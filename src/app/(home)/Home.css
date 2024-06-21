@@ -1,0 +1,119 @@
+.hero-text {
+    font-family: 'akek-malayalam-bold';
+    color: var(--secondary-cl);
+    line-height: 90px;
+}
+
+@media (min-width: 1024px) and (max-width: 1300px) {
+    .res {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+    .res {
+        width: 99%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-text {
+        line-height: 40px;
+    }
+
+    .hero-small-txt {
+        font-size: 12px !important;
+        line-height: 18px !important;
+        width: 247px !important;
+    }
+
+    .box {
+        font-size: 12px !important;
+    }
+
+    .hero-sub-text {
+        font-size: 20px !important;
+    }
+}
+
+.hero-sub-text {
+    font-family: 'akek-malayalam-semi-bold';
+    color: var(--secondary-cl);
+    line-height: 57.3px;
+    font-size: 40px;
+}
+
+.hero-small-txt {
+    font-family: 'general-sans-medium';
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+    width: 24rem;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 90deg;
+    inherits: true;
+}
+
+.box {
+    font-family: 'general-sans-semibold';
+    font-size: 16px;
+    padding: 16px 23px 16px 23px;
+    color: white;
+    border: 1px solid;
+    border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 28;
+    animation: borderRotate var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+    100% {
+        --angle: 420deg;
+    }
+}
+
+@keyframes borderRadial {
+    20% {
+        --gradX: 100%;
+        --gradY: 50%;
+    }
+
+    40% {
+        --gradX: 100%;
+        --gradY: 100%;
+    }
+
+    60% {
+        --gradX: 50%;
+        --gradY: 100%;
+    }
+
+    80% {
+        --gradX: 0%;
+        --gradY: 50%;
+    }
+
+    100% {
+        --gradX: 50%;
+        --gradY: 0%;
+    }
+}
+
+
+
+/* About Section */
+
+.bg-color {
+    background: rgb(152, 201, 163);
+    background: linear-gradient(90deg, rgba(152, 201, 163, 1) 0%, rgba(191, 216, 189, 1) 77%);
+}
+
+.box-shadow{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+/* .about-section .about-card{
+    height: 433px;
+    background-color: var(--primary-cl);
+} */

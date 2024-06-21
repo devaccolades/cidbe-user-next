@@ -2,32 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Headdings */
+@font-face {
+  font-family: "clash-display-medium";
+  src: url(../../public/font/ClashDisplay-Medium.woff) format(woff);
+}
+
+@font-face {
+  font-family: "clash-display-regular";
+  src: url(../../public//font/ClashDisplay-Regular.woff) format(woff);
+}
+
+@font-face {
+  font-family: "general-sans-light";
+  src: url(../../public//font/GeneralSans-Light.woff) format(woff);
+}
+
+@font-face {
+  font-family: "general-sans-medium";
+  src: url(../../public//font/GeneralSans-Medium.woff) format(woff);
+}
+
+@font-face {
+  font-family: "general-sans-regular";
+  src: url(../../public//font/GeneralSans-Regular.woff) format(woff);
+}
+
+@font-face {
+  font-family: "general-sans-semibold";
+  src: url(../../public//font/GeneralSans-Semibold.woff) format(woff);
+}
+
+@font-face {
+  font-family: "akek-malayalam-bold";
+  src: url(../../public/font/AnekMalayalam-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "akek-malayalam-semi-bold";
+  src: url(../../public/font/AnekMalayalam-SemiBold.ttf) format("truetype");
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --primary-cl:#BFD8BD;
+  --secondary-cl:#052D23;
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: #ffff;
+  --c2: rgba(168, 239, 255, 0.1);
+} 
+
+/* Responsive */
+
+.container {
+  width: 100%; 
+  margin: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@media (min-width: 1025px) {
+  .container {
+    width: 70%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media (max-width: 1024px) {
+  .container {
+    width: 80%;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
   }
+}
+
+.hidescroll::-webkit-scrollbar {
+  display: none;
 }

@@ -1,0 +1,9 @@
+.card-animation .hover-hideing {
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.card-animation:hover .hover-hideing {
+    opacity: 0;
+    display: none;
+}

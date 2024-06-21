@@ -1,0 +1,140 @@
+.main-area {
+    padding-top: 18px;
+}
+
+
+
+.nav-bar {
+    height: 77px;
+    width: 70%;
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.nav-bar ul {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-bar ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'general-sans-medium';
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-bar ul li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-cl);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-bar ul li:hover::after,
+.nav-bar ul li.active::after {
+    width: 100%;
+}
+
+.nav-bar ul li:hover,
+.nav-bar ul li.active {
+    color: var(--primary-cl);
+}
+
+.nav-bar ul li .card {
+    overflow: hidden;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+a.flip-animate {
+    perspective: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+a.flip-animate span {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #818181;
+    transition: transform 0.1s;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+}
+
+a.flip-animate span:before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px 20px;
+    content: attr(data-hover);
+    transition: color 0.1s;
+    transform: rotateX(-90deg);
+    transform-origin: 50% 0;
+    text-align: center;
+}
+
+a.flip-animate:hover span,
+a.flip-animate:focus span {
+    transform: rotateX(90deg) translateY(-22px);
+}
+
+a.flip-animate:hover span:before,
+a.flip-animate:focus span:before {
+    color: var(--secondary-cl);
+}
+
+/* Responsive */
+
+@media (max-width: 1023px) {
+    .lap-navbar {
+        display: none;
+    }
+
+    .mobile-navbar {
+        display: block;
+    }
+
+    .nav-bar .logo {
+        height: 34px;
+        margin-left: -20px;
+    }
+
+    .nav-bar {
+        height: 60px;
+        padding: 0 20px;
+
+    }
+
+    .nav-bar ul {
+        gap: 10px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .mobile-navbar {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1400px) {
+    .nav-bar {
+        width: 90%;
+
+    }
+
+}
