@@ -52,28 +52,28 @@ function AboutSection() {
     <main className='h-[1859px] text-[--secondary-cl] w-full flex flex-col py-[45px]'
       style={{ backgroundImage: `url(/images/home/about-section-bg.svg)` }}>
       <div className='absolute top-[1066px] left-[-191px] -z-10'>
-        <Image src={gradientLeft} />
+        <Image src={gradientLeft} alt='gradient-left' />
       </div>
       {/* About Card */}
       <card className='relative container shadow-2xl grid grid-cols-[1fr,435px] rounded-[12px]'>
         <div className='h-[433px] bg-color rounded-s-[12px] flex items-center'>
-          <Image className='absolute right-[400px] bottom-[81px]' src={aboutCardImage} />
+          <Image className='absolute right-[400px] bottom-[81px]' src={aboutCardImage} alt="Description-of-the-about-card-image" />
           <div className='w-[550px] ms-[90px] flex flex-col gap-[10px]'>
             <h3 className='text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h3>
             <div className='flex flex-col gap-[20px] font-[general-sans-regular] text-[16px] leading-[24px]'>
-              <p >"Established in 2005, CIDBI is Thrissur's most trusted builder with over 33 years of industry experience. Led by Mr. A A Abdul Lathif, we've delivered quality housing solutions across Kerala. </p>
+              <p>"Established in 2005, CIDBI is Thrissur's most trusted builder with over 33 years of industry experience. Led by Mr. A A Abdul Lathif, we've delivered quality housing solutions across Kerala. </p>
               <p>Our stringent Quality Assurance process ensures consistency in every project. With flexible floor plans and timely delivery, we exceed expectations. Welcome to CIDBI - where excellence meets trust."</p>
             </div>
             <div className='flex justify-end pt-[18px]'>
               <button className='underline flex gap-[10px] items-center'>
                 Know more
-                <Image src={arrowIcon} />
+                <Image src={arrowIcon} alt='arrow-icon'/>
               </button>
             </div>
           </div>
         </div>
         <div className='bg-cover rounded-e-[12px] ' style={{ backgroundImage: `url(/images/home/carorcel1.jpeg)` }}>
-          <Image className='h-full -ms-[2px]' src={aboutCardshape} />
+          <Image className='h-full -ms-[2px]' alt='card-shape' src={aboutCardshape} />
         </div>
       </card>
       {/* Why choose us? */}
@@ -81,7 +81,7 @@ function AboutSection() {
         <h3 className='text-[24px] font-[general-sans-medium] text-center mt-[40px] mb-[20px] leading-[32.4px]'>WHY CHOOSE US?</h3>
         <div className='grid grid-cols-3 gap-[20px]'>
           <div className="text-center flex flex-col items-center gap-[20px] py-[30px]  bg-white shadow-lg rounded-[15px]">
-            <Image src={qualityGif} width={120} />
+            <Image src={qualityGif} alt='quality-fig' width={120} />
             <div className='flex flex-col gap-[20px]'>
               <h6 className='font-[general-sans-medium] text-[24px] leading-[32px]'>Unparalleled
                 <br />
@@ -90,7 +90,7 @@ function AboutSection() {
             </div>
           </div>
           <div className="text-center flex flex-col items-center gap-[20px] py-[30px]  bg-white shadow-lg rounded-[15px]">
-            <Image src={facilitiesGif} width={120} />
+            <Image src={facilitiesGif} alt='facilities-gif' width={120} />
             <div className='flex flex-col gap-[20px]'>
               <h6 className='font-[general-sans-medium] text-[24px] leading-[32px]'>Superior
                 <br />
@@ -99,7 +99,7 @@ function AboutSection() {
             </div>
           </div>
           <div className="text-center flex flex-col items-center gap-[20px] py-[30px]  bg-white shadow-lg rounded-[15px]">
-            <Image src={serviceGif} width={120} />
+            <Image src={serviceGif} alt='service-gif' width={120} />
             <div className='flex flex-col gap-[20px]'>
               <h6 className='font-[general-sans-medium] text-[24px] leading-[32px]'>Exceptional Customer
                 <br />
@@ -119,7 +119,7 @@ function AboutSection() {
                 <p className='text-[20px] leading-[27px] font-[general-sans-regular]'>Projects <br /> Completed</p>
               </div>
               <div>
-                <Image src={image1} className='rounded-[12px] h-full w-[162px]' />
+                <Image src={image1} alt='banner-image1' className='rounded-[12px] h-full w-[162px]' />
               </div>
               <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[84px] w-[186px] flex flex-col items-center justify-center'>
                 <h5 className='text-[64px] leading-[86px] font-[general-sans-semibold]'>1M+</h5>
@@ -131,7 +131,7 @@ function AboutSection() {
               <p className='text-[20px] leading-[27px] font-[general-sans-regular]'>Happy Customers</p>
             </div>
             <div className='flex flex-row gap-[45px]'>
-              <Image src={image2} className='w-[195px] h-[243px] rounded-[12px]' />
+              <Image src={image2} alt='banner-image2' className='w-[195px] h-[243px] rounded-[12px]' />
               <div className='flex flex-col justify-center'>
                 <h5 className='text-[64px] leading-[86px] font-[general-sans-semibold]'>35+</h5>
                 <p className='text-[20px] leading-[27px] font-[general-sans-regular]'>Years of <br /> Experience</p>

@@ -6,7 +6,7 @@ import Image from 'next/image';
     import locationIcon from '../../../public/icons/location.svg'
 import arrowoutwardIcon from '../../../public/icons/arrow_outward.svg'
 function HeroSection() {
-    const [activeIndex, setActiveIndex] = useState(1);
+    // const [activeIndex, setActiveIndex] = useState(1);
         const projects = [
         { name: "CASSIA", location: "Poonkunnam", status: "Ongoing", image: "/images/home/carorcel1.jpeg" },
         { name: "Test", location: "Poonkunnam", status: "Ongoing", image: "/images/home/carorcel1.jpeg" },
@@ -62,14 +62,14 @@ function HeroSection() {
                         activeIndex={1}
                     >
                         {projects.map((project, index) => (
-                            <Card className='md:w-[275px] lg:w-[395px] h-[97%] px-[5px] pt-[5px] pb-[10px] mx-auto overflow-hidden'>
+                            <Card key={index} className='md:w-[275px] lg:w-[395px] h-[97%] px-[5px] pt-[5px] pb-[10px] mx-auto overflow-hidden'>
                                 <div className='md:h-[259px] lg:h-[405px] bg-top rounded-[8px] bg-cover'
                                     style={{ backgroundImage: `url(${project.image})` }} />
                                 <div className='bg-white grid grid-rows-2 lg:pt-[10px] md:px-[16px] lg:px-[20px] '>
                                     <div className='h-[72px] w-full flex justify-between items-center'>
                                         <div className='font-[general-sans-regular] md:-mb-[20px] lg:mb-0'>
                                             <p className='md:text-[24px] lg:text-[36px] text-black'>{project?.name}</p>
-                                            <p className='capitalize flex gap-[8px] lg:-mt-[4px]'><Image src={locationIcon} /> <span className='md:text-[10px] lg:text-[16px] text-[#767575]'>{project?.location}</span></p>
+                                            <p className='capitalize flex gap-[8px] lg:-mt-[4px]'><Image src={locationIcon} alt='location-icon' /> <span className='md:text-[10px] lg:text-[16px] text-[#767575]'>{project?.location}</span></p>
                                         </div>
                                         <div>
                                             <p className='capitalize md:-mb-[20px] lg:mb-0 rounded-[12px] text-[general-sans-medium] border-[1px] text-[10px] border-[#052D23] py-[2px] px-[10px]'>{project?.status}</p>
@@ -78,7 +78,7 @@ function HeroSection() {
                                     <div className=' h-[64px] flex justify-center items-end'>
                                         <button className='bg-[--secondary-cl] h-[44px] gap-[8px] py-[12px] pr-[8px] pl-[14px] rounded-[8px] w-full flex justify-center items-center'>
                                             <p className='font-[general-sans-medium] text-[14px] text-white'>View Project Details</p>
-                                            <Image src={arrowoutwardIcon} />
+                                            <Image src={arrowoutwardIcon} alt='arrow-icons'/>
                                         </button>
                                     </div>
                                 </div>

@@ -109,7 +109,7 @@ function Header() {
         <>
             <header className='main-area sticky top-1 z-10 '>
                 <section className={`nav-bar container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
-                    <Image src={logo} className='logo' />
+                    <Image src={logo} alt='logo' className='logo' />
                     <div className='lap-navbar'>
                         <ul className={`${scrolling ? 'text-[#052D23]' : 'text-white'}`}>
                             <li className={`${scrolling}? 'isscroll':''`}>Home</li>
@@ -164,7 +164,7 @@ function Header() {
                             exit="exit"
                         >
                             <div onClick={() => setShowMobileNav(!showMobileNav)} className="absolute top-12 right-11 text-white cursor-pointer">
-                                <Image src={closeIcon} />
+                                <Image src={closeIcon} alt='closing-icon' />
                             </div>
                             <motion.div
                                 className="relative bg-[#BFD8BD]"
