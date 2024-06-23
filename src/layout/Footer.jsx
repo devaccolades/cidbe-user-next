@@ -2,7 +2,9 @@ import React from 'react'
 import "./Style.css"
 function Footer() {
   return (
-    <div>Footer</div>
+    <section className='h-[311px] bg-[--primary-cl]'>
+      
+    </section>
   )
 }
 

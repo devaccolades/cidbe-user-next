@@ -1,9 +1,13 @@
-.card-animation .hover-hideing {
-    opacity: 1;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+/* .hide-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+   
 }
 
-.card-animation:hover .hover-hideing {
-    opacity: 0;
-    display: none;
-}
+.show-details {
+    max-height: 1000px; 
+    opacity: 1;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+} */

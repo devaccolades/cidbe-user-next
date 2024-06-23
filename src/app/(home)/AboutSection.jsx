@@ -5,10 +5,12 @@ import Image from 'next/image'
 import gradientLeft from "../../../public/images/home/gradient-left.svg"
 import aboutCardImage from "../../../public/images/home/about-card-vector.svg"
 import aboutCardshape from "../../../public/images/home/about-shape.svg"
+import aboutCardshapeMobile from "../../../public/images/home/about-shape-mobile.svg"
 import arrowIcon from "../../../public/icons/arrow-outward-green.svg"
 import qualityGif from "../../../public/gif/quality.gif"
 import facilitiesGif from "../../../public/gif/facilities.gif"
 import serviceGif from "../../../public/gif/service.gif"
+
 import './Home.css'
 import image1 from "../../../public/images/home/image1.jpeg"
 import image2 from "../../../public/images/home/image2.jpeg"
@@ -49,68 +51,73 @@ function AboutSection() {
   };
 
   return (
-    <main className='h-[1859px] text-[--secondary-cl] w-full flex flex-col py-[45px]'
-      style={{ backgroundImage: `url(/images/home/about-section-bg.svg)` }}>
-      <div className='absolute top-[1066px] left-[-191px] -z-10'>
+    <main className='lg:h-[1859px] text-[--secondary-cl] w-full flex flex-col py-[45px] lg:bg-[url(/images/home/about-section-bg.svg)]'
+    >
+      <div className='absolute top-[1066px] left-[-191px] lg:block hidden -z-10'>
         <Image src={gradientLeft} alt='gradient-left' />
       </div>
       {/* About Card */}
-      <card className='relative container shadow-2xl grid grid-cols-[1fr,435px] rounded-[12px]'>
-        <div className='h-[433px] bg-color rounded-s-[12px] flex items-center'>
-          <Image className='absolute right-[400px] bottom-[81px]' src={aboutCardImage} alt="Description-of-the-about-card-image" />
-          <div className='w-[550px] ms-[90px] flex flex-col gap-[10px]'>
-            <h3 className='text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h3>
-            <div className='flex flex-col gap-[20px] font-[general-sans-regular] text-[16px] leading-[24px]'>
+      <card className='relative containers shadow-2xl flex flex-col-reverse md:flex-row rounded-[12px]'>
+        <div className='md:h-[433px] w-full bg-color rounded-b-[12px] md:rounded-e-none  md:rounded-s-[12px] flex items-center p-[30px] md:p-[60px] lg:p-0'>
+          <Image className='absolute right-[400px] lg:block hidden bottom-[81px]' src={aboutCardImage} alt="Description-of-the-about-card-image" />
+          <Image className='absolute top-[46%] block md:hidden w-full left-0 right-0' src={aboutCardshapeMobile} alt="Description-of-the-about-card-image" />
+
+          <div className='w-full lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
+            <h3 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h3>
+            <div className='flex flex-col gap-[20px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>
               <p>"Established in 2005, CIDBI is Thrissur's most trusted builder with over 33 years of industry experience. Led by Mr. A A Abdul Lathif, we've delivered quality housing solutions across Kerala. </p>
               <p>Our stringent Quality Assurance process ensures consistency in every project. With flexible floor plans and timely delivery, we exceed expectations. Welcome to CIDBI - where excellence meets trust."</p>
             </div>
-            <div className='flex justify-end pt-[18px]'>
-              <button className='underline flex gap-[10px] items-center'>
+            <div className='flex justify-center md:justify-end pt-[18px]'>
+              <button className='underline flex gap-[10px] items-center text-[12px] font-[general-sans-medium]'>
                 Know more
-                <Image src={arrowIcon} alt='arrow-icon'/>
+                <Image src={arrowIcon} alt='arrow-icon' />
               </button>
             </div>
           </div>
         </div>
-        <div className='bg-cover rounded-e-[12px] ' style={{ backgroundImage: `url(/images/home/carorcel1.jpeg)` }}>
-          <Image className='h-full -ms-[2px]' alt='card-shape' src={aboutCardshape} />
+        <div className='bg-cover md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] bg-center' style={{ backgroundImage: `url(/images/home/carorcel1.jpeg)` }}>
+          <Image className='h-full -ms-[2px] md:visible invisible' alt='card-shape' src={aboutCardshape} />
         </div>
       </card>
       {/* Why choose us? */}
-      <section className='container'>
+      <section className='containers'>
         <h3 className='text-[24px] font-[general-sans-medium] text-center mt-[40px] mb-[20px] leading-[32.4px]'>WHY CHOOSE US?</h3>
-        <div className='grid grid-cols-3 gap-[20px]'>
-          <div className="text-center flex flex-col items-center gap-[20px] py-[30px]  bg-white shadow-lg rounded-[15px]">
-            <Image src={qualityGif} alt='quality-fig' width={120} />
-            <div className='flex flex-col gap-[20px]'>
-              <h6 className='font-[general-sans-medium] text-[24px] leading-[32px]'>Unparalleled
-                <br />
-                Quality</h6>
-              <p className='px-[30px] font-[general-sans-regular]'> we prioritize quality above all else. With decades of experience and a commitment to excellence, we ensure that every aspect of our projects, from design to construction, meets the highest standards of quality and craftsmanship.</p>
+        <div className='grid grid-rows-1 lg:grid-cols-3 gap-[20px]'>
+          <div className="text-center flex flex-col md:flex-row lg:flex-col items-center gap-[10px] lg:gap-[20px] py-[30px]  bg-white shadow-lg rounded-[15px]">
+            <Image src={qualityGif} alt='quality-fig'  width={120} />
+            <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
+              <h6 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
+                <span className='md:hidden block'>Unparalleled <br /> Quality</span>
+                <span className='md:block hidden'>Unparalleled Quality</span>
+              </h6>
+              <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'> we prioritize quality above all else. With decades of experience and a commitment to excellence, we ensure that every aspect of our projects, from design to construction, meets the highest standards of quality and craftsmanship.</p>
             </div>
           </div>
-          <div className="text-center flex flex-col items-center gap-[20px] py-[30px]  bg-white shadow-lg rounded-[15px]">
+          <div className="text-center flex flex-col md:flex-row lg:flex-col items-center gap-[20px] py-[30px]  bg-white shadow-lg rounded-[15px]">
             <Image src={facilitiesGif} alt='facilities-gif' width={120} />
-            <div className='flex flex-col gap-[20px]'>
-              <h6 className='font-[general-sans-medium] text-[24px] leading-[32px]'>Superior
-                <br />
-                Facilities</h6>
-              <p className='px-[30px] font-[general-sans-regular]'> We believe that luxury living is about more than just four walls and a roof. That's why we go above and beyond to provide our residents with top-notch facilities that enhance their lifestyle. From state-of-the-art fitness centers to serene outdoor spaces, we offer facilities that cater to every need and desire.</p>
+            <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
+              <h6 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
+              <span className='md:hidden block'>Superior <br /> Facilities</span>
+              <span className='md:block hidden'>Superior Facilities</span>
+                </h6>
+              <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'> We believe that luxury living is about more than just four walls and a roof. That's why we go above and beyond to provide our residents with top-notch facilities that enhance their lifestyle. From state-of-the-art fitness centers to serene outdoor spaces, we offer facilities that cater to every need and desire.</p>
             </div>
           </div>
-          <div className="text-center flex flex-col items-center gap-[20px] py-[30px]  bg-white shadow-lg rounded-[15px]">
+          <div className="text-center flex flex-col md:flex-row lg:flex-col items-center gap-[20px] py-[30px]  bg-white shadow-lg rounded-[15px]">
             <Image src={serviceGif} alt='service-gif' width={120} />
-            <div className='flex flex-col gap-[20px]'>
-              <h6 className='font-[general-sans-medium] text-[24px] leading-[32px]'>Exceptional Customer
-                <br />
-                Service</h6>
-              <p className='px-[30px] font-[general-sans-regular]'>  we prioritize quality above all else. With decades of experience and a commitment to excellence, we ensure that every aspect of our projects, from design to construction, meets the highest standards of quality and craftsmanship.</p>
+            <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
+              <h6 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
+              <span className='md:hidden block'>Exceptional Customer <br /> Service</span>
+              <span className='md:block hidden'>Exceptional Customer Service</span>
+                </h6>
+              <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>  we prioritize quality above all else. With decades of experience and a commitment to excellence, we ensure that every aspect of our projects, from design to construction, meets the highest standards of quality and craftsmanship.</p>
             </div>
           </div>
         </div>
       </section>
       {/* Banner */}
-      <section className='container pt-[40px]'>
+      <section className='containers pt-[40px]'>
         <card className='h-[683px] w-full bg-white rounded-[20px] p-[15px] box-shadow grid grid-cols-2'>
           <left className="flex flex-col gap-[10px]">
             <div className='flex flex-row gap-[15px] h-[190px]'>

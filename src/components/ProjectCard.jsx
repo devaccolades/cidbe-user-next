@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import { Card } from '@material-tailwind/react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import './projectCard.css'
 // Icons
 import locationIcon from '../../public/icons/location.svg'
@@ -11,22 +11,24 @@ import areaIcon from '../../public/icons/area.png'
 import premiumIcon from '../../public/icons/premium.svg'
 import reraIcon from '../../public/icons/rera.svg'
 import arrow_outwardIcon from '../../public/icons/arrow_outward.svg'
-// After connecting to backend, these images should be removed
-import Card1 from "../../public/images/home/card1.jpeg"
 
 function ProjectCard() {
+    const [hovered, setHovered] = useState(false);
+
     return (
-        <Card className='w-full h-[638px] cursor-pointer card-animation bg-white rounded-[15px] overflow-hidden p-[5px] flex flex-col gap-[10px]'>
+        <Card className='relative w-full h-[638px] cursor-pointer card-animation bg-white rounded-[15px] overflow-hidden p-[5px] grid grid-rows-[1fr,1fr,1fr] gap-[10px]'>
             <motion.div
-                className='card-image h-[201px] bg-red-500 bg-top rounded-[10px] bg-cover'
+                onMouseEnter={() => setHovered(true)}
+                onMouseLeave={() => setHovered(false)}
+                className='card-image rounded-[10px] bg-cover'
                 style={{ backgroundImage: `url(images/home/card1.jpeg)` }}
-                whileHover={{ height: 408 }}
+                animate={{ height: hovered ? 408 : 201 }}
                 transition={{ duration: 0.5, ease: 'easeInOut' }}
             />
             <div className='flex justify-between items-center pt-[10px] px-[15px]'>
                 <div className='font-[general-sans-regular] flex flex-col gap-[6px]'>
-                    <p className='text-[38px] text-black uppercase leading-[36px]'>Cassia</p>
-                    <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Location" /> <span className='md:text-[10px] lg:text-[16px] leading-[18px] text-[#767575]'>Pookunnan</span></p>
+                    <p className='text-[32px] lg:text-[38px] text-black uppercase leading-[36px]'>Cassia</p>
+                    <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Location" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>Pookunnan</span></p>
                 </div>
                 <div>
                     <p className='capitalize rounded-[12px] text-[general-sans-medium] border-[1px] text-[10px] text-[#052D23] border-[#052D23] py-[2px] px-[10px]'>Ongoing Project</p>
@@ -36,38 +38,62 @@ function ProjectCard() {
                 <div className='flex flex-row items-start gap-[20px]'>
                     <Image src={appartmentIcon} alt="Apartment" />
                     <div className='flex flex-col gap-[6px] -mt-[5px]'>
-                        <p className='text-[16px] font-[general-sans-light]'>Apartment type</p>
-                        <p className='text-[16px] font-[general-sans-medium]'>2, 3 & 4 BHK</p>
+                        <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Apartment type</p>
+                        <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>2, 3 & 4 BHK</p>
                     </div>
                 </div>
-                <div className='hover-hideing flex flex-row items-start gap-[20px]'>
-                    <Image src={areaIcon} alt="Area" />
-                    <div className='flex flex-col gap-[6px] -mt-[5px]'>
-                        <p className='text-[16px] font-[general-sans-light]'>Area range</p>
-                        <p className='text-[16px] font-[general-sans-medium]'>1,220 - 2,377 Sq.Ft</p>
-                    </div>
-                </div>
-                <div className='hover-hideing flex flex-row items-start gap-[20px]'>
-                    <Image src={premiumIcon} alt="Premium" />
-                    <div className='flex flex-col gap-[6px] -mt-[5px]'>
-                        <p className='text-[16px] font-[general-sans-light]'>Premium luxury apartment </p>
-                        <p className='text-[16px] font-[general-sans-medium]'>Unmatched Elegance</p>
-                    </div>
-                </div>
-                <div className='hover-hideing flex flex-row items-start gap-[25px]'>
-                    <Image src={reraIcon} alt="RERA" />
-                    <div className='flex flex-col gap-[6px] -mt-[5px]'>
-                        <p className='text-[16px] font-[general-sans-light]'>K.RERA</p>
-                        <p className='text-[16px] font-[general-sans-medium]'>RERA: K.RERA/PRJ/TSR/043/2023</p>
-                    </div>
-                </div>
+                <AnimatePresence>
+                    {!hovered && (
+                        <>
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 50 }}
+                                transition={{ duration: 0.10 }}
+                                className='flex flex-row items-start gap-[20px]'
+                            >
+                                <Image src={areaIcon} alt="Area" />
+                                <div className='flex flex-col gap-[6px] -mt-[5px]'>
+                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Area range</p>
+                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>1,220 - 2,377 Sq.Ft</p>
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 50 }}
+                                transition={{ duration: 0.10 }}
+                                className='flex flex-row items-start gap-[20px]'
+                            >
+                                <Image src={premiumIcon} alt="Premium" />
+                                <div className='flex flex-col gap-[6px] -mt-[5px]'>
+                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Premium luxury apartment </p>
+                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>Unmatched Elegance</p>
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 50 }}
+                                transition={{ duration: 0.10 }}
+                                className='flex flex-row items-start gap-[25px]'
+                            >
+                                <Image src={reraIcon} alt="RERA" />
+                                <div className='flex flex-col gap-[6px] -mt-[5px]'>
+                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>K.RERA</p>
+                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>RERA: K.RERA/PRJ/TSR/043/2023</p>
+                                </div>
+                            </motion.div>
+                        </>
+                    )}
+                </AnimatePresence>
             </div>
-            <div className='grid grid-cols-2 gap-[10px] px-[15px]'>
+            <div className='sticky bottom-1 bg-white grid grid-cols-2 gap-[10px] px-[15px] pb-[10px] text-[14px] lg:text-[18px]'>
                 <button className='border border-[--secondary-cl] text-[--secondary] py-[7px] px-[8px] rounded-[8px]'>Read more</button>
                 <button className='bg-[--secondary-cl] text-white flex flex-row gap-[8px] py-[7px] px-[8px] rounded-[8px] items-center justify-center'>Enquire Now <Image src={arrow_outwardIcon} alt="Arrow" /></button>
             </div>
         </Card>
-    )
+    );
 }
 
-export default ProjectCard
+export default ProjectCard;

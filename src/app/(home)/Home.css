@@ -43,6 +43,36 @@
     font-size: 40px;
 }
 
+@media (max-width: 767px) {
+    .hero-text {
+        font-size: 36px;
+        width: 300px ;
+    }
+
+    .hero-small-txt {
+        font-size: 12px !important;
+        line-height: 18px !important;
+        width: 247px !important;
+    }
+
+    .box {
+        padding: 10px 0px !important;
+        font-size: 12px !important;
+    }
+
+    .hero-sub-text {
+        font-size: 20px !important;
+    }
+}
+
+.hero-sub-text {
+    font-family: 'akek-malayalam-semi-bold';
+    color: var(--secondary-cl);
+    line-height: 57.3px;
+    font-size: 40px;
+}
+
+
 .hero-small-txt {
     font-family: 'general-sans-medium';
     font-size: 16px;
@@ -109,11 +139,52 @@
     background: linear-gradient(90deg, rgba(152, 201, 163, 1) 0%, rgba(191, 216, 189, 1) 77%);
 }
 
-.box-shadow{
+.box-shadow {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
-/* .about-section .about-card{
-    height: 433px;
-    background-color: var(--primary-cl);
-} */
+
+.custom-dots {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: -10px 0px;
+    
+}
+
+.custom-dot {
+    cursor: pointer;
+    margin: 0 4px;
+    
+}
+
+.custom-dot .dot-line {
+    display: block;
+    width: 7px;
+    height: 4px;
+    border-radius: 6px;
+    background-color:  #BCBCBC;
+    transition: all 0.3s ease;
+}
+
+.custom-dot.active .dot-line {
+    width: 22px;
+    height: 4px;
+    background-color: var(--secondary-cl);
+}
+
+
+/* Chairman */
+.chairmanBgGradient {
+    background-image: url('/images/home/chairmanbg.svg');
+    background: rgb(5, 45, 35);
+    background: linear-gradient(90deg, rgba(5, 45, 35, 1) 0%, rgba(191, 216, 189, 1) 100%);
+}
+
+
+/* Review and faq */
+.reviews-bg-gradient {
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(245,251,244,1) 48%, rgba(239,246,239,1) 55%, rgba(229,237,229,1) 66%, rgba(191,216,189,1) 100%);}
+
