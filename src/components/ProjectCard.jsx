@@ -12,7 +12,7 @@ import premiumIcon from '../../public/icons/premium.svg'
 import reraIcon from '../../public/icons/rera.svg'
 import arrow_outwardIcon from '../../public/icons/arrow_outward.svg'
 
-function ProjectCard() {
+function ProjectCard({project}) {
     const [hovered, setHovered] = useState(false);
 
     return (
@@ -20,18 +20,19 @@ function ProjectCard() {
             <motion.div
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
+                // onTap={() => setHovered(!hovered)}
                 className='card-image rounded-[10px] bg-cover'
-                style={{ backgroundImage: `url(images/home/card1.jpeg)` }}
+                style={{ backgroundImage: `url(${project?.thumbnail})` }}
                 animate={{ height: hovered ? 408 : 201 }}
                 transition={{ duration: 0.5, ease: 'easeInOut' }}
             />
             <div className='flex justify-between items-center pt-[10px] px-[15px]'>
                 <div className='font-[general-sans-regular] flex flex-col gap-[6px]'>
-                    <p className='text-[32px] lg:text-[38px] text-black uppercase leading-[36px]'>Cassia</p>
-                    <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Location" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>Pookunnan</span></p>
+                    <p className='text-[32px] lg:text-[38px] text-black uppercase leading-[36px]'>{project?.name}</p>
+                    <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Location" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>{project?.location}</span></p>
                 </div>
                 <div>
-                    <p className='capitalize rounded-[12px] text-[general-sans-medium] border-[1px] text-[10px] text-[#052D23] border-[#052D23] py-[2px] px-[10px]'>Ongoing Project</p>
+                    <p className='capitalize rounded-[12px] text-[general-sans-medium] border-[1px] text-[10px] text-[#052D23] border-[#052D23] py-[2px] px-[10px]'>{project?.status}</p>
                 </div>
             </div>
             <div className='px-[15px] py-[10px] flex flex-col gap-[20px]'>
@@ -39,7 +40,7 @@ function ProjectCard() {
                     <Image src={appartmentIcon} alt="Apartment" />
                     <div className='flex flex-col gap-[6px] -mt-[5px]'>
                         <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Apartment type</p>
-                        <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>2, 3 & 4 BHK</p>
+                        <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.bhk} BHK</p>
                     </div>
                 </div>
                 <AnimatePresence>
@@ -55,7 +56,7 @@ function ProjectCard() {
                                 <Image src={areaIcon} alt="Area" />
                                 <div className='flex flex-col gap-[6px] -mt-[5px]'>
                                     <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Area range</p>
-                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>1,220 - 2,377 Sq.Ft</p>
+                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.area_from} - {project?.area_to} Sq.Ft</p>
                                 </div>
                             </motion.div>
                             <motion.div
@@ -68,7 +69,7 @@ function ProjectCard() {
                                 <Image src={premiumIcon} alt="Premium" />
                                 <div className='flex flex-col gap-[6px] -mt-[5px]'>
                                     <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Premium luxury apartment </p>
-                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>Unmatched Elegance</p>
+                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.sub_name}</p>
                                 </div>
                             </motion.div>
                             <motion.div
@@ -81,14 +82,14 @@ function ProjectCard() {
                                 <Image src={reraIcon} alt="RERA" />
                                 <div className='flex flex-col gap-[6px] -mt-[5px]'>
                                     <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>K.RERA</p>
-                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>RERA: K.RERA/PRJ/TSR/043/2023</p>
+                                    <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.rera_number}</p>
                                 </div>
                             </motion.div>
                         </>
                     )}
                 </AnimatePresence>
             </div>
-            <div className='sticky bottom-1 bg-white grid grid-cols-2 gap-[10px] px-[15px] pb-[10px] text-[14px] lg:text-[18px]'>
+            <div className='sticky bottom-1 bg-white grid grid-cols-2 gap-[10px] px-[15px] pb-[10px] text-[14px] '>
                 <button className='border border-[--secondary-cl] text-[--secondary] py-[7px] px-[8px] rounded-[8px]'>Read more</button>
                 <button className='bg-[--secondary-cl] text-white flex flex-row gap-[8px] py-[7px] px-[8px] rounded-[8px] items-center justify-center'>Enquire Now <Image src={arrow_outwardIcon} alt="Arrow" /></button>
             </div>

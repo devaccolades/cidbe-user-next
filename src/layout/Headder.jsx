@@ -107,8 +107,8 @@ function Header() {
 
     return (
         <>
-            <header className='main-area sticky top-1 z-10 '>
-                <section className={`nav-bar container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
+            <header className='main-area sticky top-1 z-50 '>
+                <section className={`nav-bar lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
                     <Image src={logo} alt='logo' className='logo' />
                     <div className='lap-navbar'>
                         <ul className={`${scrolling ? 'text-[#052D23]' : 'text-white'}`}>
