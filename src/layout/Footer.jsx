@@ -13,10 +13,10 @@ import credailogo from '../../public/images/footer/credailogo.png'
 
 function Footer() {
   return (
-    <section className='font-[general-sans-medium] text-[--secondary-cl] bg-[--primary-cl] px-[40px] lg:px-[120px] py-[40px] flex flex-col'>
-      <div className='w-full flex flex-row h-full  justify-between'>
-        <div className='flex flex-col gap-[20px]'>
-          <p className='lg:w-9/12 text-[16px] leading-[21px]'>NO PROJECT IS TOO BIG OR TOO SMALL, HIT US UP AND LET’S BUILD</p>
+    <section className='font-[general-sans-medium] text-[--secondary-cl] bg-[--primary-cl] px-[40px] xl:px-[120px] py-[40px] flex flex-col'>
+      <div className='w-full flex flex-row h-full flex-wrap lg:flex-nowrap'>
+        <div className='flex flex-col w-full md:w-[60%] lg:w-[30vw] gap-[20px]'>
+          <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px]'>NO PROJECT IS TOO BIG OR TOO SMALL, HIT US UP AND LET’S BUILD</p>
           <Image src={logo} className='w-[118px] h-[74px]' alt='logo' />
           <div className='flex flex-row gap-[20px] items-center'>
             <Image src={instagram} className='w-[20] h-[20]' alt='instagram-logo' />
@@ -24,43 +24,43 @@ function Footer() {
             <Image src={youtube} className='w-[22px] h-[15px]' alt='youtube-logo' />
           </div>
         </div>
-        <div className='text-[14px] leading-[21px] flex flex-col gap-[20px]'>
+        <div className='text-[14px] leading-[21px] w-[50%] md:w-[18%] lg:w-[11vw] flex flex-col gap-[20px] mt-[40px] md:mt-0'>
           <p className='font-[general-sans-semibold]'>ABOUT US</p>
           <p>Who we are</p>
           <p>CSR</p>
         </div>
-        <div className='text-[14px] leading-[21px] flex flex-col gap-[20px]'>
+        <div className='text-[14px] leading-[21px] flex flex-col w-[50%] md:w-[18%] lg:w-[13vw] gap-[20px] mt-[40px] md:mt-0'>
           <p className='font-[general-sans-semibold]'>PROJECTS</p>
           <p>Completed projects</p>
           <p>Upcoming projects </p>
           <p>Ready to occupy</p>
           <p>Ongoing projects</p>
         </div>
-        <div className='font-[general-sans-semibold] text-[14px] flex flex-col gap-[20px]'>
+        <div className='font-[general-sans-semibold] text-[14px] w-full md:w-[20vw] lg:mt-0 mt-[30px] lg:w-[13vw] flex flex-col gap-[20px]'>
           <p>Gallery</p>
           <p>BLOG</p>
           <p>ACHIEVEMENTS</p>
           <p>CONTACT US</p>
           <p>CAREERS</p>
         </div>
-        <div>
-          <div className='flex flex-col gap-[8px] text-[14px]'>
+        <div className='flex flex-col md:flex-row lg:flex-col justify-between lg:mt-0 mt-[30px] '>
+          <div className='flex flex-col gap-[8px] text-[14px] w-full md:w-[40%] lg:w-auto'>
             <p className='flex flex-row gap-[10px]'><span className='w-[67px]'>Whatsapp</span> <span>-</span><span>+91 8137873330</span></p>
             <p className='flex flex-row gap-[10px]'><span className='w-[67px]'>Email</span> <span>-</span><span>salescidbi@gmail.com</span></p>
             <p className='flex flex-row gap-[10px]'><span className='w-[67px]'>Call</span> <span>-</span><span>+91 94969 33000</span></p>
           </div>
-          <div className='mt-[35px] font-[general-sans-medium]'>
+          <div className='mt-[35px] md:mt-0 lg:mt-[35px] font-[general-sans-medium] w-full md:w-[50%] lg:w-auto'>
             <p className='text-[14px]'>Certifications</p>
-            <div className='flex flex-row justify-center items-center gap-[20px]'>
+            <div className='flex flex-row flex-wrap  items-center gap-[10px] lg:gap-[20px]'>
               <Image src={isologo} className='w-[50px] h-[50px]' alt='iso-logo' />
               <Image src={sbilogo} className='w-[75px] h-[75px]' alt='sbi-logo' />
-              <Image src={bailogo} className='w-[50px] h-[50px]' alt='bai-logo' />
               <Image src={credailogo} className='w-[90px] h-[90px]' alt='creatai-logo' />
+              <Image src={bailogo} className='w-[50px] h-[50px]' alt='bai-logo' />
             </div>
           </div>
         </div>
       </div>
-      <p className='text-center text-[14px] font-[general-sans-regular] text-[#4C956C]'>All Rights reserved by CIDBI Thrissur. 2024 Powered by Example</p>
+      <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C]'>All Rights reserved by CIDBI Thrissur. 2024 Powered by Example</p>
     </section>
   )
 }

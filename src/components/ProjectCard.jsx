@@ -21,7 +21,7 @@ function ProjectCard({project}) {
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
                 // onTap={() => setHovered(!hovered)}
-                className='card-image rounded-[10px] bg-cover'
+                className='card-image bg-top rounded-[10px] bg-cover'
                 style={{ backgroundImage: `url(${project?.thumbnail})` }}
                 animate={{ height: hovered ? 408 : 201 }}
                 transition={{ duration: 0.5, ease: 'easeInOut' }}

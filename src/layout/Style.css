@@ -97,6 +97,10 @@ a.flip-animate:focus span:before {
     color: var(--secondary-cl);
 }
 
+
+/* Footer */
+
+
 /* Responsive */
 
 @media (max-width: 1023px) {
@@ -137,4 +141,12 @@ a.flip-animate:focus span:before {
 
     }
 
+}
+
+@media (max-width:1024px){
+    .footer{
+        nth-div(1){
+            column-span: 3;
+        }
+    }
 }
