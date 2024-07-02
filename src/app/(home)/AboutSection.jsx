@@ -142,60 +142,6 @@ function AboutSection() {
 
         </card>
       </section>
-      <section className='containers pt-[40px] lg:block hidden'>
-        <card className='w-full bg-white rounded-[20px] p-[15px] box-shadow grid grid-cols-[500px,1fr] lg:grid-cols-2'>
-          <left className="flex flex-col gap-[10px]">
-            <div className='flex flex-row gap-[15px] h-[170px] lg:h-[190px]'>
-              <div className='ps-[35px] w-[14.9vw] flex flex-col justify-center'>
-                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]'>20+</h5>
-                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Projects <br /> Completed</p>
-              </div>
-              <div>
-                <Image src={image1} alt='banner-image1' className='rounded-[12px] w-[137px] h-full lg:w-[262px]' />
-              </div>
-              <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[84px] w-[160px] lg:w-[19.375vw] flex flex-col items-center justify-center'>
-                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1M+</h5>
-                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Square Feet<br />Completed</p>
-              </div>
-            </div>
-            <div className='h-[170px] lg:h-[190px] ps-[50px] w-10/12 lg:w-[23.28125vw] flex flex-col justify-center bg-[--primary-cl] rounded-[12px] rounded-tr-[56px]'>
-              <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1000+</h5>
-              <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
-            </div>
-            <div className='flex flex-row gap-[45px]'>
-              <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px]' />
-              <div className='flex flex-col justify-center'>
-                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
-                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Years of <br /> Experience</p>
-              </div>
-            </div>
-          </left>
-          <right className="relative flex justify-center items-center">
-            <Image src={charectersImage} className='absolute bottom-8 w-[17.2vw] lg:w-[377px]' alt='people-image' />
-
-            <motion.div
-              className="bg-[--primary-cl] w-[26vw] h-[26vw]"
-              animate={{
-                borderRadius: [
-                  "20% 50% 50% 20%",
-                  "50% 20% 50% 20%",
-                  "20% 20% 50% 50%",
-                  "50% 50% 20% 20%",
-                  "20% 50% 50% 20%"
-                ]
-              }}
-              transition={{
-                duration: 5,
-                ease: "easeInOut",
-                times: [0, 0.25, 0.5, 0.75, 1],
-                repeat: Infinity,
-                repeatDelay: 1
-              }}
-            />
-          </right>
-
-        </card>
-      </section>
       <section className='containers pt-[40px] block lg:hidden'>
         <card className='h-[496px] w-full bg-white rounded-[20px] p-[15px] box-shadow grid grid-rows-[36%,1fr] gap-[10px]'>
           <div className=" grid grid-cols-[150px,150px,150px,1fr] gap-[10px]">
