@@ -40,9 +40,9 @@ const PrevArrow = (props) => {
 
 function HeroSection() {
     const projects = [
-        { name: "CASSIA", location: "Poonkunnam", status: "Ongoing", image: "/images/home/carorcel1.jpeg", bgimage: "/images/home/bg.webp" },
+        { name: "CASSIA", location: "Near Daya Hospital", status: "Ongoing", image: "/images/home/carorcel1.jpeg", bgimage: "/images/home/bg.webp" },
         // { name: "CASSIA", location: "Poonkunnam", status: "Ongoing", image: "/images/home/carorcel1.jpeg" ,bgimage: "/images/home/bg.webp"},
-        { name: "CANDOR", location: "Near Daya Hospital", status: "Ready to occupy", image: "/images/home/carorcel2.webp", bgimage: "/images/home/carorcel1.jpeg" },
+        { name: "CANDOR", location: "Poonkunnam", status: "Ongoing", image: "/images/home/carorcel2.webp", bgimage: "/images/home/bg-2.jpg" },
     ];
 
 

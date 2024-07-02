@@ -27,8 +27,8 @@ function CustomerReviewsAndFaq() {
         { question: "Can I visit and inspect the flat before making a purchase?", answer: "Yes, most builders and developers allow potential buyers to visit and inspect the flats before making a purchase decision. This helps buyers assess the quality, layout, and other aspects of the property." },
     ]
     const testimonials = [
-        { customer_name: "jeeva", location: "Thrissur, Kerala", profile_picture: "/images/home/testimoials.png", review_text: "CIDBI Builders exceeded our expectations with their exceptional craftsmanship and professionalism. Their attention to detail, commitment to quality, and open communication made the process seamless. We highly recommend CIDBI Builders for their reliable and top-notch construction services." },
-        { customer_name: "jeeva", location: "Thrissur, Kerala", profile_picture: "/images/home/testimoials.png", review_text: "CIDBI Builders exceeded our expectations with their exceptional craftsmanship and professionalism. Their attention to detail, commitment to quality, and open communication made the process seamless. We highly recommend CIDBI Builders for their reliable and top-notch construction services." },
+        { customer_name: "Raneesh", location: "Thrissur, Kerala", profile_picture: "/images/home/testimoials.png", review_text: "CIDBI Builders exceeded our expectations with their professionalism and quality work. They seamlessly managed our commercial construction project, ensuring everything was done to perfection. The team's communication and expertise were impressive. We highly recommend CIDBI Builders for their exceptional services." },
+        { customer_name: "Reshma", location: "Thrissur, Kerala", profile_picture: "/images/home/testimoials.png", review_text: "CIDBI Builders turned our dream home into a reality. Their team was dedicated, skilled, and attentive to our needs throughout the entire process. The quality of their workmanship is remarkable, and we couldn't be happier with the final outcome. We wholeheartedly recommend CIDBI Builders for any construction project." },
         { customer_name: "jeeva", location: "Thrissur, Kerala", profile_picture: "/images/home/testimoials.png", review_text: "CIDBI Builders exceeded our expectations with their exceptional craftsmanship and professionalism. Their attention to detail, commitment to quality, and open communication made the process seamless. We highly recommend CIDBI Builders for their reliable and top-notch construction services." },
         { customer_name: "jeeva", location: "Thrissur, Kerala", profile_picture: "/images/home/testimoials.png", review_text: "CIDBI Builders exceeded our expectations with their exceptional craftsmanship and professionalism. Their attention to detail, commitment to quality, and open communication made the process seamless. We highly recommend CIDBI Builders for their reliable and top-notch construction services." },
     ]
@@ -52,13 +52,13 @@ function CustomerReviewsAndFaq() {
         };
       }, []);
     return (
-        <section className='relative text-[--secondary-cl] overflow-hidden z-10 reviews-bg-gradient py-[90px] flex flex-col gap-[130px]'>
+        <section className='relative text-[--secondary-cl] overflow-hidden z-10 reviews-bg-gradient py-[40px] lg:py-[90px] flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]'>
             <Image src={customerReviewbg} className='absolute right-0 hidden lg:block -z-10 top-[-30px]' alt='Customer Review Background' />
 
             {/* Customer reviews */}
             <div className='containers '>
-                <h6 className='font-[general-sans-semibold] text-[29px]'>Customer Reviews</h6>
-                <div className=' mt-[44px] '>
+                <h6 className='font-[general-sans-semibold] text-[14px] md:text-[16px] lg:text-[29px]'>Customer Reviews</h6>
+                <div className='mt-[10px] lg:mt-[44px] '>
                     <Swiper
                         spaceBetween={50}
                         slidesPerView={numItems}
@@ -72,12 +72,12 @@ function CustomerReviewsAndFaq() {
                     >
                         {testimonials.map((testimoni, index) => (
                             <SwiperSlide key={index}>
-                                <div key={index} className=' bg-white cursor-pointer h-[478px] rounded-[12px] py-[30px] grid grid-rows-[110px,1fr,110px]'>
+                                <div key={index} className=' bg-white cursor-pointer h-[478px] rounded-[12px] py-[30px] grid md:grid-rows-[110px,1fr,110px]'>
                                     <div className='px-[20px]'>
                                         <Image src={quatsIcon} alt='quats-icon' />
                                     </div>
-                                    <p className='px-[30px] font-[general-sans-medium] text-[16px] leading-[24px]'>{testimoni?.review_text}</p>
-                                    <div className='px-[30px] flex flex-row gap-[20px] items-center'>
+                                    <p className='px-[30px] font-[general-sans-medium] text-[14px] lg:text-[16px] leading-[24px]'>{testimoni?.review_text}</p>
+                                    <div className='px-[30px] flex flex-row gap-[10px] lg:gap-[20px] items-center'>
                                         <Image className='w-[60px] h-[60px] rounded-full' alt='customer-reviews' width={60} height={60} src={testimoni?.profile_picture} />
                                         <div className='flex flex-col'>
                                             <p className='text-[15px] font-[inter-medium]'>{testimoni?.customer_name}</p>
@@ -92,12 +92,12 @@ function CustomerReviewsAndFaq() {
             </div>
             {/* Faq */}
             <div className='containers'>
-                <h6 className='font-[clash-display-medium] text-[32px]'>FAQ</h6>
+                <h6 className='font-[clash-display-medium] text-[20px] lg:text-[32px]'>FAQ</h6>
                 <div className='text-black'>
                     {faqs.map((faq, index) => (
                         <div key={index}>
                             <div className='flex justify-between flex-row'>
-                                <p className={`${isOpend === index ? 'font-[general-sans-medium]' : 'font-[general-sans-regular]'} text-[16px] py-[14px] w-5/12 lg:w-1/3 cursor-auto`}>{faq.question || ""}</p>
+                                <p className={`${isOpend === index ? 'font-[general-sans-medium]' : 'font-[general-sans-regular]'} text-[12px] lg:text-[16px] py-[14px] w-[90%] md:w-5/12 lg:w-1/3 cursor-auto`}>{faq.question || ""}</p>
                                 <button className='cursor-pointer' onClick={() => setOpen(isOpend === index ? null : index)}>
                                     <Image src={isOpend === index ? minusIcon : plusIcon} alt='toggle-icon' />
                                 </button>
@@ -109,7 +109,7 @@ function CustomerReviewsAndFaq() {
                                     transition={{ duration: 0.3 }}
                                     className='overflow-hidden'
                                 >
-                                    <p className='font-[general-sans-regular] text-[16px] py-[8px] leading-[24px]'>{faq.answer || ""}</p>
+                                    <p className='font-[general-sans-regular] text-[12px] lg:text-[16px] py-[8px] leading-[18px] lg:leading-[24px]'>{faq.answer || ""}</p>
                                 </motion.div>}
                             <hr className='border-t-[1px] border-t-[--secondary-cl]' />
                         </div>

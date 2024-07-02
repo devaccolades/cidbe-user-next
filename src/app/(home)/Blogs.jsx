@@ -8,7 +8,7 @@ import blogimg3 from '../../../public/images/home/blogimg3.png'
 function Blogs() {
   const [numItems, setNumItems] = useState(1);
   const Blogs = [
-    { id:1, thumbnail: blogimg1, time_to_read: "2 Min read", date_added: "28/03/2024",thumbnail_alt:"", title: "What is The Legal Process for Buying a Flat in Kerala" },
+    { id:1, thumbnail: blogimg1, time_to_read: "2 Min read", date_added: "28/03/2024",thumbnail_alt:"", title: "Luxury Living: The Importance of Location in Choosing Premium Flats" },
     { id:2, thumbnail: blogimg2, time_to_read: "2 Min read", date_added: "28/03/2024",thumbnail_alt:"", title: "Advantages of Buying a Home Over Renting" },
     { id:3, thumbnail: blogimg3, time_to_read: "2 Min read", date_added: "28/03/2024",thumbnail_alt:"", title: "Furnished vs. Unfurnished: Making the Right Choice for Your 3 BHK Flats in Thrissur" },
     { id:4, thumbnail: blogimg3, time_to_read: "2 Min read", date_added: "28/03/2024",thumbnail_alt:"", title: "Furnished vs. Unfurnished: Making the Right Choice for Your 3 BHK Flats in Thrissur" },

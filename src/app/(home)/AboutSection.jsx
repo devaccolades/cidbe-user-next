@@ -1,6 +1,7 @@
 'use client'
-import React from 'react'
+import React, { useRef } from 'react'
 import { motion } from "framer-motion";
+// import { useFollowPointe } from './useFollowPointer'
 import Image from 'next/image'
 import gradientLeft from "../../../public/images/home/gradient-left.svg"
 import aboutCardImage from "../../../public/images/home/about-card-vector.svg"
@@ -20,7 +21,7 @@ import image2 from "../../../public/images/home/image2.jpeg"
 function AboutSection() {
 
   return (
-    <main className='lg:h-[1859px] text-[--secondary-cl] w-full flex flex-col py-[45px] lg:bg-[url(/images/home/about-section-bg.svg)]'
+    <main className='text-[--secondary-cl] w-full flex flex-col py-[45px]  lg:bg-[url(/images/home/about-section-bg.svg)]'
     >
       <div className='absolute top-[1066px] left-[-191px] lg:block hidden -z-10'>
         <Image src={gradientLeft} alt='gradient-left' />
@@ -46,7 +47,7 @@ function AboutSection() {
           </div>
         </div>
         <Image src={aboutCardshapeMobile} alt='' className='min-w-full align-bottom -mb-[5px] -mt-[30px] md:hidden block' />
-        <div className='bg-cover md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] bg-center' style={{ backgroundImage: `url(/images/home/carorcel1.jpeg)` }}>
+        <div className='bg-cover bg-bottom md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] z-4' style={{ backgroundImage: `url(/images/home/about-image.jpg)` }}>
           <Image className='h-full -ms-[2px] md:visible invisible' alt='card-shape' src={aboutCardshape} />
         </div>
       </card>
@@ -87,37 +88,37 @@ function AboutSection() {
         </div>
       </section>
       {/* Banner */}
-      <section className='containers pt-[40px]'>
-        <card className='w-full bg-white rounded-[20px] p-[15px] box-shadow grid grid-cols-2'>
+      <section className='containers pt-[40px] lg:block hidden'>
+        <card className='w-full bg-white rounded-[20px] p-[15px] box-shadow grid grid-cols-[500px,1fr] lg:grid-cols-2'>
           <left className="flex flex-col gap-[10px]">
-            <div className='flex flex-row gap-[15px] h-[190px]'>
-              <div className='ps-[35px] w-[22.9vw] flex flex-col justify-center'>
-                <h5 className='text-[64px] leading-[86px] font-[general-sans-semibold]'>20+</h5>
-                <p className='text-[20px] leading-[27px] font-[general-sans-regular]'>Projects <br /> Completed</p>
+            <div className='flex flex-row gap-[15px] h-[170px] lg:h-[190px]'>
+              <div className='ps-[35px] w-[14.9vw] flex flex-col justify-center'>
+                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]'>20+</h5>
+                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Projects <br /> Completed</p>
               </div>
               <div>
-                <Image src={image1} alt='banner-image1' className='rounded-[12px] h-full w-[16.875vw]' />
+                <Image src={image1} alt='banner-image1' className='rounded-[12px] w-[137px] h-full lg:w-[262px]' />
               </div>
-              <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[84px] w-[19.375vw] flex flex-col items-center justify-center'>
-                <h5 className='text-[64px] leading-[86px] font-[general-sans-semibold]'>1M+</h5>
-                <p className='text-[20px] leading-[27px] font-[general-sans-regular]'>Square Feet<br />Completed</p>
+              <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[84px] w-[160px] lg:w-[19.375vw] flex flex-col items-center justify-center'>
+                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1M+</h5>
+                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Square Feet<br />Completed</p>
               </div>
             </div>
-            <div className='h-[190px] ps-[50px] w-[23.28125vw] flex flex-col justify-center bg-[--primary-cl] rounded-[12px] rounded-tr-[56px]'>
-              <h5 className='text-[64px] leading-[86px] font-[general-sans-semibold]'>1000+</h5>
-              <p className='text-[20px] leading-[27px] font-[general-sans-regular]'>Happy Customers</p>
+            <div className='h-[170px] lg:h-[190px] ps-[50px] w-10/12 lg:w-[23.28125vw] flex flex-col justify-center bg-[--primary-cl] rounded-[12px] rounded-tr-[56px]'>
+              <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1000+</h5>
+              <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
             </div>
             <div className='flex flex-row gap-[45px]'>
-              <Image src={image2} alt='banner-image2' className='w-[10.15625vw] h-[243px] rounded-[12px]' />
+              <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px]' />
               <div className='flex flex-col justify-center'>
-                <h5 className='text-[64px] leading-[86px] font-[general-sans-semibold]'>35+</h5>
-                <p className='text-[20px] leading-[27px] font-[general-sans-regular]'>Years of <br /> Experience</p>
+                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
+                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Years of <br /> Experience</p>
               </div>
             </div>
           </left>
           <right className="relative flex justify-center items-center">
-            <Image src={charectersImage} className='absolute bottom-8' alt='people-image'/>
-           
+            <Image src={charectersImage} className='absolute bottom-8 w-[17.2vw] lg:w-[377px]' alt='people-image' />
+
             <motion.div
               className="bg-[--primary-cl] w-[26vw] h-[26vw]"
               animate={{
@@ -138,6 +139,130 @@ function AboutSection() {
               }}
             />
           </right>
+
+        </card>
+      </section>
+      <section className='containers pt-[40px] lg:block hidden'>
+        <card className='w-full bg-white rounded-[20px] p-[15px] box-shadow grid grid-cols-[500px,1fr] lg:grid-cols-2'>
+          <left className="flex flex-col gap-[10px]">
+            <div className='flex flex-row gap-[15px] h-[170px] lg:h-[190px]'>
+              <div className='ps-[35px] w-[14.9vw] flex flex-col justify-center'>
+                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]'>20+</h5>
+                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Projects <br /> Completed</p>
+              </div>
+              <div>
+                <Image src={image1} alt='banner-image1' className='rounded-[12px] w-[137px] h-full lg:w-[262px]' />
+              </div>
+              <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[84px] w-[160px] lg:w-[19.375vw] flex flex-col items-center justify-center'>
+                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1M+</h5>
+                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Square Feet<br />Completed</p>
+              </div>
+            </div>
+            <div className='h-[170px] lg:h-[190px] ps-[50px] w-10/12 lg:w-[23.28125vw] flex flex-col justify-center bg-[--primary-cl] rounded-[12px] rounded-tr-[56px]'>
+              <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1000+</h5>
+              <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
+            </div>
+            <div className='flex flex-row gap-[45px]'>
+              <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px]' />
+              <div className='flex flex-col justify-center'>
+                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
+                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Years of <br /> Experience</p>
+              </div>
+            </div>
+          </left>
+          <right className="relative flex justify-center items-center">
+            <Image src={charectersImage} className='absolute bottom-8 w-[17.2vw] lg:w-[377px]' alt='people-image' />
+
+            <motion.div
+              className="bg-[--primary-cl] w-[26vw] h-[26vw]"
+              animate={{
+                borderRadius: [
+                  "20% 50% 50% 20%",
+                  "50% 20% 50% 20%",
+                  "20% 20% 50% 50%",
+                  "50% 50% 20% 20%",
+                  "20% 50% 50% 20%"
+                ]
+              }}
+              transition={{
+                duration: 5,
+                ease: "easeInOut",
+                times: [0, 0.25, 0.5, 0.75, 1],
+                repeat: Infinity,
+                repeatDelay: 1
+              }}
+            />
+          </right>
+
+        </card>
+      </section>
+      <section className='containers pt-[40px] block lg:hidden'>
+        <card className='h-[496px] w-full bg-white rounded-[20px] p-[15px] box-shadow grid grid-rows-[36%,1fr] gap-[10px]'>
+          <div className=" grid grid-cols-[150px,150px,150px,1fr] gap-[10px]">
+            <div className='flex flex-col pt-5 items-center'>
+              <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]'>20+</h5>
+              <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Projects <br /> Completed</p>
+            </div>
+            <div >
+              <Image src={image1} alt='banner-image1' className='rounded-[12px] h-[170px]' />
+            </div>
+            <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[84px] flex flex-col items-center pt-5'>
+              <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1M+</h5>
+              <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Square Feet<br />Completed</p>
+            </div>
+            <div className=''>4</div>
+            {/* <div className='grid grid-cols-4 gap-[15px]'>
+              <div className='ps-[35px] flex flex-col justify-center'>
+                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]'>20+</h5>
+                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Projects <br /> Completed</p>
+              </div>
+              <div>
+                <Image src={image1} alt='banner-image1' className='rounded-[12px] h-full' />
+              </div>
+              <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[84px] flex flex-col items-center justify-center'>
+                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1M+</h5>
+                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Square Feet<br />Completed</p>
+              </div>
+            </div> */}
+
+
+          </div>
+          <bottom className="flex flex-row gap-[10px]">
+            <div className='bg-green-400'>1</div>
+            <div className='bg-green-800'>1</div>
+            {/* <div className='h-[108px] ps-[50px] w-5/12 lg:w-[23.28125vw] flex flex-col justify-center bg-[--primary-cl] rounded-[12px] rounded-tr-[56px]'>
+              <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1000+</h5>
+              <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
+            </div> */}
+            {/* <Image src={charectersImage} className='absolute bottom-8 w-[17.2vw] lg:w-[377px]' alt='people-image' /> */}
+
+            {/* <motion.div
+              className="bg-[--primary-cl] w-[26vw] h-[26vw]"
+              animate={{
+                borderRadius: [
+                  "20% 50% 50% 20%",
+                  "50% 20% 50% 20%",
+                  "20% 20% 50% 50%",
+                  "50% 50% 20% 20%",
+                  "20% 50% 50% 20%"
+                ]
+              }}
+              transition={{
+                duration: 5,
+                ease: "easeInOut",
+                times: [0, 0.25, 0.5, 0.75, 1],
+                repeat: Infinity,
+                repeatDelay: 1
+              }}
+            /> */}
+            {/* <div className='flex flex-row gap-[45px]'>
+              <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px]' />
+              <div className='flex flex-col justify-center'>
+                <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
+                <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Years of <br /> Experience</p>
+              </div>
+            </div>  */}
+          </bottom>
 
         </card>
       </section>

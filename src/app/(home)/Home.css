@@ -63,6 +63,10 @@
     .hero-sub-text {
         font-size: 20px !important;
     }
+    .reviews-bg-gradient{
+        background: white;
+        background: radial-gradient(none);
+    }
 }
 
 .hero-sub-text {
@@ -138,7 +142,7 @@
     background: rgb(152, 201, 163);
     background: linear-gradient(90deg, rgba(152, 201, 163, 1) 0%, rgba(191, 216, 189, 1) 77%);
 
-    @media (max-width:768px) {
+    @media (max-width:767px) {
         background: rgb(191, 216, 189);
         background: linear-gradient(0deg, rgba(191, 216, 189, 1) 0%, rgba(152, 201, 163, 1) 100%);
     }
@@ -209,7 +213,7 @@
 
 /* Chairman */
 .chairmanBgGradient {
-    background-image: url('/images/home/chairmanbg.svg');
+    /* background-image: url('/images/home/chairmanbg.svg'); */
     background: rgb(5, 45, 35);
     background: linear-gradient(90deg, rgba(5, 45, 35, 1) 0%, rgba(191, 216, 189, 1) 100%);
 }
