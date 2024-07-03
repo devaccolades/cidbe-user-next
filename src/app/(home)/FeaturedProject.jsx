@@ -3,16 +3,13 @@ import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import ProjectCard from '@/components/ProjectCard'
 
-// after connect backend you should be remove this images
-import carorcel1 from '../../../public/images/home/carorcel1.jpeg'
-import carorcel2 from '../../../public/images/home/carorcel2.webp'
-import carorcel3 from '../../../public/images/home/carorcel3.jpeg'
+
 function FeaturedProject() {
   const [numItems, setNumItems] = useState(1);
 
   const featuredProject = [
     { id: 1, name: "CASSIA", sub_name: "PREMIUM SMART HOMES", rera_number: "K.RERA/PRJ/TSR/043/2023", location: "Near Daya Hospital", thumbnail: 'images/home/carorcel1.jpeg', thumbnail_alt: "", bhk: "2,3 & 4", area_from: "1,159", area_to: "2,548", status: "ongoing" },
-    { id: 2, name: "CANDOR", sub_name: "A PROMISE OF HAPPINESS", rera_number: "K-RERA/PRJ/112/2021", location: "Poonkunnam", thumbnail: 'images/home/carorcel2.webp', thumbnail_alt: "", bhk: "2 & 3", area_from: "1,196", area_to: "1,769", status: "ongoing" },
+    { id: 2, name: "CANDOR", sub_name: "A PROMISE OF HAPPINESS", rera_number: "K-RERA/PRJ/112/2021", location: "Poonkunnam", thumbnail: 'images/home/carorcel2.webp', thumbnail_alt: "", bhk: "2 & 3", area_from: "1,196", area_to: "1,769", status: "ready to occupy" },
     { id: 3, name: "CHALET", sub_name: "Exclusive Amenities", rera_number: "K-RERA/PRJ/TSR/059/2021", location: "Kannamkulangara", thumbnail: 'images/home/carorcel3.jpeg', thumbnail_alt: "", bhk: "2 & 3", area_from: "992", area_to: "1,340", status: "ready to occupy" },
   ]
 
