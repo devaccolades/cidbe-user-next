@@ -11,9 +11,9 @@ function FeaturedProject() {
   const [numItems, setNumItems] = useState(1);
 
   const featuredProject = [
-    { id: 1, name: "CASSIA", sub_name: "Unmatched Elegance", rera_number: "K.RERA/PRJ/TSR/043/2023", location: "Near Daya Hospital", thumbnail: 'images/home/carorcel1.jpeg', thumbnail_alt: "", bhk: "2,3 & 4", area_from: "1,220", area_to: "2,377", status: "ongoing" },
-    { id: 2, name: "CANDOR", sub_name: "A PROMISE OF HAPPINESS", rera_number: "K-RERA/PRJ/112/2021", location: "Poonkunnam", thumbnail: 'images/home/carorcel2.webp', thumbnail_alt: "", bhk: "2 & 3", area_from: "1,220", area_to: "2,377", status: "ongoing" },
-    { id: 3, name: "CHALET", sub_name: "Exclusive Amenities", rera_number: "K-RERA/PRJ/TSR/059/2021", location: "Kannamkulangara", thumbnail: 'images/home/carorcel3.jpeg', thumbnail_alt: "", bhk: "2 & 3", area_from: "1,220", area_to: "2,377", status: "ready to occupy" },
+    { id: 1, name: "CASSIA", sub_name: "Unmatched Elegance", rera_number: "K.RERA/PRJ/TSR/043/2023", location: "Near Daya Hospital", thumbnail: 'images/home/carorcel1.jpeg', thumbnail_alt: "", bhk: "2,3 & 4", area_from: "1,159", area_to: "2,548", status: "ongoing" },
+    { id: 2, name: "CANDOR", sub_name: "A PROMISE OF HAPPINESS", rera_number: "K-RERA/PRJ/112/2021", location: "Poonkunnam", thumbnail: 'images/home/carorcel2.webp', thumbnail_alt: "", bhk: "2 & 3", area_from: "1,196", area_to: "1,769", status: "ongoing" },
+    { id: 3, name: "CHALET", sub_name: "Exclusive Amenities", rera_number: "K-RERA/PRJ/TSR/059/2021", location: "Kannamkulangara", thumbnail: 'images/home/carorcel3.jpeg', thumbnail_alt: "", bhk: "2 & 3", area_from: "992", area_to: "1,340", status: "ready to occupy" },
   ]
 
   useEffect(() => {

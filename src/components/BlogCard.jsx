@@ -14,8 +14,8 @@ function BlogCard({blog}) {
                 <p className='bg-[#EBEBEB] py-[2px] px-[5px] rounded-[6px] flex justify-center items-center'>{blog?.date_added}</p>
                 <p className='bg-[#EBEBEB] py-[2px] px-[5px] rounded-[6px] flex flex-row items-center gap-[2px]'><Image src={clockIcon} alt='clock-icon'/><span>{blog?.time_to_read}</span></p>
             </div>
-            <p className='text-[18px] h-[72px] leading-[24px] font-[general-sans-light]'>{blog.title} </p>
-            <button className='bg-[#EC222A] w-full rounded-[8px] py-[8px] text-white font-[general-sans-regular] flex flex-row gap-[8px] justify-center items-center'>Read more<Image src={arrow_outward} alt='arrow-outward'/></button>
+            <p className='text-[14px] lg:text-[16px] h-[72px] leading-[24px] lg:leading-[24px] font-[general-sans-light]'>{blog.title} </p>
+            <button className='bg-[#EC222A] w-full rounded-[8px] py-[8px] text-white font-[general-sans-regular] text-[12px] flex flex-row gap-[8px] justify-center items-center'>Read more<Image src={arrow_outward} alt='arrow-outward'/></button>
         </div>
     </Card>
   )

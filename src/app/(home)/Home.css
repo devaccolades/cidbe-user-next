@@ -210,6 +210,19 @@
     left: -50px;
 }
 
+@media (min-width:864px) and (max-width:1023px){
+    .animated-bg{
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (max-width:320px){
+    .res-text{
+        font-size: 12px;
+    }
+}
+
+
 
 /* Chairman */
 .chairmanBgGradient {
