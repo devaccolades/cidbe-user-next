@@ -1,4 +1,3 @@
-import Layout from '@/layout/Layout';
 import React from 'react';
 import Cover from './Cover';
 function Page() {

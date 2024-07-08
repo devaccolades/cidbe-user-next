@@ -43,11 +43,20 @@
     transition: width 0.3s ease-in-out;
 }
 
+.bgPrimary ul li::after{
+    background-color: #4C956C !important;
+}
+
 .nav-bar ul li:hover::after,
 .nav-bar ul li.active::after {
     width: 100%;
 }
-
+.bgPrimary ul li:hover{
+    color: #4C956C !important;
+}
+.bgPrimary ul li.active{
+    color: var(--secondary-cl) !important;
+}
 .nav-bar ul li:hover,
 .nav-bar ul li.active {
     color: var(--primary-cl);

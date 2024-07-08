@@ -1,13 +1,12 @@
 
-import Header from '@/layout/Headder'
-import React from 'react'
+import Header from '../../layout/Header'
+import Footer from '@/layout/Footer'
 import HeroSection from './HeroSection'
 import AboutSection from './AboutSection'
 // import FeaturedProject from './FeaturedProject'
 import Chairman from './Chairman'
 // import Blogs from './Blogs'
 // import CustomerReviewsAndFaq from './CustomerReviewsAndFaq'
-import Footer from '@/layout/Footer'
 import dynamic from 'next/dynamic'
 import Skelten from '@/components/skeletoneffect/Skelten'
 

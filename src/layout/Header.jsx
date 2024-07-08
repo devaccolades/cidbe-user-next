@@ -3,6 +3,7 @@ import './Style.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import logo from "../../public/images/logo/logo.svg";
 import dropdownIcon from "../../public/icons/dropdown.svg";
 import dropdownyellowIcon from "../../public/icons/dropdown-yellow.svg";
@@ -12,7 +13,9 @@ import mobileDropupIcon from "../../public/icons/mobile_dropup.svg";
 import menuIcon from "../../public/icons/menu.svg"
 import menuGreenIcon from "../../public/icons/menu-green.svg"
 import closeIcon from "../../public/icons/close.svg"
-function Header() {
+import { useRouter } from 'next/navigation';
+function Header({bgPrimary=false}) {
+    const router = useRouter()
     const [hovered, setHovered] = useState({ about: false, project: false });
     const [scrolling, setScrolling] = useState(false);
     const [showMobileNav, setShowMobileNav] = useState(false)
@@ -108,18 +111,18 @@ function Header() {
     return (
         <>
             <header className='main-area sticky top-1 z-50 '>
-                <section className={`nav-bar lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
-                    <Image src={logo} alt='logo' className='logo' />
+                <section className={`nav-bar ${bgPrimary?"bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
+                    <Image src={logo} alt='logo' className='logo' onClick={()=>router.push('/')}/>
                     <div className='lap-navbar'>
-                        <ul className={`${scrolling ? 'text-[#052D23]' : 'text-white'}`}>
-                            <li className={`${scrolling}? 'isscroll':''`}>Home</li>
+                        <ul className={`${scrolling ? 'text-[#052D23]' : bgPrimary ? 'text-[--secondary-cl]' :'text-white'}`}>
+                            <li className={`${scrolling}? 'isscroll':''`}><Link href="/">Home</Link></li>
                             <li
                                 onMouseEnter={() => setHovered({ project: false, about: true })}
                                 className={`relative ${hovered.about ? 'active' : ''}`}
                                 ref={menuRef}
                             >
                                 About us
-                                <Image src={hovered.about ? dropdownyellowIcon : scrolling ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
+                                <Image src={hovered.about ? bgPrimary?dropdownGreenIcon:dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary? dropdownGreenIcon: dropdownIcon} alt="dropdown icon" />
                                 {hovered.about && (
                                     <div className="card absolute w-[285px] p-[10px] top-full left-0 mt-2 bg-white shadow-md z-10">
                                         <a class="flip-animate"><span data-hover="Who we are">Who we are</span></a>
@@ -133,7 +136,7 @@ function Header() {
                                 ref={menuRef}
                             >
                                 Projects
-                                <Image src={hovered.project ? dropdownyellowIcon : scrolling ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
+                                <Image src={hovered.project ? bgPrimary? dropdownGreenIcon :  dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary?dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
                                 {hovered.project && (
                                     <div className="card absolute w-[285px] top-full left-0 mt-2 bg-white shadow-md z-10">
                                         <a class="flip-animate"><span data-hover="Featured project">Featured project</span></a>
@@ -148,7 +151,7 @@ function Header() {
                             <li>Interiors</li>
                             <li>Blog</li>
                             <li>Achievements</li>
-                            <li>Contact us</li>
+                            <li><Link href='/contact-us'>Contact us</Link></li>
 
                         </ul>
                     </div>
