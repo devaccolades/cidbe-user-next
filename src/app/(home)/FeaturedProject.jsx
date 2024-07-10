@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import "./Home.css"
-import ProjectCard from '@/components/ProjectCard'
+import ProjectCard from '../../components/ProjectCard'
 
 
 function FeaturedProject() {
