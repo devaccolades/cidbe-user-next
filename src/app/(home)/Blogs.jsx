@@ -1,5 +1,5 @@
 'use client'
-import BlogCard from '@/components/BlogCard'
+import BlogCard from '../../components/BlogCard'
 import React, { useEffect, useState } from 'react'
 import blogimg1 from '../../../public/images/home/blogimg1.jpeg'
 import blogimg2 from '../../../public/images/home/blogimg2.png'
