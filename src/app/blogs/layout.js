@@ -3,8 +3,8 @@ import "../../app/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
-  title: "Contact Us | Best Builders in Thrissur | CIDBI ",
-  description: "Contact CIDBI Builders to know more about our latest apartments and flats projects in Kerala. Book your dream home from the leading home builders in Thrissur.",
+  title: "Blogs | CIDBI ",
+  description: "About  CIDBI Builders to know more about our latest apartments and flats projects in Kerala. Book your dream home from the leading home builders in Thrissur.",
 };
 
 export default function RootLayout({ children }) {

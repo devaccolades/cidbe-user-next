@@ -1,0 +1,6 @@
+@media (min-width:767px) and (max-width:1500px ){
+    .blog-listing{
+        grid-template-columns: repeat(3,auto);
+    }
+}
+

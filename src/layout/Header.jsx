@@ -13,9 +13,11 @@ import mobileDropupIcon from "../../public/icons/mobile_dropup.svg";
 import menuIcon from "../../public/icons/menu.svg"
 import menuGreenIcon from "../../public/icons/menu-green.svg"
 import closeIcon from "../../public/icons/close.svg"
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 function Header({bgPrimary=false}) {
-    const router = useRouter()
+    // const router = useRouter()
+    // const currentPath = router.pathname;
+    // console.log(currentPath,'daxooo');
     const [hovered, setHovered] = useState({ about: false, project: false });
     const [scrolling, setScrolling] = useState(false);
     const [showMobileNav, setShowMobileNav] = useState(false)
@@ -149,14 +151,14 @@ function Header({bgPrimary=false}) {
                             </li>
                             <li>Gallery</li>
                             <li>Interiors</li>
-                            <li>Blog</li>
-                            <li>Achievements</li>
+                            <li><Link href={'/blogs'}>Blog</Link></li>
+                            <li><Link href={'/achievements'}>Achievements</Link></li>
                             <li><Link href='/contact-us'>Contact us</Link></li>
 
                         </ul>
                     </div>
                     <div className='mobile-navbar cursor-pointer' onClick={() => setShowMobileNav(!showMobileNav)}>
-                        <Image src={scrolling?menuGreenIcon:menuIcon} alt="menu-icon" />
+                        <Image src={scrolling?menuGreenIcon:bgPrimary?menuGreenIcon:menuIcon} alt="menu-icon" />
                     </div>
                     {showMobileNav &&
                         <motion.div

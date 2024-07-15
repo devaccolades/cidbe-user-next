@@ -11,9 +11,9 @@ import bailogo from '../../public/images/footer/bailogo.png'
 import credailogo from '../../public/images/footer/credailogo.png'
 
 
-function Footer() {
+function Footer({backGround="--primary-cl"}) {
   return (
-    <section className='font-[general-sans-medium] text-[--secondary-cl] bg-[--primary-cl] px-[40px] xl:px-[120px] py-[40px] flex flex-col'>
+    <section className={`font-[general-sans-medium] text-[--secondary-cl] bg-[${backGround}] px-[40px] xl:px-[120px] py-[40px] flex flex-col`}>
       <div className='w-full flex flex-row h-full flex-wrap lg:flex-nowrap'>
         <div className='flex flex-col w-full md:w-[60%] lg:w-[30vw] gap-[20px]'>
           <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px]'>NO PROJECT IS TOO BIG OR TOO SMALL, HIT US UP AND LET’S BUILD</p>
