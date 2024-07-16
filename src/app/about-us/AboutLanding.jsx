@@ -21,9 +21,6 @@ export default function AboutLanding() {
 />
       <div className="w-[40%] h-full bg-cover bg-center -ms-[40px] rounded-br-[120px] " style={{ backgroundImage: `url(${bannerRightImage.src})` }}/>
     </section>
-    <div className="h-screen">
-
-    </div>
   </>
   
     )

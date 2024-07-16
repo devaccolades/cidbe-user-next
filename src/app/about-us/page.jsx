@@ -7,7 +7,7 @@ function page() {
     <>
       <Cover />
       <AboutLanding />
-      {/* <AboutSecondSection/> */}
+      <AboutSecondSection/>
     </>
   );
 }
