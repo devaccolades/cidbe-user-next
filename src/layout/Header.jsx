@@ -13,11 +13,9 @@ import mobileDropupIcon from "../../public/icons/mobile_dropup.svg";
 import menuIcon from "../../public/icons/menu.svg"
 import menuGreenIcon from "../../public/icons/menu-green.svg"
 import closeIcon from "../../public/icons/close.svg"
-// import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 function Header({bgPrimary=false}) {
-    // const router = useRouter()
-    // const currentPath = router.pathname;
-    // console.log(currentPath,'daxooo');
+    const pathname = usePathname()
     const [hovered, setHovered] = useState({ about: false, project: false });
     const [scrolling, setScrolling] = useState(false);
     const [showMobileNav, setShowMobileNav] = useState(false)
@@ -117,7 +115,7 @@ function Header({bgPrimary=false}) {
                     <Image src={logo} alt='logo' className='logo' onClick={()=>router.push('/')}/>
                     <div className='lap-navbar'>
                         <ul className={`${scrolling ? 'text-[#052D23]' : bgPrimary ? 'text-[--secondary-cl]' :'text-white'}`}>
-                            <li className={`${scrolling}? 'isscroll':''`}><Link href="/">Home</Link></li>
+                        <Link href="/"><li className={`${scrolling}? 'isscroll':'' ${pathname==='/'&&'active'}`}>Home</li></Link>
                             <li
                                 onMouseEnter={() => setHovered({ project: false, about: true })}
                                 className={`relative ${hovered.about ? 'active' : ''}`}
@@ -151,9 +149,9 @@ function Header({bgPrimary=false}) {
                             </li>
                             <li>Gallery</li>
                             <li>Interiors</li>
-                            <li><Link href={'/blogs'}>Blog</Link></li>
-                            <li><Link href={'/achievements'}>Achievements</Link></li>
-                            <li><Link href='/contact-us'>Contact us</Link></li>
+                            <Link href={'/blogs'}><li className={`${pathname==='/blogs' && "active"}`}>Blog</li></Link>
+                            <Link href={'/achievements'}><li className={`${pathname==='/achievements' && "active"}`}>Achievements</li></Link>
+                            <Link href='/contact-us'><li className={`${pathname==='/contact-us' && "active"}`}>Contact us</li></Link>
 
                         </ul>
                     </div>
