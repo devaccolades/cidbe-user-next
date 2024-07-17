@@ -7,11 +7,10 @@ function HeroSection() {
         <section>
             <div className='h-[100px] -mt-[80px] lg:-mt-[95px] bg-[--primary-cl] -mt' />
             <div className=' bg-[--primary-cl] h-[510px]'>
-                <div className='flex flex-row containers'>
+                <div className='flex flex-row containers' style={{padding:'0px 20px',alignItems:'center'}}>
                     <div className='w-full h-full text-[--secondary-cl]  relative'>
-                        <Image src={gradiant} alt='gradiant' className='absolute'/>
-                        <h1 className='font-[clash-display-medium] text-[20px] lg:text-[24px]'>Join Our Team</h1>
-                        <p className='font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[21px] lg:leading-[24px]absolute'>
+                            <h1 className='font-[clash-display-medium] text-[48px] '>Join Our Team</h1>
+                        <p className='font-[general-sans-regular] text-[17px] leading-[24px]'>
                             At CIDBI, we're not just constructing buildings—we're building
                             careers. Join our dynamic team of professionals dedicated to
                             innovation, excellence, and making a lasting impact. Whether

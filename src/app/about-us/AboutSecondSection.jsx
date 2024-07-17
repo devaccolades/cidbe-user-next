@@ -20,35 +20,37 @@ function AboutSecondSection() {
             </h1>
           </div>
 
-          <div className='w-full md:w-[45%] lg:w-[30%] mt-5 lg:mt-0'>
-            <div className="text-center flex flex-col px-[20px] lg:px-0 items-center gap-[10px] py-[30px] bg-white shadow-2xl rounded-[15px] h-[350px] md:h-[400px] lg:h-[350px]">
+         <div className='flex flex-col md:flex-row w-full lg:w-[60%] gap-5'>
+         <div className=' w-full '>
+            <div className="text-center flex flex-col p-[20px] lg:p-[10px] xl:p-[20px] items-center gap-[10px] bg-white shadow-2xl rounded-[15px] ">
               <Image src={aboutFirstGif} alt='quality-gif' className='w-[90px] md:w-[120px] lg:w-[120px]' />
               <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
-                <h6 className='font-[general-sans-medium] text-[20px] md:text-[24px] lg:text-[24px] leading-[28px] md:leading-[32px] lg:leading-[32px]'>
+                <h6 className='font-[general-sans-medium] text-[20px] md:text-[24px] xl:text-[24px] leading-[28px] md:leading-[32px] lg:leading-[32px]'>
                   <span className='lg:hidden block'>Unparalleled <br /> Quality</span>
                   <span className='lg:block hidden'>Unparalleled Quality</span>
                 </h6>
-                <p className='px-[10px] md:px-[30px] lg:px-[30px] font-[general-sans-regular] text-[14px] md:text-[16px] lg:text-[16px] leading-[24px]'>
+                <p className=' font-[general-sans-regular] text-[14px] md:text-[16px] lg:text-[16px] leading-[24px]'>
                   CIDBI guarantees consistency and excellence in every aspect of construction, ensuring that each project meets the highest standards of quality.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className='w-full md:w-[45%] lg:w-[30%] mt-5 lg:mt-0'>
-            <div className="text-center flex flex-col px-[20px] lg:px-0 items-center gap-[10px] py-[30px] bg-white shadow-2xl rounded-[15px] h-[350px] md:h-[400px] lg:h-[350px]">
+          <div className='w-full'>
+            <div className="text-center flex flex-col  p-[20px] lg:p-[10px] xl:p-[20px] items-center gap-[10px] bg-white shadow-2xl rounded-[15px] ">
               <Image src={aboutSecondGif} alt='mission-gif' className='w-[90px] md:w-[120px] lg:w-[120px]' />
               <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
                 <h6 className='font-[general-sans-medium] text-[20px] md:text-[24px] lg:text-[24px] leading-[28px] md:leading-[32px] lg:leading-[32px]'>
                   <span className='lg:hidden block'>Unparalleled <br /> Quality</span>
                   <span className='lg:block hidden'>Unparalleled Quality</span>
                 </h6>
-                <p className='px-[10px] md:px-[30px] lg:px-[30px] font-[general-sans-regular] text-[14px] md:text-[16px] lg:text-[16px] leading-[24px]'>
+                <p className='  font-[general-sans-regular] text-[14px] md:text-[16px] lg:text-[16px] leading-[24px]'>
                   CIDBI guarantees consistency and excellence in every aspect of construction, ensuring that each project meets the highest standards of quality.
                 </p>
               </div>
             </div>
           </div>
+         </div>
         </div>
       </section>
     </>
