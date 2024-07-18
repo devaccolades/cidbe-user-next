@@ -13,7 +13,7 @@ import '../(home)/./Home.css'
 function AboutThirdSection() {
 
   return (
-    <main className='text-[--secondary-cl] w-full flex flex-col py-[45px]  '
+    <main className='text-[--secondary-cl] w-full flex flex-col pb-[45px]  '
     >
       {/* About Card */}
       <card className='relative containers shadow-2xl flex flex-col-reverse md:flex-row rounded-[12px]'>
