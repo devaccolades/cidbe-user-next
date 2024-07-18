@@ -9,7 +9,7 @@ function page() {
             <Header bgPrimary={true} />
             <HeroSection/>
             <CareerListing/>
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }
