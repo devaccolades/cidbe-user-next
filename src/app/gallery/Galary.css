@@ -1,0 +1,6 @@
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .responsewidth {
+        width: 80% !important;
+    }
+}

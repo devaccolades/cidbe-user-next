@@ -8,3 +8,28 @@
         line-height: 40px;
     }
 }
+
+/* Time line */
+
+/* Define custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+    min-width: 10px !important;
+    width: 20px !important;
+    cursor: pointer;
+    height: 8px !important;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #D9D9D9; 
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--secondary-cl);
+    border-radius: 10px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-cl);
+  }
+  

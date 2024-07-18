@@ -6,7 +6,7 @@ import aboutSecondGif from '../../../public/gif/mission-ezgif.com-effects.gif';
 function AboutSecondSection() {
   return (
     <>
-      <section className='containers py-[100px]'>
+      <section className='containers pt-[90px] pb-[50px]'>
         <div className='flex flex-col lg:flex-row gap-5 w-full items-center'>
           <div className='w-full lg:w-[40%] h-[212px] flex flex-col justify-center gap-[24px]'>
             <h1 className='text-[#483C32] font-[general-sans-regular] text-[14px] md:text-[16px] leading-[22px] md:leading-[24px] gap-5'>
