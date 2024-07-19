@@ -1,5 +1,5 @@
 import React from 'react';
-import Cover from './Cover';
+import Cover from './(home)/Cover';
 function Page() {
   return (
     <div>

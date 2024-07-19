@@ -222,7 +222,12 @@
     }
 }
 
-
+/* feater project */
+@media (min-width:1400px) and (max-width:1750px){
+    .responsive{
+        width: 80%;
+    }
+}
 
 /* Chairman */
 .chairmanBgGradient {
@@ -231,6 +236,12 @@
     background: linear-gradient(90deg, rgba(5, 45, 35, 1) 0%, rgba(191, 216, 189, 1) 100%);
 }
 
+
+@media (min-width:1280px) and (max-width:1407px){
+    .responsive{
+        width: 80%;
+    }
+}
 
 /* Review and faq */
 .reviews-bg-gradient {

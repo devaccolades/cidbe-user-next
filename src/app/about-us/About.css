@@ -9,6 +9,13 @@
     }
 }
 
+@media (min-width:1280px) and (max-width:1664px){
+  .history-card-responsive{
+    width: 80%;
+  }
+}
+
+
 /* Time line */
 
 /* Define custom scrollbar styles */

@@ -13,8 +13,11 @@ import plusIcon from '../../../public/icons/plus.svg'
 import minusIcon from '../../../public/icons/minus.svg'
 
 import customerReviewbg from '../../../public/images/home/customer-reviewsbg.svg'
+import { usePathname } from 'next/navigation';
 
 function CustomerReviewsAndFaq() {
+    const pathname = usePathname();
+
     const [numItems, setNumItems] = useState(1);
     const [isOpend, setOpen] = useState(null)
     const faqs = [
@@ -52,7 +55,7 @@ function CustomerReviewsAndFaq() {
         };
       }, []);
     return (
-        <section className='relative text-[--secondary-cl] overflow-hidden z-10 reviews-bg-gradient py-[40px] lg:py-[90px] flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]'>
+        <section className={`relative text-[--secondary-cl] overflow-hidden z-10 ${!pathname==='/contact-us' && 'reviews-bg-gradient' }  py-[40px] lg:py-[90px] flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]`}>
             <Image src={customerReviewbg} className='absolute right-0 hidden lg:block -z-10 top-[-30px]' alt='Customer Review Background' />
 
             {/* Customer reviews */}

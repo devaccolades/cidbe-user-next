@@ -14,17 +14,22 @@ import menuIcon from "../../public/icons/menu.svg"
 import menuGreenIcon from "../../public/icons/menu-green.svg"
 import closeIcon from "../../public/icons/close.svg"
 import { usePathname, useRouter } from 'next/navigation';
-function Header({bgPrimary=false}) {
-    const router  = useRouter()
-    const pathname = usePathname()
+
+function Header({ bgPrimary = false }) {
+    const router = useRouter();
+    const pathname = usePathname();
     const [hovered, setHovered] = useState({ about: false, project: false });
-    const [scrolling, setScrolling] = useState(false);
-    const [showMobileNav, setShowMobileNav] = useState(false)
+    const [scrolling, setScrolling] = useState(pathname==='/about-us'?true:false);
+    const [showMobileNav, setShowMobileNav] = useState(false);
     const [dropDown, setdropDown] = useState({ project: false, about: false });
     const menuRef = useRef(null);
 
     const handleClickOutside = (event) => {
-        if (menuRef.current && !menuRef.current.contains(event.target)) {
+        if (
+            menuRef.current &&
+            !menuRef.current.contains(event.target) &&
+            !event.target.closest('.dropdown-item')
+        ) {
             setHovered({ project: false, about: false });
         }
     };
@@ -38,8 +43,13 @@ function Header({bgPrimary=false}) {
 
     useEffect(() => {
         const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            setScrolling(scrollTop > 0);
+
+            if (pathname==='/about-us'){
+                setScrolling(true)
+            }else{
+                const scrollTop = window.scrollY;
+                setScrolling(scrollTop > 0);
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -48,7 +58,6 @@ function Header({bgPrimary=false}) {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-
 
     const modalVariants = {
         hidden: {
@@ -79,7 +88,6 @@ function Header({bgPrimary=false}) {
             transition: {
                 duration: 0.5,
                 ease: "easeOut"
-
             },
         },
         exit: {
@@ -91,7 +99,6 @@ function Header({bgPrimary=false}) {
             }
         },
     };
-
 
     const navLinksVariants = {
         hidden: {},
@@ -112,22 +119,26 @@ function Header({bgPrimary=false}) {
     return (
         <>
             <header className='main-area sticky top-1 z-50 '>
-                <section className={`nav-bar ${bgPrimary?"bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
-                    <Image src={logo} alt='logo' className='logo' onClick={()=>router.push('/')}/>
+                <section className={`nav-bar ${bgPrimary ? "bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
+                    <Image src={logo} alt='logo' className='logo' onClick={() => router.push('/')} />
                     <div className='lap-navbar'>
-                        <ul className={`${scrolling ? 'text-[#052D23]' : bgPrimary ? 'text-[--secondary-cl]' :'text-white'}`}>
-                        <Link href="/"><li className={`${scrolling}? 'isscroll':'' ${pathname==='/'&&'active'}`}>Home</li></Link>
+                        <ul className={`${scrolling ? 'text-[#052D23]' : bgPrimary ? 'text-[--secondary-cl]' : 'text-white'}`}>
+                            <Link href="/"><li className={`${scrolling ? 'isscroll' : ''} ${pathname === '/' && 'active'}`}>Home</li></Link>
                             <li
                                 onMouseEnter={() => setHovered({ project: false, about: true })}
-                                className={`relative ${hovered.about || pathname==='/about-us' ? 'active' : ''}`}
+                                className={`relative ${hovered.about || pathname === '/about-us' ? 'active' : ''}`}
                                 ref={menuRef}
                             >
                                 About us
-                                <Image src={hovered.about ? bgPrimary?dropdownGreenIcon:dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary? dropdownGreenIcon: dropdownIcon} alt="dropdown icon" />
+                                <Image src={hovered.about ? bgPrimary ? dropdownGreenIcon : dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
                                 {hovered.about && (
                                     <div className="card absolute w-[285px] p-[10px] top-full left-0 mt-2 bg-white shadow-md z-10">
-                                        <a class="flip-animate" onClick={()=>router.push('/about-us')}><span data-hover="Who we are">Who we are</span></a>
-                                        <a class="flip-animate"><span data-hover="CSR">CSR</span></a>
+                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/about-us')}>
+                                            <span data-hover="Who we are">Who we are</span>
+                                        </a>
+                                        <a className="flip-animate dropdown-item">
+                                            <span data-hover="CSR">CSR</span>
+                                        </a>
                                     </div>
                                 )}
                             </li>
@@ -137,27 +148,36 @@ function Header({bgPrimary=false}) {
                                 ref={menuRef}
                             >
                                 Projects
-                                <Image src={hovered.project ? bgPrimary? dropdownGreenIcon :  dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary?dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
+                                <Image src={hovered.project ? bgPrimary ? dropdownGreenIcon : dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
                                 {hovered.project && (
                                     <div className="card absolute w-[285px] top-full left-0 mt-2 bg-white shadow-md z-10">
-                                        <a class="flip-animate"><span data-hover="Featured project">Featured project</span></a>
-                                        <a class="flip-animate"><span data-hover="Completed project">Completed project</span></a>
-                                        <a class="flip-animate"><span data-hover="Upcoming projects">Upcoming projects</span></a>
-                                        <a class="flip-animate"><span data-hover="Ready to occupy">Ready to occupy</span></a>
-                                        <a class="flip-animate"><span data-hover="0ngoing project">0ngoing project</span></a>
+                                        <a className="flip-animate dropdown-item">
+                                            <span data-hover="Featured project">Featured project</span>
+                                        </a>
+                                        <a className="flip-animate dropdown-item">
+                                            <span data-hover="Completed project">Completed project</span>
+                                        </a>
+                                        <a className="flip-animate dropdown-item">
+                                            <span data-hover="Upcoming projects">Upcoming projects</span>
+                                        </a>
+                                        <a className="flip-animate dropdown-item">
+                                            <span data-hover="Ready to occupy">Ready to occupy</span>
+                                        </a>
+                                        <a className="flip-animate dropdown-item">
+                                            <span data-hover="Ongoing project">Ongoing project</span>
+                                        </a>
                                     </div>
                                 )}
                             </li>
-                            <Link href='/gallery'><li className={`${pathname==='/gallery' && "active"}`}>Gallery</li></Link>
-                            <li >Interiors</li>
-                            <Link href={'/blogs'}><li className={`${pathname==='/blogs' && "active"}`}>Blog</li></Link>
-                            <Link href={'/achievements'}><li className={`${pathname==='/achievements' && "active"}`}>Achievements</li></Link>
-                            <Link href='/contact-us'><li className={`${pathname==='/contact-us' && "active"}`}>Contact us</li></Link>
-
+                            <Link href='/gallery'><li className={`${pathname === '/gallery' && "active"}`}>Gallery</li></Link>
+                            <li>Interiors</li>
+                            <Link href={'/blogs'}><li className={`${pathname === '/blogs' && "active"}`}>Blog</li></Link>
+                            <Link href={'/achievements'}><li className={`${pathname === '/achievements' && "active"}`}>Achievements</li></Link>
+                            <Link href='/contact-us'><li className={`${pathname === '/contact-us' && "active"}`}>Contact us</li></Link>
                         </ul>
                     </div>
                     <div className='mobile-navbar cursor-pointer' onClick={() => setShowMobileNav(!showMobileNav)}>
-                        <Image src={scrolling?menuGreenIcon:bgPrimary?menuGreenIcon:menuIcon} alt="menu-icon" />
+                        <Image src={scrolling ? menuGreenIcon : bgPrimary ? menuGreenIcon : menuIcon} alt="menu-icon" />
                     </div>
                     {showMobileNav &&
                         <motion.div
@@ -176,7 +196,6 @@ function Header({bgPrimary=false}) {
                                 initial="hidden"
                                 animate="visible"
                                 exit="exit"
-
                             >
                                 <div className="flex flex-col gap-5 items-center justify-center h-full font-[general-sans-medium]">
                                     <motion.p
@@ -188,7 +207,7 @@ function Header({bgPrimary=false}) {
                                     <motion.div
                                         className={`cursor-pointer ${dropDown.about ? 'text-[#052D23]' : 'text-[#4C956C]'}  text-[20px] flex flex-col items-center gap-[10px]`}
                                         variants={linkItemVariants}
-                                        onClick={() => setdropDown({ project:false, about: !dropDown.about })}
+                                        onClick={() => setdropDown({ project: false, about: !dropDown.about })}
                                     >
                                         <span className="flex items-center">
                                             About Us <Image src={dropDown.about ? mobileDropupIcon : mobileDropdownIcon} alt="dropdown icon" />
@@ -208,7 +227,7 @@ function Header({bgPrimary=false}) {
                                     <motion.div
                                         className={`cursor-pointer ${dropDown.project ? 'text-[#052D23]' : 'text-[#4C956C]'}  text-[20px] flex flex-col items-center gap-[10px]`}
                                         variants={linkItemVariants}
-                                        onClick={() => setdropDown({ about:false, project: !dropDown.project })}
+                                        onClick={() => setdropDown({ about: false, project: !dropDown.project })}
                                     >
                                         <span className="flex items-center">
                                             Projects <Image src={dropDown.project ? mobileDropupIcon : mobileDropdownIcon} alt="dropdown icon" />
@@ -223,7 +242,7 @@ function Header({bgPrimary=false}) {
                                                 <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Completed project</p>
                                                 <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Upcoming projects</p>
                                                 <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Ready to occupy</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">0ngoing project</p>
+                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Ongoing project</p>
                                             </motion.div>
                                         )}
                                     </motion.div>
@@ -270,7 +289,7 @@ function Header({bgPrimary=false}) {
                 </section>
             </header>
         </>
-    )
+    );
 }
 
-export default Header
+export default Header;

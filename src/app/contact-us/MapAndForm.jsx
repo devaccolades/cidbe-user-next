@@ -1,6 +1,5 @@
 import React from 'react'
 import EnquiryForm from '../../components/EnquiryForm/EnquiryForm'
-import './Contact.css'
 function MapAndForm() {
     return (
         <section className='bg-[--primary-cl] -mt-[80px] lg:-mt-[95px]'>

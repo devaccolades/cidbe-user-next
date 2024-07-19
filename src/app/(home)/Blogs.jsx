@@ -17,9 +17,12 @@ function Blogs() {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         setNumItems(1);
-      } else if (window.innerWidth >= 768 && window.innerWidth <= 1700) {
+      } else if (window.innerWidth >= 1400 && window.innerWidth <= 1750) {
+        setNumItems(3);
+      }else if (window.innerWidth >= 768 && window.innerWidth <= 1399) {
         setNumItems(2);
-      } else {
+      }
+       else {
         setNumItems(4);
       }
     };

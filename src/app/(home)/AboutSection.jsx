@@ -32,7 +32,7 @@ function AboutSection() {
           <Image className='absolute right-[400px] lg:block hidden bottom-[81px]' src={aboutCardImage} alt="Description-of-the-about-card-image" />
           {/* <Image className='absolute top-[46%] block md:hidden w-full left-0 right-0' src={aboutCardshapeMobile} alt="Description-of-the-about-card-image" /> */}
 
-          <div className='w-full lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
+          <div className='w-full responsive lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
             <h3 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h3>
             <div className='flex flex-col gap-[20px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>
               <p>CIDBI, ISO 9001-2015 certified, established in 2005, renowned Thrissur builders with 33+ years of experience, led by Mr. A A Abdul Lathif. </p>
@@ -70,7 +70,7 @@ function AboutSection() {
             <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
               <h6 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
                 <span className='md:hidden block'>Comprehensive <br /> Amenities</span>
-                <span className='md:block hidden'>Comprehensive Amenities</span>
+                <span className='md:block hidden px-[5px]'>Comprehensive Amenities</span>
               </h6>
               <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'> From parking spaces to landscaped gardens and community halls, CIDBI's apartments offer a wide range of amenities to enhance the quality of life for residents.</p>
             </div>
@@ -80,7 +80,7 @@ function AboutSection() {
             <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
               <h6 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
                 <span className='md:hidden block'>Customer-Centric <br /> Approach</span>
-                <span className='md:block hidden'>Customer-Centric Approach</span>
+                <span className='md:block hidden px-[5px]'>Customer-Centric Approach</span>
               </h6>
               <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>CIDBI prioritizes customer satisfaction, offering flexible floor plans and personalized service, exceeding expectations in every project.</p>
             </div>
