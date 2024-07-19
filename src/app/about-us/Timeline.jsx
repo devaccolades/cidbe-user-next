@@ -39,7 +39,7 @@ function Timeline() {
     <>
       <section className="containers py-8 flex overflow-x-auto custom-scrollbar">
         {listing.map((list,index)=>(
-          <div className="relative min-w-[547px] -ms-[2px] w-[547px] h-[404px] overflow-x-auto">
+          <div key={index} className="relative min-w-[547px] -ms-[2px] w-[547px] h-[404px] overflow-x-auto">
           <Image src={branch} alt='' className='absolute' />
           <div className='flex flex-col justify-between h-full items-center'>
             <div className='ps-[9px] w-6/12 h-[111px]'>

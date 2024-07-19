@@ -20,7 +20,7 @@ export default function AboutLanding() {
           className="w-[40px] z-10 -ms-[20px] -me-[40px] shape hidden md:block"
           style={{ height: 'fit-content', objectFit: 'contain' }}
         />
-        <Image src={shapeMobile} className="minw-[400px] w-full z-10 mt-[20px] -mb-[60px] md:hidden block"/>
+        <Image src={shapeMobile} alt="" className="minw-[400px] w-full z-10 mt-[20px] -mb-[60px] md:hidden block"/>
         <div className="w-full md:w-8/12 h-[360px] md:h-full bg-cover bg-center rounded-br-[60px] md:rounded-br-[60px] lg:rounded-br-[120px] " style={{ backgroundImage: `url(${bannerRightImage.src})` }} />
       </section>
     </>
