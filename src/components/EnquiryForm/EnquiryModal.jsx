@@ -18,7 +18,7 @@ function EnquiryModal({open, handleOpen,projectId}) {
   return (
       <Dialog className="w-[20px]" open={open} handler={handleOpen}>
         <div className="flex justify-center items-center pt-[60px]">
-          <Image src={enquiryImage}/>
+          <Image src={enquiryImage} alt=""/>
         </div>
         <EnquiryForm projectId={projectId}/>
       </Dialog>

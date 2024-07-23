@@ -55,7 +55,7 @@ function BlogCarousel() {
         </div>
         <Slider {...settings}>
           {data.map((image, index) => (
-            <div className="relative  h-screen bg-cover bg-no-repeat bg-[url(/images/home/carorcel1.jpeg)]">
+            <div key={index} className="relative  h-screen bg-cover bg-no-repeat bg-[url(/images/home/carorcel1.jpeg)]">
               <div className="absolute inset-0 bg-black opacity-[30%]"></div>
             </div>
           ))}
