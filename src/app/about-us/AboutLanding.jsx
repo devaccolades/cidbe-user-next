@@ -7,7 +7,7 @@ import bannerLogo from "../../../public/images/about/about-us-cidbi-logo.svg"
 export default function AboutLanding() {
   return (
     <>
-      <section className="h-[720px] md:h-[350px] overflow-hidden main-section lg:h-[760px] flex flex-col md:flex-row rounded-br-[60px] md:rounded-br-[60px] lg:rounded-br-[120px] -mt-[80px] lg:-mt-[95px] bg-[#EDFBFD]">
+      <section className="md:h-[350px] overflow-hidden main-section lg:h-[760px] flex flex-col md:flex-row rounded-br-[60px] md:rounded-br-[60px] lg:rounded-br-[120px] -mt-[80px] lg:-mt-[95px] bg-[#EDFBFD]">
         <div className="flex justify-center items-end md:items-center w-full -mt-[30px] mb-[20px] md:mb-0 md:mt-0 lg:mt-[70px] h-[360px] md:h-full">
           <div className="flex justify-center  flex-col gap-[20px] ms-[5%] md:ms-[120px]">
           <Image src={bannerLogo} alt="bannerLogo" className="w-[187px] md:w-[22.39vw]" />

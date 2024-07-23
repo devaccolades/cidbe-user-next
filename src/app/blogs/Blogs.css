@@ -4,3 +4,60 @@
     }
 }
 
+
+.custom-dots {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: -150px 0px;
+
+}
+
+.custom-dot {
+    cursor: pointer;
+    margin: 0 4px;
+
+}
+
+.custom-dot .dot-line {
+    display: block;
+    width: 7px;
+    height: 4px;
+    border-radius: 6px;
+    background-color: #BCBCBC;
+    transition: all 0.3s ease;
+}
+
+.custom-dot.active .dot-line {
+    width: 22px;
+    height: 4px;
+    background-color: white;
+
+    @media (max-width:768px) {
+        background-color: var(--secondary-cl);
+
+    }
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next-arrow {
+    right: -50px;
+}
+
+.prev-arrow {
+    left: -50px;
+}

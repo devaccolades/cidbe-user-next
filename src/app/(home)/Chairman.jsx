@@ -11,7 +11,7 @@ function Chairman() {
   return (
     <section className='py-[30px] lg:py-[100px] flex justify-center items-center'>
       <card className='relative  containers shadow-2xl flex flex-col-reverse md:grid md:grid-cols-[1fr,350px] lg:grid-cols-[1fr,435px] rounded-[12px]'>
-        <div className='h-[350px] md:h-[430px] lg:h-[433px] chairmanBgGradient md:rounded-s-[12px]  flex items-center' >
+        <div className='h-[350px] md:h-[430px] lg:h-[433px] chairmanBgGradient rounded-b-[12px] md:rounded-br-none md:rounded-s-[12px]  flex items-center' >
           <div className='absolute hidden md:block -z-0'>
             <Image src={chairmanbg} alt='gradient-left' />
           </div>

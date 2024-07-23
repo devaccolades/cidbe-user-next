@@ -60,7 +60,7 @@ function CustomerReviewsAndFaq() {
 
             {/* Customer reviews */}
             <div className='containers '>
-                <h6 className='font-[general-sans-semibold] text-[14px] md:text-[16px] lg:text-[29px]'>Customer Reviews</h6>
+                <h6 className='font-[clash-display-medium] text-[20px] lg:text-[32px]'>Customer Reviews</h6>
                 <div className='mt-[10px] lg:mt-[44px] '>
                     <Swiper
                         spaceBetween={50}

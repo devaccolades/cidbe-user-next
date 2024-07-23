@@ -70,7 +70,7 @@ function HeroSection() {
         draggable: true,
         autoplay: true,
         autoplaySpeed: 5000,
-        arrows: isMobile?false:true,
+        arrows: isMobile ? false : true,
         beforeChange: (current, next) => {
             setActiveIndex(next);
             setBackgroundImage(projects[next].bgimage);
@@ -89,29 +89,55 @@ function HeroSection() {
         prevArrow: <PrevArrow />,
 
     };
+    const animationConfig = {
+        initial: {
+          opacity: 0,
+          y: 50,
+        },
+        whileInView: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.5,
+            delay: 0.5,
+          },
+        },
+      };
 
     return (
         <>
             <section
-                className="h-[605px] carousel-background md:h-[540px] lg:h-[860px] -mt-[78px] lg:-mt-[95px] bg-cover bg-center overflow-hidden"
+                className="h-[605px] carousel-background md:h-[540px] main-div lg:h-[860px] -mt-[78px] lg:-mt-[95px] bg-cover bg-center overflow-hidden"
                 style={{ backgroundImage: `url(${backgroundImage})` }}>
                 <div className='h-full md:w-[90%] res lg:w-[80%] mx-auto flex flex-row justify-between md:items-center lg:pe-[40px]'>
                     <div className='md:w-[311px] lg:w-[429px] flex flex-col md:mt-4 justify-between items-center text-center md:ps-5 mx-auto pt-[85px] md:pt-0 pb-[20px] md:pb-0 md:mx-0'>
                         <div>
-                            <h1 className='hero-text md:text-[36px] lg:text-[3.95vw]'>തൃശ്ശൂരിൻ്റെ
-                                സ്വന്തം</h1>
-                            <p className='hero-sub-text -mt-[10px] md:mt-0'>ബിൽഡർ</p>
+                            <h1 className='hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col'>
+                                <p className='text-wrapper'><span className='text-animation delay-1'>തൃശ്ശൂരിൻ്റെ </span></p>
+                                <p className='text-wrapper'><span className='text-animation delay-2'>സ്വന്തം</span></p>
+                            </h1>
+                            <p className='hero-sub-text -mt-[10px] md:mt-0 text-wrapper'><span className='text-animation delay-3'>ബിൽഡർ</span></p>
                         </div>
-                        <div className=''>
-                            <button className='box m-[20px]'>
+
+                        <div className='' >
+                            <motion.button
+                                className='box m-[20px]'
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5 } }}
+                            >
                                 <p className='inner'>110 Lakhs Sqft. Area Completed</p>
-                            </button>
-                            <p className='hero-small-txt'>
-                                You are choosing a builder having the best apartments with more than 33 years of experience in construction industry
-                            </p>
+                            </motion.button>
+                            <motion.p
+                                className='hero-small-txt'
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 1 } }}
+                            >
+                                You are choosing a builder having the best apartments with more than 33 years of experience in the construction industry
+                            </motion.p>
+
                         </div>
                     </div>
-                    <div className='md:block hidden md:h-[430px] lg:h-[591px] md:w-[311px] md:mt-10 lg:mt-0 lg:w-[395px] md:me-10 lg:me-0'>
+                    <motion.div className='md:block hidden md:h-[430px] lg:h-[591px] carousel md:w-[311px] md:mt-10 lg:mt-0 lg:w-[395px] md:me-10 lg:me-0' {...animationConfig}>
                         <Slider {...settings}>
                             {projects.map((project, index) => (
                                 <Card key={index} className='md:w-[275px] lg:w-[195px] h-[97%] px-[5px] pt-[5px] pb-[10px] mx-auto overflow-hidden'>
@@ -137,7 +163,7 @@ function HeroSection() {
                                 </Card>
                             ))}
                         </Slider>
-                    </div>
+                    </motion.div>
                 </div>
             </section>
             <div className='md:hidden block h-[630px] py-[20px] containers overflow-hidden'>

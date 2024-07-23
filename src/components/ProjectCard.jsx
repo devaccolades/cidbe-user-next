@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Card } from '@material-tailwind/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import './projectCard.css'
+import EnquiryModal from '../components/EnquiryForm/EnquiryModal'
 // Icons
 import locationIcon from '../../public/icons/location.svg'
 import appartmentIcon from '../../public/icons/appartment.svg'
@@ -14,8 +15,11 @@ import arrow_outwardIcon from '../../public/icons/arrow_outward.svg'
 
 function ProjectCard({project}) {
     const [hovered, setHovered] = useState(false);
-
+    const [open, setOpen] = useState(false);
+ 
+    const handleOpen = () => setOpen(!open);
     return (
+       <>
         <Card className='relative w-full h-[638px] cursor-pointer card-animation bg-white rounded-[15px] overflow-hidden p-[5px] grid grid-rows-[1fr,1fr,1fr] gap-[10px]'>
             <motion.div
                 onMouseEnter={() => setHovered(true)}
@@ -89,11 +93,13 @@ function ProjectCard({project}) {
                     )}
                 </AnimatePresence>
             </div>
-            <div className='sticky bottom-1 bg-white grid grid-cols-2 gap-[10px] px-[15px] pb-[10px] text-[14px] '>
+            <div className='sticky bottom-1 bg-white grid grid-cols-2 gap-[10px] px-[15px] pb-[10px] text-[12px] sm:text-[14px] '>
                 <button className='border border-[--secondary-cl] text-[--secondary] py-[7px] px-[8px] rounded-[8px]'>Read more</button>
-                <button className='bg-[--secondary-cl] text-white flex flex-row gap-[8px] py-[7px] px-[8px] rounded-[8px] items-center justify-center'>Enquire Now <Image src={arrow_outwardIcon} alt="Arrow" /></button>
+                <button className='bg-[--secondary-cl] text-white flex flex-row gap-[8px] py-[7px] px-[8px] rounded-[8px] items-center justify-center' onClick={handleOpen}>Enquire Now <Image src={arrow_outwardIcon} alt="Arrow" /></button>
             </div>
         </Card>
+        <EnquiryModal open={open} handleOpen={handleOpen} projectId={"10"}/>
+       </>
     );
 }
 
