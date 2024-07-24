@@ -55,12 +55,12 @@ function CustomerReviewsAndFaq() {
         };
       }, []);
     return (
-        <section className={`relative text-[--secondary-cl] overflow-hidden z-10 ${!pathname==='/contact-us' && 'reviews-bg-gradient' }  py-[40px] lg:py-[90px] flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]`}>
+        <section className={`relative text-[--secondary-cl] overflow-hidden z-10 ${pathname==='/contact-us' ?"": 'reviews-bg-gradient' }  py-[40px] lg:py-[90px] flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]`}>
             <Image src={customerReviewbg} className='absolute right-0 hidden lg:block -z-10 top-[-30px]' alt='Customer Review Background' />
 
             {/* Customer reviews */}
             <div className='containers '>
-                <h6 className='font-[general-sans-semibold] text-[14px] md:text-[16px] lg:text-[29px]'>Customer Reviews</h6>
+                <h6 className='font-[clash-display-medium] text-[20px] lg:text-[32px]'>Customer Reviews</h6>
                 <div className='mt-[10px] lg:mt-[44px] '>
                     <Swiper
                         spaceBetween={50}

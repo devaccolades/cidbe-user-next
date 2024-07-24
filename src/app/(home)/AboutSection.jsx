@@ -16,9 +16,11 @@ import roundedImage from "../../../public/images/home/rounded.svg"
 import './Home.css'
 import image1 from "../../../public/images/home/image1.jpeg"
 import image2 from "../../../public/images/home/image2.jpeg"
+import { useRouter } from 'next/navigation';
 // after connect the backend
 
 function AboutSection() {
+  const router  = useRouter()
 
   return (
     <main className='text-[--secondary-cl] w-full flex flex-col py-[45px]  lg:bg-[url(/images/home/about-section-bg.svg)]'
@@ -27,6 +29,7 @@ function AboutSection() {
         <Image src={gradientLeft} alt='gradient-left' />
       </div>
       {/* About Card */}
+      
       <card className='relative containers shadow-2xl flex flex-col-reverse md:flex-row rounded-[12px]'>
         <div className='md:h-[433px] w-full bg-color rounded-b-[12px] md:rounded-e-none  md:rounded-s-[12px] flex items-center p-[30px] md:p-[60px] lg:p-0'>
           <Image className='absolute right-[400px] lg:block hidden bottom-[81px]' src={aboutCardImage} alt="Description-of-the-about-card-image" />
@@ -35,11 +38,11 @@ function AboutSection() {
           <div className='w-full responsive lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
             <h3 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h3>
             <div className='flex flex-col gap-[20px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>
-              <p>CIDBI, ISO 9001-2015 certified, established in 2005, renowned Thrissur builders with 33+ years of experience, led by Mr. A A Abdul Lathif. </p>
-              <p>We, Creations India (CIDBI), an ISO 9001-2015 certified builders in Thrissur established in 2005 in response to the growing need of quality housings. Since we have grown to be one of the best builders in Thrissur. CIDBI is a professionally managed company under the leadership of Mr. A A Abdul Lathif, run by well experienced management in the field of construction. We have more than 33 years of experience in the construction field.</p>
+              <p>We, Creations India Developers Builders Infrastructures (CIDBI), an ISO 9001-2015 certified builder in Thrissur, was established in 2005 in response to the growing need of quality housings. Since then, we have grown to be one of the best builders in Thrissur. CIDBI is a professionally managed company under the leadership of Mr. A A Abdul Lathif, run by well experienced management. We have more than 33 years of experience in the construction field.
+              </p>
             </div>
             <div className='flex justify-center md:justify-end pt-[18px]'>
-              <button className='underline flex gap-[10px] items-center text-[12px] font-[general-sans-medium]'>
+              <button className='underline flex gap-[10px] items-center text-[12px] font-[general-sans-medium]' onClick={()=>router.push('/about-us')}>
                 Know more
                 <Image src={arrowIcon} alt='arrow-icon' />
               </button>
@@ -47,8 +50,8 @@ function AboutSection() {
           </div>
         </div>
         <Image src={aboutCardshapeMobile} alt='' className='min-w-full align-bottom -mb-[5px] -mt-[30px] md:hidden block' />
-        <div className='bg-cover bg-bottom md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] z-4' style={{ backgroundImage: `url(/images/home/about-image.jpg)` }}>
-          <Image className='h-full -ms-[2px] md:visible invisible' alt='card-shape' src={aboutCardshape} />
+        <div className='bg-cover bg-bottom md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] h-[300px] md:h-full z-4' style={{ backgroundImage: `url(/images/home/about-image.jpg)` }}>
+          <Image className='h-full -ms-[2px] md:block hidden' alt='card-shape' src={aboutCardshape} />
         </div>
       </card>
       {/* Why choose us? */}
@@ -109,7 +112,8 @@ function AboutSection() {
               <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
             </div>
             <div className='flex flex-row gap-[45px]'>
-              <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px]' />
+              <div className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px] bg-center bg-cover' style={{ backgroundImage: `url(/images/home/image2.jpeg)` }}/>
+              {/* <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px]' /> */}
               <div className='flex flex-col justify-center'>
                 <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
                 <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Years of <br /> Experience</p>
@@ -165,8 +169,10 @@ function AboutSection() {
                 <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1000+</h5>
                 <p className='text-[14px] leading-[18px] md:text-[16px] lg:text-[1.04vw] md:leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
               </div>
-              <div className='flex flex-row gap-[45px]'>
-                <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] rounded-[12px]' />
+              <div className='flex flex-row gap-[45px] mt-[16px] md:mt-0'>
+              <div className='w-[142px] lg:w-[195px] rounded-[12px] bg-center bg-cover' style={{ backgroundImage: `url(/images/home/image2.jpeg)` }}/>
+
+                {/* <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] rounded-[12px]' /> */}
                 <div className='flex flex-col justify-center'>
                   <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
                   <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Years of <br /> Experience</p>

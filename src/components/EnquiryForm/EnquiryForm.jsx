@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EnquiryForm({ bg = 'bg-transparent' }) {
+function EnquiryForm({ bg = 'bg-transparent',projectId }) {
   return (
     <div className={`h-full rounded-[20px] text-[--secondary-cl] p-[30px] md:p-[40px] ${bg}`}>
       <div className='flex flex-col gap-[17px] md:gap-[20px]'>
@@ -12,11 +12,11 @@ function EnquiryForm({ bg = 'bg-transparent' }) {
           </div>
           <div className='flex flex-col gap-[6px]'>
             <p className='font-[inter-regular] text-[11px] md:text-[14px]'>WhatsApp No</p>
-            <input className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none' placeholder='Enter WhatsApp Number' type="text" />
+            <input className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none' placeholder='Enter whatsApp number' type="text" />
           </div>
           <div className='flex flex-col gap-[6px]'>
-            <p className='font-[inter-regular] text-[11px] md:text-[14px]'>WhatsApp No</p>
-            <input className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none' placeholder='Enter WhatsApp Number' type="text" />
+            <p className='font-[inter-regular] text-[11px] md:text-[14px]'>Email</p>
+            <input className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none' placeholder='Enter email address' type="text" />
           </div>
           <div className='flex flex-col gap-[6px]'>
             <p className='font-[inter-regular] text-[11px] md:text-[14px]'>Message</p>

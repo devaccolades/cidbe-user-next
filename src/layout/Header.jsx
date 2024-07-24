@@ -151,19 +151,19 @@ function Header({ bgPrimary = false }) {
                                 <Image src={hovered.project ? bgPrimary ? dropdownGreenIcon : dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
                                 {hovered.project && (
                                     <div className="card absolute w-[285px] top-full left-0 mt-2 bg-white shadow-md z-10">
-                                        <a className="flip-animate dropdown-item">
+                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/featured-projects')}>
                                             <span data-hover="Featured project">Featured project</span>
                                         </a>
-                                        <a className="flip-animate dropdown-item">
+                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/completed-projects')}>
                                             <span data-hover="Completed project">Completed project</span>
                                         </a>
-                                        <a className="flip-animate dropdown-item">
+                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/upcoming-projects')}>
                                             <span data-hover="Upcoming projects">Upcoming projects</span>
                                         </a>
-                                        <a className="flip-animate dropdown-item">
+                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/ready-to-occupy')}>
                                             <span data-hover="Ready to occupy">Ready to occupy</span>
                                         </a>
-                                        <a className="flip-animate dropdown-item">
+                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/ongoing-projects')}>
                                             <span data-hover="Ongoing project">Ongoing project</span>
                                         </a>
                                     </div>
@@ -201,6 +201,7 @@ function Header({ bgPrimary = false }) {
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
                                         variants={linkItemVariants}
+                                        onClick={()=>router.push('/')}
                                     >
                                         Home
                                     </motion.p>
@@ -219,7 +220,7 @@ function Header({ bgPrimary = false }) {
                                                 exit={{ opacity: 0, y: -10 }}
                                                 className="flex flex-col gap-4 mt-2 text-center "
                                             >
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Who we are</p>
+                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/about-us')}>Who we are</p>
                                                 <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">CSR</p>
                                             </motion.div>
                                         )}
@@ -239,46 +240,52 @@ function Header({ bgPrimary = false }) {
                                                 exit={{ opacity: 0, y: -10 }}
                                                 className="flex flex-col gap-4 mt-2 text-center "
                                             >
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Completed project</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Upcoming projects</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Ready to occupy</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Ongoing project</p>
+                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/featured-projects')}>Featured project</p>
+                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/completed-projects')}>Completed project</p>
+                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/upcoming-projects')}>Upcoming projects</p>
+                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/ready-to-occupy')}>Ready to occupy</p>
+                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/ongoing-projects')}>Ongoing project</p>
                                             </motion.div>
                                         )}
                                     </motion.div>
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
                                         variants={linkItemVariants}
-                                    >
+                                        onClick={() => router.push('/gallery')}                                    >
                                         Gallery
                                     </motion.p>
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
                                         variants={linkItemVariants}
+                                        // onClick={() => router.push('/gallery')}
                                     >
                                         Interiors
                                     </motion.p>
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
                                         variants={linkItemVariants}
+                                        onClick={() => router.push('/blogs')}
                                     >
                                         Blog
                                     </motion.p>
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
                                         variants={linkItemVariants}
+                                        onClick={() => router.push('/achievements')}
                                     >
                                         Achievements
                                     </motion.p>
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
                                         variants={linkItemVariants}
+                                        onClick={() => router.push('/contact-us')}
                                     >
                                         Contact us
                                     </motion.p>
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
                                         variants={linkItemVariants}
+                                        onClick={() => router.push('/careers')}
                                     >
                                         Careers
                                     </motion.p>

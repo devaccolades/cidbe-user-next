@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import ProjectCard from '../../components/ProjectCard'
+import { useRouter } from 'next/navigation'
 
 
 function FeaturedProject() {
+  const router = useRouter()
   const [numItems, setNumItems] = useState(1);
 
   const featuredProject = [
@@ -41,7 +43,7 @@ function FeaturedProject() {
             <ProjectCard key={index} project={project} />
           ))}
         </div>
-        <p className='text-[16px] font-[general-sans-medium] text-center underline pt-[30px]'>View All</p>
+        <p className='text-[16px] font-[general-sans-medium] text-center underline pt-[30px]' onClick={()=>router.push('/featured-projects')}>View All</p>
       </div>
     </div>
   )

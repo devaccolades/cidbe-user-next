@@ -4,7 +4,9 @@ import Footer from '../../layout/Footer'
 import dynamic from 'next/dynamic'
 import Skelten from '../../components/skeletoneffect/Skelten'
 import GalaryHeroSection from './GalaryHeroSection'
-import GalaryListing from './GalaryListing'
+// import GalaryListing from './GalaryListing'
+const GalaryListing = dynamic(() => import('./GalaryListing'), { ssr: false,loading:() => <Skelten/>, });
+
 import './Galary.css'
 
 function page() {

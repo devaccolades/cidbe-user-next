@@ -4,8 +4,10 @@ import React, { useEffect, useState } from 'react'
 import blogimg1 from '../../../public/images/home/blogimg1.jpeg'
 import blogimg2 from '../../../public/images/home/blogimg2.png'
 import blogimg3 from '../../../public/images/home/blogimg3.png'
+import { useRouter } from 'next/navigation'
 
 function Blogs() {
+  const router = useRouter()
   const [numItems, setNumItems] = useState(1);
   const Blogs = [
     { id:1, thumbnail: blogimg1, time_to_read: "2 Min read", date_added: "28/03/2024",thumbnail_alt:"", title: "Luxury Living: The Importance of Location in Choosing Premium Flats" },
@@ -45,7 +47,7 @@ function Blogs() {
           ))}
 
         </div>
-        <p className='py-[20px] text-center underline text-[16px] font-[general-sans-regular]'>View all</p>
+        <p className='py-[20px] text-center underline text-[16px] font-[general-sans-regular]' onClick={()=>router.push('/blogs')}>View all</p>
       </div>
     </section>
   )

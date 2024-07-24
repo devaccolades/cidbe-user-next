@@ -4,7 +4,47 @@
     line-height: 4.6875vw;
 }
 
-@media (min-width: 1024px) and (max-width: 1300px) {
+.text-wrapper {
+    overflow: hidden;
+}
+
+.text-animation {
+    display: block;
+    opacity: 0;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+.delay-3 {
+    animation-delay: 1.5s;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translate(0, 100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1500px) {
+    .main-div{
+        height: 800px;
+    }
+   .carousel{
+    width: 360px;
+   }
     .res {
         width: 90%;
     }
@@ -142,9 +182,12 @@
     background: rgb(152, 201, 163);
     background: linear-gradient(90deg, rgba(152, 201, 163, 1) 0%, rgba(191, 216, 189, 1) 77%);
 
-    @media (max-width:767px) {
-        background: rgb(191, 216, 189);
-        background: linear-gradient(0deg, rgba(191, 216, 189, 1) 0%, rgba(152, 201, 163, 1) 100%);
+   
+}
+@media (max-width:767px) {
+    .bg-color {
+        background: rgb(191,216,189);
+        background: linear-gradient(0deg, rgba(191,216,189,1) 0%, rgba(152,201,163,1) 100%);
     }
 }
 
