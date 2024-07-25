@@ -3,17 +3,14 @@ import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import ProjectCard from '../../components/ProjectCard'
 import { useRouter } from 'next/navigation'
+import NotFound from '../../components/common/NotFound'
+import { getFeaturedProject } from '../../services/services'
 
 
 function FeaturedProject() {
   const router = useRouter()
-  const [numItems, setNumItems] = useState(1);
-
-  const featuredProject = [
-    { id: 1, name: "CASSIA", sub_name: "PREMIUM SMART HOMES", rera_number: "K.RERA/PRJ/TSR/043/2023", location: "Near Daya Hospital", thumbnail: 'images/home/carorcel1.jpeg', thumbnail_alt: "", bhk: "2,3 & 4", area_from: "1,159", area_to: "2,548", status: "ongoing" },
-    { id: 2, name: "CANDOR", sub_name: "A PROMISE OF HAPPINESS", rera_number: "K-RERA/PRJ/112/2021", location: "Poonkunnam", thumbnail: 'images/home/carorcel2.webp', thumbnail_alt: "", bhk: "2 & 3", area_from: "1,196", area_to: "1,769", status: "ready to occupy" },
-    { id: 3, name: "CHALET", sub_name: "Exclusive Amenities", rera_number: "K-RERA/PRJ/TSR/059/2021", location: "Kannamkulangara", thumbnail: 'images/home/carorcel3.jpeg', thumbnail_alt: "", bhk: "2 & 3", area_from: "992", area_to: "1,340", status: "ready to occupy" },
-  ]
+  const [numItems, setNumItems] = useState(window.innerWidth < 768 ? 1:window.innerWidth >= 768 && window.innerWidth <= 1399 ? 2 :3 );
+  const [featuredProject, setFeaturedProject] = useState([])
 
   useEffect(() => {
     const handleResize = () => {
@@ -34,16 +31,37 @@ function FeaturedProject() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const fetchData = async () =>{
+    try {
+      const res = await getFeaturedProject(1,numItems)
+      const { StatusCode, data } = res.data
+      if (StatusCode === 6000){
+        setFeaturedProject(data)
+      }else{
+        setFeaturedProject([])
+      }
+    } catch (error) {
+      setFeaturedProject([])
+    }
+  }
+  useEffect(()=>{
+    fetchData()
+  },[])
   return (
     <div className=' bg-[--primary-cl] text-[--secondary-cl] pt-[80px] pb-[30px]' style={{ backgroundImage: `url(/images/home/line_background.svg)` }}>
       <div className='w-[90%] md:w-[90%] responsive lg:w-[60%] xl:w-[55%] mx-auto flex flex-col gap-[20px]'>
         <h3 className='text-[32px] leading-[43px] font-[general-sans-medium]'>Featured Projects</h3>
-        <div className='flex flex-row gap-[20px] w-full'>
-          {featuredProject.slice(0, numItems).map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
-        <p className='text-[16px] font-[general-sans-medium] text-center underline pt-[30px]' onClick={()=>router.push('/featured-projects')}>View All</p>
+        {featuredProject.length > 0 ?(
+          <div className='flex flex-row gap-[20px] w-full'>
+            {featuredProject.slice(0, numItems).map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </div>
+        ):(
+        <NotFound />
+        )}
+        <p className='text-[16px] font-[general-sans-medium] text-center underline pt-[30px] cursor-pointer' onClick={() => router.push('/featured-projects')}>View All</p>
       </div>
     </div>
   )
