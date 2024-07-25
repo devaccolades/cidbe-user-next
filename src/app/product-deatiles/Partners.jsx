@@ -15,7 +15,7 @@ function Partners() {
 
   return (
     <>
-      <section>
+      <section className='bg-[#ffff]'>
         <div className='containers p-[20px]'>
           <h1 className='text-center text-[24px] font-[clash-display-medium]'>
             Finance Your Dream Apartment with Our Trusted Banks

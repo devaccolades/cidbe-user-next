@@ -20,7 +20,7 @@ const Specifications = () => {
   ];
 
   return (
-    <div className="containers p-[20px]">
+    <div className="containers p-[20px] bg-white">
       <h2 className="text-[24px] font-[clash-display-medium] mb-[20px]">Specifications</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[106px] gap-y-[20px] md:gap-y-[30px]">
