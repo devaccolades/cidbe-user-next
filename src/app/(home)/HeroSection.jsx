@@ -55,7 +55,6 @@ function HeroSection() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [backgroundImage, setBackgroundImage] = useState(projects[0]?.background_image);
     const [isMobile, setIsMobile] = useState();
-    console.log(projects);
 
     useEffect(() => {
         const handleResize = () => {
@@ -118,6 +117,7 @@ function HeroSection() {
             const { StatusCode, data } = res.data
             if (StatusCode === 6000) {
                 setProject(data)
+                setBackgroundImage(data[0]?.background_image)
             } else {
                 setProject([])
             }
