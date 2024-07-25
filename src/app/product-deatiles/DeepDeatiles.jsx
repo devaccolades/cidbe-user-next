@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useRef } from 'react';
 import Amenities from '../../app/product-deatiles/Amenities';
 import SmartFeature from '../../app/product-deatiles/SmartFeature';
 import Slider from '../../app/product-deatiles/Slider';
@@ -10,6 +12,24 @@ import Status from '../../app/product-deatiles/status';
 import Partners from '../../app/product-deatiles/Partners';
 
 function DeepDetails() {
+  const sectionRefs = {
+    Amenities: useRef(null),
+    'Smart Features': useRef(null),
+    Specifications: useRef(null),
+    Plans: useRef(null),
+    Video: useRef(null),
+    Location: useRef(null),
+    'Current Status': useRef(null),
+  };
+
+  const scrollToSection = (section) => {
+    const offset = 70; // Adjust this value according to your navigation bar height
+    window.scrollTo({
+      top: sectionRefs[section].current.offsetTop - offset,
+      behavior: 'smooth'
+    });
+  };
+
   const DetailsNavbar = [
     { name: 'Amenities' },
     { name: 'Smart Features' },
@@ -22,12 +42,13 @@ function DeepDetails() {
 
   return (
     <>
-      <section>
-        <div className="containers p-[20px] hidden lg:flex">
+      <section className="lg:sticky top-0 z-50 bg-white py-[10px]">
+        <div className="containers p-[20px] hidden lg:flex ">
           <ul className="flex space-x-[20px]">
             {DetailsNavbar.map((item, index) => (
               <li
                 key={index}
+                onClick={() => scrollToSection(item.name)}
                 className="font-[clash-display-regular] text-[20px] px-[10px] py-[5px] relative cursor-pointer group transition-all duration-300 ease-in-out hover:font-[general-sans-medium]"
               >
                 {item.name}
@@ -37,15 +58,28 @@ function DeepDetails() {
           </ul>
         </div>
       </section>
-      
-      <Amenities />
-      <SmartFeature />
-      <Slider />
-      <Specification />
-      <Plans />
-      <ProductVideo />
-      <Location />
-      <Status />
+
+      <div ref={sectionRefs.Amenities} className="pt-[30px] hidden sm:block md:block lg:block bg-white">
+        <Amenities />
+      </div>
+      <div ref={sectionRefs['Smart Features']} className="pt-[30px] hidden sm:block md:block lg:block bg-white">
+        <SmartFeature  />
+      </div>
+      <div ref={sectionRefs.Specifications} className="pt-[30px] hidden sm:block md:block lg:block bg-white">
+        <Specification />
+      </div>
+      <div ref={sectionRefs.Plans} className="pt-[30px] hidden sm:block md:block lg:block bg-white">
+        <Plans />
+      </div>
+      <div ref={sectionRefs.Video} className="pt-[30px] hidden sm:block md:block lg:block bg-white">
+        <ProductVideo />
+      </div>
+      <div ref={sectionRefs.Location} className="pt-[30px] hidden sm:block md:block lg:block bg-white">
+        <Location />
+      </div>
+      <div ref={sectionRefs['Current Status']} className="pt-[30px] hidden sm:block md:block lg:block bg-white">
+        <Status />
+      </div>
       <Partners />
     </>
   );

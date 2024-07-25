@@ -11,7 +11,7 @@ function Location() {
   ];
 
   return (
-    <section>
+    <section className='bg-[#ffff]'>
       <div className="containers p-[20px]">
         <h1 className='text-[24px] font-[clash-display-medium] mb-[20px]'>Location</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-[30px]'>
