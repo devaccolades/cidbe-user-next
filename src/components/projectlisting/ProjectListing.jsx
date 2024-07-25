@@ -1,54 +1,94 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProjectCard from '../ProjectCard';
+import { getCompletedProject, getFeaturedProject, getOngoingProject, getReadyToOccupyProject, getUpcomingProject } from '../../services/services';
+import NotFound from '../../components/common/NotFound'
+import { usePathname } from 'next/navigation';
 
-function ProjectListing({title,data}) {
-    const [numItems, setNumItems] = useState(1);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [jobsPerPage] = useState(4); 
+function ProjectListing({ title }) {
+  const pathname = usePathname();
+  const [page, setPage] = useState(1)
+  const [page_limit, setPage_limit] = useState(pathname==="/completed-projects"? 6 : 3)
+  const [total_count, setTotal] = useState(0)
+  const [projects, setprojects] = useState('')
+  const fetchData = async () => {
+    try {
+      let res = ""
+      if (title === 'Featured Projects') {
+        res = await getFeaturedProject(page, page_limit)
+      }else if (title === "Ongoing Projects"){
+        res = await getOngoingProject(page, page_limit)
+      }else if (title === "Upcoming Projects"){
+        res = await getUpcomingProject(page,page_limit)
+      }else if (title === "Completed Projects"){
+        res  = await getCompletedProject(page,page_limit)
+      }else if (title === "Ready to Occupy"){
+        res = await getReadyToOccupyProject(page,page_limit)
+      }
+      const { StatusCode, data } = res.data
+      if (StatusCode === 6000) {
+        setprojects(data)
+        setTotal(res.data.total_count)
+      } else {
+        setprojects([])
+      }
+    } catch (error) {
+      console.log(error);
+      setprojects([])
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  }, [page])
+  const handleClick = (pageNumber) => {
+    setPage(pageNumber);
+  };
+  return (
+    <main className="bg-[--primary-cl] bg-cover bg-no-repeat md:bg-[url(/images/home/line_background.svg)] -mt-[80px] lg:-mt-[95px]">
+      <section className='containers '>
+        <h1 className='text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]'>{title}</h1>
+        {projects.length > 0 ?(
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full py-[30px]'>
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+        ):(
+          <NotFound />
 
-  
-    return (
-        <main className="bg-[--primary-cl] bg-cover bg-no-repeat md:bg-[url(/images/home/line_background.svg)] -mt-[80px] lg:-mt-[95px]">
-            <section className='containers '>
-                <h1 className='text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]'>{title}</h1>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full py-[30px]'>
-                {data.map((project, index) => (
-                    <ProjectCard key={index} project={project} />
-                ))}
+        )}
 
-                </div>
-                <div className="pb-[30px] flex justify-end">
-                <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
-                  <button
-                    onClick={() => paginate(currentPage - 1)}
-                    disabled={currentPage === 1}
-                    className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${currentPage === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-                  >
-                    Previous
-                  </button>
-                  {Array.from({ length: Math.ceil(10/3) }, (_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => paginate(index + 1)}
-                      className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 ${currentPage === index + 1 ? 'z-10 bg-gray-100 text-gray-900 cursor-default' : 'hover:text-gray-500'}`}
-                    >
-                      {index + 1}
-                    </button>
-                  ))}
-                  <button
-                    onClick={() => paginate(currentPage + 1)}
-                    disabled={currentPage === Math.ceil(10 / 3)}
-                    className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${currentPage === Math.ceil(10 / 3) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-                  >
-                    Next
-                  </button>
-                </nav>
-              </div>
-            </section>
-           
-        </main>
-    )
+      </section>
+      <div className="pb-[30px] flex justify-end containers">
+        <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
+          <button
+            onClick={() => handleClick(page - 1)}
+            disabled={page === 1}
+            className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
+          >
+            Previous
+          </button>
+          {Array.from({ length: Math.ceil(total_count / page_limit) }, (_, index) => (
+            <button
+              key={index}
+              onClick={() => handleClick(index + 1)}
+              className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 ${page === index + 1 ? 'z-10 bg-gray-100 text-gray-900 cursor-default' : 'hover:text-gray-500'}`}
+            >
+              {index + 1}
+            </button>
+          ))}
+          <button
+            onClick={() => handleClick(page + 1)}
+            disabled={page === Math.ceil(total_count / page_limit)}
+            className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(10 / 3) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
+          >
+            Next
+          </button>
+        </nav>
+      </div>
+
+    </main>
+  )
 }
 
 export default ProjectListing

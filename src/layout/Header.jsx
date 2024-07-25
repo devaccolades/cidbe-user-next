@@ -126,7 +126,7 @@ function Header({ bgPrimary = false }) {
                             <Link href="/"><li className={`${scrolling ? 'isscroll' : ''} ${pathname === '/' && 'active'}`}>Home</li></Link>
                             <li
                                 onMouseEnter={() => setHovered({ project: false, about: true })}
-                                className={`relative ${hovered.about || pathname === '/about-us' ? 'active' : ''}`}
+                                className={`relative ${hovered.about || pathname === '/about-us' || pathname === '/csr' ? 'active' : ''}`}
                                 ref={menuRef}
                             >
                                 About us
@@ -136,7 +136,7 @@ function Header({ bgPrimary = false }) {
                                         <a className="flip-animate dropdown-item" onClick={() => router.push('/about-us')}>
                                             <span data-hover="Who we are">Who we are</span>
                                         </a>
-                                        <a className="flip-animate dropdown-item">
+                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/csr')}>
                                             <span data-hover="CSR">CSR</span>
                                         </a>
                                     </div>
@@ -221,7 +221,7 @@ function Header({ bgPrimary = false }) {
                                                 className="flex flex-col gap-4 mt-2 text-center "
                                             >
                                                 <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/about-us')}>Who we are</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">CSR</p>
+                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/csr')}>CSR</p>
                                             </motion.div>
                                         )}
                                     </motion.div>

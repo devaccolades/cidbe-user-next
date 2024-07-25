@@ -4,8 +4,32 @@ import AboutThirdSection from "../about-us/AboutThirdSection";
 import AboutFourthSection from '../about-us/AboutFourthSection'
 import Footer from "../../layout/Footer";
 import Timeline from '../../../src/app/about-us/Timeline'
-import './About.css'
 import Header from "../../layout/Header";
+
+import { getSeoApi } from '../../services/services';
+
+import './About.css'
+
+async function fetchSeoData(path) {
+  let data = {};
+  try {
+    const res = await getSeoApi(path);
+    data = res.data.data[0];
+  } catch (error) {
+    console.log(error);
+  }
+  return data;
+}
+
+export async function generateMetadata() {
+  const path = '/about-us';
+  const responseData = await fetchSeoData(path);
+  const { meta_title, meta_description } = responseData;
+  return {
+    title: meta_title,
+    description: meta_description,
+  };
+}
 function page() {
   return (
     <>

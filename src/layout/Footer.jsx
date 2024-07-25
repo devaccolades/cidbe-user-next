@@ -30,7 +30,7 @@ function Footer({backGround="--primary-cl"}) {
         <div className='text-[14px] leading-[21px] w-[50%] md:w-[18%] lg:w-[11vw] flex flex-col gap-[20px] mt-[40px] md:mt-0'>
           <p className='font-[general-sans-semibold]'>ABOUT US</p>
           <p className='cursor-pointer' onClick={() => router.push('/about-us')}>Who we are</p>
-          <p>CSR</p>
+          <p className='cursor-pointer' onClick={() => router.push('/csr')}>CSR</p>
         </div>
         <div className='text-[14px] leading-[21px] flex flex-col w-[50%] md:w-[18%] lg:w-[13vw] gap-[20px] mt-[40px] md:mt-0'>
           <p className='font-[general-sans-semibold]'>PROJECTS</p>
@@ -41,7 +41,7 @@ function Footer({backGround="--primary-cl"}) {
         </div>
         <div className='font-[general-sans-semibold] text-[14px] w-full md:w-[20vw] lg:mt-0 mt-[30px] lg:w-[13vw] flex flex-col gap-[20px]'>
           <p className='cursor-pointer' onClick={() => router.push('/gallery')}>Gallery</p>
-          <p className='cursor-pointer' onClick={() => router.push('/blogs')}          >BLOG</p>
+          <p className='cursor-pointer' onClick={() => router.push('/blogs')}>BLOG</p>
           <p className='cursor-pointer' onClick={() => router.push('/achievements')}>ACHIEVEMENTS</p>
           <p className='cursor-pointer' onClick={() => router.push('/contact-us')}>CONTACT US</p>
           <p className='cursor-pointer' onClick={() => router.push('/careers')}>CAREERS</p>

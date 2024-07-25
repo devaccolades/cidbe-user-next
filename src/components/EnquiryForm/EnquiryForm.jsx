@@ -1,7 +1,7 @@
 import React from 'react';
 
 function EnquiryForm({ bg = 'bg-transparent',projectId }) {
-  return (
+  return (  
     <div className={`h-full rounded-[20px] text-[--secondary-cl] p-[30px] md:p-[40px] ${bg}`}>
       <div className='flex flex-col gap-[17px] md:gap-[20px]'>
         <p className='font-[general-sans-regular] text-[16px] md:text-[20px] leading-[28px] md:leading-[28px]'>WE ARE READY TO ANSWER ALL YOUR QUESTIONS</p>

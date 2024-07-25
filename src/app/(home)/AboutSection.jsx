@@ -16,6 +16,7 @@ import roundedImage from "../../../public/images/home/rounded.svg"
 import './Home.css'
 import image1 from "../../../public/images/home/image1.jpeg"
 import image2 from "../../../public/images/home/image2.jpeg"
+import aboutImage from "../../../public/images/home/about-image.jpg"
 import { useRouter } from 'next/navigation';
 // after connect the backend
 
@@ -50,7 +51,7 @@ function AboutSection() {
           </div>
         </div>
         <Image src={aboutCardshapeMobile} alt='' className='min-w-full align-bottom -mb-[5px] -mt-[30px] md:hidden block' />
-        <div className='bg-cover bg-bottom md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] h-[300px] md:h-full z-4' style={{ backgroundImage: `url(/images/home/about-image.jpg)` }}>
+        <div className='bg-cover bg-bottom md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] h-[300px] md:h-full z-4' style={{ backgroundImage: `url(${aboutImage.src})` }}>
           <Image className='h-full -ms-[2px] md:block hidden' alt='card-shape' src={aboutCardshape} />
         </div>
       </card>
@@ -112,7 +113,7 @@ function AboutSection() {
               <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
             </div>
             <div className='flex flex-row gap-[45px]'>
-              <div className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px] bg-center bg-cover' style={{ backgroundImage: `url(/images/home/image2.jpeg)` }}/>
+              <div className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px] bg-center bg-cover' style={{ backgroundImage: `url(${image2.src})` }}/>
               {/* <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px]' /> */}
               <div className='flex flex-col justify-center'>
                 <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
@@ -170,7 +171,7 @@ function AboutSection() {
                 <p className='text-[14px] leading-[18px] md:text-[16px] lg:text-[1.04vw] md:leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
               </div>
               <div className='flex flex-row gap-[45px] mt-[16px] md:mt-0'>
-              <div className='w-[142px] lg:w-[195px] rounded-[12px] bg-center bg-cover' style={{ backgroundImage: `url(/images/home/image2.jpeg)` }}/>
+              <div className='w-[142px] lg:w-[195px] rounded-[12px] bg-center bg-cover' style={{ backgroundImage: `url(${image2.src})` }}/>
 
                 {/* <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] rounded-[12px]' /> */}
                 <div className='flex flex-col justify-center'>

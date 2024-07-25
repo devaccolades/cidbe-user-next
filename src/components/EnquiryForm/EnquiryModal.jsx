@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Dialog,
@@ -14,9 +14,27 @@ import enquiryImage from '../../../public/images/enqiry/enquiry-image.svg'
 import Image from "next/image";
 
 function EnquiryModal({open, handleOpen,projectId}) {
+  const [size, setSize] = useState('md'); 
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (window.innerWidth > 767) {
+        setSize('sm');
+      } else {
+        setSize('md');
+      }
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+
+    return () => {
+      window.removeEventListener('resize', updateSize);
+    };
+  }, []);
 
   return (
-      <Dialog className="w-[20px]" open={open} handler={handleOpen}>
+      <Dialog size={size} open={open} handler={handleOpen}>
         <div className="flex justify-center items-center pt-[60px]">
           <Image src={enquiryImage} alt=""/>
         </div>

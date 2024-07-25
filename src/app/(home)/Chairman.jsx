@@ -7,6 +7,7 @@ import chairmanshape from "../../../public/images/home/chairmanshape.svg"
 import chairmanshapeMobile from "../../../public/images/home/chairmanshapeMobile.svg"
 import chairmanbg from "../../../public/images/home/chairmanbg.svg"
 import chairmanbgMobile from "../../../public/images/home/chairmanbgMobile.svg"
+import chraimanImage from "../../../public/images/home/chraiman.jpeg"
 function Chairman() {
   return (
     <section className='py-[30px] lg:py-[100px] flex justify-center items-center'>
@@ -33,7 +34,7 @@ function Chairman() {
           </div>
         </div>
         <Image className='min-w-full align-bottom -mt-[10%] -mb-[5%] md:hidden block z-20' alt='card-shape' src={chairmanshapeMobile} />
-        <div className='bg-cover bg-top rounded-t-[12px] md:rounded-t-0 md:rounded-e-[12px] h-[500px] md:h-auto z-10' style={{ backgroundImage: `url(/images/home/chraiman.jpeg)` }}>
+        <div className='bg-cover bg-top rounded-t-[12px] md:rounded-t-0 md:rounded-e-[12px] h-[500px] md:h-auto z-10' style={{ backgroundImage: `url(${chraimanImage.src})` }}>
           <Image className='h-full -ms-[2px] hidden md:block' alt='card-shape' src={chairmanshape} />
         </div>
       </card>
