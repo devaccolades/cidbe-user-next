@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic'
 import Skelten from '../../components/skeletoneffect/Skelten'
 import GalaryHeroSection from './GalaryHeroSection'
 import './Galary.css'
-// import GalaryListing from './GalaryListing'
 const GalaryListing = dynamic(() => import('./GalaryListing'), { ssr: false,loading:() => <Skelten/>, });
 
 import { getSeoApi } from '../../services/services';

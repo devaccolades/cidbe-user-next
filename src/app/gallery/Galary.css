@@ -1,6 +1,15 @@
-
 @media (min-width: 1024px) and (max-width: 1440px) {
     .responsewidth {
         width: 80% !important;
+    }
+}
+
+@media (min-width:768px) {
+    .galary-bg {
+        background-image: url('../../../public/images/achievements/achievements-bg.svg');
+    }
+    .galary-inner-bg{
+        background-image: url('../../../public/images/home/line_background.svg');
+
     }
 }

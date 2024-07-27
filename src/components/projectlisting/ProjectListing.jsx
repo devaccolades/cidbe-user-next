@@ -4,7 +4,7 @@ import ProjectCard from '../ProjectCard';
 import { getCompletedProject, getFeaturedProject, getOngoingProject, getReadyToOccupyProject, getUpcomingProject } from '../../services/services';
 import NotFound from '../../components/common/NotFound'
 import { usePathname } from 'next/navigation';
-
+import './ProjectList.css'
 function ProjectListing({ title }) {
   const pathname = usePathname();
   const [page, setPage] = useState(1)
@@ -29,6 +29,7 @@ function ProjectListing({ title }) {
       if (StatusCode === 6000) {
         setprojects(data)
         setTotal(res.data.total_count)
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
       } else {
         setprojects([])
       }
@@ -44,7 +45,7 @@ function ProjectListing({ title }) {
     setPage(pageNumber);
   };
   return (
-    <main className="bg-[--primary-cl] bg-cover bg-no-repeat md:bg-[url(/images/home/line_background.svg)] -mt-[80px] lg:-mt-[95px]">
+    <main className="bg-[--primary-cl] bg-cover bg-no-repeat project-list-bg -mt-[80px] lg:-mt-[95px]">
       <section className='containers '>
         <h1 className='text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]'>{title}</h1>
         {projects.length > 0 ?(

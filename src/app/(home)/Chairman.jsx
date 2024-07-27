@@ -34,7 +34,7 @@ function Chairman() {
           </div>
         </div>
         <Image className='min-w-full align-bottom -mt-[10%] -mb-[5%] md:hidden block z-20' alt='card-shape' src={chairmanshapeMobile} />
-        <div className='bg-cover bg-top rounded-t-[12px] md:rounded-t-0 md:rounded-e-[12px] h-[500px] md:h-auto z-10' style={{ backgroundImage: `url(${chraimanImage.src})` }}>
+        <div className='bg-cover bg-top rounded-t-[12px] md:rounded-t-0 md:rounded-e-[12px] h-[400px] md:h-auto z-10' style={{ backgroundImage: `url(${chraimanImage.src})` }}>
           <Image className='h-full -ms-[2px] hidden md:block' alt='card-shape' src={chairmanshape} />
         </div>
       </card>

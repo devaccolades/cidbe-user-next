@@ -1,7 +1,7 @@
 import React from 'react'
 import aboutFormShape from '../../../public/images/about/aboutfromnew.svg.svg'
 import Image from 'next/image'
-
+import formImage from '../../../public/images/about/AboutFormImage.png'
 
 function AboutFourthSection() {
   return (
@@ -38,7 +38,7 @@ function AboutFourthSection() {
                 </div>
               </div>
             </div>
-            <div className='bg-cover bg-bottom md:w-full lg:w-7/12  md:rounded-e-[12px] z-4' style={{ backgroundImage: `url(/images/about/AboutFormImage.png)`, zIndex: '1' }}>
+            <div className='bg-cover bg-bottom md:w-full lg:w-7/12  md:rounded-e-[12px] z-4' style={{ backgroundImage: `url(${formImage.src})` ,zIndex:'1'}}>
               <Image className='h-full -ms-[2px] md:visible invisible' alt='card-shape' src={aboutFormShape} />
             </div>
           </card>

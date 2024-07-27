@@ -26,7 +26,7 @@ function BlogCarousel({ blogDetails }) {
     },
     appendDots: dots => (
       <div>
-        <ul className="custom-dots"> {dots} </ul>
+        <ul className="custom-dots-blog"> {dots} </ul>
       </div>
     ),
     customPaging: i => (

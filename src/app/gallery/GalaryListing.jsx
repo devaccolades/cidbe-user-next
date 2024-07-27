@@ -23,6 +23,7 @@ function GalaryListing() {
         if (StatusCode === 6000) {
           setGalary(data)
           setTotal(res.data.total_count)
+          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         } else {
           setGalary([])
         }
@@ -47,14 +48,16 @@ function GalaryListing() {
   }
 
   return (
-    <main className="md:bg-[url('/images/achievements/achievements-bg.svg')] bg-cover">
-      <div className='containers responsewidth py-[42px] md:py-[82px] flex flex-col gap-[100px]'>
+    <main className="galary-bg bg-cover">
+      <div className='containers responsewidth py-[42px] md:py-[82px] flex flex-col gap-[50px] md:gap-[100px]'>
         {galary.length > 0 ? (
           galary.map((galary, index) => (
             <>
               <section key={index} className={`w-full flex flex-col ${index % 2 == 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-[20px] md:h-[750px]`}>
                 <div className='md:w-[40%] flex flex-col gap-[20px]'>
-                  <div className="rounded-[8px]  h-[359px] bg-cover bg-center" style={{ backgroundImage: `url(${galary?.images[0]?.image})` }} />
+                  <div className=' overflow-hidden rounded-[8px]'>
+                    <div className="rounded-[8px] h-[200px] md:h-[359px] bg-cover bg-center transition-transform duration-300 ease-in-out hover:scale-110" style={{ backgroundImage: `url(${galary?.images[0]?.image})` }} />
+                  </div>
                   <div className='flex flex-col gap-[10px]'>
                     <p className='w-10/12 font-[general-sans-medium] text-[#483C32] text-[16px] lg:text-[24px] leading-[21px] lg:leading-[32px] p'>{galary?.title}</p>
                     <p className='text-[--secondary-cl] text-[10px] bg-[#EBEBEB] flex justify-center items-center rounded-[6px] w-[73px] h-[24px]'>{galary?.date_added}</p>
@@ -72,21 +75,35 @@ function GalaryListing() {
                   <div className='w-full flex flex-row gap-[10px] md:gap-[20px] h-[75%] '>
                     <div className='w-full lg:w-[75%] flex flex-col gap-[10px] md:gap-[20px] '>
                       <div className='w-full h-[35%] flex flex-row gap-[10px] md:gap-[20px]'>
-                        <div className="w-[70%] rounded-[8px] h-full bg-cover bg-center" style={{ backgroundImage: `url(${galary?.images[1]?.image})` }} />
-                        <div className="w-[30%] rounded-[8px] h-full bg-cover bg-center" style={{ backgroundImage: `url(${galary?.images[2]?.image})` }} />
+                        <div className='overflow-hidden w-[70%] rounded-[8px]'>
+                          <div className=" h-full bg-cover bg-center transition-transform duration-300 ease-in-out hover:scale-110" style={{ backgroundImage: `url(${galary?.images[1]?.image})` }} />
+                        </div>
+                        <div className='overflow-hidden w-[30%] rounded-[8px]'>
+                          <div className=" h-full bg-cover bg-center transition-transform duration-300 ease-in-out hover:scale-110" style={{ backgroundImage: `url(${galary?.images[2]?.image})` }} />
+                        </div>
                       </div>
-                      <div className="h-[65%] rounded-[8px] bg-center bg-cover" style={{ backgroundImage: `url(${galary?.images[3]?.image})` }} />
+                      <div className='overflow-hidden h-[65%] rounded-[8px]'>
+                      <div className="h-full bg-center bg-cover transition-transform duration-300 ease-in-out hover:scale-110" style={{ backgroundImage: `url(${galary?.images[3]?.image})` }} />
+                      </div>
                     </div>
                     <div className='hidden lg:block w-[25%] h-full'>
                       <div className='w-full h-full flex flex-col gap-[10px] md:gap-[20px]'>
-                        <div className="h-[70%] w-full rounded-[8px] bg-center bg-cover " style={{ backgroundImage: `url(${galary?.images[4]?.image})` }} ></div>
-                        <div className="h-[30%] rounded-[8px] bg-center bg-cover " style={{ backgroundImage: `url(${galary?.images[5]?.image})` }} />
+                        <div className='overflow-hidden h-[70%] w-full rounded-[8px]'>
+                        <div className="h-full  bg-center bg-cover transition-transform duration-300 ease-in-out hover:scale-110" style={{ backgroundImage: `url(${galary?.images[4]?.image})` }} ></div>
+                        </div>
+                        <div className='overflow-hidden h-[30%] rounded-[8px]'>
+                        <div className="h-full bg-center bg-cover transition-transform duration-300 ease-in-out hover:scale-110" style={{ backgroundImage: `url(${galary?.images[5]?.image})` }} />
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div className='w-full flex flex-row gap-[10px] md:gap-[20px] h-[25%]'>
-                    <div className="w-[60%] rounded-[8px] bg-center bg-cover " style={{ backgroundImage: `url(${galary?.images[6]?.image})` }} />
-                    <div className="w-[40%] rounded-[8px] bg-center bg-cover" style={{ backgroundImage: `url(${galary?.images[7]?.image})` }} />
+                    <div className='overflow-hidden w-[60%] rounded-[8px]'>
+                    <div className="w-full h-full rounded-[8px] bg-center bg-cover transition-transform duration-300 ease-in-out hover:scale-110" style={{ backgroundImage: `url(${galary?.images[6]?.image})` }} />
+                    </div>
+                    <div className='overflow-hidden w-[40%] rounded-[8px]'>
+                    <div className="h-full bg-center bg-cover transition-transform duration-300 ease-in-out hover:scale-110" style={{ backgroundImage: `url(${galary?.images[7]?.image})` }} />
+                    </div>
                   </div>
                 </div>
                 <div className='md:hidden block'>

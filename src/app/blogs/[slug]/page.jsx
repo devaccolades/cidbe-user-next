@@ -5,10 +5,10 @@ import BlogDescription from './BlogDescription';
 import MoreBlogs from './MoreBlogs';
 import Header from '../../../layout/Header';
 import Footer from '../../../layout/Footer';
-import '../../../app/globals.css';
 import { getBlogDetailsApi } from '../../../services/services';
 import { useRouter } from 'next/navigation';
-
+import '../../../app/globals.css';
+import '../Blogs.css'
 const Page = ({ params }) => {
 
   const router = useRouter();

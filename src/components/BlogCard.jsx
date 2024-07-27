@@ -9,12 +9,14 @@ import { useRouter } from 'next/navigation'
 function BlogCard({ blog }) {
   const router = useRouter()
   return (
-    <Card className='w-full  h-[444px] rounded-[12px]'>
+    <Card className='w-full  h-[444px] rounded-[12px] '>
       {/* <Image src={blog?.images[0].image}  alt={blog?.images[0].image_alt} className='h-[240px] w-full rounded-t-[12px]'/> */}
+      <div className='overflow-hidden rounded-t-[12px]'>
       <div
-        className="h-[240px] w-full rounded-t-[12px] bg-cover bg-no-repeat bg-center"
+        className="h-[240px] w-full rounded-t-[12px] bg-cover bg-no-repeat bg-center transition-transform duration-300 ease-in-out hover:scale-110"
         style={{ backgroundImage: `url(${blog?.images[0]?.image})` }}
       />
+      </div>
       <div className='p-[24px] flex flex-col gap-[12px]'>
         <div className='font-[general-sans-light] text-[#616161] flex justify-between  text-[10px]'>
           <p className='bg-[#EBEBEB] py-[2px] px-[5px] rounded-[6px] flex justify-center items-center'>{blog?.date_added}</p>

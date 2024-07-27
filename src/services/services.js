@@ -103,6 +103,13 @@ const getCareersSuggestionApi = () => {
     });
 };
 
+// Community Impact
+const getCommunityImpactApi = (page,page_limit) => {
+    return api.get(`communityimpact/?page=${page}&&page_limit=${page_limit}`, {
+        withCredentials: true,
+    });
+};
+
 
 export{
     getSeoApi,
@@ -120,4 +127,5 @@ export{
     getReadyToOccupyProject,
     getCareersApi,
     getCareersSuggestionApi,
+    getCommunityImpactApi,
 }

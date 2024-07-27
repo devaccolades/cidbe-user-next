@@ -6,6 +6,7 @@ import GalaryHeroSection from '../GalaryHeroSection'
 import GalaryDetails from './GalaryDetails'
 import { getGalleryDetailsApi } from '../../../services/services'
 import { useRouter } from 'next/navigation'
+import '../Galary.css'
 function Page({ params }) {
   const slug = params.slug
   const router = useRouter();
