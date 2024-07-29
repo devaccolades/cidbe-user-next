@@ -2,3 +2,9 @@
 .card-shadow{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
+
+@media (min-width:768px) {
+    .achievements-bg {
+        background-image: url('../../../public/images/achievements/achievements-bg.svg');
+    }
+}

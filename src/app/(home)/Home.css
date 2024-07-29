@@ -26,6 +26,7 @@
     animation-delay: 1.5s;
 }
 
+
 @keyframes reveal {
     0% {
         opacity: 0;
@@ -177,6 +178,14 @@
 
 
 /* About Section */
+@media (min-width:768px){
+    .about-main-bg{
+        background-image: url('../../../public/images/home/about-section-bg.svg');
+    }
+    .main-featurend-bg{
+        background-image: url('../../../public/images/home/line_background.svg');
+    }
+}
 
 .bg-color {
     background: rgb(152, 201, 163);

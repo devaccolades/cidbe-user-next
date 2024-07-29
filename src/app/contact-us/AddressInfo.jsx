@@ -1,9 +1,9 @@
 'use client'
 import React, { useState } from 'react'
-import homeIcon from '../../../public/icons/home.png'
-import phoneIcon from '../../../public/icons/phone.png'
-import whatsappIcon from '../../../public/icons/whatsapp.png'
-import emailIcon from '../../../public/icons/email.png'
+import homeIcon from '../../../public/icons/home.svg'
+import phoneIcon from '../../../public/icons/phone.svg'
+import whatsappIcon from '../../../public/icons/whatsapp.svg'
+import emailIcon from '../../../public/icons/email.svg'
 import Image from 'next/image'
 function AddressInfo() {
     return (

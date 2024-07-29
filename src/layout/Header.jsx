@@ -144,7 +144,13 @@ function Header({ bgPrimary = false }) {
                             </li>
                             <li
                                 onMouseEnter={() => setHovered({ about: false, project: true })}
-                                className={`relative ${hovered.project ? 'active' : ''}`}
+                                className={`relative ${hovered.project || 
+                                    pathname === '/featured-projects' ||
+                                    pathname === '/completed-projects' ||
+                                    pathname === '/upcoming-projects' ||
+                                    pathname === '/ready-to-occupy' ||
+                                    pathname === '/ongoing-projects'
+                                    ? 'active' : ''}`}
                                 ref={menuRef}
                             >
                                 Projects

@@ -24,7 +24,7 @@ function AboutSection() {
   const router  = useRouter()
 
   return (
-    <main className='text-[--secondary-cl] w-full flex flex-col py-[45px]  lg:bg-[url(/images/home/about-section-bg.svg)]'
+    <main className='text-[--secondary-cl] w-full flex flex-col py-[45px] about-main-bg'
     >
       <div className='absolute top-[1066px] left-[-191px] lg:block hidden -z-10'>
         <Image src={gradientLeft} alt='gradient-left' />

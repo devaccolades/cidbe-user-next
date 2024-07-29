@@ -13,8 +13,8 @@ import EnquiryForm from "./EnquiryForm";
 import enquiryImage from '../../../public/images/enqiry/enquiry-image.svg'
 import Image from "next/image";
 
-function EnquiryModal({open, handleOpen,projectId}) {
-  const [size, setSize] = useState('md'); 
+function EnquiryModal({ open, handleOpen, projectId }) {
+  const [size, setSize] = useState('md');
 
   useEffect(() => {
     const updateSize = () => {
@@ -34,12 +34,14 @@ function EnquiryModal({open, handleOpen,projectId}) {
   }, []);
 
   return (
-      <Dialog size={size} open={open} handler={handleOpen}>
-        <div className="flex justify-center items-center pt-[60px]">
-          <Image src={enquiryImage} alt=""/>
+    <Dialog size={size} open={open} handler={handleOpen}>
+      <div className="hidden md:block">
+        <div className="flex justify-center items-center pt-[60px] ">
+          <Image src={enquiryImage} alt="" />
         </div>
-        <EnquiryForm projectId={projectId}/>
-      </Dialog>
+      </div>
+      <EnquiryForm projectId={projectId} modal={true} handleOpen={handleOpen} />
+    </Dialog>
   )
 }
 

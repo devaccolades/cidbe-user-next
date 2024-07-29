@@ -1,0 +1,5 @@
+@media (min-width:768px){
+    .project-list-bg{
+        background-image: url('../../../public/images/home/line_background.svg');
+    }
+  }

@@ -1,0 +1,6 @@
+.text-stroke {
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #98C9A3;
+    opacity: 30%;
+  }

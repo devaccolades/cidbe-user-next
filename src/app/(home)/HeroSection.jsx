@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import "./Home.css"
 import { Card, Carousel } from "@material-tailwind/react";
 import Slider from 'react-slick';
@@ -17,6 +17,7 @@ import image2 from "../../../public/images/home/carorcel2.webp"
 import bgimage1 from "../../../public/images/home/bg.webp"
 import bgimage2 from "../../../public/images/home/bg-2.jpg"
 import { getFeaturedProject } from '../../services/services';
+import HomePageSkelten from '../../components/skeletoneffect/HomePageSkelten';
 // Custom Next Arrow component
 const NextArrow = (props) => {
     const { onClick } = props;
@@ -223,7 +224,9 @@ function HeroSection() {
                     </div>
                 </>
             ) : (
-                <></>
+                <>
+                <HomePageSkelten/>
+                </>
             )
             }
         </>

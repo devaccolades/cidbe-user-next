@@ -5,7 +5,7 @@
 }
 
 
-.custom-dots {
+.custom-dots-blog {
     display: flex;
     justify-content: center;
     list-style: none;
@@ -103,5 +103,15 @@
         font-size: 14px;
         line-height: 21px;
         color: #483C32;
+    }
+}
+
+@media (min-width:768px) {
+    .blog-bg {
+        background-image: url('../../../public/images/blogs/blog-bg.svg');
+    }
+    .blog-inner-bg{
+        background-image: url('../../../public/images/home/customer-reviewsbg.svg');
+
     }
 }

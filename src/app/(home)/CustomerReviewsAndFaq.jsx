@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -144,15 +144,18 @@ function CustomerReviewsAndFaq() {
                                     <Image src={isOpend === index ? minusIcon : plusIcon} alt='toggle-icon' />
                                 </button>
                             </div>
+                            <AnimatePresence>
                             {isOpend === index &&
                                 <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: 'auto', opacity: 1 }}
-                                    transition={{ duration: 0.3 }}
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3 }}
                                     className='overflow-hidden'
                                 >
                                     <p className='font-[general-sans-regular] text-[12px] lg:text-[16px] py-[8px] leading-[18px] lg:leading-[24px]'>{faq.answer || ""}</p>
                                 </motion.div>}
+                                </AnimatePresence>
                             <hr className='border-t-[1px] border-t-[--secondary-cl]' />
                         </div>
                     ))}

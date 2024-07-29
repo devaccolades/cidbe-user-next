@@ -2,11 +2,18 @@
 import React, { useEffect, useState } from 'react'
 import NotFound from '../../components/common/NotFound'
 import { getAchievementsApi } from '../../services/services'
+import ImageModal from '../../components/imagemodal/ImageModal'
 function AchievementsListing() {
     const [achievements, setAchievements] = useState([])
     const [page_limit, setPage_limit] = useState(window.innerWidth < 1023 ? 4 : 8)
     const [total_count, setTotal] = useState(0)
     const [page, setPage] = useState(1)
+
+    // Modal handler
+    const [open, setOpen] = useState(false);
+    const [data, setData] = useState({});
+ 
+    const handleOpen = () => setOpen(!open);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -16,6 +23,7 @@ function AchievementsListing() {
                 if (StatusCode === 6000) {
                     setAchievements(data)
                     setTotal(res.data.total_count)
+                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
                 } else {
                     setAchievements([])
                 }
@@ -30,16 +38,19 @@ function AchievementsListing() {
         setPage(pageNumber);
     };
     return (
-        <main className="bg-white -mt-[80px] lg:-mt-[95px] md:bg-[url('/images/achievements/achievements-bg.svg')] bg-cover">
+        <>
+        <main className="bg-white -mt-[80px] lg:-mt-[95px] achievements-bg bg-cover">
             <h4 className='text-[16px] lg:text-[24px] text-center font-[clash-display-medium] pt-[90px] lg:pt-[130px] text-[--secondary-cl]'>ACHIEVEMENTS</h4>
             {achievements.length > 0 ? (
                 <section className='containers grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[20px] py-[30px] lg:py-[70px]'>
                     {achievements.map((achi, index) => (
-                        <div key={index} className='rounded-[16px] card-shadow h-full w-auto'>
-                            <div
-                                className="h-[350px] bg-center bg-cover rounded-t-[16px]"
+                        <div key={index} className='rounded-[16px] card-shadow bg-white h-full w-auto cursor-pointer' onClick={()=>(handleOpen(),setData(achi?.image))}>
+                           <div className='overflow-hidden rounded-t-[16px]'>
+                           <div
+                                className="h-[350px] bg-center bg-cover bg-no-repeat rounded-t-[16px] transition-transform duration-300 ease-in-out hover:scale-110"
                                 style={{ backgroundImage: `url(${achi?.image})` }}
                             />
+                           </div>
                             <div className='w-full p-[24px] flex flex-col gap-[12px] font-[general-sans-regular] bg-white rounded-b-[16px]'>
                                 <p className='rounded-[6px] flex justify-center items-center text-[#616161] w-[73px] h-[24px] text-[10px]  bg-[#EBEBEB]'>28/03/2024</p>
                                 <p className='text-[14px] leading-[18px] text-[#483C32]'>{achi?.title}</p>
@@ -79,6 +90,8 @@ function AchievementsListing() {
                 </nav>
             </div>
         </main>
+        <ImageModal open={open} data={data} handleOpen={handleOpen}/>
+        </>
     )
 }
 

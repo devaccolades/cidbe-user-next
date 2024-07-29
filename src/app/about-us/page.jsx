@@ -37,7 +37,7 @@ function page() {
       <AboutLanding />
       <AboutSecondSection />
       <AboutThirdSection />
-      <div className="bg-cover bg-no-repeat bg-[url(/images/home/customer-reviewsbg.svg)]">
+      <div className="bg-cover bg-no-repeat about-bg">
         <Timeline />
         <AboutFourthSection />
       </div>
