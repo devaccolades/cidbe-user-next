@@ -19,7 +19,7 @@ function GalaryDetails({ galleryDetails }) {
                         {galleryDetails?.images?.map((image, index) => (
                             <div key={index} className='p-[5px] bg-white rounded-[8px]'
                             >
-                                <div className='overflow-hidden rounded-[8px] w-[315px] h-[200px]'>
+                                <div className='overflow-hidden rounded-[8px] w-full h-[200px]'>
                                 <div className='w-full h-full  bg-cover bg-center transition-transform duration-300 ease-in-out hover:scale-110'style={{ backgroundImage: `url(${image.image})` }}/>
                                 </div>
                             </div>

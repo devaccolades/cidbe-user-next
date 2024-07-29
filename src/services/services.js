@@ -112,6 +112,8 @@ const getCommunityImpactApi = (page,page_limit) => {
 
 
 export{
+    PostEnquiryApi,
+
     getSeoApi,
     getBlogsApi,
     getBlogDetailsApi,
