@@ -1,3 +1,31 @@
 .custom-shadow{
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+@media (min-width: 1250px) and (max-width: 1600px) {
+    .custom-res {
+      width: 80% !important;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1249px) {
+  
+    .custom-res {
+        width: 90% !important;
+        
+      }
+    .heading-size{
+  font-size: 16px !important;
+    }
+    .text-res{
+ font-size: 12px !important;
+    }
+    .paragraph-size{
+        font-size: 16px Im !important;
+    }
+    .left-side-width{
+        width: 70%;
+    }
+    .right-side-width{
+        width: 30%;
+    }
+  }

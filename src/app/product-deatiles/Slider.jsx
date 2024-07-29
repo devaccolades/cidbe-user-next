@@ -44,7 +44,8 @@ const Carousel = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+    <div className='bg-white'>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
         <div className="relative w-full h-full flex items-center justify-center">
           {[-2, -1, 0, 1, 2].map((offset) => {
@@ -95,6 +96,7 @@ const Carousel = () => {
           ))}
         </div>
       </div>
+    </div>
     </div>
   );
 };
