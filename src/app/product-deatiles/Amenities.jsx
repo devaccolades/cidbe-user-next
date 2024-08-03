@@ -35,9 +35,9 @@ const amenitiesDeatiles = [
 
 function Amenities() {
   return (
-    <div className="containers p-[20px] mb-[30px]">
+    <div className="containers custom-res py-[20px] mb-[30px]">
       <h1 className='text-[24px] font-[clash-display-medium] mb-[20px]'>Amenities</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[30px]">
+      <div className="grid grid-cols-1 sm:grid-cols-4 gap-[30px]">
         {amenitiesDeatiles.map((area, index) => (
           <div
             key={index}

@@ -46,9 +46,10 @@ const Page = ({ params }) => {
         <React.Fragment>
           <BlogCarousel blogDetails={blogDetails} />
           <BlogDescription body={blogDetails?.body} />
+          <MoreBlogs blogId={blogDetails?.id}/>
         </React.Fragment>
       )}
-      <MoreBlogs />
+     
       <div className='bg-white'>
         <Footer backGround='' />
       </div>

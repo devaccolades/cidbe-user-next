@@ -110,12 +110,19 @@ function FocusAreas() {
               {communityData.map((item, index) => (
                 <div key={index} className='overflow-hidden border-white'>
                   <div className='w-full overflow-hidden rounded-[20px]'>
+                    {/* <div className='transition-transform bg-cover bg-center bg-no-repeat duration-300 ease-in-out hover:scale-110 rounded-[20px] w-full lg:w-[400px] h-[213px] md:h-[300px] lg:h-[300px]'
+                      style={{
+                        backgroundImage: `url(${item?.image})`,
+                      }}
+                      aria-label={item?.image_alt}
+                    /> */}
                     <Image
                       src={item?.image}
                       alt={item?.image_alt}
                       width={400}
                       height={300}
                       layout="responsive"
+                      unoptimized
                       className="transition-transform duration-300 ease-in-out hover:scale-110 rounded-[20px]"
                     />
                   </div>

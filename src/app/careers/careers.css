@@ -1,0 +1,5 @@
+@media (min-width:768px) {
+    .careers-bg {
+        background-image: url('../../../public/images/careers/careerBackgroun.svg');
+    }
+}

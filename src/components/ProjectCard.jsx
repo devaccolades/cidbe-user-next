@@ -62,7 +62,7 @@ function ProjectCard({ project }) {
                             <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Location" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>{project?.location}</span></p>
                         </div>
                         <div>
-                            <p className='capitalize rounded-[12px] text-[general-sans-medium] border-[1px] text-[10px] text-[#052D23] border-[#052D23] py-[2px] px-[10px]'>{project?.status}</p>
+                            <p className='capitalize rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-[12px] text-white py-[4px] px-[12px]'>{project?.status}</p>
                         </div>
                     </div>
                     <div className='px-[15px] py-[10px] flex flex-col gap-[20px]'>

@@ -6,7 +6,7 @@ import HeroSection from './HeroSection'
 import { getSeoApi } from '../../services/services'
 import dynamic from 'next/dynamic'
 import Skelten from '../../components/skeletoneffect/Skelten'
-
+import './careers.css'
 const CareerListing = dynamic(() => import('./CareerListing'), { ssr: false,loading:() => <Skelten/>, });
 
 

@@ -17,8 +17,8 @@ const getSeoApi = (path) => {
     });
 };
 
-const getBlogsApi = (page,page_limit) => {
-    return api.get(`blogs/?page=${page}&&page_limit=${page_limit}`, {
+const getBlogsApi = (page,page_limit,blogId=null) => {
+    return api.get(`blogs/?page=${page}&&page_limit=${page_limit}&&exclude=${blogId}`, {
         withCredentials: true,
     });
 };

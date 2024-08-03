@@ -4,7 +4,7 @@ import BlogCard from '../../../components/BlogCard'
 import { getBlogsApi } from '../../../services/services'
 import { useRouter } from 'next/navigation'
 
-function MoreBlogs() {
+function MoreBlogs({blogId}) {
   const router = useRouter()
   const [numItems, setNumItems] = useState(4);
   const [Blogs, setBlogs] = useState([])
@@ -36,7 +36,7 @@ function MoreBlogs() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await getBlogsApi(1, numItems)
+        const res = await getBlogsApi(1, numItems,blogId)
         const { StatusCode, data } = res.data
         if (StatusCode === 6000) {
           setBlogs(data)
@@ -54,7 +54,7 @@ function MoreBlogs() {
   return (
     <main className='bg-[--primary-cl]'>
       <section className='containers w-full py-[25px] md:py-[50px]'>
-        <h4 className='text-[20px] lg:text-[30px] font-[general-sans-regular]'>BLOGS</h4>
+        <h4 className='text-[20px] lg:text-[30px] font-[general-sans-regular]'>RELATED BLOGS</h4>
         <div className='flex flex-row gap-[20px] justify-center py-[10px]'>
           {Blogs.slice(0, numItems).map((blog, index) => (
             <BlogCard key={index} blog={blog} />

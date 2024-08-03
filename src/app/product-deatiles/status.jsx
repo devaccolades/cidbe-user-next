@@ -67,8 +67,8 @@ function Status() {
 
   return (
     <section className='bg-[#ffff]'>
-      <div className='containers p-[20px]'>
-        <div className='flex flex-col md:flex-row items-center md:items-start gap-[20px]'>
+      <div className='containers custom-res py-[20px]'>
+        <div className='flex flex-col md:flex-row md:items-start gap-[1px] lg:gap-[20px]'>
           <h1 className='text-[24px] font-[clash-display-medium] mb-[20px] md:mb-[0] md:mr-[40px]'>
             Current Status
           </h1>

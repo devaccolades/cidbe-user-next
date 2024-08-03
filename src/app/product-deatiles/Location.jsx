@@ -12,14 +12,15 @@ function Location() {
 
   return (
     <section className='bg-[#ffff]'>
-      <div className="containers p-[20px]">
+      <div className="containers custom-res py-[20px]">
         <h1 className='text-[24px] font-[clash-display-medium] mb-[20px]'>Location</h1>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-[30px]'>
-          <div className='flex-grow'>
+          <div className='flex-grow rounded-[8px]'>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1sen!2sus!4v1510579767785"
               width="100%"
               height="100%"
+              className='rounded-[8px]'
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"

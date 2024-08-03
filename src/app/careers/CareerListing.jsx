@@ -134,7 +134,7 @@ function CurrentOpenings() {
   return (
     <>
       <section>
-        <main className="md:bg-[url('/images/careers/careerBackgroun.svg')] min-h-screen">
+        <main className="careers-bg min-h-screen">
           <section className='pt-12'>
             <div className='containers' style={{ padding: '0px 20px', alignItems: 'center' }}>
               <h1 className='text-[32px] font-[clash-display-medium] mb-8 text-start'>Current Openings</h1>

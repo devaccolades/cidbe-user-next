@@ -18,14 +18,14 @@ function Brochure() {
   ];
 
   return (
-    <section className='bg-white ' style={{paddingTop:'100px',borderRadius:'100px 100px 0px 0px'}}>
-      <div className='containers custom-res mx-auto px-[20px] w-full max-w-[90%] lg:max-w-[90%] md:max-w-[90%] sm:max-w-[90%]   left-side-width  '>
+    <section className='bg-white rounded-t-[20px] lg:rounded-t-[100px] pt-[30px] lg:pt-[100px]' >
+      <div className='containers custom-res mx-auto w-full max-w-[90%] lg:max-w-[90%] md:max-w-[90%] sm:max-w-[90%]   left-side-width  '>
         <div className='flex flex-col md:flex-row gap-[20px] lg:gap-[30px]'>
           {/* Left-side content */}
           <div className='flex flex-col mb-[20px] md:mb-0 md:w-[53%] lg:w-[70%]'>
             <div className='flex-grow'>
-              <h1 className='lg:text-[24px] md:text-[16px] font-[clash-display-medium] heading-size'>PREMIUM SMART HOMES</h1>
-              <p className='lg:text-[18px] md:text-[14px] sm:text-[12px] font-[general-sans-regular] leading-[27px] paragraph-size'>
+              <h1 className='lg:text-[24px] text-[16px] font-[clash-display-medium] heading-size'>PREMIUM SMART HOMES</h1>
+              <p className='lg:text-[18px] text-[14px] font-[general-sans-regular] leading-[27px] paragraph-size'>
                 Envisaged to be truly an epitome of excellence, CIDBI CASSIA offers a superlative living space in an area of around an acre. CIDBI CASSIA offers 2, 3 & 4 BHK Ultra Premium Apartments for the elite class complimented with the best of amenities you have desired. The key feature of project comprises up to 70% open space with all the premium amenities. The project comprises all the premium amenities like 15m long infinity pool, 250m jogging track, Open gym, automated homes, face detected access controlled lobby, seniors corner, video door phone, electric car charging provision, reticulated gas line, smart lighting system, Home theatre, access controlled lift, one BHK guest apartment and many more……..Coming up at Viyyur, Near Daya Hospital, one of the most wanted residential hubs of Thrissur City. CIDBI CASSIA ensures quick access to all the vibes and ensures an elegant lifestyle at a prominent location. Moreover the project is designed with open space in mind for the experience of premium lifestyle alongside the calmness and serene beauty of nature. We are proud to say that all of our projects have been timely delivered with the experience and expertise of team CIDBI that has bagged us the reputation that we enjoy today.
               </p>
             </div>

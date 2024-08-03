@@ -11,14 +11,14 @@ function HeroSection() {
 
   // Settings for the carousel
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 2000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false, // You can enable arrows if needed
+    arrows: false, 
     beforeChange: (current, next) => {
       setActiveIndex(next);
     },
@@ -32,6 +32,7 @@ function HeroSection() {
         <span className="dot-line"></span>
       </div>
     ),
+    
   };
 
   // Array of images for the carousel
@@ -43,12 +44,12 @@ function HeroSection() {
   ];
 
   return (
-    <div className='relative h-screen -mt-[80px] lg:-mt-[95px] -mb-[75px] sticky top-0 z-[-10]'>
+    <div className='relative h-[690px] md:h-[768px] lg:h-screen -mt-[80px] lg:-mt-[95px] -mb-[75px] sticky top-0 z-[-10]'>
       {/* Carousel Component */}
       <div className="absolute inset-0">
         <Slider {...settings}>
           {images.map((image, index) => (
-            <div key={index} className="relative h-screen bg-cover bg-no-repeat">
+            <div key={index} className="relative h-[690px] md:h-[768px] lg:h-screen bg-cover bg-no-repeat">
               <Image src={image} alt={`Slide ${index}`} layout="fill" objectFit="cover" />
               <div className="absolute inset-0 opacity-[30%]"></div>
             </div>
