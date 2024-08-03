@@ -45,7 +45,7 @@ const Carousel = () => {
 
   return (
     <div className='bg-white'>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto ">
       <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
         <div className="relative w-full h-full flex items-center justify-center">
           {[-2, -1, 0, 1, 2].map((offset) => {
@@ -81,7 +81,7 @@ const Carousel = () => {
             );
           })}
         </div>
-        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex items-center gap-2">
+        <div className="absolute bottom-0 md:bottom-3 lg:bottom-5 left-1/2 transform -translate-x-1/2 flex items-center gap-2">
           {images.map((_, index) => (
             <button
               key={index}

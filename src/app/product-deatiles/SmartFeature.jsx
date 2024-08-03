@@ -22,7 +22,7 @@ const featureDetails = [
 
 function SmartFeature() {
   return (
-    <div className="containers p-[20px] mb-[30px] bg-white">
+    <div className="containers custom-res py-[20px] mb-[30px] bg-white">
       <h1 className="text-[24px] font-[clash-display-medium] mb-[20px]">Smart features</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[96px] gap-y-[16px]">
         {featureDetails.map((feature, index) => (

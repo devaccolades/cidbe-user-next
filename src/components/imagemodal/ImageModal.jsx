@@ -1,20 +1,35 @@
 import React from "react";
-import {
-  Button,
-  Dialog,
-  DialogHeader,
-  DialogBody,
-  DialogFooter,
-} from "@material-tailwind/react";
-function ImageModal({ open, handleOpen ,data}) {
+import { Dialog } from "@material-tailwind/react";
+import Image from "next/image";
+
+function ImageModal({ open, handleOpen, data }) {
   return (
-    <>
-      <Dialog className="relative bg-white shadow-none" open={open} handler={handleOpen}>
-        <p className="absolute border-[2px] text-2xl rounded-full right-3 top-3 border-[--secondary-cl] text-[--secondary-cl] cursor-pointer font-bold px-[9px]" onClick={handleOpen}>x</p>
-          <div className="h-[90vh] bg-contain rounded-[16px] bg-no-repeat bg-center" style={{ backgroundImage: `url(${data})` }} />
-      </Dialog>
-    </>
-  )
+    <Dialog
+      size="xxl"
+      open={open}
+      handler={handleOpen}
+      className="bg-black bg-opacity-40 shadow-none flex justify-center items-center"
+    >
+      <div className="relative w-full h-[90vh] flex items-center justify-center">
+        <button
+          className="absolute right-3 cursor-pointer top-[-10px] z-30 bg-white bg-opacity-70 text-black rounded-full w-8 h-8 flex items-center justify-center font-bold text-xl"
+          onClick={handleOpen}
+        >
+          ×
+        </button>
+        <div className="relative w-full h-full">
+          <Image
+            src={data}
+            alt="Modal Image"
+            layout="fill"
+            objectFit="contain"
+            quality={100}
+            unoptimized
+          />
+        </div>
+      </div>
+    </Dialog>
+  );
 }
 
-export default ImageModal
+export default ImageModal;

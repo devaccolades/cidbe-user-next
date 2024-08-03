@@ -275,7 +275,7 @@
 }
 
 /* feater project */
-@media (min-width:1400px) and (max-width:1750px){
+@media (min-width:1024px) and (max-width:1750px){
     .responsive{
         width: 80%;
     }

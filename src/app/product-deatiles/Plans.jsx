@@ -29,10 +29,10 @@ function Plans() {
 
   return (
     <section className="py-10 bg-[#ffff]">
-      <div className="containers px-4 sm:px-6 lg:px-8">
-        <h1 className='text-3xl sm:text-2xl md:text-3xl font-[clash-display-medium] mb-8'>Plans</h1>
+      <div className="containers custom-res">
+        <h1 className='text-3xl sm:text-2xl md:text-3xl lg:px-[20px] font-[clash-display-medium] '>Plans</h1>
 
-        <div className='mt-12 -mx-4 sm:-mx-6 lg:-mx-8'>
+        <div className='-mx-4 sm:-mx-6 lg:-mx-8'>
           <Swiper
             modules={[Scrollbar]}
             spaceBetween={30}
@@ -59,10 +59,10 @@ function Plans() {
                       <Image src={buildIcon} alt="Building Icon" width={28} height={28} />
                     </div>
                     <div>
-                      <h1 className='text-2xl sm:text-xl md:text-2xl font-[general-sans-medium]'>{image.type}</h1>
+                      <h1 className='text-[16px] lg:text-[24px] font-[general-sans-medium]'>{image.type}</h1>
                       <p className='text-sm sm:text-xs md:text-sm font-[general-sans-medium]'>{image.floor}</p>
                     </div>
-                    <h2 className='text-4xl sm:text-2xl md:text-4xl font-[general-sans-medium] ml-auto'>{image.bhk}</h2>
+                    <h2 className='text-[20px] lg:text-[30px] font-[general-sans-medium] ml-auto'>{image.bhk}</h2>
                   </div>
                   <div className='flex justify-between text-sm sm:text-xs md:text-sm font-[general-sans-light] text-[#ADADAD] mb-6'>
                     <p>Area {image.area}</p>

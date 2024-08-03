@@ -8,19 +8,17 @@ import Slider from './Slider'
 import './projectDetails.css'
 function page() {
   return (
-  <>
-<Header/>
-<HeroSection  className='bg-[#ffff]'/>
-<Brochure />
-<div className='bg-[#ffff]'>
+    <>
+      <Header />
+      <HeroSection className='bg-[#ffff]' />
+      <Brochure />
+      <div className='bg-[#ffff]'>
+        <Slider />
+        <DeepDeatiles className='bg-[#ffff]' />
+      </div>
 
-
-<Slider/>
-<DeepDeatiles className='bg-[#ffff]'/> 
-</div>
-
-<Footer/>
-  </>
+      <Footer />
+    </>
   )
 }
 

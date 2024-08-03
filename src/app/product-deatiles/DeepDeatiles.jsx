@@ -42,7 +42,7 @@ function DeepDetails() {
   return (
     <>
       <section className="lg:sticky top-0 z-50 bg-white py-[10px] hidden lg:block">
-        <div className="containers p-[20px]">
+        <div className="containers custom-res py-[20px]">
           <ul className="flex justify-between w-full">
             {DetailsNavbar.map((item, index) => (
               <li
