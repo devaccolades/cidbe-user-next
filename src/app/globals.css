@@ -64,6 +64,13 @@
   --c2: rgba(168, 239, 255, 0.1);
 } 
 
+/* selection color change */
+
+::selection {
+  color: #052D23; /* Text color */
+  background: #BFD8BD; /* Background color */
+}
+
 /* Responsive */
 
 .containers {

@@ -9,12 +9,12 @@ import NotFound from '../../components/common/NotFound';
 import { getCareersApi, getCareersSuggestionApi } from '../../services/services';
 
 function CurrentOpenings() {
-  const [jobOpenings, setJobOpenings] = useState([])
-  const [jobSuggestion,setJobSuggestion] = useState([])
-  const [locations,setLocations] = useState([])
-  const [page, setPage] = useState(1)
-  const [page_limit, setPage_limit] = useState(4)
-  const [total_count, setTotal] = useState(0)
+  const [jobOpenings, setJobOpenings] = useState([]);
+  const [jobSuggestion, setJobSuggestion] = useState([]);
+  const [locations, setLocations] = useState([]);
+  const [page, setPage] = useState(1);
+  const [page_limit, setPage_limit] = useState(4);
+  const [total_count, setTotal] = useState(0);
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null);
   const [selectedLocation, setSelectedLocation] = useState('');
@@ -25,7 +25,6 @@ function CurrentOpenings() {
     email: ''
   });
   const [isFormFilled, setIsFormFilled] = useState(false);
-
 
   useEffect(() => {
     const allFieldsFilled =
@@ -56,13 +55,10 @@ function CurrentOpenings() {
 
   const handlePositionChange = (event) => {
     setSelectedPosition(event.target.value);
-    if (event.target.name === "position"){
-      
+    if (event.target.name === "position") {
       const filteredLocations = jobSuggestion
-      .filter(job => job.id === event.target.value)
-     ;
-    setLocations(filteredLocations);
-
+        .filter(job => job.id === event.target.value);
+      setLocations(filteredLocations);
     }
   };
 
@@ -71,7 +67,6 @@ function CurrentOpenings() {
       ...formData,
       [event.target.name]: event.target.value
     });
-   
   };
 
   const handleSubmit = () => {
@@ -89,43 +84,44 @@ function CurrentOpenings() {
     }
   };
 
-
   const fetchDate = async () => {
     try {
-      const res = await getCareersApi(page, page_limit)
-      const { StatusCode, data } = res.data
+      const res = await getCareersApi(page, page_limit);
+      const { StatusCode, data } = res.data;
       if (StatusCode === 6000) {
-        setJobOpenings(data)
-        setTotal(res.data.total_count)
+        setJobOpenings(data);
+        setTotal(res.data.total_count);
       } else {
-        setJobOpenings([])
+        setJobOpenings([]);
       }
     } catch (error) {
       console.log(error);
-      setJobOpenings([])
+      setJobOpenings([]);
     }
-  }
+  };
+
   const fetchDateSugestion = async () => {
     try {
-      const res = await getCareersSuggestionApi(page, page_limit)
-      const { StatusCode, data } = res.data
+      const res = await getCareersSuggestionApi(page, page_limit);
+      const { StatusCode, data } = res.data;
       if (StatusCode === 6000) {
-        setJobSuggestion(data)
+        setJobSuggestion(data);
       } else {
-        setJobSuggestion([])
+        setJobSuggestion([]);
       }
     } catch (error) {
       console.log(error);
-      setJobSuggestion([])
+      setJobSuggestion([]);
     }
-  }
-  
-  useEffect(()=>{
-    fetchDate()
-  },[page])
-  useEffect(()=>{
-    fetchDateSugestion()
-  },[])
+  };
+
+  useEffect(() => {
+    fetchDate();
+  }, [page]);
+
+  useEffect(() => {
+    fetchDateSugestion();
+  }, []);
 
   const handleClick = (pageNumber) => {
     setPage(pageNumber);
@@ -137,7 +133,7 @@ function CurrentOpenings() {
         <main className="careers-bg min-h-screen">
           <section className='pt-12'>
             <div className='containers' style={{ padding: '0px 20px', alignItems: 'center' }}>
-              <h1 className='text-[32px] font-[clash-display-medium] mb-8 text-start'>Current Openings</h1>
+              <h1 className='font-[clash-display-medium] mb-8 text-start text-[20px] md:text-[30px]'>Current Openings</h1>
               {jobOpenings.length > 0 ? (
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-[30px]'>
                   {jobOpenings.map((job, index) => (
@@ -215,22 +211,22 @@ function CurrentOpenings() {
                       name="position"
                       value={selectedPosition}
                       onChange={handlePositionChange}
-                      className={`w-full h-[40px] px-[15px] border-2 rounded-[6px] text-[14px] focus:outline-none ${selectedPosition ? 'text-black' : 'text-[#BABABA]'}`}
+                      className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none'
                     >
-                      <option value="" disabled>Select Job Position</option>
+                      <option value="" disabled>Select Position</option>
                       {jobSuggestion.map((job, index) => (
                         <option key={index} value={job.id}>{job.job_title}</option>
                       ))}
                     </select>
                   </div>
                   <div className='flex flex-col'>
-                    <p className='font-[inter-regular] text-[11px] md:text-[14px]'>Phone No</p>
+                    <p className='font-[inter-regular] text-[11px] md:text-[14px]'>Phone</p>
                     <input
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
                       className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none'
-                      placeholder='Enter Phone Number'
+                      placeholder='Enter Your Phone Number'
                       type="text"
                     />
                   </div>
@@ -240,11 +236,11 @@ function CurrentOpenings() {
                       name="location"
                       value={selectedLocation}
                       onChange={handleLocationChange}
-                      className={`w-full h-[40px] px-[15px] border-2 rounded-[6px] text-[14px] focus:outline-none ${selectedLocation ? 'text-black' : 'text-[#BABABA]'}`}
+                      className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none'
                     >
                       <option value="" disabled>Select Location</option>
-                      {locations.map((job, index) => (
-                        <option key={index} value={job.location}>{job.location}</option>
+                      {locations.map((location, index) => (
+                        <option key={index} value={location.location}>{location.location}</option>
                       ))}
                     </select>
                   </div>
@@ -255,39 +251,36 @@ function CurrentOpenings() {
                       value={formData.email}
                       onChange={handleInputChange}
                       className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none'
-                      placeholder='Enter Email'
-                      type="text"
+                      placeholder='Enter Your Email'
+                      type="email"
                     />
                   </div>
-
                   <div className='flex flex-col'>
                     <p className='font-[inter-regular] text-[11px] md:text-[14px]'>Upload CV</p>
-                    <div className='relative'>
-                      <input
-                        className={`w-full h-[40px] pl-[40px] px-[15px] border-2 rounded-[6px] text-[14px] focus:outline-none cursor-pointer ${selectedFile ? 'text-black' : 'text-[#BABABA]'}`}
-                        value={selectedFile ? selectedFile.name : 'Choose File'}
-                        type="text"
-                        onClick={handleFileInputClick}
-                        readOnly
-                      />
-                      <Image src={uploadIcon} alt='upload' className='absolute top-1/2 left-3 transform -translate-y-1/2 cursor-pointer' />
-                      <input type="file" ref={fileInputRef} className='hidden' onChange={handleFileChange} />
+                    <input
+                      type="file"
+                      ref={fileInputRef}
+                      onChange={handleFileChange}
+                      className='hidden'
+                    />
+                    <div
+                      onClick={handleFileInputClick}
+                      className='flex justify-between items-center h-[40px] px-[15px] border-2 rounded-[6px] cursor-pointer'
+                    >
+                      <span className='text-[14px] text-[#BABABA]'>
+                        {selectedFile ? selectedFile.name : 'Upload Your CV'}
+                      </span>
+                      <Image src={uploadIcon} alt="upload icon" />
                     </div>
-                    <div className='mt-2 text-[inter-regular] md:text-[11px] text-[#052D23]'>
-                      <p className='text-xs md:text-[11px]'>
-                        Allowed file types: pdf, doc, docx, rtf<br />
-                        Maximum file size allowed: 5MB
-                      </p>
-                    </div>                  </div>
+                  </div>
                 </div>
-                <div className='mt-6 md:flex md:justify-end'>
+                <div className='pt-[50px] flex justify-center'>
                   <button
                     onClick={handleSubmit}
-                    className={`w-full md:w-auto text-white border border-black px-6 py-2 rounded-md transition-all duration-300 ${isFormFilled ? 'bg-black' : 'bg-black opacity-50 cursor-not-allowed'
-                      }`}
                     disabled={!isFormFilled}
+                    className={`w-full md:w-[320px] h-[55px] rounded-[6px] text-[14px] text-center font-[inter-semibold] text-white cursor-pointer transition-all duration-300 ${isFormFilled ? 'bg-[#000000] hover:bg-[#4d4d4d]' : 'bg-[#cccccc] cursor-not-allowed'}`}
                   >
-                    Submit
+                    Apply Now
                   </button>
                 </div>
               </div>

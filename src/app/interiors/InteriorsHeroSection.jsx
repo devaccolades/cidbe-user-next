@@ -1,26 +1,51 @@
 import React from 'react'
-import bg from '../../../public/images/interiors/bg.svg'
-import herobg1 from '../../../public/images/interiors/herobg-1.png'
-import herobg2 from '../../../public/images/interiors/herobg-2.png'
+import Image from 'next/image'
+import banner from '../../../public/images/interiors/testedSv.svg'
+import leftSide from '../../../public/images/interiors/landing.svg'
+import smmdBanner from '../../../public/images/interiors/designBackground.svg'
+
 function InteriorsHeroSection() {
-    return (
-        <section className='relative h-[543px] lg:h-[900px] w-full bg-[--primary-cl] -mt-[80px] lg:-mt-[95px]' style={{ backgroundImage: `url(${bg.src})` }}>
-            <div className='absolute text-[64px] md:text-[100px] lg:text-[300px] font-[inter-medium] flex flex-col h-full overflow-hidden w-full items-center justify-center lg:justify-end'>
-                <p className='self-start text-[#98C9A3] opacity-[30%] -ms-[1%]'>INTERIORS</p>
-                <p className='self-end text-stroke -me-[1%]'>DESIGN</p>
-            </div>
-            <div className='flex flex-row h-full gap-[20px]'>
-                <div className='w-full flex flex-col justify-end pb-[2%] items-center h-full '>
-                    <div className='border-[5px] border-[--primary-cl] z-10 rounded-[166px__166px__166px__0px] -ms-[29%] h-[600px] w-[330px] bg-cover bg-center' style={{ backgroundImage: `url(${herobg1.src})` }}/>
-                    <div className='-z-0 -mt-[32%] rounded-[0px__158px] h-[400px] w-[600px] bg-cover bg-center' style={{ backgroundImage: `url(${herobg2.src})` }}/>
-                </div>
-                <div className='w-full text-[--secondary-cl] flex flex-col justify-center items-start gap-[20px]' >
-                    <h1 className='text-[20px] lg:text-[65px] leading-[24px] lg:leading-[78px] font-[clash-display-medium] xl:w-[60%]'>Expert service in interior design</h1>
-                    <p className='text-[14px] lg:text-[24px] leading-[18px] lg:leading-[32px] font-[general-sans-regular] xl:w-[60%]'>Our aim is to create a comfortable and cosy home for our clients, providing interior design solutions which are practical and beautiful.</p>
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section
+      className="h-[600px] sm:h-[700px] md:h-[525px] lg:h-[870px] bg-[#BFD8BD] bg-center -mt-[80px] lg:-mt-[115px] relative"
+    >
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden pb-[100px]"  
+        style={{
+          backgroundImage: `url(${smmdBanner.src})`,
+        }}
+      />
+      <div 
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat hidden lg:block"
+        style={{
+          backgroundImage: `url(${banner.src})`,
+        }}
+      />
+      <div className="containers res h-full flex flex-col md:flex-row items-center justify-center md:justify-between gap-[16px] md:gap-[24px] lg:gap-[40px] relative z-10 pt-[60px] md:pt-[65px] lg:pt-[115px] pb-[20px] sm:pb-[30px] md:pb-0">
+        <div className="relative w-full md:w-1/2 flex items-center justify-center md:justify-start mt-0 min-[550px]:mt-[30px] min-[640px]:mt-[30px] min-[760px]:mt-0">
+          <div className="relative">
+            <Image
+              src={leftSide}
+              alt="Interior Landing"
+              layout="intrinsic" 
+              objectFit="contain" 
+              className="w-[70%] sm:w-[75%] md:w-[70%] lg:w-[80%] mx-auto md:mx-0"
+            />
+          </div>
+        </div>
+        <div className="w-full md:w-1/2 text-left md:mb-[30px] px-4 sm:px-6 md:px-0">
+          <h1 className="text-[24px] sm:text-[28px] md:text-[28px] lg:text-[55px] font-[general-sans-medium] leading-[28px] sm:leading-[34px] md:leading-[34px] lg:leading-[66px] text-[#052D23]">
+            Expert service in interior design
+          </h1>
+          <p className="mt-[8px] sm:mt-[10px] text-[14px] sm:text-[16px] md:text-[16px] lg:text-[24px] font-[general-sans-regular] leading-[18px] sm:leading-[22px] md:leading-[22px] lg:leading-[32px] text-[#052D23]">
+            Our aim is to create a comfortable and cosy home for our clients,
+            providing interior design solutions which are practical and
+            beautiful.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
 }
 
 export default InteriorsHeroSection
