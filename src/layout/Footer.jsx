@@ -40,7 +40,7 @@ function Footer({backGround="--primary-cl"}) {
           <p className='cursor-pointer' onClick={() => router.push('/ongoing-projects')}>Ongoing projects</p>
         </div>
         <div className='font-[general-sans-semibold] text-[14px] w-full md:w-[20vw] lg:mt-0 mt-[30px] lg:w-[13vw] flex flex-col gap-[20px]'>
-          <p className='cursor-pointer' onClick={() => router.push('/gallery')}>Gallery</p>
+          <p className='cursor-pointer' onClick={() => router.push('/gallery')}>GALLERY</p>
           <p className='cursor-pointer' onClick={() => router.push('/blogs')}>BLOG</p>
           <p className='cursor-pointer' onClick={() => router.push('/achievements')}>ACHIEVEMENTS</p>
           <p className='cursor-pointer' onClick={() => router.push('/contact-us')}>CONTACT US</p>

@@ -4,6 +4,8 @@ import Footer from '../../layout/Footer'
 import dynamic from 'next/dynamic'
 import InteriorsHeroSection from './InteriorsHeroSection'
 import { getSeoApi } from '../../services/services';
+import Portfolio from './Portfolio'
+import Process from './Process'
 import './Interiors.css'
 async function fetchSeoData(path) {
   let data = {};
@@ -31,9 +33,8 @@ function page() {
     <>
     <Header/>
     <InteriorsHeroSection/>
-    <div className='h-[50px]'>
-
-    </div>
+<Portfolio/>
+  <Process/>
     <Footer/>
     </>
   )
