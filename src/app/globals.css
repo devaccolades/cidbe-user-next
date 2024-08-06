@@ -66,10 +66,10 @@
 
 /* selection color change */
 
-::selection {
-  color: #052D23; /* Text color */
-  background: #BFD8BD; /* Background color */
-}
+/* ::selection {
+  color: #052D23; 
+  background: #99e294; 
+} */
 
 /* Responsive */
 
