@@ -34,6 +34,7 @@ async function fetchSeoData(path) {
 function page() {
     return (
         <>
+        
             <Header bgPrimary={true} />
             <HeroSection/>
             <CareerListing/>

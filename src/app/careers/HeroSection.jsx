@@ -8,7 +8,7 @@ function HeroSection() {
       {/* Background and spacing adjustments */}
       <div className='h-[100px] -mt-[80px] lg:-mt-[95px] bg-[--primary-cl]' />
       <div className='bg-[--primary-cl]'>
-        <div className='containers flex flex-col md:flex-row items-center px-[20px]'>
+        <div className='containers flex flex-col md:flex-row items-center px-0 md:px-5 lg:px-5'>
           {/* Image content */}
           <div className='w-full md:w-1/2 order-1 md:order-2 mb-4 md:mb-0'>
             <div className='md:h-[510px] flex justify-center items-center'>
