@@ -120,7 +120,7 @@ function Header({ bgPrimary = false }) {
         <>
             <header className='main-area sticky top-1 z-50 '>
                 <section className={`nav-bar ${bgPrimary ? "bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
-                    <Image src={logo} alt='logo' className='logo' onClick={() => router.push('/')} />
+                    <Image src={logo} alt='logo' className='logo cursor-pointer' onClick={() => router.push('/')} />
                     <div className='lap-navbar'>
                         <ul className={`${scrolling ? 'text-[#052D23]' : bgPrimary ? 'text-[--secondary-cl]' : 'text-white'}`}>
                             <Link href="/"><li className={`${scrolling ? 'isscroll' : ''} ${pathname === '/' && 'active'}`}>Home</li></Link>
@@ -176,7 +176,7 @@ function Header({ bgPrimary = false }) {
                                 )}
                             </li>
                             <Link href='/gallery'><li className={`${pathname === '/gallery' && "active"}`}>Gallery</li></Link>
-                            <li>Interiors</li>
+                            <Link href="/interiors"><li className={`${pathname === '/interiors' && "active"}`}>Interiors</li></Link>
                             <Link href={'/blogs'}><li className={`${pathname === '/blogs' && "active"}`}>Blog</li></Link>
                             <Link href={'/achievements'}><li className={`${pathname === '/achievements' && "active"}`}>Achievements</li></Link>
                             <Link href='/contact-us'><li className={`${pathname === '/contact-us' && "active"}`}>Contact us</li></Link>
@@ -263,7 +263,7 @@ function Header({ bgPrimary = false }) {
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
                                         variants={linkItemVariants}
-                                        // onClick={() => router.push('/gallery')}
+                                        onClick={() => router.push('/interiors')}
                                     >
                                         Interiors
                                     </motion.p>

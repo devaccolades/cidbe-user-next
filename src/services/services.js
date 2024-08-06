@@ -35,18 +35,21 @@ const getTestimonialApi = () => {
     });
 };
 
+// Faq api
 const getFaqApi = () => {
     return api.get(`faq/`, {
         withCredentials: true,
     });
 };
 
+// Achievements api
 const getAchievementsApi = (page,page_limit) => {
     return api.get(`achievements/?page=${page}&&page_limit=${page_limit}`, {
         withCredentials: true,
     });
 };
 
+// Galary api
 const getGalaryApi = (page,page_limit) => {
     return api.get(`galary/?page=${page}&&page_limit=${page_limit}`, {
         withCredentials: true,
@@ -90,6 +93,12 @@ const getReadyToOccupyProject = (page,page_limit) =>{
     });;
 }
 
+const getProjectDetails = (slug) =>{
+    return api.get(`project/${slug}/`, {
+        withCredentials: true,
+    });;
+}
+
 // Job api
 const getCareersApi = (page,page_limit) => {
     return api.get(`careers/?page=${page}&&page_limit=${page_limit}`, {
@@ -127,6 +136,7 @@ export{
     getUpcomingProject,
     getCompletedProject,
     getReadyToOccupyProject,
+    getProjectDetails,
     getCareersApi,
     getCareersSuggestionApi,
     getCommunityImpactApi,

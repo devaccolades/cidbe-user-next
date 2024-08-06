@@ -3,28 +3,16 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Specifications = () => {
+const Specifications = ({specification}) => {
   const [openItemIndex, setOpenItemIndex] = useState(null);
 
-  const specificationData = [
-    { title: 'FOUNDATION', description: 'Earth quake resistant, RCC framed structure with suitable foundation.' },
-    { title: 'WALLS', description: 'High-quality brick walls with smooth plaster finish.' },
-    { title: 'GENERATOR', description: 'Backup power supply for common areas and essential services.' },
-    { title: 'DOORS & WINDOWS', description: 'Durable and stylish doors and windows for enhanced security and ventilation.' },
-    { title: 'ELECTRICAL', description: 'Modern electrical system with safety features and sufficient power outlets.' },
-    { title: 'FLOORING', description: 'Premium quality flooring materials used throughout the building.' },
-    { title: 'TELEPHONE', description: 'Pre-installed telephone lines and internet connectivity options.' },
-    { title: 'LIFTS', description: 'High-speed elevators with modern safety features.' },
-    { title: 'FIRE FIGHTING', description: 'Comprehensive fire safety system including sprinklers and alarms.' },
-    { title: 'WATER SUPPLY', description: 'Reliable water supply system with storage tanks and treatment facilities.' },
-  ];
 
   return (
     <div className="containers custom-res py-[20px] bg-white">
       <h2 className="text-[24px] font-[clash-display-medium] mb-[20px]">Specifications</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[106px] gap-y-[20px] md:gap-y-[30px]">
-        {specificationData.map((spec, index) => (
+        {specification.map((spec, index) => (
           <SpecificationItem 
             key={index}
             title={spec.title}

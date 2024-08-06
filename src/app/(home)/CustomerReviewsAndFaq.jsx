@@ -138,9 +138,9 @@ function CustomerReviewsAndFaq() {
                 <div className='text-black'>
                     {faqs.map((faq, index) => (
                         <div key={index}>
-                            <div className='flex justify-between flex-row'>
-                                <p className={`${isOpend === index ? 'font-[general-sans-medium]' : 'font-[general-sans-regular]'} text-[12px] lg:text-[16px] py-[14px] w-[90%] md:w-5/12 lg:w-1/3 cursor-auto`}>{faq.question || ""}</p>
-                                <button className='cursor-pointer' onClick={() => setOpen(isOpend === index ? null : index)}>
+                            <div className='flex justify-between flex-row cursor-pointer' onClick={() => setOpen(isOpend === index ? null : index)}>
+                                <p className={`${isOpend === index ? 'font-[general-sans-medium]' : 'font-[general-sans-regular]'} text-[12px] lg:text-[16px] py-[14px] w-[90%] md:w-5/12 lg:w-1/3 cursor-pointer `} onClick={() => setOpen(isOpend === index ? null : index)}>{faq.question || ""}</p>
+                                <button className='cursor-pointer' >
                                     <Image src={isOpend === index ? minusIcon : plusIcon} alt='toggle-icon' />
                                 </button>
                             </div>

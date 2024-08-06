@@ -79,7 +79,7 @@ function FocusAreas() {
               <div className='bg-[#BFD8BD] w-[60px] h-[52px] flex items-center justify-center border border-black rounded-lg flex-shrink-0'>
                 <Image src={area.icon} alt={`${area.title} Icon`} width={24} height={24} />
               </div>
-              <p className='text-base  sm:text-[14px] lg-[text-18px]  font-[clash-display-medium] whitespace-nowrap'>{area.title}</p>
+              <p className='text-base  text-[14px] lg:text-[16px]  font-[general-sans-medium] whitespace-nowrap'>{area.title}</p>
             </div>
           ))}
         </div>
@@ -127,11 +127,11 @@ function FocusAreas() {
                     />
                   </div>
                   <div className='pt-4'>
-                    <h3 className='font-[clash-display-medium] sm:text-[16px] lg:text-[24px] mb-2'>{item.title}</h3>
+                    <h3 className='font-[general-sans-medium] text-[16px] lg:text-[24px] text-[#483C32] mb-2'>{item.title}</h3>
                     <div className='inline-block bg-[#EBEBEB] px-3 py-1 mb-2' style={{ borderRadius: '20px' }}>
-                      <p className='font-[general-sans-light] text-[#616161] text-[12px]'>{item.date_added}</p>
+                      <p className='font-[general-sans-regular] text-[#616161] text-[12px]'>{item.date_added}</p>
                     </div>
-                    <p className='font-[general-sans-light] sm:text-[14px] lg:text-[18px]'>{item.description}</p>
+                    <p className='font-[general-sans-light] text-[#483C32] text-[14px] lg:text-[18px] leading-[21px] lg:leading-[30px]'>{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -163,7 +163,7 @@ function FocusAreas() {
             <button
               onClick={() => handleClick(page + 1)}
               disabled={page === Math.ceil(total_count / page_limit)}
-              className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(10 / 3) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
+              className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(total_count / page_limit) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
             >
               Next
             </button>

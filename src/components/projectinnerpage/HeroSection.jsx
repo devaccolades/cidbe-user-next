@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Image from "next/image";
 
 // HeroSection Component
-function HeroSection() {
+function HeroSection({ data, images }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   // Settings for the carousel
@@ -18,7 +18,7 @@ function HeroSection() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false, 
+    arrows: false,
     beforeChange: (current, next) => {
       setActiveIndex(next);
     },
@@ -32,37 +32,34 @@ function HeroSection() {
         <span className="dot-line"></span>
       </div>
     ),
-    
-  };
 
-  // Array of images for the carousel
-  const images = [
-    '/images/product-view/banner.jpeg',
-    '/images/product-view/banner.jpeg',
-    '/images/product-view/banner.jpeg' // Banner image
-    // Add other images here if needed
-  ];
+  };
 
   return (
     <div className='relative h-[690px] md:h-[768px] lg:h-screen -mt-[80px] lg:-mt-[95px] -mb-[75px] sticky top-0 z-[-10]'>
       {/* Carousel Component */}
       <div className="absolute inset-0">
         <Slider {...settings}>
-          {images.map((image, index) => (
-            <div key={index} className="relative h-[690px] md:h-[768px] lg:h-screen bg-cover bg-no-repeat">
-              <Image src={image} alt={`Slide ${index}`} layout="fill" objectFit="cover" />
-              <div className="absolute inset-0 opacity-[30%]"></div>
-            </div>
-          ))}
+          {images.length > 0 ? (
+            images.map((image, index) => (
+              <div key={index} className="relative h-[690px] md:h-[768px] lg:h-screen bg-cover bg-no-repeat">
+                <Image unoptimized src={image?.images} alt={image?.image_alt} layout="fill" objectFit="cover" />
+                <div className="absolute inset-0 opacity-[30%]"></div>
+              </div>
+            ))) : (
+            ""
+          )}
         </Slider>
       </div>
-      
+      {/* <div className="absolute top-[35%] left-[14%]">
+        <img src={data?.logo} alt="logo" />
+      </div> */}
       {/* Text Content */}
       <div className="p-[20px] h-full flex flex-col justify-end containers relative z-20">
         <div className="text-white mb-[100px]">
-          <h1 className='text-[24px] font-[clash-display-medium]'>CIDBI CASSIA</h1>
-          <h1 className='text-[16px] font-[clash-display-medium]'>PREMIUM SMART HOMES</h1>
-          <h1 className='text-[16px] font-[clash-display-medium]'>NEAR DAYA HOSPITAL</h1>
+          <h1 className='text-[24px] font-[clash-display-medium]'>{data?.name}</h1>
+          <h1 className='text-[16px] font-[clash-display-medium]'>{data?.sub_name}</h1>
+          <h1 className='text-[16px] font-[clash-display-medium]'>{data?.location}</h1>
         </div>
       </div>
     </div>

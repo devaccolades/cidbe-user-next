@@ -38,12 +38,12 @@ function AboutSection() {
 
           <div className='w-full responsive lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
             <h3 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h3>
-            <div className='flex flex-col gap-[20px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>
+            <div className='flex flex-col z-10 gap-[20px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>
               <p>We, Creations India Developers Builders Infrastructures (CIDBI), an ISO 9001-2015 certified builder in Thrissur, was established in 2005 in response to the growing need of quality housings. Since then, we have grown to be one of the best builders in Thrissur. CIDBI is a professionally managed company under the leadership of Mr. A A Abdul Lathif, run by well experienced management. We have more than 33 years of experience in the construction field.
               </p>
             </div>
             <div className='flex justify-center md:justify-end pt-[18px]'>
-              <button className='underline flex gap-[10px] items-center text-[12px] font-[general-sans-medium]' onClick={()=>router.push('/about-us')}>
+              <button className='underline flex gap-[10px] items-center text-[12px] font-[general-sans-medium] cursor-pointer z-10' onClick={()=>router.push('/about-us')}>
                 Know more
                 <Image src={arrowIcon} alt='arrow-icon' />
               </button>

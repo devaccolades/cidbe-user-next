@@ -34,7 +34,7 @@ function InteriorsHeroSection() {
           </div>
         </div>
         <div className="w-full md:w-1/2 text-left md:mb-[30px] px-4 sm:px-6 md:px-0">
-          <h1 className="text-[24px] sm:text-[28px] md:text-[28px] lg:text-[55px] font-[general-sans-medium] leading-[28px] sm:leading-[34px] md:leading-[34px] lg:leading-[66px] text-[#052D23]">
+          <h1 className="text-[24px] capitalize sm:text-[28px] md:text-[28px] lg:text-[55px] font-[general-sans-medium] leading-[28px] sm:leading-[34px] md:leading-[34px] lg:leading-[66px] text-[#052D23]">
             Expert service in interior design
           </h1>
           <p className="mt-[8px] sm:mt-[10px] text-[14px] sm:text-[16px] md:text-[16px] lg:text-[24px] font-[general-sans-regular] leading-[18px] sm:leading-[22px] md:leading-[22px] lg:leading-[32px] text-[#052D23]">

@@ -1,21 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import first from '../../../public/images/product-view/slider/Slide Image (1).svg';
-import second from '../../../public/images/product-view/slider/Slide Image (2).svg';
-import third from '../../../public/images/product-view/slider/Slide Image (3).svg';
-import fourth from '../../../public/images/product-view/slider/Slide Image (4).svg';
-import fifth from '../../../public/images/product-view/slider/Slide Image (5).svg';
 
-const images = [
-  { id: 1, src: first, alt: 'Slide Image 1' },
-  { id: 2, src: second, alt: 'Slide Image 2' },
-  { id: 3, src: third, alt: 'Slide Image 3' },
-  { id: 4, src: fourth, alt: 'Slide Image 4' },
-  { id: 5, src: fifth, alt: 'Slide Image 5' },
-];
-
-const Carousel = () => {
+const Carousel = ({amenities_images}) => {
   const [currentIndex, setCurrentIndex] = useState(2);
   const [containerWidth, setContainerWidth] = useState(0);
 
@@ -32,15 +19,15 @@ const Carousel = () => {
   }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % amenities_images?.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + amenities_images?.length) % amenities_images?.length);
   };
 
   const getImageIndex = (offset) => {
-    return (currentIndex + offset + images.length) % images.length;
+    return (currentIndex + offset + amenities_images?.length) % amenities_images?.length;
   };
 
   return (
@@ -50,7 +37,7 @@ const Carousel = () => {
         <div className="relative w-full h-full flex items-center justify-center">
           {[-2, -1, 0, 1, 2].map((offset) => {
             const index = getImageIndex(offset);
-            const image = images[index];
+            const image = amenities_images[index];
             const zIndex = 5 - Math.abs(offset);
             const opacity = 1 - Math.abs(offset) * 0.3;
             const scale = 1 - Math.abs(offset) * 0.2;
@@ -59,7 +46,7 @@ const Carousel = () => {
 
             return (
               <div
-                key={image.id}
+                key={image?.id}
                 onClick={() => setCurrentIndex(index)}
                 className="absolute transition-all duration-500 cursor-pointer"
                 style={{
@@ -71,18 +58,19 @@ const Carousel = () => {
                 }}
               >
                 <Image
-                  src={image.src}
-                  alt={image.alt}
+                  src={image?.images}
+                  alt={image?.image_alt}
                   layout="fill"
                   objectFit="cover"
                   className="rounded-[30px]"
+                  unoptimized
                 />
               </div>
             );
           })}
         </div>
         <div className="absolute bottom-0 md:bottom-3 lg:bottom-5 left-1/2 transform -translate-x-1/2 flex items-center gap-2">
-          {images.map((_, index) => (
+          {amenities_images.map((_, index) => (
             <button
               key={index}
               className="transition-all duration-300 rounded-full"

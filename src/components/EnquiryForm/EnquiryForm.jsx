@@ -5,7 +5,7 @@ import { EnquiryFomSchema } from '../../validation/Validation'
 import { Spinner } from '@material-tailwind/react';
 import Swal from 'sweetalert2';
 import { PostEnquiryApi } from '../../services/services';
-function EnquiryForm({ bg = 'bg-transparent', projectId,handleOpen,modal }) {
+function EnquiryForm({ bg = 'bg-transparent', projectId, handleOpen, modal }) {
   const [isLoad, setLoad] = useState(false)
   const initialValues = {
     project_id: projectId || "",
@@ -31,7 +31,7 @@ function EnquiryForm({ bg = 'bg-transparent', projectId,handleOpen,modal }) {
   });
   const handleSubmitForm = async (values, setSubmitting) => {
     try {
-      if (!values.project_id){
+      if (!values.project_id) {
         values.project_id = projectId
       }
       setLoad(true)
@@ -39,15 +39,15 @@ function EnquiryForm({ bg = 'bg-transparent', projectId,handleOpen,modal }) {
       const { StatusCode, data } = res.data
       if (StatusCode === 6001) {
         resetForm()
-        if (modal){
+        if (modal) {
           handleOpen()
         }
         Swal.fire({
           title: "We received your enquiry",
           text: "We will contact you soon. Thank you for your enquiry.",
           icon: "success",
-          background: '#2B2B2B',
-          color: 'white',
+          background: 'white',
+          color: '#2B2B2B',
           confirmButtonColor: '#3085d6',
           customClass: {
             // popup: 'custom-swal-popup'
@@ -63,14 +63,14 @@ function EnquiryForm({ bg = 'bg-transparent', projectId,handleOpen,modal }) {
           title: "Oops...",
           text: "Something went wrong!.",
           showConfirmButton: false,
-          background: '#2B2B2B',
-          color: 'white',
+          background: 'white',
+          color: '#2B2B2B',
           timer: 1500
         });
       }
 
     } catch (error) {
-      if (modal){
+      if (modal) {
         handleOpen()
       }
       console.log(error);
@@ -125,7 +125,7 @@ function EnquiryForm({ bg = 'bg-transparent', projectId,handleOpen,modal }) {
           </div>
           <div className='flex flex-col gap-[6px]'>
             <p className='font-[inter-regular] text-[11px] md:text-[14px]'>Message</p>
-            <textarea name='message' rows="5" placeholder='' className='w-full px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none'
+            <textarea name='message' rows="5" placeholder='message' className='w-full px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none'
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.message} >

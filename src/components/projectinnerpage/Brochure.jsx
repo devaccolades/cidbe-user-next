@@ -8,13 +8,13 @@ import third from '../../../public/images/product-view/icons/03.svg';
 import fourth from '../../../public/images/product-view/icons/02.svg';
 import fifth from '../../../public/images/product-view/icons/01.svg';
 
-function Brochure() {
+function Brochure({ data }) {
   const overViewIcon = [
-    { icon: first, title: 'K.RERA', description: 'K.RERA/PRJ/TSR/043/2023' },
-    { icon: second, title: 'Location', description: 'Near Daya Hospital' },
-    { icon: third, title: 'Other Title', description: 'Description for another item' },
-    { icon: fourth, title: 'Status', description: 'Ongoing' },
-    { icon: fifth, title: 'Area Range', description: '1,220 - 2,377 Sq.Ft' },
+    { icon: first, title: 'K.RERA', description: data?.rera_number },
+    { icon: second, title: 'Location', description: data?.location },
+    { icon: third, title: 'Apartment type', description: data?.bhk },
+    { icon: fourth, title: 'Status', description: data?.status },
+    { icon: fifth, title: 'Area Range', description: `${data?.area_from} - ${data?.area_to} Sq.Ft` },
   ];
 
   return (
@@ -24,10 +24,11 @@ function Brochure() {
           {/* Left-side content */}
           <div className='flex flex-col mb-[20px] md:mb-0 md:w-[53%] lg:w-[70%]'>
             <div className='flex-grow'>
-              <h1 className='lg:text-[24px] text-[16px] font-[clash-display-medium] heading-size'>PREMIUM SMART HOMES</h1>
-              <p className='lg:text-[18px] text-[14px] font-[general-sans-regular] leading-[27px] paragraph-size'>
-                Envisaged to be truly an epitome of excellence, CIDBI CASSIA offers a superlative living space in an area of around an acre. CIDBI CASSIA offers 2, 3 & 4 BHK Ultra Premium Apartments for the elite class complimented with the best of amenities you have desired. The key feature of project comprises up to 70% open space with all the premium amenities. The project comprises all the premium amenities like 15m long infinity pool, 250m jogging track, Open gym, automated homes, face detected access controlled lobby, seniors corner, video door phone, electric car charging provision, reticulated gas line, smart lighting system, Home theatre, access controlled lift, one BHK guest apartment and many more……..Coming up at Viyyur, Near Daya Hospital, one of the most wanted residential hubs of Thrissur City. CIDBI CASSIA ensures quick access to all the vibes and ensures an elegant lifestyle at a prominent location. Moreover the project is designed with open space in mind for the experience of premium lifestyle alongside the calmness and serene beauty of nature. We are proud to say that all of our projects have been timely delivered with the experience and expertise of team CIDBI that has bagged us the reputation that we enjoy today.
-              </p>
+              <h1 className='lg:text-[24px] text-[16px] font-[clash-display-medium] heading-size'>{data?.sub_name}</h1>
+              <p
+                className='lg:text-[18px] text-[14px] font-[general-sans-regular] leading-[27px] paragraph-size'
+                dangerouslySetInnerHTML={{ __html: data?.description }}
+              />
             </div>
             <div className='mt-auto'>
               <button className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] inline-flex items-center gap-[8px] rounded-[6px] lg:inline-flex hidden'>
@@ -42,7 +43,7 @@ function Brochure() {
             <div className='flex-grow'>
               <div className='flex items-center justify-between mb-[20px]'>
                 <h1 className='lg:text-[24px] md:text-[16px] font-[clash-display-medium] heading-size '>Project Overview</h1>
-                <Image src={qrIcon} alt='QR Code' width={46} height={46} />
+                {data?.qr_code && <Image src={data?.qr_code} alt='QR Code' width={46} height={46} />}
               </div>
               <div>
                 {overViewIcon.map((item, index) => (
@@ -52,7 +53,7 @@ function Brochure() {
                     </div>
                     <div className='ml-[10px] flex-grow'>
                       <h1 className='lg:text-[18px] md:text-[14px] font-[general-sans-medium] heading-size'>{item.title}</h1>
-                      <p className='lg:text-[14px] md:text-[12px] sm:text-[12px] font-[general-sans-regular] text-res leading-[20px] paragraph-size'>{item.description}</p>
+                      <p className='xl:text-[18px] lg:text-[16px] md:text-[14px] text-[14px] font-[general-sans-regular] text-res leading-[20px] paragraph-size'>{item.description}</p>
                     </div>
                   </div>
                 ))}

@@ -59,11 +59,11 @@ function GalaryListing() {
                     <div className="rounded-[8px] h-[200px] md:h-[359px] bg-cover bg-center transition-transform duration-300 ease-in-out hover:scale-110" style={{ backgroundImage: `url(${galary?.images[0]?.image})` }} />
                   </div>
                   <div className='flex flex-col gap-[10px]'>
-                    <p className='w-10/12 font-[general-sans-medium] text-[#483C32] text-[16px] lg:text-[24px] leading-[21px] lg:leading-[32px] p'>{galary?.title}</p>
-                    <p className='text-[--secondary-cl] text-[10px] bg-[#EBEBEB] flex justify-center items-center rounded-[6px] w-[73px] h-[24px]'>{galary?.date_added}</p>
+                    <p className='w-10/12 font-[general-sans-medium] text-[#483C32] text-[16px] lg:text-[24px] leading-[21px] lg:leading-[32px]'>{galary?.title}</p>
+                    <p className='text-[--secondary-cl] text-[10px] bg-[#EBEBEB] flex justify-center items-center rounded-[6px] w-[73px] h-[24px] font-[general-sans-regular]'>{galary?.date_added}</p>
                   </div>
                   <div className='flex flex-col gap-[50px] lg:w-[96%]'>
-                    <p className='font-[general-sans-regular] text-[14px] lg:text-[18px] leading-[21px] lg:leading-[30px]'>{truncateTextByCharacters(galary?.description, 350)}</p>
+                    <p className='font-[general-sans-regular] text-[14px] lg:text-[18px] leading-[21px] text-[#483C32] lg:leading-[30px]'>{truncateTextByCharacters(galary?.description, 350)}</p>
                     <div className='hidden md:block'>
                       <div className='flex justify-end items-center'>
                         <p className='flex flex-row font-[general-sans-medium] text-[12px] gap-[6px] cursor-pointer' onClick={() => router.push(`/gallery/${galary?.slug}`)}><span>View Full  Gallery</span> <Image src={arrowIcon} className='' alt="" /></p>
@@ -139,7 +139,7 @@ function GalaryListing() {
           <button
             onClick={() => handleClick(page + 1)}
             disabled={page === Math.ceil(total_count / page_limit)}
-            className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(10 / 3) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
+            className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(total_count / page_limit) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
           >
             Next
           </button>
