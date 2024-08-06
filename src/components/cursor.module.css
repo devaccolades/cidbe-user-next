@@ -1,0 +1,11 @@
+/* .customCursor {
+  position: absolute;
+  width: 40px; /* Adjust size */
+  height: 40px; /* Adjust size */
+  border-radius: 50%; /* Circular shape */
+  background: radial-gradient(circle, rgba(212, 250, 149, 0.8) 20%, rgba(212, 250, 149, 0.5) 50%);
+  pointer-events: none; /* Do not interfere with clicks */
+  transform: translate(-50%, -50%); /* Center the cursor */
+  z-index: 9999; /* Ensure cursor is above other elements */
+  transition: transform 0.1s ease-out; /* Smooth and faster response */
+}  */
