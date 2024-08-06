@@ -14,15 +14,15 @@ function ProjectListing({ title }) {
   const fetchData = async () => {
     try {
       let res = ""
-      if (title === 'Featured Projects') {
+      if (pathname === '/featured-projects') {
         res = await getFeaturedProject(page, page_limit)
-      }else if (title === "Ongoing Projects"){
+      }else if (pathname === '/ongoing-projects'){
         res = await getOngoingProject(page, page_limit)
-      }else if (title === "Upcoming Projects"){
+      }else if (pathname === '/upcoming-projects'){
         res = await getUpcomingProject(page,page_limit)
-      }else if (title === "Completed Projects"){
+      }else if (pathname === '/completed-projects'){
         res  = await getCompletedProject(page,page_limit)
-      }else if (title === "Ready to Occupy"){
+      }else if (pathname === '/ready-to-occupy'){
         res = await getReadyToOccupyProject(page,page_limit)
       }
       const { StatusCode, data } = res.data
@@ -81,7 +81,7 @@ function ProjectListing({ title }) {
           <button
             onClick={() => handleClick(page + 1)}
             disabled={page === Math.ceil(total_count / page_limit)}
-            className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(10 / 3) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
+            className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(total_count / page_limit) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
           >
             Next
           </button>

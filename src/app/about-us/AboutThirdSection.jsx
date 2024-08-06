@@ -24,7 +24,7 @@ function AboutThirdSection() {
 
           <div className='w-full lg:w-10/12 history-card-responsive xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
             <h3 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px] uppercase'>Our Excellence</h3>
-            <div className='flex flex-col gap-[20px] md:gap-[10px] lg:gap-[20px] font-[general-sans-regular] paragraph text-[14px] lg:text-[16px] leading-[21px] lg:leading-[24px]'>
+            <div className='flex flex-col gap-[20px] md:gap-[10px] lg:gap-[20px] font-[general-sans-regular] paragraph text-[14px] lg:text-[16px] leading-[21px] lg:leading-[24px] z-10'>
               <p>At CIDBI, we prioritize customer satisfaction by offering flexible floor plans, personalized service, and comprehensive amenities. Our commitment to unparalleled quality and a customer-centric approach ensures that every project meets the highest standards, enhancing the living experience for our esteemed clients.</p>
               <p>Our extensive experience and in-house expertise allow us to manage all aspects of construction independently, eliminating the need for external contractors. This capability, combined with our innovative ideas and commitment to high quality, has earned us a stellar reputation for exceeding customer expectations and delivering projects on time.</p>
             </div>

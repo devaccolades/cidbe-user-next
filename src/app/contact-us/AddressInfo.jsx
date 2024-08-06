@@ -41,8 +41,11 @@ function AddressInfo() {
                     <p className='text-[16px] lg:text-[20px] '>Email</p>
                 </div>
                 <div>
-                    <p className='text-[14px] lg:text-[16px] leading-[18px] lg:leading-[21px] '><span className='und'><a href="mailto:salescidbi@gmail.com">salescidbi@gmail.com</a> </span> <br /><span className='und'>
-                        {/* <a href="mailto:salescidbi@gmail.com">salescidbi@gmail.com</a> */}
+                    <p className='text-[14px] lg:text-[16px] leading-[18px] lg:leading-[21px] '>
+                        <span className='und'>
+                            <a href="mailto:salescidbi@gmail.com">salescidbi@gmail.com</a> </span> <br />
+                        <span className='und'>
+                            <a href="mailto:salescidbi@gmail.com">info@cidbi.com</a>
                         </span></p>
                 </div>
             </div>

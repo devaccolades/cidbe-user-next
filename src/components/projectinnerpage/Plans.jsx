@@ -12,17 +12,11 @@ import planTypeB from '../../../public/images/product-view/typeB.svg';
 import buildIcon from '../../../public/images/product-view/plansbuilding.svg';
 import planView from '../../../public/images/product-view/project-view.jpg';
 
-const planImages = [
-  { id: 1, src: planTypeA, alt: 'Plan Type A', type: 'Type A', bhk: '3 BHK', area: '1622 Sqft', carpetArea: '1105 Sqft', floor: '1st to 12th Floor' },
-  { id: 2, src: planTypeB, alt: 'Plan Type B', type: 'Type B', bhk: '3 BHK', area: '1622 Sqft', carpetArea: '1105 Sqft', floor: '1st to 12th Floor' },
-  { id: 3, src: planTypeA, alt: 'Plan Type A', type: 'Type A', bhk: '3 BHK', area: '1622 Sqft', carpetArea: '1105 Sqft', floor: '1st to 12th Floor' },
-  { id: 4, src: planTypeB, alt: 'Plan Type B', type: 'Type B', bhk: '3 BHK', area: '1622 Sqft', carpetArea: '1105 Sqft', floor: '1st to 12th Floor' },
-  { id: 5, src: planTypeA, alt: 'Plan Type A', type: 'Type A', bhk: '3 BHK', area: '1622 Sqft', carpetArea: '1105 Sqft', floor: '1st to 12th Floor' },
-  { id: 6, src: planTypeB, alt: 'Plan Type B', type: 'Type B', bhk: '3 BHK', area: '1622 Sqft', carpetArea: '1105 Sqft', floor: '1st to 12th Floor' },
-];
 
-function Plans() {
+
+function Plans({ floor_plan, blueprint_image }) {
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("")
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
@@ -48,34 +42,38 @@ function Plans() {
             }}
             className="!px-4 sm:!px-6 lg:!px-8 !py-4"
           >
-            {planImages.map((image) => (
-              <SwiperSlide key={image.id} className="!h-auto">
-                <div 
+            {floor_plan.map((image, index) => (
+              <SwiperSlide key={index} className="!h-auto">
+                <div
                   className='bg-white rounded-lg p-6 custom-shadow transition-all duration-300 hover:shadow-2xl h-full cursor-pointer'
-                  onClick={openModal}
+                  onClick={() => { openModal(), setSelectedImage(image?.image) }}
                 >
                   <div className='flex items-center mb-4'>
                     <div className='w-14 h-14 rounded-full flex items-center justify-center mr-4 bg-[#BFD8BD]'>
                       <Image src={buildIcon} alt="Building Icon" width={28} height={28} />
                     </div>
                     <div>
-                      <h1 className='text-[16px] lg:text-[24px] font-[general-sans-medium]'>{image.type}</h1>
-                      <p className='text-sm sm:text-xs md:text-sm font-[general-sans-medium]'>{image.floor}</p>
+                      <h1 className='text-[16px] lg:text-[24px] font-[general-sans-medium]'>{image.plan_type}</h1>
+                      <p className='text-sm sm:text-xs md:text-sm font-[general-sans-medium]'>{image?.floor_from && `${image?.floor_from}st to`} {image?.floor_to}th Floor</p>
                     </div>
-                    <h2 className='text-[20px] lg:text-[30px] font-[general-sans-medium] ml-auto'>{image.bhk}</h2>
+                    <h2 className='text-[20px] lg:text-[30px] font-[general-sans-medium] ml-auto'>{image?.bedrooms}BHK</h2>
                   </div>
                   <div className='flex justify-between text-sm sm:text-xs md:text-sm font-[general-sans-light] text-[#ADADAD] mb-6'>
-                    <p>Area {image.area}</p>
-                    <p>Carpet Area {image.carpetArea}</p>
+                    <p>Area {image?.total_area} sqft</p>
+                    <p>Carpet Area {image?.carpet_area} sqft</p>
                   </div>
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
+                  {/*  <Image
+                    src={image?.plan_image}
+                    alt={image?.plan_alt}
                     layout="responsive"
                     width={1600}
                     height={1200}
+                    unoptimized
                     className='w-full'
-                  />
+                  /> */}
+                  <img src={image?.plan_image}
+                  className='mx-auto'
+                    alt={image?.plan_alt} />
                 </div>
               </SwiperSlide>
             ))}
@@ -83,11 +81,11 @@ function Plans() {
         </div>
 
         <div className='mt-16'>
-          <Image src={PlanImage} alt="Plan Image" layout="responsive" />
+          <Image unoptimized src={blueprint_image} alt="Plan Image" width={100} height={100} layout="responsive" />
         </div>
       </div>
 
-      {modalOpen && (
+      {modalOpen && selectedImage && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="relative bg-white rounded-lg overflow-hidden shadow-lg p-8 max-w-3xl w-full">
             <button
@@ -96,7 +94,7 @@ function Plans() {
             >
               &times;
             </button>
-            <Image src={planView} alt="Project View" layout="responsive" width={1200} height={900} className="w-full h-auto" />
+            <Image unoptimized src={selectedImage} alt="Project View" layout="responsive" width={1200} height={900} className="w-full h-auto" />
           </div>
         </div>
       )}

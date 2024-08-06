@@ -30,8 +30,13 @@
     }
   }
 
-
-.custom-dots {
+.iframe-div iframe {
+    border-radius: 8px !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 300px;
+}
+/* .custom-dots {
     display: flex;
     justify-content: center;
     list-style: none;
@@ -88,4 +93,4 @@
 .prev-arrow {
     right: 100px;
     top: 85%;
-}
+} */

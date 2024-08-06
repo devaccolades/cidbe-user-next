@@ -43,8 +43,8 @@ function BlogCarousel({ blogDetails }) {
       <div className="absolute z-10 top-[50%] flex flex-col gap-[20px] left-0 right-0 transform -translate-y-1/2 text-center ">
         <p className="font-[clash-display-medium] text-white text-[32px] lg:text-[64px] leading-[39px] w-[90%] md:w-[40%] mx-auto lg:leading-[78px]  uppercase text-center">{blogDetails?.title}</p>
         <div className="flex flex-row gap-[10px] mx-auto w-full justify-center text-[10px] lg:text-[12px]">
-          <p className="py-[2px] px-[10px] bg-white font-[general-sans-semibold] rounded-[6px]">{blogDetails?.date_added}</p>
-          <p className="py-[2px] px-[10px] bg-white font-[general-sans-semibold] rounded-[6px] flex flex-row justify-center items-center gap-[1px]"><Image src={clockIcon} alt="" />{blogDetails?.time_to_read} Min read</p>
+          <p className="py-[2px] px-[10px] bg-white font-[general-sans-semibold] rounded-[6px] text-[--secondary-cl]">{blogDetails?.date_added}</p>
+          <p className="py-[2px] px-[10px] bg-white font-[general-sans-semibold] rounded-[6px] text-[--secondary-cl] flex flex-row justify-center items-center gap-[1px]"><Image src={clockIcon} alt="" />{blogDetails?.time_to_read} Min read</p>
         </div>
       </div>
       <Slider {...settings}>

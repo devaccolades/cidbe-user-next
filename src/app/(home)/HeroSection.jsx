@@ -18,6 +18,7 @@ import bgimage1 from "../../../public/images/home/bg.webp"
 import bgimage2 from "../../../public/images/home/bg-2.jpg"
 import { getFeaturedProject } from '../../services/services';
 import HomePageSkelten from '../../components/skeletoneffect/HomePageSkelten';
+import { useRouter } from 'next/navigation';
 // Custom Next Arrow component
 const NextArrow = (props) => {
     const { onClick } = props;
@@ -46,12 +47,7 @@ const PrevArrow = (props) => {
 
 function HeroSection() {
 
-    // const projects = [
-    //     { name: "CASSIA", location: "Near Daya Hospital", status: "Ongoing", image: image1, bgimage: bgimage1 },
-    //     // { name: "CASSIA", location: "Poonkunnam", status: "Ongoing", image: "/images/home/carorcel1.jpeg" ,bgimage: "/images/home/bg.webp"},
-    //     { name: "CANDOR", location: "Poonkunnam", status: "Ongoing", image: image2, bgimage: bgimage2 },
-    // ];
-
+    const router = useRouter()
     const [projects, setProject] = useState([])
     const [activeIndex, setActiveIndex] = useState(0);
     const [backgroundImage, setBackgroundImage] = useState(projects[0]?.background_image);
@@ -114,7 +110,7 @@ function HeroSection() {
 
     const fetchData = async () => {
         try {
-            const res =await getFeaturedProject(1, 4)
+            const res = await getFeaturedProject(1, 4)
             const { StatusCode, data } = res.data
             if (StatusCode === 6000) {
                 setProject(data)
@@ -128,9 +124,9 @@ function HeroSection() {
 
         }
     }
-    useEffect(()=>{
+    useEffect(() => {
         fetchData()
-    },[])
+    }, [])
     return (
         <>
             {projects.length > 0 ? (
@@ -179,12 +175,12 @@ function HeroSection() {
                                                         <p className='capitalize flex gap-[8px] lg:-mt-[4px]'><Image src={locationIcon} alt='location-icon' /> <span className='md:text-[10px] lg:text-[16px] text-[#767575]'>{project?.location}</span></p>
                                                     </div>
                                                     <div>
-                                                        <p className='capitalize md:-mb-[20px] lg:mb-0 rounded-[12px] text-[general-sans-medium] border-[1px] text-[10px] border-[#052D23] py-[2px] px-[10px]'>{project?.status}</p>
+                                                        <p className='capitalize md:-mb-[20px] lg:mb-0 rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-white text-[12px] py-[2px] px-[10px]'>{project?.status}</p>
                                                     </div>
                                                 </div>
                                                 <div className=' h-[64px] flex justify-center items-end'>
                                                     <button className='bg-[--secondary-cl] h-[44px] gap-[8px] py-[12px] pr-[8px] pl-[14px] rounded-[8px] w-full flex justify-center items-center'>
-                                                        <p className='font-[general-sans-medium] text-[14px] text-white'>View Project Details</p>
+                                                        <p className='font-[general-sans-medium] text-[14px] text-white cursor-pointer' onClick={()=>router.push(`/featured-projects/${project?.slug}`)}>View Project Details</p>
                                                         <Image src={arrowoutwardIcon} alt='arrow-icons' />
                                                     </button>
                                                 </div>
@@ -208,12 +204,12 @@ function HeroSection() {
                                                 <p className='capitalize flex gap-[8px] '><Image src={locationIcon} alt='location-icon' /> <span className='text-[14px] text-[#767575]'>{project?.location}</span></p>
                                             </div>
                                             <div>
-                                                <p className='capitalize md:-mb-[20px] lg:mb-0 rounded-[12px] text-[general-sans-medium] border-[1px] text-[10px] border-[#052D23] py-[2px] px-[10px]'>{project?.status}</p>
+                                                <p className='capitalize md:-mb-[20px] lg:mb-0 rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-white text-[10px] py-[2px] px-[10px]'>{project?.status}</p>
                                             </div>
                                         </div>
                                         <div className='h-[64px] flex justify-center items-end'>
                                             <button className='bg-[--secondary-cl] h-[44px] gap-[8px] py-[12px] pr-[8px] pl-[14px] rounded-[8px] w-full flex justify-center items-center'>
-                                                <p className='font-[general-sans-medium] text-[14px] text-white'>View Project Details</p>
+                                                <p className='font-[general-sans-medium] text-[14px] text-white' onClick={()=>router.push(`/featured-projects/${project?.slug}`)}>View Project Details</p>
                                                 <Image src={arrowoutwardIcon} alt='arrow-icons' />
                                             </button>
                                         </div>
@@ -225,7 +221,7 @@ function HeroSection() {
                 </>
             ) : (
                 <>
-                <HomePageSkelten/>
+                    <HomePageSkelten />
                 </>
             )
             }

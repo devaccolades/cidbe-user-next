@@ -31,11 +31,11 @@ async function fetchSeoData(path) {
 function page() {
   return (
     <>
-    <Header/>
-    <InteriorsHeroSection/>
-<Portfolio/>
-  <Process/>
-    <Footer/>
+      <Header bgPrimary={true}/>
+      <InteriorsHeroSection />
+      <Portfolio />
+      <Process />
+      <Footer />
     </>
   )
 }
