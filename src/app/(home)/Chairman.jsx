@@ -22,7 +22,7 @@ function Chairman() {
           <div className='w-full lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px]  text-white flex flex-col gap-[10px] px-[30px] md:px-[30px] lg:px-[20px]'>
             <h3 className='text-[24px] font-[general-sans-medium] leading-[29px]'>CHAIRMAN</h3>
             <div className='flex flex-col gap-[20px] font-[general-sans-medium] text-[14px] lg:text-[18px] leading-[21px] md:leading-[24px]'>
-              <p>"We build homes which will be a part of your soul, Reflecting your taste &aspiration .We make sure that every moments you spent at your home is not built on walls and beams, but love and dreams .We don't want to push our ideas to the customers ,we simply want to make what they want" </p>
+              <p>"We build homes which will be a part of your soul, Reflecting your taste &aspiration .We make sure that every moments you spent at your home is not built on walls and beams, but love and dreams .We don't want to push our ideas to the customers ,we simply want to make what they want"  </p>
             </div>
             <div className='flex md:justify-end pt-[20px]'>
               <p className='font-[general-sans-medium] text-[14px] lg:text-[12px] leading-[18px]'>

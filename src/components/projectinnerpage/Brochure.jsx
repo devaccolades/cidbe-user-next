@@ -7,6 +7,7 @@ import second from '../../../public/images/product-view/icons/04.svg';
 import third from '../../../public/images/product-view/icons/03.svg';
 import fourth from '../../../public/images/product-view/icons/02.svg';
 import fifth from '../../../public/images/product-view/icons/01.svg';
+import { getBrochureDownload } from '../../services/services';
 
 function Brochure({ data }) {
   const overViewIcon = [
@@ -17,6 +18,30 @@ function Brochure({ data }) {
     { icon: fifth, title: 'Area Range', description: `${data?.area_from} - ${data?.area_to} Sq.Ft` },
   ];
 
+  const getBrochure = async (id) => {
+    try {
+        const response = await getBrochureDownload(id);
+
+        if (response.status !== 200) {
+            throw new Error('Failed to download brochure');
+        }
+
+        const blob = new Blob([response.data], { type: response.headers['content-type'] });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${data?.name}-brochure.pdf`; // Customize the filename if needed
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+    } catch (error) {
+        console.error('Error downloading the brochure:', error);
+    }
+};
+
+
+
   return (
     <section className='bg-white rounded-t-[20px] lg:rounded-t-[100px] pt-[30px] lg:pt-[100px]' >
       <div className='containers custom-res mx-auto w-full max-w-[90%] lg:max-w-[90%] md:max-w-[90%] sm:max-w-[90%]   left-side-width  '>
@@ -26,16 +51,16 @@ function Brochure({ data }) {
             <div className='flex-grow'>
               <h1 className='lg:text-[24px] text-[16px] font-[clash-display-medium] heading-size'>{data?.sub_name}</h1>
               <p
-                className='lg:text-[18px] text-[14px] font-[general-sans-regular] leading-[27px] paragraph-size'
+                className='lg:text-[16px] text-[14px] font-[general-sans-regular] leading-[27px] paragraph-size'
                 dangerouslySetInnerHTML={{ __html: data?.description }}
               />
             </div>
-            <div className='mt-auto'>
-              <button className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] inline-flex items-center gap-[8px] rounded-[6px] lg:inline-flex hidden'>
+            {data?.brochure && <div className='mt-auto'>
+              <button onClick={()=>getBrochure(data?.id)} className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] inline-flex items-center gap-[8px] rounded-[6px] lg:inline-flex hidden'>
                 <span>Download Brochure</span>
                 <Image src={downloadIcon} alt='Download Icon' width={16} height={16} />
               </button>
-            </div>
+            </div>}
           </div>
 
           {/* Right-side content */}
@@ -52,19 +77,19 @@ function Brochure({ data }) {
                       <Image src={item.icon} alt={item.title} width={30} height={30} className='md:w-[30px] md:h-[30px] lg:w-auto lg:h-auto' />
                     </div>
                     <div className='ml-[10px] flex-grow'>
-                      <h1 className='lg:text-[18px] md:text-[14px] font-[general-sans-medium] heading-size'>{item.title}</h1>
+                      <h1 className='lg:text-[16px] md:text-[14px] font-[general-sans-medium] heading-size'>{item.title}</h1>
                       <p className='xl:text-[18px] lg:text-[16px] md:text-[14px] text-[14px] font-[general-sans-regular] text-res leading-[20px] paragraph-size'>{item.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className='mt-auto'>
-              <button className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] flex items-center justify-center gap-[8px] rounded-[6px] w-full lg:hidden'>
+            {data?.brochure && <div className='mt-auto'>
+              <button onClick={()=>getBrochure(data?.id)}  className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] flex items-center justify-center gap-[8px] rounded-[6px] w-full lg:hidden'>
                 <span>Download Brochure</span>
                 <Image src={downloadIcon} alt='Download Icon' width={16} height={16} />
               </button>
-            </div>
+            </div>}
           </div>
         </div>
       </div>

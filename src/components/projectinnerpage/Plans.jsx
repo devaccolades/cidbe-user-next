@@ -6,11 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import PlanImage from '../../../public/images/product-view/plansImage .svg';
-import planTypeA from '../../../public/images/product-view/typeA.svg';
-import planTypeB from '../../../public/images/product-view/typeB.svg';
 import buildIcon from '../../../public/images/product-view/plansbuilding.svg';
-import planView from '../../../public/images/product-view/project-view.jpg';
 
 
 

@@ -16,7 +16,7 @@ function Status({ status }) {
   const [selected, setSelected] = useState('')
   const [open, setOpen] = useState(false)
   const handleOpen = (data) => {
-    setSelected(data)
+    setSelected(data||"")
     setOpen(!open)
   }
   const [activeYear, setActiveYear] = useState("");
@@ -107,7 +107,7 @@ function Status({ status }) {
             {status.flatMap((yearData) =>
               yearData.statuses.map((item, index) => (
                 <SwiperSlide key={`${item.id}-${index}`} className='relative'>
-                  <div className='w-full h-[200px] bg-cover bg-center rounded-[8px]' 
+                  <div className='w-full h-[200px] bg-cover bg-center rounded-[8px] cursor-pointer' 
                       style={{ backgroundImage: `url(${item?.image})` }} onClick={()=>handleOpen(item?.image)}/>
                   <div className='relative mt-[5px] rounded-[5px] bottom-0 left-0 right-0 flex items-center justify-between bg-[#BFD8BD] p-[10px] rounded-b-[6px]' >
                     <div className='flex items-center'>

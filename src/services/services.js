@@ -99,6 +99,14 @@ const getProjectDetails = (slug) =>{
     });;
 }
 
+const getBrochureDownload = (id) =>{
+    return api.get(`brochures/${id}/download/`, {
+        responseType: 'blob', 
+        withCredentials: true,
+    });;
+}
+
+
 // Job api
 const getCareersApi = (page,page_limit) => {
     return api.get(`careers/?page=${page}&&page_limit=${page_limit}`, {
@@ -137,6 +145,7 @@ export{
     getCompletedProject,
     getReadyToOccupyProject,
     getProjectDetails,
+    getBrochureDownload,
     getCareersApi,
     getCareersSuggestionApi,
     getCommunityImpactApi,
