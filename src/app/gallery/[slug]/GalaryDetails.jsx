@@ -1,10 +1,18 @@
 'use client'
 import { useRouter } from 'next/navigation'
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import NotFound from '../../../components/common/NotFound'
+import ImageModal from '../../../components/imagemodal/ImageModal'
 function GalaryDetails({ galleryDetails }) {
+    const [selected, setSelected] = useState("")
+    const [open, setOpend] = useState(false)
     const router = useRouter()
+
+    const handleOpen = (image) => {
+        setOpend(!open)
+        setSelected(image||"")
+    }
     return (
         <main className="bg-[--primary-cl] bg-cover bg-no-repeat galary-inner-bg"
         >
@@ -17,10 +25,10 @@ function GalaryDetails({ galleryDetails }) {
                 {galleryDetails?.images.length > 0 ? (
                     <div className='w-full grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[10px] md:gap-[20px] py-[25px] md:py-[50px]'>
                         {galleryDetails?.images?.map((image, index) => (
-                            <div key={index} className='p-[5px] bg-white rounded-[8px]'
+                            <div key={index} onClick={()=>handleOpen(image?.image)} className='p-[5px] bg-white rounded-[8px]'
                             >
                                 <div className='overflow-hidden rounded-[8px] w-full h-[200px]'>
-                                <div className='w-full h-full  bg-cover bg-center transition-transform duration-300 ease-in-out hover:scale-110'style={{ backgroundImage: `url(${image.image})` }}/>
+                                    <div className='w-full h-full  bg-cover bg-center transition-transform duration-300 ease-in-out hover:scale-110' style={{ backgroundImage: `url(${image?.image})` }} />
                                 </div>
                             </div>
                         ))}
@@ -32,6 +40,7 @@ function GalaryDetails({ galleryDetails }) {
                     <button className='h-[40px] w-[100px] bg-[--secondary-cl] text-white text-[14px]  font-bold rounded-[6px] lg:hidden block' onClick={() => router.push('/gallery')}>Back</button>
                 </div>
             </section>
+            <ImageModal open={open} handleOpen={handleOpen} data={selected} />
         </main>
     )
 }

@@ -77,7 +77,7 @@ function DeepDetails({
         <Plans floor_plan={floor_plan} blueprint_image={blueprint_image} />
       </div>}
       <div ref={sectionRefs.Video} className="pt-[30px] bg-white">
-        <ProductVideo />
+        <ProductVideo videos={videos}/>
       </div>
       <div ref={sectionRefs.Location} className="pt-[30px] bg-white">
         <Location location={location} nearby={nearby} />
