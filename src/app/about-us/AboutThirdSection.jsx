@@ -8,7 +8,7 @@ import aboutCardshapeMobile from "../../../public/images/home/about-shape-mobile
 import arrowIcon from "../../../public/icons/arrow-outward-green.svg"
 import '../(home)/./Home.css'
 
-import excellenceBg from '../../../public/images/home/about-image.jpg'
+import excellenceBg from '../../../public/images/about/historyImage.jpeg'
 // after connect the backend
 
 function AboutThirdSection() {
@@ -32,9 +32,9 @@ function AboutThirdSection() {
             </div>
           </div>
         </div>
-        <Image src={aboutCardshapeMobile} alt='' className='min-w-full -mt-[20px] -mb-[1px] bg-transparent z-10 md:hidden block' />
-        <div className='bg-cover bg-bottom md:w-full lg:w-7/12 h-[300px] md:h-full rounded-t-[12px] md:rounded-e-[12px] z-4' style={{ backgroundImage: `url(${excellenceBg.src})` ,zIndex:'1'}}>
-          <Image className='h-full -ms-[2px] hidden md:block' alt='card-shape' src={aboutCardshape} />
+        <Image src={aboutCardshapeMobile} alt='' className='min-w-full -mt-[20px] -mb-[1px] bg-transparent z-1 md:hidden block' />
+        <div className='bg-cover  bg-top md:w-full lg:w-7/12 h-[300px] md:h-full rounded-t-[12px] md:rounded-e-[12px] z-[10]' style={{ backgroundImage: `url(${excellenceBg.src})` ,zIndex:'10'}}>
+          <Image className='h-full -ms-[2px] hidden md:block z-[15]' alt='card-shape' src={aboutCardshape} />
         </div>
       </card>
     </main>
