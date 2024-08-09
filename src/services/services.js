@@ -9,6 +9,15 @@ const PostEnquiryApi = (values) => {
     });
 };
 
+const postApplyJobApi = (values) => {
+    return api.post(`apply-job/`, values,{
+        withCredentials: true,
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+
+    });
+};
 // ----------------------------Get methods-------------------------------------//
 
 const getSeoApi = (path) => {
@@ -127,6 +136,14 @@ const getCommunityImpactApi = (page,page_limit) => {
     });
 };
 
+// interior  Impact
+const interiorimagestApi = () => {
+    return api.get(`interiorimages/`, {
+        withCredentials: true,
+    });
+};
+
+
 
 export{
     PostEnquiryApi,
@@ -149,4 +166,8 @@ export{
     getCareersApi,
     getCareersSuggestionApi,
     getCommunityImpactApi,
+    interiorimagestApi,
+
+    postApplyJobApi,
+    
 }

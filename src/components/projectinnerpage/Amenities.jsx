@@ -4,8 +4,8 @@ import Image from 'next/image';
 function Amenities({amenities}) {
   return (
     <div className="containers custom-res py-[20px] mb-[30px]">
-      <h1 className='text-[24px] font-[clash-display-medium] mb-[20px]'>Amenities</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-[30px]">
+      <h2 className='text-[24px] font-[clash-display-medium] mb-[20px]'>Amenities</h2>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-[30px]">
         {amenities.map((amenity, index) => (
           <div
             key={index}

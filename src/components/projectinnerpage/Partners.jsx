@@ -8,9 +8,9 @@ function Partners({bank}) {
     <>
       <section className='bg-[#ffff]'>
         <div className='containers custom-res py-[20px]'>
-          <h1 className='text-center text-[24px] font-[clash-display-medium]'>
+          <h2 className='text-center text-[24px] font-[clash-display-medium]'>
             Finance Your Dream Apartment with Our Trusted Banks
-          </h1>
+          </h2>
           <div className='flex flex-wrap justify-between mt-[20px]'>
             {bank.map((img, index) => (
               <div key={index} className='w-[100px] h-[80px] flex items-center justify-center m-[10px]'>

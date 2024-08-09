@@ -33,13 +33,13 @@ function DeepDetails({
   };
 
   const sections = [
-    { name: 'Amenities', hasData: amenities.length > 0 },
-    { name: 'Smart Features', hasData: features?.length > 0 || amenities_images.length > 0 },
-    { name: 'Specifications', hasData: specification.length > 0 },
-    { name: 'Plans', hasData: floor_plan.length > 0 },
-    { name: 'Video', hasData: videos > 0 },
-    { name: 'Location', hasData: true }, 
-    { name: 'Current Status', hasData: status.length > 0 },
+    { name: 'Amenities' },
+    { name: 'Smart Features'},
+    { name: 'Specifications' },
+    { name: 'Plans'},
+    { name: 'Video' },
+    { name: 'Location' }, 
+    { name: 'Current Status'},
   ];
 
   return (
@@ -48,7 +48,6 @@ function DeepDetails({
         <div className="containers custom-res py-[20px]">
           <ul className="flex justify-between w-full">
           {sections
-              .filter(section => section.hasData)
               .map((item, index) => (
                 <li
                   key={index}
@@ -63,28 +62,28 @@ function DeepDetails({
         </div>
       </section>
 
-      {amenities.length > 0 && <div ref={sectionRefs.Amenities} className="pt-[30px] bg-white">
+     <div ref={sectionRefs.Amenities} className="pt-[30px] bg-white">
         <Amenities amenities={amenities} />
-      </div>}
+      </div>
       <div ref={sectionRefs['Smart Features']} className="pt-[30px] bg-white">
-        {features?.length > 0 && <SmartFeature features={features} />}
+         <SmartFeature features={features} />
         {amenities_images.length > 0 && <Slider amenities_images={amenities_images} />}
       </div>
-      {specification.length > 0 && <div ref={sectionRefs.Specifications} className="pt-[30px] bg-white">
+      <div ref={sectionRefs.Specifications} className="pt-[30px] bg-white">
         <Specification specification={specification} />
-      </div>}
-      {floor_plan.length > 0 && <div ref={sectionRefs.Plans} className="pt-[30px] bg-white">
+      </div>
+      <div ref={sectionRefs.Plans} className="pt-[30px] bg-white">
         <Plans floor_plan={floor_plan} blueprint_image={blueprint_image} />
-      </div>}
+      </div>
       <div ref={sectionRefs.Video} className="pt-[30px] bg-white">
         <ProductVideo videos={videos}/>
       </div>
       <div ref={sectionRefs.Location} className="pt-[30px] bg-white">
         <Location location={location} nearby={nearby} />
       </div>
-      {status.length > 0 && <div ref={sectionRefs['Current Status']} className="pt-[30px] bg-white">
+      <div ref={sectionRefs['Current Status']} className="pt-[30px] bg-white">
         <Status status={status} />
-      </div>}
+      </div>
       {bank.length > 0 && <Partners bank={bank} />}
     </>
   );

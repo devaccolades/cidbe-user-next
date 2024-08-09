@@ -15,7 +15,7 @@ function Brochure({ data }) {
     { icon: second, title: 'Location', description: data?.location },
     { icon: third, title: 'Apartment type', description: data?.bhk },
     { icon: fourth, title: 'Status', description: data?.status },
-    { icon: fifth, title: 'Area Range', description: `${data?.area_from} - ${data?.area_to} Sq.Ft` },
+    { icon: fifth, title: 'Area Range', description: `${data?.area_from || ""} - ${data?.area_to || ""} Sq.Ft` },
   ];
 
   const getBrochure = async (id) => {
@@ -49,7 +49,7 @@ function Brochure({ data }) {
           {/* Left-side content */}
           <div className='flex flex-col mb-[20px] md:mb-0 md:w-[53%] lg:w-[70%]'>
             <div className='flex-grow'>
-              <h1 className='lg:text-[24px] text-[16px] font-[clash-display-medium] heading-size'>{data?.sub_name}</h1>
+              <h2 className='lg:text-[24px] text-[16px] font-[clash-display-medium] heading-size'>{data?.sub_name}</h2>
               <p
                 className='lg:text-[16px] text-[14px] font-[general-sans-regular] leading-[27px] paragraph-size'
                 dangerouslySetInnerHTML={{ __html: data?.description }}
@@ -67,7 +67,7 @@ function Brochure({ data }) {
           <div className='md:w-[47%] lg:w-[30%] bg-[#BFD8BD] rounded-[12px] p-[30px] flex flex-col right-side-width'>
             <div className='flex-grow'>
               <div className='flex items-center justify-between mb-[20px]'>
-                <h1 className='lg:text-[24px] md:text-[16px] font-[clash-display-medium] heading-size '>Project Overview</h1>
+                <h2 className='lg:text-[24px] md:text-[16px] font-[clash-display-medium] heading-size '>Project Overview</h2>
                 {data?.qr_code && <Image src={data?.qr_code} alt='QR Code' width={46} height={46} />}
               </div>
               <div>
@@ -77,7 +77,7 @@ function Brochure({ data }) {
                       <Image src={item.icon} alt={item.title} width={30} height={30} className='md:w-[30px] md:h-[30px] lg:w-auto lg:h-auto' />
                     </div>
                     <div className='ml-[10px] flex-grow'>
-                      <h1 className='lg:text-[16px] md:text-[14px] font-[general-sans-medium] heading-size'>{item.title}</h1>
+                      <h2 className='lg:text-[16px] md:text-[14px] font-[general-sans-medium] heading-size'>{item.title}</h2>
                       <p className='xl:text-[18px] lg:text-[16px] md:text-[14px] text-[14px] font-[general-sans-regular] text-res leading-[20px] paragraph-size'>{item.description}</p>
                     </div>
                   </div>

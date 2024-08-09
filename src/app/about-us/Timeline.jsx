@@ -13,6 +13,11 @@ import Cocoon from '../../../public/images/about/Cocoon.JPG'
 import Cinthia from '../../../public/images/about/Cinthia.JPG'
 import Clarion from '../../../public/images/about/Clarion.jpg'
 import Credence from '../../../public/images/about/Credence.JPG'
+import Chalet from '../../../public/images/about/Chalet.jpg'
+import Candor from '../../../public/images/about/Candor.webp'
+import Cassia from '../../../public/images/about/Cassia.jpeg'
+
+
 
 function Timeline() {
   const [listing, setListing] = useState([]);
@@ -28,6 +33,9 @@ function Timeline() {
     { image: Clarion, year: 2017, name: "Clarion" },
     { image: Cinthia, year: 2018, name: "Cinthia" },
     { image: Credence, year: 2017, name: "Credence" },
+    { image: Chalet, year: 2023, name: "Chalet" },
+    { image: Candor, year: 2024, name: "Candor" },
+    { image: Cassia, year: 2024, name: "Cassia" },
   ];
 
   useEffect(() => {

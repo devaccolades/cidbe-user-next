@@ -129,7 +129,7 @@ function Header({ bgPrimary = false }) {
                                 className={`relative ${hovered.about || pathname === '/about-us' || pathname === '/csr' ? 'active' : ''}`}
                                 ref={menuRef}
                             >
-                                About us
+                                About Us
                                 <Image src={hovered.about ? bgPrimary ? dropdownGreenIcon : dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
                                 {hovered.about && (
                                     <div className="card absolute w-[285px] p-[10px] top-full left-0 mt-2 bg-white shadow-md z-10">
@@ -179,7 +179,7 @@ function Header({ bgPrimary = false }) {
                             <Link href="/interiors"><li className={`${pathname === '/interiors' && "active"}`}>Interiors</li></Link>
                             <Link href={'/blogs'}><li className={`${pathname === '/blogs' && "active"}`}>Blog</li></Link>
                             <Link href={'/achievements'}><li className={`${pathname === '/achievements' && "active"}`}>Achievements</li></Link>
-                            <Link href='/contact-us'><li className={`${pathname === '/contact-us' && "active"}`}>Contact us</li></Link>
+                            <Link href='/contact-us'><li className={`${pathname === '/contact-us' && "active"}`}>Contact Us</li></Link>
                         </ul>
                     </div>
                     <div className='mobile-navbar cursor-pointer' onClick={() => setShowMobileNav(!showMobileNav)}>
@@ -286,7 +286,7 @@ function Header({ bgPrimary = false }) {
                                         variants={linkItemVariants}
                                         onClick={() => router.push('/contact-us')}
                                     >
-                                        Contact us
+                                        Contact Us
                                     </motion.p>
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"

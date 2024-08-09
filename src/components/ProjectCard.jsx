@@ -42,11 +42,13 @@ function ProjectCard({ project }) {
                             <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Location" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>{project?.location}</span></p>
                         </div>
                         <div>
-                            <p className='capitalize rounded-[12px] text-[general-sans-medium] border-[1px] text-[10px] text-[#052D23] border-[#052D23] py-[2px] px-[10px]'>{project?.status}</p>
+                        <p className='capitalize rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-[12px] text-white py-[4px] px-[12px]'>{project?.status}</p>
                         </div>
                     </div>
                     <div className='sticky bottom-1 bg-white mt-[10px] gap-[10px] px-[15px] pb-[10px] text-[12px] sm:text-[14px] '>
-                        <button className='border cursor-pointer border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px]' onClick={()=>router.push(`${pathname}/${project?.slug}`)}>Read more</button>
+                        {project?.description?(<button className='border cursor-pointer border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px]' onClick={()=>router.push(`${pathname}/${project?.slug}`)}>Read more</button>):
+                        (<button className='border cursor-pointer border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px]'>Read more</button>)}
+                        
                     </div>
                 </Card >
             ) : (

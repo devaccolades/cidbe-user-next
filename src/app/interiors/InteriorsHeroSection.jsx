@@ -35,12 +35,10 @@ function InteriorsHeroSection() {
         </div>
         <div className="w-full md:w-1/2 text-left md:mb-[30px] px-4 sm:px-6 md:px-0">
           <h1 className="text-[24px] capitalize sm:text-[28px] md:text-[28px] lg:text-[55px] font-[general-sans-medium] leading-[28px] sm:leading-[34px] md:leading-[34px] lg:leading-[66px] text-[#052D23]">
-            Expert service in interior design
+          Creating Beautiful Spaces That Inspire
           </h1>
           <p className="mt-[8px] sm:mt-[10px] text-[14px] sm:text-[16px] md:text-[16px] lg:text-[24px] font-[general-sans-regular] leading-[18px] sm:leading-[22px] md:leading-[22px] lg:leading-[32px] text-[#052D23]">
-            Our aim is to create a comfortable and cosy home for our clients,
-            providing interior design solutions which are practical and
-            beautiful.
+          Our wish is to create calm and comfortable home for our buyers by providing interior design solutions that are both aesthetic and functional.
           </p>
         </div>
       </div>

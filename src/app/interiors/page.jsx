@@ -18,15 +18,15 @@ async function fetchSeoData(path) {
   return data;
 }
 
-// export async function generateMetadata() {
-//   const path = '/interiors';
-//   const responseData = await fetchSeoData(path);
-//   const { meta_title, meta_description } = responseData;
-//   return {
-//     title: meta_title,
-//     description: meta_description,
-//   };
-// }
+export async function generateMetadata() {
+  const path = '/interiors';
+  const responseData = await fetchSeoData(path);
+  const { meta_title, meta_description } = responseData;
+  return {
+    title: meta_title,
+    description: meta_description,
+  };
+}
 
 function page() {
   return (

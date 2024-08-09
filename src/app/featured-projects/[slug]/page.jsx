@@ -56,6 +56,8 @@ function Page({ params }) {
 
   return (
     <>
+    <title>{projectDetails?.details?.meta_title || 'Default Title'}</title>
+    <meta name="description" content={projectDetails?.details?.meta_description || 'Default Description'} />
       <Header />
       <HeroSection data={projectDetails?.details} images={projectDetails?.images} className='bg-[#ffff]' />
       <Brochure data={projectDetails?.details} />

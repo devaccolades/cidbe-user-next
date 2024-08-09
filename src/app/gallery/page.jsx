@@ -33,8 +33,8 @@ export async function generateMetadata() {
 function page() {
   return (
     <>
-    <Header/>
-    <GalaryHeroSection/>
+    <Header bgPrimary={true}/>
+    {/* <GalaryHeroSection/> */}
     <GalaryListing/>
     <Footer/>
     </>

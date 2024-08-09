@@ -55,7 +55,10 @@ function Page({ params }) {
         }
     }, [slug, fetchData, router]);
     return (
-        <> <Header />
+        <>
+            <title>{projectDetails?.details?.meta_title || 'Default Title'}</title>
+            <meta name="description" content={projectDetails?.details?.meta_description || 'Default Description'} />
+            <Header />
             <HeroSection data={projectDetails?.details} images={projectDetails?.images} className='bg-[#ffff]' />
             <Brochure data={projectDetails?.details} />
             <div className='bg-[#ffff]'>
@@ -68,7 +71,7 @@ function Page({ params }) {
                     floor_plan={projectDetails?.floor_plan}
                     location={projectDetails?.details?.iframe}
                     nearby={projectDetails?.nearby}
-                    videos = {projectDetails?.videos}
+                    videos={projectDetails?.videos}
                     status={projectDetails?.status}
                     bank={projectDetails?.bank}
                     className='bg-[#ffff]' />

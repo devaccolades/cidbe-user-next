@@ -10,6 +10,7 @@ import isologo from '../../public/images/footer/isologo.png'
 import sbilogo from '../../public/images/footer/sbilogo.png'
 import bailogo from '../../public/images/footer/bailogo.png'
 import credailogo from '../../public/images/footer/credailogo.png'
+import accoldesLogo from '../../public/images/footer/accoldes-logo.svg'
 import { useRouter } from 'next/navigation'
 
 
@@ -29,15 +30,15 @@ function Footer({backGround="--primary-cl"}) {
         </div>
         <div className='text-[14px] leading-[21px] w-[50%] md:w-[18%] lg:w-[11vw] flex flex-col gap-[20px] mt-[40px] md:mt-0'>
           <p className='font-[general-sans-semibold]'>ABOUT US</p>
-          <p className='cursor-pointer' onClick={() => router.push('/about-us')}>Who we are</p>
+          <p className='cursor-pointer' onClick={() => router.push('/about-us')}>Who We Are</p>
           <p className='cursor-pointer' onClick={() => router.push('/csr')}>CSR</p>
         </div>
         <div className='text-[14px] leading-[21px] flex flex-col w-[50%] md:w-[18%] lg:w-[13vw] gap-[20px] mt-[40px] md:mt-0'>
           <p className='font-[general-sans-semibold]'>PROJECTS</p>
-          <p className='cursor-pointer' onClick={() => router.push('/completed-projects')}>Completed projects</p>
-          <p className='cursor-pointer' onClick={() => router.push('/upcoming-projects')}>Upcoming projects </p>
-          <p className='cursor-pointer' onClick={() => router.push('/ready-to-occupy')}>Ready to occupy</p>
-          <p className='cursor-pointer' onClick={() => router.push('/ongoing-projects')}>Ongoing projects</p>
+          <p className='cursor-pointer' onClick={() => router.push('/completed-projects')}>Completed Projects</p>
+          <p className='cursor-pointer' onClick={() => router.push('/upcoming-projects')}>Upcoming Projects </p>
+          <p className='cursor-pointer' onClick={() => router.push('/ready-to-occupy')}>Ready To Occupy</p>
+          <p className='cursor-pointer' onClick={() => router.push('/ongoing-projects')}>Ongoing Projects</p>
         </div>
         <div className='font-[general-sans-semibold] text-[14px] w-full md:w-[20vw] lg:mt-0 mt-[30px] lg:w-[13vw] flex flex-col gap-[20px]'>
           <p className='cursor-pointer' onClick={() => router.push('/gallery')}>GALLERY</p>
@@ -63,7 +64,10 @@ function Footer({backGround="--primary-cl"}) {
           </div>
         </div>
       </div>
-      <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C]'>All Rights reserved by CIDBI Thrissur. 2024 Powered by Example</p>
+     <div className='flex flex-row flex-wrap mt-[10px] md:mt-0 md:gap-[10px] justify-center items-center w-full'>
+     <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C]'>All Rights reserved by CIDBI Thrissur. 2024  </p>
+     <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] flex justify-center items-center gap-[10px]'><span>Powered by accolades integrated</span> <Image width={10} height={10} className='w-[20px]' alt='accolades-logo' src={accoldesLogo}/> </p>
+     </div>
     </section>
   )
 }

@@ -5,7 +5,7 @@ function Location({ location, nearby }) {
   return (
     <section className='bg-[#ffff]'>
       <div className="containers custom-res py-[20px]">
-        <h1 className='text-[24px] font-[clash-display-medium] text-[--secondary-cl] mb-[20px]'>Location</h1>
+        <h2 className='text-[24px] font-[clash-display-medium] text-[--secondary-cl] mb-[20px]'>Location</h2>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-[30px]'>
           {location && <div className='flex-grow rounded-[8px] iframe-div' dangerouslySetInnerHTML={{ __html: location }}></div>}
           {nearby?.length > 0 && <div className='flex-1 flex flex-col'>
