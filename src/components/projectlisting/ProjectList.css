@@ -3,3 +3,21 @@
         background-image: url('../../../public/images/home/line_background.svg');
     }
   }
+
+  @media (min-width:1025px) and (max-width:1439px){
+    .res-custom-container{
+        width: 90%;
+    }
+  }
+
+  @media (min-width:1440px) and (max-width:1500px){
+    .res-custom-name{
+        font-size: 28px;
+    }
+  }
+
+  @media (min-width:1024px) and (max-width:1200px){
+    .res-custom-name{
+        font-size: 25px;
+    }
+  }
