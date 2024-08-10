@@ -1,58 +1,58 @@
-// 'use client';
-// import { useEffect, useRef, useState } from 'react';
-// import styles from './cursor.module.css';
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import styles from './cursor.module.css';
 
-// const ConditionalContentWithCursor = () => {
-//   const cursorRef = useRef(null);
-//   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-//   const [showCursor, setShowCursor] = useState(true); // State to toggle the cursor
+const ConditionalContentWithCursor = () => {
+  const cursorRef = useRef(null);
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [showCursor, setShowCursors] = useState(true); 
 
-//   useEffect(() => {
-//     const handleMouseMove = (e) => {
-//       setCursorPos({ x: e.pageX, y: e.pageY });
-//     };
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setCursorPos({ x: e.pageX, y: e.pageY });
+    };
 
-//     document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mousemove', handleMouseMove);
 
-//     return () => {
-//       document.removeEventListener('mousemove', handleMouseMove);
-//     };
-//   }, []);
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
-//   useEffect(() => {
-//     if (showCursor && cursorRef.current) {
-//       cursorRef.current.style.transform = `translate(${cursorPos.x}px, ${cursorPos.y}px)`;
-//     }
-//   }, [cursorPos, showCursor]);
+  useEffect(() => {
+    if (showCursor && cursorRef.current) {
+      cursorRef.current.style.transform = `translate(${cursorPos.x}px, ${cursorPos.y}px)`;
+    }
+  }, [cursorPos, showCursor]);
 
-//   return (
-//     <div>
-//       {showCursor && (
-//         <div className={styles.customCursor} ref={cursorRef} />
-//       )}
+  return (
+    <div>
+      {showCursor && (
+        <div className={styles.customCursor} ref={cursorRef} />
+      )}
       
-//       {showCursor ? (
-//         <img
-//           src="/path-to-your-image.jpg" 
-//           alt="Continuous Image"
-//           style={{ width: '100%', height: 'auto', zIndex: 1 }} // Ensure image stays below cursor
-//         />
-//       ) : (
-//         <p>Your text content here</p>
-//       )}
+      {showCursor ? (
+        <img
+          src="/path-to-your-image.jpg" 
+          alt="Continuous Image"
+          style={{ width: '100%', height: 'auto', zIndex: 2 }} 
+        />
+      ) : (
+        <p>Your text content here</p>
+      )}
 
-//       {/* Toggle buttons for demonstration */}
-//       <button onClick={() => setShowCursor(!showCursor)}>
-//         Toggle Cursor Visibility
-//       </button>
-//       <button onClick={() => setShowCursor(true)}>
-//         Show Image and Cursor
-//       </button>
-//       <button onClick={() => setShowCursor(false)}>
-//         {/* Show Text Only (Hide Cursor) */}
-//       </button>
-//     </div>
-//   );
-// };
+      <button onClick={() => setShowCursors(!showCursor)}>
+        Toggle Cursor Visibility
+      </button>
+      <button onClick={() => setShowCursors(true)}>
+        Show Image and Cursor
+      </button>
+      <button onClick={() => setShowCursors(false)}>
+      </button>
+    </div>
+  );
+};
 
-// export default ConditionalContentWithCursor;
+export default ConditionalContentWithCursor; 
+
+

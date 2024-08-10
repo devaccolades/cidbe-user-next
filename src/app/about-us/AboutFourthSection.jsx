@@ -7,7 +7,6 @@ function AboutFourthSection() {
   return (
 
     <>
-
       <section>
         <main className='py-[45px]'>
           <card className='relative containers shadow-2xl flex flex-col-reverse md:flex-row rounded-[12px]'>

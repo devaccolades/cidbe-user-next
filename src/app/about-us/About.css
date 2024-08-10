@@ -3,7 +3,6 @@
       background-image: url('../../../public/images/home/customer-reviewsbg.svg');
   }
 }
-
 @media (min-width:1024px) and (max-width:1500px){
     .main-section{
         height: 500px;
@@ -13,7 +12,6 @@
         line-height: 40px;
     }
 }
-
 @media (min-width:1280px) and (max-width:1664px){
   .history-card-responsive{
     width: 80%;
@@ -24,15 +22,11 @@
     font-size: 14px;
   }
 }
-
 @media (min-width:768px) and (max-width:1023px){
   /* .paragraph{
     font-size: 14px;
   } */
 }
-
-
-
 
 /* Time line */
 

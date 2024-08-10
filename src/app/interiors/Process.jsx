@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import lineImage from '../../../public/images/interiors/newImageArjun.svg';
+import lineImage from '../../../public/images/interiors/designNewBgImage.svg';
 
 function Process() {
   const [isVisible, setIsVisible] = useState(false);
@@ -54,27 +54,30 @@ function Process() {
   const cardDetails = [
     {
       title: 'Initial Consultation',
-      description: 'We begin by meeting with you to discuss your goals, preferences, and budget. This is an opportunity for us to understand your lifestyle, tastes, and the specific requirements of your space.'
+      description: 'Firstly, our team will meet you to discuss your requirements and tastes. This is an opportunity for our designers to understand your exact needs, and the specific preference for your interiors.'
     },
     {
       title: 'Budget presentation',
-      description: 'Based on our discussion, we create initial design concepts tailored to your requirements, presenting them for your feedback and input.'
+      description: 'Based on our discussion, we create initial design concepts customized to your requirements and present them for your feedback and suggestions.'
+    },
+    {
+      title: 'Design Proposal',
+      description: 'After that, we prepare a detailed design proposal including floor plans, mood boards, and material samples. This will provide an overall vision for your space.'
     },
     {
       title: 'Drawing finalization',
-      description: 'Upon approval of the design proposal, we finalize designs, select furniture, fixtures, and finishes, ensuring they align with the agreed-upon concept.'
+      description: 'Upon approval of the design proposal, we finalize the designs. Then we select furniture and fixtures that aligns with your desire and concept.'
     },
     {
       title: 'Design Development',
-      description: 'We manage the procurement process, sourcing and purchasing all necessary items, and oversee their timely installation by coordinating with suppliers and contractors.'
+      description: 'We refine the approved design, selecting materials, finishes, and furnishings that complement the overall aesthetic.'
     },
     {
       title: 'Production',
-      description: 'As the project nears completion, we focus on styling and adding finishing touches to enhance the overall aesthetic of your space, ensuring every detail contributes to the cohesive design.'
-    },
-    {
-      title: 'Procurement and Installation',
-      description: 'We manage the procurement process, sourcing and purchasing all necessary items, and oversee their timely installation by coordinating with suppliers and contractors.'
+      description: 'With the design finalized, we move into production. Our skilled craftsmen bring your ideas to life with guarantee that every piece is made to the highest standards.'
+    },{
+      title:'Installation',
+      description:'Our experienced and professional team manage the installation and handover the project on time.'
     }
   ];
 

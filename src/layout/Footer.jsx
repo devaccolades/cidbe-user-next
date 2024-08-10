@@ -11,20 +11,41 @@ import sbilogo from '../../public/images/footer/sbilogo.png'
 import bailogo from '../../public/images/footer/bailogo.png'
 import credailogo from '../../public/images/footer/credailogo.png'
 import { useRouter } from 'next/navigation'
+import  callIcon from '../../public/images/footer/call.svg'
+import  watsappIcon  from '../../public/images/footer/watsapp.svg'
 
 
 function Footer({backGround="--primary-cl"}) {
   const router = useRouter()
   return (
-    <section className={`font-[general-sans-medium] text-[--secondary-cl] bg-[${backGround}] px-[40px] xl:px-[120px] py-[40px] flex flex-col`}>
+  
+    <>
+      <div className='fixed z-50 bottom-0 right-0'>
+
+      <div className="hidden lg:flex flex-col space-y-5 mr-[40px] mb-[30px]">
+  <a href="https://wa.me/+918137873330?text=I'm%20interested%20in%20your%20Property" target="_blank" rel="noopener noreferrer">
+    <Image src={watsappIcon} alt="WhatsApp Icon" />
+  </a>
+  <a href="tel:+919496933000">
+    <Image src={callIcon} alt="Call Icon" target="_blank" />
+  </a>
+</div>
+
+
+    
+    
+    </div>
+        <section className={`font-[general-sans-medium] text-[--secondary-cl] bg-[${backGround}] px-[40px] xl:px-[120px] py-[40px] flex flex-col`}>
       <div className='w-full flex flex-row h-full flex-wrap lg:flex-nowrap'>
         <div className='flex flex-col w-full md:w-[60%] lg:w-[30vw] gap-[20px]'>
           <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px]'>NO PROJECT IS TOO BIG OR TOO SMALL, HIT US UP AND LET’S BUILD</p>
-          <Image src={logo} className='w-[118px] h-[74px]' alt='logo' />
+          <Image src={logo}  onClick={() => router.push('/')} className='w-[118px] h-[74px]' alt='logo' />
           <div className='flex flex-row gap-[20px] items-center'>
-            <Image src={instagram} className='w-[20] h-[20]' alt='instagram-logo' />
-            <Image src={facebook} alt='facebook-logo' />
-            <Image src={youtube} className='w-[22px] h-[15px]' alt='youtube-logo' />
+            <a href="https://www.instagram.com/cidbithrissur/" target="_blank"> <Image src={instagram} className='w-[20] h-[20]' alt='instagram-logo' /></a> 
+            <a href="https://www.facebook.com/cidbitsr/" target="_blank">  <Image src={facebook} alt='facebook-logo' /></a>
+           <a href="https://www.youtube.com/channel/UCyRwiMStzuHNzaRzEGb__jQ"><Image src={youtube} className='w-[22px] h-[15px]' alt='youtube-logo' /></a>
+           
+       
           </div>
         </div>
         <div className='text-[14px] leading-[21px] w-[50%] md:w-[18%] lg:w-[11vw] flex flex-col gap-[20px] mt-[40px] md:mt-0'>
@@ -65,6 +86,8 @@ function Footer({backGround="--primary-cl"}) {
       </div>
       <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C]'>All Rights reserved by CIDBI Thrissur. 2024 Powered by Example</p>
     </section>
+    </>
+
   )
 }
 
