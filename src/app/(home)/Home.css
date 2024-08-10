@@ -305,6 +305,15 @@
         font-size: 14px;
     }
 }
+@media (max-width:374px){
+    .chaiman-cards{
+        padding: 0px 16px;
+    }
+    .name-sectio{
+        padding-top: 2px;
+    }
+   
+}
 @media (min-width:768px) and (max-width:930px){
     .chaiman-cards{
         width: 94%;

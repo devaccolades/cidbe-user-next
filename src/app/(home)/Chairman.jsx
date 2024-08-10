@@ -12,14 +12,14 @@ function Chairman() {
   return (
     <section className='py-[30px] lg:py-[100px] flex justify-center items-center'>
       <card className='relative responsive containers shadow-2xl flex flex-col-reverse md:grid md:grid-cols-[1fr,350px] lg:grid-cols-[1fr,435px] rounded-[12px]'>
-        <div className='h-[350px] md:h-[430px] lg:h-[433px] chairmanBgGradient rounded-b-[12px] md:rounded-br-none md:rounded-s-[12px]  flex items-center' >
+        <div className='h-[450px] md:h-[430px] lg:h-[433px] chairmanBgGradient rounded-b-[12px] md:rounded-br-none md:rounded-s-[12px]  flex items-center' >
           <div className='absolute hidden md:block -z-0'>
             <Image src={chairmanbg} alt='gradient-left' />
           </div>
           <div className='absolute md:hidden block'>
             <Image src={chairmanbgMobile} alt='gradient-left' />
           </div>
-          <div className='w-[80%] chaiman-cards  mx-auto text-white flex flex-col gap-[10px] px-[30px] md:px-[30px] lg:px-[20px]'>
+          <div className='w-full md:w-[80%] chaiman-cards mx-auto text-white flex flex-col gap-[6px] md:gap-[10px] px-[30px] md:px-[30px] lg:px-[20px]'>
             <h3 className='text-[24px] font-[general-sans-medium] leading-[29px]'>CHAIRMAN</h3>
             <div className='flex flex-col gap-[20px] font-[general-sans-medium] description text-[14px] lg:text-[18px] leading-[21px] md:leading-[24px]'>
               <p>
