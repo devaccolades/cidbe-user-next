@@ -294,6 +294,37 @@
         width: 80%;
     }
 }
+@media (min-width:1024px) and (max-width:1250px){
+    .chaiman-cards{
+        width: 94%;
+    }
+    h3{
+        font-size: 24px;
+    }
+    .description{
+        font-size: 14px;
+    }
+}
+@media (max-width:374px){
+    .chaiman-cards{
+        padding: 0px 16px;
+    }
+    .name-sectio{
+        padding-top: 2px;
+    }
+   
+}
+@media (min-width:768px) and (max-width:930px){
+    .chaiman-cards{
+        width: 94%;
+    }
+    .description{
+        line-height: 20px;
+    }
+    .name-sectio{
+        padding-top: 8px;
+    }
+}
 
 /* Review and faq */
 .reviews-bg-gradient {

@@ -52,9 +52,9 @@ function Status({ status }) {
     <section className='bg-[#ffff]'>
       <div className='containers custom-res py-[20px]'>
         <div className='flex flex-col md:flex-row md:items-start gap-[1px] lg:gap-[20px]'>
-          <h1 className='text-[24px] font-[clash-display-medium] mb-[20px] md:mb-[0] md:mr-[40px]'>
+          <h2 className='text-[24px] font-[clash-display-medium] mb-[20px] md:mb-[0] md:mr-[40px]'>
             Current Status
-          </h1>
+          </h2>
           <div className='flex gap-[10px] flex-wrap'>
             {status.map((yearData, index) => (
               <button

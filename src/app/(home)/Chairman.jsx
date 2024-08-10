@@ -11,20 +11,26 @@ import chraimanImage from "../../../public/images/home/chraiman.jpeg"
 function Chairman() {
   return (
     <section className='py-[30px] lg:py-[100px] flex justify-center items-center'>
-      <card className='relative  containers shadow-2xl flex flex-col-reverse md:grid md:grid-cols-[1fr,350px] lg:grid-cols-[1fr,435px] rounded-[12px]'>
-        <div className='h-[350px] md:h-[430px] lg:h-[433px] chairmanBgGradient rounded-b-[12px] md:rounded-br-none md:rounded-s-[12px]  flex items-center' >
+      <card className='relative responsive containers shadow-2xl flex flex-col-reverse md:grid md:grid-cols-[1fr,350px] lg:grid-cols-[1fr,435px] rounded-[12px]'>
+        <div className='h-[450px] md:h-[430px] lg:h-[433px] chairmanBgGradient rounded-b-[12px] md:rounded-br-none md:rounded-s-[12px]  flex items-center' >
           <div className='absolute hidden md:block -z-0'>
             <Image src={chairmanbg} alt='gradient-left' />
           </div>
           <div className='absolute md:hidden block'>
             <Image src={chairmanbgMobile} alt='gradient-left' />
           </div>
-          <div className='w-full lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px]  text-white flex flex-col gap-[10px] px-[30px] md:px-[30px] lg:px-[20px]'>
+          <div className='w-full md:w-[80%] chaiman-cards mx-auto text-white flex flex-col gap-[6px] md:gap-[10px] px-[30px] md:px-[30px] lg:px-[20px]'>
             <h3 className='text-[24px] font-[general-sans-medium] leading-[29px]'>CHAIRMAN</h3>
-            <div className='flex flex-col gap-[20px] font-[general-sans-medium] text-[14px] lg:text-[18px] leading-[21px] md:leading-[24px]'>
-              <p>"We build homes which will be a part of your soul, Reflecting your taste &aspiration .We make sure that every moments you spent at your home is not built on walls and beams, but love and dreams .We don't want to push our ideas to the customers ,we simply want to make what they want"  </p>
+            <div className='flex flex-col gap-[20px] font-[general-sans-medium] description text-[14px] lg:text-[18px] leading-[21px] md:leading-[24px]'>
+              <p>
+                Welcome to CIDBI.
+                We drive forward with our commitment to innovation and excellence. Our journey is built on integrity, quality, and customer satisfaction.
+                At CIDBI, we build homes that become a part of your soul, reflecting your taste and aspirations. We ensure that every moment you spend in your home is not built with walls and beams, but with love and dreams. We don't push our ideas; we create what you want.
+                Thank you for your trust and support as we continue to excel in the industries we serve.
+                Warm regards,
+              </p>
             </div>
-            <div className='flex md:justify-end pt-[20px]'>
+            <div className='flex md:justify-end name-sectio pt-[20px]'>
               <p className='font-[general-sans-medium] text-[14px] lg:text-[12px] leading-[18px]'>
                 <span className='text-[14px]'>A A Abdul Lathif</span> <br />
                 <span className='text-[12px] leading-[18px]'>CEO, CIDBI, Thrissur</span> <br />

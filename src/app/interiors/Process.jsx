@@ -97,7 +97,7 @@ function Process() {
   return (
     <section className="bg-cover bg-center sm:py-[50px] md:py-[75px] lg:py-[100px]" style={{backgroundImage:`url('/images/interiors/interiors.svg')` }}>
       <div className="containers relative">
-        <h1 className="font-[clash-display-medium] sm:text-[16px] md:text-[26px] lg:text-[36px] text-center mb-8 text-[--secondary-cl]">Our interior design process</h1>
+        <h2 className="font-[clash-display-medium] sm:text-[16px] md:text-[26px] lg:text-[36px] text-center mb-8 text-[--secondary-cl]">Our interior design process</h2>
         <div className="hidden md:block" ref={imageRef} style={imageStyle}>
           <Image
             src={lineImage}

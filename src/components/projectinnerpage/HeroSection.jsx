@@ -51,15 +51,16 @@ function HeroSection({ data, images }) {
           )}
         </Slider>
       </div>
-      {/* <div className="absolute top-[35%] left-[14%]">
+      {/* <div className="absolute top-[20%] left-[16%]">
         <img src={data?.logo} alt="logo" />
       </div> */}
       {/* Text Content */}
       <div className="p-[20px] h-full flex flex-col justify-end containers relative z-20">
         <div className="text-white mb-[100px]">
+        {data?.logo && <img src={data?.logo} alt="logo" className="w-[100px] md:w-[140px]"/>}
           <h1 className='text-[24px] font-[clash-display-medium]'>{data?.name}</h1>
-          <h1 className='text-[16px] font-[clash-display-medium]'>{data?.sub_name}</h1>
-          <h1 className='text-[16px] font-[clash-display-medium]'>{data?.location}</h1>
+          <p className='text-[16px] font-[clash-display-medium]'>{data?.sub_name}</p>
+          <p className='text-[16px] font-[clash-display-medium]'>{data?.location}</p>
         </div>
       </div>
     </div>

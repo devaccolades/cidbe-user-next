@@ -11,7 +11,7 @@ import { getCommunityImpactApi } from '../../services/services';
 
 function FocusAreas() {
   const [page, setPage] = useState(1);
-  const [page_limit, setPage_limit] = useState(3);
+  const [page_limit, setPage_limit] = useState(6);
   const [total_count, setTotal] = useState(0);
   const [communityData, setCommunityData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -74,7 +74,7 @@ function FocusAreas() {
     <section className='csr-bg min-h-screen'>
       {/* our focus areas */}
 <div className='containers px-5 py-8 sm:py-10 lg:py-12'>
-  <h1 className='text-center font-[clash-display-medium] text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8'>Our Focus Areas</h1>
+  <h2 className='text-center font-[clash-display-medium] text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8'>Our Focus Areas</h2>
     <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 lg:flex lg:justify-between'>
       {focusAreas.map((area, index) => (
         <div key={index} className='flex flex-row sm:flex-col lg:flex-row items-center space-x-3 sm:space-x-0 sm:space-y-3 lg:space-y-0 lg:space-x-3'>
@@ -103,7 +103,7 @@ function FocusAreas() {
 
       {/* community impact */}
       <div className='containers py-12' ref={communityImpactRef}>
-        <h1 className='text-center font-[clash-display-medium] text-2xl sm:text-3xl lg:text-4xl mb-8'>Community impact</h1>
+        <h2 className='text-center font-[clash-display-medium] text-2xl sm:text-3xl lg:text-4xl mb-8 capitalize'>Community impact</h2>
         {communityData.length > 0 ? (
           isLoading ? (
             <div>Loading...</div>

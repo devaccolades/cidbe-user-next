@@ -36,7 +36,7 @@ function BlogListing() {
     };
     return (
         <main className="bg-[var(--primary-cl)] -mt-[80px] lg:-mt-[95px] flex flex-col blog-bg bg-cover">
-            <h4 className='text-[16px] lg:text-[32px] text-center font-[clash-display-medium] pt-[80px] lg:pt-[130px] text-[--secondary-cl]'>BLOGS</h4>
+            <h1 className='text-[16px] lg:text-[32px] text-center font-[clash-display-medium] pt-[80px] lg:pt-[130px] text-[--secondary-cl]'>BLOGS</h1>
             {Blogs.length > 0 ? (
                 <section className='blog-listing containers gap-y-[40px] gap-x-[20px] grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-[20px] lg:py-[52px]'>
                     {Blogs.map((blog, index) => (

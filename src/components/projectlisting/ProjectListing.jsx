@@ -46,7 +46,7 @@ function ProjectListing({ title }) {
   };
   return (
     <main className="bg-[--primary-cl] bg-cover bg-no-repeat project-list-bg -mt-[80px] lg:-mt-[95px]">
-      <section className='containers '>
+      <section className='containers res-custom-container'>
         <h1 className='text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]'>{title}</h1>
         {projects.length > 0 ?(
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full py-[30px]'>

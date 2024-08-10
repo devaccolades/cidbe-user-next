@@ -9,9 +9,9 @@ function AboutSecondSection() {
       <section className='containers pt-[20px] lg:pt-[90px] pb-[50px]'>
         <div className='flex flex-col lg:flex-row gap-5 w-full items-center'>
           <div className='w-full lg:w-[40%] md:h-[212px] flex flex-col justify-center gap-[24px]'>
-            <h1 className='text-[#483C32] font-[general-sans-regular] text-[14px] md:text-[16px] leading-[22px] md:leading-[24px] gap-5'>
+            <h2 className='text-[#483C32] font-[general-sans-regular] text-[14px] md:text-[16px] leading-[22px] md:leading-[24px] gap-5'>
               We, Creations India Developers Builders Infrastructures (CIDBI), an ISO 9001-2015 certified builder in Thrissur, was established in 2005 in response to the growing need of quality housings. Since then, we have grown to be one of the best builders in Thrissur. CIDBI is a professionally managed company under the leadership of Mr. A A Abdul Lathif, run by well experienced management. We have more than 33 years of experience in the construction field and have developed more than 110 lakhs sqft buildings in the form of residential flats, office/shopping complexes, educational institutions, hospitals etc in an around Thrissur.
-            </h1>
+            </h2>
           </div>
           <div className='flex flex-col md:flex-row w-full lg:w-[60%] gap-5'>
             <div className='w-full flex flex-col'>
