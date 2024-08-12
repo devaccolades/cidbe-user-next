@@ -58,7 +58,7 @@ function Brochure({ data }) {
             {data?.brochure && <div className='mt-auto'>
               <button onClick={()=>getBrochure(data?.id)} className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] inline-flex items-center gap-[8px] rounded-[6px] lg:inline-flex hidden'>
                 <span>Download Brochure</span>
-                <Image src={downloadIcon} alt='Download Icon' width={16} height={16} />
+                <Image  src={downloadIcon} alt='Download Icon' width={16} height={16} />
               </button>
             </div>}
           </div>
@@ -68,7 +68,7 @@ function Brochure({ data }) {
             <div className='flex-grow'>
               <div className='flex items-center justify-between mb-[20px]'>
                 <h2 className='lg:text-[24px] md:text-[16px] font-[clash-display-medium] heading-size '>Project Overview</h2>
-                {data?.qr_code && <Image src={data?.qr_code} alt='QR Code' width={46} height={46} />}
+                {data?.qr_code && <Image unoptimized src={data?.qr_code} alt='QR Code' width={46} height={46} />}
               </div>
               <div>
                 {overViewIcon.map((item, index) => (
