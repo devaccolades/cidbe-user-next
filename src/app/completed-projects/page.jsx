@@ -1,9 +1,10 @@
 import React from 'react'
 import Header from '../../layout/Header'
 import Footer from '../../layout/Footer'
+import ProjectListing from '../../components/projectlisting/ProjectListing';
 import dynamic from 'next/dynamic';
 import Skelten from '../../components/skeletoneffect/Skelten';
-const ProjectListing = dynamic(() => import('../../components/projectlisting/ProjectListing'), { ssr: false,loading:() => <Skelten/>, });
+// const ProjectListing = dynamic(() => import('../../components/projectlisting/ProjectListing'), { ssr: false,loading:() => <Skelten/>, });
 import { getSeoApi } from '../../services/services';
 
 async function fetchSeoData(path) {

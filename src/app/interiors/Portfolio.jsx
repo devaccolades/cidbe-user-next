@@ -13,14 +13,25 @@ import imageEighth from '../../../public/images/interiors/portfolio/int8.svg';
 import imageNinth from '../../../public/images/interiors/portfolio/int9.svg';
 import imageTenth from '../../../public/images/interiors/portfolio/int10.svg';
 
+import image1 from '../../../public/images/interiors/portfolio/image1.png';
+import image2 from '../../../public/images/interiors/portfolio/image2.png';
+import image3 from '../../../public/images/interiors/portfolio/image3.png';
+import image4 from '../../../public/images/interiors/portfolio/image4.png';
+import image5 from '../../../public/images/interiors/portfolio/image5.png';
+import image6 from '../../../public/images/interiors/portfolio/image6.png';
+import image7 from '../../../public/images/interiors/portfolio/image7.png';
+import image8 from '../../../public/images/interiors/portfolio/image8.png';
+import image9 from '../../../public/images/interiors/portfolio/image9.png';
+import image10 from '../../../public/images/interiors/portfolio/image10.png';
+
 function Portfolio() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
   const portfolioRef = useRef(null);
 
   const images = [
-    imageFirst, imageSecond, imageThird, imageFourth, imageFifth,
-    imageSixth, imageSeventh, imageEighth, imageNinth, imageTenth
+    image10, image2, image3, image4, image5,
+    image6, image7, image8, image9, image9
   ];
 
   const totalPages = Math.ceil(images.length / itemsPerPage);
@@ -49,20 +60,20 @@ function Portfolio() {
           <div className="grid gap-4 pb-[100px]">
             <div className="grid grid-cols-2 gap-4 items-end">
               <div className="relative overflow-hidden">
-                <Image src={imageFirst} alt="Interior 1" className="transition-transform duration-300 hover:scale-110" />
+                <Image src={image1} alt="Interior 1" className="transition-transform duration-300 hover:scale-110" />
               </div>
               <div className="relative overflow-hidden flex justify-end">
-                <Image src={imageSecond} alt="Interior 2" className="transition-transform duration-300 hover:scale-110" />
+                <Image src={image2} alt="Interior 2" className="transition-transform duration-300 hover:scale-110" />
               </div>
             </div>
             <div className='flex justify-end'>
               <div className="relative overflow-hidden">
-                <Image src={imageThird} alt="Interior 3" className="transition-transform duration-300 hover:scale-110" />
+                <Image src={image5} alt="Interior 3" className="transition-transform duration-300 hover:scale-110" />
               </div>
             </div>
             <div className='flex justify-end'>
               <div className="relative overflow-hidden">
-                <Image src={imageFourth} alt="Interior 4" className="transition-transform duration-300 hover:scale-110" />
+                <Image src={image7} alt="Interior 4" className="transition-transform duration-300 hover:scale-110" />
               </div>
             </div>
           </div>
@@ -70,30 +81,30 @@ function Portfolio() {
           {/* Center Column */}
           <div className="flex flex-col items-center justify-around gap-8">
             <div className="relative overflow-hidden">
-              <Image src={imageFifth} alt="Interior 5" className="transition-transform duration-300 hover:scale-110" />
+              <Image src={image3} alt="Interior 5" className="transition-transform duration-300 hover:scale-110" />
             </div>
             <div className="text-center">
               <h2 className="font-[clash-display-medium] sm:text-[16px] md:text-[26px] lg:text-[36px] text-center text-[--secondary-cl]">Our Portfolio</h2>
             </div>
             <div className="relative overflow-hidden">
-              <Image src={imageSixth} alt="Interior 6" className="transition-transform duration-300 hover:scale-110" />
+              <Image src={image8} alt="Interior 6" className="transition-transform duration-300 hover:scale-110" />
             </div>
           </div>
 
           {/* Right Column */}
           <div className="grid gap-4 pt-[100px]">
             <div className="relative overflow-hidden">
-              <Image src={imageSeventh} alt="Interior 7" className="transition-transform duration-300 hover:scale-110" />
+              <Image src={image4} alt="Interior 7" className="transition-transform duration-300 hover:scale-110" />
             </div>
             <div className="relative overflow-hidden">
-              <Image src={imageEighth} alt="Interior 8" className="transition-transform duration-300 hover:scale-110" />
+              <Image src={image6} alt="Interior 8" className="transition-transform duration-300 hover:scale-110" />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="relative overflow-hidden">
-                <Image src={imageNinth} alt="Interior 9" className="transition-transform duration-300 hover:scale-110" />
+                <Image src={image9} alt="Interior 9" className="transition-transform duration-300 hover:scale-110" />
               </div>
               <div className="relative overflow-hidden">
-                <Image src={imageTenth} alt="Interior 10" className="transition-transform duration-300 hover:scale-110" />
+                <Image src={image10} alt="Interior 10" className="transition-transform duration-300 hover:scale-110" />
               </div>
             </div>
           </div>

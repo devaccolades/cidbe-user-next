@@ -5,25 +5,26 @@ import { getCompletedProject, getFeaturedProject, getOngoingProject, getReadyToO
 import NotFound from '../../components/common/NotFound'
 import { usePathname } from 'next/navigation';
 import './ProjectList.css'
+import Skelten from '../skeletoneffect/Skelten';
 function ProjectListing({ title }) {
   const pathname = usePathname();
   const [page, setPage] = useState(1)
-  const [page_limit, setPage_limit] = useState(pathname==="/completed-projects"? 6 : 3)
+  const [page_limit, setPage_limit] = useState(pathname === "/completed-projects" ? 6 : 3)
   const [total_count, setTotal] = useState(0)
-  const [projects, setprojects] = useState('')
+  const [projects, setprojects] = useState(null)
   const fetchData = async () => {
     try {
       let res = ""
       if (pathname === '/featured-projects') {
         res = await getFeaturedProject(page, page_limit)
-      }else if (pathname === '/ongoing-projects'){
+      } else if (pathname === '/ongoing-projects') {
         res = await getOngoingProject(page, page_limit)
-      }else if (pathname === '/upcoming-projects'){
-        res = await getUpcomingProject(page,page_limit)
-      }else if (pathname === '/completed-projects'){
-        res  = await getCompletedProject(page,page_limit)
-      }else if (pathname === '/ready-to-occupy'){
-        res = await getReadyToOccupyProject(page,page_limit)
+      } else if (pathname === '/upcoming-projects') {
+        res = await getUpcomingProject(page, page_limit)
+      } else if (pathname === '/completed-projects') {
+        res = await getCompletedProject(page, page_limit)
+      } else if (pathname === '/ready-to-occupy') {
+        res = await getReadyToOccupyProject(page, page_limit)
       }
       const { StatusCode, data } = res.data
       if (StatusCode === 6000) {
@@ -48,16 +49,19 @@ function ProjectListing({ title }) {
     <main className="bg-[--primary-cl] bg-cover bg-no-repeat project-list-bg -mt-[80px] lg:-mt-[95px]">
       <section className='containers res-custom-container'>
         <h1 className='text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]'>{title}</h1>
-        {projects.length > 0 ?(
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full py-[30px]'>
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
-        ):(
-          <NotFound />
+        {projects === null ? (
+          <Skelten />
+        ) :
+          projects.length > 0 ? (
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full py-[30px]'>
+              {projects.map((project, index) => (
+                <ProjectCard key={index} project={project} />
+              ))}
+            </div>
+          ) : (
+            <NotFound />
 
-        )}
+          )}
 
       </section>
       <div className="pb-[30px] flex justify-end containers">

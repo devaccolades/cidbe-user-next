@@ -55,7 +55,7 @@ function BlogListing() {
                     >
                         Previous
                     </button>
-                    {Array.from({ length: Math.ceil(total_count / page_limit) }, (_, index) => (
+                    {/* {Array.from({ length: Math.ceil(total_count / page_limit) }, (_, index) => (
                         <button
                             key={index}
                             onClick={() => handleClick(index + 1)}
@@ -63,7 +63,7 @@ function BlogListing() {
                         >
                             {index + 1}
                         </button>
-                    ))}
+                    ))} */}
                     <button
                         onClick={() => handleClick(page + 1)}
                         disabled={page === Math.ceil(total_count / page_limit)}
