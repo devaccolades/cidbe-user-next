@@ -75,6 +75,7 @@ function Plans({ floor_plan, blueprint_image }) {
             ))}
           </Swiper>
         </div>
+      
 
        {blueprint_image&& <div className='mt-16'>
           <Image unoptimized src={blueprint_image} alt="Plan Image" width={100} height={100} layout="responsive" />
