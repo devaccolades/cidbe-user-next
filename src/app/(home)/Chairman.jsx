@@ -34,7 +34,7 @@ function Chairman() {
               <p className='font-[general-sans-medium] text-[14px] lg:text-[12px] leading-[18px]'>
                 <span className='text-[14px]'>A A Abdul Lathif</span> <br />
                 <span className='text-[12px] leading-[18px]'>CEO, CIDBI, Thrissur</span> <br />
-                <span className='text-[12px] leading-[18px]'>President, CREDAI, Thrissur Chapter</span>
+                <span className='text-[12px] leading-[18px]'>Executive Committee, CREDAI, Thrissur Chapter</span>
               </p>
             </div>
           </div>

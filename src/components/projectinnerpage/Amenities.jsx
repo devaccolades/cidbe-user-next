@@ -14,7 +14,7 @@ function Amenities({amenities}) {
             <div className="bg-[#BFD8BD] w-[60px] h-[52px] flex items-center justify-center border border-black rounded-lg flex-shrink-0">
               <Image src={amenity?.icon} alt={`${amenity.image_alt} Icon`} unoptimized width={24} height={24} />
             </div>
-            <p className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-medium] ">
+            <p className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-medium] uppercase">
               {amenity.title}
             </p>
           </div>
