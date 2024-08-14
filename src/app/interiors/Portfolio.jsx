@@ -2,27 +2,17 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import imageFirst from '../../../public/images/interiors/portfolio/int1.svg';
-import imageSecond from '../../../public/images/interiors/portfolio/int2.svg';
-import imageThird from '../../../public/images/interiors/portfolio/int3.svg';
-import imageFourth from '../../../public/images/interiors/portfolio/int4.svg';
-import imageFifth from '../../../public/images/interiors/portfolio/int5.svg';
-import imageSixth from '../../../public/images/interiors/portfolio/int6.svg';
-import imageSeventh from '../../../public/images/interiors/portfolio/int7.svg';
-import imageEighth from '../../../public/images/interiors/portfolio/int8.svg';
-import imageNinth from '../../../public/images/interiors/portfolio/int9.svg';
-import imageTenth from '../../../public/images/interiors/portfolio/int10.svg';
 
-import image1 from '../../../public/images/interiors/portfolio/image1.png';
-import image2 from '../../../public/images/interiors/portfolio/image2.png';
-import image3 from '../../../public/images/interiors/portfolio/image3.png';
-import image4 from '../../../public/images/interiors/portfolio/image4.png';
-import image5 from '../../../public/images/interiors/portfolio/image5.png';
-import image6 from '../../../public/images/interiors/portfolio/image6.png';
-import image7 from '../../../public/images/interiors/portfolio/image7.png';
-import image8 from '../../../public/images/interiors/portfolio/image8.png';
-import image9 from '../../../public/images/interiors/portfolio/image9.png';
-import image10 from '../../../public/images/interiors/portfolio/image10.png';
+import image1 from '../../../public/images/interiors/new img/1.svg';
+import image2 from '../../../public/images/interiors/new img/2.svg';
+import image3 from '../../../public/images/interiors/new img/3.svg';
+import image4 from '../../../public/images/interiors/new img/4.svg';
+import image5 from '../../../public/images/interiors/new img/5.svg';
+import image6 from '../../../public/images/interiors/new img/6.svg';
+import image7 from '../../../public/images/interiors/new img/7.svg';
+import image8 from '../../../public/images/interiors/new img/8.svg';
+import image9 from '../../../public/images/interiors/new img/9.svg';
+import image10 from '../../../public/images/interiors/new img/10.svg';
 
 function Portfolio() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -46,7 +36,6 @@ function Portfolio() {
     }
   };
   
-
   const paginatedImages = images.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
@@ -60,20 +49,36 @@ function Portfolio() {
           <div className="grid gap-4 pb-[100px]">
             <div className="grid grid-cols-2 gap-4 items-end">
               <div className="relative overflow-hidden">
-                <Image src={image1} alt="Interior 1" className="transition-transform duration-300 hover:scale-110" />
+                <Image 
+                  src={image1} 
+                  alt="Interior 1" 
+                  className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+                />
               </div>
               <div className="relative overflow-hidden flex justify-end">
-                <Image src={image2} alt="Interior 2" className="transition-transform duration-300 hover:scale-110" />
+                <Image 
+                  src={image2} 
+                  alt="Interior 2" 
+                  className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+                />
               </div>
             </div>
             <div className='flex justify-end'>
               <div className="relative overflow-hidden">
-                <Image src={image5} alt="Interior 3" className="transition-transform duration-300 hover:scale-110" />
+                <Image 
+                  src={image5} 
+                  alt="Interior 3" 
+                  className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+                />
               </div>
             </div>
             <div className='flex justify-end'>
               <div className="relative overflow-hidden">
-                <Image src={image7} alt="Interior 4" className="transition-transform duration-300 hover:scale-110" />
+                <Image 
+                  src={image7} 
+                  alt="Interior 4" 
+                  className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+                />
               </div>
             </div>
           </div>
@@ -81,30 +86,54 @@ function Portfolio() {
           {/* Center Column */}
           <div className="flex flex-col items-center justify-around gap-8">
             <div className="relative overflow-hidden">
-              <Image src={image3} alt="Interior 5" className="transition-transform duration-300 hover:scale-110" />
+              <Image 
+                src={image3} 
+                alt="Interior 5" 
+                className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+              />
             </div>
             <div className="text-center">
               <h2 className="font-[clash-display-medium] sm:text-[16px] md:text-[26px] lg:text-[36px] text-center text-[--secondary-cl]">Our Portfolio</h2>
             </div>
             <div className="relative overflow-hidden">
-              <Image src={image8} alt="Interior 6" className="transition-transform duration-300 hover:scale-110" />
+              <Image 
+                src={image8} 
+                alt="Interior 6" 
+                className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+              />
             </div>
           </div>
 
           {/* Right Column */}
           <div className="grid gap-4 pt-[100px]">
             <div className="relative overflow-hidden">
-              <Image src={image4} alt="Interior 7" className="transition-transform duration-300 hover:scale-110" />
+              <Image 
+                src={image4} 
+                alt="Interior 7" 
+                className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+              />
             </div>
             <div className="relative overflow-hidden">
-              <Image src={image6} alt="Interior 8" className="transition-transform duration-300 hover:scale-110" />
+              <Image 
+                src={image6} 
+                alt="Interior 8" 
+                className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+              />
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="relative overflow-hidden">
-                <Image src={image9} alt="Interior 9" className="transition-transform duration-300 hover:scale-110" />
+                <Image 
+                  src={image9} 
+                  alt="Interior 9" 
+                  className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+                />
               </div>
               <div className="relative overflow-hidden">
-                <Image src={image10} alt="Interior 10" className="transition-transform duration-300 hover:scale-110" />
+                <Image 
+                  src={image10} 
+                  alt="Interior 10" 
+                  className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
+                />
               </div>
             </div>
           </div>
@@ -116,7 +145,11 @@ function Portfolio() {
           <h2 className="text-[16px] font-[clash-display-medium] mb-4">Our Portfolio</h2>
           {paginatedImages.map((image, index) => (
             <div key={index} className="w-full ">
-              <Image src={image} alt={`Interior ${index + 1}`} className="w-full h-auto object-cover" />
+              <Image 
+                src={image} 
+                alt={`Interior ${index + 1}`} 
+                className="w-full h-auto object-cover" 
+              />
             </div>
           ))}
         </div>
@@ -154,3 +187,7 @@ function Portfolio() {
 }
 
 export default Portfolio;
+
+
+
+ 
