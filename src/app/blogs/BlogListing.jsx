@@ -3,13 +3,14 @@ import React, { useEffect, useState } from 'react'
 import BlogCard from '../../components/BlogCard'
 import NotFound from '../../components/common/NotFound'
 import { getBlogsApi } from '../../services/services'
+import Skelten from '../../components/skeletoneffect/Skelten'
 
 function BlogListing() {
     const [page, setPage] = useState(1)
     const [page_limit, setPage_limit] = useState(window.innerWidth < 768 ? 6 : 8)
     const [total_count, setTotal] = useState(0)
 
-    const [Blogs, setBlogs] = useState([])
+    const [Blogs, setBlogs] = useState(null)
 
 
     useEffect(() => {
@@ -37,7 +38,10 @@ function BlogListing() {
     return (
         <main className="bg-[var(--primary-cl)] -mt-[80px] lg:-mt-[95px] flex flex-col blog-bg bg-cover">
             <h1 className='text-[16px] lg:text-[32px] text-center font-[clash-display-medium] pt-[80px] lg:pt-[130px] text-[--secondary-cl]'>BLOGS</h1>
-            {Blogs.length > 0 ? (
+            {Blogs===null?(
+                <Skelten/>
+            ):
+            Blogs.length > 0 ? (
                 <section className='blog-listing containers gap-y-[40px] gap-x-[20px] grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-[20px] lg:py-[52px]'>
                     {Blogs.map((blog, index) => (
                         <BlogCard key={index} blog={blog} />

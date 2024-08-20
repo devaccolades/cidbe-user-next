@@ -12,10 +12,6 @@ import nextArrowIcon from '../../../public/icons/next_arrow.svg';
 import prevArrowIcon from '../../../public/icons/prev_arrow.svg';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import image1 from "../../../public/images/home/carorcel1.jpeg"
-import image2 from "../../../public/images/home/carorcel2.webp"
-import bgimage1 from "../../../public/images/home/bg.webp"
-import bgimage2 from "../../../public/images/home/bg-2.jpg"
 import { getFeaturedProject } from '../../services/services';
 import HomePageSkelten from '../../components/skeletoneffect/HomePageSkelten';
 import { useRouter } from 'next/navigation';

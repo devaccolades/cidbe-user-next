@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import aboutFormShape from '../../../public/images/about/aboutfromnew.svg.svg'
 import Image from 'next/image'
-import formImage from '../../../public/images/about/AboutFormImage.png'
+import formImage from '../../../public/images/about/AboutFormImage.jpg'
 import { EnquiryFomSchema } from '../../validation/Validation'
 import { PostEnquiryApi } from '../../services/services'
 import { useFormik } from 'formik'
@@ -105,7 +105,7 @@ function AboutFourthSection() {
                     </div>
                     <div className='flex flex-col gap-[6px]'>
                       <p className='font-[inter-regular] text-[11px] md:text-[14px]'>Phone No</p>
-                      <input className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none' placeholder='Enter Your Phone No Number' type="number"
+                      <input className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none' placeholder='Enter your phone number' type="number"
                         name='number'
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -116,7 +116,7 @@ function AboutFourthSection() {
                     </div>
                     <div className='flex flex-col gap-[6px]'>
                       <p className='font-[inter-regular] text-[11px] md:text-[14px]'>Email</p>
-                      <input className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none' placeholder='Enter Your Email id' type="text"
+                      <input className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none' placeholder='Enter your email id' type="text"
                         name='email'
                         onChange={handleChange}
                         onBlur={handleBlur}

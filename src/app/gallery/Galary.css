@@ -13,3 +13,11 @@
 
     }
 }
+
+.ant-image{
+    width: 100% !important;
+}
+.ant-image-img{
+    object-fit: cover;
+    height: 200px !important;
+}

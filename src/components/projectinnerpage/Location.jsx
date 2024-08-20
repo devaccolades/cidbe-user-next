@@ -1,5 +1,4 @@
 import React from 'react';
-import ImageModal from '../imagemodal/ImageModal';
 
 function Location({ location, nearby }) {
   return (
@@ -29,7 +28,6 @@ function Location({ location, nearby }) {
           </div>}
         </div>
       </div>
-      <ImageModal/>
     </section>
   );
 }

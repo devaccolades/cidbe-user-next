@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import { Image as AntdImage } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
 import arrowIcon from '../../../public/images/product-view/slideArrow.svg';
@@ -13,12 +14,6 @@ import 'swiper/css/scrollbar';
 import ImageModal from '../imagemodal/ImageModal';
 
 function Status({ status }) {
-  const [selected, setSelected] = useState('')
-  const [open, setOpen] = useState(false)
-  const handleOpen = (data) => {
-    setSelected(data||"")
-    setOpen(!open)
-  }
   const [activeYear, setActiveYear] = useState("");
   const swiperRef = useRef(null);
 
@@ -60,9 +55,8 @@ function Status({ status }) {
               <button
                 key={index}
                 onClick={() => handleYearChange(yearData.year)}
-                className={`w-[80px] h-[40px] font-medium rounded-[6px] flex items-center justify-center border-[1px] border-black transition-colors duration-300 ${
-                  activeYear === yearData.year ? 'bg-[#052D23] text-white' : 'bg-white text-black hover:bg-[#052D23] hover:text-white'
-                }`}
+                className={`w-[80px] h-[40px] font-medium rounded-[6px] flex items-center justify-center border-[1px] border-black transition-colors duration-300 ${activeYear === yearData.year ? 'bg-[#052D23] text-white' : 'bg-white text-black hover:bg-[#052D23] hover:text-white'
+                  }`}
               >
                 {yearData.year}
               </button>
@@ -71,6 +65,7 @@ function Status({ status }) {
         </div>
 
         <div className='mt-[40px]'>
+        <AntdImage.PreviewGroup>
           <Swiper
             ref={swiperRef}
             modules={[Scrollbar]}
@@ -104,26 +99,34 @@ function Status({ status }) {
               }
             }}
           >
-            {status.flatMap((yearData) =>
-              yearData.statuses.map((item, index) => (
-                <SwiperSlide key={`${item.id}-${index}`} className='relative'>
-                  <div className='w-full h-[200px] bg-cover bg-center rounded-[8px] cursor-pointer' 
-                      style={{ backgroundImage: `url(${item?.image})` }} onClick={()=>handleOpen(item?.image)}/>
-                  <div className='relative mt-[5px] rounded-[5px] bottom-0 left-0 right-0 flex items-center justify-between bg-[#BFD8BD] p-[10px] rounded-b-[6px]' >
-                    <div className='flex items-center'>
-                      <Image src={yearIcon} alt="Year Icon" className='mr-[5px]' />
-                      <p className='text-sm'>{item.month}</p>
-                    </div>
-                    {/* {index < yearData.statuses.length - 1 && ( */}
+              {status.flatMap((yearData) =>
+                yearData.statuses.map((item, index) => (
+                  <SwiperSlide key={`${item.id}-${index}`} className='relative'>
+                    {/* <div className='w-full h-[200px] bg-cover bg-center rounded-[8px] cursor-pointer' 
+                      style={{ backgroundImage: `url(${item?.image})` }} onClick={()=>handleOpen(item?.image)}/> */}
+                    <AntdImage
+                      className="w-full rounded-[8px] h-[200px]"
+                      height={200}
+                      src={item?.image}
+                      alt={item?.title}
+                      preview={{ src: item?.image }}
+                    />
+                    <div className='relative mt-[2px] rounded-[5px] bottom-0 left-0 right-0 flex items-center justify-between bg-[#BFD8BD] p-[10px] rounded-b-[6px]' >
+                      <div className='flex items-center'>
+                        <Image src={yearIcon} alt="Year Icon" className='mr-[5px]' />
+                        <p className='text-sm'>{item.month}</p>
+                      </div>
+                      {/* {index < yearData.statuses.length - 1 && ( */}
                       <div className='flex items-center'>
                         <Image src={arrowIcon} alt="Arrow Icon" />
                       </div>
-                    {/* )} */}
-                  </div>
-                </SwiperSlide>
-              ))
-            )}
+                      {/* )} */}
+                    </div>
+                  </SwiperSlide>
+                ))
+              )}
           </Swiper>
+          </AntdImage.PreviewGroup>
         </div>
       </div>
 
@@ -148,7 +151,6 @@ function Status({ status }) {
           padding-bottom: 30px !important;
         }
       `}</style>
-       <ImageModal open={open} handleOpen={handleOpen} data={selected} />
     </section>
   );
 }

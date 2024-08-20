@@ -138,7 +138,7 @@ function FocusAreas() {
         )}
 
         {/* Pagination */}
-        <div className="flex justify-center containers">
+        <div className="flex justify-center containers pt-[30px]">
                 <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
                     <button
                         onClick={() => handleClick(page - 1)}

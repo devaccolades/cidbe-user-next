@@ -8,3 +8,17 @@
         background-image: url('../../../public/images/achievements/achievements-bg.svg');
     }
 }
+
+.ant-image{
+    width: 100% !important;
+}
+.ant-image-img{
+    object-fit: cover;
+    height: 315px !important;
+}
+@media (min-width:1280px) and (max-width:1500px){
+    .custom-grid{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+}

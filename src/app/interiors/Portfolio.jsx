@@ -13,6 +13,8 @@ import image7 from '../../../public/images/interiors/new img/7.svg';
 import image8 from '../../../public/images/interiors/new img/8.svg';
 import image9 from '../../../public/images/interiors/new img/9.svg';
 import image10 from '../../../public/images/interiors/new img/10.svg';
+import image11 from '../../../public/images/interiors/new img/11.jpg';
+import image12 from '../../../public/images/interiors/new img/12.jpg';
 
 function Portfolio() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -20,8 +22,8 @@ function Portfolio() {
   const portfolioRef = useRef(null);
 
   const images = [
-    image10, image2, image3, image4, image5,
-    image6, image7, image8, image9, image9
+    image1, image2, image3, image4, image5,
+    image6, image7, image8, image12, image11
   ];
 
   const totalPages = Math.ceil(images.length / itemsPerPage);

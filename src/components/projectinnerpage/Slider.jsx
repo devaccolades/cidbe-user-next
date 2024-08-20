@@ -1,10 +1,11 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Carousel = ({ amenities_images }) => {
   const [currentIndex, setCurrentIndex] = useState(2);
-  const visibleImages = 2; // Change this value to increase/decrease the number of visible images on each side
+  const visibleImages = 2; // Number of visible images on each side
   const slideIntervalRef = useRef(null);
   const userInteractionTimeoutRef = useRef(null);
 
@@ -20,7 +21,7 @@ const Carousel = ({ amenities_images }) => {
     }
     userInteractionTimeoutRef.current = setTimeout(() => {
       startSlideShow();
-    }, 2000); 
+    }, 2000);
   };
 
   useEffect(() => {
@@ -62,7 +63,7 @@ const Carousel = ({ amenities_images }) => {
               const translateZ = offset === 0 ? '0px' : '-50px';
 
               return (
-                <div
+                <motion.div
                   key={image?.id}
                   onClick={() => {
                     clearInterval(slideIntervalRef.current);
@@ -77,6 +78,15 @@ const Carousel = ({ amenities_images }) => {
                     opacity: opacity,
                     zIndex: zIndex,
                   }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  onDragEnd={(e, { offset, velocity }) => {
+                    if (offset.x > 100) {
+                      prevSlide();
+                    } else if (offset.x < -100) {
+                      nextSlide();
+                    }
+                  }}
                 >
                   <Image
                     src={image?.images}
@@ -86,7 +96,7 @@ const Carousel = ({ amenities_images }) => {
                     className="rounded-[30px]"
                     unoptimized
                   />
-                </div>
+                </motion.div>
               );
             })}
           </div>

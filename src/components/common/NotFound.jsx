@@ -1,5 +1,5 @@
 import React from 'react'
-import noData from '../../../public/images/notfound/notfoundimage.png'
+import noData from '../../../public/images/notfound/notfoundimage.svg'
 import Image from 'next/image'
 function NotFound() {
   return (
