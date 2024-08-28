@@ -51,7 +51,7 @@ function Plans({ floor_plan, blueprint_image }) {
                     </div>
                     <h2 className='text-[20px] lg:text-[30px] font-[general-sans-medium] ml-auto'>{image?.bedrooms}BHK</h2>
                   </div>
-                  <div className='flex justify-between text-sm sm:text-xs md:text-sm font-[general-sans-light] text-[#ADADAD] mb-6'>
+                  <div className='flex justify-between text-sm sm:text-xs md:text-sm font-[general-sans-light] text-[--secondary-cl] mb-6'>
                     <p>Area {image?.total_area} sqft</p>
                     <p>Carpet Area {image?.carpet_area} sqft</p>
                   </div>
@@ -65,6 +65,9 @@ function Plans({ floor_plan, blueprint_image }) {
                     className='w-full'
                   /> */}
                    <AntdImage
+                      // width={1000}
+                      // height={90}
+                      className='h-full w-full'
                       src={image?.plan_image}
                       alt={image?.plan_alt}
                       preview={{ src: image?.image }}

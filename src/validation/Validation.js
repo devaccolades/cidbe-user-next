@@ -8,5 +8,5 @@ export const EnquiryFomSchema = Yup.object({
     .trim()
     .matches(/^[0-9]{10}$/, "Phone number must be exactly 10 digits")
     .required("Please enter your phone number"),
-  message: Yup.string().trim().min(4),
+  message: Yup.string().trim(),
 });

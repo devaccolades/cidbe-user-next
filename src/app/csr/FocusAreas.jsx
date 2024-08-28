@@ -73,31 +73,34 @@ function FocusAreas() {
   return (
     <section className='csr-bg min-h-screen'>
       {/* our focus areas */}
-<div className='containers px-5 py-8 sm:py-10 lg:py-12'>
-  <h2 className='text-center font-[clash-display-medium] text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8'>Our Focus Areas</h2>
-    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 lg:flex lg:justify-between'>
-      {focusAreas.map((area, index) => (
-        <div key={index} className='flex flex-row sm:flex-col lg:flex-row items-center space-x-3 sm:space-x-0 sm:space-y-3 lg:space-y-0 lg:space-x-3'>
-           <div className='bg-[#BFD8BD] w-[40px] h-[40px] sm:w-[48px] sm:h-[48px] lg:w-[52px] lg:h-[52px] flex items-center justify-center border border-black rounded-lg flex-shrink-0'>
-            <Image src={area.icon} alt={`${area.title} Icon`} width={20} height={20} className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px] lg:w-[20px] lg:h-[20px]" />
+      <div className='containers px-5 py-8 sm:py-10 lg:py-12'>
+        <h2 className='text-center font-[clash-display-medium] text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8'>Our Focus Areas</h2>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 lg:flex lg:justify-between'>
+          {focusAreas.map((area, index) => (
+            <div key={index} className='flex flex-row sm:flex-col lg:flex-row items-center space-x-3 sm:space-x-0 sm:space-y-3 lg:space-y-0 lg:space-x-3'>
+              <div className='bg-[#BFD8BD] w-[40px] h-[40px] sm:w-[48px] sm:h-[48px] lg:w-[52px] lg:h-[52px] flex items-center justify-center border border-black rounded-lg flex-shrink-0'>
+                <Image src={area.icon} alt={`${area.title} Icon`} width={20} height={20} className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px] lg:w-[20px] lg:h-[20px]" />
+              </div>
+              <p className='text-[14px] xl:text-[16px] font-[general-sans-medium] whitespace-normal sm:whitespace-nowrap'>{area.title}</p>
+            </div>
+          ))}
         </div>
-      <p className='text-[14px] xl:text-[16px] font-[general-sans-medium] whitespace-normal sm:whitespace-nowrap'>{area.title}</p>
-    </div>
-  ))}
-</div>
-</div>
+      </div>
 
       {/* csr video section */}
       <div className="containers sm:px-5 md:px-[100px] lg:px-[150px] py-1 sm:py-6 md:py-12">
         <div className="relative w-full rounded-[20px] overflow-hidden" style={{ paddingTop: '56.25%' }}>
-          <iframe
+          {/* <iframe
             className="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/Cf8NcIiIZeU"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></iframe>
+          ></iframe> */}
+          <iframe width="560" height="315" 
+          className="absolute top-0 left-0 w-full h-full"
+          src="https://www.youtube.com/embed/aRgv7Ntt7QA?si=BLXCcrxijpMaQkRT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
 
@@ -139,32 +142,32 @@ function FocusAreas() {
 
         {/* Pagination */}
         <div className="flex justify-center containers pt-[30px]">
-                <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
-                    <button
-                        onClick={() => handleClick(page - 1)}
-                        disabled={page === 1}
-                        className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-                    >
-                        Previous
-                    </button>
-                    {Array.from({ length: Math.ceil(total_count / page_limit) }, (_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => handleClick(index + 1)}
-                            className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 ${page === index + 1 ? 'z-10 bg-gray-100 text-gray-900 cursor-default' : 'hover:text-gray-500'}`}
-                        >
-                            {index + 1}
-                        </button>
-                    ))}
-                    <button
-                        onClick={() => handleClick(page + 1)}
-                        disabled={page === Math.ceil(total_count / page_limit)}
-                        className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(total_count / page_limit) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-                    >
-                        Next
-                    </button>
-                </nav>
-            </div>
+          <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
+            <button
+              onClick={() => handleClick(page - 1)}
+              disabled={page === 1}
+              className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
+            >
+              Previous
+            </button>
+            {Array.from({ length: Math.ceil(total_count / page_limit) }, (_, index) => (
+              <button
+                key={index}
+                onClick={() => handleClick(index + 1)}
+                className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 ${page === index + 1 ? 'z-10 bg-gray-100 text-gray-900 cursor-default' : 'hover:text-gray-500'}`}
+              >
+                {index + 1}
+              </button>
+            ))}
+            <button
+              onClick={() => handleClick(page + 1)}
+              disabled={page === Math.ceil(total_count / page_limit)}
+              className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(total_count / page_limit) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
+            >
+              Next
+            </button>
+          </nav>
+        </div>
       </div>
     </section>
   );

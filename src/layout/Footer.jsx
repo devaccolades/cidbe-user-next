@@ -41,7 +41,7 @@ function Footer({ backGround = "--primary-cl" }) {
             <div className='flex flex-row gap-[20px] items-center'>
               <a href="https://www.instagram.com/cidbithrissur/" target="_blank"> <Image src={instagram} className='w-[20] h-[20]' alt='instagram-logo' /></a>
               <a href="https://www.facebook.com/cidbitsr/" target="_blank">  <Image src={facebook} alt='facebook-logo' /></a>
-              <a href="https://www.youtube.com/channel/UCyRwiMStzuHNzaRzEGb__jQ"><Image src={youtube} className='w-[22px] h-[15px]' alt='youtube-logo' /></a>
+              <a href="https://www.youtube.com/channel/UCyRwiMStzuHNzaRzEGb__jQ" target="_blank"><Image src={youtube} className='w-[22px] h-[15px]' alt='youtube-logo' /></a>
             </div>
           </div>
           <div className='text-[14px] leading-[21px] w-[50%] md:w-[18%] lg:w-[11vw] flex flex-col gap-[20px] mt-[40px] md:mt-0'>
@@ -81,7 +81,7 @@ function Footer({ backGround = "--primary-cl" }) {
           </div>
         </div>
         <div className='flex flex-row flex-wrap mt-[10px] md:mt-[10px] ld:mt-0 md:gap-[10px] justify-center items-center w-full'>
-          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C]'>All Rights reserved by CIDBI Thrissur. 2024  </p>
+          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by CIDBI Thrissur. 2024  </p>
           <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] flex justify-center items-center gap-[10px]'><span>Powered by Accolades Integrated</span> <a href="https://accoladesintegrated.com/" target='_blank'> <Image width={10} height={10} className='w-[20px]' alt='accolades-logo' src={accoldesLogo} /></a> </p>
         </div>
       </section>
@@ -97,7 +97,7 @@ function Footer({ backGround = "--primary-cl" }) {
                 <div className='flex flex-row gap-[20px] items-center'>
                   <a href="https://www.instagram.com/cidbithrissur/" target="_blank"> <Image src={instagram} className='w-[20] h-[20]' alt='instagram-logo' /></a>
                   <a href="https://www.facebook.com/cidbitsr/" target="_blank">  <Image src={facebook} alt='facebook-logo' /></a>
-                  <a href="https://www.youtube.com/channel/UCyRwiMStzuHNzaRzEGb__jQ"><Image src={youtube} className='w-[22px] h-[15px]' alt='youtube-logo' /></a>
+                  <a href="https://www.youtube.com/channel/UCyRwiMStzuHNzaRzEGb__jQ" target="_blank"><Image src={youtube} className='w-[22px] h-[15px]' alt='youtube-logo' /></a>
                 </div>
               </div>
               <div className='text-[14px] leading-[21px] w-[50%] flex flex-col gap-[20px]'>
@@ -141,7 +141,7 @@ function Footer({ backGround = "--primary-cl" }) {
           </div>
         </div>
         <div className='flex flex-row flex-wrap mt-[10px] md:mt-0 md:gap-[10px] justify-center items-center w-full'>
-          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C]'>All Rights reserved by CIDBI Thrissur. 2024  </p>
+          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by CIDBI Thrissur. 2024  </p>
           <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] flex justify-center items-center gap-[10px]'><span>Powered by Accolades Integrated</span> <a href="https://accoladesintegrated.com/" target='_blank'> <Image width={10} height={10} className='w-[20px]' alt='accolades-logo' src={accoldesLogo} /></a> </p>
         </div>
       </section>
