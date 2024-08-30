@@ -35,6 +35,7 @@ function AboutThirdSection() {
           <Image className='h-full -ms-[2px] hidden md:block z-[15]' alt='card-shape' src={aboutCardshape} />
         </div>
       </card>
+      
     </main>
   )
 }

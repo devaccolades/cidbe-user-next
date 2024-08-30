@@ -14,12 +14,14 @@ import menuIcon from "../../public/icons/menu.svg"
 import menuGreenIcon from "../../public/icons/menu-green.svg"
 import closeIcon from "../../public/icons/close.svg"
 import { usePathname, useRouter } from 'next/navigation';
+import Head from 'next/head';
+import Script from 'next/script';
 
 function Header({ bgPrimary = false }) {
     const router = useRouter();
     const pathname = usePathname();
     const [hovered, setHovered] = useState({ about: false, project: false });
-    const [scrolling, setScrolling] = useState(pathname==='/about-us'?true:false);
+    const [scrolling, setScrolling] = useState(pathname === '/about-us' ? true : false);
     const [showMobileNav, setShowMobileNav] = useState(false);
     const [dropDown, setdropDown] = useState({ project: false, about: false });
     const menuRef = useRef(null);
@@ -44,9 +46,9 @@ function Header({ bgPrimary = false }) {
     useEffect(() => {
         const handleScroll = () => {
 
-            if (pathname==='/about-us'){
+            if (pathname === '/about-us') {
                 setScrolling(true)
-            }else{
+            } else {
                 const scrollTop = window.scrollY;
                 setScrolling(scrollTop > 0);
             }
@@ -118,6 +120,41 @@ function Header({ bgPrimary = false }) {
 
     return (
         <>
+             <Head>
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-PWFG6894');
+            `,
+          }}
+        />
+        {/* End Google Tag Manager */}
+      </Head>
+
+      <Script
+        id="google-tag-manager"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PWFG6894');
+          `,
+        }}
+      />
+
+      <noscript
+        dangerouslySetInnerHTML={{
+          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+        }}
+      />
             <header className='main-area sticky top-1 z-50 '>
                 <section className={`nav-bar ${bgPrimary ? "bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
                     <Image src={logo} alt='logo' className='logo cursor-pointer' onClick={() => router.push('/')} />
@@ -144,7 +181,7 @@ function Header({ bgPrimary = false }) {
                             </li>
                             <li
                                 onMouseEnter={() => setHovered({ about: false, project: true })}
-                                className={`relative ${hovered.project || 
+                                className={`relative ${hovered.project ||
                                     pathname === '/featured-projects' ||
                                     pathname === '/completed-projects' ||
                                     pathname === '/upcoming-projects' ||
@@ -207,7 +244,7 @@ function Header({ bgPrimary = false }) {
                                     <motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
                                         variants={linkItemVariants}
-                                        onClick={()=>router.push('/')}
+                                        onClick={() => router.push('/')}
                                     >
                                         Home
                                     </motion.p>

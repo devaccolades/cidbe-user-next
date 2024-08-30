@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import "./Style.css"
 import Image from 'next/image'
 import logo from '../../public/images/logo/logo.svg'
@@ -14,12 +14,21 @@ import accoldesLogo from '../../public/images/footer/accoldes-logo.svg'
 import { useRouter } from 'next/navigation'
 import callIcon from '../../public/images/footer/call.svg'
 import watsappIcon from '../../public/images/footer/watsapp.svg'
+import EnquiryModal from '../components/EnquiryForm/EnquiryModal'
 
 
 function Footer({ backGround = "--primary-cl" }) {
+  const [open,setOpen] = useState(false)
+  const handleOpen = () =>{
+    setOpen(!open)
+  }
   const router = useRouter()
   return (
     <>
+      <div className='quick-enquiry' onClick={handleOpen}>
+        <p className='content'>Enquire Now</p>
+      </div>
+      <EnquiryModal open={open} handleOpen={handleOpen} />
       {/* Whatsapp and phone start */}
       <div className='fixed z-50 bottom-0 right-0'>
         <div className="hidden lg:flex flex-col space-y-5 mr-[40px] mb-[30px]">
@@ -81,7 +90,7 @@ function Footer({ backGround = "--primary-cl" }) {
           </div>
         </div>
         <div className='flex flex-row flex-wrap mt-[10px] md:mt-[10px] ld:mt-0 md:gap-[10px] justify-center items-center w-full'>
-          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by CIDBI Thrissur. 2024  </p>
+          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by <span className='font-bold'>CIDBI</span> Thrissur. 2024  </p>
           <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] flex justify-center items-center gap-[10px]'><span>Powered by Accolades Integrated</span> <a href="https://accoladesintegrated.com/" target='_blank'> <Image width={10} height={10} className='w-[20px]' alt='accolades-logo' src={accoldesLogo} /></a> </p>
         </div>
       </section>
@@ -141,7 +150,7 @@ function Footer({ backGround = "--primary-cl" }) {
           </div>
         </div>
         <div className='flex flex-row flex-wrap mt-[10px] md:mt-0 md:gap-[10px] justify-center items-center w-full'>
-          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by CIDBI Thrissur. 2024  </p>
+          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by <span className='font-bold'>CIDBI</span> Thrissur. 2024  </p>
           <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] flex justify-center items-center gap-[10px]'><span>Powered by Accolades Integrated</span> <a href="https://accoladesintegrated.com/" target='_blank'> <Image width={10} height={10} className='w-[20px]' alt='accolades-logo' src={accoldesLogo} /></a> </p>
         </div>
       </section>

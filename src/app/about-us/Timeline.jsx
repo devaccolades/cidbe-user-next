@@ -90,6 +90,16 @@ function Timeline() {
           </div>
         ))}
       </section>
+      <div className="containers sm:px-5 md:px-[100px] lg:px-[150px] py-1 pt-[50px]">
+        <div className="relative w-full rounded-[20px] overflow-hidden" style={{ paddingTop: '56.25%' }}>
+          <iframe width="560" height="315" 
+          className="absolute top-0 left-0 w-full h-full"
+          src="https://www.youtube.com/embed/qIW904oqc_Q?si=_CGa3Z1GvePCeDU8" 
+          title="YouTube video player" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
     </>
   );
 }

@@ -64,7 +64,7 @@ function ProjectCard({ project }) {
                     />
                     <div className='flex justify-between items-center pt-[10px] px-[15px]'>
                         <div className='font-[general-sans-regular] flex flex-col gap-[6px]'>
-                            <p className='text-[32px] lg:text-[38px] text-black uppercase leading-[36px]'>{project?.name}</p>
+                            <p className='text-[32px] lg:text-[36px] text-black uppercase leading-[36px]'>{project?.name}</p>
                             <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Location" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>{project?.location}</span></p>
                         </div>
                         <div>

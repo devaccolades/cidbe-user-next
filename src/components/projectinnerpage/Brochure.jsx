@@ -1,6 +1,9 @@
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import Image from 'next/image';
 import downloadIcon from '../../../public/images/product-view/download.svg';
+import arrow_outwardicon from '../../../public/icons/arrow_outward.svg';
+
 import qrIcon from '../../../public/images/product-view/newQr.svg';
 import first from '../../../public/images/product-view/icons/05.svg';
 import second from '../../../public/images/product-view/icons/04.svg';
@@ -8,37 +11,42 @@ import third from '../../../public/images/product-view/icons/03.svg';
 import fourth from '../../../public/images/product-view/icons/02.svg';
 import fifth from '../../../public/images/product-view/icons/01.svg';
 import { getBrochureDownload } from '../../services/services';
+import EnquiryModal from '../EnquiryForm/EnquiryModal';
 
 function Brochure({ data }) {
+  const [open, setOpen] = useState(false)
+  const handleOpen = () => {
+    setOpen(!open)
+  }
   const overViewIcon = [
     { icon: first, title: 'K.RERA', description: data?.rera_number },
     { icon: second, title: 'Location', description: data?.location },
-    { icon: third, title: 'Apartment type', description: data?.bhk },
+    { icon: third, title: 'Apartment type', description: `${data?.bhk} Bhk` },
     { icon: fourth, title: 'Status', description: data?.status },
     { icon: fifth, title: 'Area Range', description: `${data?.area_from || ""} - ${data?.area_to || ""} Sq.Ft` },
   ];
 
   const getBrochure = async (id) => {
     try {
-        const response = await getBrochureDownload(id);
+      const response = await getBrochureDownload(id);
 
-        if (response.status !== 200) {
-            throw new Error('Failed to download brochure');
-        }
+      if (response.status !== 200) {
+        throw new Error('Failed to download brochure');
+      }
 
-        const blob = new Blob([response.data], { type: response.headers['content-type'] });
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = `${data?.name}-brochure.pdf`; // Customize the filename if needed
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        window.URL.revokeObjectURL(url);
+      const blob = new Blob([response.data], { type: response.headers['content-type'] });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${data?.name}-brochure.pdf`; // Customize the filename if needed
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
     } catch (error) {
-        console.error('Error downloading the brochure:', error);
+      console.error('Error downloading the brochure:', error);
     }
-};
+  };
 
 
 
@@ -55,12 +63,16 @@ function Brochure({ data }) {
                 dangerouslySetInnerHTML={{ __html: data?.description }}
               />
             </div>
-            {data?.brochure && <div className='mt-auto'>
-              <button onClick={()=>getBrochure(data?.id)} className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] inline-flex items-center gap-[8px] rounded-[6px] lg:inline-flex hidden'>
+            <div className='mt-auto flex flex-row gap-[10px]'>
+              {data?.brochure && <button onClick={() => getBrochure(data?.id)} className='mt-[20px] py-[10px] px-[18px] text-[--secondary-cl] border border-[--secondary-cl] text-[#ffff] text-[15px] inline-flex items-center gap-[8px] rounded-[6px] lg:inline-flex hidden'>
                 <span>Download Brochure</span>
-                <Image  src={downloadIcon} alt='Download Icon' width={16} height={16} />
+                <Image src={downloadIcon} alt='Download Icon' width={16} height={16} />
+              </button>}
+              <button onClick={handleOpen} className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] inline-flex items-center gap-[8px] rounded-[6px] lg:inline-flex hidden'>
+                <span>Enquire Now</span>
+                <Image src={arrow_outwardicon} alt='Download Icon' width={16} height={16} />
               </button>
-            </div>}
+            </div>
           </div>
 
           {/* Right-side content */}
@@ -84,15 +96,20 @@ function Brochure({ data }) {
                 ))}
               </div>
             </div>
-            {data?.brochure && <div className='mt-auto'>
-              <button onClick={()=>getBrochure(data?.id)}  className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] flex items-center justify-center gap-[8px] rounded-[6px] w-full lg:hidden'>
+            <div className='mt-auto flex flex-col gap-[10px]'>
+              {data?.brochure && <button onClick={() => getBrochure(data?.id)} className='mt-[20px] py-[10px] px-[18px] border border-[--secondary-cl] text-[--secondary-cl] text-[15px] flex items-center justify-center gap-[8px] rounded-[6px] w-full lg:hidden'>
                 <span>Download Brochure</span>
                 <Image src={downloadIcon} alt='Download Icon' width={16} height={16} />
+              </button>}
+              <button onClick={handleOpen} className='py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] flex items-center justify-center gap-[8px] rounded-[6px] w-full lg:hidden'>
+                <span>Enquire Now</span>
+                <Image src={arrow_outwardicon} alt='Download Icon' width={16} height={16} />
               </button>
-            </div>}
+            </div>
           </div>
         </div>
       </div>
+      <EnquiryModal open={open} handleOpen={handleOpen} projectId={data?.id} />
     </section>
   );
 }

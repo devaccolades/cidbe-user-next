@@ -9,9 +9,11 @@ import Skelten from '../skeletoneffect/Skelten';
 function ProjectListing({ title }) {
   const pathname = usePathname();
   const [page, setPage] = useState(1)
-  const [page_limit, setPage_limit] = useState(pathname === "/completed-projects" ? 6 : 3)
+  const [page_limit, setPage_limit] = useState(pathname === "/completed-projects" ? 6 : window.innerWidth <= 1150 ? 2 : 3)
   const [total_count, setTotal] = useState(0)
   const [projects, setprojects] = useState(null)
+  console.log(window.innerWidth,'daxoo');
+  
   const fetchData = async () => {
     try {
       let res = ""
@@ -53,7 +55,7 @@ function ProjectListing({ title }) {
           <Skelten />
         ) :
           projects.length > 0 ? (
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full py-[30px]'>
+            <div className='grid grid-cols-1 custom-listing md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full py-[30px]'>
               {projects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}

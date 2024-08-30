@@ -1,0 +1,8 @@
+@media (max-width:1440px){
+    .hidden-div{
+        display: none;
+    }
+}
+/* .custom-width{
+    height: 90vh;
+} */
