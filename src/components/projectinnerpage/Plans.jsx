@@ -47,7 +47,7 @@ function Plans({ floor_plan, blueprint_image }) {
                     </div>
                     <div>
                       <h2 className='text-[16px] lg:text-[24px] font-[general-sans-medium]'>{image.plan_type}</h2>
-                      <p className='text-sm sm:text-xs md:text-sm font-[general-sans-medium]'>{image?.floor_from && `${image?.floor_from}st to`} {image?.floor_to}th Floor</p>
+                      <p className='text-sm sm:text-xs md:text-sm font-[general-sans-medium]'>{image?.floor_from && `${image?.floor_from} `}  {image?.floor_to && `to ${image?.floor_to}`} Floor</p>
                     </div>
                     <h2 className='text-[20px] lg:text-[30px] font-[general-sans-medium] ml-auto'>{image?.bedrooms}BHK</h2>
                   </div>

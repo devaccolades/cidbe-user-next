@@ -11,7 +11,6 @@ import yearIcon from '../../../public/images/product-view/yearicon.svg';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import ImageModal from '../imagemodal/ImageModal';
 
 function Status({ status }) {
   const [activeYear, setActiveYear] = useState("");
@@ -105,7 +104,7 @@ function Status({ status }) {
                     {/* <div className='w-full h-[200px] bg-cover bg-center rounded-[8px] cursor-pointer' 
                       style={{ backgroundImage: `url(${item?.image})` }} onClick={()=>handleOpen(item?.image)}/> */}
                     <AntdImage
-                      className="w-full rounded-[8px] h-[200px]"
+                      className="w-full image-width rounded-[8px] h-[200px]"
                       height={200}
                       src={item?.image}
                       alt={item?.title}

@@ -15,6 +15,7 @@ import { useRouter } from 'next/navigation'
 import callIcon from '../../public/images/footer/call.svg'
 import watsappIcon from '../../public/images/footer/watsapp.svg'
 import EnquiryModal from '../components/EnquiryForm/EnquiryModal'
+import Script from 'next/script';
 
 
 function Footer({ backGround = "--primary-cl" }) {
@@ -25,17 +26,34 @@ function Footer({ backGround = "--primary-cl" }) {
   const router = useRouter()
   return (
     <>
+     <Script
+        id="tawk-to"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5e51034ea89cda5a18876532/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+          `,
+        }}
+      />
       <div className='quick-enquiry' onClick={handleOpen}>
         <p className='content'>Enquire Now</p>
       </div>
       <EnquiryModal open={open} handleOpen={handleOpen} />
       {/* Whatsapp and phone start */}
-      <div className='fixed z-50 bottom-0 right-0'>
-        <div className="hidden lg:flex flex-col space-y-5 mr-[40px] mb-[30px]">
-          <a href="https://wa.me/+918137873330?text=I'm%20interested%20in%20your%20Property" target="_blank" rel="noopener noreferrer">
+      <div className='fixed z-50 bottom-[50px] right-0'>
+        <div className="flex flex-col space-y-[10px] mr-[20px] md:space-y-5 md:mr-[40px] mb-[30px]">
+          <a className='w-[45px] lg:w-full' href="https://wa.me/+918137873330?text=I'm%20interested%20in%20your%20Property" target="_blank" rel="noopener noreferrer">
             <Image src={watsappIcon} alt="WhatsApp Icon" />
           </a>
-          <a href="tel:+919496933000">
+          <a className='w-[45px] lg:w-full' href="tel:+919496933000">
             <Image src={callIcon} alt="Call Icon" target="_blank" />
           </a>
         </div>
@@ -45,7 +63,7 @@ function Footer({ backGround = "--primary-cl" }) {
       <section className={`hidden md:block font-[general-sans-medium] text-[--secondary-cl] bg-[${backGround}] px-[40px] xl:px-[120px] py-[40px] flex flex-col`}>
         <div className='w-full flex flex-row h-full flex-wrap lg:flex-nowrap'>
           <div className='flex flex-col w-full md:w-[60%] logo-div lg:w-[30vw] gap-[20px]'>
-            <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px]'>NO PROJECT IS TOO BIG OR TOO SMALL, HIT US UP AND LET’S BUILD</p>
+            <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px] uppercase'>Your trusted building partner in Thrissur, shaping the future of luxury living with quality construction.</p>
             <Image src={logo} onClick={() => router.push('/')} className='w-[118px] h-[74px]' alt='logo' />
             <div className='flex flex-row gap-[20px] items-center'>
               <a href="https://www.instagram.com/cidbithrissur/" target="_blank"> <Image src={instagram} className='w-[20] h-[20]' alt='instagram-logo' /></a>
@@ -99,7 +117,7 @@ function Footer({ backGround = "--primary-cl" }) {
       <section className={`block md:hidden font-[general-sans-medium] text-[--secondary-cl] bg-[${backGround}] px-[20px] xl:px-[120px] py-[40px] flex flex-col`}>
         <div className='w-full flex flex-row h-full flex-wrap lg:flex-nowrap'>
           <div className='flex flex-col w-full md:w-[60%] lg:w-[30vw] gap-[20px]'>
-            <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px]'>NO PROJECT IS TOO BIG OR TOO SMALL, HIT US UP AND LET’S BUILD</p>
+            <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px] uppercase'>Your trusted building partner in Thrissur, shaping the future of luxury living with quality construction.</p>
             <div className='flex flex-row justify-between'>
               <div className='flex flex-col w-full gap-[20px]'>
                 <Image src={logo} onClick={() => router.push('/')} className='w-[118px] h-[74px]' alt='logo' />

@@ -90,7 +90,7 @@ function Brochure({ data }) {
                     </div>
                     <div className='ml-[10px] flex-grow'>
                       <h2 className='lg:text-[16px] md:text-[14px] font-[general-sans-medium] heading-size'>{item.title}</h2>
-                      <p className='xl:text-[18px] lg:text-[16px] md:text-[14px] text-[14px] font-[general-sans-regular] text-res leading-[20px] paragraph-size'>{item.description}</p>
+                      <p className='xl:text-[18px] lg:text-[16px] md:text-[14px] text-[14px] capitalize font-[general-sans-regular] text-res leading-[20px] paragraph-size'>{item.description}</p>
                     </div>
                   </div>
                 ))}

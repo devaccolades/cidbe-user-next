@@ -13,6 +13,8 @@ import EnquiryForm from "./EnquiryForm";
 import enquiryImage from '../../../public/images/enqiry/enquiry-image.svg'
 import Image from "next/image";
 import './Enquiry.css'
+import closeIcon from '../../../public/icons/close.svg'
+
 function EnquiryModal({ open, handleOpen, projectId }) {
   const [size, setSize] = useState('md');
 
@@ -37,12 +39,18 @@ function EnquiryModal({ open, handleOpen, projectId }) {
   }, []);
 
   return (
-    <Dialog size={size} className="custom-width" open={open}  handler={handleOpen}>
+    <Dialog size={size} className="custom-width relative" open={open}  handler={handleOpen}>
       {/* <div className="hidden md:block hidden-div">
         <div className="flex justify-center items-center pt-[60px] ">
           <Image src={enquiryImage} alt="" />
         </div>
       </div> */}
+       <button
+          className="absolute right-3 cursor-pointer top-[10px]"
+          onClick={handleOpen}
+        >
+          <Image src={closeIcon} className="h-[20px] md:h-[30px] w-[20px] md:w-[30px]"/>
+        </button>
       <EnquiryForm projectId={projectId} modal={true} handleOpen={handleOpen} />
     </Dialog>
   )

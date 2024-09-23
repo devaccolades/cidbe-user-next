@@ -120,41 +120,41 @@ function Header({ bgPrimary = false }) {
 
     return (
         <>
-             <Head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+            <Head>
+                {/* Google Tag Manager */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-PWFG6894');
             `,
-          }}
-        />
-        {/* End Google Tag Manager */}
-      </Head>
-
-      <Script
-        id="google-tag-manager"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
+                    }}
+                />
+                {/* End Google Tag Manager */}
+            </Head>
+            <meta name="google-site-verification" content="2jg94-S0O0YXT4aejzDkxO-7XCdJKcEk06Oh6woEsC0" />
+            <Script
+                id="google-tag-manager"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                    __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-PWFG6894');
           `,
-        }}
-      />
+                }}
+            />
 
-      <noscript
-        dangerouslySetInnerHTML={{
-          __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-        }}
-      />
+            <noscript
+                dangerouslySetInnerHTML={{
+                    __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+                }}
+            />
             <header className='main-area sticky top-1 z-50 '>
                 <section className={`nav-bar ${bgPrimary ? "bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
                     <Image src={logo} alt='logo' className='logo cursor-pointer' onClick={() => router.push('/')} />

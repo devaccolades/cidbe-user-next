@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Amenities from './Amenities';
 import SmartFeature from './SmartFeature';
 import Slider from './Slider';
@@ -14,6 +14,19 @@ function DeepDetails({
   amenities, features, amenities_images, specification, blueprint_image, floor_plan,
   location, nearby, status, bank, videos
 }) {
+  const [isSticky, setIsSticky] = useState(false);
+  const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(navbarRef.current?.getBoundingClientRect().top <= 0);
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   const sectionRefs = {
     Amenities: useRef(null),
     'Smart Features': useRef(null),
@@ -42,12 +55,16 @@ function DeepDetails({
     { name: 'Current Status'},
   ];
 
+  const filteredSections = features.length === 0
+  ? sections.filter(section => section.name !== 'Smart Features')
+  : sections;
+
   return (
     <>
-      <section className="lg:sticky top-0 z-50 bg-white pt-[20px] pb-[10px] hidden lg:block">
-        <div className="containers custom-res py-[20px]">
+      <section ref={navbarRef} className={`lg:sticky top-0 z-50 transition-all duration-300 ease-in-out   ${isSticky ? 'bg-[--primary-cl]' : 'bg-white'} pt-[20px] pb-[10px] hidden lg:block`}>
+      <div className={`containers custom-res py-[20px] rounded-[12px] transition-colors duration-300`}>
           <ul className="flex justify-between w-full">
-          {sections
+          {filteredSections
               .map((item, index) => (
                 <li
                   key={index}
@@ -65,10 +82,10 @@ function DeepDetails({
      <div ref={sectionRefs.Amenities} className="pt-[30px] bg-white">
         <Amenities amenities={amenities} />
       </div>
-      <div ref={sectionRefs['Smart Features']} className="pt-[30px] bg-white">
+      {features.length > 0 && <div ref={sectionRefs['Smart Features']} className="pt-[30px] bg-white">
          <SmartFeature features={features} />
-        {amenities_images.length > 0 && <Slider amenities_images={amenities_images} />}
-      </div>
+      </div>}
+      {amenities_images.length > 0 && <Slider amenities_images={amenities_images} />}
       <div ref={sectionRefs.Specifications} className="pt-[30px] bg-white">
         <Specification specification={specification} />
       </div>
