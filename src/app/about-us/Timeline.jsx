@@ -2,6 +2,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import branch from '../../../public/images/about/braches.svg'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
+import { Autoplay } from 'swiper/modules';
+
 
 // After Connecting to backend should be remove 
 import Coral from '../../../public/images/about/Coral.jpg'
@@ -17,11 +23,37 @@ import Chalet from '../../../public/images/about/Chalet.jpg'
 import Candor from '../../../public/images/about/Candor.webp'
 import Cassia from '../../../public/images/about/Cassia.jpeg'
 
+// videos
+import CidbiVideo1 from '../../../public/video/whoweare/cidbi1.mp4'
+import CidbiVideo2 from '../../../public/video/whoweare/cidbi2.mp4'
+import CidbiVideo3 from '../../../public/video/whoweare/cidbi3.mp4'
+// Thumb
+import thumb1 from '../../../public/images/about/thumb/thumbnail1.png'
+import thumb2 from '../../../public/images/about/thumb/thumbnail2.png'
+import thumb3 from '../../../public/images/about/thumb/thumbnail3.png'
+
+
+export function Video({ file, thumb }) {
+  console.log(thumb,'daxoo');
+  
+  return (
+    <video width="320" height="240" controls preload="none" poster={thumb.src} className='mx-auto rounded-[12px]'>
+      <source src={file} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  )
+}
 
 
 function Timeline() {
   const [listing, setListing] = useState([]);
   const sectionRef = useRef(null);
+
+  const videosList = [
+    { file: CidbiVideo1, thumb: thumb1 },
+    { file: CidbiVideo2, thumb: thumb2 },
+    { file: CidbiVideo3, thumb: thumb3 },
+  ]
 
   const data = [
     { image: Coral, year: 2007, name: "Coral" },
@@ -90,14 +122,49 @@ function Timeline() {
           </div>
         ))}
       </section>
+      {/* Video section */}
+      <section className='containers mx-auto pt-[50px] md:px-[100px]'>
+        <Swiper
+          spaceBetween={40}
+          slidesPerView={3}
+          loop={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 40
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
+          modules={[Autoplay]}
+        >
+          {videosList.map((file, index) => (
+            <SwiperSlide key={index}>
+              <Video file={file.file} thumb={file?.thumb} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+      </section>
       <div className="containers sm:px-5 md:px-[100px] lg:px-[150px] py-1 pt-[50px]">
         <div className="relative w-full rounded-[20px] overflow-hidden" style={{ paddingTop: '56.25%' }}>
-          <iframe width="560" height="315" 
-          className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/qIW904oqc_Q?si=_CGa3Z1GvePCeDU8" 
-          title="YouTube video player" frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="560" height="315"
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/qIW904oqc_Q?si=_CGa3Z1GvePCeDU8"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </>

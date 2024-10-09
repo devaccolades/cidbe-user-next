@@ -41,7 +41,7 @@
     transition: width 0.3s ease-in-out;
 }
 
-.bgPrimary ul li::after{
+.bgPrimary ul li::after {
     background-color: #4C956C !important;
 }
 
@@ -49,10 +49,12 @@
 .nav-bar ul li.active::after {
     width: 100%;
 }
+
 .bgPrimary ul li:hover,
 .bgPrimary ul li.active {
     color: #4C956C !important;
 }
+
 /* .bgPrimary ul li.active{
     color: var(--secondary-cl) !important;
 } */
@@ -107,37 +109,36 @@ a.flip-animate:focus span:before {
 
 
 /* Footer */
-.quick-enquiry{
-  cursor: pointer;
-  background-color: var(--primary-cl);
-  position: fixed;
-  right: 0%;
-  top: 40%;
-  border-radius: 20px 0px 0px 20px;
-  width: 50px;
-  height: 180px;
-  z-index: 100;
-  display:  flex;
-  overflow: hidden;
-  border: 1px solid var(--secondary-cl);
+.quick-enquiry {
+    cursor: pointer;
+    background-color: var(--primary-cl);
+    position: fixed;
+    right: 0%;
+    top: 40%;
+    border-radius: 20px 0px 0px 20px;
+    width: 50px;
+    height: 180px;
+    z-index: 100;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid var(--secondary-cl);
 
-  &:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 30%,
-      rgb(255 255 255 / 53%),
-      rgba(255, 255, 255, 0) 70%
-    );
-    top: -100px;
-    left: 0;
-    animation: shimmerAnimation 3s infinite linear;
-  }
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(180deg,
+                rgba(255, 255, 255, 0) 30%,
+                rgb(255 255 255 / 53%),
+                rgba(255, 255, 255, 0) 70%);
+        top: -100px;
+        left: 0;
+        animation: shimmerAnimation 3s infinite linear;
+    }
 }
-.quick-enquiry .content{
+
+.quick-enquiry .content {
     writing-mode: vertical-rl;
     rotate: 180deg;
     text-orientation: mixed;
@@ -150,24 +151,40 @@ a.flip-animate:focus span:before {
     color: var(--secondary-cl);
 }
 
+@media (max-width:767px) {
+    .quick-enquiry{
+        width: 40px ;
+        height: 120px;
+        border-radius: 12px 0px 0px 12px;
+    }
+    .quick-enquiry .content {
+        font-size: 14px;
+    }
+
+}
+
 @keyframes shimmerAnimation {
     0% {
-      top: -100px;
+        top: -100px;
     }
+
     20% {
-      top: 100%;
+        top: 100%;
     }
+
     100% {
-      top: 100%;
+        top: 100%;
     }
-  }
+}
+
 @media (max-width: 768px) {
-    .quick-enquiry{
+    .quick-enquiry {
         width: 40px;
         height: 160px;
     }
- 
+
 }
+
 /* Responsive */
 
 @media (max-width: 1023px) {
@@ -211,25 +228,28 @@ a.flip-animate:focus span:before {
 }
 
 
-@media (max-width:1024px){
-    .footer{
-        nth-div(1){
+@media (max-width:1024px) {
+    .footer {
+        nth-div(1) {
             column-span: 3;
         }
     }
 }
 
-@media (min-width:1024px) and (max-width:1100px){
-    .logo-div{
+@media (min-width:1024px) and (max-width:1100px) {
+    .logo-div {
         width: 28vw;
     }
+
     .project-div {
         width: 15vw;
     }
-    .other-links{
+
+    .other-links {
         width: 14vw;
     }
+
     .nav-bar {
-        width: 94% ;
+        width: 94%;
     }
 }

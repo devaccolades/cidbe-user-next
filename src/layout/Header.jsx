@@ -155,7 +155,7 @@ function Header({ bgPrimary = false }) {
                     __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
                 }}
             />
-            <header className='main-area sticky top-1 z-50 '>
+            <header className='main-area sticky top-1 z-50'>
                 <section className={`nav-bar ${bgPrimary ? "bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
                     <Image src={logo} alt='logo' className='logo cursor-pointer' onClick={() => router.push('/')} />
                     <div className='lap-navbar'>
