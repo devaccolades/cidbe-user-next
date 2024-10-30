@@ -1,5 +1,9 @@
 'use client'
-import React, { Children, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import { usePathname } from 'next/navigation';
+import { getFaqApi, getTestimonialApi } from '../../services/services';
+import { Dialog } from '@material-tailwind/react';
+import { throttle } from 'lodash';
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,9 +18,6 @@ import minusIcon from '../../../public/icons/minus.svg'
 import playIcon from '../../..//public/icons/play.svg'
 
 import customerReviewbg from '../../../public/images/home/customer-reviewsbg.svg'
-import { usePathname } from 'next/navigation';
-import { getFaqApi, getTestimonialApi } from '../../services/services';
-import { Dialog } from '@material-tailwind/react';
 
 function CustomerReviewsAndFaq() {
     const pathname = usePathname();
@@ -37,69 +38,60 @@ function CustomerReviewsAndFaq() {
     const handleImageClick = (videoSrc) => {
         setCurrentVideo(videoSrc);
         setIsModalOpen(true);
-      };
+    };
 
     useEffect(() => {
         if (!isModalOpen && videoRef.current) {
-          videoRef.current.pause();
-          setCurrentVideo(null);
+            videoRef.current.pause();
+            setCurrentVideo(null);
         }
-      }, [isModalOpen]);
+    }, [isModalOpen]);
 
 
     useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth < 768) {
-                setNumItems(1);
-            } else if (window.innerWidth >= 768 && window.innerWidth <= 1700) {
-                setNumItems(2);
-            } else {
-                setNumItems(3);
-            }
+        const determineNumItems = () => {
+            const width = window.innerWidth;
+            if (width < 768) return 1;
+            if (width >= 768 && width <= 1700) return 2;
+            return 3;
         };
 
-        handleResize();
+        setNumItems(determineNumItems());
+
+        const handleResize = throttle(() => {
+            setNumItems(determineNumItems());
+        }, 200);
 
         window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     // ferchData
-    const fetchData = async () => {
+    const fetchData = async (apiFunc, setData) => {
         try {
-            const res = await getTestimonialApi()
-            const { StatusCode, data } = res.data
+            const res = await apiFunc();
+            const { StatusCode, data } = res.data;
             if (StatusCode === 6000) {
-                setTestimonials(data)
+                setData(data);
             } else {
-                setTestimonials([])
+                setData([]);
             }
         } catch (error) {
-            console.log(error);
-            setTestimonials([])
+            console.error(error);
+            setData([]);
         }
-    }
-    const fetchFaqData = async () => {
-        try {
-            const res = await getFaqApi()
-            const { StatusCode, data } = res.data
-            if (StatusCode === 6000) {
-                setFaqs(data)
-            } else {
-                setFaqs([])
-            }
-        } catch (error) {
-            console.log(error);
-            setFaqs([])
-        }
-    }
+    };
+
     useEffect(() => {
-        fetchData()
-        fetchFaqData()
-    }, [])
+        const fetchAllData = async () => {
+            await Promise.all([
+                fetchData(getTestimonialApi, setTestimonials),
+                fetchData(getFaqApi, setFaqs)
+            ]);
+        };
+
+        fetchAllData();
+    }, []);
     return (
         <section className={`relative text-[--secondary-cl] overflow-hidden z-10 ${pathname === '/contact-us' ? "" : 'reviews-bg-gradient'}  py-[40px] lg:py-[90px] flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]`}>
             <Image src={customerReviewbg} className='absolute right-0 hidden lg:block -z-10 top-[-30px]' alt='Customer Review Background' />
@@ -137,11 +129,11 @@ function CustomerReviewsAndFaq() {
                                         </div>
                                     </div>
                                 ) : (
-                                    <div 
-                                    className='relative w-full h-[478px] bg-center bg-cover rounded-[12px] cursor-pointer'
-                                    style={{ backgroundImage: `url(${testimoni?.thumbnail})` }} 
-                                    onClick={()=>handleImageClick(testimoni?.video)}>
-                                        <Image className='absolute top-[45%] left-[45%] opacity-[70%]' width={50} src={playIcon} alt='Play-icon'/>
+                                    <div
+                                        className='relative w-full h-[478px] bg-center bg-cover rounded-[12px] cursor-pointer'
+                                        style={{ backgroundImage: `url(${testimoni?.thumbnail})` }}
+                                        onClick={() => handleImageClick(testimoni?.video)}>
+                                        <Image className='absolute top-[45%] left-[45%] opacity-[70%]' width={50} src={playIcon} alt='Play-icon' />
                                     </div>
                                 )}
                             </SwiperSlide>
@@ -180,9 +172,9 @@ function CustomerReviewsAndFaq() {
             </div>
             {isModalOpen && (
                 <Dialog size='xl' open={isModalOpen} handler={handleModalClose} className='bg-transparent'>
-                     <video ref={videoRef} className='h-full w-full rounded-[10px]' controls autoPlay src={currentVideo} /> 
+                    <video ref={videoRef} className='h-full w-full rounded-[10px]' controls autoPlay src={currentVideo} />
                 </Dialog>
-                
+
             )}
         </section>
     )
@@ -190,11 +182,11 @@ function CustomerReviewsAndFaq() {
 
 // const VideoModal = ({ onClose, children }) => {
 //     return (
-        // <div onClick={onClose} className='fixed top-0 left-0 w-full h-[100%] bg-[#06060675] flex justify-center items-center video-modal' >
-        //     <div onClick={(e) => e.stopPropagation()} className='relative video-modal'>
-        //         {children}
-        //     </div>
-        // </div >
+// <div onClick={onClose} className='fixed top-0 left-0 w-full h-[100%] bg-[#06060675] flex justify-center items-center video-modal' >
+//     <div onClick={(e) => e.stopPropagation()} className='relative video-modal'>
+//         {children}
+//     </div>
+// </div >
 //     );
 // };
 

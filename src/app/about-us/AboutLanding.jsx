@@ -1,7 +1,7 @@
 import Image from "next/image";
 import shape from "../../../public/images/about/about-banner-shape.svg";
 import shapeMobile from "../../../public/images/about/about-banner-shape-mobile.svg";
-import bannerRightImage from "../../../public/images/home/about-image.jpg"
+import bannerRightImage from "../../../public/images/home/about-image.webp"
 import bannerLogo from "../../../public/images/about/about-us-cidbi-logo.svg"
 
 export default function AboutLanding() {

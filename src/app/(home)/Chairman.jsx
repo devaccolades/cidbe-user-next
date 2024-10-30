@@ -8,7 +8,7 @@ import chairmanshape from "../../../public/images/home/chairmanshape.svg"
 import chairmanshapeMobile from "../../../public/images/home/chairmanshapeMobile.svg"
 import chairmanbg from "../../../public/images/home/chairmanbg.svg"
 import chairmanbgMobile from "../../../public/images/home/chairmanbgMobile.svg"
-import chraimanImage from "../../../public/images/home/chraiman.jpeg"
+import chraimanImage from "../../../public/images/home/chraiman.webp"
 
 import { Fade } from "react-reveal";
 

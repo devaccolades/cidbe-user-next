@@ -5,52 +5,46 @@ import { useRouter } from 'next/navigation'
 import NotFound from '../../components/common/NotFound'
 import { getBlogsApi } from '../../services/services'
 import Skelten from '../../components/skeletoneffect/Skelten'
+import { throttle } from 'lodash';
 
 function Blogs() {
   const router = useRouter()
-  const [numItems, setNumItems] = useState(window.innerWidth < 768 ? 1 : window.innerWidth >= 1400 && window.innerWidth <= 1750 ? 3 : window.innerWidth >= 768 && window.innerWidth <= 1399 ? 2 : 4);
+  const [numItems, setNumItems] = useState(4);
   const [Blogs, setBlogs] = useState(null)
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setNumItems(1);
-      } else if (window.innerWidth >= 1400 && window.innerWidth <= 1750) {
-        setNumItems(3);
-      } else if (window.innerWidth >= 768 && window.innerWidth <= 1399) {
-        setNumItems(2);
-      }
-      else {
-        setNumItems(4);
-      }
+    const determineNumItems = () => {
+      const width = window.innerWidth;
+      if (width < 768) return 1;
+      if (width >= 1400 && width <= 1750) return 3;
+      if (width >= 768 && width <= 1399) return 2;
+      return 4;
     };
 
-    handleResize();
+    setNumItems(determineNumItems());
+
+    const handleResize = throttle(() => {
+      setNumItems(determineNumItems());
+    }, 200); // Throttle resize to fire every 200ms
 
     window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await getBlogsApi(1, numItems)
-        const { StatusCode, data } = res.data
-        if (StatusCode === 6000) {
-          setBlogs(data)
-        } else {
-          setBlogs([])
-        }
+        const res = await getBlogsApi(1, numItems);
+        const { StatusCode, data } = res.data;
+        setBlogs(StatusCode === 6000 ? data : []);
       } catch (error) {
-        setBlogs([])
-        console.log(error);
+        console.error("Error fetching blogs:", error);
+        setBlogs([]);
       }
-    }
-    fetchData()
-  }, [numItems])
+    };
+
+    fetchData();
+  }, [numItems]);
 
   return (
     <section className='h-[651px] bg-[--primary-cl]'>

@@ -10,27 +10,27 @@ import { Autoplay } from 'swiper/modules';
 
 
 // After Connecting to backend should be remove 
-import Coral from '../../../public/images/about/Coral.jpg'
-import Coronet from '../../../public/images/about/Coronet.JPG'
-import Chaitram from '../../../public/images/about/Chaitram.JPG'
-import Cedar from '../../../public/images/about/Cedar.JPG'
-import Chiraag from '../../../public/images/about/Chiraag.JPG'
+import Coral from '../../../public/images/about/Coral.webp'
+import Coronet from '../../../public/images/about/Coronet.webp'
+import Chaitram from '../../../public/images/about/Chaitram.webp'
+import Cedar from '../../../public/images/about/Cedar.webp'
+import Chiraag from '../../../public/images/about/Chiraag.webp'
 import Cocoon from '../../../public/images/about/Cocoon.JPG'
-import Cinthia from '../../../public/images/about/Cinthia.JPG'
+import Cinthia from '../../../public/images/about/Cinthia.webp'
 import Clarion from '../../../public/images/about/Clarion.jpg'
-import Credence from '../../../public/images/about/Credence.JPG'
-import Chalet from '../../../public/images/about/Chalet.jpg'
+import Credence from '../../../public/images/about/Credence.webp'
+import Chalet from '../../../public/images/about/Chalet.webp'
 import Candor from '../../../public/images/about/Candor.webp'
-import Cassia from '../../../public/images/about/Cassia.jpeg'
+import Cassia from '../../../public/images/about/Cassia.webp'
 
 // videos
 import CidbiVideo1 from '../../../public/video/whoweare/cidbi1.mp4'
 import CidbiVideo2 from '../../../public/video/whoweare/cidbi2.mp4'
 import CidbiVideo3 from '../../../public/video/whoweare/cidbi3.mp4'
 // Thumb
-import thumb1 from '../../../public/images/about/thumb/thumbnail1.png'
-import thumb2 from '../../../public/images/about/thumb/thumbnail2.png'
-import thumb3 from '../../../public/images/about/thumb/thumbnail3.png'
+import thumb1 from '../../../public/images/about/thumb/thumbnail1.webp'
+import thumb2 from '../../../public/images/about/thumb/thumbnail2.webp'
+import thumb3 from '../../../public/images/about/thumb/thumbnail3.webp'
 
 
 export function Video({ file, thumb }) {

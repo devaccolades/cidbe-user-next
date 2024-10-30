@@ -1,40 +1,32 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react';
 import { motion } from "framer-motion";
-// import { useFollowPointe } from './useFollowPointer'
-import Image from 'next/image'
-import gradientLeft from "../../../public/images/home/gradient-left.svg"
-import aboutCardImage from "../../../public/images/home/about-card-vector.svg"
-import aboutCardshape from "../../../public/images/home/about-shape.svg"
-import aboutCardshapeMobile from "../../../public/images/home/about-shape-mobile.svg"
-import arrowIcon from "../../../public/icons/arrow-outward-green.svg"
-import qualityGif from "../../../public/gif/quality.gif"
-import facilitiesGif from "../../../public/gif/facilities.gif"
-import serviceGif from "../../../public/gif/service.gif"
-import charectersImage from "../../../public/images/home/charecters.png"
-import roundedImage from "../../../public/images/home/rounded.svg"
-import './Home.css'
-import image1 from "../../../public/images/home/image1.jpeg"
-import image2 from "../../../public/images/home/experience.jpeg"
-import aboutImage from "../../../public/images/home/about-image.jpg"
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-// after connect the backend
 import { Fade } from "react-reveal";
+
+// SVG Images
+import gradientLeft from "../../../public/images/home/gradient-left.svg";
+import aboutCardImage from "../../../public/images/home/about-card-vector.svg";
+import aboutCardshape from "../../../public/images/home/about-shape.svg";
+import aboutCardshapeMobile from "../../../public/images/home/about-shape-mobile.svg";
+import arrowIcon from "../../../public/icons/arrow-outward-green.svg";
+
+// GIF Images
+import qualityGif from "../../../public/gif/quality.gif";
+import facilitiesGif from "../../../public/gif/facilities.gif";
+import serviceGif from "../../../public/gif/service.gif";
+
+// Other Images
+import charectersImage from "../../../public/images/home/charecters.png";
+import image1 from "../../../public/images/home/image1.jpeg";
+import image2 from "../../../public/images/home/experience.jpeg";
+import aboutImage from "../../../public/images/home/about-image.webp";
+
+import './Home.css';
 
 function AboutSection() {
   const router = useRouter()
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768);
-    };
-
-    handleResize(); // Check initial screen size
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
       <main className='text-[--secondary-cl] w-full flex flex-col py-[45px] about-main-bg'
@@ -47,8 +39,6 @@ function AboutSection() {
           <card className='relative containers shadow-2xl flex flex-col-reverse md:flex-row rounded-[12px]'>
             <div className='md:h-[433px] w-full bg-color rounded-b-[12px] md:rounded-e-none  md:rounded-s-[12px] flex items-center p-[30px] md:p-[60px] lg:p-0'>
               <Image className='absolute right-[400px] lg:block hidden bottom-[81px]' src={aboutCardImage} alt="Description-of-the-about-card-image" />
-              {/* <Image className='absolute top-[46%] block md:hidden w-full left-0 right-0' src={aboutCardshapeMobile} alt="Description-of-the-about-card-image" /> */}
-
               <div className='w-full responsive lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
                 <Fade bottom delay={200}>
                   <h3 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h3>
@@ -171,7 +161,6 @@ function AboutSection() {
                 <Fade left delay={600}>
                   <div className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px] bg-center bg-cover' style={{ backgroundImage: `url(${image2.src})` }} />
                   </Fade>
-                  {/* <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px]' /> */}
                   <Fade left delay={700}>
                   <div className='flex flex-col justify-center'>
                     <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
@@ -233,7 +222,6 @@ function AboutSection() {
                 <div className='flex flex-row gap-[45px] mt-[16px] md:mt-0'>
                   <div className='w-[142px] lg:w-[195px] rounded-[12px] bg-center bg-cover' style={{ backgroundImage: `url(${image2.src})` }} />
 
-                  {/* <Image src={image2} alt='banner-image2' className='w-[142px] lg:w-[195px] rounded-[12px]' /> */}
                   <div className='flex flex-col justify-center'>
                     <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
                     <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Years of <br /> Experience</p>
