@@ -4,15 +4,15 @@ import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
 import image1 from '../../../public/images/interiors/new img/1.svg';
-import image2 from '../../../public/images/interiors/new img/2.svg';
+import image2 from '../../../public/images/interiors/new img/2.webp';
 import image3 from '../../../public/images/interiors/new img/3.svg';
 import image4 from '../../../public/images/interiors/new img/4.svg';
 import image5 from '../../../public/images/interiors/new img/5.svg';
 import image6 from '../../../public/images/interiors/new img/6.svg';
 import image7 from '../../../public/images/interiors/new img/7.svg';
-import image8 from '../../../public/images/interiors/new img/8.svg';
-import image9 from '../../../public/images/interiors/new img/9.svg';
-import image10 from '../../../public/images/interiors/new img/10.svg';
+import image8 from '../../../public/images/interiors/new img/8.webp';
+import image9 from '../../../public/images/interiors/new img/9.webp';
+import image10 from '../../../public/images/interiors/new img/10.webp';
 import image11 from '../../../public/images/interiors/new img/11.jpg';
 import image12 from '../../../public/images/interiors/new img/12.jpg';
 

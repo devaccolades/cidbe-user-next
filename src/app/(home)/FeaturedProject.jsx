@@ -1,11 +1,13 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import "./Home.css"
 import ProjectCard from '../../components/ProjectCard'
 import { useRouter } from 'next/navigation'
 import NotFound from '../../components/common/NotFound'
 import { getFeaturedProject } from '../../services/services'
 import { Fade } from "react-reveal";
+import { throttle } from 'lodash';
+
+import "./Home.css"
 
 function FeaturedProject() {
   const router = useRouter()
@@ -36,18 +38,14 @@ function FeaturedProject() {
     try {
       const res = await getFeaturedProject(1,numItems)
       const { StatusCode, data } = res.data
-      if (StatusCode === 6000){
-        setFeaturedProject(data)
-      }else{
-        setFeaturedProject([])
-      }
+      setFeaturedProject(StatusCode === 6000 ? data : []);
     } catch (error) {
       setFeaturedProject([])
     }
   }
   useEffect(()=>{
     fetchData()
-  },[])
+  },[numItems])
   return (
     <Fade bottom delay={200}>
     <div className=' bg-[--primary-cl] text-[--secondary-cl] pt-[40px] md:pt-[80px] pb-[30px] main-featurend-bg'>

@@ -150,6 +150,18 @@ function Header({ bgPrimary = false }) {
                 }}
             />
 
+            <Script
+                id="gtag-base"
+                strategy="afterInteractive" // Load after the page has loaded
+                src={`https://www.googletagmanager.com/gtag/js?id=AW-10797634861`}
+            />
+            <Script id="gtag-init" strategy="afterInteractive">
+                {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-10797634861');`}
+            </Script>
+
             <noscript
                 dangerouslySetInnerHTML={{
                     __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
