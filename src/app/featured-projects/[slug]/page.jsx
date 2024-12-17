@@ -58,7 +58,7 @@ function Page({ params }) {
     <>
       <title>{projectDetails?.details?.meta_title || 'Default Title'}</title>
       <meta name="description" content={projectDetails?.details?.meta_description || 'Default Description'} />
-      {slug && projectDetails?.details?.status && <link rel="canonical" href={`https://cidbi.com/${projectDetails?.details?.status === "ongoing" ? "ongoing-projects" : projectDetails?.details?.status === "ready to occupy" ? "ready-to-occupy" : "completed-projects"}/${slug}`} />}
+      {slug === "flats-in-thrissur-candor" && <link rel="canonical" href="https://cidbi.com/ready-to-occupy/flats-in-thrissur-candor" />}
       <Header />
       <HeroSection data={projectDetails?.details} images={projectDetails?.images} className='bg-[#ffff]' />
       <Brochure data={projectDetails?.details} />
