@@ -24,24 +24,6 @@ function Header({ bgPrimary = false }) {
     const [scrolling, setScrolling] = useState(pathname === '/about-us' ? true : false);
     const [showMobileNav, setShowMobileNav] = useState(false);
     const [dropDown, setdropDown] = useState({ project: false, about: false });
-    const menuRef = useRef(null);
-
-    const handleClickOutside = (event) => {
-        if (
-            menuRef.current &&
-            !menuRef.current.contains(event.target) &&
-            !event.target.closest('.dropdown-item')
-        ) {
-            setHovered({ project: false, about: false });
-        }
-    };
-
-    useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, [hovered]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -173,56 +155,49 @@ function Header({ bgPrimary = false }) {
                     <div className='lap-navbar'>
                         <ul className={`${scrolling ? 'text-[#052D23]' : bgPrimary ? 'text-[--secondary-cl]' : 'text-white'}`}>
                             <Link href="/"><li className={`${scrolling ? 'isscroll' : ''} ${pathname === '/' && 'active'}`}>Home</li></Link>
-                            <li
+                            <li className={`menu-hover relative group ${hovered.about || pathname === '/about-us' || pathname === '/csr' ? 'active' : ''}`}
                                 onMouseEnter={() => setHovered({ project: false, about: true })}
-                                className={`relative ${hovered.about || pathname === '/about-us' || pathname === '/csr' ? 'active' : ''}`}
-                                ref={menuRef}
-                            >
+                                onMouseLeave={() => setHovered({ project: false, about: false })}>
                                 About Us
                                 <Image src={hovered.about ? bgPrimary ? dropdownGreenIcon : dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
-                                {hovered.about && (
-                                    <div className="card absolute w-[285px] p-[10px] top-full left-0 mt-2 bg-white shadow-md z-10">
-                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/about-us')}>
-                                            <span data-hover="Who we are">Who we are</span>
-                                        </a>
-                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/csr')}>
-                                            <span data-hover="CSR">CSR</span>
-                                        </a>
-                                    </div>
-                                )}
+                                <div className="absolute card flex flex-col gap-[1px] left-[-10%] top-[100%] w-[285px] bg-white shadow-lg rounded-lg invisible group-hover:visible group-hover:translate-y-1 transition-all duration-200 ease-in-out z-10 ">
+                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/about-us')}>
+                                        <span data-hover="Who we are">Who we are</span>
+                                    </a>
+                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/csr')}>
+                                        <span data-hover="CSR">CSR</span>
+                                    </a>
+                                </div>
                             </li>
-                            <li
-                                onMouseEnter={() => setHovered({ about: false, project: true })}
-                                className={`relative ${hovered.project ||
-                                    pathname === '/featured-projects' ||
-                                    pathname === '/completed-projects' ||
-                                    pathname === '/upcoming-projects' ||
-                                    pathname === '/ready-to-occupy' ||
-                                    pathname === '/ongoing-projects'
-                                    ? 'active' : ''}`}
-                                ref={menuRef}
-                            >
+                            <li className={`menu-hover relative group ${hovered.project ||
+                                pathname === '/featured-projects' ||
+                                pathname === '/completed-projects' ||
+                                pathname === '/upcoming-projects' ||
+                                pathname === '/ready-to-occupy' ||
+                                pathname === '/ongoing-projects'
+                                ? 'active' : ''}`}
+                                onMouseEnter={() => setHovered({ project: true, about: false })}
+                                onMouseLeave={() => setHovered({ project: false, about: false })}>
+                                
                                 Projects
                                 <Image src={hovered.project ? bgPrimary ? dropdownGreenIcon : dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
-                                {hovered.project && (
-                                    <div className="card absolute w-[285px] top-full left-0 mt-2 bg-white shadow-md z-10">
-                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/featured-projects')}>
-                                            <span data-hover="Featured project">Featured project</span>
-                                        </a>
-                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/completed-projects')}>
-                                            <span data-hover="Completed project">Completed project</span>
-                                        </a>
-                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/upcoming-projects')}>
-                                            <span data-hover="Upcoming projects">Upcoming projects</span>
-                                        </a>
-                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/ready-to-occupy')}>
-                                            <span data-hover="Ready to occupy">Ready to occupy</span>
-                                        </a>
-                                        <a className="flip-animate dropdown-item" onClick={() => router.push('/ongoing-projects')}>
-                                            <span data-hover="Ongoing project">Ongoing project</span>
-                                        </a>
-                                    </div>
-                                )}
+                                <div className="absolute card flex flex-col gap-[1px] left-[-10%] top-[100%] w-[285px] bg-white shadow-lg rounded-lg invisible group-hover:visible group-hover:translate-y-1 transition-all duration-200 ease-in-out z-10 ">
+                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/featured-projects')}>
+                                        <span data-hover="Featured project">Featured project</span>
+                                    </a>
+                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/completed-projects')}>
+                                        <span data-hover="Completed project">Completed project</span>
+                                    </a>
+                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/upcoming-projects')}>
+                                        <span data-hover="Upcoming projects">Upcoming projects</span>
+                                    </a>
+                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/ready-to-occupy')}>
+                                        <span data-hover="Ready to occupy">Ready to occupy</span>
+                                    </a>
+                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/ongoing-projects')}>
+                                        <span data-hover="Ongoing project">Ongoing project</span>
+                                    </a>
+                                </div>
                             </li>
                             <Link href='/gallery'><li className={`${pathname === '/gallery' && "active"}`}>Gallery</li></Link>
                             <Link href="/interiors"><li className={`${pathname === '/interiors' && "active"}`}>Interiors</li></Link>
