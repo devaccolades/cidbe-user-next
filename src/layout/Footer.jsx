@@ -20,6 +20,8 @@ import Script from 'next/script';
 
 function Footer({ backGround = "--primary-cl" }) {
   const [open,setOpen] = useState(false)
+  const currentYear = new Date().getFullYear();
+
   const handleOpen = () =>{
     setOpen(!open)
   }
@@ -108,7 +110,7 @@ function Footer({ backGround = "--primary-cl" }) {
           </div>
         </div>
         <div className='flex flex-row flex-wrap mt-[10px] md:mt-[10px] ld:mt-0 md:gap-[10px] justify-center items-center w-full'>
-          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by <span className='font-bold'>CIDBI</span> Thrissur. 2024  </p>
+          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by <span className='font-bold'>CIDBI</span> Thrissur. {currentYear}  </p>
           <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] flex justify-center items-center gap-[10px]'><span>Powered by Accolades Integrated</span> <a href="https://accoladesintegrated.com/" target='_blank'> <Image width={10} height={10} className='w-[20px]' alt='accolades-logo' src={accoldesLogo} /></a> </p>
         </div>
       </section>
@@ -168,7 +170,7 @@ function Footer({ backGround = "--primary-cl" }) {
           </div>
         </div>
         <div className='flex flex-row flex-wrap mt-[10px] md:mt-0 md:gap-[10px] justify-center items-center w-full'>
-          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by <span className='font-bold'>CIDBI</span> Thrissur. 2024  </p>
+          <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] capitalize'>All Rights reserved by <span className='font-bold'>CIDBI</span> Thrissur. {currentYear}  </p>
           <p className='text-center text-[10px] lg:text-[14px] font-[general-sans-regular] text-[#4C956C] flex justify-center items-center gap-[10px]'><span>Powered by Accolades Integrated</span> <a href="https://accoladesintegrated.com/" target='_blank'> <Image width={10} height={10} className='w-[20px]' alt='accolades-logo' src={accoldesLogo} /></a> </p>
         </div>
       </section>
