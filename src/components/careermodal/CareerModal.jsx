@@ -14,8 +14,8 @@ import Image from "next/image";
 
 function CareerModal({
     open, handleOpen, formData, setFormData, handleInputChange,
-    selectedPosition,setSelectedPosition, handlePositionChange, jobSuggestion, selectedLocation,
-    handleLocationChange, locations, selectedFile, handleFileInputClick,
+    selectedPosition,setSelectedPosition, handlePositionChange,
+     selectedFile, handleFileInputClick,
     uploadIcon, fileInputRef, handleFileChange, isFormFilled, setIsFormFilled,
     isLoad, setLoading,setSelectedLocation,setSelectedFile
 }) {
@@ -27,8 +27,7 @@ function CareerModal({
         if (isFormFilled) {
             setLoading(true)
             datas.append("name", formData.name)
-            datas.append('career', selectedPosition);
-            datas.append('location', selectedLocation);
+            datas.append('career', formData?.position);
             datas.append('number', formData.phone);
             datas.append('email', formData.email);
             datas.append('cv_file', selectedFile);
@@ -40,11 +39,13 @@ function CareerModal({
                     setFormData({
                         name: '',
                         phone: '',
-                        email: ''
+                        email: '',
+                        position:""
                     })
                     setSelectedPosition("")
-                    setSelectedLocation("")
                     setSelectedFile(null)
+                    window.location.reload() 
+                    
                     Swal.fire({
                         title: "We received your application",
                         text: "We will contact you soon. Thank you for showing interest.",
@@ -114,9 +115,10 @@ function CareerModal({
                                 className={`w-full h-[40px] px-[15px] border-2 rounded-[6px] text-[14px] focus:outline-none ${selectedPosition ? 'text-black' : 'text-[#BABABA]'}`}
                             >
                                 <option value="" disabled>Select Job Position</option>
-                                {jobSuggestion.map((job, index) => (
-                                    <option key={index} value={job.id}>{job.job_title}</option>
-                                ))}
+                                <option value={selectedPosition} selected>{selectedPosition}</option>
+                                {/* {jobSuggestion.map((job, index) => (
+                                    <option key={index} selected={job?.job_title === selectedPosition} value={job.job_title}>{job.job_title}</option>
+                                ))} */}
                             </select>
                         </div>
                         <div className='flex flex-col'>
@@ -130,7 +132,7 @@ function CareerModal({
                                 type="number"
                             />
                         </div>
-                        <div className='flex flex-col'>
+                        {/* <div className='flex flex-col'>
                             <p className='font-[inter-regular] text-[14px] '>Location</p>
                             <select
                                 name="location"
@@ -139,11 +141,12 @@ function CareerModal({
                                 className={`w-full h-[40px] px-[15px] border-2 rounded-[6px] text-[14px] focus:outline-none ${selectedLocation ? 'text-black' : 'text-[#BABABA]'}`}
                             >
                                 <option value="" disabled>Select Location</option>
+                                <option value="Thrissur" selected={true}>Thrissur</option>
                                 {locations.map((job, index) => (
                                     <option key={index} value={job.location}>{job.location}</option>
                                 ))}
                             </select>
-                        </div>
+                        </div> */}
                         <div className='flex flex-col'>
                             <p className='font-[inter-regular] text-[14px] '>Email</p>
                             <input

@@ -1,7 +1,11 @@
-@media (min-width:767px) and (max-width:1500px ){
-    .blog-listing{
-        grid-template-columns: repeat(3,auto);
-    }
+@media (min-width: 767px) and (max-width: 1500px) {
+  .blog-listing {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.blog-card:hover {
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
 /* 
@@ -62,61 +66,95 @@
     left: -50px;
 } */
 
-
-.blog-description h1, 
-.blog-description h2, 
-.blog-description h3, 
-.blog-description h4, 
-.blog-description h5, 
-.blog-description h6, 
+.blog-description h1,
+.blog-description h2,
+.blog-description h3,
+.blog-description h4,
+.blog-description h5,
+.blog-description h6,
 .blog-description strong,
 .blog-description b {
-    font-family: 'general-sans-medium' ;
-    font-size: 24px ;
-    line-height: 32px ;
-    color: var(--secondary-cl) !important;
-    padding: 20px 0px;
+  font-family: "general-sans-medium";
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--secondary-cl) !important;
+  padding: 20px 0px;
 }
 
-.blog-description p {
-    font-family: 'general-sans-light';
+.blog-description {
+  p,
+  a,
+  li {
+    font-family: "general-sans-regular";
     font-size: 20px;
-    line-height: 36px;
+    line-height: 156%;
     color: var(--secondary-cl) !important;
+  }
 }
 
-@media (max-width:1023px){
-    .blog-description h1, 
-    .blog-description h2, 
-    .blog-description h3, 
-    .blog-description h4, 
-    .blog-description h5, 
-    .blog-description h6, 
-    .blog-description strong,
-    .blog-description b {
-        font-size: 16px !important;
-        line-height: 21px !important;
-        padding: 20px 0px;
-    }
+.blog-description {
+  ul,
+  ol,
+  menu {
+    list-style: inherit;
+    margin: 0 0 1rem 1.5rem;
+    padding: 0;
+  }
 
-    .blog-description p {
-        font-size: 14px;
-        line-height: 21px;
-        color: var(--secondary-cl) !important;
-    }
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul ul,
+  ol ol,
+  ul ol,
+  ol ul {
+    margin-left: 1rem;
+    list-style-type: circle;
+  }
+
+  li {
+    margin: 0.5rem 0;
+  }
 }
 
-@media (min-width:1024px) and (max-width:1440px){
-    .custom-blog-innder-title-width{
-        width: 60% !important;
-    }
-}
-@media (min-width:768px) {
-    .blog-bg {
-        background-image: url('../../../public/images/blogs/blog-bg.svg');
-    }
-    .blog-inner-bg{
-        background-image: url('../../../public/images/home/customer-reviewsbg.svg');
+@media (max-width: 1023px) {
+  .blog-description h1,
+  .blog-description h2,
+  .blog-description h3,
+  .blog-description h4,
+  .blog-description h5,
+  .blog-description h6,
+  .blog-description strong,
+  .blog-description b {
+    font-size: 16px !important;
+    line-height: 21px !important;
+    padding: 20px 0px;
+  }
 
+  .blog-description {
+    p, a, li{
+      font-size: 14px;
+      color: var(--secondary-cl) !important;
     }
+    
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .custom-blog-innder-title-width {
+    width: 60% !important;
+  }
+}
+@media (min-width: 768px) {
+  .blog-bg {
+    background-image: url("../../../public/images/blogs/blog-bg.svg");
+  }
+  .blog-inner-bg {
+    background-image: url("../../../public/images/home/customer-reviewsbg.svg");
+  }
 }

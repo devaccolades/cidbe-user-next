@@ -17,7 +17,7 @@ const HeroSection = dynamic(() => import('../app/(home)/HeroSection'), { ssr: fa
 async function fetchSeoData(path) {
   let data = {};
   try {
-    const res = await getSeoApi(path);
+    const res = await getSeoApi(path);    
     data = res.data.data[0];
   } catch (error) {
     console.log(error);

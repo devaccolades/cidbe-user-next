@@ -132,3 +132,24 @@ function Skelten() {
 }
 
 export default Skelten
+
+
+export const SkeletonLoader = () => (
+  <div className='w-full py-[30px] md:py-[50px] bg-white rounded-t-[20px] lg:rounded-t-[100px]'>
+      <div className='containers h-full grid grid-cols-1 md:grid-cols-2 items-center'>
+          <div className="animate-pulse">
+              <div className="h-6 w-48 bg-gray-300 rounded mb-4"></div>
+              <div className="h-4 w-64 bg-gray-300 rounded mb-2"></div>
+              <div className="h-4 w-52 bg-gray-300 rounded mb-2"></div>
+              <div className="h-10 w-40 bg-gray-300 rounded mt-4"></div>
+          </div>
+          <div className="animate-pulse hidden md:block">
+              <div className="h-6 w-48 bg-gray-300 rounded mb-4"></div>
+              <div className="h-4 w-64 bg-gray-300 rounded mb-2"></div>
+              <div className="h-4 w-52 bg-gray-300 rounded mb-2"></div>
+              <div className="h-10 w-40 bg-gray-300 rounded mt-4"></div>
+          </div>
+      </div>
+
+  </div>
+);

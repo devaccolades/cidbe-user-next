@@ -1,39 +1,15 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Image } from 'antd';
 import NotFound from '../../components/common/NotFound';
-import { getAchievementsApi } from '../../services/services';
 import Skelten from '../../components/skeletoneffect/Skelten';
+import Link from 'next/link';
 
-function AchievementsListing() {
-    const [achievements, setAchievements] = useState(null);
-    const [page_limit, setPage_limit] = useState(window.innerWidth < 1023 ? 4 : 8);
-    const [total_count, setTotal] = useState(0);
-    const [page, setPage] = useState(1);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await getAchievementsApi(page, page_limit);
-                const { StatusCode, data } = res.data;
-                if (StatusCode === 6000) {
-                    setAchievements(data);
-                    setTotal(res.data.total_count);
-                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-                } else {
-                    setAchievements([]);
-                }
-            } catch (error) {
-                console.log(error);
-                setAchievements([]);
-            }
-        };
-        fetchData();
-    }, [page, page_limit]);
-
-    const handleClick = (pageNumber) => {
-        setPage(pageNumber);
-    };
+function AchievementsListing({ achievements = [], totalCount, currentPage, pageSize }) {
+    const visiblePages = Array.from(
+        { length: 5 },
+        (_, i) => currentPage - 2 + i
+    ).filter((pages) => pages > 0 && pages <= Math.ceil(totalCount / pageSize));
 
     return (
         <>
@@ -51,7 +27,7 @@ function AchievementsListing() {
                                             <Image
                                                 className="h-[350px] bg-center bg-cover bg-no-repeat rounded-t-[16px] transition-transform duration-300 ease-in-out hover:scale-110"
                                                 src={achi?.image}
-                                                alt={achi?.title}
+                                                alt={achi?.image_alt}
                                                 height={300}
                                                 preview={{
                                                     src: achi?.image,
@@ -69,32 +45,47 @@ function AchievementsListing() {
                     ) : (
                         <NotFound />
                     )}
-                <div className="pb-[30px] flex justify-end containers">
-                    <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
-                        <button
-                            onClick={() => handleClick(page - 1)}
-                            disabled={page === 1}
-                            className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-                        >
-                            Previous
-                        </button>
-                        {Array.from({ length: Math.ceil(total_count / page_limit) }, (_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => handleClick(index + 1)}
-                                className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 ${page === index + 1 ? 'z-10 bg-gray-100 text-gray-900 cursor-default' : 'hover:text-gray-500'}`}
+                <div className="pb-[30px] flex justify-center md:justify-end containers">
+                    <ul className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
+                        <li>
+                            <Link
+                                href={currentPage > 1 ? `/achievements?page=${currentPage - 1}` : '#'}
+                                onClick={(e) => {
+                                    if (currentPage === 1) {
+                                        e.preventDefault();
+                                    }
+                                }}
+                                className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${currentPage === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'
+                                    }`}
                             >
-                                {index + 1}
-                            </button>
+                                Previous
+                            </Link>
+                        </li>
+
+                        {visiblePages.map((pageNumber) => (
+                            <li key={pageNumber}>
+                                <Link
+                                    href={`/achievements?page=${pageNumber}`}
+                                    className={`relative inline-flex items-center px-4 py-2 border border-gray-300  text-sm font-medium  ${pageNumber === currentPage ? 'z-10 bg-[var(--primary-cl)] border-white text-white hover:text-gray-700' : 'bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-500'}`}>
+                                    {pageNumber}
+                                </Link>
+                            </li>
                         ))}
-                        <button
-                            onClick={() => handleClick(page + 1)}
-                            disabled={page === Math.ceil(total_count / page_limit)}
-                            className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(total_count / page_limit) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-                        >
-                            Next
-                        </button>
-                    </nav>
+                        <li>
+                            <Link
+                                href={currentPage === Math.ceil(totalCount / pageSize) ? '#' : `/achievements?page=${currentPage + 1}`}
+                                onClick={(e) => {
+                                    if (currentPage === Math.ceil(totalCount / pageSize)) {
+                                        e.preventDefault();
+                                    }
+                                }}
+                                className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${currentPage === Math.ceil(totalCount / pageSize) ? 'cursor-not-allowed' : 'hover:text-gray-700'
+                                    }`}
+                            >
+                                Next
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
             </main>
         </>

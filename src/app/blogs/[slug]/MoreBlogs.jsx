@@ -1,66 +1,50 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import BlogCard from '../../../components/BlogCard'
-import { getBlogsApi } from '../../../services/services'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
-function MoreBlogs({blogId}) {
-  const router = useRouter()
-  const [numItems, setNumItems] = useState(4);
-  const [Blogs, setBlogs] = useState([])
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleResize = () => {
-        if (window.innerWidth < 768) {
-          setNumItems(1);
-        } else if (window.innerWidth >= 1400 && window.innerWidth <= 1750) {
-          setNumItems(3);
-        } else if (window.innerWidth >= 768 && window.innerWidth <= 1399) {
-          setNumItems(2);
-        } else {
-          setNumItems(4);
-        }
-      };
-
-      handleResize();
-
-      window.addEventListener('resize', handleResize);
-
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await getBlogsApi(1, numItems,blogId)
-        const { StatusCode, data } = res.data
-        if (StatusCode === 6000) {
-          setBlogs(data)
-        } else {
-          setBlogs([])
-        }
-      } catch (error) {
-        setBlogs([])
-        console.log(error);
-      }
-    }
-    fetchData()
-  }, [numItems])
+function MoreBlogs({ related_blogs }) {
 
   return (
     <main className='bg-[--primary-cl]'>
       <section className='containers w-full py-[25px] md:py-[50px]'>
         <h4 className='text-[20px] lg:text-[30px] text-[--secondary-cl] font-[general-sans-regular]'>RELATED BLOGS</h4>
         <div className='flex flex-row gap-[20px] justify-center py-[10px]'>
-          {Blogs.slice(0, numItems).map((blog, index) => (
-            <BlogCard key={index} blog={blog} />
-          ))}
+            <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1, // width < 768
+                    spaceBetween: 10
+                  },
+                  768: {
+                    slidesPerView: 2, // width >= 768 && width <= 1399
+                    spaceBetween: 20
+                  },
+                  1400: {
+                    slidesPerView: 3, // width >= 1400 && width <= 1750
+                    spaceBetween: 20
+                  },
+                  1750: {
+                    slidesPerView: 4, // Default for larger screens
+                    spaceBetween: 20
+                  },
+                }}
+                className="relative"
+              >
+                {related_blogs && related_blogs.length > 0 && related_blogs.map((blog, index) => (
+                  <SwiperSlide key={index}>
+                    <BlogCard key={index} blog={blog} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
         </div>
-        <p className='pt-[20px] cursor-pointer text-center underline text-[16px] font-[general-sans-regular]' onClick={() => router.push('/blogs')}>View all</p>
+        <div className='flex justify-center items-center'>
+          <Link className='pt-[20px] cursor-pointer text-center underline text-[16px] font-[general-sans-regular]' href="/blogs">View all</Link>
+        </div>
       </section>
     </main>
   )

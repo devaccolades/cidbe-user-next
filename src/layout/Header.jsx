@@ -151,7 +151,7 @@ function Header({ bgPrimary = false }) {
             />
             <header className='main-area sticky top-1 z-50'>
                 <section className={`nav-bar ${bgPrimary ? "bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
-                    <Image src={logo} alt='logo' className='logo cursor-pointer' onClick={() => router.push('/')} />
+                    <Link href='/'><Image src={logo} alt='logo' className='logo cursor-pointer' /></Link>
                     <div className='lap-navbar'>
                         <ul className={`${scrolling ? 'text-[#052D23]' : bgPrimary ? 'text-[--secondary-cl]' : 'text-white'}`}>
                             <Link href="/"><li className={`${scrolling ? 'isscroll' : ''} ${pathname === '/' && 'active'}`}>Home</li></Link>
@@ -161,12 +161,12 @@ function Header({ bgPrimary = false }) {
                                 About Us
                                 <Image src={hovered.about ? bgPrimary ? dropdownGreenIcon : dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
                                 <div className="absolute card flex flex-col gap-[1px] left-[-10%] top-[100%] w-[285px] bg-white shadow-lg rounded-lg invisible group-hover:visible group-hover:translate-y-1 transition-all duration-200 ease-in-out z-10 ">
-                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/about-us')}>
+                                    <Link href='/about-us' className="flip-animate dropdown-item" >
                                         <span data-hover="Who we are">Who we are</span>
-                                    </a>
-                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/csr')}>
+                                    </Link>
+                                    <Link href='/csr' className="flip-animate dropdown-item">
                                         <span data-hover="CSR">CSR</span>
-                                    </a>
+                                    </Link>
                                 </div>
                             </li>
                             <li className={`menu-hover relative group ${hovered.project ||
@@ -178,25 +178,25 @@ function Header({ bgPrimary = false }) {
                                 ? 'active' : ''}`}
                                 onMouseEnter={() => setHovered({ project: true, about: false })}
                                 onMouseLeave={() => setHovered({ project: false, about: false })}>
-                                
+
                                 Projects
                                 <Image src={hovered.project ? bgPrimary ? dropdownGreenIcon : dropdownyellowIcon : scrolling ? dropdownGreenIcon : bgPrimary ? dropdownGreenIcon : dropdownIcon} alt="dropdown icon" />
                                 <div className="absolute card flex flex-col gap-[1px] left-[-10%] top-[100%] w-[285px] bg-white shadow-lg rounded-lg invisible group-hover:visible group-hover:translate-y-1 transition-all duration-200 ease-in-out z-10 ">
-                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/featured-projects')}>
+                                    <Link href='/featured-projects' className="flip-animate dropdown-item">
                                         <span data-hover="Featured project">Featured project</span>
-                                    </a>
-                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/completed-projects')}>
+                                    </Link>
+                                    <Link href='/completed-projects' className="flip-animate dropdown-item">
                                         <span data-hover="Completed project">Completed project</span>
-                                    </a>
-                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/upcoming-projects')}>
+                                    </Link>
+                                    <Link href='/upcoming-projects' className="flip-animate dropdown-item">
                                         <span data-hover="Upcoming projects">Upcoming projects</span>
-                                    </a>
-                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/ready-to-occupy')}>
+                                    </Link>
+                                    <Link href='/ready-to-occupy' className="flip-animate dropdown-item">
                                         <span data-hover="Ready to occupy">Ready to occupy</span>
-                                    </a>
-                                    <a className="flip-animate dropdown-item" onClick={() => router.push('/ongoing-projects')}>
+                                    </Link>
+                                    <Link href='/ongoing-projects' className="flip-animate dropdown-item">
                                         <span data-hover="Ongoing project">Ongoing project</span>
-                                    </a>
+                                    </Link>
                                 </div>
                             </li>
                             <Link href='/gallery'><li className={`${pathname === '/gallery' && "active"}`}>Gallery</li></Link>
@@ -228,13 +228,14 @@ function Header({ bgPrimary = false }) {
                                 exit="exit"
                             >
                                 <div className="flex flex-col gap-5 items-center justify-center h-full font-[general-sans-medium]">
-                                    <motion.p
-                                        className="cursor-pointer text-[#4C956C] text-[20px]"
-                                        variants={linkItemVariants}
-                                        onClick={() => router.push('/')}
-                                    >
-                                        Home
-                                    </motion.p>
+                                    <Link href='/'>
+                                        <motion.p
+                                            className="cursor-pointer text-[#4C956C] text-[20px]"
+                                            variants={linkItemVariants}
+                                        >
+                                            Home
+                                        </motion.p>
+                                    </Link>
                                     <motion.div
                                         className={`cursor-pointer ${dropDown.about ? 'text-[#052D23]' : 'text-[#4C956C]'}  text-[20px] flex flex-col items-center gap-[10px]`}
                                         variants={linkItemVariants}
@@ -250,8 +251,8 @@ function Header({ bgPrimary = false }) {
                                                 exit={{ opacity: 0, y: -10 }}
                                                 className="flex flex-col gap-4 mt-2 text-center "
                                             >
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/about-us')}>Who we are</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/csr')}>CSR</p>
+                                                <Link href='/about-us'><p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Who we are</p></Link>
+                                                <Link href='/csr'><p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">CSR</p></Link>
                                             </motion.div>
                                         )}
                                     </motion.div>
@@ -270,55 +271,68 @@ function Header({ bgPrimary = false }) {
                                                 exit={{ opacity: 0, y: -10 }}
                                                 className="flex flex-col gap-4 mt-2 text-center "
                                             >
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/featured-projects')}>Featured project</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/completed-projects')}>Completed project</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/upcoming-projects')}>Upcoming projects</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/ready-to-occupy')}>Ready to occupy</p>
-                                                <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" onClick={() => router.push('/ongoing-projects')}>Ongoing project</p>
+                                                <Link href="/featured-projects">
+                                                    <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" >Featured project</p>
+                                                </Link>
+                                                <Link href="/completed-projects">
+                                                    <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" >Completed project</p>
+                                                </Link>
+                                                <Link href="/upcoming-projects">
+                                                    <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]" >Upcoming projects</p>
+                                                </Link>
+                                                <Link href="/ready-to-occupy">
+                                                    <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Ready to occupy</p>
+                                                </Link>
+                                                <Link href="/ongoing-projects">
+                                                    <p className="cursor-pointer text-[#052D23] font-[general-sans-regular] text-[16px]">Ongoing project</p>
+                                                </Link>
                                             </motion.div>
                                         )}
                                     </motion.div>
-                                    <motion.p
+                                    <Link href='/gallery'><motion.p
                                         className="cursor-pointer text-[#4C956C] text-[20px]"
-                                        variants={linkItemVariants}
-                                        onClick={() => router.push('/gallery')}                                    >
+                                        variants={linkItemVariants} >
                                         Gallery
                                     </motion.p>
-                                    <motion.p
-                                        className="cursor-pointer text-[#4C956C] text-[20px]"
-                                        variants={linkItemVariants}
-                                        onClick={() => router.push('/interiors')}
-                                    >
-                                        Interiors
-                                    </motion.p>
-                                    <motion.p
-                                        className="cursor-pointer text-[#4C956C] text-[20px]"
-                                        variants={linkItemVariants}
-                                        onClick={() => router.push('/blogs')}
-                                    >
-                                        Blog
-                                    </motion.p>
-                                    <motion.p
-                                        className="cursor-pointer text-[#4C956C] text-[20px]"
-                                        variants={linkItemVariants}
-                                        onClick={() => router.push('/achievements')}
-                                    >
-                                        Achievements
-                                    </motion.p>
-                                    <motion.p
-                                        className="cursor-pointer text-[#4C956C] text-[20px]"
-                                        variants={linkItemVariants}
-                                        onClick={() => router.push('/contact-us')}
-                                    >
-                                        Contact Us
-                                    </motion.p>
-                                    <motion.p
-                                        className="cursor-pointer text-[#4C956C] text-[20px]"
-                                        variants={linkItemVariants}
-                                        onClick={() => router.push('/careers')}
-                                    >
-                                        Careers
-                                    </motion.p>
+                                    </Link>
+                                    <Link href='/interiors'>
+                                        <motion.p
+                                            className="cursor-pointer text-[#4C956C] text-[20px]"
+                                            variants={linkItemVariants}>
+                                            Interiors
+                                        </motion.p>
+                                    </Link>
+                                    <Link href='/blogs'>
+                                        <motion.p
+                                            className="cursor-pointer text-[#4C956C] text-[20px]"
+                                            variants={linkItemVariants}>
+                                            Blog
+                                        </motion.p>
+                                    </Link>
+                                    <Link href='/achievements'>
+                                        <motion.p
+                                            className="cursor-pointer text-[#4C956C] text-[20px]"
+                                            variants={linkItemVariants}
+                                        >
+                                            Achievements
+                                        </motion.p>
+                                    </Link>
+                                    <Link href='/contact-us'>
+                                        <motion.p
+                                            className="cursor-pointer text-[#4C956C] text-[20px]"
+                                            variants={linkItemVariants}
+                                        >
+                                            Contact Us
+                                        </motion.p>
+                                    </Link>
+                                    <Link href='/careers'>
+                                        <motion.p
+                                            className="cursor-pointer text-[#4C956C] text-[20px]"
+                                            variants={linkItemVariants}
+                                        >
+                                            Careers
+                                        </motion.p>
+                                    </Link>
                                 </div>
                             </motion.div>
                         </motion.div>
