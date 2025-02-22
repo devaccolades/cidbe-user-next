@@ -16,19 +16,20 @@ import callIcon from '../../public/images/footer/call.svg'
 import watsappIcon from '../../public/images/footer/watsapp.svg'
 import EnquiryModal from '../components/EnquiryForm/EnquiryModal'
 import Script from 'next/script';
+import Link from 'next/link'
 
 
 function Footer({ backGround = "--primary-cl" }) {
-  const [open,setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const currentYear = new Date().getFullYear();
 
-  const handleOpen = () =>{
+  const handleOpen = () => {
     setOpen(!open)
   }
   const router = useRouter()
   return (
     <>
-     <Script
+      <Script
         id="tawk-to"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
@@ -66,7 +67,7 @@ function Footer({ backGround = "--primary-cl" }) {
         <div className='w-full flex flex-row h-full flex-wrap lg:flex-nowrap'>
           <div className='flex flex-col w-full md:w-[60%] logo-div lg:w-[30vw] gap-[20px]'>
             <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px] uppercase'>Your trusted building partner in Thrissur, shaping the future of luxury living with quality construction.</p>
-            <Image src={logo} onClick={() => router.push('/')} className='w-[118px] h-[74px]' alt='logo' />
+            <Link href='/'><Image src={logo} className='w-[118px] h-[74px]' alt='logo' /></Link>
             <div className='flex flex-row gap-[20px] items-center'>
               <a href="https://www.instagram.com/cidbithrissur/" target="_blank"> <Image src={instagram} className='w-[20] h-[20]' alt='instagram-logo' /></a>
               <a href="https://www.facebook.com/cidbitsr/" target="_blank">  <Image src={facebook} alt='facebook-logo' /></a>
@@ -75,22 +76,46 @@ function Footer({ backGround = "--primary-cl" }) {
           </div>
           <div className='text-[14px] leading-[21px] w-[50%] md:w-[18%] lg:w-[11vw] flex flex-col gap-[20px] mt-[40px] md:mt-0'>
             <p className='font-[general-sans-semibold]'>ABOUT US</p>
-            <p className='cursor-pointer' onClick={() => router.push('/about-us')}>Who We Are</p>
-            <p className='cursor-pointer' onClick={() => router.push('/csr')}>CSR</p>
+            <Link href='/about-us'>
+              <p className='cursor-pointer'>Who We Are</p>
+            </Link>
+            <Link href='/csr'>
+              <p className='cursor-pointer'>CSR</p>
+            </Link>
           </div>
           <div className='text-[14px] leading-[21px] flex flex-col w-[50%] md:w-[18%] project-div lg:w-[13vw] gap-[20px] mt-[40px] md:mt-0'>
             <p className='font-[general-sans-semibold]'>PROJECTS</p>
-            <p className='cursor-pointer' onClick={() => router.push('/completed-projects')}>Completed Projects</p>
-            <p className='cursor-pointer' onClick={() => router.push('/upcoming-projects')}>Upcoming Projects </p>
-            <p className='cursor-pointer' onClick={() => router.push('/ready-to-occupy')}>Ready To Occupy</p>
-            <p className='cursor-pointer' onClick={() => router.push('/ongoing-projects')}>Ongoing Projects</p>
+            <Link href="/completed-projects">
+              <p className="cursor-pointer">Completed Projects</p>
+            </Link>
+            <Link href="/upcoming-projects">
+              <p className="cursor-pointer">Upcoming Projects</p>
+            </Link>
+            <Link href="/ready-to-occupy">
+              <p className="cursor-pointer">Ready To Occupy</p>
+            </Link>
+            <Link href="/ongoing-projects">
+              <p className="cursor-pointer">Ongoing Projects</p>
+            </Link>
+
           </div>
           <div className='font-[general-sans-semibold] text-[14px] w-full md:w-[20vw] lg:mt-0 mt-[30px] other-links lg:w-[13vw] flex flex-col gap-[20px]'>
-            <p className='cursor-pointer' onClick={() => router.push('/gallery')}>GALLERY</p>
-            <p className='cursor-pointer' onClick={() => router.push('/blogs')}>BLOG</p>
-            <p className='cursor-pointer' onClick={() => router.push('/achievements')}>ACHIEVEMENTS</p>
-            <p className='cursor-pointer' onClick={() => router.push('/contact-us')}>CONTACT US</p>
-            <p className='cursor-pointer' onClick={() => router.push('/careers')}>CAREERS</p>
+            <Link href="/gallery" className="cursor-pointer">
+              <p>GALLERY</p>
+            </Link>
+            <Link href="/blogs" className="cursor-pointer">
+              <p>BLOG</p>
+            </Link>
+            <Link href="/achievements" className="cursor-pointer">
+              <p>ACHIEVEMENTS</p>
+            </Link>
+            <Link href="/contact-us" className="cursor-pointer">
+              <p>CONTACT US</p>
+            </Link>
+            <Link href="/careers" className="cursor-pointer">
+              <p>CAREERS</p>
+            </Link>
+
           </div>
           <div className='flex flex-col md:flex-row lg:flex-col justify-between lg:mt-0 mt-[30px]'>
             <div className='flex flex-col gap-[8px] text-[14px] w-full md:w-[40%] lg:w-auto'>
@@ -131,25 +156,49 @@ function Footer({ backGround = "--primary-cl" }) {
               </div>
               <div className='text-[14px] leading-[21px] w-[50%] flex flex-col gap-[20px]'>
                 <p className='font-[general-sans-semibold]'>ABOUT US</p>
-                <p className='cursor-pointer' onClick={() => router.push('/about-us')}>Who We Are</p>
-                <p className='cursor-pointer' onClick={() => router.push('/csr')}>CSR</p>
+                <Link href="/about-us" className="cursor-pointer">
+                  <p>Who We Are</p>
+                </Link>
+                <Link href="/csr" className="cursor-pointer">
+                  <p>CSR</p>
+                </Link>
               </div>
             </div>
           </div>
           <div className='flex flex-ro w-full justify-between mt-[40px]'>
             <div className='text-[14px] leading-[21px] flex flex-col w-full gap-[20px]'>
               <p className='font-[general-sans-semibold]'>PROJECTS</p>
-              <p className='cursor-pointer' onClick={() => router.push('/completed-projects')}>Completed Projects</p>
-              <p className='cursor-pointer' onClick={() => router.push('/upcoming-projects')}>Upcoming Projects </p>
-              <p className='cursor-pointer' onClick={() => router.push('/ready-to-occupy')}>Ready To Occupy</p>
-              <p className='cursor-pointer' onClick={() => router.push('/ongoing-projects')}>Ongoing Projects</p>
+              <Link href="/completed-projects" className="cursor-pointer">
+                <p>Completed Projects</p>
+              </Link>
+              <Link href="/upcoming-projects" className="cursor-pointer">
+                <p>Upcoming Projects</p>
+              </Link>
+              <Link href="/ready-to-occupy" className="cursor-pointer">
+                <p>Ready To Occupy</p>
+              </Link>
+              <Link href="/ongoing-projects" className="cursor-pointer">
+                <p>Ongoing Projects</p>
+              </Link>
+
             </div>
             <div className='font-[general-sans-semibold] text-[14px] w-[50%] flex flex-col gap-[20px]'>
-              <p className='cursor-pointer' onClick={() => router.push('/gallery')}>GALLERY</p>
-              <p className='cursor-pointer' onClick={() => router.push('/blogs')}>BLOG</p>
-              <p className='cursor-pointer' onClick={() => router.push('/achievements')}>ACHIEVEMENTS</p>
-              <p className='cursor-pointer' onClick={() => router.push('/contact-us')}>CONTACT US</p>
-              <p className='cursor-pointer' onClick={() => router.push('/careers')}>CAREERS</p>
+              <Link href="/gallery" className="cursor-pointer">
+                <p>GALLERY</p>
+              </Link>
+              <Link href="/blogs" className="cursor-pointer">
+                <p>BLOG</p>
+              </Link>
+              <Link href="/achievements" className="cursor-pointer">
+                <p>ACHIEVEMENTS</p>
+              </Link>
+              <Link href="/contact-us" className="cursor-pointer">
+                <p>CONTACT US</p>
+              </Link>
+              <Link href="/careers" className="cursor-pointer">
+                <p>CAREERS</p>
+              </Link>
+
             </div>
           </div>
           <div className='flex flex-col justify-between w-full  mt-[30px] '>

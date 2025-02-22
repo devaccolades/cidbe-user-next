@@ -1,41 +1,61 @@
-import React from 'react'
-import Header from '../../layout/Header'
-import Footer from '../../layout/Footer'
-import Skelten from '../../components/skeletoneffect/Skelten';
+import React from 'react';
 import dynamic from 'next/dynamic';
-import './Blogs.css'
-const BlogListing = dynamic(() => import('./BlogListing'), { ssr: false,loading:() => <Skelten/>, });
+import Header from '../../layout/Header';
+import Footer from '../../layout/Footer';
+import Skelten from '../../components/skeletoneffect/Skelten';
+import { getBlogsApi, getSeoApi } from '../../services/services';
+import './Blogs.css';
 
-import { getSeoApi } from '../../services/services';
+const BlogListing = dynamic(() => import('./BlogListing'),
+ { ssr: false, 
+  loading: () => <Skelten />, 
+});
 
-async function fetchSeoData(path) {
-  let data = {};
-  try {
-    const res = await getSeoApi(path);
-    data = res.data.data[0];
-  } catch (error) {
-    console.log(error);
-  }
-  return data;
-}
 
 export async function generateMetadata() {
-  const path = '/blogs';
-  const responseData = await fetchSeoData(path);
-  const { meta_title, meta_description } = responseData;
-  return {
-    title: meta_title,
-    description: meta_description,
-  };
-}
-function page() {
-    return (
-        <>
-            <Header bgPrimary={true} />
-            <BlogListing />
-            <Footer backGround='#FFFFFF' />
-        </>
-    )
+  try {
+    const res = await getSeoApi('/blogs');
+    const { data } = res.data;
+
+    return {
+      title: data?.[0]?.meta_title || 'Blogs',
+      description: data?.[0]?.meta_description || 'Default Description',
+    };
+  } catch (error) {
+    console.error('Error fetching metadata:', error);
+    return {
+      title: 'Blogs',
+      description: 'Default Description',
+    };
+  }
 }
 
-export default page
+export default async function Page({ searchParams }) {
+  const currentPage = parseInt(searchParams?.page || '1', 10);
+  const pageSize = 8;
+
+  let blogs = [];
+  let totalCount = 0;
+
+  try {
+    const res = await getBlogsApi(currentPage, pageSize);
+    const { StatusCode, data, total_count } = res?.data || {};
+
+    if (StatusCode === 6000) {
+      blogs = data || [];
+      totalCount = total_count || 0;
+    } else {
+      console.warn('Unexpected StatusCode. Falling back to empty blogs.');
+    }
+  } catch (error) {
+    console.error('Error loading blogs:', error);
+  }
+  return (
+    <>
+      <Header bgPrimary={true} />
+      <BlogListing data={blogs} totalCount={totalCount} currentPage={currentPage} pageSize={pageSize} />
+      <Footer backGround='#FFFFFF' />
+    </>
+  )
+}
+

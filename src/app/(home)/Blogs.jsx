@@ -1,40 +1,19 @@
 'use client'
 import BlogCard from '../../components/BlogCard'
 import React, { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
 import NotFound from '../../components/common/NotFound'
 import { getBlogsApi } from '../../services/services'
 import Skelten from '../../components/skeletoneffect/Skelten'
-import { throttle } from 'lodash';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import Link from 'next/link'
 function Blogs() {
-  const router = useRouter()
-  const [numItems, setNumItems] = useState(4);
   const [Blogs, setBlogs] = useState(null)
-
-  useEffect(() => {
-    const determineNumItems = () => {
-      const width = window.innerWidth;
-      if (width < 768) return 1;
-      if (width >= 1400 && width <= 1750) return 3;
-      if (width >= 768 && width <= 1399) return 2;
-      return 4;
-    };
-
-    setNumItems(determineNumItems());
-
-    const handleResize = throttle(() => {
-      setNumItems(determineNumItems());
-    }, 200); // Throttle resize to fire every 200ms
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await getBlogsApi(1, numItems);
+        const res = await getBlogsApi(1, 4);
         const { StatusCode, data } = res.data;
         setBlogs(StatusCode === 6000 ? data : []);
       } catch (error) {
@@ -44,7 +23,7 @@ function Blogs() {
     };
 
     fetchData();
-  }, [numItems]);
+  }, []);
 
   return (
     <section className='h-[651px] bg-[--primary-cl]'>
@@ -54,16 +33,45 @@ function Blogs() {
           <Skelten />
         ) :
           Blogs.length > 0 ? (
-            <div className='flex flex-row gap-[20px] justify-center py-[10px]'>
-              {Blogs.map((blog, index) => (
-                <BlogCard key={index} blog={blog} />
-              ))}
+            <div className='w-full py-[10px]'>
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1, // width < 768
+                    spaceBetween: 10
+                  },
+                  768: {
+                    slidesPerView: 2, // width >= 768 && width <= 1399
+                    spaceBetween: 20
+                  },
+                  1400: {
+                    slidesPerView: 3, // width >= 1400 && width <= 1750
+                    spaceBetween: 20
+                  },
+                  1750: {
+                    slidesPerView: 4, // Default for larger screens
+                    spaceBetween: 20
+                  },
+                }}
+                className="relative"
+              >
+                {Blogs.map((blog, index) => (
+                  <SwiperSlide key={index}>
+                    <BlogCard key={index} blog={blog} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           ) : (
             <NotFound />
           )}
-          <p className='py-[20px] text-center underline text-[16px] font-[general-sans-regular] cursor-pointer' onClick={() => router.push('/blogs')}>View all</p>
+        <div className='flex justify-center items-center'>
+          <Link href='/blogs' className='py-[20px] text-center underline text-[16px] font-[general-sans-regular] cursor-pointer' >View all</Link>
+        </div>
       </div>
+
     </section>
   )
 }

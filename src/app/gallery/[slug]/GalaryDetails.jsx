@@ -3,6 +3,7 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { Image } from 'antd';
 import NotFound from '../../../components/common/NotFound'
+import Link from 'next/link';
 function GalaryDetails({ galleryDetails }) {
     const router = useRouter()
 
@@ -13,7 +14,7 @@ function GalaryDetails({ galleryDetails }) {
             <section className='containers py-[30px] md:py-[60px]'>
                 <div className='font-[general-sans-medium] flex flex-row justify-between'>
                     <p className='text-[16px] lg:text-[24px] leading-[21px] lg:leading-[32px] text-[--secondary-cl] w-full lg:w-[450px]'>{galleryDetails?.title}</p>
-                    <button className='h-[40px] w-[100px] bg-[--secondary-cl] text-white text-[14px] font-bold rounded-[6px] hidden lg:block' onClick={() => router.push('/gallery')}>Back</button>
+                   <Link href='/gallery' className='hidden lg:block'> <button className='h-[40px] w-[100px] bg-[--secondary-cl] text-white text-[14px] font-bold rounded-[6px] '>Back</button></Link>
                 </div>
                 <p className='text-[--secondary-cl] text-[10px] bg-[#EBEBEB] flex justify-center items-center rounded-[6px] w-[73px] h-[24px] mt-[15px]'>{galleryDetails?.date_added}</p>
                 <Image.PreviewGroup>
@@ -27,7 +28,7 @@ function GalaryDetails({ galleryDetails }) {
                                         <Image
                                             className="h-full w-full"
                                             src={image?.image}
-                                            alt={image?.title}
+                                            alt={image?.image_alt}
                                             preview={{
                                                 src: image?.image,
                                             }}
@@ -41,7 +42,7 @@ function GalaryDetails({ galleryDetails }) {
                     )}
                 </Image.PreviewGroup>
                 <div className='flex justify-end'>
-                    <button className='h-[40px] w-[100px] bg-[--secondary-cl] text-white text-[14px]  font-bold rounded-[6px] lg:hidden block' onClick={() => router.push('/gallery')}>Back</button>
+                    <Link href='/gallery' className='lg:hidden block'><button className='h-[40px] w-[100px] bg-[--secondary-cl] text-white text-[14px]  font-bold rounded-[6px]' >Back</button></Link>
                 </div>
             </section>
             {/* <ImageModal open={open} handleOpen={handleOpen} data={selected} /> */}

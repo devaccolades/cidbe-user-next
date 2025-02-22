@@ -1,81 +1,78 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import BlogCard from '../../components/BlogCard'
 import NotFound from '../../components/common/NotFound'
-import { getBlogsApi } from '../../services/services'
+import { Fade } from "react-reveal";
 import Skelten from '../../components/skeletoneffect/Skelten'
+import Link from 'next/link'
 
-function BlogListing() {
-    const [page, setPage] = useState(1)
-    const [page_limit, setPage_limit] = useState(window.innerWidth < 768 ? 6 : 8)
-    const [total_count, setTotal] = useState(0)
+function BlogListing({ data = [], totalCount, currentPage, pageSize }) {
 
-    const [Blogs, setBlogs] = useState(null)
+    const visiblePages = Array.from(
+        { length: 5 },
+        (_, i) => currentPage - 2 + i
+    ).filter((pages) => pages > 0 && pages <= Math.ceil(totalCount / pageSize));
 
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await getBlogsApi(page, page_limit)
-                const { StatusCode, data } = res.data
-                if (StatusCode === 6000) {
-                    setBlogs(data)
-                    setTotal(res.data.total_count)
-                    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-                } else {
-                    setBlogs([])
-                }
-            } catch (error) {
-                console.log(error);
-                setBlogs([])
-            }
-        }
-        fetchData()
-    }, [page])
-    const handleClick = (pageNumber) => {
-        setPage(pageNumber);
-    };
     return (
         <main className="bg-[var(--primary-cl)] -mt-[80px] lg:-mt-[95px] flex flex-col blog-bg bg-cover">
             <h1 className='text-[16px] lg:text-[32px] text-center font-[clash-display-medium] pt-[80px] lg:pt-[130px] text-[--secondary-cl]'>BLOGS</h1>
-            {Blogs===null?(
-                <Skelten/>
-            ):
-            Blogs.length > 0 ? (
-                <section className='blog-listing containers gap-y-[40px] gap-x-[20px] grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-[20px] lg:py-[52px]'>
-                    {Blogs.map((blog, index) => (
-                        <BlogCard key={index} blog={blog} />
-                    ))}
-                </section>
-            ) : (
-                <NotFound />
-            )}
-            <div className="pb-[30px] flex justify-end containers">
-                <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
-                    <button
-                        onClick={() => handleClick(page - 1)}
-                        disabled={page === 1}
-                        className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-                    >
-                        Previous
-                    </button>
-                    {/* {Array.from({ length: Math.ceil(total_count / page_limit) }, (_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => handleClick(index + 1)}
-                            className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 ${page === index + 1 ? 'z-10 bg-gray-100 text-gray-900 cursor-default' : 'hover:text-gray-500'}`}
+            {data === null ? (
+                <Skelten />
+            ) :
+                data.length > 0 ? (
+                    <section className='blog-listing containers gap-y-[40px] gap-x-[20px] grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 py-[20px] lg:py-[52px]'>
+                        {data.map((blog, index) => (
+                            <Fade bottom delay={index * 50} key={blog.id}>
+                                <BlogCard blog={blog} />
+                            </Fade>
+                        ))}
+                    </section>
+                ) : (
+                    <NotFound />
+                )}
+            <div className="pb-[30px] flex justify-center md:justify-end containers">
+                <ul className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
+                    <li>
+                        <Link
+                            href={currentPage > 1 ? `/blogs?page=${currentPage - 1}` : '#'}
+                            onClick={(e) => {
+                                if (currentPage === 1) {
+                                    e.preventDefault();
+                                }
+                            }}
+                            className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${currentPage === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'
+                                }`}
                         >
-                            {index + 1}
-                        </button>
-                    ))} */}
-                    <button
-                        onClick={() => handleClick(page + 1)}
-                        disabled={page === Math.ceil(total_count / page_limit)}
-                        className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(total_count / page_limit) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-                    >
-                        Next
-                    </button>
-                </nav>
+                            Previous
+                        </Link>
+                    </li>
+
+                    {visiblePages.map((pageNumber) => (
+                        <li key={pageNumber}>
+                            <Link
+                                href={`/blogs?page=${pageNumber}`}
+                                className={`relative inline-flex items-center px-4 py-2 border border-gray-300  text-sm font-medium  ${pageNumber === currentPage ? 'z-10 bg-[var(--primary-cl)] border-white text-white hover:text-gray-700' : 'bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-500'}`}
+                            >
+                                {pageNumber}
+                            </Link>
+                        </li>
+                    ))}
+                    <li>
+                        <Link
+                            href={currentPage === Math.ceil(totalCount / pageSize) ? '#' : `/blogs?page=${currentPage + 1}`}
+                            onClick={(e) => {
+                                if (currentPage === Math.ceil(totalCount / pageSize)) {
+                                    e.preventDefault();
+                                }
+                            }}
+                            className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${currentPage === Math.ceil(totalCount / pageSize) ? 'cursor-not-allowed' : 'hover:text-gray-700'
+                                }`}
+                        >
+                            Next
+                        </Link>
+                    </li>
+                </ul>
             </div>
             {/* <p className='pb-[40px] text-center underline text-[16px] font-[general-sans-regular]'>View all</p> */}
         </main>

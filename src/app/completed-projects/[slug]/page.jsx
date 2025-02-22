@@ -1,84 +1,61 @@
-'use client'
-import { useRouter } from 'next/navigation';
-import React, { useCallback, useEffect, useState } from 'react'
+import React from 'react'
 import Header from '../../../layout/Header';
 import Footer from '../../../layout/Footer';
 import { getProjectDetails } from '../../../services/services';
 import HeroSection from '../../../components/projectinnerpage/HeroSection';
-import Brochure from '../../../components/projectinnerpage/Brochure';
 import DeepDeatiles from '../../../components/projectinnerpage/DeepDeatiles';
 import '../../../components/projectinnerpage/projectDetails.css'
+import { redirect } from 'next/navigation';
+import dynamic from 'next/dynamic';
+import { SkeletonLoader } from '../../../components/skeletoneffect/Skelten';
 
-function Page({ params }) {
-    const [projectDetails, setProjectDetails] = useState(
-        {
-            details: [], images: [], amenities: [], features: [], amenities_images: [],
-            specification: [], floor_plan: [], videos: [], status: [], bank: []
-        })
+const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, })
 
-    const router = useRouter();
-    const slug = params.slug;
+async function fetchData(slug) {
+    try {
+        const res = await getProjectDetails(slug);
 
-    const fetchData = useCallback(async () => {
-        try {
-            const res = await getProjectDetails(slug);
-            const { StatusCode, data, images, amenities, features, amenities_images, specification, floor_plan, videos, nearby, status, bank } = res.data;
-            if (StatusCode === 6000) {
-                setProjectDetails(
-                    {
-                        ...projectDetails, details: data, images: images, amenities: amenities, features: features, amenities_images: amenities_images,
-                        specification: specification, floor_plan: floor_plan, videos: videos, nearby: nearby, status: status, bank: bank
-                    }
-                );
-            } else {
-                router.push('/completed-projects');
-                setProjectDetails({
-                    details: [], images: [], amenities: [], features: [], amenities_images: [],
-                    specification: [], floor_plan: [], videos: [], status: [], bank: []
-                })
-            }
-        } catch (error) {
-            console.error(error);
-            setProjectDetails({
-                details: [], images: [], amenities: [], features: [], amenities_images: [],
-                specification: [], floor_plan: [], videos: [], status: [], bank: []
-            })
-            router.push('/completed-projects');
+        if (res?.data?.StatusCode === 6000) {
+            return res?.data;
         }
-    }, [slug, router]);
+        return null;
+    } catch (error) {
+        console.error(`Error fetching project details for slug: ${slug}`, error);
+        return null;
+    }
+}
 
-    useEffect(() => {
-        if (slug) {
-            fetchData();
-        } else {
-            router.push('/completed-projects');
-        }
-    }, [slug, fetchData, router]);
+export default async function Page({ params }) {
+    const { slug } = params;
+    const data = await fetchData(slug);
+
+    if (!data) {
+        redirect('/completed-projects');
+        return;
+    }
     return (
         <>
-            <title>{projectDetails?.details?.meta_title || 'Default Title'}</title>
-            <meta name="description" content={projectDetails?.details?.meta_description || 'Default Description'} />
+            <title>{data?.data?.meta_title || 'Default Title'}</title>
+            <meta name="description" content={data?.data?.meta_description || 'Default Description'} />
             <Header />
-            <HeroSection data={projectDetails?.details} images={projectDetails?.images} className='bg-[#ffff]' />
-            <Brochure data={projectDetails?.details} />
-            <div className='bg-[#ffff]'>
+            <HeroSection data={data?.data} images={data?.images || []} className='bg-[#ffff]' />
+            <Brochure data={data?.data || {}} />
+             <div className='bg-[#ffff]'>
                 <DeepDeatiles
-                    amenities={projectDetails?.amenities}
-                    features={projectDetails?.features}
-                    amenities_images={projectDetails?.amenities_images}
-                    specification={projectDetails?.specification}
-                    blueprint_image={projectDetails?.details?.blueprint_image}
-                    floor_plan={projectDetails?.floor_plan}
-                    location={projectDetails?.details?.iframe}
-                    nearby={projectDetails?.nearby}
-                    status={projectDetails?.status}
-                    videos={projectDetails?.videos}
-                    bank={projectDetails?.bank}
+                    amenities={data?.amenities}
+                    features={data?.features}
+                    amenities_images={data?.amenities_images}
+                    specification={data?.specification}
+                    blueprint_image={data?.data?.blueprint_image}
+                    floor_plan={data?.floor_plan}
+                    location={data?.data?.iframe}
+                    nearby={data?.nearby}
+                    videos={data?.videos}
+                    status={data?.status || []}
+                    bank={data?.bank}
                     className='bg-[#ffff]' />
             </div>
             <Footer />
         </>
     )
 }
-
-export default Page

@@ -6,38 +6,14 @@ import arrowIcon from '../../../public/icons/arrow-outward-green.svg'
 import { useRouter } from 'next/navigation'
 import { getGalaryApi } from '../../services/services'
 import NotFound from '../../components/common/NotFound'
+import Link from 'next/link'
 
 
-function GalaryListing() {
-  const router = useRouter()
-  const [page_limit, setPage_limit] = useState(2)
-  const [total_count, setTotal] = useState(0)
-  const [page, setPage] = useState(1)
-  const [galary, setGalary] = useState([])
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await getGalaryApi(page, page_limit)
-        const { StatusCode, data } = res.data
-        if (StatusCode === 6000) {
-          setGalary(data)
-          setTotal(res.data.total_count)
-          window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-        } else {
-          setGalary([])
-        }
-      } catch (error) {
-        console.log(error);
-        setGalary([])
-      }
-    }
-    fetchData()
-  }, [page])
-
-  const handleClick = (pageNumber) => {
-    setPage(pageNumber);
-  };
+function GalaryListing({ galary = [], totalCount, currentPage, pageSize }) {
+  const visiblePages = Array.from(
+    { length: 5 },
+    (_, i) => currentPage - 2 + i
+  ).filter((pages) => pages > 0 && pages <= Math.ceil(totalCount / pageSize));
 
   function truncateTextByCharacters(text, charLimit) {
     if (!text) return '';
@@ -67,7 +43,7 @@ function GalaryListing() {
                     <p className='font-[general-sans-regular] text-[14px] lg:text-[18px] leading-[21px] text-[#483C32] lg:leading-[30px]'>{truncateTextByCharacters(galary?.description, 350)}</p>
                     <div className='hidden md:block'>
                       <div className='flex justify-end items-center'>
-                        <p className='flex flex-row font-[general-sans-medium] text-[12px] gap-[6px] cursor-pointer' onClick={() => router.push(`/gallery/${galary?.slug}`)}><span>View Full  Gallery</span> <Image src={arrowIcon} className='' alt="" /></p>
+                        <Link href={`/gallery/${galary?.slug}`}><p className='flex flex-row font-[general-sans-medium] text-[12px] gap-[6px] cursor-pointer'><span>View Full  Gallery</span> <Image src={arrowIcon} className='' alt="" /></p></Link>
                       </div>
                     </div>
                   </div>
@@ -109,7 +85,7 @@ function GalaryListing() {
                 </div>
                 <div className='md:hidden block'>
                   <div className='flex justify-center items-center'>
-                    <p className='flex flex-row font-[general-sans-medium] text-[12px] gap-[6px] cursor-pointer' onClick={() => router.push(`/gallery/${galary?.slug}`)}><span>View Full  Gallery</span> <Image src={arrowIcon} className='' alt="" /></p>
+                    <Link href={`/gallery/${galary?.slug}`}> <p className='flex flex-row font-[general-sans-medium] text-[12px] gap-[6px] cursor-pointer'><span>View Full  Gallery</span> <Image src={arrowIcon} className='' alt="" /></p></Link>
                   </div>
                 </div>
               </section>
@@ -119,32 +95,48 @@ function GalaryListing() {
           <NotFound />
         )}
       </div>
-      <div className="pb-[30px] flex justify-end containers">
-        <nav className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
-          <button
-            onClick={() => handleClick(page - 1)}
-            disabled={page === 1}
-            className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-          >
-            Previous
-          </button>
-          {Array.from({ length: Math.ceil(total_count / page_limit) }, (_, index) => (
-            <button
-              key={index}
-              onClick={() => handleClick(index + 1)}
-              className={`relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 ${page === index + 1 ? 'z-10 bg-gray-100 text-gray-900 cursor-default' : 'hover:text-gray-500'}`}
+      <div className="pb-[30px] flex justify-center md:justify-end containers">
+        <ul className="relative z-0 inline-flex shadow-sm -space-x-px" aria-label="Pagination">
+          <li>
+            <Link
+              href={currentPage > 1 ? `/gallery?page=${currentPage - 1}` : '#'}
+              onClick={(e) => {
+                if (currentPage === 1) {
+                  e.preventDefault();
+                }
+              }}
+              className={`relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${currentPage === 1 ? 'cursor-not-allowed' : 'hover:text-gray-700'
+                }`}
             >
-              {index + 1}
-            </button>
+              Previous
+            </Link>
+          </li>
+
+          {visiblePages.map((pageNumber) => (
+            <li key={pageNumber}>
+              <Link
+                href={`/gallery?page=${pageNumber}`}
+                className={`relative inline-flex items-center px-4 py-2 border border-gray-300  text-sm font-medium  ${pageNumber === currentPage ? 'z-10 bg-[var(--primary-cl)] border-white text-white hover:text-gray-700' : 'bg-white text-gray-700 hover:bg-gray-50 hover:text-gray-500'}`}
+              >
+                {pageNumber}
+              </Link>
+            </li>
           ))}
-          <button
-            onClick={() => handleClick(page + 1)}
-            disabled={page === Math.ceil(total_count / page_limit)}
-            className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${page === Math.ceil(total_count / page_limit) ? 'cursor-not-allowed' : 'hover:text-gray-700'}`}
-          >
-            Next
-          </button>
-        </nav>
+          <li>
+            <Link
+              href={currentPage === Math.ceil(totalCount / pageSize) ? '#' : `/gallery?page=${currentPage + 1}`}
+              onClick={(e) => {
+                if (currentPage === Math.ceil(totalCount / pageSize)) {
+                  e.preventDefault();
+                }
+              }}
+              className={`relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 ${currentPage === Math.ceil(totalCount / pageSize) ? 'cursor-not-allowed' : 'hover:text-gray-700'
+                }`}
+            >
+              Next
+            </Link>
+          </li>
+        </ul>
       </div>
     </main>
   )
