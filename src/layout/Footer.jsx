@@ -52,12 +52,7 @@ function Footer({ backGround = "--primary-cl" }) {
       {/* Whatsapp and phone start */}
       <div className="fixed z-50 bottom-[50px] right-0">
         <div className="flex flex-col space-y-[10px] mr-[20px] md:space-y-5 md:mr-[40px] mb-[30px]">
-          <a
-            className="w-[45px] lg:w-full"
-            href="https://wa.me/+918137873330?text=I'm%20interested%20in%20your%20Property"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <a className='w-[45px] lg:w-full' href="https://wa.me/+919496933000?text=I'm%20interested%20in%20your%20Property" target="_blank" rel="noopener noreferrer">
             <Image src={watsappIcon} alt="WhatsApp Icon" />
           </a>
           <a className="w-[45px] lg:w-full" href="tel:+919496933000">
