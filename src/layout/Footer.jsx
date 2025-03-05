@@ -53,7 +53,7 @@ function Footer({ backGround = "--primary-cl" }) {
       {/* Whatsapp and phone start */}
       <div className='fixed z-50 bottom-[50px] right-0'>
         <div className="flex flex-col space-y-[10px] mr-[20px] md:space-y-5 md:mr-[40px] mb-[30px]">
-          <a className='w-[45px] lg:w-full' href="https://wa.me/+918137873330?text=I'm%20interested%20in%20your%20Property" target="_blank" rel="noopener noreferrer">
+          <a className='w-[45px] lg:w-full' href="https://wa.me/+919496933000?text=I'm%20interested%20in%20your%20Property" target="_blank" rel="noopener noreferrer">
             <Image src={watsappIcon} alt="WhatsApp Icon" />
           </a>
           <a className='w-[45px] lg:w-full' href="tel:+919496933000">
@@ -203,9 +203,9 @@ function Footer({ backGround = "--primary-cl" }) {
           </div>
           <div className='flex flex-col justify-between w-full  mt-[30px] '>
             <div className='flex flex-col gap-[8px] text-[14px] w-full md:w-[40%] lg:w-auto'>
-              <p className='flex flex-row gap-[10px]'><span className='w-[67px]'>Whatsapp</span> <span>-</span><span>+91 8137873330</span></p>
+              <p className='flex flex-row gap-[10px]'><span className='w-[67px]'>Whatsapp</span> <span>-</span><span>+91 9496933000</span></p>
               <p className='flex flex-row gap-[10px]'><span className='w-[67px]'>Email</span> <span>-</span><span>salescidbi@gmail.com</span></p>
-              <p className='flex flex-row gap-[10px]'><span className='w-[67px]'>Call</span> <span>-</span><span>+91 94969 33000</span></p>
+              <p className='flex flex-row gap-[10px]'><span className='w-[67px]'>Call</span> <span>-</span><span>+91 9496933000</span></p>
             </div>
             <div className='mt-[35px] md:mt-0 lg:mt-[35px] font-[general-sans-medium] w-full'>
               <p className='text-[14px]'>Certifications</p>
