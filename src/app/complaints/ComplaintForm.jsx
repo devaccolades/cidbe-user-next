@@ -240,7 +240,7 @@ function ComplaintForm() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full h-[200px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none"
+                    className="w-full h-[100px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none"
                     placeholder="Enter complaint"
                   ></textarea>
                 </div>
@@ -250,7 +250,7 @@ function ComplaintForm() {
                 <button
                   type='submit'
                   className='w-full md:w-auto text-white border bg-[#052D23] px-6 py-2 rounded-md transition-all duration-300'>
-                  SUBMIT
+                  Submit
                 </button>
               </div>
             </form>
