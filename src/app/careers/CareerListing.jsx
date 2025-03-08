@@ -9,6 +9,8 @@ import { getCareersApi, getCareersSuggestionApi, postApplyJobApi } from '../../s
 import Swal from 'sweetalert2';
 import { Spinner } from '@material-tailwind/react';
 import CareerModal from '../../components/careermodal/CareerModal'
+
+
 function CurrentOpenings() {
   const [isLoad, setLoading] = useState(false)
   const [jobOpenings, setJobOpenings] = useState([])
