@@ -178,6 +178,9 @@ function ComplaintForm() {
     
               <h1 className='font-[clash-display-medium] text-center text-[32px] md:text-[48px] mb-2 md:mb-2 md:leading-[48px] leading-[32px]'>Submit Your Complaint</h1>
               <p className='font-[general-sans-regular]   text-center pb-[32px] text-[15px] md:text-[17px] leading-[22px] md:leading-[24px]'>
+              We're committed to providing you with the best living experience.
+              If you're facing any issue with your flat, let us know, and our
+              team will resolve it at the earliest.
               Please provide accurate details so our team can address your issue quickly.   
               </p>
       
