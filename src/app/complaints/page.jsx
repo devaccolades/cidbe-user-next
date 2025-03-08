@@ -9,7 +9,8 @@ import HeroSection from '../complaints/HeroSection';
 function page() {
   return (
     <div>
-      <Header />
+      <Header bgPrimary={true} />
+      
       {/* <HeroSection/> */}
       <ComplaintForm/>
       <Footer/>
