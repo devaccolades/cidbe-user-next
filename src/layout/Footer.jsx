@@ -65,27 +65,7 @@ function Footer({ backGround = "--primary-cl" }) {
       {/* Whatsapp and phone end */}
       {/* Foote pc */}
       <section className={`hidden md:block font-[general-sans-medium] text-[--secondary-cl] bg-[${backGround}] px-[40px] xl:px-[120px] py-[40px] flex flex-col`}>
-      <div className="flex justify-center py-6   w-full">
-        <div className="w-full   border border-black rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-18">
-          <div className="text-center md:text-left">
-            <h2 className="text-black font-[clash-display-medium]  font-bold text-lg md:text-xl">
-              Need Assistance?{" "}
-              <span className="font-bold">Register Complaints here!</span>
-            </h2>
-            <p className="text-black text-sm md:text-base  font-[general-sans-regular] mt-1 max-w-[90%] ">
-              We're committed to providing you with the best living experience.
-              If you're facing any issue with your flat, let us know, and our
-              team will resolve it at the earliest.
-            </p>
-          </div>
-          <Link href="/complaints">
-              {/* <p>Register a Complaint</p> */}
-          <button className="mt-4 md:mt-0 bg-[#0D3227] text-white px-2 py-2 w-[300px] rounded-lg text-sm md:text-base hover:bg-[#09251D] transition">
-            Register a Complaint
-          </button>
-            </Link>
-        </div>
-      </div>
+      
         <div className='w-full flex flex-row h-full flex-wrap lg:flex-nowrap'>
           <div className='flex flex-col w-full md:w-[60%] logo-div lg:w-[30vw] gap-[20px]'>
             <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px] uppercase'>Your trusted building partner in Thrissur, shaping the future of luxury living with quality construction.</p>
@@ -103,6 +83,9 @@ function Footer({ backGround = "--primary-cl" }) {
             </Link>
             <Link href='/csr'>
               <p className='cursor-pointer'>CSR</p>
+            </Link>
+            <Link href='/complaints'>
+              <p className='cursor-pointer'>Any Complaints</p>
             </Link>
           </div>
           <div className='text-[14px] leading-[21px] flex flex-col w-[50%] md:w-[18%] project-div lg:w-[13vw] gap-[20px] mt-[40px] md:mt-0'>
@@ -164,27 +147,7 @@ function Footer({ backGround = "--primary-cl" }) {
 
       {/* Footer Mobile */}
       <section className={`block md:hidden font-[general-sans-medium] text-[--secondary-cl] bg-[${backGround}] px-[20px] xl:px-[120px] py-[40px] flex flex-col`}>
-      <div className="flex justify-center py-6   w-full">
-        <div className="w-full   border border-black rounded-lg p-6 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-18">
-          <div className="text-center md:text-left">
-            <h2 className="text-black font-[clash-display-medium]   font-bold text-[20px] leading-[20px]">
-              Need Assistance?{" "}
-              <span className="font-bold">Register Complaints here!</span>
-            </h2>
-            <p className="text-black text-sm md:text-base  font-[general-sans-regular] mt-1 max-w-[90%] ">
-              We're committed to providing you with the best living experience.
-              If you're facing any issue with your flat, let us know, and our
-              team will resolve it at the earliest.
-            </p>
-          </div>
-          <Link href="/complaints">
-              {/* <p>Register a Complaint</p> */}
-          <button className="mt-4 md:mt-0 bg-[#0D3227] text-white px-4 py-2 rounded-lg text-sm md:text-base hover:bg-[#09251D] transition">
-            Register a Complaint
-          </button>
-            </Link>
-        </div>
-      </div>
+     
         <div className='w-full flex flex-row h-full flex-wrap lg:flex-nowrap'>
           <div className='flex flex-col w-full md:w-[60%] lg:w-[30vw] gap-[20px]'>
             <p className='md:w-7/12 lg:w-9/12 text-[16px] leading-[21px] uppercase'>Your trusted building partner in Thrissur, shaping the future of luxury living with quality construction.</p>
@@ -204,6 +167,9 @@ function Footer({ backGround = "--primary-cl" }) {
                 </Link>
                 <Link href="/csr" className="cursor-pointer">
                   <p>CSR</p>
+                </Link>
+                <Link href="/complaints" className="cursor-pointer">
+                  <p>Any Complaints</p>
                 </Link>
               </div>
             </div>
