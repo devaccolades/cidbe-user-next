@@ -181,21 +181,8 @@ function ComplaintForm() {
             <form onSubmit={handleSubmit}>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-[20px]'>
 
-                <div className='flex flex-col'>
-                  <p className='font-[inter-regular] text-[14px]'>Flat No</p>
-                  <input
-                    name="flat_no"
-                    value={formData.flat_no}
-                    onChange={handleChange}
-                    className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none'
-                    placeholder='1/H/5...'
-                    type="text"
-                    required
-                  />
-                  {errors.flat_no && <p className="text-red-500 text-sm">{errors.flat_no}</p>}
-                </div>
 
-                <div className='flex flex-col'>
+              <div className='flex flex-col'>
                   <p className='font-[inter-regular] text-[14px]'>Project</p>
                   <select
           name="project"
@@ -217,6 +204,22 @@ function ComplaintForm() {
         </select>
         {errors.project && <p className="text-red-500 text-sm">{errors.project}</p>}
                 </div>
+
+                <div className='flex flex-col'>
+                  <p className='font-[inter-regular] text-[14px]'>Flat No</p>
+                  <input
+                    name="flat_no"
+                    value={formData.flat_no}
+                    onChange={handleChange}
+                    className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none'
+                    placeholder='1/H/5...'
+                    type="text"
+                    required
+                  />
+                  {errors.flat_no && <p className="text-red-500 text-sm">{errors.flat_no}</p>}
+                </div>
+
+            
 
 
                 <div className='flex flex-col'>

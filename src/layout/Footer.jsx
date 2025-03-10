@@ -85,7 +85,7 @@ function Footer({ backGround = "--primary-cl" }) {
               <p className='cursor-pointer'>CSR</p>
             </Link>
             <Link href='/complaints'>
-              <p className='cursor-pointer'>Any Complaints</p>
+              <p className='cursor-pointer'>Complaints</p>
             </Link>
           </div>
           <div className='text-[14px] leading-[21px] flex flex-col w-[50%] md:w-[18%] project-div lg:w-[13vw] gap-[20px] mt-[40px] md:mt-0'>
@@ -169,7 +169,7 @@ function Footer({ backGround = "--primary-cl" }) {
                   <p>CSR</p>
                 </Link>
                 <Link href="/complaints" className="cursor-pointer">
-                  <p>Any Complaints</p>
+                  <p>Complaints</p>
                 </Link>
               </div>
             </div>
