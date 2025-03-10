@@ -143,11 +143,22 @@ const interiorimagestApi = () => {
     });
 };
 
+// Project-sugge
+export const getProjectSuggestionApi = () => {
+    return api.get(`projects-suggestion/`, {
+        withCredentials: true,
+    });
+}; 
 
+// complaints 
+export const PostComplaintsApi = (values) => {
+    return api.post('complaints/', values, {
+        withCredentials: true,
+    });
+};
 
 export{
     PostEnquiryApi,
-
     getSeoApi,
     getBlogsApi,
     getBlogDetailsApi,
