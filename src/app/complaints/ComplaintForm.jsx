@@ -191,17 +191,17 @@ function ComplaintForm() {
           className='w-full h-[40px] px-[15px] border-2 rounded-[6px] placeholder:text-[14px] placeholder:text-[#BABABA] focus:outline-none'
           required
         >
-          <option className='font-[inter-regular] text-[14px]' value=""></option>
+          <option className='font-[inter-regular] text-[14px] ' value=""></option>
           {projectData && projectData.length > 0 ? (
             projectData.map((project) => (
-              <option className='font-[inter-regular] text-[14px]' key={project.id} value={project.id}>
+              <option className='font-[inter-regular] text-[14px] uppercase' key={project.id} value={project.id}>
                 {project.name} 
               </option>
             ))
           ) : (
             <option value="">No Projects Available</option>
-          )}
-        </select>
+          )}  
+        </select> 
         {errors.project && <p className="text-red-500 text-sm">{errors.project}</p>}
                 </div>
 
