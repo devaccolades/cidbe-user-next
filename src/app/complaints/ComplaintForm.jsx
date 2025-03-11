@@ -125,19 +125,27 @@ function ComplaintForm() {
     setLoading(true);
     console.log("Form Submitted:", formData);
     try {
-      await PostComplaintsApi(formData);
-      Swal.fire({ title: "Form Submitted Successfully!", text: "We will reach out to you soon", icon: "success" }).then(() => {
+      // await PostComplaintsApi(formData);
+      const response = await PostComplaintsApi(formData);
+      const registrationNo = response.data.registration_no; 
+      Swal.fire({
+        title: "Form Submitted Successfully!",
+        text: `We will reach out to you soon. Your complaint registration id is ${registrationNo}.`,  // Correct template literal usage
+        icon: "success"
+      }).then(() => {
         resetForm();
-
       });
     } catch (error) {
       console.error("Submission Error:", error);
-      Swal.fire({ title: "Submission Failed", text: "Something went wrong. Please try again.", icon: "error" }).then(() => {
+      Swal.fire({
+        title: "Submission Failed",
+        text: "Something went wrong. Please try again.",
+        icon: "error"
+      }).then(() => {
         resetForm();
-
       });
     } finally {
-      setLoading(false); // Stop loading animation
+      setLoading(false); 
     }
   };
 
@@ -160,9 +168,9 @@ function ComplaintForm() {
   }
   console.log(projectData);
 
-  useEffect(() => {
-    getProjectSuggestion();
-  }, [])
+  // useEffect(() => {
+  //   getProjectSuggestion();
+  // }, [])
 
   return (
     <div>
@@ -199,7 +207,7 @@ function ComplaintForm() {
               </option>
             ))
           ) : (
-            <option value="">No Projects Available</option>
+            <option value=""disabled>No Projects Available</option>
           )}  
         </select> 
         {errors.project && <p className="text-red-500 text-sm">{errors.project}</p>}
