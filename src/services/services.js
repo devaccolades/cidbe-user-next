@@ -157,6 +157,24 @@ export const PostComplaintsApi = (values) => {
     });
 };
 
+
+// Customer Enquiry Form
+export const PostCustomerEnquiryFormApi = (values) => {
+    return api.post('customer-enquiry-form/', values, {
+        withCredentials: true,
+    })
+    .then((response) => {
+        console.log("API Response:", response); // Log the response to check what the server returns
+        return response;
+    })
+    .catch((error) => {
+        console.error("API Error:", error); // Log the error if the request fails
+        throw error;
+    });
+};
+
+
+
 export{
     PostEnquiryApi,
     getSeoApi,
@@ -180,5 +198,5 @@ export{
     interiorimagestApi,
 
     postApplyJobApi,
-    
+     
 }
