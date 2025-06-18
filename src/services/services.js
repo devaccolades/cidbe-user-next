@@ -78,6 +78,13 @@ const getFeaturedProject = (page,page_limit) =>{
     });;
 }
 
+//  apartments in trissur (SEO- page)
+const getTrissurProject = () =>{
+    return api.get(`projects/?promot=True`, {
+        withCredentials: true,
+    });;
+}
+
 const getOngoingProject = (page,page_limit) =>{
     return api.get(`projects/?status=ongoing&&page=${page}&&page_limit=${page_limit}`, {
         withCredentials: true,
@@ -186,6 +193,7 @@ export{
     getGalaryApi,
     getGalleryDetailsApi,
     getFeaturedProject,
+    getTrissurProject,
     getOngoingProject,
     getUpcomingProject,
     getCompletedProject,
@@ -196,7 +204,7 @@ export{
     getCareersSuggestionApi,
     getCommunityImpactApi,
     interiorimagestApi,
-
+    
     postApplyJobApi,
      
 }

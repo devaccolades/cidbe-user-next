@@ -6,11 +6,13 @@ import FaqSection from './FaqSection';
 import HighlightsSection from './HighlightsSection';
 import FormSection from './FormSection';
 import WhyChooseSection from './WhyChooseSection';
+
 export default async function page() {
+  
   return (
     <>
       <Header />
-      <Herosection />
+      <Herosection/>
       <WhyChooseSection />
       <FormSection />
       <HighlightsSection />
