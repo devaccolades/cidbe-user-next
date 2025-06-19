@@ -18,12 +18,12 @@ const Herobottom = () => {
     <>
       {/* HERO BOTTOM SECTION */}
       <section
-        className="relative w-full py-16 md:py-20 lg:py-34"
+        className="relative w-full py-48 md:py-20 md:pb-64 lg:py-34  xl:pb-64"
         style={{ backgroundColor: '#052D23' }}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center -mt-[120px] mb-8 md:mb-12">
-            <p className="text-white text-[16px] md:text-base font-[general-sans-regular] leading-relaxed max-w-6xl mx-auto">
+            <p className="text-white text-[13px] max-w-6xl md:text-[14px] md:max-w-2xl font-[general-sans-regular] leading-relaxed  mx-auto">
               Discover your dream home in the cultural heart of Kerala – Thrissur. Known for its rich
               heritage, vibrant festivals, and thriving economy, Thrissur offers the perfect blend of
               modern living and traditional charm. At GVGRI Builders, we present thoughtfully
@@ -50,11 +50,11 @@ const Herobottom = () => {
       </section>
 
       {/* PROJECT CARDS THAT OVERLAP HERO BOTTOM */}
-      <div className="relative z-10 -mt-[80px] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 -mt-[200px] px-4  md:-mt-[220px] lg:-mt-[220px] max-w-[1610px]  mx-auto  sm:px-6 lg:px-24">
         {projects === null ? (
           <Skelten />
         ) : projects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px] py-[30px] items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-[10px] py-[30px] ">
             {projects.map((project, index) => (
               <ThrissurCard key={index} project={project} />
             ))}

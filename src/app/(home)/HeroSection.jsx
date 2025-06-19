@@ -152,7 +152,7 @@ function HeroSection() {
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 1 } }}
                             >
-                                You are choosing a builder having the best apartments with more than 33 years of experience in the construction industry
+                                You are choosing a builder having the best apartments with more than 35 years of experience in the construction industry
                             </motion.p>
 
                         </div>
