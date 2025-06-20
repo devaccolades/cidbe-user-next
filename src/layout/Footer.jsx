@@ -139,12 +139,12 @@ function Footer({ backGround = "--primary-cl" }) {
             <Link href="/gallery" className="cursor-pointer">
               <p>GALLERY</p>
             </Link>
-            <Link
+            {/* <Link
               href="/apartments-flats-thrissur"
               className="cursor-pointer uppercase"
             >
               <p>apartments in<br/> thrissur</p> 
-            </Link>
+            </Link> */}
             <Link href="/blogs" className="cursor-pointer">
               <p>BLOG</p>
             </Link>
@@ -301,12 +301,12 @@ function Footer({ backGround = "--primary-cl" }) {
               <Link href="/gallery" className="cursor-pointer">
                 <p>GALLERY</p>
               </Link>
-              <Link
+              {/* <Link
                 href="/apartments-flats-thrissur"
                 className="cursor-pointer uppercase"
               >
                 <p>apartments in<br/> thrissur</p>
-              </Link>
+              </Link> */}
               <Link href="/blogs" className="cursor-pointer">
                 <p>BLOG</p>
               </Link>
