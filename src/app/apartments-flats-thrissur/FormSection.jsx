@@ -87,9 +87,9 @@ export default function FormSection({ projectId, handleOpen, modal }) {
     <section className="bg-[#BFD8BD] py-16 relative">
       <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white via-transparent to-transparent z-10" />
 
-      <div className="mr-auto grid grid-cols-1 md:grid-cols-2 items-center">
+      <div className="mr-auto grid grid-cols-1 lg:grid-cols-2 items-center lg:max-w-[1610px] mx-auto sm:px-6 lg:px-24">
         {/* Image */}
-        <div className="relative w-full h-[400px] md:h-[500px]">
+        <div className="relative w-full h-[300px] md:h-[500px]">
           <Image
             src={buildingSketch}
             alt="Apartment sketch"
@@ -100,7 +100,7 @@ export default function FormSection({ projectId, handleOpen, modal }) {
         </div>
 
         {/* Form */}
-        <div className="w-[92%] mx-auto 2xl:w-[85%] bg-white rounded-xl shadow-lg p-6 md:p-10 max-w-lg ml-auto">
+        <div className="w-[92%] mx-auto bg-white rounded-xl shadow-lg p-6 md:p-10 ml-auto">
           <h3 className="text-[20px] font-[general-sans-regular] font-normal text-gray-700 mb-6">
             WE ARE READY TO ANSWER ALL YOUR QUESTIONS
           </h3>

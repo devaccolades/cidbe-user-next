@@ -16,7 +16,7 @@ const Herogreen = () => {
 
       {/* Content */}
       <div className="relative z-20 text-center pt-24">
-        <h1 className="text-[#BFD8BD] font-[general-sans-regular] text-[32px] leading-[32px] md:text-[48px] md:leading-[48px] lg:text-[48px] lg:leading-[48px] xl:text-[64px] xl:leading-[64px] font-light ">
+        <h1 className="text-[#BFD8BD] font-[general-sans-regular] text-[32px] leading-[32px] font-medium md:text-[48px] md:leading-[48px] xl:text-[64px] xl:leading-[64px]  ">
           Apartments & Flats for
           <br />
           Sale in Thrissur

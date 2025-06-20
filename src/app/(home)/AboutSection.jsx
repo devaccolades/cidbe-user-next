@@ -146,7 +146,7 @@ function AboutSection() {
                   </Fade>
                   <Fade left delay={400}>
                     <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[84px] w-[160px] lg:w-[19.375vw] flex flex-col items-center justify-center'>
-                      <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1M+</h5>
+                      <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>11M+</h5>
                       <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Square Feet<br />Completed</p>
                     </div>
                   </Fade>
@@ -207,7 +207,7 @@ function AboutSection() {
                 <Image src={image1} alt='banner-image1' className='rounded-[12px] h-full md:h-[170px]' />
               </div>
               <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[54px] md:rounded-br-[84px] flex flex-col items-center pt-3 md:pt-5'>
-                <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1M+</h5>
+                <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>11M+</h5>
                 <p className='res-text text-[14px] leading-[18px] md:text-[16px] lg:text-[1.04vw] md:leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Square Feet<br />Completed</p>
               </div>
               {/* <div className=''></div> */}
