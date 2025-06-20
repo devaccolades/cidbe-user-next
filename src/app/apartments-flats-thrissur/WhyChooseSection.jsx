@@ -86,7 +86,7 @@ export default function WhyChooseSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 w-[92%] mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-[12px] py-4 w-[92%] mx-auto">
         <div
           style={{
             backgroundImage: `url(${onGoing.src})`,

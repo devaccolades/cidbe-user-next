@@ -18,7 +18,7 @@ const Herobottom = () => {
     <>
       {/* HERO BOTTOM SECTION */}
       <section
-        className="relative w-full py-48 md:py-20 md:pb-64 lg:py-34  xl:pb-64"
+        className="relative w-full pt-20 pb-48 md:py-20 md:pb-64 lg:py-34  xl:pb-64"
         style={{ backgroundColor: '#052D23' }}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,15 +34,15 @@ const Herobottom = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-[14px] font-[general-sans-regular]">
-            <button className="bg-white text-gray-800 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 min-w-[160px] justify-center">
+          <div className="flex sm:flex-row gap-4 justify-center items-center text-[14px] font-[general-sans-regular]">
+            <button className="bg-white text-gray-800 px-8 py-3 rounded-lg text-[14px] font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 min-w-[159px] justify-center">
               Enquire Now
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
 
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200 min-w-[160px]">
+            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200 min-w-[15  9px]">
               About Us
             </button>
           </div>

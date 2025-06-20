@@ -6,7 +6,7 @@ import img4 from "../../../public/images/aprtments_thrissur/img4.jpg";
 
 export default function HighlightsSection() {
   return (
-    <section className=" py-16  about-main-bg">
+    <section className=" pt-16  about-main-bg">
       <div className="containers ">
         {/* Project Highlights Header */}
         <div className="text-left font-[general-sans-regular] mb-12">
@@ -29,7 +29,7 @@ export default function HighlightsSection() {
         </div>
 
         {/* Highlights Grid */}
-        <div className="grid grid-cols-2 w-full sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {[
             {
               img: img1,
@@ -68,7 +68,7 @@ export default function HighlightsSection() {
 
         {/* Location Advantages */}
         <div className="text-center mb-8">
-          <h3 className="text-gray-400 font-[general-sans-regular] text-[40px] font-medium">
+          <h3 className="text-gray-400 font-[general-sans-regular] text-[32px] leading-[36px] md:text-[40px] font-medium">
             Location{" "}
             <span className="text-gray-900 font-semibold">
               Advantages – Living in Thrissur
@@ -84,7 +84,7 @@ export default function HighlightsSection() {
           ].map((point, i) => (
             <div
               key={i}
-              className={`rounded-lg p-8 text-[15px] leading-normal font-medium font-[general-sans-regular] bg-gray-100 text-gray-700 transition-colors duration-200 hover:bg-[#BFD8BD] hover:text-green-800 font-medium`}
+              className={`rounded-lg p-[20px] text-[15px] leading-normal font-medium font-[general-sans-regular] bg-gray-100 text-gray-700 transition-colors duration-200 hover:bg-[#BFD8BD] hover:text-green-800 `}
             >
               {point}
             </div>

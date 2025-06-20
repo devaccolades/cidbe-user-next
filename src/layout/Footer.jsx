@@ -143,7 +143,10 @@ function Footer({ backGround = "--primary-cl" }) {
               href="/apartments-flats-thrissur"
               className="cursor-pointer uppercase"
             >
-              <p>apartments in<br/> thrissur</p> 
+              <p>
+                apartments in
+                <br /> thrissur
+              </p>
             </Link>
             <Link href="/blogs" className="cursor-pointer">
               <p>BLOG</p>
@@ -301,11 +304,15 @@ function Footer({ backGround = "--primary-cl" }) {
               <Link href="/gallery" className="cursor-pointer">
                 <p>GALLERY</p>
               </Link>
+              
               <Link
                 href="/apartments-flats-thrissur"
                 className="cursor-pointer uppercase"
               >
-                <p>apartments in<br/> thrissur</p>
+                <p>
+                  apartments in
+                  <br /> thrissur
+                </p>
               </Link>
               <Link href="/blogs" className="cursor-pointer">
                 <p>BLOG</p>
