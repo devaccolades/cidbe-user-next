@@ -83,7 +83,7 @@ export default function ThrissurCard({
       <Card
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="xl:hidden w-full min-h-[638px] cursor-pointer card-animation bg-white rounded-[15px] overflow-hidden p-[5px] grid grid-rows-[auto_auto_auto] gap-[10px]"
+        className="xl:hidden w-full min-h-[638px] xs:max-w-[437px] xs:mx-auto md:max-w-full cursor-pointer card-animation bg-white rounded-[15px] overflow-hidden p-[5px] grid grid-rows-[auto_auto_auto] gap-[10px]"
       >
         <motion.div
           className="card-image bg-top rounded-[10px] bg-cover h-[201px]"

@@ -6,14 +6,14 @@ import img4 from "../../../public/images/aprtments_thrissur/img4.jpg";
 
 export default function HighlightsSection() {
   return (
-    <section className=" pt-16  about-main-bg">
-      <div className="containers ">
+    <section className="pt-8 about-main-bg">
+      <div className="w-[92%] md:w-full lg:max-w-[1610px] mx-auto sm:px-6 lg:px-24">
         {/* Project Highlights Header */}
         <div className="text-left font-[general-sans-regular] mb-12">
           <h2 className="text-gray-400 text-[32px]  font-medium">
             Project <span className="text-gray-900">Highlights</span>
           </h2>
-          <p className=" text-gray-600 text-[13px] leading-[150%] mt-4">
+          <p className=" text-gray-600 text-[13px] leading-[150%] mt-2">
             Living at a CIDBI apartment means experiencing the best in modern
             living, enhanced by thoughtful design and quality construction. Our
             project highlights reflect our commitment to creating homes that are
@@ -29,7 +29,7 @@ export default function HighlightsSection() {
         </div>
 
         {/* Highlights Grid */}
-        <div className="grid grid-cols-1 w-full sm:grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 w-full sm:grid-cols-2 xs:grid-cols-2 xl:grid-cols-4 md:gap-[38px] gap-6 mb-8">
           {[
             {
               img: img1,
@@ -50,13 +50,13 @@ export default function HighlightsSection() {
           ].map((item, i) => (
             <div
               key={i}
-              className="rounded overflow-hidden shadow-md relative group max-w-[300px]"
+              className="rounded overflow-hidden shadow-md relative group xs:min-h-[289px]"
             >
               <Image
                 src={item.img}
                 alt="highlight"
-                width={100}
-                height={100}
+                width={300}
+                height={300}
                 className=" h-full w-full object-cover"
               />
               <div className="text-center absolute bottom-0 font-[inter-regular] text-white text-[20px] p-4 w-full transition-all group-hover:bg-opacity-80 leading-[110%] font-bold">
@@ -67,8 +67,8 @@ export default function HighlightsSection() {
         </div>
 
         {/* Location Advantages */}
-        <div className="text-center mb-8">
-          <h3 className="text-gray-400 font-[general-sans-regular] text-[32px] leading-[36px] md:text-[40px] font-medium">
+        <div className="text-center mb-8 md:pt-[80px]">
+          <h3 className="text-gray-400 font-[general-sans-regular] text-[32px] leading-[36px] xs:max-w-xs xs:mx-auto md:max-w-md md:text-[40px] md:leading-[40px] font-medium">
             Location{" "}
             <span className="text-gray-900 font-semibold">
               Advantages – Living in Thrissur
@@ -84,7 +84,8 @@ export default function HighlightsSection() {
           ].map((point, i) => (
             <div
               key={i}
-              className={`rounded-lg p-[20px] text-[15px] leading-normal font-medium font-[general-sans-regular] bg-gray-100 text-gray-700 transition-colors duration-200 hover:bg-[#BFD8BD] hover:text-green-800 `}
+              className={`rounded-lg p-[20px] text-[15px] leading-normal font-medium font-[general-sans-regular] bg-white text-[#052D23] transition-colors duration-200 hover:bg-[#BFD8BD] hover:text-green-800 `}
+              style={{boxShadow: "0px 0px 25.8px 0px #0000001F"}}
             >
               {point}
             </div>

@@ -40,6 +40,9 @@ export default function WhyChooseSection() {
             className="object-cover object-top"
             priority
           />
+
+          {/* Gradient fade at bottom */}
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
         </div>
 
         {/* Right Content */}
@@ -68,7 +71,8 @@ export default function WhyChooseSection() {
             {features.map((item, i) => (
               <div
                 key={i}
-                className="w-full sm:w-[48%] p-4 rounded-lg text-sm text-gray-800 bg-gray-100 hover:bg-green-100 hover:text-green-900 transition-colors duration-200"
+                className="w-full sm:w-[48%] p-4 rounded-lg text-sm text-gray-800 hover:bg-green-100 hover:text-green-900 transition-colors duration-200"
+                style={{boxShadow: "0px 0px 25.8px 0px #0000001F"}}
               >
                 <div className="flex items-start gap-3">
                   <Image
@@ -86,7 +90,7 @@ export default function WhyChooseSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-[12px] py-4 w-[92%] mx-auto">
+      <div className="w-[92%] md:w-full grid grid-cols-2 md:grid-cols-4 gap-[12px] py-4 lg:max-w-[1610px] mx-auto sm:px-6 lg:px-24">
         <div
           style={{
             backgroundImage: `url(${onGoing.src})`,
@@ -96,7 +100,9 @@ export default function WhyChooseSection() {
           className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
         >
           <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">Ongoing Projects</div>
+          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
+            Ongoing Projects
+          </div>
         </div>
         <div
           style={{
@@ -107,7 +113,9 @@ export default function WhyChooseSection() {
           className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
         >
           <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">Ready to Occupy</div>
+          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
+            Ready to Occupy
+          </div>
         </div>
         <div
           style={{
@@ -118,7 +126,9 @@ export default function WhyChooseSection() {
           className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
         >
           <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">Completed Projects</div>
+          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
+            Completed Projects
+          </div>
         </div>
         <div
           style={{
@@ -129,7 +139,9 @@ export default function WhyChooseSection() {
           className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
         >
           <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">Featured Projects</div>
+          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
+            Featured Projects
+          </div>
         </div>
       </div>
     </section>

@@ -23,7 +23,7 @@ const Herobottom = () => {
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center -mt-[120px] mb-8 md:mb-12">
-            <p className="text-white text-[13px] max-w-6xl md:text-[14px] md:max-w-2xl font-[general-sans-regular] leading-relaxed  mx-auto">
+            <p className="text-white text-[13px] font-normal xl:max-w-5xl md:text-[14px] md:max-w-2xl font-[general-sans-regular] leading-relaxed  mx-auto">
               Discover your dream home in the cultural heart of Kerala – Thrissur. Known for its rich
               heritage, vibrant festivals, and thriving economy, Thrissur offers the perfect blend of
               modern living and traditional charm. At GVGRI Builders, we present thoughtfully
@@ -34,15 +34,15 @@ const Herobottom = () => {
             </p>
           </div>
 
-          <div className="flex sm:flex-row gap-4 justify-center items-center text-[14px] font-[general-sans-regular]">
-            <button className="bg-white text-gray-800 px-8 py-3 rounded-lg text-[14px] font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center gap-2 min-w-[159px] justify-center">
+          <div className="flex gap-4 justify-center items-center text-[14px] font-[general-sans-regular] font-normal">
+            <button className="bg-white text-gray-800  py-3 rounded-lg text-[14px] font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center min-w-[159px] w-full xs:max-w-[210px]  justify-center">
               Enquire Now
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
 
-            <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200 min-w-[15  9px]">
+            <button className="border-2 border-white text-white  py-3 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200 min-w-[159px] w-full xs:max-w-[210px] ">
               About Us
             </button>
           </div>
@@ -50,7 +50,7 @@ const Herobottom = () => {
       </section>
 
       {/* PROJECT CARDS THAT OVERLAP HERO BOTTOM */}
-      <div className="relative z-10 -mt-[200px] px-4  md:-mt-[220px] lg:-mt-[220px] max-w-[1610px]  mx-auto  sm:px-6 lg:px-24">
+      <div className="relative z-10 -mt-[200px] px-4  md:-mt-[220px] lg:-mt-[220px] max-w-[1610px] mx-auto  sm:px-6 lg:px-24">
         {projects === null ? (
           <Skelten />
         ) : projects.length > 0 ? (
