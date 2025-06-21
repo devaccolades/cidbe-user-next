@@ -18,6 +18,7 @@ module.exports = {
     },
     screens: {
       xs: "480px", // your custom breakpoint
+      xxl: "1660px",
       ...require("tailwindcss/defaultTheme").screens,
     },
   },

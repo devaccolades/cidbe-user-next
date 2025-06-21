@@ -100,7 +100,7 @@ export default function FormSection({ projectId, handleOpen, modal }) {
         </div>
 
         {/* Form */}
-        <div className="w-[92%] mx-auto bg-white rounded-xl shadow-lg p-6 md:p-10 ml-auto">
+        <div className="w-full mx-auto bg-white rounded-xl shadow-lg p-6 md:p-10 ml-auto">
           <h3 className="text-[20px] font-[general-sans-regular] font-normal text-gray-700 mb-6">
             WE ARE READY TO ANSWER ALL YOUR QUESTIONS
           </h3>
