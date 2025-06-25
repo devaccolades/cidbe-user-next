@@ -4,7 +4,7 @@ import green from "../../../public/images/aprtments_thrissur/Vector.png";
 
 const Herogreen = () => {
   return (
-    <div className="relative -mt-[180px] sm:-mt-[180px] w-full h-64 md:h-80 lg:h-96 flex items-center justify-center">
+    <div className="relative -mt-[128px] sm:-mt-[182px] w-full h-64 md:h-80 lg:h-96 flex items-center justify-center">
       {/* Background Image */}
       <Image
         src={green}
