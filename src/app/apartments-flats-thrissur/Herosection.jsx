@@ -39,7 +39,7 @@ export default function Herosection() {
         />
 
         {/* Foreground Centered Video */}
-        <div className="relative z-10 sm:z-0 flex items-center justify-center h-[80vh]">
+        <div className="relative z-10 sm:z-0 flex items-center justify-center h-[60vh] md:h-[80vh]">
           <video
             src="/video/whoweare/cidbi.mp4"
             autoPlay
