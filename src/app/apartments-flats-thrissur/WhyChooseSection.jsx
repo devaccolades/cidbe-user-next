@@ -30,7 +30,7 @@ const features = [
 export default function WhyChooseSection() {
   return (
     <section className="w-full bg-white md:py-12">
-      <div className="w-full lg:w-[94%] mr-auto flex flex-col lg:flex-row items-center justify-start gap-10 max-w-[1660px] xxl:mx-auto xxl:px-24">
+      <div className="w-full lg:w-[94%] mr-auto flex flex-col lg:flex-row items-center justify-start sm:gap-10 max-w-[1660px] xxl:mx-auto xxl:px-24">
         {/* Left Image */}
         <div className="relative w-full h-[327px] md:h-[500px] 2xl:h-[600px]">
           <Image
@@ -46,7 +46,7 @@ export default function WhyChooseSection() {
         </div>
 
         {/* Right Content */}
-        <div className="font-[general-sans-regular] w-[92%] mr-auto">
+        <div className="font-[general-sans-regular] w-[92%] mx-auto sm:mr-auto">
           <h2 className="text-[32px] leading-[40px] md:text-[36px] md:max-w-xl text-gray-500 mb-3 ">
             Why Choose{" "}
             <span className="text-black font-semibold">
