@@ -57,7 +57,7 @@ export default function HighlightsSection() {
                 alt="highlight"
                 width={300}
                 height={300}
-                className=" h-full w-full object-cover"
+                className=" h-full w-full object-cover brightness-50"
               />
               <div className="text-center absolute bottom-0 font-[inter-regular] text-white text-[20px] p-4 w-full transition-all group-hover:bg-opacity-80 leading-[110%] font-bold">
                 {item.text}

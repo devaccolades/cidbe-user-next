@@ -35,14 +35,14 @@ const Herobottom = () => {
           </div>
 
           <div className="flex gap-4 justify-center items-center text-[14px] font-[general-sans-regular] font-normal">
-            <button className="bg-white text-gray-800  py-3 rounded-lg text-[14px] font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center min-w-[159px] w-full xs:max-w-[210px]  justify-center">
+            <button className="bg-white text-gray-800  py-3 rounded-lg text-[14px] font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center w-full xs:max-w-[210px]  justify-center">
               Enquire Now
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
 
-            <button className="border-2 border-white text-white  py-3 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200 min-w-[159px] w-full xs:max-w-[210px] ">
+            <button className="border-2 border-white text-white  py-3 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200 w-full xs:max-w-[210px] ">
               About Us
             </button>
           </div>

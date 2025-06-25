@@ -104,7 +104,7 @@ export default function ThrissurCard({
                 </span>
               </p>
             </div>
-            <p className="capitalize rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-[12px] text-white py-[4px] px-[12px]">
+            <p className="capitalize rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-[10px] sm:text-[12px] text-white py-[4px] px-[12px]">
               {project?.status}
             </p>
           </div>
@@ -155,15 +155,12 @@ export default function ThrissurCard({
 
       {/* Desktop layout */}
       <Card className="hidden xl:flex-row xl:flex w-full min-h-[365px] cursor-pointer bg-white rounded-[15px] overflow-hidden  p-[5px] gap-[10px] ">
-        <div className="h-full">
-          <Image
-            src={project?.thumbnail}
-            width={300}
-            height={300}
-            alt="image flat"
-            className="h-full w-full rounded-[10px] object-cover object-center"
-          />
-        </div>
+        <div
+          className="h-full w-full rounded-[10px] bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${project?.thumbnail})`,
+          }}
+        ></div>
         <div className=" flex flex-col justify-between w-full">
           <div className="flex justify-between items-center pt-[10px] px-[15px]">
             <div className="font-[general-sans-regular] flex flex-col gap-[6px]">
