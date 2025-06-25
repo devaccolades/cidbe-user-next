@@ -48,7 +48,7 @@ export default function WhyChooseSection() {
         {/* Right Content */}
         <div className="font-[general-sans-regular] w-[92%] mx-auto sm:mr-auto">
           <h2 className="text-[32px] leading-[40px] md:text-[36px] md:max-w-xl text-gray-500 mb-3 font-semibold">
-            Why Choose{" "}
+            Why Choose
             <span className="text-black font-semibold">
               CIDBI Apartments in Thrissur?
             </span>
