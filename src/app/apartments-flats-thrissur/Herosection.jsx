@@ -7,39 +7,41 @@ import Herobottom from "./Herobottom";
 
 export default function Herosection() {
   return (
-    <section className="relative -mt-[78px] lg:-mt-[95px] text-white w-full ">
+    <section className="relative -mt-[78px] lg:-mt-[95px] text-white w-full h-full">
       {/* Aspect ratio wrapper */}
-      {/* <div className="relative w-full aspect-[12/16] sm:aspect-[16/9] hidden sm:block">
-        <Image
-          src={HeroBg}
-          alt="Hero Background"
-          fill
-          className="object-cover object-top"
-          priority
-        />
+      <div className="relative w-full sm:aspect-[12/16] aspect-[16/9] h-[100vh] xs:hidden">
+        <video
+          src="/video/whoweare/cidbiSmall.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        ></video>
       </div>
-      <div className="sm:hidden relative w-full height-full">
-        <Image
-          src={HeroBgS}
-          alt="hero Background for small device "
-          height={300}
-          width={300}
-          className="object-cover object-top h-[510px] w-full"
-        />
-      </div> */}
-      <div className="relative w-full overflow-hidden ">
-        {/* Background Video with blur */}
+      <div className="hidden xs:block relative w-full ">
         <video
           src="/video/whoweare/cidbi.mp4"
           autoPlay
           muted
           loop
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover blur-lg md:blur-none z-0 "
+          className="object-cover object-center w-full"
         />
+      </div>
+      {/* <div className="relative w-full overflow-hidden "> */}
+      {/* Background Video with blur */}
+      {/* <video
+          src="/video/whoweare/cidbi.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover blur-lg md:blur-none z-0 "
+        /> */}
 
-        {/* Foreground Centered Video */}
-        <div className="relative z-10 sm:z-0 flex items-center justify-center h-[60vh] md:h-[80vh]">
+      {/* Foreground Centered Video */}
+      {/* <div className="relative z-10 sm:z-0 flex items-center justify-center h-[60vh] md:h-[80vh]">
           <video
             src="/video/whoweare/cidbi.mp4"
             autoPlay
@@ -49,7 +51,7 @@ export default function Herosection() {
             className="w-full md:h-full -mt-[60px] xs:mt-0 object-cover"
           />
         </div>
-      </div>
+      </div> */}
 
       <Herogreen />
       <Herobottom />
