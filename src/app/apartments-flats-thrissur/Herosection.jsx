@@ -1,7 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import HeroBg from "../../../public/images/aprtments_thrissur/cidbe.png";
-import HeroBgS from "../../../public/images/aprtments_thrissur/smallImage.jpg";
 import Herogreen from "./Herogreen";
 import Herobottom from "./Herobottom";
 

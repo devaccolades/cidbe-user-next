@@ -6,6 +6,8 @@ import onGoing from "../../../public/images/aprtments_thrissur/onGoing.jpg";
 import ready from "../../../public/images/aprtments_thrissur/ready.jpg";
 import completed from "../../../public/images/aprtments_thrissur/complete.jpg";
 import featured from "../../../public/images/aprtments_thrissur/featured.jpg";
+import Link from "next/link";
+
 
 const features = [
   {
@@ -72,7 +74,7 @@ export default function WhyChooseSection() {
               <div
                 key={i}
                 className="w-full sm:w-[48%] p-4 rounded-lg text-sm text-gray-800 hover:bg-green-100 hover:text-green-900 transition-colors duration-200"
-                style={{boxShadow: "0px 0px 25.8px 0px #0000001F"}}
+                style={{ boxShadow: "0px 0px 25.8px 0px #0000001F" }}
               >
                 <div className="flex items-start gap-3">
                   <Image
@@ -91,45 +93,58 @@ export default function WhyChooseSection() {
       </div>
 
       <div className="w-[92%] md:w-full grid grid-cols-2 md:grid-cols-4 gap-[12px] py-4 lg:max-w-[1610px] mx-auto sm:px-6 lg:px-24">
-        <div
-          style={{
-            backgroundImage: `url(${onGoing.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
-            Ongoing Projects
+        <Link href="/ongoing-projects" className="cursor-pointer">
+          <div
+            style={{
+              backgroundImage: `url(${onGoing.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
+            <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
+              Ongoing Projects
+            </div>
           </div>
-        </div>
-        <div
-          style={{
-            backgroundImage: `url(${ready.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
-            Ready to Occupy
+        </Link>
+
+        <Link href="/ready-to-occupy" className="cursor-pointer">
+
+          <div
+            style={{
+              backgroundImage: `url(${ready.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
+            <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
+              Ready to Occupy
+            </div>
           </div>
-        </div>
-        <div
-          style={{
-            backgroundImage: `url(${completed.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
-            Completed Projects
+        </Link>
+
+        <Link href="/completed-projects" className="cursor-pointer">
+
+          <div
+            style={{
+              backgroundImage: `url(${completed.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
+            <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
+              Completed Projects
+            </div>
           </div>
-        </div>
+        </Link>
+
+        <Link href="/featured-projects" className="cursor-pointer">
+
         <div
           style={{
             backgroundImage: `url(${featured.src})`,
@@ -143,6 +158,8 @@ export default function WhyChooseSection() {
             Featured Projects
           </div>
         </div>
+        </Link>
+
       </div>
     </section>
   );
