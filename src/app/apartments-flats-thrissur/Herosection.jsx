@@ -9,7 +9,7 @@ export default function Herosection() {
   return (
     <section className="relative -mt-[78px] lg:-mt-[95px] text-white w-full h-full">
       {/* Aspect ratio wrapper */}
-      <div className="relative w-full sm:aspect-[12/16] aspect-[16/9] h-[100vh] xs:hidden">
+      <div className="relative w-full sm:aspect-[12/16] aspect-[16/9] h-[85vh] xs:hidden">
         <video
           src="/video/whoweare/cidbiSmall.mp4"
           autoPlay
