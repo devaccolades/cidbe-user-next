@@ -37,7 +37,7 @@ export default function WhyChooseSection() {
         <div className="relative w-full h-[327px] md:h-[500px] 2xl:h-[600px]">
           <Image
             src={templeImage}
-            alt="Temple Sketch"
+            alt="Flat for sale in Thrissur"
             fill
             className="object-cover object-center 2xl:object-contain"
             priority
@@ -100,6 +100,8 @@ export default function WhyChooseSection() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
+            role="img"
+            aria-label="Flat for sale in Thrissur"
             className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
           >
             <div className="absolute inset-0 bg-black/50 z-10"></div>
@@ -117,6 +119,8 @@ export default function WhyChooseSection() {
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
+            role="img"
+            aria-label="Flats in thrissur"
             className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
           >
             <div className="absolute inset-0 bg-black/50 z-10"></div>
@@ -135,6 +139,8 @@ export default function WhyChooseSection() {
               backgroundPosition: "center",
             }}
             className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
+            role="img"
+            aria-label="Apartments in Thrissur"
           >
             <div className="absolute inset-0 bg-black/50 z-10"></div>
             <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
@@ -152,6 +158,8 @@ export default function WhyChooseSection() {
             backgroundPosition: "center",
           }}
           className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
+          role="img"
+            aria-label="Flat for sale in Thrissur"
         >
           <div className="absolute inset-0 bg-black/50 z-10"></div>
           <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">

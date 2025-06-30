@@ -54,7 +54,7 @@ export default function HighlightsSection() {
             >
               <Image
                 src={item.img}
-                alt="highlight"
+                alt="Apartments in Thrissur"
                 width={300}
                 height={300}
                 className=" h-[289px] w-full object-cover brightness-50"
