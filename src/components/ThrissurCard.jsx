@@ -88,6 +88,7 @@ export default function ThrissurCard({
         <motion.div
           className="card-image bg-top rounded-[10px] bg-cover h-[201px]"
           style={{ backgroundImage: `url(${project?.thumbnail})` }}
+          aria-label="Flats in thrissur"
           animate={{ height: hovered ? 408 : 201 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         />
@@ -160,6 +161,8 @@ export default function ThrissurCard({
           style={{
             backgroundImage: `url(${project?.thumbnail})`,
           }}
+          role="img"
+          aria-label="Apartments in Thrissur"
         ></div>
         <div className=" flex flex-col justify-between w-full">
           <div className="flex justify-between items-center pt-[10px] px-[15px]">

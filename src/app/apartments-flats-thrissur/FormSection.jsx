@@ -92,7 +92,7 @@ export default function FormSection({ projectId, handleOpen, modal }) {
         <div className="relative w-full h-[300px] md:h-[500px]">
           <Image
             src={buildingSketch}
-            alt="Apartment sketch"
+            alt="Flats in thrissur"
             fill
             className="object-cover"
             priority

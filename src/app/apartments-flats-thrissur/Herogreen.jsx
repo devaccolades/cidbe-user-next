@@ -8,7 +8,7 @@ const Herogreen = () => {
       {/* Background Image */}
       <Image
         src={green}
-        alt="Green background"
+        alt="Flat for sale in Thrissur"
         fill
         className="object-cover "
         priority
