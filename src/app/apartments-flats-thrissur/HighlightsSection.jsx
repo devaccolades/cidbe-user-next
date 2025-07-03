@@ -14,17 +14,7 @@ export default function HighlightsSection() {
             Project <span className="text-gray-900">Highlights</span>
           </h2>
           <p className=" text-gray-600 text-[13px] leading-[150%] mt-2">
-            Living at a CIDBI apartment means experiencing the best in modern
-            living, enhanced by thoughtful design and quality construction. Our
-            project highlights reflect our commitment to creating homes that are
-            not just beautiful, but also functional and sustainable. Each
-            apartment is built with premium materials and cutting-edge
-            technology to ensure long-lasting quality and comfort. From spacious
-            living areas to energy-efficient designs, CIDBI apartments are
-            crafted to provide the perfect balance of luxury and practicality.
-            With a focus on community living, our projects also include
-            world-class amenities and beautifully landscaped spaces, creating a
-            truly exceptional living experience for our residents.
+          CIDBI’s flagship projects are located in prime areas and these apartments in Thrissur redefine urban living. Candor, ready to occupy flats, are in Punkunnam and Cassia, ongoing project, is near Daya Hospital. Candor stands out with its rooftop pool, fitness centre, party hall and landscaped gardens. Cassia, premium smart homes, combines affordability with comfort and convenience. Both projects are built with eco-friendly features like rainwater harvesting and solar power.  They ensure 24/7 security and power backup. Both are ideal homes for modern families seeking location and lifestyle.
           </p>
         </div>
 
@@ -33,19 +23,19 @@ export default function HighlightsSection() {
           {[
             {
               img: img1,
-              text: "Modern, spacious apartments with premium amenities.",
+              text: "Spacious Rooms & Premium Amenities ",
             },
             {
               img: img2,
-              text: "Eco-friendly construction with rainwater harvesting.",
+              text: "High-Level Security & Smart Features",
             },
             {
               img: img3,
-              text: "State-of-the-art security and surveillance systems.",
+              text: "Eco-Friendly & Energy-Saving Systems",
             },
             {
               img: img4,
-              text: "Ample car parking and landscaped gardens.",
+              text: "Open Space & Landscaped Gardens",
             },
           ].map((item, i) => (
             <div
@@ -77,10 +67,10 @@ export default function HighlightsSection() {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            "5 mins from Thrissur Railway Station.",
-            "Near Jubilee Mission Hospital & Devamatha School.",
-            "Easy access to highways, shopping malls, and cultural centers.",
-            "Peaceful residential environment ideal for families.",
+            "Proximity to Major Hospitals & Healthcare ",
+            "Excellent Connectivity to Transport Hubs",
+            "Easy Access to Educational Institutions",
+            "Thriving Neighbourhoods with Urban Convenience",
           ].map((point, i) => (
             <div
               key={i}
