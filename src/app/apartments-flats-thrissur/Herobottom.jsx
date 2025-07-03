@@ -24,13 +24,7 @@ const Herobottom = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center -mt-[120px] mb-8 md:mb-12">
             <p className="text-white text-[13px] font-normal xl:max-w-5xl md:text-[14px] md:max-w-2xl font-[general-sans-regular] leading-relaxed  mx-auto">
-              Discover your dream home in the cultural heart of Kerala – Thrissur. Known for its rich
-              heritage, vibrant festivals, and thriving economy, Thrissur offers the perfect blend of
-              modern living and traditional charm. At GVGRI Builders, we present thoughtfully
-              designed apartments and flats in prime locations, ensuring you enjoy a comfortable,
-              secure, and luxurious lifestyle. Whether you need a spacious family home or a cozy
-              apartment, our projects cater to diverse preferences and budgets. Experience the best
-              of urban living with world-class amenities and connectivity in the heart of Thrissur.
+            Discover your dream home in Thrissur, the cultural heart of Kerala. You can find the convenience of modern living and traditional charm here. CIDBI delivers thoughtfully designed apartments and flats for sale in Thrissur. CIDBI all time ensure you a comfortable, secure, and luxurious lifestyle. Whether it is a compact 2 BHK Flat or spacious3BKH apartments in Thrissur, we have the options for you.
             </p>
           </div>
 

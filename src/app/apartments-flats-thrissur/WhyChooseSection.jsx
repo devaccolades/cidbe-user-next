@@ -12,19 +12,19 @@ import Link from "next/link";
 const features = [
   {
     title:
-      "Prime residential locations close to schools, hospitals, and shopping centers.",
+      "Prime Locations with Excellent Connectivity ",
     icon: "/images/aprtments_thrissur/icon1.svg",
   },
   {
-    title: "Dedicated customer service and post-handover support.",
+    title: "More Open Space with Outstanding Amenities",
     icon: "/images/aprtments_thrissur/icon2.svg",
   },
   {
-    title: "Earthquake-resistant and Vaastu-compliant designs.",
+    title: "Quality Construction & Eco-Friendly Design.",
     icon: "/images/aprtments_thrissur/icon3.svg",
   },
   {
-    title: "Transparent documentation and on-time delivery.",
+    title: "On Time Delivery and Transparency in Dealing",
     icon: "/images/aprtments_thrissur/icon4.svg",
   },
 ];
@@ -56,15 +56,7 @@ export default function WhyChooseSection() {
             </span>
           </h2>
           <p className="text-gray-600 text-[13px] leading-normal md:text-[14px] max-w-4xl mb-8 ">
-            CIDBI Apartments stand out for their commitment to quality and
-            attention to detail. Each apartment is crafted to blend modern
-            design with the cultural essence of Thrissur, creating a perfect
-            living space for families and individuals. With a focus on
-            sustainability and energy efficiency, our projects are designed to
-            minimize environmental impact while maximizing comfort. From premium
-            fittings to innovative layouts, every aspect is carefully planned to
-            provide a superior living experience. Choosing CIDBI means choosing
-            a trusted partner for your dream home in Thrissur.
+          CIDBI, with over 40 years of building experience, has the ability to face any challenges in construction field and deliver projects on time. Moreover, CIDBI has no sub contracts in any stage of development. Each apartment is designed and built to create a perfect living space for families and individuals. CIDBI’s projects are designed to minimize environmental impact while maximizing comfort. They come with solar power plants and waste management system. CIDBI also uses premium quality materials for doors, windows, plumbing and electrical fittings. More open space for echo friendly living is the main feature of apartments in Thrissur by CIDBI.
           </p>
 
           {/* Features */}
