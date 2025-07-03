@@ -50,9 +50,9 @@ export default function FaqSection  () {
                         <div key={index}>
                             <div className='flex justify-between flex-row cursor-pointer' onClick={() => setOpen(isOpend === index ? null : index)}>
                                 <p className={`${'font-[general-sans-regular]'} font-bold text-[12px] lg:text-[16px] py-[14px] w-[90%] `} onClick={() => setOpen(isOpend === index ? null : index)}>{faq.question || ""}</p>
-                                <button className='cursor-pointer' >
+                                {/* <button className='cursor-pointer' >
                                     <Image src={minusIcon}  alt='toggle-icon' />
-                                </button>
+                                </button> */}
                             </div>
                             <AnimatePresence>
                               
