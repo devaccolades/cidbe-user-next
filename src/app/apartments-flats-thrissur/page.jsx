@@ -248,13 +248,13 @@ const faqStructuredData = {
 export default async function page() {
   return (
     <>
-      <Head>
+      {/* <Head>
         <link rel="canonical" href="https://cidbi.com/"/>
          <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
         />
-      </Head>
+      </Head> */}
       <main>
       <Header />
       <ScrollToTop />
