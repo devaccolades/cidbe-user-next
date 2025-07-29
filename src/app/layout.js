@@ -4,15 +4,11 @@ import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// export const metadata = {
-//   title: "Top Builders in Thrissur | Apartments in Thrissur | Flats in Thrissur | CIDBI ",
-//   description: "CIDBI one of the leading builders in Thrissur offers apartments and flats in thrissur. Discover high-quality flats in Thrissur with trusted builders. Find your dream apartments in thrissur today and enjoy a comfortable living experience.",
-// };
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="hidescroll">
-      <head>
+      <head />
+        <body className={inter.className}>
         <Script
           id="gtm-init"
           strategy="afterInteractive"
@@ -26,8 +22,6 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-      </head>
-      <body className={inter.className}>
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894"
             height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
