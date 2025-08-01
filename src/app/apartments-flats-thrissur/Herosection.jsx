@@ -9,7 +9,7 @@ export default function Herosection() {
       {/* Aspect ratio wrapper */}
       <div className="relative w-full sm:aspect-[12/16] aspect-[16/9] h-[85vh] xs:hidden">
         <video
-          src="/video/whoweare/cidbiSmall.mp4"
+          src="/video/tsr/CIDBI_r.mp4"
           autoPlay
           muted
           loop
@@ -19,37 +19,14 @@ export default function Herosection() {
       </div>
       <div className="hidden xs:block relative w-full ">
         <video
-          src="/video/whoweare/cidbi.mp4"
+          src="/video/tsr/CIDBI_l.mp4"
           autoPlay
-          muted
+          volume={0.5}
           loop
           playsInline
           className="object-cover object-center w-full"
         />
       </div>
-      {/* <div className="relative w-full overflow-hidden "> */}
-      {/* Background Video with blur */}
-      {/* <video
-          src="/video/whoweare/cidbi.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover blur-lg md:blur-none z-0 "
-        /> */}
-
-      {/* Foreground Centered Video */}
-      {/* <div className="relative z-10 sm:z-0 flex items-center justify-center h-[60vh] md:h-[80vh]">
-          <video
-            src="/video/whoweare/cidbi.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full md:h-full -mt-[60px] xs:mt-0 object-cover"
-          />
-        </div>
-      </div> */}
 
       <Herogreen />
       <Herobottom />
