@@ -167,7 +167,7 @@ function HeroSection() {
                                         <div className='h-[72px] w-full flex justify-between items-center'>
                                             <div className='font-[general-sans-regular] md:-mb-[20px] lg:mb-0'>
                                                 <p className='md:text-[24px] lg:text-[36px] text-black'>{project?.name}</p>
-                                                <p className='capitalize flex gap-[8px] lg:-mt-[4px]'><Image src={locationIcon} alt='location-icon' /> <span className='md:text-[10px] lg:text-[16px] text-[#767575]'>{project?.location}</span></p>
+                                                <p className='capitalize flex gap-[8px] lg:-mt-[4px]'><Image src={locationIcon} alt='flats in Thrissur' /> <span className='md:text-[10px] lg:text-[16px] text-[#767575]'>{project?.location}</span></p>
                                             </div>
                                             <div>
                                                 <p className='capitalize md:-mb-[20px] lg:mb-0 rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-white text-[12px] py-[2px] px-[10px]'>{project?.status}</p>
@@ -196,7 +196,7 @@ function HeroSection() {
                                 <div className='h-[72px] w-full pt-[10px] flex justify-between items-center'>
                                     <div className='font-[general-sans-regular] '>
                                         <p className='text-[24px] text-black'>{project?.name}</p>
-                                        <p className='capitalize flex gap-[8px] '><Image src={locationIcon} alt='location-icon' /> <span className='text-[14px] text-[#767575]'>{project?.location}</span></p>
+                                        <p className='capitalize flex gap-[8px] '><Image src={locationIcon} alt='apartments in Thrissur' /> <span className='text-[14px] text-[#767575]'>{project?.location}</span></p>
                                     </div>
                                     <div>
                                         <p className='capitalize md:-mb-[20px] lg:mb-0 rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-white text-[10px] py-[2px] px-[10px]'>{project?.status}</p>

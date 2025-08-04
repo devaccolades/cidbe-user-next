@@ -38,7 +38,7 @@ function AboutSection() {
         <Fade bottom delay={200}>
           <card className='relative containers shadow-2xl flex flex-col-reverse md:flex-row rounded-[12px]'>
             <div className='md:h-[433px] w-full bg-color rounded-b-[12px] md:rounded-e-none  md:rounded-s-[12px] flex items-center p-[30px] md:p-[60px] lg:p-0'>
-              <Image className='absolute right-[400px] lg:block hidden bottom-[81px]' src={aboutCardImage} alt="Description-of-the-about-card-image" />
+              <Image className='absolute right-[400px] lg:block hidden bottom-[81px]' src={aboutCardImage} alt="flats for sale in Thrissur" />
               <div className='w-full responsive lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
                 <Fade bottom delay={200}>
                   <h3 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h3>
