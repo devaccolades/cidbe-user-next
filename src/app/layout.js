@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "../app/globals.css";
 import Script from "next/script";
+import Canonical from "../components/Canonical"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894"
             height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
         </noscript>
-
+            <Canonical />
         {children}
       </body>
     </html>

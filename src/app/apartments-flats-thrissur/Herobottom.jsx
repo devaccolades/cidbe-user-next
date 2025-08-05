@@ -4,6 +4,7 @@ import ThrissurCard from '../../components/ThrissurCard';
 import Skelten from '../../components/skeletoneffect/Skelten';
 import NotFound from '../../components/common/NotFound';
 import { getTrissurProject } from '../../services/services';
+import Link from 'next/link';
 
 const Herobottom = () => {
   const [projects, setProj] = useState(null);
@@ -29,16 +30,16 @@ const Herobottom = () => {
           </div>
 
           <div className="flex gap-4 justify-center items-center text-[14px] font-[general-sans-regular] font-normal">
-            <button className="bg-white text-gray-800  py-3 rounded-lg text-[14px] font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center w-full xs:max-w-[210px]  justify-center">
+            <Link href={'/about-us'} className="bg-white text-gray-800  py-3 rounded-lg text-[14px] font-medium hover:bg-gray-100 transition-colors duration-200 flex items-center w-full xs:max-w-[210px]  justify-center">
               Enquire Now
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </Link>
 
-            <button className="border-2 border-white text-white  py-3 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200 w-full xs:max-w-[210px] ">
+            <Link href={'/about-us'} className="border-2 text-center border-white text-white  py-3 rounded-lg font-medium hover:bg-white hover:text-gray-800 transition-colors duration-200 w-full xs:max-w-[210px] ">
               About Us
-            </button>
+            </Link>
           </div>
         </div>
       </section>

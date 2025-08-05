@@ -140,7 +140,7 @@ function Footer({ backGround = "--primary-cl" }) {
               <p>GALLERY</p>
             </Link>
             <Link
-              href="/apartments-flats-thrissur"
+              href="/apartments-flats-thrissur/#hero"
               className="cursor-pointer uppercase"
             >
               <span>
@@ -305,7 +305,7 @@ function Footer({ backGround = "--primary-cl" }) {
                 <p>GALLERY</p>
               </Link>
               <Link
-                href="/apartments-flats-thrissur"
+                href="/apartments-flats-thrissur/#hero"
                 className="cursor-pointer uppercase"
               >
                 <span>
