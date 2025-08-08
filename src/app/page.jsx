@@ -106,7 +106,7 @@ const faqStructuredData =
         {
           "@type": "Offer",
           "name": "CIDBI Candor",
-          "description": "Ready-to-move flats in Punkunnam, Thrissur. 2 BHK + Study from ₹81.5 lakhs, 3 BHK at ₹1.02 Cr.",
+          "description": "Ready-to-move flats in Punkunnam, Thrissur. 2 BHK + Study from ₹81.5 lakhs, 3 BHK at ₹1.02 Cr.",  
           "priceCurrency": "INR",
           "price": "8150000",
           "url": "https://cidbi.com/featured-projects/flats-in-thrissur-candor",
@@ -198,7 +198,12 @@ function Page() {
        <Script
         id="seo-json-ld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData, newSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData)}}
+      />
+       <Script
+        id="seo-json-ld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(newSchema)}}
       />
     </>
   );
