@@ -34,7 +34,7 @@ const ConditionalContentWithCursor = () => {
       {showCursor ? (
         <img
           src="/path-to-your-image.jpg" 
-          alt="Continuous Image"
+          alt="flats in Thrissur"
           style={{ width: '100%', height: 'auto', zIndex: 2 }} 
         />
       ) : (

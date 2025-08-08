@@ -16,7 +16,7 @@ function AboutSecondSection() {
           <div className='flex flex-col md:flex-row w-full lg:w-[60%] gap-5'>
             <div className='w-full flex flex-col'>
               <div className="text-center flex flex-col p-[20px] lg:p-[10px] xl:p-[20px] items-center gap-[10px] bg-white shadow-2xl rounded-[15px] flex-1">
-                <Image src={aboutFirstGif} alt='quality-gif' className='w-[90px] md:w-[120px] lg:w-[120px]' />
+                <Image src={aboutFirstGif} alt='flat for sale in Thrissur' className='w-[90px] md:w-[120px] lg:w-[120px]' />
                 <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
                   <h6 className='font-[general-sans-medium] text-[--secondary-cl] text-[20px] md:text-[24px] xl:text-[24px] leading-[28px] md:leading-[32px] lg:leading-[32px]'>
                     <span className=''>Our Vision</span>
@@ -28,7 +28,7 @@ function AboutSecondSection() {
             </div>
             <div className='w-full flex flex-col'>
               <div className="text-center flex flex-col p-[20px] lg:p-[10px] xl:p-[20px] items-center gap-[10px] bg-white shadow-2xl rounded-[15px] flex-1">
-                <Image src={aboutSecondGif} alt='mission-gif' className='w-[90px] md:w-[120px] lg:w-[120px]' />
+                <Image src={aboutSecondGif} alt='flat for sale in Thrissur' className='w-[90px] md:w-[120px] lg:w-[120px]' />
                 <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
                   <h6 className='font-[general-sans-medium] text-[--secondary-cl] text-[20px] md:text-[24px] lg:text-[24px] leading-[28px] md:leading-[32px] lg:leading-[32px]'>
                     <span className=''>Our Mission</span>

@@ -43,7 +43,7 @@ function HeroSection({ data, images }) {
           {images.length > 0 ? (
             images.map((image, index) => (
               <div key={index} className="relative h-[690px] md:h-[768px] lg:h-screen bg-cover bg-no-repeat">
-                <Image unoptimized src={image?.images} alt={image?.image_alt} layout="fill" objectFit="cover" />
+                <Image unoptimized src={image?.images} alt="flats in Thrissur" layout="fill" objectFit="cover" />
                 <div className="absolute inset-0 opacity-[30%]"></div>
               </div>
             ))) : (
@@ -57,7 +57,7 @@ function HeroSection({ data, images }) {
       {/* Text Content */}
       <div className="p-[20px] h-full flex flex-col justify-end containers relative z-20">
         <div className="text-white mb-[100px]">
-        {data?.logo && <img src={data?.logo} alt="logo" className="w-[100px] md:w-[140px]"/>}
+        {data?.logo && <img src={data?.logo} alt="flat for sale in Thrissur" className="w-[100px] md:w-[140px]"/>}
           <h1 className='text-[24px] font-[clash-display-medium]'>{data?.name}</h1>
           <p className='text-[16px] font-[clash-display-medium]'>{data?.sub_name}</p>
           <p className='text-[16px] font-[clash-display-medium]'>{data?.location}</p>

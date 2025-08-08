@@ -36,7 +36,7 @@ const PrevArrow = (props) => {
     const { onClick } = props;
     return (
         <div className="custom-arrow prev-arrow" onClick={onClick} >
-            <Image src={prevArrowIcon} alt="prev" />
+            <Image src={prevArrowIcon} alt="flats in Thrissur" />
         </div>
     );
 }
@@ -176,7 +176,7 @@ function HeroSection() {
                                         <div className=' h-[64px] flex justify-center items-end'>
                                             <button className='bg-[--secondary-cl] h-[44px] gap-[8px] py-[12px] pr-[8px] pl-[14px] rounded-[8px] w-full flex justify-center items-center'>
                                                 <p className='font-[general-sans-medium] text-[14px] text-white cursor-pointer' onClick={() => router.push(`/featured-projects/${project?.slug}`)}>View Project Details</p>
-                                                <Image src={arrowoutwardIcon} alt='arrow-icons' />
+                                                <Image src={arrowoutwardIcon} alt='flats in Thrissur' />
                                             </button>
                                         </div>
                                     </div>
@@ -205,7 +205,7 @@ function HeroSection() {
                                 <div className='h-[64px] flex justify-center items-end'>
                                     <button className='bg-[--secondary-cl] h-[44px] gap-[8px] py-[12px] pr-[8px] pl-[14px] rounded-[8px] w-full flex justify-center items-center'>
                                         <p className='font-[general-sans-medium] text-[14px] text-white' onClick={() => router.push(`/featured-projects/${project?.slug}`)}>View Project Details</p>
-                                        <Image src={arrowoutwardIcon} alt='arrow-icons' />
+                                        <Image src={arrowoutwardIcon} alt='flats in Thrissur' />
                                     </button>
                                 </div>
                             </div>

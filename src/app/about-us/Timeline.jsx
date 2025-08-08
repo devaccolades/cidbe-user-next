@@ -104,10 +104,10 @@ function Timeline() {
       <section ref={sectionRef} className="containers py-8 flex overflow-x-auto custom-scrollbar">
         {listing.map((list, index) => (
           <div key={index} className="timeline-item relative min-w-[547px] -ms-[2px] w-[547px] h-[404px] overflow-x-auto">
-            <Image src={branch} alt='' className='absolute branch-image' />
+            <Image src={branch} alt='Apartments in Thrissur' className='absolute branch-image' />
             <div className='flex flex-col justify-between h-full items-center'>
               <div className='ps-[9px] w-6/12 h-[111px]'>
-                <Image src={list[0].image} alt='' className='w-[147px] h-[111px] rounded-[8px] top-image' />
+                <Image src={list[0].image} alt='Apartments in Thrissur' className='w-[147px] h-[111px] rounded-[8px] top-image' />
                 <p className='font-[general-sans-regular] text-[20px]'>{list[0]?.name}</p>
               </div>
               <div className='flex flex-col-reverse w-[60%] h-[160px] justify-between'>
@@ -116,7 +116,7 @@ function Timeline() {
               </div>
               <div className='pe-[1px] w-6/12 h-[111px] flex flex-col items-end '>
                 <p className='font-[general-sans-regular] text-[20px] -mt-[30px]'>{list[1]?.name}</p>
-                {list[1]?.image && <Image src={list[1]?.image} alt='' className='w-[147px] h-[111px] rounded-[8px] bottom-image' />}
+                {list[1]?.image && <Image src={list[1]?.image} alt='Apartments in Thrissur' className='w-[147px] h-[111px] rounded-[8px] bottom-image' />}
               </div>
             </div>
           </div>

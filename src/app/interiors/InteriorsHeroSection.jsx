@@ -26,7 +26,7 @@ function InteriorsHeroSection() {
           <div className="relative">
             <Image
               src={leftSide}
-              alt="Interior Landing"
+              alt="flat for sale in Thrissur"
               layout="intrinsic" 
               objectFit="contain" 
               className="w-[70%] sm:w-[75%] md:w-[70%] lg:w-[80%] mx-auto md:mx-0"

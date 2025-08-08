@@ -43,7 +43,7 @@ function Plans({ floor_plan, blueprint_image }) {
                 >
                   <div className='flex items-center mb-4'>
                     <div className='w-14 h-14 rounded-full flex items-center justify-center mr-4 bg-[#BFD8BD]'>
-                      <Image src={buildIcon} alt="Building Icon" width={28} height={28} />
+                      <Image src={buildIcon} alt="flats in Thrissur" width={28} height={28} />
                     </div>
                     <div>
                       <h2 className='text-[16px] lg:text-[24px] font-[general-sans-medium]'>{image.plan_type}</h2>
@@ -83,7 +83,7 @@ function Plans({ floor_plan, blueprint_image }) {
         </div>
 
        {blueprint_image&& <div className='mt-16'>
-          <Image unoptimized src={blueprint_image} alt="Plan Image" width={100} height={100} layout="responsive" />
+          <Image unoptimized src={blueprint_image} alt="flats in Thrissur" width={100} height={100} layout="responsive" />
         </div>}
       </div>
     </section>

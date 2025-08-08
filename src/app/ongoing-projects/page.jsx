@@ -26,6 +26,9 @@ export async function generateMetadata() {
   return {
     title: meta_title,
     description: meta_description,
+        alternates: {
+      canonical: `https://cidbi.com${path}`,
+    },
   };
 }
 

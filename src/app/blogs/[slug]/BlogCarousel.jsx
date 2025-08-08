@@ -43,7 +43,7 @@ function BlogCarousel({ blogDetails }) {
         <p className="font-[clash-display-medium] text-white text-[32px] lg:text-[64px] leading-[39px] w-[90%] custom-blog-innder-title-width md:w-[40%] mx-auto lg:leading-[78px]  capitalize text-center">{blogDetails?.title}</p>
         <div className="flex flex-row gap-[10px] mx-auto w-full justify-center text-[10px] items-center lg:text-[12px]">
           <p className="py-[4px] flex justify-center items-center px-[10px] bg-white font-[general-sans-semibold] rounded-[6px] text-[--secondary-cl]">{blogDetails?.date_added}</p>
-          <p className="py-[2px] px-[10px] bg-white font-[general-sans-semibold] rounded-[6px] text-[--secondary-cl] flex flex-row justify-center items-center gap-[1px]"><Image src={clockIcon} alt="" />{blogDetails?.time_to_read} Min read</p>
+          <p className="py-[2px] px-[10px] bg-white font-[general-sans-semibold] rounded-[6px] text-[--secondary-cl] flex flex-row justify-center items-center gap-[1px]"><Image src={clockIcon} alt="flats in Thrissur" />{blogDetails?.time_to_read} Min read</p>
         </div>
       </div>
       <Slider {...settings}>

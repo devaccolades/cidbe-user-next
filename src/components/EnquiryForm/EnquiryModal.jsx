@@ -49,7 +49,7 @@ function EnquiryModal({ open, handleOpen, projectId }) {
           className="absolute right-3 cursor-pointer top-[10px]"
           onClick={handleOpen}
         >
-          <Image src={closeIcon} className="h-[20px] md:h-[30px] w-[20px] md:w-[30px]"/>
+          <Image src={closeIcon} alt="Apartments in Thrissur" className="h-[20px] md:h-[30px] w-[20px] md:w-[30px]"/>
         </button>
       <EnquiryForm projectId={projectId} modal={true} handleOpen={handleOpen} />
     </Dialog>

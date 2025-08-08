@@ -19,7 +19,7 @@ function AboutThirdSection() {
       {/* About Card */}
       <card className='relative containers shadow-2xl flex flex-col-reverse md:flex-row rounded-[12px]'>
         <div className='md:h-[433px] w-full bg-color rounded-b-[12px] md:rounded-e-none  md:rounded-s-[12px] flex items-center p-[20px]  lg:p-0'>
-          <Image className='absolute right-[400px] lg:block hidden bottom-[81px] z-10' src={aboutCardImage} alt="Description-of-the-about-card-image" />
+          <Image className='absolute right-[400px] lg:block hidden bottom-[81px] z-10' src={aboutCardImage} alt="Apartments in Thrissur" />
           <div className='w-full lg:w-10/12 history-card-responsive xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
             <h3 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px] uppercase'>Our Excellence</h3>
             <div className='flex flex-col gap-[20px] md:gap-[10px] lg:gap-[20px] font-[general-sans-regular] paragraph text-[14px] lg:text-[16px] leading-[21px] lg:leading-[24px] z-10'>
@@ -30,9 +30,9 @@ function AboutThirdSection() {
             </div>
           </div>
         </div>
-        <Image src={aboutCardshapeMobile} alt='' className='min-w-full -mt-[26px] z-20 -mb-[1px] bg-transparent z-1 md:hidden block' />
+        <Image src={aboutCardshapeMobile} alt='Apartments in Thrissur' className='min-w-full -mt-[26px] z-20 -mb-[1px] bg-transparent z-1 md:hidden block' />
         <div className='bg-cover  bg-top md:w-full lg:w-7/12 h-[300px] md:h-full rounded-t-[12px] md:rounded-e-[12px] z-[10]' style={{ backgroundImage: `url(${excellenceBg.src})` ,zIndex:'10'}}>
-          <Image className='h-full -ms-[2px] hidden md:block z-[15]' alt='card-shape' src={aboutCardshape} />
+          <Image className='h-full -ms-[2px] hidden md:block z-[15]' alt='Apartments in Thrissur' src={aboutCardshape} />
         </div>
       </card>
       

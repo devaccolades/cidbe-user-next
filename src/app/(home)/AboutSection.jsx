@@ -32,7 +32,7 @@ function AboutSection() {
       <main className='text-[--secondary-cl] w-full flex flex-col py-[45px] about-main-bg'
       >
         <div className='absolute top-[1066px] left-[-191px] lg:block hidden -z-10'>
-          <Image src={gradientLeft} alt='gradient-left' />
+          <Image src={gradientLeft} alt='Apartments in Thrissur' />
         </div>
         {/* About Card */}
         <Fade bottom delay={200}>
@@ -53,15 +53,15 @@ function AboutSection() {
                   <Fade bottom delay={300}>
                     <button className='underline flex gap-[10px] items-center text-[12px] font-[general-sans-medium] cursor-pointer z-10' onClick={() => router.push('/about-us')}>
                       Know more
-                      <Image src={arrowIcon} alt='arrow-icon' />
+                      <Image src={arrowIcon} alt='Apartments in Thrissur' />
                     </button>
                   </Fade>
                 </div>
               </div>
             </div>
-            <Image src={aboutCardshapeMobile} alt='' className='min-w-full align-bottom -mb-[5px] -mt-[30px] md:hidden block' />
+            <Image src={aboutCardshapeMobile} alt='flats in Thrissur' className='min-w-full align-bottom -mb-[5px] -mt-[30px] md:hidden block' />
             <div className='bg-cover bg-bottom md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] h-[300px] md:h-full z-4' style={{ backgroundImage: `url(${aboutImage.src})` }}>
-              <Image className='h-full -ms-[2px] md:block hidden' alt='card-shape' src={aboutCardshape} />
+              <Image className='h-full -ms-[2px] md:block hidden' alt='flat for sale in Thrissur' src={aboutCardshape} />
             </div>
           </card>
         </Fade>
@@ -74,7 +74,7 @@ function AboutSection() {
             <Fade bottom delay={200}>
               <div className="text-center flex flex-col md:flex-row lg:flex-col px-[20px] lg:px-0 items-center gap-[10px] lg:gap-[20px] py-[30px]  bg-white shadow-2xl rounded-[15px]">
                 <Fade bottom delay={200}>
-                  <Image src={qualityGif} alt='quality-fig' className='w-[90px] lg:w-[120px]' />
+                  <Image src={qualityGif} alt='Apartments in Thrissur' className='w-[90px] lg:w-[120px]' />
                 </Fade>
                 <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
                   <Fade bottom delay={300}>
@@ -92,7 +92,7 @@ function AboutSection() {
             <Fade bottom delay={500}>
               <div className="text-center flex flex-col md:flex-row lg:flex-col px-[20px] lg:px-0 items-center gap-[20px] py-[30px]  bg-white shadow-2xl rounded-[15px]">
                 <Fade bottom delay={500}>
-                  <Image src={facilitiesGif} alt='facilities-gif' className='w-[90px] lg:w-[120px]' />
+                  <Image src={facilitiesGif} alt='flats in Thrissur' className='w-[90px] lg:w-[120px]' />
                 </Fade>
                 <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
                   <Fade bottom delay={600}>
@@ -110,7 +110,7 @@ function AboutSection() {
             <Fade bottom delay={700}>
               <div className="text-center flex flex-col md:flex-row lg:flex-col px-[20px] lg:px-0 items-center gap-[20px] py-[30px]  bg-white shadow-2xl rounded-[15px]">
                 <Fade bottom delay={700}>
-                  <Image src={serviceGif} alt='service-gif' className='w-[90px] lg:w-[120px]' />
+                  <Image src={serviceGif} alt='flat for sale in Thrissur' className='w-[90px] lg:w-[120px]' />
                 </Fade>
                 <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
                   <Fade bottom delay={750}>
@@ -141,7 +141,7 @@ function AboutSection() {
                   </Fade>
                   <Fade left delay={300}>
                     <div>
-                      <Image src={image1} alt='banner-image1' className='rounded-[12px] w-[137px] h-full lg:w-[262px]' />
+                      <Image src={image1} alt='Apartments in Thrissur' className='rounded-[12px] w-[137px] h-full lg:w-[262px]' />
                     </div>
                   </Fade>
                   <Fade left delay={400}>
@@ -171,7 +171,7 @@ function AboutSection() {
               </left>
               <Fade right delay={400}>
               <right className="relative flex justify-center items-center">
-                <Image src={charectersImage} className='absolute bottom-8 w-[17.2vw] lg:w-[377px]' alt='people-image' />
+                <Image src={charectersImage} className='absolute bottom-8 w-[17.2vw] lg:w-[377px]' alt='flats in Thrissur' />
                 <motion.div
                   className="bg-[--primary-cl] w-[26vw] h-[26vw]"
                   animate={{
@@ -204,7 +204,7 @@ function AboutSection() {
                 <p className='res-text text-[14px] leading-[18px] md:text-[16px] lg:text-[1.04vw] md:leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Projects <br /> Completed</p>
               </div>
               <div className='h-[120px] lg:h-auto'>
-                <Image src={image1} alt='banner-image1' className='rounded-[12px] h-full md:h-[170px]' />
+                <Image src={image1} alt='flat for sale in Thrissur' className='rounded-[12px] h-full md:h-[170px]' />
               </div>
               <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[54px] md:rounded-br-[84px] flex flex-col items-center pt-3 md:pt-5'>
                 <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>11M+</h5>
@@ -229,7 +229,7 @@ function AboutSection() {
                 </div>
               </div>
               <div className='relative w-full flex h-full justify-center items-center'>
-                <Image src={charectersImage} className='absolute  md:bottom-8 w-[180px] md:w-7/12' alt='people-image' />
+                <Image src={charectersImage} className='absolute  md:bottom-8 w-[180px] md:w-7/12' alt='Apartments in Thrissur' />
                 <motion.div
                   className="bg-[--primary-cl] w-[200px] md:w-[26vw] h-[230px] md:h-[26vw] animated-bg"
                   animate={{

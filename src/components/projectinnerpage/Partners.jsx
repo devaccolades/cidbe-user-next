@@ -14,7 +14,7 @@ function Partners({bank}) {
           <div className='flex flex-wrap items-center justify-center lg:justify-between mt-[20px]'>
             {bank.map((img, index) => (
               <div key={index} className='w-[80px] md:w-[100px] h-auto lg:h-[80px] flex items-center justify-center m-[10px]'>
-                <img src={img?.image} alt={img?.title} />
+                <img src={img?.image} alt="Apartments in Thrissur" />
               </div>
             ))}
           </div>

@@ -43,7 +43,7 @@ function GalaryListing({ galary = [], totalCount, currentPage, pageSize }) {
                     <p className='font-[general-sans-regular] text-[14px] lg:text-[18px] leading-[21px] text-[#483C32] lg:leading-[30px]'>{truncateTextByCharacters(galary?.description, 350)}</p>
                     <div className='hidden md:block'>
                       <div className='flex justify-end items-center'>
-                        <Link href={`/gallery/${galary?.slug}`}><p className='flex flex-row font-[general-sans-medium] text-[12px] gap-[6px] cursor-pointer'><span>View Full  Gallery</span> <Image src={arrowIcon} className='' alt="" /></p></Link>
+                        <Link href={`/gallery/${galary?.slug}`}><p className='flex flex-row font-[general-sans-medium] text-[12px] gap-[6px] cursor-pointer'><span>View Full  Gallery</span> <Image src={arrowIcon} className='' alt="Apartments in Thrissur" /></p></Link>
                       </div>
                     </div>
                   </div>
@@ -85,7 +85,7 @@ function GalaryListing({ galary = [], totalCount, currentPage, pageSize }) {
                 </div>
                 <div className='md:hidden block'>
                   <div className='flex justify-center items-center'>
-                    <Link href={`/gallery/${galary?.slug}`}> <p className='flex flex-row font-[general-sans-medium] text-[12px] gap-[6px] cursor-pointer'><span>View Full  Gallery</span> <Image src={arrowIcon} className='' alt="" /></p></Link>
+                    <Link href={`/gallery/${galary?.slug}`}> <p className='flex flex-row font-[general-sans-medium] text-[12px] gap-[6px] cursor-pointer'><span>View Full  Gallery</span> <Image src={arrowIcon} className='' alt="Apartments in Thrissur" /></p></Link>
                   </div>
                 </div>
               </section>

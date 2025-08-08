@@ -12,7 +12,7 @@ function Amenities({amenities}) {
             className="flex flex-row sm:flex-col lg:flex-row items-center space-x-4 sm:space-x-0 sm:space-y-4 lg:space-y-0 lg:space-x-4"
           >
             <div className="bg-[#BFD8BD] w-[60px] h-[52px] flex items-center justify-center border border-black rounded-lg flex-shrink-0">
-              <Image src={amenity?.icon} alt={`${amenity.image_alt} Icon`} unoptimized width={24} height={24} />
+              <Image src={amenity?.icon} alt="Apartments in Thrissur" unoptimized width={24} height={24} />
             </div>
             <p className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-medium] uppercase">
               {amenity.title}

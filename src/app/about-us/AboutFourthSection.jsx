@@ -144,7 +144,7 @@ function AboutFourthSection() {
               </div>
             </form>
             <div className='bg-cover h-[270px] md:h-full bg-bottom md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-t-0  md:rounded-e-[12px] z-4' style={{ backgroundImage: `url(${formImage.src})`, zIndex: '1' }}>
-              <Image className='h-full -ms-[2px] md:visible invisible' alt='card-shape' src={aboutFormShape} />
+              <Image className='h-full -ms-[2px] md:visible invisible' alt='flat for sale in Thrissur' src={aboutFormShape} />
             </div>
           </card>
         </main>

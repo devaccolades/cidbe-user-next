@@ -89,7 +89,7 @@ const Carousel = ({ amenities_images }) => {
                   >
                     <Image
                       src={image.images}
-                      alt={image.image_alt}
+                      alt="flats in Thrissur"
                       layout="fill"
                       objectFit="cover"
                       className="rounded-[30px]"

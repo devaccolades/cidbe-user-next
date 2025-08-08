@@ -117,7 +117,7 @@ function Status({ status }) {
                       </div>
                       {/* {index < yearData.statuses.length - 1 && ( */}
                       <div className='flex items-center'>
-                        <Image src={arrowIcon} alt="Arrow Icon" />
+                        <Image src={arrowIcon} alt="flat for sale in Thrissur" />
                       </div>
                       {/* )} */}
                     </div>

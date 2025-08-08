@@ -11,12 +11,16 @@ import { getGalaryApi, getSeoApi } from '../../services/services';
 
 export async function generateMetadata() {
   try {
+    const path = '/gallery';
     const res = await getSeoApi('/gallery');
     const { data } = res.data;
 
     return {
       title: data?.[0]?.meta_title || 'Gallery',
       description: data?.[0]?.meta_description || 'Default Description',
+          alternates: {
+      canonical: `https://cidbi.com${path}`,
+    },
     };
   } catch (error) {
     console.error('Error fetching metadata:', error);

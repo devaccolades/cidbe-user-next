@@ -9,8 +9,8 @@ function NotFound() {
   const router = useRouter()
   return (
     <section className='h-screen w-full bg-[b9e1f5] flex flex-col justify-center gap-[16px]'>
-      <Image src={notfoundIcon} alt='Not Found' className='mx-auto px-[30px]'/>
-      <Image src={connectionIcon} alt='Not Found' className='pe-[20px]'/>
+      <Image src={notfoundIcon} alt='flats in Thrissur' className='mx-auto px-[30px]'/>
+      <Image src={connectionIcon} alt='flat for sale in Thrissur' className='pe-[20px]'/>
      <div className='flex  flex-col justify-center px-[10px] items-center w-full gap-[10px]'>
      <p className='text-[24px] font-[general-sans-semibold]'>Page Not Found</p>
       <p className='text-[16px] text-[#77707F] font-[general-sans-regular] text-center lg:w-[30%]'>Sorry, the page you're looking for does not exist or has been moved 

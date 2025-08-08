@@ -16,11 +16,11 @@ export default function AboutLanding() {
         </div>
         <Image
           src={shape}
-          alt="Shape"
+          alt="flat for sale in Thrissur"
           className="w-[40px] z-10 -ms-[20px] -me-[40px] shape hidden md:block"
           style={{ height: 'fit-content', objectFit: 'contain' }}
         />
-        <Image src={shapeMobile} alt="" className="min-[100px] w-full z-10 md:hidden block"/>
+        <Image src={shapeMobile} alt="flat for sale in Thrissur" className="min-[100px] w-full z-10 md:hidden block"/>
         <div className="w-full md:w-8/12 h-[360px] md:h-full bg-cover bg-center rounded-br-[60px] md:rounded-br-[60px] lg:rounded-br-[120px] " style={{ backgroundImage: `url(${bannerRightImage.src})` }} />
       </section>
     </>

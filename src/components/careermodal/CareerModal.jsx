@@ -169,7 +169,7 @@ function CareerModal({
                                     onClick={handleFileInputClick}
                                     readOnly
                                 />
-                                <Image src={uploadIcon} alt='upload' className='absolute top-1/2 left-3 transform -translate-y-1/2 cursor-pointer' />
+                                <Image src={uploadIcon} alt='Apartments in Thrissur' className='absolute top-1/2 left-3 transform -translate-y-1/2 cursor-pointer' />
                                 <input type="file" ref={fileInputRef} className='hidden' onChange={handleFileChange} />
                             </div>
                             <div className='mt-2 text-[inter-regular] md:text-[11px] text-[#052D23]'>

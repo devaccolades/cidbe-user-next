@@ -12,7 +12,7 @@ function HeroSection() {
                <div className='containers flex flex-col md:flex-row items-center px-[20px]'>
                   <div className='w-full md:w-1/2 order-1 md:order-2 mb-4 md:mb-0'>
                      <div className='md:h-[510px] flex sm:justify-center	 md:justify-end items-center'>
-                        <Image src={Group} alt='group-image' className='w-[500px] md:h-[500px]' objectFit='contain' />
+                        <Image src={Group} alt='flat for sale in Thrissur' className='w-[500px] md:h-[500px]' objectFit='contain' />
                      </div>
                   </div>
                   <div className='w-full pb-[50px] md:pb-0 md:w-1/2 order-2 md:order-1'>

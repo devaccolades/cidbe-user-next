@@ -40,7 +40,7 @@ function ProjectCard({ project }) {
                     <div className='flex justify-between items-center pt-[10px] px-[15px]'>
                         <div className='font-[general-sans-regular] flex flex-col gap-[6px]'>
                             <p className='text-[30px] res-custom-name text-black uppercase leading-[36px]'>{project?.name}</p>
-                            <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Location" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>{project?.location}</span></p>
+                            <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Apartments in Thrissur" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>{project?.location}</span></p>
                         </div>
                         <div>
                         <p className='capitalize rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-[12px] text-white py-[4px] px-[12px]'>{project?.status}</p>
@@ -66,7 +66,7 @@ function ProjectCard({ project }) {
                     <div className='flex justify-between items-center pt-[10px] px-[15px]'>
                         <div className='font-[general-sans-regular] flex flex-col gap-[6px]'>
                             <p className='text-[32px] lg:text-[36px] text-black uppercase leading-[36px]'>{project?.name}</p>
-                            <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Location" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>{project?.location}</span></p>
+                            <p className='capitalize flex gap-[8px]'><Image src={locationIcon} alt="Apartments in Thrissur" /> <span className='text-[14px] lg:text-[16px] leading-[18px] text-[#767575]'>{project?.location}</span></p>
                         </div>
                         <div>
                             <p className='capitalize rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-[12px] text-white py-[4px] px-[12px]'>{project?.status}</p>
@@ -74,7 +74,7 @@ function ProjectCard({ project }) {
                     </div>
                     <div className='px-[15px] py-[10px] flex flex-col gap-[20px]'>
                         <div className='flex flex-row items-start gap-[20px]'>
-                            <Image src={appartmentIcon} alt="Apartment" />
+                            <Image src={appartmentIcon} alt="Apartments in Thrissur" />
                             <div className='flex flex-col gap-[6px] -mt-[5px]'>
                                 <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Apartment type</p>
                                 <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.bhk} BHK</p>
@@ -90,7 +90,7 @@ function ProjectCard({ project }) {
                                         transition={{ duration: 0.10 }}
                                         className='flex flex-row items-start gap-[20px]'
                                     >
-                                        <Image src={areaIcon} alt="Area" />
+                                        <Image src={areaIcon} alt="flats in Thrissur" />
                                         <div className='flex flex-col gap-[6px] -mt-[5px]'>
                                             <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Area range</p>
                                             <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.area_from} - {project?.area_to} Sq.Ft</p>
@@ -103,7 +103,7 @@ function ProjectCard({ project }) {
                                         transition={{ duration: 0.10 }}
                                         className='flex flex-row items-start gap-[20px]'
                                     >
-                                        <Image src={premiumIcon} alt="Premium" />
+                                        <Image src={premiumIcon} alt="flats in Thrissur" />
                                         <div className='flex flex-col gap-[6px] -mt-[5px]'>
                                             <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Premium luxury apartment </p>
                                             <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.sub_name}</p>
@@ -116,7 +116,7 @@ function ProjectCard({ project }) {
                                         transition={{ duration: 0.10 }}
                                         className='flex flex-row items-start gap-[25px]'
                                     >
-                                        <Image src={reraIcon} alt="RERA" />
+                                        <Image src={reraIcon} alt="flats in Thrissur" />
                                         <div className='flex flex-col gap-[6px] -mt-[5px]'>
                                             <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>K.RERA</p>
                                             <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.rera_number}</p>
@@ -128,7 +128,7 @@ function ProjectCard({ project }) {
                     </div>
                     <div className='sticky bottom-1 bg-white grid grid-cols-2 gap-[10px] px-[15px] pb-[10px] text-[12px] sm:text-[14px] '>
                        <Link href={`${pathname}/${project?.slug}`}> <button className='border border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px] cursor-pointer'>Read more</button></Link>
-                        <button className='bg-[--secondary-cl] text-white flex flex-row gap-[8px] py-[7px] px-[8px] rounded-[8px] items-center justify-center cursor-pointer' onClick={()=>(handleOpen(),setProjectId(project.id))}>Enquire Now <Image src={arrow_outwardIcon} alt="Arrow" /></button>
+                        <button className='bg-[--secondary-cl] text-white flex flex-row gap-[8px] py-[7px] px-[8px] rounded-[8px] items-center justify-center cursor-pointer' onClick={()=>(handleOpen(),setProjectId(project.id))}>Enquire Now <Image src={arrow_outwardIcon} alt="flats in Thrissur" /></button>
                     </div>
                 </Card >
             )

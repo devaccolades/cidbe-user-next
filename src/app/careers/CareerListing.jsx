@@ -201,7 +201,7 @@ function CurrentOpenings() {
                           {job?.location}
                         </div> */}
                         <div className='flex items-center bg-[#EBEBEB] px-2 py-1 rounded-md'>
-                          <Image src={work} alt='work type' className="mr-2" />
+                          <Image src={work} alt='flats in Thrissur' className="mr-2" />
                           {job?.type}
                         </div>
                       </div>
@@ -319,7 +319,7 @@ function CurrentOpenings() {
                       onClick={handleFileInputClick}
                       readOnly
                     />
-                    <Image src={uploadIcon} alt='upload' className='absolute top-1/2 left-3 transform -translate-y-1/2 cursor-pointer' />
+                    <Image src={uploadIcon} alt='flats in Thrissur' className='absolute top-1/2 left-3 transform -translate-y-1/2 cursor-pointer' />
                     <input type="file" ref={fileInputRef} className='hidden' onChange={handleFileChange} />
                   </div>
 
