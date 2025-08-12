@@ -79,7 +79,7 @@ function FocusAreas() {
           {focusAreas.map((area, index) => (
             <div key={index} className='flex flex-row sm:flex-col lg:flex-row items-center space-x-3 sm:space-x-0 sm:space-y-3 lg:space-y-0 lg:space-x-3'>
               <div className='bg-[#BFD8BD] w-[40px] h-[40px] sm:w-[48px] sm:h-[48px] lg:w-[52px] lg:h-[52px] flex items-center justify-center border border-black rounded-lg flex-shrink-0'>
-                <Image src={area.icon} alt={`${area.title} Icon`} width={20} height={20} className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px] lg:w-[20px] lg:h-[20px]" />
+                <Image src={area.icon} alt="flats in Thrissur" width={20} height={20} className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px] lg:w-[20px] lg:h-[20px]" />
               </div>
               <p className='text-[14px] xl:text-[16px] font-[general-sans-medium] whitespace-normal sm:whitespace-nowrap'>{area.title}</p>
             </div>
@@ -117,7 +117,7 @@ function FocusAreas() {
                   <div className='w-full overflow-hidden rounded-[20px]'>
                     <Image
                       src={item?.image}
-                      alt={item?.image_alt}
+                      alt="flats in Thrissur"
                       width={400}
                       height={300}
                       layout="responsive"

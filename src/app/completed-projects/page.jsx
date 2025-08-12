@@ -1,11 +1,14 @@
-import React from 'react'
-import Header from '../../layout/Header'
-import Footer from '../../layout/Footer'
+import React from "react";
+import Header from "../../layout/Header";
+import Footer from "../../layout/Footer";
 // import ProjectListing from '../../components/projectlisting/ProjectListing';
-import dynamic from 'next/dynamic';
-import Skelten from '../../components/skeletoneffect/Skelten';
-const ProjectListing = dynamic(() => import('../../components/projectlisting/ProjectListing'), { ssr: false,loading:() => <Skelten/>, });
-import { getSeoApi } from '../../services/services';
+import dynamic from "next/dynamic";
+import Skelten from "../../components/skeletoneffect/Skelten";
+const ProjectListing = dynamic(
+  () => import("../../components/projectlisting/ProjectListing"),
+  { ssr: false, loading: () => <Skelten /> }
+);
+import { getSeoApi } from "../../services/services";
 
 async function fetchSeoData(path) {
   let data = {};
@@ -19,25 +22,27 @@ async function fetchSeoData(path) {
 }
 
 export async function generateMetadata() {
-  const path = '/completed-projects';
+  const path = "/completed-projects";
   const responseData = await fetchSeoData(path);
   const { meta_title, meta_description } = responseData;
   return {
     title: meta_title,
     description: meta_description,
+    alternates: {
+      canonical: `https://cidbi.com${path}`,
+    },
   };
 }
 
-
 function page() {
-  const title = "Completed Projects"
+  const title = "Completed Projects";
   return (
-   <>
-   <Header bgPrimary={true}/>
-   <ProjectListing title={title}/>
-   <Footer backGround=''/>
-   </>
-)
+    <>
+      <Header bgPrimary={true} />
+      <ProjectListing title={title} />
+      <Footer backGround="" />
+    </>
+  );
 }
 
-export default page
+export default page;

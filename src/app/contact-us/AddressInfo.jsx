@@ -10,7 +10,7 @@ function AddressInfo() {
         <div className='w-full containers font-[general-sans-medium] flex flex-row flex-wrap justify-center gap-[10px] lg:gap-[60px] pt-[20px] lg:pt-[110px]'>
             <div className='h-[180px] w-[284px] rounded-[60px_20px_60px_20px] flex flex-col justify-center items-center p-[30px] gap-[20px] bg-[--secondary-cl]'>
                 <div className='flex flex-row items-center gap-[20px]'>
-                    <Image src={homeIcon} alt='home-icon' />
+                    <Image src={homeIcon} alt='Apartments in Thrissur' />
                     <p className='text-[16px] lg:text-[20px] text-[--primary-cl] '>Address</p>
                 </div>
                 <div>
@@ -19,7 +19,7 @@ function AddressInfo() {
             </div>
             <div className='h-[180px] w-[284px] rounded-[60px_20px_60px_20px] flex flex-col justify-center px-[60px] gap-[20px] bg-[#98C9A3]'>
                 <div className='flex flex-row items-center gap-[20px]'>
-                    <Image src={phoneIcon} alt='home-icon' />
+                    <Image src={phoneIcon} alt='Apartments in Thrissur' />
                     <p className='text-[16px] lg:text-[20px] '>Phone No</p>
                 </div>
                 <div>
@@ -28,7 +28,7 @@ function AddressInfo() {
             </div>
             <div className='h-[180px] w-[284px] rounded-[60px_20px_60px_20px] flex flex-col justify-center px-[60px] gap-[20px] bg-[--primary-cl]'>
                 <div className='flex flex-row items-center gap-[20px]'>
-                    <Image src={whatsappIcon} alt='home-icon' />
+                    <Image src={whatsappIcon} alt='flats in Thrissur' />
                     <p className='text-[16px] lg:text-[20px] '>WhatsApp</p>
                 </div>
                 <div>
@@ -37,7 +37,7 @@ function AddressInfo() {
             </div>
             <div className='h-[180px] w-[284px] rounded-[60px_20px_60px_20px] flex flex-col justify-center px-[60px] gap-[20px] bg-[#E3EFE2]'>
                 <div className='flex flex-row items-center gap-[20px]'>
-                    <Image src={emailIcon} alt='home-icon' />
+                    <Image src={emailIcon} alt='flats in Thrissur' />
                     <p className='text-[16px] lg:text-[20px] '>Email</p>
                 </div>
                 <div>

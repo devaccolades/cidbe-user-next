@@ -28,7 +28,7 @@ function GalaryDetails({ galleryDetails }) {
                                         <Image
                                             className="h-full w-full"
                                             src={image?.image}
-                                            alt={image?.image_alt}
+                                            alt="flats in Thrissur"
                                             preview={{
                                                 src: image?.image,
                                             }}

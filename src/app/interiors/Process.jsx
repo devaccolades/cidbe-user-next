@@ -101,7 +101,7 @@ function Process() {
         <div className="hidden md:block" ref={imageRef} style={imageStyle}>
           <Image
             src={lineImage}
-            alt="Line Image"
+            alt="flats in Thrissur"
             layout="responsive"
             style={{ objectPosition: 'center' }}
           />

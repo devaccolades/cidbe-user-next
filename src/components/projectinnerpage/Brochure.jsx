@@ -66,11 +66,11 @@ function Brochure({ data }) {
             <div className='mt-auto flex flex-row gap-[10px]'>
               {data?.brochure && <button onClick={() => getBrochure(data?.id)} className='mt-[20px] py-[10px] px-[18px] text-[--secondary-cl] border border-[--secondary-cl] text-[#ffff] text-[15px] inline-flex items-center gap-[8px] rounded-[6px] lg:inline-flex hidden'>
                 <span>Download Brochure</span>
-                <Image src={downloadIcon} alt='Download Icon' width={16} height={16} />
+                <Image src={downloadIcon} alt='Apartments in Thrissur' width={16} height={16} />
               </button>}
               <button onClick={handleOpen} className='mt-[20px] py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] inline-flex items-center gap-[8px] rounded-[6px] lg:inline-flex hidden'>
                 <span>Enquire Now</span>
-                <Image src={arrow_outwardicon} alt='Download Icon' width={16} height={16} />
+                <Image src={arrow_outwardicon} alt='Apartments in Thrissur' width={16} height={16} />
               </button>
             </div>
           </div>
@@ -80,13 +80,13 @@ function Brochure({ data }) {
             <div className='flex-grow'>
               <div className='flex items-center justify-between mb-[20px]'>
                 <h2 className='lg:text-[24px] md:text-[16px] font-[clash-display-medium] heading-size '>Project Overview</h2>
-                {data?.qr_code && <Image unoptimized src={data?.qr_code} alt='QR Code' width={46} height={46} />}
+                {data?.qr_code && <Image unoptimized src={data?.qr_code} alt='Apartments in Thrissur' width={46} height={46} />}
               </div>
               <div>
                 {overViewIcon.map((item, index) => (
                   <div key={index} className='flex items-center mb-[15px]'>
                     <div className='md:w-[30px] md:h-[30px] lg:w-auto lg:h-auto flex-shrink-0'>
-                      <Image src={item.icon} alt={item.title} width={30} height={30} className='md:w-[30px] md:h-[30px] lg:w-auto lg:h-auto' />
+                      <Image src={item.icon} alt="Apartments in Thrissur" width={30} height={30} className='md:w-[30px] md:h-[30px] lg:w-auto lg:h-auto' />
                     </div>
                     <div className='ml-[10px] flex-grow'>
                       <h2 className='lg:text-[16px] md:text-[14px] font-[general-sans-medium] heading-size'>{item.title}</h2>
@@ -99,11 +99,11 @@ function Brochure({ data }) {
             <div className='mt-auto flex flex-col gap-[10px]'>
               {data?.brochure && <button onClick={() => getBrochure(data?.id)} className='mt-[20px] py-[10px] px-[18px] border border-[--secondary-cl] text-[--secondary-cl] text-[15px] flex items-center justify-center gap-[8px] rounded-[6px] w-full lg:hidden'>
                 <span>Download Brochure</span>
-                <Image src={downloadIcon} alt='Download Icon' width={16} height={16} />
+                <Image src={downloadIcon} alt='Apartments in Thrissur' width={16} height={16} />
               </button>}
               <button onClick={handleOpen} className='py-[10px] px-[18px] bg-[#052D23] text-[#ffff] text-[15px] flex items-center justify-center gap-[8px] rounded-[6px] w-full lg:hidden'>
                 <span>Enquire Now</span>
-                <Image src={arrow_outwardicon} alt='Download Icon' width={16} height={16} />
+                <Image src={arrow_outwardicon} alt='Apartments in Thrissur' width={16} height={16} />
               </button>
             </div>
           </div>

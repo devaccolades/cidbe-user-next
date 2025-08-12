@@ -1,12 +1,11 @@
-
-import Header from '../../layout/Header'
-import Footer from '../../layout/Footer'
-import dynamic from 'next/dynamic'
-import InteriorsHeroSection from './InteriorsHeroSection'
-import { getSeoApi } from '../../services/services';
-import Portfolio from './Portfolio'
-import Process from './Process'
-import './Interiors.css'
+import Header from "../../layout/Header";
+import Footer from "../../layout/Footer";
+import dynamic from "next/dynamic";
+import InteriorsHeroSection from "./InteriorsHeroSection";
+import { getSeoApi } from "../../services/services";
+import Portfolio from "./Portfolio";
+import Process from "./Process";
+import "./Interiors.css";
 async function fetchSeoData(path) {
   let data = {};
   try {
@@ -19,25 +18,28 @@ async function fetchSeoData(path) {
 }
 
 export async function generateMetadata() {
-  const path = '/interiors';
+  const path = "/interiors";
   const responseData = await fetchSeoData(path);
   const { meta_title, meta_description } = responseData;
   return {
     title: meta_title,
     description: meta_description,
+    alternates: {
+      canonical: `https://cidbi.com${path}`,
+    },
   };
 }
 
 function page() {
   return (
     <>
-      <Header bgPrimary={true}/>
+      <Header bgPrimary={true} />
       <InteriorsHeroSection />
       <Portfolio />
       <Process />
       <Footer />
     </>
-  )
+  );
 }
 
-export default page
+export default page;

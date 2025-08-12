@@ -19,7 +19,7 @@ function Chairman() {
       <card className='relative responsive containers shadow-2xl flex flex-col-reverse md:grid md:grid-cols-[1fr,350px] lg:grid-cols-[1fr,435px] rounded-[12px]'>
         <div className='h-[450px] md:h-[430px] lg:h-[433px] chairmanBgGradient rounded-b-[12px] md:rounded-br-none md:rounded-s-[12px]  flex items-center' >
           <div className='absolute hidden md:block -z-0'>
-            <Image src={chairmanbg} alt='gradient-left' />
+            <Image src={chairmanbg} alt='flats in Thrissur' />
           </div>
           {/* <div className='absolute md:hidden block'>
             <Image src={chairmanbgMobile} className='' alt='gradient-left' />
@@ -50,9 +50,9 @@ function Chairman() {
             </div>
           </div>
         </div>
-        <Image className='min-w-full align-bottom -mt-[10%] -mb-[5%] md:hidden block z-20' alt='card-shape' src={chairmanshapeMobile} />
+        <Image className='min-w-full align-bottom -mt-[10%] -mb-[5%] md:hidden block z-20' alt='Apartments in Thrissur' src={chairmanshapeMobile} />
         <div className='bg-cover bg-top rounded-t-[12px] md:rounded-t-0 md:rounded-e-[12px] h-[400px] md:h-auto z-10' style={{ backgroundImage: `url(${chraimanImage.src})` }}>
-          <Image className='h-full -ms-[2px] hidden md:block' alt='card-shape' src={chairmanshape} />
+          <Image className='h-full -ms-[2px] hidden md:block' alt='flats in Thrissur' src={chairmanshape} />
         </div>
       </card>
     </section>

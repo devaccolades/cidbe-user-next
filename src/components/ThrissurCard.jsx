@@ -27,7 +27,7 @@ export default function ThrissurCard({
   const Details = () => (
     <>
       <div className="flex flex-row items-start gap-[20px]">
-        <Image src={appartmentIcon} alt="Apartment" />
+        <Image src={appartmentIcon} alt="flats in Thrissur" />
         <div className="flex flex-col gap-[6px] -mt-[5px]">
           <p className="text-[14px] lg:text-[16px] font-[general-sans-medium]">
             Apartment type
@@ -39,7 +39,7 @@ export default function ThrissurCard({
       </div>
 
       <div className="flex flex-row items-start gap-[20px]">
-        <Image src={areaIcon} alt="Area" />
+        <Image src={areaIcon} alt="flats in Thrissur" />
         <div className="flex flex-col gap-[6px] -mt-[5px]">
           <p className="text-[14px] lg:text-[16px] font-[general-sans-medium] ">
             Area range
@@ -51,7 +51,7 @@ export default function ThrissurCard({
       </div>
 
       <div className="flex flex-row items-start gap-[20px]">
-        <Image src={premiumIcon} alt="Premium" />
+        <Image src={premiumIcon} alt="flats in Thrissur" />
         <div className="flex flex-col gap-[6px] -mt-[5px]">
           <p className="text-[14px] lg:text-[16px] font-[general-sans-medium]">
             Premium luxury apartment
@@ -63,7 +63,7 @@ export default function ThrissurCard({
       </div>
 
       <div className="flex flex-row items-start gap-[25px]">
-        <Image src={reraIcon} alt="RERA" />
+        <Image src={reraIcon} alt="flats in Thrissur" />
         <div className="flex flex-col gap-[6px] -mt-[5px]">
           <p className="text-[14px] lg:text-[16px] font-[general-sans-medium]">
             K.RERA
@@ -99,7 +99,7 @@ export default function ThrissurCard({
                 {project?.name}
               </p>
               <p className="capitalize flex gap-[8px]">
-                <Image src={locationIcon} alt="Location" />
+                <Image src={locationIcon} alt="flat for sale in Thrissur" />
                 <span className="text-[14px] lg:text-[16px] leading-[18px] text-[#767575]">
                   {project?.location}
                 </span>
@@ -112,7 +112,7 @@ export default function ThrissurCard({
 
           <div className="px-[15px] py-[10px] flex flex-col gap-[20px]">
             <div className="flex flex-row items-start gap-[20px]">
-              <Image src={appartmentIcon} alt="Apartment" />
+              <Image src={appartmentIcon} alt="flat for sale in Thrissur" />
               <div className="flex flex-col gap-[6px] -mt-[5px]">
                 <p className="text-[14px] lg:text-[16px] font-[general-sans-light]">
                   Apartment type
@@ -148,7 +148,7 @@ export default function ThrissurCard({
               className="bg-[--secondary-cl] text-white flex flex-row gap-[8px] py-[7px] px-[8px] rounded-[8px] items-center justify-center cursor-pointer"
               onClick={() => (handleOpen(), setProjectId(project.id))}
             >
-              Enquire Now <Image src={arrow_outwardIcon} alt="Arrow" />
+              Enquire Now <Image src={arrow_outwardIcon} alt="flat for sale in Thrissur" />
             </button>
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function ThrissurCard({
                 {project?.name}
               </p>
               <p className="capitalize flex gap-[8px]">
-                <Image src={locationIcon} alt="Location" />
+                <Image src={locationIcon} alt="flat for sale in Thrissur" />
                 <span className="text-[14px] lg:text-[16px] leading-[18px] text-[#767575]">
                   {project?.location}
                 </span>
@@ -196,7 +196,7 @@ export default function ThrissurCard({
               className="bg-[--secondary-cl] text-white flex flex-row gap-[8px] py-[7px] rounded-[8px] items-center justify-center cursor-pointer"
               onClick={() => (handleOpen(), setProjectId(project.id))}
             >
-              Enquire Now <Image src={arrow_outwardIcon} alt="Arrow" />
+              Enquire Now <Image src={arrow_outwardIcon} alt="Apartments in Thrissur" />
             </button>
           </div>
         </div>

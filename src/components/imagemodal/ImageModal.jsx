@@ -20,7 +20,7 @@ function ImageModal({ open, handleOpen, data }) {
         <div className="relative w-full h-full">
           <Image
             src={data}
-            alt="Modal Image"
+            alt="Apartments in Thrissur"
             layout="fill"
             objectFit="contain"
             quality={100}

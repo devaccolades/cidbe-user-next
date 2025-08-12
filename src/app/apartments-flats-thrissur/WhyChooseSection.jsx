@@ -71,7 +71,7 @@ export default function WhyChooseSection() {
                 <div className="flex items-start gap-3">
                   <Image
                     src={item.icon}
-                    alt=""
+                    alt="flat for sale in Thrissur"
                     width={24}
                     height={24}
                     className="shrink-0 mt-1"

@@ -94,7 +94,7 @@ function CustomerReviewsAndFaq() {
     }, []);
     return (
         <section className={`relative text-[--secondary-cl] overflow-hidden z-10 ${pathname === '/contact-us' ? "" : 'reviews-bg-gradient'}  py-[40px] lg:py-[90px] flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]`}>
-            <Image src={customerReviewbg} className='absolute right-0 hidden lg:block -z-10 top-[-30px]' alt='Customer Review Background' />
+            <Image src={customerReviewbg} className='absolute right-0 hidden lg:block -z-10 top-[-30px]' alt='flats in Thrissur' />
 
             {/* Customer reviews */}
             <div className='containers '>
@@ -116,7 +116,7 @@ function CustomerReviewsAndFaq() {
                                 {testimoni.type === 'text' ? (
                                     <div key={index} className=' bg-white cursor-pointer h-[478px] rounded-[12px] py-[30px] grid md:grid-rows-[110px,1fr,110px]'>
                                         <div className='px-[20px]'>
-                                            <Image src={quatsIcon} alt='quats-icon' />
+                                            <Image src={quatsIcon} alt='flat for sale in Thrissur' />
                                         </div>
                                         <p className='px-[30px] font-[general-sans-medium] text-[14px] lg:text-[16px] leading-[24px]'>{testimoni?.review_text}</p>
                                         <div className='px-[30px] flex flex-row gap-[10px] lg:gap-[20px] items-center'>
@@ -133,7 +133,7 @@ function CustomerReviewsAndFaq() {
                                         className='relative w-full h-[478px] bg-center bg-cover rounded-[12px] cursor-pointer'
                                         style={{ backgroundImage: `url(${testimoni?.thumbnail})` }}
                                         onClick={() => handleImageClick(testimoni?.video)}>
-                                        <Image className='absolute top-[45%] left-[45%] opacity-[70%]' width={50} src={playIcon} alt='Play-icon' />
+                                        <Image className='absolute top-[45%] left-[45%] opacity-[70%]' width={50} src={playIcon} alt='Apartments in Thrissur' />
                                     </div>
                                 )}
                             </SwiperSlide>
@@ -150,7 +150,7 @@ function CustomerReviewsAndFaq() {
                             <div className='flex justify-between flex-row cursor-pointer' onClick={() => setOpen(isOpend === index ? null : index)}>
                                 <p className={`${isOpend === index ? 'font-[general-sans-medium]' : 'font-[general-sans-regular]'} text-[12px] lg:text-[16px] py-[14px] w-[90%] md:w-5/12 lg:w-1/3 cursor-pointer `} onClick={() => setOpen(isOpend === index ? null : index)}>{faq.question || ""}</p>
                                 <button className='cursor-pointer' >
-                                    <Image src={isOpend === index ? minusIcon : plusIcon} alt='toggle-icon' />
+                                    <Image src={isOpend === index ? minusIcon : plusIcon} alt='flats in Thrissur' />
                                 </button>
                             </div>
                             <AnimatePresence>

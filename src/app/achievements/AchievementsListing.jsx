@@ -27,7 +27,7 @@ function AchievementsListing({ achievements = [], totalCount, currentPage, pageS
                                             <Image
                                                 className="h-[350px] bg-center bg-cover bg-no-repeat rounded-t-[16px] transition-transform duration-300 ease-in-out hover:scale-110"
                                                 src={achi?.image}
-                                                alt={achi?.image_alt}
+                                                alt="flats in Thrissur"
                                                 height={300}
                                                 preview={{
                                                     src: achi?.image,

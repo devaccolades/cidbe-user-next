@@ -53,14 +53,14 @@ function Portfolio() {
               <div className="relative overflow-hidden">
                 <Image 
                   src={image1} 
-                  alt="Interior 1" 
+                  alt="Apartments in Thrissur" 
                   className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
                 />
               </div>
               <div className="relative overflow-hidden flex justify-end">
                 <Image 
                   src={image2} 
-                  alt="Interior 2" 
+                  alt="Apartments in Thrissur" 
                   className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
                 />
               </div>
@@ -69,7 +69,7 @@ function Portfolio() {
               <div className="relative overflow-hidden">
                 <Image 
                   src={image5} 
-                  alt="Interior 3" 
+                  alt="Apartments in Thrissur" 
                   className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
                 />
               </div>
@@ -78,7 +78,7 @@ function Portfolio() {
               <div className="relative overflow-hidden">
                 <Image 
                   src={image7} 
-                  alt="Interior 4" 
+                  alt="flats in Thrissur" 
                   className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
                 />
               </div>
@@ -90,7 +90,7 @@ function Portfolio() {
             <div className="relative overflow-hidden">
               <Image 
                 src={image3} 
-                alt="Interior 5" 
+                alt="flats in Thrissur" 
                 className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
               />
             </div>
@@ -100,7 +100,7 @@ function Portfolio() {
             <div className="relative overflow-hidden">
               <Image 
                 src={image8} 
-                alt="Interior 6" 
+                alt="flats in Thrissur" 
                 className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
               />
             </div>
@@ -111,14 +111,14 @@ function Portfolio() {
             <div className="relative overflow-hidden">
               <Image 
                 src={image4} 
-                alt="Interior 7" 
+                alt="flat for sale in Thrissur" 
                 className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
               />
             </div>
             <div className="relative overflow-hidden">
               <Image 
                 src={image6} 
-                alt="Interior 8" 
+                alt="flat for sale in Thrissur" 
                 className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
               />
             </div>
@@ -126,14 +126,14 @@ function Portfolio() {
               <div className="relative overflow-hidden">
                 <Image 
                   src={image9} 
-                  alt="Interior 9" 
+                  alt="flat for sale in Thrissur" 
                   className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
                 />
               </div>
               <div className="relative overflow-hidden">
                 <Image 
                   src={image10} 
-                  alt="Interior 10" 
+                  alt="Apartments in Thrissur" 
                   className="transition-transform duration-300 hover:scale-110 w-full h-auto" 
                 />
               </div>
@@ -149,7 +149,7 @@ function Portfolio() {
             <div key={index} className="w-full ">
               <Image 
                 src={image} 
-                alt={`Interior ${index + 1}`} 
+                alt="Apartments in Thrissur"
                 className="w-full h-auto object-cover" 
               />
             </div>
