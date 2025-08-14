@@ -23,6 +23,10 @@ export async function generateMetadata() {
       alternates: {
         canonical: `https://cidbi.com${path}`,
       },
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   } catch (error) {
     console.error("Error fetching metadata:", error);

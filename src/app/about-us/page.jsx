@@ -1,14 +1,14 @@
 import AboutLanding from "../../app/about-us/AboutLanding";
 import AboutSecondSection from "../about-us/AboutSecondSection";
 import AboutThirdSection from "../about-us/AboutThirdSection";
-import AboutFourthSection from '../about-us/AboutFourthSection'
+import AboutFourthSection from "../about-us/AboutFourthSection";
 import Footer from "../../layout/Footer";
-import Timeline from '../../../src/app/about-us/Timeline'
+import Timeline from "../../../src/app/about-us/Timeline";
 import Header from "../../layout/Header";
 
-import { getSeoApi } from '../../services/services';
+import { getSeoApi } from "../../services/services";
 
-import './About.css'
+import "./About.css";
 
 async function fetchSeoData(path) {
   let data = {};
@@ -22,7 +22,7 @@ async function fetchSeoData(path) {
 }
 
 export async function generateMetadata() {
-  const path = '/about-us';
+  const path = "/about-us";
   const responseData = await fetchSeoData(path);
   const { meta_title, meta_description } = responseData;
   return {
@@ -31,9 +31,12 @@ export async function generateMetadata() {
     alternates: {
       canonical: `https://cidbi.com${path}`,
     },
+    robots: {
+       index: true,
+       follow: true 
+    },
   };
 }
-
 
 function page() {
   return (

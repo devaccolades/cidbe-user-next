@@ -27,6 +27,10 @@ export async function generateMetadata() {
     alternates: {
       canonical: `https://cidbi.com${path}`,
     },
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 
