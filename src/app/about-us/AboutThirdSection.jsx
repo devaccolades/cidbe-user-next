@@ -2,13 +2,13 @@
 import React, { useRef } from 'react'
 // import { useFollowPointe } from './useFollowPointer'
 import Image from 'next/image'
-import aboutCardImage from "../../../public/images/home/about-card-vector.svg"
-import aboutCardshape from "../../../public/images/home/about-shape.svg"
-import aboutCardshapeMobile from "../../../public/images/home/about-shape-mobile.svg"
+import aboutCardImage from "../../../public/images/home/about-card-vector.webp"
+import aboutCardshape from "../../../public/images/home/about-shape.webp"
+import aboutCardshapeMobile from "../../../public/images/home/about-shape-mobile.webp"
 import arrowIcon from "../../../public/icons/arrow-outward-green.svg"
 import '../(home)/./Home.css'
 
-import excellenceBg from '../../../public/images/about/historyImage.jpeg'
+import excellenceBg from '../../../public/images/about/historyImage.webp'
 // after connect the backend
 
 function AboutThirdSection() {

@@ -7,12 +7,12 @@ import Link from "next/link";
 import EnquiryModal from "../components/EnquiryForm/EnquiryModal";
 
 // Icons
-import locationIcon from "../../public/icons/location.svg";
-import appartmentIcon from "../../public/icons/appartment.svg";
-import areaIcon from "../../public/icons/area.png";
-import premiumIcon from "../../public/icons/premium.svg";
-import reraIcon from "../../public/icons/rera.svg";
-import arrow_outwardIcon from "../../public/icons/arrow_outward.svg";
+import locationIcon from "../../public/icons/location.webp";
+import appartmentIcon from "../../public/icons/appartment.webp";
+import areaIcon from "../../public/icons/area.webp";
+import premiumIcon from "../../public/icons/premium.webp";
+import reraIcon from "../../public/icons/rera.webp";
+import arrow_outwardIcon from "../../public/icons/arrow_outward.webp";
 
 export default function ThrissurCard({
   project,

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import green from "../../../public/images/aprtments_thrissur/Vector.png";
+import green from "../../../public/images/aprtments_thrissur/Vector.webp";
 
 const Herogreen = () => {
   return (

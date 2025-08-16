@@ -6,11 +6,11 @@ import { useRouter } from 'next/navigation';
 import { Fade } from "react-reveal";
 
 // SVG Images
-import gradientLeft from "../../../public/images/home/gradient-left.svg";
-import aboutCardImage from "../../../public/images/home/about-card-vector.svg";
-import aboutCardshape from "../../../public/images/home/about-shape.svg";
-import aboutCardshapeMobile from "../../../public/images/home/about-shape-mobile.svg";
-import arrowIcon from "../../../public/icons/arrow-outward-green.svg";
+import gradientLeft from "../../../public/images/home/gradient-left.webp";
+import aboutCardImage from "../../../public/images/home/about-card-vector.webp";
+import aboutCardshape from "../../../public/images/home/about-shape.webp";
+import aboutCardshapeMobile from "../../../public/images/home/about-shape-mobile.webp";
+import arrowIcon from "../../../public/icons/arrow-outward-green.webp";
 
 // GIF Images
 import qualityGif from "../../../public/gif/quality.gif";
@@ -18,9 +18,9 @@ import facilitiesGif from "../../../public/gif/facilities.gif";
 import serviceGif from "../../../public/gif/service.gif";
 
 // Other Images
-import charectersImage from "../../../public/images/home/charecters.png";
-import image1 from "../../../public/images/home/image1.jpeg";
-import image2 from "../../../public/images/home/experience.jpeg";
+import charectersImage from "../../../public/images/home/charecters.webp";
+import image1 from "../../../public/images/home/image1.webp";
+import image2 from "../../../public/images/home/experience.webp";
 import aboutImage from "../../../public/images/home/about-image.webp";
 
 import './Home.css';

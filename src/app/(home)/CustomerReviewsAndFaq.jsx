@@ -12,12 +12,12 @@ import 'swiper/css/autoplay';
 import 'swiper/css/pagination';
 import { Autoplay } from 'swiper/modules';
 // icons
-import quatsIcon from '../../../public/icons/quats.svg'
-import plusIcon from '../../../public/icons/plus.svg'
-import minusIcon from '../../../public/icons/minus.svg'
-import playIcon from '../../..//public/icons/play.svg'
+import quatsIcon from '../../../public/icons/quats.webp'
+import plusIcon from '../../../public/icons/plus.webp'
+import minusIcon from '../../../public/icons/minus.webp'
+import playIcon from '../../..//public/icons/play.webp'
 
-import customerReviewbg from '../../../public/images/home/customer-reviewsbg.svg'
+import customerReviewbg from '../../../public/images/home/customer-reviewsbg.webp'
 
 function CustomerReviewsAndFaq() {
     const pathname = usePathname();

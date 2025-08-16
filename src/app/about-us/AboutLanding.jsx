@@ -1,8 +1,8 @@
 import Image from "next/image";
-import shape from "../../../public/images/about/about-banner-shape.svg";
-import shapeMobile from "../../../public/images/about/about-banner-shape-mobile.svg";
+import shape from "../../../public/images/about/about-banner-shape.webp";
+import shapeMobile from "../../../public/images/about/about-banner-shape-mobile.webp";
 import bannerRightImage from "../../../public/images/home/about-image.webp"
-import bannerLogo from "../../../public/images/about/about-us-cidbi-logo.svg"
+import bannerLogo from "../../../public/images/about/about-us-cidbi-logo.webp"
 
 export default function AboutLanding() {
   return (

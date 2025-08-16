@@ -13,7 +13,7 @@ import EnquiryForm from "./EnquiryForm";
 import enquiryImage from '../../../public/images/enqiry/enquiry-image.svg'
 import Image from "next/image";
 import './Enquiry.css'
-import closeIcon from '../../../public/icons/close.svg'
+import closeIcon from '../../../public/icons/close.webp'
 
 function EnquiryModal({ open, handleOpen, projectId }) {
   const [size, setSize] = useState('md');

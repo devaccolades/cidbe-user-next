@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import noData from '../../../public/images/notfound/notfoundimage.svg'
+import noData from '../../../public/images/notfound/notfoundimage.webp'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation';
 function NotFound() {

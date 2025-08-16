@@ -14,7 +14,7 @@ import Skelten from "../skeletoneffect/Skelten";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 // Icons
-import dropdownGreeen from "../../../public/icons/dropdown-greeen.svg";
+import dropdownGreeen from "../../../public/icons/dropdown-greeen.webp";
 
 import "./ProjectList.css";
 

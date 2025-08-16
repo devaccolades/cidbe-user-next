@@ -1,5 +1,5 @@
 import React from 'react'
-import bgImage from '../../../public/images/gallery/bg.jpeg'
+import bgImage from '../../../public/images/gallery/bg.webp'
 function GalaryHeroSection() {
 
   return (

@@ -7,9 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
-import buildIcon from '../../../public/images/product-view/plansbuilding.svg';
-
-
+import buildIcon from '../../../public/images/product-view/plansbuilding.webp';
 
 function Plans({ floor_plan, blueprint_image }) {
 

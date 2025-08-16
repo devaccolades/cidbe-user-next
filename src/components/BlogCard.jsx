@@ -3,8 +3,8 @@ import { Card } from '@material-tailwind/react'
 import React from 'react'
 import Image from 'next/image'
 // Icons
-import arrow_outward from '../../public/icons/arrow_outward.svg'
-import clockIcon from '../../public/icons/clock.svg'
+import arrow_outward from '../../public/icons/arrow_outward.webp'
+import clockIcon from '../../public/icons/clock.webp'
 import Link from 'next/link'
 function BlogCard({ blog }) {
   return (

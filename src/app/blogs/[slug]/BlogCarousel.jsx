@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 // Icnos
-import clockIcon from '../../../../public/icons/clock.svg'
+import clockIcon from '../../../../public/icons/clock.webp'
 import '../Blogs.css'
 import Image from "next/image";
 function BlogCarousel({ blogDetails }) {

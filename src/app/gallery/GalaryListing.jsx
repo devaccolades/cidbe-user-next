@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 // Icons
-import arrowIcon from '../../../public/icons/arrow-outward-green.svg'
+import arrowIcon from '../../../public/icons/arrow-outward-green.webp'
 import { useRouter } from 'next/navigation'
 import { getGalaryApi } from '../../services/services'
 import NotFound from '../../components/common/NotFound'

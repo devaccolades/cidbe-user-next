@@ -3,18 +3,18 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
-import image1 from '../../../public/images/interiors/new img/1.svg';
+import image1 from '../../../public/images/interiors/new img/1.webp';
 import image2 from '../../../public/images/interiors/new img/2.webp';
-import image3 from '../../../public/images/interiors/new img/3.svg';
-import image4 from '../../../public/images/interiors/new img/4.svg';
-import image5 from '../../../public/images/interiors/new img/5.svg';
-import image6 from '../../../public/images/interiors/new img/6.svg';
-import image7 from '../../../public/images/interiors/new img/7.svg';
+import image3 from '../../../public/images/interiors/new img/3.webp';
+import image4 from '../../../public/images/interiors/new img/4.webp';
+import image5 from '../../../public/images/interiors/new img/5.webp';
+import image6 from '../../../public/images/interiors/new img/6.webp';
+import image7 from '../../../public/images/interiors/new img/7.webp';
 import image8 from '../../../public/images/interiors/new img/8.webp';
 import image9 from '../../../public/images/interiors/new img/9.webp';
 import image10 from '../../../public/images/interiors/new img/10.webp';
-import image11 from '../../../public/images/interiors/new img/11.jpg';
-import image12 from '../../../public/images/interiors/new img/12.jpg';
+import image11 from '../../../public/images/interiors/new img/11.webp';
+import image12 from '../../../public/images/interiors/new img/12.webp';
 
 function Portfolio() {
   const [currentPage, setCurrentPage] = useState(1);
