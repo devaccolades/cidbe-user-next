@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Group from '../../../public/images/csr/OBJECTS.webp';
-import backgroundCsr from '../../../public/images/csr/csrbackground.svg'
+// import backgroundCsr from '../../../public/images/csr/csrbackground.svg'
 
 function HeroSection() {
    return (

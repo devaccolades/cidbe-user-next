@@ -3,8 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-import plusIcon from '../../../public/icons/plus.svg'
-import minusIcon from '../../../public/icons/minus.svg'
+// import plusIcon from '../../../public/icons/plus.svg'
+// import minusIcon from '../../../public/icons/minus.svg'
 
 const faqs = [
   {
