@@ -2,8 +2,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import location from '../../../public/images/careers/newLocaton.svg';
-import work from '../../../public/images/careers/newWork.svg';
-import uploadIcon from '../../../public/images/careers/attachment.svg';
+import work from '../../../public/images/careers/newWork.webp';
+import uploadIcon from '../../../public/images/careers/attachment.webp';
 import NotFound from '../../components/common/NotFound';
 import { getCareersApi, getCareersSuggestionApi, postApplyJobApi } from '../../services/services';
 import Swal from 'sweetalert2';
@@ -184,7 +184,7 @@ function CurrentOpenings() {
   return (
     <>
       <section>
-        <main className="md:bg-[url('/images/careers/careerBackgroun.svg')] min-h-screen">
+        <main className="md:bg-[url('/images/careers/careerBackgroun.webp')] min-h-screen">
           <section className='pt-4 md:pt-8 lg:pt-12'>
             <div className='containers px-0 md:px-5 lg:px-5' style={{ alignItems: 'center' }}>
               <h1 className="text-[20px] sm:text-[32px] font-[clash-display-medium] mb-4 sm:mb-8 text-start text-[#052D23]">

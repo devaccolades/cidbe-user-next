@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import buildingSketch from "../../../public/images/aprtments_thrissur/buildingSketch.png";
+import buildingSketch from "../../../public/images/aprtments_thrissur/buildingSketch.webp";
 import { useFormik } from "formik";
 import Swal from "sweetalert2";
 import { Spinner } from "@material-tailwind/react";

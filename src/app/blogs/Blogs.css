@@ -152,9 +152,9 @@
 }
 @media (min-width: 768px) {
   .blog-bg {
-    background-image: url("../../../public/images/blogs/blog-bg.svg");
+    background-image: url("../../../public/images/blogs/blog-bg.webp");
   }
   .blog-inner-bg {
-    background-image: url("../../../public/images/home/customer-reviewsbg.svg");
+    background-image: url("../../../public/images/home/customer-reviewsbg.webp");
   }
 }

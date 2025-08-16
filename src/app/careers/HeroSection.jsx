@@ -1,5 +1,5 @@
 import React from 'react';
-import Group from '../../../public/images/careers/Group.svg';
+import Group from '../../../public/images/careers/Group.webp';
 import Image from 'next/image';
 
 function HeroSection() {

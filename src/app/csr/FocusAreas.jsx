@@ -1,10 +1,10 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import First from '../../../public/images/csr/First.svg';
-import Second from '../../../public/images/csr/Second.svg';
-import Third from '../../../public/images/csr/Third.svg';
-import Fourth from '../../../public/images/csr/Fourth.svg';
+import First from '../../../public/images/csr/First.webp';
+import Second from '../../../public/images/csr/Second.webp';
+import Third from '../../../public/images/csr/Third.webp';
+import Fourth from '../../../public/images/csr/Fourth.webp';
 
 import NotFound from '../../components/common/NotFound';
 import { getCommunityImpactApi } from '../../services/services';

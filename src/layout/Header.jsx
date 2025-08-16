@@ -4,15 +4,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from "../../public/images/logo/logo.svg";
-import dropdownIcon from "../../public/icons/dropdown.svg";
-import dropdownyellowIcon from "../../public/icons/dropdown-yellow.svg";
-import dropdownGreenIcon from "../../public/icons/dropdown-greeen.svg";
-import mobileDropdownIcon from "../../public/icons/mobile_dropdown.svg";
-import mobileDropupIcon from "../../public/icons/mobile_dropup.svg";
-import menuIcon from "../../public/icons/menu.svg"
-import menuGreenIcon from "../../public/icons/menu-green.svg"
-import closeIcon from "../../public/icons/close.svg"
+import logo from "../../public/images/logo/logo.webp";
+import dropdownIcon from "../../public/icons/dropdown.webp";
+import dropdownyellowIcon from "../../public/icons/dropdown-yellow.webp";
+import dropdownGreenIcon from "../../public/icons/dropdown-greeen.webp";
+import mobileDropdownIcon from "../../public/icons/mobile_dropdown.webp";
+import mobileDropupIcon from "../../public/icons/mobile_dropup.webp";
+import menuIcon from "../../public/icons/menu.webp"
+import menuGreenIcon from "../../public/icons/menu-green.webp"
+import closeIcon from "../../public/icons/close.webp"
 import { usePathname, useRouter } from 'next/navigation';
 import Head from 'next/head';
 import Script from 'next/script';

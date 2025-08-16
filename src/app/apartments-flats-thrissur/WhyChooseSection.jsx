@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import templeImage from "../../../public/images/aprtments_thrissur/temple.png";
-import onGoing from "../../../public/images/aprtments_thrissur/onGoing.jpg";
-import ready from "../../../public/images/aprtments_thrissur/ready.jpg";
-import completed from "../../../public/images/aprtments_thrissur/complete.jpg";
-import featured from "../../../public/images/aprtments_thrissur/featured.jpg";
+import templeImage from "../../../public/images/aprtments_thrissur/temple.webp";
+import onGoing from "../../../public/images/aprtments_thrissur/onGoing.webp";
+import ready from "../../../public/images/aprtments_thrissur/ready.webp";
+import completed from "../../../public/images/aprtments_thrissur/complete.webp";
+import featured from "../../../public/images/aprtments_thrissur/featured.webp";
 import Link from "next/link";
 
 
@@ -13,19 +13,19 @@ const features = [
   {
     title:
       "Prime Locations with Excellent Connectivity ",
-    icon: "/images/aprtments_thrissur/icon1.svg",
+    icon: "/images/aprtments_thrissur/icon1.webp",
   },
   {
     title: "More Open Space with Outstanding Amenities",
-    icon: "/images/aprtments_thrissur/icon2.svg",
+    icon: "/images/aprtments_thrissur/icon2.webp",
   },
   {
     title: "Quality Construction & Eco-Friendly Design.",
-    icon: "/images/aprtments_thrissur/icon3.svg",
+    icon: "/images/aprtments_thrissur/icon3.webp",
   },
   {
     title: "On Time Delivery and Transparency in Dealing",
-    icon: "/images/aprtments_thrissur/icon4.svg",
+    icon: "/images/aprtments_thrissur/icon4.webp",
   },
 ];
 

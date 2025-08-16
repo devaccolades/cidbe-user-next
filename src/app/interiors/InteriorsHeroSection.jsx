@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import banner from '../../../public/images/interiors/testedSv.svg'
-import leftSide from '../../../public/images/interiors/landing.svg'
-import smmdBanner from '../../../public/images/interiors/designBackground.svg'
+import banner from '../../../public/images/interiors/testedSv.webp'
+import leftSide from '../../../public/images/interiors/landing.webp'
+import smmdBanner from '../../../public/images/interiors/designBackground.webp'
 
 function InteriorsHeroSection() {
   return (

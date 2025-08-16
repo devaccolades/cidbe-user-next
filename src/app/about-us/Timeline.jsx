@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import branch from '../../../public/images/about/braches.svg'
+import branch from '../../../public/images/about/braches.webp'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -15,9 +15,9 @@ import Coronet from '../../../public/images/about/Coronet.webp'
 import Chaitram from '../../../public/images/about/Chaitram.webp'
 import Cedar from '../../../public/images/about/Cedar.webp'
 import Chiraag from '../../../public/images/about/Chiraag.webp'
-import Cocoon from '../../../public/images/about/Cocoon.JPG'
+import Cocoon from '../../../public/images/about/Cocoon.webp'
 import Cinthia from '../../../public/images/about/Cinthia.webp'
-import Clarion from '../../../public/images/about/Clarion.jpg'
+import Clarion from '../../../public/images/about/Clarion.webp'
 import Credence from '../../../public/images/about/Credence.webp'
 import Chalet from '../../../public/images/about/Chalet.webp'
 import Candor from '../../../public/images/about/Candor.webp'

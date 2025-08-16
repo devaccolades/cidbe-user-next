@@ -4,11 +4,11 @@ import './Home.css'
 import Image from 'next/image'
 
 // Images
-import chairmanshape from "../../../public/images/home/chairmanshape.svg"
-import chairmanshapeMobile from "../../../public/images/home/chairmanshapeMobile.svg"
-import chairmanbg from "../../../public/images/home/chairmanbg.svg"
-import chairmanbgMobile from "../../../public/images/home/chairmanbgMobile.svg"
-import chraimanImage from "../../../public/images/home/chair.jpeg"
+import chairmanshape from "../../../public/images/home/chairmanshape.webp"
+import chairmanshapeMobile from "../../../public/images/home/chairmanshapeMobile.webp"
+import chairmanbg from "../../../public/images/home/chairmanbg.webp"
+import chairmanbgMobile from "../../../public/images/home/chairmanbgMobile.webp"
+import chraimanImage from "../../../public/images/home/chair.webp";
 
 import { Fade } from "react-reveal";
 

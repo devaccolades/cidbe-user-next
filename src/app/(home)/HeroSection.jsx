@@ -11,11 +11,10 @@ import { Card } from "@material-tailwind/react";
 const Carousel = dynamic(() => import('react-slick'), { ssr: false });
 
 // Icons
-import locationIcon from '../../../public/icons/location.svg'
-import arrowoutwardIcon from '../../../public/icons/arrow_outward.svg'
-import nextArrowIcon from '../../../public/icons/next_arrow.svg';
-import prevArrowIcon from '../../../public/icons/prev_arrow.svg';
-
+import locationIcon from '../../../public/icons/location.webp'
+import arrowoutwardIcon from '../../../public/icons/arrow_outward.webp'
+import nextArrowIcon from '../../../public/icons/next_arrow.webp';
+import prevArrowIcon from '../../../public/icons/prev_arrow.webp';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

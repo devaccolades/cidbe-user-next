@@ -180,10 +180,10 @@
 /* About Section */
 @media (min-width:768px){
     .about-main-bg{
-        background-image: url('../../../public/images/home/about-section-bg.svg');
+        background-image: url('../../../public/images/home/about-section-bg.webp');
     }
     .main-featurend-bg{
-        background-image: url('../../../public/images/home/line_background.svg');
+        background-image: url('../../../public/images/home/line_background.webp');
     }
 }
 

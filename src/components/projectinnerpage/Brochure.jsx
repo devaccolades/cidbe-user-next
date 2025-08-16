@@ -1,15 +1,15 @@
 'use client'
 import React, { useState } from 'react';
 import Image from 'next/image';
-import downloadIcon from '../../../public/images/product-view/download.svg';
-import arrow_outwardicon from '../../../public/icons/arrow_outward.svg';
+import downloadIcon from '../../../public/images/product-view/download.webp';
+import arrow_outwardicon from '../../../public/icons/arrow_outward.webp';
 
 import qrIcon from '../../../public/images/product-view/newQr.svg';
-import first from '../../../public/images/product-view/icons/05.svg';
-import second from '../../../public/images/product-view/icons/04.svg';
-import third from '../../../public/images/product-view/icons/03.svg';
-import fourth from '../../../public/images/product-view/icons/02.svg';
-import fifth from '../../../public/images/product-view/icons/01.svg';
+import first from '../../../public/images/product-view/icons/05.webp';
+import second from '../../../public/images/product-view/icons/04.webp';
+import third from '../../../public/images/product-view/icons/03.webp';
+import fourth from '../../../public/images/product-view/icons/02.webp';
+import fifth from '../../../public/images/product-view/icons/01.webp';
 import { getBrochureDownload } from '../../services/services';
 import EnquiryModal from '../EnquiryForm/EnquiryModal';
 

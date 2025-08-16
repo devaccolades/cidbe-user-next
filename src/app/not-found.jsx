@@ -1,8 +1,8 @@
 'use client'
 import Image from 'next/image';
 import React from 'react';
-import notfoundIcon from "../../public/images/pagenotfound/notfound1.svg";
-import connectionIcon from "../../public/images/pagenotfound/connection.svg";
+import notfoundIcon from "../../public/images/pagenotfound/notfound1.webp";
+import connectionIcon from "../../public/images/pagenotfound/connection.webp";
 import { useRouter } from 'next/navigation';
 
 function NotFound() {

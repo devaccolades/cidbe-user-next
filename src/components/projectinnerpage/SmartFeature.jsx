@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import tickIcon from '../../../public/images/product-view/smartFeature.svg';
+import tickIcon from '../../../public/images/product-view/smartFeature.webp';
 
 function SmartFeature({features}) {
   return (

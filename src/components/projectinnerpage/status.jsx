@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { Image as AntdImage } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar } from 'swiper/modules';
-import arrowIcon from '../../../public/images/product-view/slideArrow.svg';
-import yearIcon from '../../../public/images/product-view/yearicon.svg';
+import arrowIcon from '../../../public/images/product-view/slideArrow.webp';
+import yearIcon from '../../../public/images/product-view/yearicon.webp';
 
 // Import Swiper styles
 import 'swiper/css';

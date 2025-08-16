@@ -1,8 +1,8 @@
 import Image from "next/image";
-import img1 from "../../../public/images/aprtments_thrissur/img1.jpg";
-import img2 from "../../../public/images/aprtments_thrissur/img2.jpg";
-import img3 from "../../../public/images/aprtments_thrissur/img3.jpg";
-import img4 from "../../../public/images/aprtments_thrissur/img4.jpg";
+import img1 from "../../../public/images/aprtments_thrissur/img1.webp";
+import img2 from "../../../public/images/aprtments_thrissur/img2.webp";
+import img3 from "../../../public/images/aprtments_thrissur/img3.webp";
+import img4 from "../../../public/images/aprtments_thrissur/img4.webp";
 
 export default function HighlightsSection() {
   return (
