@@ -5,52 +5,62 @@
 /* clash fonts */
 @font-face {
   font-family: "clash-display-regular"; /* 400 */
-  src: url(../../public//font/ClashDisplay-Regular.woff) format(woff);
+  src: url("../../public//font/ClashDisplay-Regular.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "clash-display-medium"; /* 500 */
-  src: url(../../public/font/ClashDisplay-Medium.woff) format(woff);
+  src: url("../../public/font/ClashDisplay-Medium.woff2") format("woff2");
+  font-display: swap;
 }
 
 /* general sans fonts */
 @font-face {
   font-family: "general-sans-light"; /* 300 */
-  src: url(../../public//font/GeneralSans-Light.woff) format(woff);
+  src: url("../../public//font/GeneralSans-Light.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "general-sans-regular"; /* 400 */
-  src: url(../../public//font/GeneralSans-Regular.woff) format(woff);
+  src: url("../../public//font/GeneralSans-Regular.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "general-sans-medium"; /* 500 */
-  src: url(../../public//font/GeneralSans-Medium.woff) format(woff);
+  src: url("../../public//font/GeneralSans-Medium.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "general-sans-semibold"; /* 600 */
-  src: url(../../public//font/GeneralSans-Semibold.woff) format(woff);
+  src: url("../../public//font/GeneralSans-Semibold.woff2") format("woff2");
+  font-display: swap;
 }
 /* inter fonts */
 @font-face {
   font-family: "inter-regular"; /* 400 */
-  src: url(../../public//font/Inter-Regular.ttf) format(woff);
+  src: url("../../public//font/Inter-Regular.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "inter-medium"; /* 500 */
-  src: url(../../public//font/Inter-Medium.ttf) format(woff);
+  src: url("../../public//font/Inter-Medium.woff2") format("woff2");
+  font-display: swap;
 }
 
 /* anek malayalam fonts */
 @font-face {
   font-family: "akek-malayalam-bold"; /* 700 */
-  src: url(../../public/font/AnekMalayalam-Bold.ttf) format("truetype");
+  src: url("../../public/font/AnekMalayalam-Bold.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
   font-family: "akek-malayalam-semi-bold";
-  src: url(../../public/font/AnekMalayalam-SemiBold.ttf) format("truetype");
+  src: url("../../public/font/AnekMalayalam-SemiBold.woff2") format("woff2");
+  font-display: swap;
 }
 
 :root {
