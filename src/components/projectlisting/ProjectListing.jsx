@@ -43,27 +43,27 @@ const featuredProjectAddOnDatas = [
     <p>&nbsp;</p>
   `,
   },
-  {
-    title:
-      "CIDBI CANDOR: Your Destination for Ready to Occupy Apartments in Thrissur",
-    description: `
-    <p><span style="color:#000000">Situated in Poonkunnam, CIDBI Candor is the epitome of elegance and convenience, offering 2 BHK &amp; 3 BHK premium luxury apartments that are ready to occupy. Designed by one of the </span><a href="https://cidbi.com/" style="text-decoration:none"><span style="color:#1155cc"><u>best builders in Thrissur</u></span></a><span style="color:#000000">, this project ensures an unmatched living experience, combining modern design with practicality.</span></p>
-    <p><span style="color:#000000"><strong>Amenities for a Comfortable Lifestyle</strong></span></p>
-    <p><span style="color:#000000">CIDBI Candor is designed to cater to every aspect of urban living. With a rooftop swimming pool and a party area, residents can unwind while enjoying panoramic city views. The children&rsquo;s play area ensures a safe space for kids, while the air-conditioned health club supports an active lifestyle.</span></p>
-    <p><span style="color:#000000"><strong><em>Additional amenities include:</em></strong></span></p>
-    <p><span style="color:#000000">A multi-purpose AC recreation hall for social gatherings.</span></p>
-    <p><span style="color:#000000">Advanced security features such as biometric card entry, CCTV surveillance, and intercom connectivity.</span></p>
-    <p><span style="color:#000000">Sustainable energy solutions with a 5kW solar panel connected to the grid.</span></p>
-    <p><span style="color:#000000">Convenience features like an electronics main door lock, automatic gate, and generator backup for uninterrupted power.</span></p>
-    <p><span style="color:#000000"><strong>Prime Location in Thrissur</strong></span></p>
-    <p><span style="color:#000000">CIDBI Candor offers excellent connectivity, being just 300 meters from Punkunnam Railway Station and 1.5 km from Swaraj Round. Families will appreciate the proximity to Devamatha Public School (2 km) and essential services like Ashwini Hospital (1 km) and Bismi Hypermarket (700 meters).</span></p>
-    <p><span style="color:#000000">These </span><a href="https://cidbi.com/featured-projects/flats-in-thrissur-candor" style="text-decoration:none"><span style="color:#1155cc"><u>ready to occupy flats in Thrissur</u></span></a><span style="color:#000000"> are perfect for homebuyers looking for a combination of convenience and luxury. With its strategic location and top-notch amenities, CIDBI Candor stands out as a symbol of modern living.</span></p>
-    <p><span style="color:#000000"><strong>Choose CIDBI: Trusted Builders in Thrissur</strong></span></p>
-    <p><span style="color:#000000">CIDBI has earned its reputation as one of the top builders in Thrissur, offering thoughtfully designed homes that cater to various budgets and preferences. Whether you are looking for luxury flats, budget flats, or ready to occupy apartments, CIDBI delivers exceptional quality and innovation.</span></p>
-    <p><span style="color:#000000">Both CIDBI Cassia and CIDBI Candor showcase the perfect balance of comfort, technology, and location. Experience the best of urban living by choosing your dream home with CIDBI.</span></p>
-    <p>&nbsp;</p>
-  `,
-  },
+  // {
+  //   title:
+  //     "CIDBI CANDOR: Your Destination for Ready to Occupy Apartments in Thrissur",
+  //   description: `
+  //   <p><span style="color:#000000">Situated in Poonkunnam, CIDBI Candor is the epitome of elegance and convenience, offering 2 BHK &amp; 3 BHK premium luxury apartments that are ready to occupy. Designed by one of the </span><a href="https://cidbi.com/" style="text-decoration:none"><span style="color:#1155cc"><u>best builders in Thrissur</u></span></a><span style="color:#000000">, this project ensures an unmatched living experience, combining modern design with practicality.</span></p>
+  //   <p><span style="color:#000000"><strong>Amenities for a Comfortable Lifestyle</strong></span></p>
+  //   <p><span style="color:#000000">CIDBI Candor is designed to cater to every aspect of urban living. With a rooftop swimming pool and a party area, residents can unwind while enjoying panoramic city views. The children&rsquo;s play area ensures a safe space for kids, while the air-conditioned health club supports an active lifestyle.</span></p>
+  //   <p><span style="color:#000000"><strong><em>Additional amenities include:</em></strong></span></p>
+  //   <p><span style="color:#000000">A multi-purpose AC recreation hall for social gatherings.</span></p>
+  //   <p><span style="color:#000000">Advanced security features such as biometric card entry, CCTV surveillance, and intercom connectivity.</span></p>
+  //   <p><span style="color:#000000">Sustainable energy solutions with a 5kW solar panel connected to the grid.</span></p>
+  //   <p><span style="color:#000000">Convenience features like an electronics main door lock, automatic gate, and generator backup for uninterrupted power.</span></p>
+  //   <p><span style="color:#000000"><strong>Prime Location in Thrissur</strong></span></p>
+  //   <p><span style="color:#000000">CIDBI Candor offers excellent connectivity, being just 300 meters from Punkunnam Railway Station and 1.5 km from Swaraj Round. Families will appreciate the proximity to Devamatha Public School (2 km) and essential services like Ashwini Hospital (1 km) and Bismi Hypermarket (700 meters).</span></p>
+  //   <p><span style="color:#000000">These </span><a href="https://cidbi.com/featured-projects/flats-in-thrissur-candor" style="text-decoration:none"><span style="color:#1155cc"><u>ready to occupy flats in Thrissur</u></span></a><span style="color:#000000"> are perfect for homebuyers looking for a combination of convenience and luxury. With its strategic location and top-notch amenities, CIDBI Candor stands out as a symbol of modern living.</span></p>
+  //   <p><span style="color:#000000"><strong>Choose CIDBI: Trusted Builders in Thrissur</strong></span></p>
+  //   <p><span style="color:#000000">CIDBI has earned its reputation as one of the top builders in Thrissur, offering thoughtfully designed homes that cater to various budgets and preferences. Whether you are looking for luxury flats, budget flats, or ready to occupy apartments, CIDBI delivers exceptional quality and innovation.</span></p>
+  //   <p><span style="color:#000000">Both CIDBI Cassia and CIDBI Candor showcase the perfect balance of comfort, technology, and location. Experience the best of urban living by choosing your dream home with CIDBI.</span></p>
+  //   <p>&nbsp;</p>
+  // `,
+  // },
 ];
 
 const completedProjectAddOnDatas = [

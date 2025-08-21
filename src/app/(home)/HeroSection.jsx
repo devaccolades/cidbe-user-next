@@ -62,12 +62,15 @@ function HeroSection() {
 
     const settings = {
         dots: true,
-        infinite: true,
+        // infinite: true,
+        infinite: projects.length > 1,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        draggable: true,
-        autoplay: true,
+        // draggable: true,
+        // autoplay: true,
+        draggable: projects.length > 1,  // ✅ prevent dragging single card
+        autoplay: projects.length > 1,
         autoplaySpeed: 5000,
         arrows: isMobile ? false : true,
         beforeChange: (current, next) => {
