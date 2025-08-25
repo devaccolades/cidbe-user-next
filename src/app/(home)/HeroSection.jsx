@@ -109,8 +109,8 @@ function HeroSection() {
 
     const fetchData = async () => {
         try {
-            // const res = await getFeaturedProject(1, 4)
-            const res = await getCompletedProject(1,4)
+            const res = await getFeaturedProject(1, 4)
+            // const res = await getCompletedProject(1,4)
             const { StatusCode, data } = res.data
             if (StatusCode === 6000) {
                 setProject(data)
