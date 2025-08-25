@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import "./Style.css";
 import Image from "next/image";
-import logo from "../../public/images/logo/logo.webp";
+import logo from "../../public/images/logo/logo.png";
 import instagram from "../../public/images/footer/instagram.webp";
 import facebook from "../../public/images/footer/facebook.webp";
 import youtube from "../../public/images/footer/youtube.webp";

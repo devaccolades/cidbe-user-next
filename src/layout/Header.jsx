@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from "../../public/images/logo/logo.webp";
-import dropdownIcon from "../../public/icons/dropdown.webp";
+import dropdownIcon from "../../public/icons/dropdown.png";
 import dropdownyellowIcon from "../../public/icons/dropdown-yellow.webp";
 import dropdownGreenIcon from "../../public/icons/dropdown-greeen.webp";
 import mobileDropdownIcon from "../../public/icons/mobile_dropdown.webp";
