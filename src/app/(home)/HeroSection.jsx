@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import debounce from 'lodash/debounce';
-import { getFeaturedProject } from '../../services/services';
+import { getFeaturedProject, getCompletedProject } from '../../services/services';
 import { useRouter } from 'next/navigation';
 import { Card } from "@material-tailwind/react";
 
@@ -69,7 +69,7 @@ function HeroSection() {
         slidesToScroll: 1,
         // draggable: true,
         // autoplay: true,
-        draggable: projects.length > 1,  // ✅ prevent dragging single card
+        draggable: projects.length > 1, 
         autoplay: projects.length > 1,
         autoplaySpeed: 5000,
         arrows: isMobile ? false : true,
@@ -109,7 +109,8 @@ function HeroSection() {
 
     const fetchData = async () => {
         try {
-            const res = await getFeaturedProject(1, 4)
+            // const res = await getFeaturedProject(1, 4)
+            const res = await getCompletedProject(1,4)
             const { StatusCode, data } = res.data
             if (StatusCode === 6000) {
                 setProject(data)
