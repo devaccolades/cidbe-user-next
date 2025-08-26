@@ -150,7 +150,7 @@ function Header({ bgPrimary = false }) {
                 }}
             />
             <header className='main-area sticky top-1 z-50'>
-                <section className={`nav-bar ${bgPrimary ? "bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500 `}>
+                <section className={`nav-bar ${bgPrimary ? "bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500`}>
                     <Link href='/'><Image src={logo} alt='logo' className='logo cursor-pointer' /></Link>
                     <div className='lap-navbar'>
                         <ul className={`${scrolling ? 'text-[#052D23]' : bgPrimary ? 'text-[--secondary-cl]' : 'text-white'}`}>
