@@ -10,9 +10,6 @@ import { Autoplay } from 'swiper/modules'
 import VideoModal from '../components/VideoModal'
 import playIcon from '../../public/icons/play.webp'
 
-// background image
-import customerReviewbg from '../../public/images/home/customer-reviewsbg.webp'
-
 function VideoSection({ isVideoModalOpen, setIsVideoModalOpen }) {
     const pathname = usePathname()
 
@@ -55,21 +52,19 @@ function VideoSection({ isVideoModalOpen, setIsVideoModalOpen }) {
 
     const videos = [
         {
-            thumbnail: '/images/img1.png',
+            thumbnail: '/images/image16.jpg',
             video: '/video/vid1.mp4',
         },
         {
-            thumbnail: '/images/img2.png',
+            thumbnail: '/images/image15.jpg',
             video: '/video/vid2.mp4',
         },
     ]
 
 return (
     <section className={`relative text-[--secondary-cl] overflow-hidden z-10 ${pathname === '/contact-us' ? '' : 'reviews-bg-gradient'}  flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]`}>
-        <Image src={customerReviewbg} className="absolute right-0 hidden lg:block -z-10 top-[-30px]" alt="flats in Thrissur" />
-
         <div className="containers">
-            <h6 className="font-[clash-display-medium] text-[20px] lg:text-[32px]">Sample flats</h6>
+            <h6 className="font-[clash-display-medium] text-[20px] lg:text-[32px]">Explore Our Showcase Apartments</h6>
 
             <div className="mt-[10px] lg:mt-[44px]">
                 <Swiper
