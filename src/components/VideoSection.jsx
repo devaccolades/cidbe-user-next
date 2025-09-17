@@ -62,7 +62,7 @@ function VideoSection({ isVideoModalOpen, setIsVideoModalOpen }) {
     ]
 
 return (
-    <section className={`relative text-[--secondary-cl] overflow-hidden z-10 ${pathname === '/contact-us' ? '' : 'reviews-bg-gradient'}  flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]`}>
+    <section className={`relative text-[--secondary-cl] overflow-hidden z-10 flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]`}>
         <div className="containers">
             <h6 className="font-[clash-display-medium] text-[20px] lg:text-[32px]">Explore Our Showcase Apartments</h6>
 
