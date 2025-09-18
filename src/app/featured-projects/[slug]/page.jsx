@@ -1,4 +1,5 @@
-import React  from 'react'
+'use client';
+import React, { useState } from 'react'
 import Header from '../../../layout/Header';
 import Footer from '../../../layout/Footer';
 import { getProjectDetails } from '../../../services/services';
@@ -10,6 +11,44 @@ import dynamic from 'next/dynamic';
 import { SkeletonLoader } from '../../../components/skeletoneffect/Skelten';
 
 const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, })
+
+// Create a client component wrapper
+function PageContent({ data }) {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+  return (
+    <>
+      <title>{data?.data?.meta_title || 'Default Title'}</title>
+      <meta name="description" content={data?.data?.meta_description || 'Default Description'} />
+      
+      {/* Hide Header when video modal is open */}
+      {!isVideoModalOpen && <Header />}
+      
+      <HeroSection data={data?.data} images={data?.images || []} className='bg-[#ffff]' />
+      <Brochure data={data?.data || {}} />
+      <div className='bg-[#ffff]'>
+        <DeepDeatiles
+          amenities={data?.amenities}
+          features={data?.features}
+          amenities_images={data?.amenities_images}
+          specification={data?.specification}
+          blueprint_image={data?.data?.blueprint_image}
+          floor_plan={data?.floor_plan}
+          location={data?.data?.iframe}
+          nearby={data?.nearby}
+          videos={data?.videos}
+          status={data?.status || []}
+          bank={data?.bank}
+          videosection={data?.videosection}
+          className='bg-[#ffff]'
+          onVideoModalOpen={() => setIsVideoModalOpen(true)}
+          onVideoModalClose={() => setIsVideoModalOpen(false)}
+        />
+      </div>
+      <Footer />
+    </>
+  );
+}
 
 async function fetchData(slug) {
   try {
@@ -27,36 +66,12 @@ async function fetchData(slug) {
 
 export default async function Page({ params }) {
   const { slug } = params;
-     const data = await fetchData(slug);
- 
-     if (!data) {
-         redirect('/featured-projects');
-         return;
-     }
+  const data = await fetchData(slug);
 
-  return (
-    <>
-      <title>{data?.data?.meta_title || 'Default Title'}</title>
-            <meta name="description" content={data?.data?.meta_description || 'Default Description'} />
-            <Header />
-            <HeroSection data={data?.data} images={data?.images || []} className='bg-[#ffff]' />
-            <Brochure data={data?.data || {}} />
-             <div className='bg-[#ffff]'>
-                <DeepDeatiles
-                    amenities={data?.amenities}
-                    features={data?.features}
-                    amenities_images={data?.amenities_images}
-                    specification={data?.specification}
-                    blueprint_image={data?.data?.blueprint_image}
-                    floor_plan={data?.floor_plan}
-                    location={data?.data?.iframe}
-                    nearby={data?.nearby}
-                    videos={data?.videos}
-                    status={data?.status || []}
-                    bank={data?.bank}
-                    className='bg-[#ffff]' />
-            </div>
-            <Footer />
-    </>
-  )
+  if (!data) {
+      redirect('/featured-projects');
+      return;
+  }
+
+  return <PageContent data={data} />;
 }
