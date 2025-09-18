@@ -13,9 +13,10 @@ import VideoSection from '../VideoSection';
 
 function DeepDetails({
   amenities, features, amenities_images, specification, blueprint_image, floor_plan, videosection,
-  location, nearby, status, bank, videos
+  location, nearby, status, bank, videos, onVideoModalOpen, onVideoModalClose
 }) {
   const [isSticky, setIsSticky] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const navbarRef = useRef(null);
 
   useEffect(() => {
@@ -32,7 +33,7 @@ function DeepDetails({
     'Smart Features': useRef(null),
     Specifications: useRef(null),
     Plans: useRef(null),
-    VideoSection: useRef(null),  // Add this
+    VideoSection: useRef(null),
     ProductVideo: useRef(null),
     Location: useRef(null),
     'Current Status': useRef(null),
@@ -51,8 +52,8 @@ function DeepDetails({
     { name: 'Smart Features' },
     { name: 'Specifications' },
     { name: 'Plans' },
-    { name: 'VideoSection' },  // Now properly mapped
-    { name: 'ProductVideo' },  // Optional
+    { name: 'VideoSection' },
+    { name: 'ProductVideo' },
     { name: 'Location' },
     { name: 'Current Status' },
   ];
@@ -63,7 +64,11 @@ function DeepDetails({
 
   return (
     <>
-      <section ref={navbarRef} className={`lg:sticky top-0 z-50 transition-all duration-300 ease-in-out ${isSticky ? 'bg-[--primary-cl]' : 'bg-white'} pt-[20px] pb-[10px] hidden lg:block`}>
+      {/* Hide header when video modal is open */}
+      <section 
+        ref={navbarRef} 
+        className={`lg:sticky top-0 z-50 transition-all duration-300 ease-in-out ${isSticky ? 'bg-[--primary-cl]' : 'bg-white'} pt-[20px] pb-[10px] ${isVideoModalOpen ? 'hidden' : 'hidden lg:block'}`}
+      >
         <div className={`containers custom-res py-[20px] rounded-[12px] transition-colors duration-300`}>
           <ul className="flex justify-between w-full">
             {filteredSections.map((item, index) => (
@@ -100,9 +105,19 @@ function DeepDetails({
         <Plans floor_plan={floor_plan} blueprint_image={blueprint_image} />
       </div>
 
-      {/* VideoSection Properly as a section */}
+      {/* VideoSection with modal state handlers */}
       <div ref={sectionRefs.VideoSection} className="bg-white">
-        <VideoSection videosection={videosection} />
+        <VideoSection 
+          videosection={videosection} 
+          onVideoModalOpen={() => {
+            setIsVideoModalOpen(true);
+            onVideoModalOpen?.();
+          }}
+          onVideoModalClose={() => {
+            setIsVideoModalOpen(false);
+            onVideoModalClose?.();
+          }}
+        />
       </div>
 
       <div ref={sectionRefs.ProductVideo} className="pt-[30px] bg-white">

@@ -35,7 +35,7 @@ function ProjectCard({ project }) {
                         onMouseLeave={() => setHovered(false)}
                         // onTap={() => setHovered(!hovered)}
                         className='card-image bg-top h-[350px] rounded-[10px] bg-cover'
-                        style={{ backgroundImage: `url(${project?.thumbnail})` }}
+                        style={{ backgroundImage: `url(${project?.thumbnail})` }}                        
                     />
                     <div className='flex justify-between items-center pt-[10px] px-[15px]'>
                         <div className='font-[general-sans-regular] flex flex-col gap-[6px]'>
