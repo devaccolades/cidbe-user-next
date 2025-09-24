@@ -13,7 +13,7 @@ function SmartFeature({features}) {
             className="flex items-start"
           >
             <div className="w-[24px] h-[24px] mr-[12px] flex-shrink-0 mt-[2px]">
-              <Image src={tickIcon} alt="flats in Thrissur" width={24} height={24} />
+              <Image src={tickIcon} alt="Premium 2 Bhk flats in thrissur" width={24} height={24} />
             </div>
             <p className="text-[14px] lg:text-[16px] text-[--secondary-cl] font-[general-sans-regular] leading-[20px]">{feature?.title}</p>
           </div>

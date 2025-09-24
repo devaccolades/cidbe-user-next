@@ -9,6 +9,7 @@ import '../../../components/projectinnerpage/projectDetails.css'
 import { redirect } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { SkeletonLoader } from '../../../components/skeletoneffect/Skelten';
+import FAQSection from '../../../components/FAQSection'
 
 const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, })
 
@@ -44,6 +45,7 @@ function PageContent({ data }) {
           onVideoModalOpen={() => setIsVideoModalOpen(true)}
           onVideoModalClose={() => setIsVideoModalOpen(false)}
         />
+      <FAQSection />
       </div>
       <Footer />
     </>

@@ -112,12 +112,12 @@ function Status({ status }) {
                     />
                     <div className='relative mt-[2px] rounded-[5px] bottom-0 left-0 right-0 flex items-center justify-between bg-[#BFD8BD] p-[10px] rounded-b-[6px]' >
                       <div className='flex items-center'>
-                        <Image src={yearIcon} alt="Year Icon" className='mr-[5px]' />
+                        <Image src={yearIcon} alt="Premium 3 Bhk flats in thrissur" className='mr-[5px]' />
                         <p className='text-sm'>{item.month}</p>
                       </div>
                       {/* {index < yearData.statuses.length - 1 && ( */}
                       <div className='flex items-center'>
-                        <Image src={arrowIcon} alt="flat for sale in Thrissur" />
+                        <Image src={arrowIcon} alt="Premium 4 Bhk flats in thrissur" />
                       </div>
                       {/* )} */}
                     </div>

@@ -142,7 +142,7 @@ function VideoSection({ videosection, onVideoModalOpen, onVideoModalClose }) {
                         width={50}
                         height={50}
                         src={playIcon}
-                        alt="Play video"
+                        alt="Premium 2 Bhk flats in thrissur"
                       />
                     </div>
                   </div>
