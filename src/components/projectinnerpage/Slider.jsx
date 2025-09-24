@@ -89,7 +89,7 @@ const Carousel = ({ amenities_images }) => {
                   >
                     <Image
                       src={image.images}
-                      alt="flats in Thrissur"
+                      alt="Premium 3 Bhk flats in thrissur"
                       layout="fill"
                       objectFit="cover"
                       className="rounded-[30px]"
