@@ -11,7 +11,6 @@ import dynamic from 'next/dynamic';
 import { SkeletonLoader } from '../../../components/skeletoneffect/Skelten';
 import FAQSection from '../../../components/FAQSection'
 import Script from 'next/script';
-
 const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, })
 
 // Create a client component wrapper
@@ -217,11 +216,20 @@ const newSchema = {
   ]
 }
 
+
 function PageContent({ data }) {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
     <>
+      {data?.data?.slug === "premium-flats-cassia" && (
+        <Script
+          id="ld-json-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(newSchema) }}
+        />
+      )}
       <title>{data?.data?.meta_title || 'Default Title'}</title>
       <meta name="description" content={data?.data?.meta_description || 'Default Description'} />
 
@@ -280,14 +288,7 @@ export default async function Page({ params }) {
 
   return (
     <>
-      <PageContent data={data} />;
-      {slug === 'premium-flats-cassia' && (
-        <Script
-          id="seo-json-ld"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(newSchema) }}
-        />
-      )}
+      <PageContent data={data} />
     </>
   );
 }
