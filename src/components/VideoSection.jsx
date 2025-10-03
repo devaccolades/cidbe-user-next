@@ -61,11 +61,11 @@ function VideoSection({ videosection, onVideoModalOpen, onVideoModalClose }) {
       thumbnail: "/images/image15.jpg", // Path to your custom thumbnail
       title: "Showcase Apartment 1", // Optional title
     },
-    // {
-    //     videoId: 'YOUR_YOUTUBE_VIDEO_ID_2',
-    //     thumbnail: '/images/custom-thumbnail-2.jpg',
-    //     title: 'Showcase Apartment 2'
-    // },
+    {
+        videoId: 'tJBpcADoXEs',
+        thumbnail: '/images/cidbe2.jpg',
+        title: 'Showcase Apartment 2'
+    },
   ];
 
   // YouTube Modal Component - FULLY RESPONSIVE
