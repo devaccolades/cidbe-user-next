@@ -14,7 +14,7 @@ import Script from 'next/script';
 const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, })
 
 // Create a client component wrapper
-const newSchema = {
+const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
 
@@ -223,11 +223,11 @@ function PageContent({ data }) {
   return (
     <>
       {data?.data?.slug === "premium-flats-cassia" && (
-        <Script
-          id="ld-json-schema"
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(newSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
         />
       )}
       <title>{data?.data?.meta_title || 'Default Title'}</title>
