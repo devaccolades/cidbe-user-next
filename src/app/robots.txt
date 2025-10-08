@@ -3,4 +3,5 @@ User-agent: *
 Disallow: /?
 Disallow: /*?
 Allow: /favicon.ico
-Sitemap: https://cidbi.com/sitemap.xml
+Allow: /next/image
+Sitemap: https://cidbi.com/sitemap.xml      

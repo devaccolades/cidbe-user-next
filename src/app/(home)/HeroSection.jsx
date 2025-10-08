@@ -116,7 +116,7 @@ function HeroSection() {
       if (StatusCode === 6000) {
         let projects = data;
         if (data.length === 1) {
-            projects = Array(5).fill(data[0]);
+          projects = Array(5).fill(data[0]);
         }
         setProject(projects);
         setBackgroundImage(data[0]?.background_image);
@@ -174,8 +174,9 @@ function HeroSection() {
                   transition: { duration: 0.5, delay: 1 },
                 }}
               >
-                You are choosing a builder having the best apartments with more
-                than 35 years of experience in the construction industry
+                You are choosing a builder having the best apartments and flats
+                with more than 35 years of experience in the construction
+                industry
               </motion.p>
             </div>
           </div>
