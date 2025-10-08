@@ -26,7 +26,7 @@ function Chairman() {
           </div> */}
           <div className='w-full md:w-[80%] chaiman-cards mx-auto text-white flex flex-col gap-[6px] md:gap-[10px] px-[30px] md:px-[30px] lg:px-[20px]'>
           <Fade bottom delay={300}>
-            <h3 className='text-[24px] font-[general-sans-medium] leading-[29px]'>CHAIRMAN</h3>
+            <h2 className='text-[24px] font-[general-sans-medium] leading-[29px]'>CHAIRMAN</h2>
             </Fade>
             <div className='flex flex-col gap-[20px] font-[general-sans-medium] description text-[14px] lg:text-[18px] leading-[21px] md:leading-[24px]'>
             <Fade bottom delay={400}>

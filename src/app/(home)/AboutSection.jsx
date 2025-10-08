@@ -41,7 +41,7 @@ function AboutSection() {
               <Image className='absolute right-[400px] lg:block hidden bottom-[81px]' src={aboutCardImage} alt="flats for sale in Thrissur" />
               <div className='w-full responsive lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
                 <Fade bottom delay={200}>
-                  <h3 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h3>
+                  <h2 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h2>
                 </Fade>
                 <div className='flex flex-col z-10 gap-[20px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>
                   <Fade bottom delay={250}>
@@ -68,7 +68,7 @@ function AboutSection() {
         {/* Why choose us? */}
         <section className='containers'>
           <Fade bottom delay={300}>
-            <h3 className='text-[24px] font-[general-sans-medium] text-center mt-[40px] mb-[20px] leading-[32.4px]'>WHY CHOOSE US?</h3>
+            <h2 className='text-[24px] font-[general-sans-medium] text-center mt-[40px] mb-[20px] leading-[32.4px]'>WHY CHOOSE US?</h2>
           </Fade>
           <div className='grid grid-rows-1 lg:grid-cols-3 gap-[20px]'>
             <Fade bottom delay={200}>
@@ -78,13 +78,13 @@ function AboutSection() {
                 </Fade>
                 <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
                   <Fade bottom delay={300}>
-                    <h6 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
+                    <h3 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
                       <span className='md:hidden block'>Unparalleled <br /> Quality</span>
                       <span className='md:block hidden'>Unparalleled Quality</span>
-                    </h6>
+                    </h3>
                   </Fade>
                   <Fade bottom delay={400}>
-                    <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'> CIDBI's guarantees consistency and excellence in every aspect of construction, ensuring that each project meets the highest standards of quality.</p>
+                    <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'> CIDBI, one of the top builders in Thrissur, delivers high-quality flats and apartments in Thrissur with unmatched consistency and construction excellence.</p>
                   </Fade>
                 </div>
               </div>
@@ -96,13 +96,13 @@ function AboutSection() {
                 </Fade>
                 <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
                   <Fade bottom delay={600}>
-                    <h6 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
+                    <h3 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
                       <span className='md:hidden block'>Comprehensive <br /> Amenities</span>
                       <span className='md:block hidden px-[5px]'>Comprehensive Amenities</span>
-                    </h6>
+                    </h3>
                   </Fade>
                   <Fade bottom delay={600}>
-                    <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'> From parking spaces to landscaped gardens and community halls, CIDBI's apartments offer a wide range of amenities to enhance the quality of life for residents.</p>
+                    <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'> CIDBI, one of the top builders in Thrissur, offers thoughtfully designed flats and apartments in Thrissur with modern amenities for a better lifestyle.</p>
                   </Fade>
                 </div>
               </div>
@@ -114,13 +114,13 @@ function AboutSection() {
                 </Fade>
                 <div className='flex flex-col gap-[10px] lg:gap-[20px]'>
                   <Fade bottom delay={750}>
-                    <h6 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
+                    <h3 className='font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]'>
                       <span className='md:hidden block'>Customer-Centric <br /> Approach</span>
                       <span className='md:block hidden px-[5px]'>Customer-Centric Approach</span>
-                    </h6>
+                    </h3>
                   </Fade>
                   <Fade bottom delay={750}>
-                    <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>CIDBI prioritizes customer satisfaction, offering flexible floor plans and personalized service, exceeding expectations in every project.</p>
+                    <p className='px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>CIDBI, trusted builders in Thrissur, offers quality flats and apartments with flexible floor plans and personalized service to match every lifestyle.</p>
                   </Fade>
                 </div>
               </div>
@@ -135,7 +135,7 @@ function AboutSection() {
                 <div className='flex flex-row gap-[15px] h-[170px] lg:h-[190px]'>
                   <Fade left delay={200}>
                     <div className='ps-[35px] w-[14.9vw] flex flex-col justify-center'>
-                      <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]'>20+</h5>
+                      <p className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]'>20+</p>
                       <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Projects <br /> Completed</p>
                     </div>
                   </Fade>
@@ -146,14 +146,14 @@ function AboutSection() {
                   </Fade>
                   <Fade left delay={400}>
                     <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[84px] w-[160px] lg:w-[19.375vw] flex flex-col items-center justify-center'>
-                      <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>11M+</h5>
+                      <p className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>11M+</p>
                       <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Square Feet<br />Completed</p>
                     </div>
                   </Fade>
                 </div>
                 <Fade left delay={500}>
                 <div className='h-[170px] lg:h-[190px] ps-[50px] w-10/12 lg:w-[23.28125vw] flex flex-col justify-center bg-[--primary-cl] rounded-[12px] rounded-tr-[56px]'>
-                  <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1000+</h5>
+                  <p className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1000+</p>
                   <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
                 </div>
                 </Fade>
@@ -163,7 +163,7 @@ function AboutSection() {
                   </Fade>
                   <Fade left delay={700}>
                   <div className='flex flex-col justify-center'>
-                    <h5 className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
+                    <p className='text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</p>
                     <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Years of <br /> Experience</p>
                   </div>
                   </Fade>
@@ -200,14 +200,14 @@ function AboutSection() {
           <card className='h-[672px] md:h-[496px] w-full bg-white rounded-[20px] p-[10px] md:p-[15px] box-shadow grid grid-rows-[18%,1fr] md:grid-rows-[36%,1fr] gap-[10px]'>
             <div className=" grid h-[120px] md:h-auto grid-cols-[1fr,90px,1fr] md:grid-cols-[150px,150px,150px,1fr] gap-[10px]">
               <div className='flex flex-col mt-2 md:pt-5 items-center'>
-                <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]'>20+</h5>
+                <p className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]'>20+</p>
                 <p className='res-text text-[14px] leading-[18px] md:text-[16px] lg:text-[1.04vw] md:leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Projects <br /> Completed</p>
               </div>
               <div className='h-[120px] lg:h-auto'>
                 <Image src={image1} alt='flat for sale in Thrissur' className='rounded-[12px] h-full md:h-[170px]' />
               </div>
               <div className='bg-[--primary-cl] rounded-[12px] rounded-br-[54px] md:rounded-br-[84px] flex flex-col items-center pt-3 md:pt-5'>
-                <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>11M+</h5>
+                <p className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>11M+</p>
                 <p className='res-text text-[14px] leading-[18px] md:text-[16px] lg:text-[1.04vw] md:leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Square Feet<br />Completed</p>
               </div>
               {/* <div className=''></div> */}
@@ -216,14 +216,14 @@ function AboutSection() {
             <bottom className="flex flex-col md:flex-row  gap-[10px]">
               <div className=' w-full grid grid-rows-[45%,1fr] md:grid-rows-[35%,1fr] gap-[10px]'>
                 <div className='ps-[40px] h-[120px] md:h-auto flex flex-col justify-center bg-[--primary-cl] rounded-[12px] rounded-tr-[56px]'>
-                  <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1000+</h5>
+                  <p className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>1000+</p>
                   <p className='text-[14px] leading-[18px] md:text-[16px] lg:text-[1.04vw] md:leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Happy Customers</p>
                 </div>
                 <div className='flex flex-row gap-[45px] mt-[16px] md:mt-0'>
                   <div className='w-[142px] lg:w-[195px] rounded-[12px] bg-center bg-cover' style={{ backgroundImage: `url(${image2.src})` }} />
 
                   <div className='flex flex-col justify-center'>
-                    <h5 className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</h5>
+                    <p className='text-[32px] md:text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]'>35+</p>
                     <p className='text-[16px] lg:text-[1.04vw] leading-[21px] lg:leading-[1.40vw] font-[general-sans-regular]'>Years of <br /> Experience</p>
                   </div>
                 </div>

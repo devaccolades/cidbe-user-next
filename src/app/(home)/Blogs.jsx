@@ -28,7 +28,7 @@ function Blogs() {
   return (
     <section className='h-[651px] bg-[--primary-cl]'>
       <div className='containers py-[40px]'>
-        <h4 className='text-[30px] text-center font-[general-sans-regular]'>BLOGS</h4>
+        <h2 className='text-[30px] text-center font-[general-sans-regular]'>BLOGS</h2>
         {Blogs === null ? (
           <Skelten />
         ) :

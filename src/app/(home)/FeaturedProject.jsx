@@ -51,7 +51,7 @@ function FeaturedProject() {
     <div className=' bg-[--primary-cl] text-[--secondary-cl] pt-[40px] md:pt-[80px] pb-[30px] main-featurend-bg'>
       <div className='w-[90%] md:w-[90%] responsive lg:w-[60%] xl:w-[55%] mx-auto flex flex-col gap-[20px]'>
       <Fade bottom delay={300}>
-        <h3 className='text-[32px] leading-[43px] font-[general-sans-medium]'>Featured Projects</h3>
+        <h2 className='text-[32px] leading-[43px] font-[general-sans-medium]'>Featured Projects</h2>
         </Fade>
         {featuredProject.length > 0 ?(
           <div className='flex flex-row gap-[20px] w-full'>
