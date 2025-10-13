@@ -29,7 +29,7 @@ function AboutSection() {
   const router = useRouter()
 
   return (
-      <main className='text-[--secondary-cl] w-full flex flex-col py-[45px] about-main-bg'
+      <main className='text-[--secondary-cl] w-full h-full flex flex-col py-[45px] about-main-bg '
       >
         <div className='absolute top-[1066px] left-[-191px] lg:block hidden -z-10'>
           <Image src={gradientLeft} alt='Apartments in Thrissur' />
@@ -37,11 +37,12 @@ function AboutSection() {
         {/* About Card */}
         <Fade bottom delay={200}>
           <card className='relative containers shadow-2xl flex flex-col-reverse md:flex-row rounded-[12px]'>
-            <div className='md:h-[433px] w-full bg-color rounded-b-[12px] md:rounded-e-none  md:rounded-s-[12px] flex items-center p-[30px] md:p-[60px] lg:p-0'>
+            <div className='h-full md:h-[433px] w-full bg-color rounded-b-[12px] md:rounded-e-none  md:rounded-s-[12px] flex items-center p-[30px] md:p-[21.4px] lg:p-8'>
               <Image className='absolute right-[400px] lg:block hidden bottom-[81px]' src={aboutCardImage} alt="flats for sale in Thrissur" />
-              <div className='w-full responsive lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
+              <div className='h-full w-full responsive lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start'>
                 <Fade bottom delay={200}>
-                  <h2 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>About us</h2>
+                  <h2 className='text-[10px] md:text-[14px] font-[general-sans-medium] leading-[20px]'>About us</h2>
+                  <h1 className='text-[20px] md:text-[24px] font-[general-sans-medium] leading-[32.4px]'>Flats and Apartments in Thrissur by Trusted Builder</h1>
                 </Fade>
                 <div className='flex flex-col z-10 gap-[20px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]'>
                   <Fade bottom delay={250}>
@@ -60,7 +61,7 @@ function AboutSection() {
               </div>
             </div>
             <Image src={aboutCardshapeMobile} alt='flats in Thrissur' className='min-w-full align-bottom -mb-[5px] -mt-[30px] md:hidden block' />
-            <div className='bg-cover bg-bottom md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] h-[300px] md:h-full z-4' style={{ backgroundImage: `url(${aboutImage.src})` }}>
+            <div className='h-full bg-cover bg-bottom md:w-full lg:w-7/12 rounded-t-[12px] md:rounded-e-[12px] min-h-[300px] md:h-full z-4' style={{ backgroundImage: `url(${aboutImage.src})` }}>
               <Image className='h-full -ms-[2px] md:block hidden' alt='flat for sale in Thrissur' src={aboutCardshape} />
             </div>
           </card>

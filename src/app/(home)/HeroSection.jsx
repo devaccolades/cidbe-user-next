@@ -140,14 +140,14 @@ function HeroSection() {
         <div className="h-full md:w-[90%] res lg:w-[80%] mx-auto flex flex-row justify-between md:items-center lg:pe-[40px]">
           <div className="md:w-[311px] lg:w-[429px] flex flex-col md:mt-4 justify-between items-center text-center md:ps-5 mx-auto pt-[85px] md:pt-0 pb-[20px] md:pb-0 md:mx-0">
             <div>
-              <h1 className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
+              <p className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
                 <p className="text-wrapper">
                   <span className="text-animation delay-1">തൃശ്ശൂരിൻ്റെ </span>
                 </p>
                 <p className="text-wrapper">
                   <span className="text-animation delay-2">സ്വന്തം</span>
                 </p>
-              </h1>
+              </p>
               <p className="hero-sub-text -mt-[10px] md:mt-0 text-wrapper">
                 <span className="text-animation delay-3">ബിൽഡർ</span>
               </p>
