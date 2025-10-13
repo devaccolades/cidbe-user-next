@@ -9,6 +9,7 @@ import Footer from "../layout/Footer";
 import HomePageSkelten from "../components/skeletoneffect/HomePageSkelten";
 import Head from "next/head";
 import Script from "next/script";
+import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 
 const FeaturedProject = dynamic(() => import("../app/(home)/FeaturedProject"), {
   ssr: false,
@@ -204,6 +205,7 @@ export async function generateMetadata() {
 function Page() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <HeroSection />
       <AboutSection />

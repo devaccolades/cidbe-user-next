@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "../app/globals.css";
 import Script from "next/script";
+import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 // import Canonical from "../components/Canonical"
 
 const inter = Inter({ subsets: ["latin"] });
@@ -9,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="hidescroll">
       <head />
-        <body className={inter.className}>
+      <body className={inter.className}>
         <Script
           id="gtm-init"
           strategy="afterInteractive"
@@ -20,20 +21,24 @@ export default function RootLayout({ children }) {
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-PWFG6894');
-            `,
+              `,
           }}
         />
         <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894"
-            height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
         </noscript>
-           <Script
+        <Script
           id="meta-pixel"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
               n.callMethod.apply(n,arguments):n.queue.push(arguments)};
               if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
               n.queue=[];t=b.createElement(e);t.async=!0;
@@ -42,7 +47,7 @@ export default function RootLayout({ children }) {
               'https://connect.facebook.net/en_US/fbevents.js');
               fbq('init', '946622127096867');
               fbq('track', 'PageView');
-            `,
+              `,
           }}
         />
         <noscript>
@@ -53,6 +58,7 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=946622127096867&ev=PageView&noscript=1"
           />
         </noscript>
+        <ScrollToTop />
         {children}
       </body>
     </html>

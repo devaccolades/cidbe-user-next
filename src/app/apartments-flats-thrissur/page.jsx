@@ -60,8 +60,8 @@ const jsonLd = {
 export default async function page() {
   return (
     <>
+      {/* <ScrollToTop /> */}
       <Header />
-      <ScrollToTop />
       <Herosection />
       <WhyChooseSection />
       <FormSection />
