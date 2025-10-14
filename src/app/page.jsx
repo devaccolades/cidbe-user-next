@@ -213,6 +213,7 @@ function Page() {
       <Chairman />
       <Blogs />
       <CustomerReviewsAndFaq />
+      
       <Footer />
       <Script
         id="seo-json-ld"
