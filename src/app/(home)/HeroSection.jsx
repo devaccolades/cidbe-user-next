@@ -142,14 +142,14 @@ function HeroSection() {
             <div>
               <p className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
                 <p className="text-wrapper">
-                  <span className="text-animation delay-1">തൃശ്ശൂരിൻ്റെ </span>
+                  <span className="text-animation delay-0">തൃശ്ശൂരിൻ്റെ </span>
                 </p>
                 <p className="text-wrapper">
-                  <span className="text-animation delay-2">സ്വന്തം</span>
+                  <span className="text-animation delay-0">സ്വന്തം</span>
                 </p>
               </p>
               <p className="hero-sub-text -mt-[10px] md:mt-0 text-wrapper">
-                <span className="text-animation delay-3">ബിൽഡർ</span>
+                <span className="text-animation delay-0">ബിൽഡർ</span>
               </p>
             </div>
 
@@ -160,7 +160,7 @@ function HeroSection() {
                 whileInView={{
                   opacity: 1,
                   y: 0,
-                  transition: { duration: 0.5, delay: 0.5 },
+                  transition: { duration: 0.2, delay: 0.2 },
                 }}
               >
                 <p className="inner">110 Lakhs Sqft. Area Completed</p>
