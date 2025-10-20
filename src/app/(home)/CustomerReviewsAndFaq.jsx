@@ -136,7 +136,7 @@ function CustomerReviewsAndFaq() {
                     className=" bg-white cursor-pointer h-[478px] rounded-[12px] py-[30px] grid md:grid-rows-[110px,1fr,110px]"
                   >
                     <div className="px-[20px]">
-                      <Image src={quatsIcon} alt="flat for sale in Thrissur" />
+                      <Image src={quatsIcon} alt="Builders in Thrissur" />
                     </div>
                     <p className="px-[30px] font-[general-sans-medium] text-[14px] lg:text-[16px] leading-[24px]">
                       {testimoni?.review_text}

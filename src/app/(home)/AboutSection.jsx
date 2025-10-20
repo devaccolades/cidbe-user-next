@@ -40,7 +40,7 @@ function AboutSection() {
             <Image
               className="absolute right-[400px] lg:block hidden bottom-[81px]"
               src={aboutCardImage}
-              alt="flats for sale in Thrissur"
+              alt="Builders in Thrissur"
             />
             <div className="h-full w-full responsive lg:w-10/12 xl:w-7/12 lg:ms-[50px] xl:ms-[90px] flex flex-col gap-[10px] text-center md:text-start">
               <Fade bottom delay={200}>
@@ -89,7 +89,7 @@ function AboutSection() {
           >
             <Image
               className="h-full -ms-[2px] md:block hidden"
-              alt="flat for sale in Thrissur"
+              alt="Builders in Thrissur"
               src={aboutCardshape}
             />
           </div>
@@ -170,7 +170,7 @@ function AboutSection() {
               <Fade bottom delay={700}>
                 <Image
                   src={serviceGif}
-                  alt="flat for sale in Thrissur"
+                  alt="Builders in Thrissur"
                   className="w-[90px] lg:w-[120px]"
                 />
               </Fade>
@@ -309,7 +309,7 @@ function AboutSection() {
             <div className="h-[120px] lg:h-auto">
               <Image
                 src={image1}
-                alt="flat for sale in Thrissur"
+                alt="flat in Thrissur"
                 className="rounded-[12px] h-full md:h-[170px]"
               />
             </div>
