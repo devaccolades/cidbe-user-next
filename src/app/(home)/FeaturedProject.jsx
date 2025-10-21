@@ -47,10 +47,10 @@ function FeaturedProject() {
     fetchData()
   },[numItems])
   return (
-    <Fade bottom delay={200}>
+    <Fade bottom delay={100}>
     <div className=' bg-[--primary-cl] text-[--secondary-cl] pt-[40px] md:pt-[80px] pb-[30px] main-featurend-bg'>
       <div className='w-[90%] md:w-[90%] responsive lg:w-[60%] xl:w-[55%] mx-auto flex flex-col gap-[20px]'>
-      <Fade bottom delay={300}>
+      <Fade bottom delay={100}>
         <h2 className='text-[32px] leading-[43px] font-[general-sans-medium]'>Featured Projects</h2>
         </Fade>
         {featuredProject.length > 0 ?(

@@ -208,7 +208,8 @@ function CustomerReviewsAndFaq() {
               </div>
               <AnimatePresence>
                 {isOpend === index && (
-                  <motion.div
+                  <div
+                  // <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -218,7 +219,8 @@ function CustomerReviewsAndFaq() {
                     <p className="font-[general-sans-regular] text-[12px] lg:text-[16px] py-[8px] leading-[18px] lg:leading-[24px]">
                       {faq.answer || ""}
                     </p>
-                  </motion.div>
+                  {/* </motion.div> */}
+                  </div>
                 )}
               </AnimatePresence>
               <hr className="border-t-[1px] border-t-[--secondary-cl]" />

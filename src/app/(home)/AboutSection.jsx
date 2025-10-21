@@ -97,15 +97,15 @@ function AboutSection() {
       </Fade>
       {/* Why choose us? */}
       <section className="containers">
-        <Fade bottom delay={300}>
+        <Fade bottom delay={100}>
           <h2 className="text-[24px] font-[general-sans-medium] text-center mt-[40px] mb-[20px] leading-[32.4px]">
             WHY CHOOSE US?
           </h2>
         </Fade>
         <div className="grid grid-rows-1 lg:grid-cols-3 gap-[20px]">
-          <Fade bottom delay={200}>
+          <Fade bottom delay={100}>
             <div className="text-center flex flex-col md:flex-row lg:flex-col px-[20px] lg:px-0 items-center gap-[10px] lg:gap-[20px] py-[30px]  bg-white shadow-2xl rounded-[15px]">
-              <Fade bottom delay={200}>
+              <Fade bottom delay={100}>
                 <Image
                   src={qualityGif}
                   alt="Apartments in Thrissur"
@@ -113,7 +113,7 @@ function AboutSection() {
                 />
               </Fade>
               <div className="flex flex-col gap-[10px] lg:gap-[20px]">
-                <Fade bottom delay={300}>
+                <Fade bottom delay={100}>
                   <h3 className="font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]">
                     <span className="md:hidden block">
                       Unparalleled <br /> Quality
@@ -123,7 +123,7 @@ function AboutSection() {
                     </span>
                   </h3>
                 </Fade>
-                <Fade bottom delay={400}>
+                <Fade bottom delay={100}>
                   <p className="px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]">
                     {" "}
                     CIDBI, one of the top builders in Thrissur, delivers
@@ -134,9 +134,9 @@ function AboutSection() {
               </div>
             </div>
           </Fade>
-          <Fade bottom delay={500}>
+          <Fade bottom delay={100}>
             <div className="text-center flex flex-col md:flex-row lg:flex-col px-[20px] lg:px-0 items-center gap-[20px] py-[30px]  bg-white shadow-2xl rounded-[15px]">
-              <Fade bottom delay={500}>
+              <Fade bottom delay={100}>
                 <Image
                   src={facilitiesGif}
                   alt="flats in Thrissur"
@@ -144,7 +144,7 @@ function AboutSection() {
                 />
               </Fade>
               <div className="flex flex-col gap-[10px] lg:gap-[20px]">
-                <Fade bottom delay={600}>
+                <Fade bottom delay={100}>
                   <h3 className="font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]">
                     <span className="md:hidden block">
                       Comprehensive <br /> Amenities
@@ -154,7 +154,7 @@ function AboutSection() {
                     </span>
                   </h3>
                 </Fade>
-                <Fade bottom delay={600}>
+                <Fade bottom delay={100}>
                   <p className="px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]">
                     {" "}
                     CIDBI, one of the top builders in Thrissur, offers
@@ -165,9 +165,9 @@ function AboutSection() {
               </div>
             </div>
           </Fade>
-          <Fade bottom delay={700}>
+          <Fade bottom delay={100}>
             <div className="text-center flex flex-col md:flex-row lg:flex-col px-[20px] lg:px-0 items-center gap-[20px] py-[30px]  bg-white shadow-2xl rounded-[15px]">
-              <Fade bottom delay={700}>
+              <Fade bottom delay={100}>
                 <Image
                   src={serviceGif}
                   alt="Builders in Thrissur"
@@ -175,7 +175,7 @@ function AboutSection() {
                 />
               </Fade>
               <div className="flex flex-col gap-[10px] lg:gap-[20px]">
-                <Fade bottom delay={750}>
+                <Fade bottom delay={150}>
                   <h3 className="font-[general-sans-medium] text-[24px] md:text-[20px] lg:text-[24px] leading-[32px]">
                     <span className="md:hidden block">
                       Customer-Centric <br /> Approach
@@ -185,7 +185,7 @@ function AboutSection() {
                     </span>
                   </h3>
                 </Fade>
-                <Fade bottom delay={750}>
+                <Fade bottom delay={150}>
                   <p className="px-[30px] font-[general-sans-regular] text-[14px] lg:text-[16px] leading-[24px]">
                     CIDBI, trusted builders in Thrissur, offers quality flats
                     and apartments with flexible floor plans and personalized
@@ -198,12 +198,12 @@ function AboutSection() {
         </div>
       </section>
       {/* Banner */}
-      <Fade bottom delay={200}>
+      <Fade bottom delay={100}>
         <section className="containers pt-[40px] lg:block hidden">
           <card className="w-full bg-white rounded-[20px] p-[15px] box-shadow grid grid-cols-[500px,1fr] lg:grid-cols-2">
             <left className="flex flex-col gap-[10px]">
               <div className="flex flex-row gap-[15px] h-[170px] lg:h-[190px]">
-                <Fade left delay={200}>
+                <Fade left delay={100}>
                   <div className="ps-[35px] w-[14.9vw] flex flex-col justify-center">
                     <p className="text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw] font-[general-sans-semibold]">
                       20+
@@ -213,7 +213,7 @@ function AboutSection() {
                     </p>
                   </div>
                 </Fade>
-                <Fade left delay={300}>
+                <Fade left delay={100}>
                   <div>
                     <Image
                       src={image1}
@@ -222,7 +222,7 @@ function AboutSection() {
                     />
                   </div>
                 </Fade>
-                <Fade left delay={400}>
+                <Fade left delay={100}>
                   <div className="bg-[--primary-cl] rounded-[12px] rounded-br-[84px] w-[160px] lg:w-[19.375vw] flex flex-col items-center justify-center">
                     <p className="text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]">
                       11M+
@@ -235,7 +235,7 @@ function AboutSection() {
                   </div>
                 </Fade>
               </div>
-              <Fade left delay={500}>
+              <Fade left delay={100}>
                 <div className="h-[170px] lg:h-[190px] ps-[50px] w-10/12 lg:w-[23.28125vw] flex flex-col justify-center bg-[--primary-cl] rounded-[12px] rounded-tr-[56px]">
                   <p className="text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]">
                     1000+
@@ -246,13 +246,13 @@ function AboutSection() {
                 </div>
               </Fade>
               <div className="flex flex-row gap-[45px]">
-                <Fade left delay={600}>
+                <Fade left delay={100}>
                   <div
                     className="w-[142px] lg:w-[195px] h-[177px] lg:h-[243px] rounded-[12px] bg-center bg-cover"
                     style={{ backgroundImage: `url(${image2.src})` }}
                   />
                 </Fade>
-                <Fade left delay={700}>
+                <Fade left delay={100}>
                   <div className="flex flex-col justify-center">
                     <p className="text-[36px] lg:text-[3.33vw] lg:leading-[3.54vw]  font-[general-sans-semibold]">
                       35+
@@ -264,7 +264,7 @@ function AboutSection() {
                 </Fade>
               </div>
             </left>
-            <Fade right delay={400}>
+            <Fade right delay={100}>
               <right className="relative flex justify-center items-center">
                 <Image
                   src={charectersImage}
@@ -285,7 +285,7 @@ function AboutSection() {
                   transition={{
                     duration: 5,
                     ease: "easeInOut",
-                    times: [0, 0.25, 0.5, 0.75, 1],
+                    times: [0, 0.25, 0.25, 0.5, 0.5],
                     repeat: Infinity,
                     repeatDelay: 1,
                   }}
@@ -371,7 +371,7 @@ function AboutSection() {
                 transition={{
                   duration: 5,
                   ease: "easeInOut",
-                  times: [0, 0.25, 0.5, 0.75, 1],
+                  times: [0, 0.25, 0.25, 0.5, 5],
                   repeat: Infinity,
                   repeatDelay: 1,
                 }}
