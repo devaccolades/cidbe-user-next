@@ -142,20 +142,21 @@ function HeroSection() {
             <div>
               {/* <p className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
                 <p className="text-wrapper">
-                  <span className="text-animation delay-0">തൃശ്ശൂരിൻ്റെ </span>
+                  <span className="text-animation delay-1">തൃശ്ശൂരിൻ്റെ </span>
                 </p>
                 <p className="text-wrapper">
-                  <span className="text-animation delay-0">സ്വന്തം</span>
+                  <span className="text-animation delay-1">സ്വന്തം</span>
                 </p>
               </p>
               <p className="hero-sub-text -mt-[10px] md:mt-0 text-wrapper">
-                <span className="text-animation delay-0">ബിൽഡർ</span>
-              </p> */}
-              <p className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
+                <span className="text-animation delay-1">ബിൽഡർ</span>
+              </p>
+    */}
+ <p className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
   <motion.span
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: 0.1 }}
+    transition={{ duration: 0.1, delay: 0.1 }}
     className="text-wrapper"
   >
     തൃശ്ശൂരിൻ്റെ
@@ -164,7 +165,7 @@ function HeroSection() {
   <motion.span
     initial={{ opacity: 0, y: 30 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6, delay: 0.3 }}
+    transition={{ duration: 0.3, delay: 0.3 }}
     className="text-wrapper"
   >
     സ്വന്തം
@@ -175,11 +176,10 @@ function HeroSection() {
   className="hero-sub-text -mt-[10px] md:mt-0 text-wrapper"
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.5 }}
+  transition={{ duration: 0.3, delay: 0.3 }}
 >
   ബിൽഡർ
 </motion.p>
-
             </div>
 
             <div className="">
@@ -209,7 +209,8 @@ function HeroSection() {
               </motion.p>
             </div>
           </div>
-          <motion.div
+          {/* <motion.div */}
+          <div
             className="md:block hidden md:h-[430px] lg:h-[591px] carousel md:w-[311px] md:mt-10 lg:mt-0 lg:w-[395px] md:me-10 lg:me-0"
             {...animationConfig}
           >
@@ -259,7 +260,8 @@ function HeroSection() {
                 </Card>
               ))}
             </Carousel>
-          </motion.div>
+            </div>
+          {/* </motion.div> */}
         </div>
       </section>
       <div className="md:hidden block h-[630px] py-[20px] containers overflow-hidden">

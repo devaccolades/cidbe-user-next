@@ -14,7 +14,7 @@ import { Fade } from "react-reveal";
 
 function Chairman() {
   return (
-    <Fade bottom delay={200}>
+    <Fade bottom delay={100}>
     <section className='py-[30px] lg:py-[100px] flex justify-center items-center'>
       <card className='relative responsive containers shadow-2xl flex flex-col-reverse md:grid md:grid-cols-[1fr,350px] lg:grid-cols-[1fr,435px] rounded-[12px]'>
         <div className='h-[450px] md:h-[430px] lg:h-[433px] chairmanBgGradient rounded-b-[12px] md:rounded-br-none md:rounded-s-[12px]  flex items-center' >
@@ -25,11 +25,11 @@ function Chairman() {
             <Image src={chairmanbgMobile} className='' alt='gradient-left' />
           </div> */}
           <div className='w-full md:w-[80%] chaiman-cards mx-auto text-white flex flex-col gap-[6px] md:gap-[10px] px-[30px] md:px-[30px] lg:px-[20px]'>
-          <Fade bottom delay={300}>
+          <Fade bottom delay={100}>
             <h2 className='text-[24px] font-[general-sans-medium] leading-[29px]'>CHAIRMAN</h2>
             </Fade>
             <div className='flex flex-col gap-[20px] font-[general-sans-medium] description text-[14px] lg:text-[18px] leading-[21px] md:leading-[24px]'>
-            <Fade bottom delay={400}>
+            <Fade bottom delay={100}>
               <p>
                 Welcome to CIDBI.
                 We drive forward with our commitment to innovation and excellence. Our journey is built on integrity, quality, and customer satisfaction.
@@ -40,7 +40,7 @@ function Chairman() {
               </Fade>
             </div>
             <div className='flex md:justify-end name-sectio pt-[20px]'>
-            <Fade bottom delay={500}>
+            <Fade bottom delay={100}>
               <p className='font-[general-sans-medium] text-[14px] lg:text-[12px] leading-[18px]'>
                 <span className='text-[14px]'>A A Abdul Lathif</span> <br />
                 <span className='text-[12px] leading-[18px]'>CEO, CIDBI, Thrissur</span> <br />
