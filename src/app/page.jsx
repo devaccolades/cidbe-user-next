@@ -10,6 +10,7 @@ import HomePageSkelten from "../components/skeletoneffect/HomePageSkelten";
 import Head from "next/head";
 import Script from "next/script";
 import ScrollToTop from "../components/scrollToTop/ScrollToTop";
+import HeroSection from "../app/(home)/HeroSection"
 
 const FeaturedProject = dynamic(() => import("../app/(home)/FeaturedProject"), {
   ssr: false,
@@ -23,10 +24,10 @@ const CustomerReviewsAndFaq = dynamic(
   () => import("../app/(home)/CustomerReviewsAndFaq"),
   { ssr: false, loading: () => <Skelten /> }
 );
-const HeroSection = dynamic(() => import("../app/(home)/HeroSection"), {
-  ssr: false,
-  loading: () => <HomePageSkelten />,
-});
+// const HeroSection = dynamic(() => import("../app/(home)/HeroSection"), {
+//   ssr: false,
+//   loading: () => <HomePageSkelten />,
+// });
 
 async function fetchSeoData(path) {
   let data = {};
