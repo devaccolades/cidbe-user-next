@@ -152,38 +152,38 @@ function HeroSection() {
                 <span className="text-animation delay-1">ബിൽഡർ</span>
               </p>
     */}
- <p className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
-  <motion.span
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.1, delay: 0.1 }}
-    className="text-wrapper"
-  >
-    തൃശ്ശൂരിൻ്റെ
-  </motion.span>
+              <p className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
+                <motion.span
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.1, delay: 0.1 }}
+                  className="text-wrapper"
+                >
+                  തൃശ്ശൂരിൻ്റെ
+                </motion.span>
 
-  <motion.span
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3, delay: 0.3 }}
-    className="text-wrapper"
-  >
-    സ്വന്തം
-  </motion.span>
-</p>
+                <motion.span
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.3 }}
+                  className="text-wrapper"
+                >
+                  സ്വന്തം
+                </motion.span>
+              </p>
 
-<motion.p
-  className="hero-sub-text -mt-[10px] md:mt-0 text-wrapper"
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.3, delay: 0.3 }}
->
-  ബിൽഡർ
-</motion.p>
+              <motion.p
+                className="hero-sub-text -mt-[10px] md:mt-0 text-wrapper"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+              >
+                ബിൽഡർ
+              </motion.p>
             </div>
 
             <div className="">
-              <motion.button
+              {/* <motion.button
                 className="box m-[20px]"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{
@@ -193,7 +193,11 @@ function HeroSection() {
                 }}
               >
                 <p className="inner">110 Lakhs Sqft. Area Completed</p>
-              </motion.button>
+              </motion.button> */}
+              <button className="box m-[20px]">
+  <p className="inner">110 Lakhs Sqft. Area Completed</p>
+</button>
+
               <motion.p
                 className="hero-small-txt"
                 initial={{ opacity: 0, y: 50 }}
@@ -260,7 +264,7 @@ function HeroSection() {
                 </Card>
               ))}
             </Carousel>
-            </div>
+          </div>
           {/* </motion.div> */}
         </div>
       </section>
