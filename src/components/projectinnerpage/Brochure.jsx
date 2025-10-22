@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import downloadIcon from '../../../public/images/product-view/download.webp';
+import dynamic from 'next/dynamic';
 import arrow_outwardicon from '../../../public/icons/arrow_outward.webp';
 
 import qrIcon from '../../../public/images/product-view/newQr.svg';
@@ -11,7 +12,9 @@ import third from '../../../public/images/product-view/icons/03.webp';
 import fourth from '../../../public/images/product-view/icons/02.webp';
 import fifth from '../../../public/images/product-view/icons/01.webp';
 import { getBrochureDownload } from '../../services/services';
-import EnquiryModal from '../EnquiryForm/EnquiryModal';
+import { SkeletonLoader } from '../skeletoneffect/Skelten';
+const EnquiryModal = dynamic(() => import('../EnquiryForm/EnquiryModal'), { ssr: false, loading: () => <SkeletonLoader />, })
+// import EnquiryModal from '../EnquiryForm/EnquiryModal';
 
 function Brochure({ data }) {
   const [open, setOpen] = useState(false)

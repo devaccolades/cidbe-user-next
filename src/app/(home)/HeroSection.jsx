@@ -93,6 +93,7 @@ function HeroSection() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
+  
   const animationConfig = {
     initial: {
       opacity: 0,

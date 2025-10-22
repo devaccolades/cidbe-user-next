@@ -4,7 +4,7 @@ import Header from '../../../layout/Header';
 import Footer from '../../../layout/Footer';
 import { getProjectDetails } from '../../../services/services';
 import HeroSection from '../../../components/projectinnerpage/HeroSection';
-import DeepDeatiles from '../../../components/projectinnerpage/DeepDeatiles';
+// import DeepDeatiles from '../../../components/projectinnerpage/DeepDeatiles';
 import '../../../components/projectinnerpage/projectDetails.css'
 import { redirect } from 'next/navigation';
 import dynamic from 'next/dynamic';
@@ -12,6 +12,7 @@ import { SkeletonLoader } from '../../../components/skeletoneffect/Skelten';
 import FAQSection from '../../../components/FAQSection'
 import Script from 'next/script';
 const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, })
+const DeepDeatiles = dynamic(() => import('../../../components/projectinnerpage/DeepDeatiles'), { ssr: false, loading: () => <SkeletonLoader />, })
 
 // Create a client component wrapper
 const jsonLd = {
