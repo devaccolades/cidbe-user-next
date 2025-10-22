@@ -19,8 +19,8 @@ import serviceGif from "../../../public/gif/service1.gif";
 
 // Other Images
 import charectersImage from "../../../public/images/home/charecters.webp";
-import image1 from "../../../public/images/home/image1.webp";
-import image2 from "../../../public/images/home/experience.webp";
+import image1 from "../../../public/images/home/image11.webp";
+import image2 from "../../../public/images/home/experience1.webp";
 import aboutImage from "../../../public/images/home/about-image.webp";
 
 import "./Home.css";
