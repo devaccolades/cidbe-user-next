@@ -196,8 +196,8 @@ function HeroSection() {
                 <p className="inner">110 Lakhs Sqft. Area Completed</p>
               </motion.button> */}
               <button className="border border-collapse p-2 m-[20px]">
-  <p className="inner text-white text-[12px] lg:text-[16px] ">110 Lakhs Sqft. Area Completed</p>
-</button>
+                <p className="inner text-white text-[12px] lg:text-[16px] ">110 Lakhs Sqft. Area Completed</p>
+              </button>
 
               <motion.p
                 className="hero-small-txt"
