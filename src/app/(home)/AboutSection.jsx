@@ -13,9 +13,9 @@ import aboutCardshapeMobile from "../../../public/images/home/about-shape-mobile
 import arrowIcon from "../../../public/icons/arrow-outward-green.webp";
 
 // GIF Images
-import qualityGif from "../../../public/gif/quality.gif";
-import facilitiesGif from "../../../public/gif/facilities.gif";
-import serviceGif from "../../../public/gif/service.gif";
+import qualityGif from "../../../public/gif/quality1.gif";
+import facilitiesGif from "../../../public/gif/facilities1.gif";
+import serviceGif from "../../../public/gif/service1.gif";
 
 // Other Images
 import charectersImage from "../../../public/images/home/charecters.webp";
