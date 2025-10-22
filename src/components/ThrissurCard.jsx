@@ -32,7 +32,7 @@ export default function ThrissurCard({
           <p className="text-[14px] lg:text-[16px] font-[general-sans-medium]">
             Apartment type
           </p>
-          <p className="text-[14px] lg:text-[16px] font-[general-sans-light]">
+          <p className="text-[14px] lg:text-[16px] general-sans-light">
             {project?.bhk} BHK
           </p>
         </div>
@@ -44,7 +44,7 @@ export default function ThrissurCard({
           <p className="text-[14px] lg:text-[16px] font-[general-sans-medium] ">
             Area range
           </p>
-          <p className="text-[14px] lg:text-[16px] font-[general-sans-light]">
+          <p className="text-[14px] lg:text-[16px] general-sans-light">
             {project?.area_from} - {project?.area_to} Sq.Ft
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function ThrissurCard({
           <p className="text-[14px] lg:text-[16px] font-[general-sans-medium]">
             Premium luxury apartment
           </p>
-          <p className="text-[14px] lg:text-[16px] font-[general-sans-light]">
+          <p className="text-[14px] lg:text-[16px] general-sans-light">
             {project?.sub_name}
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function ThrissurCard({
           <p className="text-[14px] lg:text-[16px] font-[general-sans-medium]">
             K.RERA
           </p>
-          <p className="text-[14px] lg:text-[16px] font-[general-sans-light]">
+          <p className="text-[14px] lg:text-[16px] general-sans-light">
             {project?.rera_number}
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function ThrissurCard({
             <div className="flex flex-row items-start gap-[20px]">
               <Image src={appartmentIcon} alt="flat for sale in Thrissur" />
               <div className="flex flex-col gap-[6px] -mt-[5px]">
-                <p className="text-[14px] lg:text-[16px] font-[general-sans-light]">
+                <p className="text-[14px] lg:text-[16px] general-sans-light">
                   Apartment type
                 </p>
                 <p className="text-[14px] lg:text-[16px] font-[general-sans-medium]">

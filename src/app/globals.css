@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Zen+Old+Mincho&display=swap");
 
 /* clash fonts */
 @font-face {
@@ -18,15 +18,13 @@
 
 /* general sans fonts 300*/
 
-@font-face {
+/* @font-face {
   font-family: "general-sans-light";
   font-weight: 300;
   font-style: normal;
-  src: local("Inter"),
-    url("https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLte6LKk5N0A.woff2")
-      format("woff2");
+  src: local("Inter");
   font-display: swap;
-}
+} */
 
 /* @font-face {
   font-family: "general-sans-light";
@@ -99,6 +97,11 @@
 .containers {
   width: 100%;
   margin: auto;
+}
+
+.general-sans-light {
+  font-family: var(--general-sans-light), sans-serif;
+  font-weight: 300;
 }
 
 @media (min-width: 1025px) {

@@ -205,7 +205,7 @@ function CurrentOpenings() {
                           {job?.type}
                         </div>
                       </div>
-                      <p className="text-[16px] md:text-[18px] lg:text-[18px] text-[#483C32] mb-6 leading-[24px] md:leading-[30px] lg:leading-[30px] font-[general-sans-light]">{job?.description}</p>
+                      <p className="text-[16px] md:text-[18px] lg:text-[18px] text-[#483C32] mb-6 leading-[24px] md:leading-[30px] lg:leading-[30px] general-sans-light">{job?.description}</p>
                       <div className='flex justify-end'>
                         <button onClick={() => (handleOpen(), handlemodalLocattions(job?.job_title))} className='border border-black text-black px-6 py-2 rounded-md hover:bg-black hover:text-white transition-all duration-300 shadow-md hover:shadow-lg'>Apply Now</button>
                       </div>
