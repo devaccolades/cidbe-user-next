@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
 /* clash fonts */
 @font-face {
   font-family: "clash-display-regular"; /* 400 */
@@ -14,12 +16,23 @@
   font-display: swap;
 }
 
-/* general sans fonts */
+/* general sans fonts 300*/
+
 @font-face {
-  font-family: "general-sans-light"; /* 300 */
-  src: url(../../public//font/GeneralSans-Light.woff) format(woff);
+  font-family: "general-sans-light";
+  font-weight: 300;
+  font-style: normal;
+  src: local("Inter"),
+    url("https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLte6LKk5N0A.woff2")
+      format("woff2");
   font-display: swap;
 }
+
+/* @font-face {
+  font-family: "general-sans-light";
+  src: url(../../public//font/GeneralSans-Light.woff) format(woff);
+  font-display: swap;
+} */
 
 @font-face {
   font-family: "general-sans-regular"; /* 400 */
@@ -64,15 +77,15 @@
 }
 
 :root {
-  --primary-cl:#BFD8BD;
-  --secondary-cl:#052D23;
+  --primary-cl: #bfd8bd;
+  --secondary-cl: #052d23;
   --d: 2500ms;
   --angle: 90deg;
   --gradX: 100%;
   --gradY: 50%;
   --c1: #ffff;
   --c2: rgba(168, 239, 255, 0.1);
-} 
+}
 
 /* selection color change */
 
@@ -84,7 +97,7 @@
 /* Responsive */
 
 .containers {
-  width: 100%; 
+  width: 100%;
   margin: auto;
 }
 
@@ -111,13 +124,8 @@
 }
 
 /* About Section */
-@media (min-width:768px){
-  .about-main-bg{
-        background-image: url('../../public/images/home/about-section-bg.webp');
-    }
+@media (min-width: 768px) {
+  .about-main-bg {
+    background-image: url("../../public/images/home/about-section-bg.webp");
+  }
 }
-
-
-
-
-
