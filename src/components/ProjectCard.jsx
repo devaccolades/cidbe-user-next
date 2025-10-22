@@ -76,7 +76,7 @@ function ProjectCard({ project }) {
                         <div className='flex flex-row items-start gap-[20px]'>
                             <Image src={appartmentIcon} alt="Apartments in Thrissur" />
                             <div className='flex flex-col gap-[6px] -mt-[5px]'>
-                                <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Apartment type</p>
+                                <p className='text-[14px] lg:text-[16px] general-sans-light'>Apartment type</p>
                                 <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.bhk} BHK</p>
                             </div>
                         </div>
@@ -92,7 +92,7 @@ function ProjectCard({ project }) {
                                     >
                                         <Image src={areaIcon} alt="flats in Thrissur" />
                                         <div className='flex flex-col gap-[6px] -mt-[5px]'>
-                                            <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Area range</p>
+                                            <p className='text-[14px] lg:text-[16px] general-sans-light'>Area range</p>
                                             <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.area_from} - {project?.area_to} Sq.Ft</p>
                                         </div>
                                     </motion.div>
@@ -105,7 +105,7 @@ function ProjectCard({ project }) {
                                     >
                                         <Image src={premiumIcon} alt="flats in Thrissur" />
                                         <div className='flex flex-col gap-[6px] -mt-[5px]'>
-                                            <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>Premium luxury apartment </p>
+                                            <p className='text-[14px] lg:text-[16px] general-sans-light'>Premium luxury apartment </p>
                                             <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.sub_name}</p>
                                         </div>
                                     </motion.div>
@@ -118,7 +118,7 @@ function ProjectCard({ project }) {
                                     >
                                         <Image src={reraIcon} alt="flats in Thrissur" />
                                         <div className='flex flex-col gap-[6px] -mt-[5px]'>
-                                            <p className='text-[14px] lg:text-[16px] font-[general-sans-light]'>K.RERA</p>
+                                            <p className='text-[14px] lg:text-[16px] general-sans-light'>K.RERA</p>
                                             <p className='text-[14px] lg:text-[16px] font-[general-sans-medium]'>{project?.rera_number}</p>
                                         </div>
                                     </motion.div>

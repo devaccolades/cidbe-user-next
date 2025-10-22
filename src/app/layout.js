@@ -4,11 +4,16 @@ import Script from "next/script";
 import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 // import Canonical from "../components/Canonical"
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--general-sans-light", // 👈 use your existing name
+  display: "swap",
+  weight: ["300"], // optional: limit to 300 weight if you want
+});
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="hidescroll">
+    <html lang="en" className={`hidescroll ${inter.variable}`}>
       <head />
       <body className={inter.className}>
         <Script

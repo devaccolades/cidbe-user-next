@@ -49,7 +49,7 @@ function Plans({ floor_plan, blueprint_image }) {
                     </div>
                     <h2 className='text-[20px] lg:text-[30px] font-[general-sans-medium] ml-auto'>{image?.bedrooms}BHK</h2>
                   </div>
-                  <div className='flex justify-between text-sm sm:text-xs md:text-sm font-[general-sans-light] text-[--secondary-cl] mb-6'>
+                  <div className='flex justify-between text-sm sm:text-xs md:text-sm general-sans-light text-[--secondary-cl] mb-6'>
                     <p>Area {image?.total_area} sqft</p>
                     <p>Carpet Area {image?.carpet_area} sqft</p>
                   </div>

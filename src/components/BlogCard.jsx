@@ -23,7 +23,7 @@ function BlogCard({ blog }) {
             <p className='bg-[#EBEBEB] py-[2px] px-[5px] rounded-[6px] flex justify-center items-center'>{blog?.date_added}</p>
             <p className='bg-[#EBEBEB] py-[2px] px-[5px] rounded-[6px] flex flex-row items-center gap-[2px]'><Image src={clockIcon} alt='flats in Thrissur' /><span>{blog?.time_to_read} Min read</span></p>
           </div>
-          <p className='text-[14px] lg:text-[16px] h-[72px] text-black capitalize leading-[24px] lg:leading-[24px] font-[general-sans-light] line-clamp-3'>
+          <p className='text-[14px] lg:text-[16px] h-[72px] text-black capitalize leading-[24px] lg:leading-[24px] general-sans-light line-clamp-3'>
             {/* {blog.title.length > 70 ? `${blog.title.slice(0, 70)}...` : blog.title} */}
             {blog.title}
           </p>

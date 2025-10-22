@@ -130,7 +130,7 @@ function FocusAreas() {
                     <div className='inline-block bg-[#EBEBEB] px-3 py-1 mb-2' style={{ borderRadius: '5px' }}>
                       <p className='font-[general-sans-regular] text-[#616161] text-[12px]'>{item.date_added}</p>
                     </div>
-                    <p className='font-[general-sans-light] text-[#483C32] text-[14px] lg:text-[18px] leading-[21px] lg:leading-[30px]'>{item.description}</p>
+                    <p className='general-sans-light text-[#483C32] text-[14px] lg:text-[18px] leading-[21px] lg:leading-[30px]'>{item.description}</p>
                   </div>
                 </div>
               ))}
