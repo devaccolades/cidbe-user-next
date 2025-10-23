@@ -16,8 +16,14 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`hidescroll ${inter.variable}`}>
       <head />
       <body className={inter.className}>
-        <ScrollToTop />
-        {children}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Script
           id="gtm-init"
           strategy="lazyOnload"
@@ -31,14 +37,8 @@ export default function RootLayout({ children }) {
               `,
           }}
         />
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
+        <ScrollToTop />
+        {children}
         <Script
           id="meta-pixel"
           strategy="lazyOnload"
