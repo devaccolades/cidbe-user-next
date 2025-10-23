@@ -16,9 +16,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`hidescroll ${inter.variable}`}>
       <head />
       <body className={inter.className}>
+        <ScrollToTop />
+        {children}
         <Script
           id="gtm-init"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -39,7 +41,7 @@ export default function RootLayout({ children }) {
         </noscript>
         <Script
           id="meta-pixel"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
             !function(f,b,e,v,n,t,s)
@@ -63,8 +65,6 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=946622127096867&ev=PageView&noscript=1"
           />
         </noscript>
-        <ScrollToTop />
-        {children}
       </body>
     </html>
   );

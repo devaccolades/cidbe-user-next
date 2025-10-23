@@ -236,7 +236,7 @@ function HeroSection() {
                           {project?.name}
                         </p>
                         <p className="capitalize flex gap-[8px] lg:-mt-[4px]">
-                          <Image src={locationIcon} alt="flats in Thrissur" />{" "}
+                          <Image src={locationIcon} alt="flats in Thrissur"  priority/>{" "}
                           <span className="md:text-[10px] lg:text-[16px] text-[#767575]">
                             {project?.location}
                           </span>
@@ -258,7 +258,7 @@ function HeroSection() {
                         >
                           View Project Details
                         </p>
-                        <Image src={arrowoutwardIcon} alt="flats in Thrissur" />
+                        <Image src={arrowoutwardIcon} alt="flats in Thrissur" priority/>
                       </button>
                     </div>
                   </div>
@@ -285,7 +285,7 @@ function HeroSection() {
                   <div className="font-[general-sans-regular] ">
                     <p className="text-[24px] text-black">{project?.name}</p>
                     <p className="capitalize flex gap-[8px] ">
-                      <Image src={locationIcon} alt="apartments in Thrissur" />{" "}
+                      <Image src={locationIcon} alt="apartments in Thrissur" priority/>{" "}
                       <span className="text-[14px] text-[#767575]">
                         {project?.location}
                       </span>
@@ -307,7 +307,7 @@ function HeroSection() {
                     >
                       View Project Details
                     </p>
-                    <Image src={arrowoutwardIcon} alt="flats in Thrissur" />
+                    <Image src={arrowoutwardIcon} alt="flats in Thrissur" priority/>
                   </button>
                 </div>
               </div>

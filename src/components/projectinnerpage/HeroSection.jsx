@@ -11,6 +11,7 @@ function HeroSection({ data, images }) {
 
   // Settings for the carousel
   const settings = {
+    lazyLoad: "ondemand",
     dots: false,
     infinite: true,
     speed: 2000,
@@ -52,6 +53,7 @@ function HeroSection({ data, images }) {
                     layout="fill"
                     objectFit="cover"
                     quality={70}
+                    priority
                   />
                   <div className="absolute inset-0 opacity-[30%]"></div>
                 </div>
