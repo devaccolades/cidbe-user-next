@@ -10,6 +10,7 @@ import { redirect } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { SkeletonLoader } from '../../../components/skeletoneffect/Skelten';
 import FAQSection from '../../../components/FAQSection'
+import FeaturedFaq from './FeaturedFaq';
 import Script from 'next/script';
 const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, })
 const DeepDeatiles = dynamic(() => import('../../../components/projectinnerpage/DeepDeatiles'), { ssr: false, loading: () => <SkeletonLoader />, })
@@ -257,7 +258,8 @@ function PageContent({ data }) {
           onVideoModalOpen={() => setIsVideoModalOpen(true)}
           onVideoModalClose={() => setIsVideoModalOpen(false)}
         />
-        <FAQSection />
+        {/* <FAQSection /> */}
+        <FeaturedFaq />
       </div>
       <Footer />
     </>

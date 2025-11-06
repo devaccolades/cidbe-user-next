@@ -175,8 +175,11 @@ function ProjectListing({ title }) {
   return (
     <main className="bg-[--primary-cl] bg-cover bg-no-repeat project-list-bg -mt-[80px] lg:-mt-[95px]">
       <section className="containers res-custom-container">
-        <h1 className="text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]">
+        <h2 className="text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]">
           {title}
+        </h2>
+        <h1 className="text-center pt-[10px] text-[14px] lg:text-[16px] font-[clash-display-medium]">
+          CIDBI — Luxury Apartments in Thrissur Built on Trust 
         </h1>
         {projects === null ? (
           <Skelten />
