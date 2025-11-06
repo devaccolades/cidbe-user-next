@@ -5,6 +5,8 @@ import dynamic from "next/dynamic";
 // import ProjectListing from '../../components/projectlisting/ProjectListing'
 import Skelten from "../../components/skeletoneffect/Skelten";
 import { getFeaturedProject, getSeoApi } from "../../services/services";
+import FeaturedFaq from "./[slug]/FeaturedFaq";
+import SeoContents from "./SeoContents";
 const ProjectListing = dynamic(
   () => import("../../components/projectlisting/ProjectListing"),
   { ssr: false, loading: () => <Skelten /> }
@@ -40,11 +42,14 @@ export async function generateMetadata() {
 
 function page() {
   const title = "Featured Projects";
+  const subtitle = "CIDBI — Luxury Apartments in Thrissur Built on Trust "
 
   return (
     <>
       <Header bgPrimary={true} />
-      <ProjectListing title={title} />
+      <ProjectListing title={title} subtitle={subtitle} />
+      <FeaturedFaq />
+      <SeoContents />
       <Footer backGround="" />
     </>
   );
