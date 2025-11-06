@@ -239,7 +239,7 @@ function ProjectListing({ title }) {
       {
   (pathname === '/featured-projects' || pathname === '/completed-projects') && (
     <div className='containers res-custom-container flex flex-col gap-[6px] lg:gap-[20px] pt-[30px] pb-[30px] lg:pb-[60px]'>
-      {pathname === '/featured-projects' && featuredProjectAddOnDatas.map((item, index) => (
+      {/* {pathname === '/featured-projects' && featuredProjectAddOnDatas.map((item, index) => (
         <AddOnContent
           item={item}
           key={index}
@@ -247,7 +247,7 @@ function ProjectListing({ title }) {
           setOpen={setOpen}
           index={index}
         />
-      ))}
+      ))} */}
       {pathname === '/completed-projects' && completedProjectAddOnDatas.map((item, index) => (
         <AddOnContent
           item={item}
