@@ -9,7 +9,6 @@ const ProjectListing = dynamic(
   { ssr: false, loading: () => <Skelten /> }
 );
 import { getSeoApi } from "../../services/services";
-
 async function fetchSeoData(path) {
   let data = {};
   try {
@@ -20,7 +19,6 @@ async function fetchSeoData(path) {
   }
   return data;
 }
-
 export async function generateMetadata() {
   const path = "/completed-projects";
   const responseData = await fetchSeoData(path);

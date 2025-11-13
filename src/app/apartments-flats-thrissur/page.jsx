@@ -6,11 +6,14 @@ import FaqSection from "./FaqSection";
 import HighlightsSection from "./HighlightsSection";
 import FormSection from "./FormSection";
 import WhyChooseSection from "./WhyChooseSection";
-// import ScrollToTop from "@components/scrollToTop/ScrollToTop.jsx";
-import ScrollToTop from "../../components/scrollToTop/ScrollToTop";
 import { getSeoApi } from "../../services/services";
-import Head from "next/head";
+import Skelten from "../../components/skeletoneffect/Skelten";
 import Script from "next/script";
+import dynamic from "next/dynamic";
+const ProjectListing = dynamic(
+  () => import("../../components/projectlisting/ProjectListing"),
+  { ssr: false, loading: () => <Skelten /> }
+);
 
 export async function generateMetadata() {
   try {
@@ -58,6 +61,7 @@ const jsonLd = {
 };
 
 export default async function page() {
+  const title = "Completed Projects";
   return (
     <>
       {/* <ScrollToTop /> */}
@@ -65,6 +69,7 @@ export default async function page() {
       <Herosection />
       <WhyChooseSection />
       <FormSection />
+      <ProjectListing title={title} />
       <HighlightsSection />
       <FaqSection />
       <Footer />

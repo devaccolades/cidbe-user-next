@@ -153,6 +153,9 @@ function ProjectListing({ title }) {
       } else if (pathname === "/ready-to-occupy") {
         res = await getReadyToOccupyProject(page, page_limit);
       }
+       else if (pathname === "/apartments-flats-thrissur") {
+        res = await getCompletedProject(page, page_limit);
+      }
       const { StatusCode, data } = res.data;
       if (StatusCode === 6000) {
         setprojects(data);
