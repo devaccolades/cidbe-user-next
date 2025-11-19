@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
               `,
           }}
         />
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         {children}
         <Script
           id="meta-pixel"
@@ -57,14 +57,14 @@ export default function RootLayout({ children }) {
               `,
           }}
         />
-        <noscript>
+        {/* <noscript>
           <img
             height="1"
             width="1"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=946622127096867&ev=PageView&noscript=1"
           />
-        </noscript>
+        </noscript> */}
       </body>
     </html>
   );
