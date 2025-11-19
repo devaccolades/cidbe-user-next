@@ -104,7 +104,7 @@ function Header({ bgPrimary = false }) {
         <>
             <Head>
                 {/* Google Tag Manager */}
-                <script
+                {/* <script
                     dangerouslySetInnerHTML={{
                         __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -114,7 +114,7 @@ function Header({ bgPrimary = false }) {
               })(window,document,'script','dataLayer','GTM-PWFG6894');
             `,
                     }}
-                />
+                /> */}
                 {/* End Google Tag Manager */}
             </Head>
             <meta name="google-site-verification" content="2jg94-S0O0YXT4aejzDkxO-7XCdJKcEk06Oh6woEsC0" />
@@ -132,9 +132,9 @@ function Header({ bgPrimary = false }) {
                 }}
             />
 
-            <Script
+            {/* <Script
                 id="gtag-base"
-                strategy="afterInteractive" // Load after the page has loaded
+                strategy="afterInteractive" 
                 src={`https://www.googletagmanager.com/gtag/js?id=AW-10797634861`}
             />
             <Script id="gtag-init" strategy="afterInteractive">
@@ -142,13 +142,13 @@ function Header({ bgPrimary = false }) {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'AW-10797634861');`}
-            </Script>
+            </Script> */}
 
-            <noscript
+            {/* <noscript
                 dangerouslySetInnerHTML={{
                     __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
                 }}
-            />
+            /> */}
             <header className='main-area sticky top-1 z-50'>
                 <section className={`nav-bar ${bgPrimary ? "bgPrimary" : ""} lg:container ${scrolling ? 'bg-white' : 'bg-transparent'} transition-all duration-500`}>
                     <Link href='/'><Image src={logo} alt='logo' className='logo cursor-pointer' /></Link>
