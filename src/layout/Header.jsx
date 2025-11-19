@@ -117,8 +117,8 @@ function Header({ bgPrimary = false }) {
                 /> */}
                 {/* End Google Tag Manager */}
             </Head>
-            <meta name="google-site-verification" content="2jg94-S0O0YXT4aejzDkxO-7XCdJKcEk06Oh6woEsC0" />
-            <Script
+            {/* <meta name="google-site-verification" content="2jg94-S0O0YXT4aejzDkxO-7XCdJKcEk06Oh6woEsC0" /> */}
+            {/* <Script
                 id="google-tag-manager"
                 strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
@@ -130,7 +130,7 @@ function Header({ bgPrimary = false }) {
             })(window,document,'script','dataLayer','GTM-PWFG6894');
           `,
                 }}
-            />
+            /> */}
 
             {/* <Script
                 id="gtag-base"
