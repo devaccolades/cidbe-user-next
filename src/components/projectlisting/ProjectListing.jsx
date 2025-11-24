@@ -160,7 +160,7 @@ function ProjectListing({ title }) {
       if (StatusCode === 6000) {
         setprojects(data);
         setTotal(res.data.total_count);
-        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       } else {
         setprojects([]);
       }

@@ -10,9 +10,9 @@ export default function Herosection() {
   const videoRef = useRef(null);
   const audioRef = useRef(null);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathName]);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, [pathName]);
 
   useEffect(() => {
     const video = videoRef.current;
