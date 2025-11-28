@@ -47,7 +47,7 @@ function ProjectCard({ project }) {
                         </div>
                     </div>
                     <div className='sticky bottom-1 bg-white mt-[10px] gap-[10px] px-[15px] pb-[10px] text-[12px] sm:text-[14px] '>
-                        {project?.description?(<Link href={`${pathname}/${project?.slug}`}><button className='border cursor-pointer border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px]'>Read more</button></Link>):
+                        {project?(<Link href={`${pathname}/${project?.slug}`}><button className='border cursor-pointer border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px]'>Read more</button></Link>):
                         (<button className='border cursor-pointer border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px]'>Read more</button>)}
                         
                     </div>

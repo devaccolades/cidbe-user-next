@@ -159,6 +159,7 @@ function ProjectListing({ title }) {
       const { StatusCode, data } = res.data;
       if (StatusCode === 6000) {
         setprojects(data);
+        console.log("logging projects data",projects)
         setTotal(res.data.total_count);
         // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       } else {
