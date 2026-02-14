@@ -163,17 +163,20 @@ function Footer({ backGround = "--primary-cl" }) {
           </div>
           <div className="flex flex-col md:flex-row lg:flex-col justify-between lg:mt-0 mt-[30px]">
             <div className="flex flex-col gap-[8px] text-[14px] w-full md:w-[40%] lg:w-auto">
-              <p className="flex flex-row gap-[10px]">
+              {/* <p className="flex flex-row gap-[10px]">
                 <span className="w-[67px]">Whatsapp</span> <span>-</span>
                 <span>+91 8137873330</span>
-              </p>
+              </p> */}
               <p className="flex flex-row gap-[10px]">
                 <span className="w-[67px]">Email</span> <span>-</span>
                 <span>salescidbi@gmail.com</span>
               </p>
               <p className="flex flex-row gap-[10px]">
                 <span className="w-[67px]">Call</span> <span>-</span>
-                <span>+91 94969 33000</span>
+                <span className="flex flex-col">
+                  <span>+91 94969 33000</span>
+                  <span>+91 81378 73330</span>
+                </span>
               </p>
             </div>
             <div className="mt-[35px] md:mt-0 lg:mt-[35px] font-[general-sans-medium] w-full md:w-[50%] lg:w-auto">
