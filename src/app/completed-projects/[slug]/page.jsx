@@ -25,6 +25,27 @@ async function fetchData(slug) {
     }
 }
 
+export async function generateMetadata({ params }) {
+    const { slug } = params;
+    const data = await fetchData(slug);
+
+    if (!data) {
+        return {};
+    }
+
+    const project = data?.data;
+
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL; 
+    const canonicalUrl = `https://cidbi.com/completed-projects/${slug}`;
+    return {
+        title: project?.meta_title || "Default Title",
+        description: project?.meta_description || "Default Description",
+        alternates: {
+            canonical: canonicalUrl,
+        },
+    };
+}
+
 export default async function Page({ params }) {
     const { slug } = params;
     const data = await fetchData(slug);
@@ -35,8 +56,8 @@ export default async function Page({ params }) {
     }
     return (
         <>
-            <title>{data?.data?.meta_title || 'Default Title'}</title>
-            <meta name="description" content={data?.data?.meta_description || 'Default Description'} />
+            {/* <title>{data?.data?.meta_title || 'Default Title'}</title>
+            <meta name="description" content={data?.data?.meta_description || 'Default Description'} /> */}
             <Header />
             <HeroSection data={data?.data} images={data?.images || []} className='bg-[#ffff]' />
             <Brochure data={data?.data || {}} />

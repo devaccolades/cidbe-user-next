@@ -44,10 +44,10 @@ function Plans({ floor_plan, blueprint_image }) {
                       <Image src={buildIcon} alt="Premium Flats in Thrissur" width={28} height={28} />
                     </div>
                     <div>
-                      <h2 className='text-[16px] lg:text-[24px] font-[general-sans-medium]'>{image.plan_type}</h2>
+                      <h3 className='text-[16px] lg:text-[24px] font-[general-sans-medium]'>{image.plan_type}</h3>
                       <p className='text-sm sm:text-xs md:text-sm font-[general-sans-medium]'>{image?.floor_from && `${image?.floor_from} `}  {image?.floor_to && `to ${image?.floor_to}`} Floor</p>
                     </div>
-                    <h2 className='text-[20px] lg:text-[30px] font-[general-sans-medium] ml-auto'>{image?.bedrooms}BHK</h2>
+                    <h3 className='text-[20px] lg:text-[30px] font-[general-sans-medium] ml-auto'>{image?.bedrooms}BHK</h3>
                   </div>
                   <div className='flex justify-between text-sm sm:text-xs md:text-sm general-sans-light text-[--secondary-cl] mb-6'>
                     <p>Area {image?.total_area} sqft</p>
