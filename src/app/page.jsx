@@ -196,6 +196,9 @@ export async function generateMetadata() {
   return {
     title: meta_title,
     description: meta_description,
+    alternates: {
+      canonical: `https://cidbi.com`,
+    },
     robots: {
       index: true,
       follow: true,
@@ -214,7 +217,7 @@ function Page() {
       <Chairman />
       <Blogs />
       <CustomerReviewsAndFaq />
-      
+
       <Footer />
       <Script
         id="seo-json-ld"
