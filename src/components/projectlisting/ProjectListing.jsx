@@ -175,12 +175,17 @@ function ProjectListing({ title }) {
   const handleClick = (pageNumber) => {
     setPage(pageNumber);
   };
+
+  const HeadingTag = pathname === "/featured-projects" ? "h1" : "h2";
   return (
     <main className="bg-[--primary-cl] bg-cover bg-no-repeat project-list-bg -mt-[80px] lg:-mt-[95px]">
       <section className="containers res-custom-container">
-        <h1 className="text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]">
+        {/* <h1 className="text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]">
           {title}
-        </h1>
+        </h1> */}
+        <HeadingTag className="text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]">
+          {title}
+        </HeadingTag>
         <h2 className="text-center pt-[10px] text-[14px] lg:text-[16px] font-[clash-display-medium]">
           CIDBI — Luxury Apartments in Thrissur Built on Trust
         </h2>
