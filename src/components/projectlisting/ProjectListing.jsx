@@ -134,7 +134,7 @@ function ProjectListing({ title }) {
   const pathname = usePathname();
   const [page, setPage] = useState(1);
   const [page_limit, setPage_limit] = useState(
-    pathname === "/completed-projects" ? 6 : window.innerWidth <= 1150 ? 2 : 3
+    pathname === "/completed-projects" ? 6 : window.innerWidth <= 1150 ? 2 : 3,
   );
   const [total_count, setTotal] = useState(0);
   const [projects, setprojects] = useState(null);
@@ -152,14 +152,13 @@ function ProjectListing({ title }) {
         res = await getCompletedProject(page, page_limit);
       } else if (pathname === "/ready-to-occupy") {
         res = await getReadyToOccupyProject(page, page_limit);
-      }
-       else if (pathname === "/apartments-flats-thrissur") {
+      } else if (pathname === "/apartments-flats-thrissur") {
         res = await getCompletedProject(page, page_limit);
       }
       const { StatusCode, data } = res.data;
       if (StatusCode === 6000) {
         setprojects(data);
-        console.log("logging projects data",projects)
+        console.log("logging projects data", projects);
         setTotal(res.data.total_count);
         // window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       } else {
@@ -179,12 +178,12 @@ function ProjectListing({ title }) {
   return (
     <main className="bg-[--primary-cl] bg-cover bg-no-repeat project-list-bg -mt-[80px] lg:-mt-[95px]">
       <section className="containers res-custom-container">
-        <h2 className="text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]">
+        <h1 className="text-center pt-[120px] text-[16px] lg:text-[32px] font-[clash-display-medium]">
           {title}
-        </h2>
-        <h1 className="text-center pt-[10px] text-[14px] lg:text-[16px] font-[clash-display-medium]">
-          CIDBI — Luxury Apartments in Thrissur Built on Trust 
         </h1>
+        <h2 className="text-center pt-[10px] text-[14px] lg:text-[16px] font-[clash-display-medium]">
+          CIDBI — Luxury Apartments in Thrissur Built on Trust
+        </h2>
         {projects === null ? (
           <Skelten />
         ) : projects.length > 0 ? (
@@ -225,7 +224,7 @@ function ProjectListing({ title }) {
               >
                 {index + 1}
               </button>
-            )
+            ),
           )}
           <button
             onClick={() => handleClick(page + 1)}
@@ -240,10 +239,10 @@ function ProjectListing({ title }) {
           </button>
         </nav>
       </div>
-      {
-  (pathname === '/featured-projects' || pathname === '/completed-projects') && (
-    <div className='containers res-custom-container flex flex-col gap-[6px] lg:gap-[20px] pt-[30px] pb-[30px] lg:pb-[60px]'>
-      {/* {pathname === '/featured-projects' && featuredProjectAddOnDatas.map((item, index) => (
+      {(pathname === "/featured-projects" ||
+        pathname === "/completed-projects") && (
+        <div className="containers res-custom-container flex flex-col gap-[6px] lg:gap-[20px] pt-[30px] pb-[30px] lg:pb-[60px]">
+          {/* {pathname === '/featured-projects' && featuredProjectAddOnDatas.map((item, index) => (
         <AddOnContent
           item={item}
           key={index}
@@ -252,18 +251,18 @@ function ProjectListing({ title }) {
           index={index}
         />
       ))} */}
-      {pathname === '/completed-projects' && completedProjectAddOnDatas.map((item, index) => (
-        <AddOnContent
-          item={item}
-          key={index}
-          isOpend={isOpend}
-          setOpen={setOpen}
-          index={index}
-        />
-      ))}
-    </div>
-  )
-}
+          {pathname === "/completed-projects" &&
+            completedProjectAddOnDatas.map((item, index) => (
+              <AddOnContent
+                item={item}
+                key={index}
+                isOpend={isOpend}
+                setOpen={setOpen}
+                index={index}
+              />
+            ))}
+        </div>
+      )}
     </main>
   );
 }

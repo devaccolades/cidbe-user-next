@@ -169,13 +169,27 @@ function Footer({ backGround = "--primary-cl" }) {
               </p> */}
               <p className="flex flex-row gap-[10px]">
                 <span className="w-[67px]">Email</span> <span>-</span>
-                <span>salescidbi@gmail.com</span>
+                {/* <span>salescidbi@gmail.com</span> */}
+                <a
+                  href="mailto:salescidbi@gmail.com"
+                  className="hover:underline"
+                >
+                  salescidbi@gmail.com
+                </a>
               </p>
               <p className="flex flex-row gap-[10px]">
                 <span className="w-[67px]">Call</span> <span>-</span>
-                <span className="flex flex-col">
+                {/* <span className="flex flex-col">
                   <span>+91 94969 33000</span>
                   <span>+91 81378 73330</span>
+                </span> */}
+                <span className="flex flex-col">
+                  <a href="tel:+919496933000" className="hover:underline">
+                    +91 94969 33000
+                  </a>
+                  <a href="tel:+918137873330" className="hover:underline">
+                    +91 81378 73330
+                  </a>
                 </span>
               </p>
             </div>

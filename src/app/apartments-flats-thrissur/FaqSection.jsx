@@ -44,7 +44,7 @@ export default function FaqSection  () {
     <div className='py-[45px] about-main-bg'>
         
       <div className='containers '>
-                <h6 className='font-[clash-display-medium] text-[20px] lg:text-[32px]'>FAQ</h6>
+                <h2 className='font-[clash-display-medium] text-[20px] lg:text-[32px]'>FAQ</h2>
                 <div className='text-black'>
                     {faqs.map((faq, index) => (
                         <div key={index}>
