@@ -10,7 +10,9 @@ import HomePageSkelten from "../components/skeletoneffect/HomePageSkelten";
 import Head from "next/head";
 import Script from "next/script";
 import ScrollToTop from "../components/scrollToTop/ScrollToTop";
-import HeroSection from "../app/(home)/HeroSection"
+import HeroSection from "../app/(home)/HeroSection";
+import Achievements from "./(home)/Achievements";
+import { getAchievementsApi } from "../services/services";
 
 const FeaturedProject = dynamic(() => import("../app/(home)/FeaturedProject"), {
   ssr: false,
@@ -22,7 +24,7 @@ const Blogs = dynamic(() => import("../app/(home)/Blogs"), {
 });
 const CustomerReviewsAndFaq = dynamic(
   () => import("../app/(home)/CustomerReviewsAndFaq"),
-  { ssr: false, loading: () => <Skelten /> }
+  { ssr: false, loading: () => <Skelten /> },
 );
 // const HeroSection = dynamic(() => import("../app/(home)/HeroSection"), {
 //   ssr: false,
@@ -206,6 +208,17 @@ export async function generateMetadata() {
   };
 }
 
+let achievements = [];
+
+try {
+  const res = await getAchievementsApi(1, 4); // only 4 items
+  if (res?.data?.StatusCode === 6000) {
+    achievements = res.data.data || [];
+  }
+} catch (err) {
+  console.error("Error fetching achievements:", err);
+}
+
 function Page() {
   return (
     <>
@@ -215,9 +228,9 @@ function Page() {
       <AboutSection />
       <FeaturedProject />
       <Chairman />
+      <Achievements achievements={achievements} />
       <Blogs />
       <CustomerReviewsAndFaq />
-
       <Footer />
       <Script
         id="seo-json-ld"
