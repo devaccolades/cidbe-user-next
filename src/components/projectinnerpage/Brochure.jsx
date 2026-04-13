@@ -67,9 +67,9 @@ function Brochure({ data }) {
           {/* Left-side content */}
           <div className="flex flex-col mb-[20px] md:mb-0 md:w-[53%] lg:w-[70%]">
             <div className="flex-grow">
-              <h2 className="lg:text-[24px] text-[16px] font-[clash-display-medium] heading-size">
+              <h1 className="lg:text-[24px] text-[16px] font-[clash-display-medium] heading-size">
                 {data?.sub_name}
-              </h2>
+              </h1>
               <p
                 className="lg:text-[16px] text-[14px] font-[general-sans-regular] leading-[27px] paragraph-size"
                 dangerouslySetInnerHTML={{ __html: data?.description }}

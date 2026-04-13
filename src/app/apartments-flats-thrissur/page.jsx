@@ -8,11 +8,12 @@ import FormSection from "./FormSection";
 import WhyChooseSection from "./WhyChooseSection";
 import { getSeoApi } from "../../services/services";
 import Skelten from "../../components/skeletoneffect/Skelten";
+import Amneties from "./Amneties.jsx";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 const ProjectListing = dynamic(
   () => import("../../components/projectlisting/ProjectListing"),
-  { ssr: false, loading: () => <Skelten /> }
+  { ssr: false, loading: () => <Skelten /> },
 );
 
 export async function generateMetadata() {
@@ -68,6 +69,7 @@ export default async function page() {
       <Header />
       <Herosection />
       <WhyChooseSection />
+      <Amneties />
       <FormSection />
       <ProjectListing title={title} />
       <HighlightsSection />

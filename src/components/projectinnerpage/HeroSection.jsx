@@ -76,12 +76,12 @@ function HeroSection({ data, images }) {
               className="w-[100px] md:w-[140px]"
             />
           )}
-          <h1 className="text-[24px] font-[clash-display-medium]">
+          <h2 className="text-[24px] font-[clash-display-medium]">
             {data?.name}
-          </h1>
-          <p className="text-[16px] font-[clash-display-medium]">
+          </h2>
+          {/* <p className="text-[16px] font-[clash-display-medium]">
             {data?.sub_name}
-          </p>
+          </p> */}
           <p className="text-[16px] font-[clash-display-medium]">
             {data?.location}
           </p>

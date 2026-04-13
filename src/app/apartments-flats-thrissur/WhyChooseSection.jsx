@@ -8,11 +8,9 @@ import completed from "../../../public/images/aprtments_thrissur/complete.webp";
 import featured from "../../../public/images/aprtments_thrissur/featured.webp";
 import Link from "next/link";
 
-
 const features = [
   {
-    title:
-      "Prime Locations with Excellent Connectivity ",
+    title: "Prime Locations with Excellent Connectivity ",
     icon: "/images/aprtments_thrissur/icon1.webp",
   },
   {
@@ -56,7 +54,17 @@ export default function WhyChooseSection() {
             </span>
           </h2>
           <p className="text-gray-600 text-[13px] leading-normal md:text-[14px] max-w-4xl mb-8 ">
-          CIDBI, with over 40 years of building experience, has the ability to face any challenges in construction field and deliver projects on time. Moreover, CIDBI has no sub contracts in any stage of development. Each apartment is designed and built to create a perfect living space for families and individuals. CIDBI’s projects are designed to minimize environmental impact while maximizing comfort. They come with solar power plants and waste management system. CIDBI also uses premium quality materials for doors, windows, plumbing and electrical fittings. More open space for echo friendly living is the main feature of apartments in Thrissur by CIDBI.
+            CIDBI, with over 40 years of building experience, has the ability to
+            face any challenges in construction field and deliver projects on
+            time. Moreover, CIDBI has no sub contracts in any stage of
+            development. Each apartment is designed and built to create a
+            perfect living space for families and individuals. CIDBI’s projects
+            are designed to minimize environmental impact while maximizing
+            comfort. They come with solar power plants and waste management
+            system. CIDBI also uses premium quality materials for doors,
+            windows, plumbing and electrical fittings. More open space for echo
+            friendly living is the main feature of apartments in Thrissur by
+            CIDBI.
           </p>
 
           {/* Features */}
@@ -104,7 +112,6 @@ export default function WhyChooseSection() {
         </Link>
 
         <Link href="/ready-to-occupy" className="cursor-pointer">
-
           <div
             style={{
               backgroundImage: `url(${ready.src})`,
@@ -123,7 +130,6 @@ export default function WhyChooseSection() {
         </Link>
 
         <Link href="/completed-projects" className="cursor-pointer">
-
           <div
             style={{
               backgroundImage: `url(${completed.src})`,
@@ -142,24 +148,22 @@ export default function WhyChooseSection() {
         </Link>
 
         <Link href="/featured-projects" className="cursor-pointer">
-
-        <div
-          style={{
-            backgroundImage: `url(${featured.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
-          role="img"
+          <div
+            style={{
+              backgroundImage: `url(${featured.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+            className="relative w-full h-[150px] flex justify-center items-center rounded-xl overflow-hidden"
+            role="img"
             aria-label="Flat for sale in Thrissur"
-        >
-          <div className="absolute inset-0 bg-black/50 z-10"></div>
-          <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
-            Featured Projects
+          >
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
+            <div className="relative z-20 p-4 text-white text-[20px] text-center font-bold">
+              Featured Projects
+            </div>
           </div>
-        </div>
         </Link>
-
       </div>
     </section>
   );
