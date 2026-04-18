@@ -1,6 +1,6 @@
 import React from "react";
 
-function Partners({ bank }) {
+function Partners({ bank, isCandorPage }) {
   // Array of logos
 
   return (
@@ -22,58 +22,60 @@ function Partners({ bank }) {
           </div>
         </div>
       </section>
-      <div className="containers grid grid-cols-1 md:grid-cols-2 gap-10 py-3">
-        <div>
-          <h2 className="text-[18px] leading-[100%] md:text-[24px] md:max-w-xl text-black mb-3 font-semibold">
-            Why Buy Flats in Punkunnam, Thrissur
-          </h2>
+      {isCandorPage && (
+        <div className="containers grid grid-cols-1 md:grid-cols-2 gap-10 py-3">
+          <div>
+            <h2 className="text-[18px] leading-[100%] md:text-[24px] md:max-w-xl text-black mb-3 font-semibold">
+              Why Buy Flats in Punkunnam, Thrissur
+            </h2>
 
-          <div className="text-black text-[13px] leading-normal md:text-[14px] max-w-4xl space-y-3">
-            <p>
-              Punkunnam stands out as a highly desired residential hub in
-              Thrissur city. High demand makes buying property in Punkunnam a
-              truly smart choice today.
-            </p>
+            <div className="text-black text-[13px] leading-normal md:text-[14px] max-w-4xl space-y-3">
+              <p>
+                Punkunnam stands out as a highly desired residential hub in
+                Thrissur city. High demand makes buying property in Punkunnam a
+                truly smart choice today.
+              </p>
 
-            <p>
-              You get amazing connectivity to major roads and lively city spots.
-              The famous Swaraj Round is just 1.5 kilometres away. Traveling is
-              a breeze since the Punkunnam Railway Station is only 300 meters
-              from your door.
-            </p>
+              <p>
+                You get amazing connectivity to major roads and lively city
+                spots. The famous Swaraj Round is just 1.5 kilometres away.
+                Traveling is a breeze since the Punkunnam Railway Station is
+                only 300 meters from your door.
+              </p>
 
-            <p>
-              Families love these apartments in Punkunnam because top education
-              is very close. Devamatha Public School sits just 2 kilometres
-              away. Top healthcare is also right around the corner. Ashwini
-              Hospital is a quick 1 kilometer drive. Saroja Multi Speciality
-              Hospital is close by too.
-            </p>
+              <p>
+                Families love these apartments in Punkunnam because top
+                education is very close. Devamatha Public School sits just 2
+                kilometres away. Top healthcare is also right around the corner.
+                Ashwini Hospital is a quick 1 kilometer drive. Saroja Multi
+                Speciality Hospital is close by too.
+              </p>
 
-            <p>
-              With quick travel options, these flats in Punkunnam offer
-              unmatched convenience. You get a peaceful home perfectly linked to
-              active city life.
+              <p>
+                With quick travel options, these flats in Punkunnam offer
+                unmatched convenience. You get a peaceful home perfectly linked
+                to active city life.
+              </p>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-[18px] leading-[100%] md:text-[24px] md:max-w-xl text-black mb-3 font-semibold">
+              About CIDBI – Trusted Builders in Thrissur
+            </h2>
+
+            <p className="text-black text-[13px] leading-normal md:text-[14px] max-w-4xl">
+              CIDBI stands as a highly trusted name in luxury home construction.
+              Mr. A. A. Abdul Lathif leads our expert team with years of rich
+              experience. We proudly hold an ISO 9001 2015 certification for our
+              top tier standards. We always deliver projects on time, earning
+              deep trust from happy families. As a proud CREDAI member, we
+              promise pure excellence in every single home we build. When you
+              choose CIDBI, you choose lasting peace and true value.
             </p>
           </div>
         </div>
-
-        <div>
-          <h2 className="text-[18px] leading-[100%] md:text-[24px] md:max-w-xl text-black mb-3 font-semibold">
-            About CIDBI – Trusted Builders in Thrissur
-          </h2>
-
-          <p className="text-black text-[13px] leading-normal md:text-[14px] max-w-4xl">
-            CIDBI stands as a highly trusted name in luxury home construction.
-            Mr. A. A. Abdul Lathif leads our expert team with years of rich
-            experience. We proudly hold an ISO 9001 2015 certification for our
-            top tier standards. We always deliver projects on time, earning deep
-            trust from happy families. As a proud CREDAI member, we promise pure
-            excellence in every single home we build. When you choose CIDBI, you
-            choose lasting peace and true value.
-          </p>
-        </div>
-      </div>
+      )}
     </>
   );
 }

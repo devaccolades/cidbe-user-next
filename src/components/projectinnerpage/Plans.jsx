@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/scrollbar";
 import buildIcon from "../../../public/images/product-view/plansbuilding.webp";
 
-function Plans({ floor_plan, blueprint_image }) {
+function Plans({ floor_plan, blueprint_image, isCandorPage }) {
   return (
     <section className="py-10 bg-[#ffff]">
       <div className="containers custom-res">
@@ -19,17 +19,19 @@ function Plans({ floor_plan, blueprint_image }) {
         >
           Well Designed 2 & 3 BHK Apartment Plans
         </h2>
-        <p className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-medium] mb-4">
-          CANDOR 2&3 BHK apartments in Punkunnam, by CIDBI has 5 floor layouts.
-          Floor plans from Type A to Type D are standard units and Type E are
-          spacious units. Every corner is crafted to give your family room to
-          grow and relax .Enjoy bright mornings with excellent ventilation in
-          every single room. Open balconies and clever designs pull in fresh air
-          and plenty of natural sunlight. This keeps your living spaces feeling
-          fresh and full of life all day long. The generous floor areas give you
-          plenty of room for your favourite furniture. Moving around feels easy
-          and completely unrestricted.
-        </p>{" "}
+        {isCandorPage && (
+          <p className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-medium] mb-4">
+            CANDOR 2&3 BHK apartments in Punkunnam, by CIDBI has 5 floor
+            layouts. Floor plans from Type A to Type D are standard units and
+            Type E are spacious units. Every corner is crafted to give your
+            family room to grow and relax .Enjoy bright mornings with excellent
+            ventilation in every single room. Open balconies and clever designs
+            pull in fresh air and plenty of natural sunlight. This keeps your
+            living spaces feeling fresh and full of life all day long. The
+            generous floor areas give you plenty of room for your favourite
+            furniture. Moving around feels easy and completely unrestricted.
+          </p>
+        )}
         <div className="-mx-4 sm:-mx-6 lg:-mx-8">
           <AntdImage.PreviewGroup>
             <Swiper

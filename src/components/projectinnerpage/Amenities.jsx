@@ -1,22 +1,24 @@
 import React from "react";
 import Image from "next/image";
 
-function Amenities({ amenities }) {
+function Amenities({ amenities, isCandorPage }) {
   return (
     <div className="containers custom-res py-[20px] mb-[30px]">
       <h2 className="text-[24px] font-[clash-display-medium] mb-[10px]">
         Amenities
       </h2>
-      <p className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-medium] mb-4">
-        Step into a world of ease at our premium Punkunnam apartments. We
-        designed every feature to make your daily life smoother and far more
-        fun. You can relax in the rooftop pool or stay active in the modern
-        health club. Your family stays completely safe with round the clock
-        security, CCTV cameras, and smart biometric locks. You also enjoy total
-        convenience with reliable generator backup and green solar power. These
-        apartments in Punkunnam offer the perfect mix of fun, safety, and deep
-        comfort.
-      </p>
+      {isCandorPage && (
+        <p className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-medium] mb-4">
+          Step into a world of ease at our premium Punkunnam apartments. We
+          designed every feature to make your daily life smoother and far more
+          fun. You can relax in the rooftop pool or stay active in the modern
+          health club. Your family stays completely safe with round the clock
+          security, CCTV cameras, and smart biometric locks. You also enjoy
+          total convenience with reliable generator backup and green solar
+          power. These apartments in Punkunnam offer the perfect mix of fun,
+          safety, and deep comfort.
+        </p>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-[30px]">
         {amenities.map((amenity, index) => (
           <div

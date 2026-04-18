@@ -32,6 +32,7 @@ function DeepDetails({
   videos,
   onVideoModalOpen,
   onVideoModalClose,
+  isCandorPage,
 }) {
   const [isSticky, setIsSticky] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -111,7 +112,7 @@ function DeepDetails({
       </section>
 
       <div ref={sectionRefs.Amenities} className="pt-[30px] bg-white">
-        <Amenities amenities={amenities} />
+        <Amenities amenities={amenities} isCandorPage={isCandorPage} />
       </div>
 
       {features.length > 0 && (
@@ -125,11 +126,18 @@ function DeepDetails({
       )}
 
       <div ref={sectionRefs.Specifications} className="pt-[30px] bg-white">
-        <Specification specification={specification} />
+        <Specification
+          specification={specification}
+          isCandorPage={isCandorPage}
+        />
       </div>
 
       <div ref={sectionRefs.Plans} className="pt-[30px] bg-white">
-        <Plans floor_plan={floor_plan} blueprint_image={blueprint_image} />
+        <Plans
+          floor_plan={floor_plan}
+          blueprint_image={blueprint_image}
+          isCandorPage={isCandorPage}
+        />
       </div>
 
       {/* VideoSection with modal state handlers */}
@@ -159,7 +167,7 @@ function DeepDetails({
         <Status status={status} />
       </div>
 
-      {bank.length > 0 && <Partners bank={bank} />}
+      {bank.length > 0 && <Partners bank={bank} isCandorPage={isCandorPage} />}
     </>
   );
 }
