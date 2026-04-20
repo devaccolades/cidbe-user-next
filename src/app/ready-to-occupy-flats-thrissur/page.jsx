@@ -243,7 +243,21 @@ function page() {
                   },
                   {
                     title: "Quality of Living",
-                    desc: "People truly love the clean, green, and culturally vibrant neighbourhoods here. It is a safe and peaceful place to raise a happy family.",
+                    // desc: "People truly love the clean, green, and culturally vibrant neighbourhoods here, making apartments in Thrissur a popular option for those seeking a safe and peaceful place to raise a happy family. ",
+                    desc: (
+                      <>
+                        People truly love the clean, green, and culturally
+                        vibrant neighbourhoods here, making{" "}
+                        <a
+                          href="https://cidbi.com/apartments-flats-thrissur"
+                          className="text-blue-600 hover:underline"
+                        >
+                          apartments in Thrissur
+                        </a>{" "}
+                        a popular option for those seeking a safe and peaceful
+                        place to raise a happy family.
+                      </>
+                    ),
                   },
                   {
                     title: "Top Facilities",

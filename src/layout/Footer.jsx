@@ -128,7 +128,7 @@ function Footer({ backGround = "--primary-cl" }) {
             <Link href="/upcoming-projects">
               <p className="cursor-pointer">Upcoming Projects</p>
             </Link>
-            <Link href="/ready-to-occupy">
+            <Link href="/ready-to-occupy-flats-thrissur">
               <p className="cursor-pointer">Ready To Occupy</p>
             </Link>
             <Link href="/ongoing-projects">
@@ -310,7 +310,10 @@ function Footer({ backGround = "--primary-cl" }) {
               <Link href="/upcoming-projects" className="cursor-pointer">
                 <p>Upcoming Projects</p>
               </Link>
-              <Link href="/ready-to-occupy" className="cursor-pointer">
+              <Link
+                href="/ready-to-occupy-flats-thrissur"
+                className="cursor-pointer"
+              >
                 <p>Ready To Occupy</p>
               </Link>
               <Link href="/ongoing-projects" className="cursor-pointer">

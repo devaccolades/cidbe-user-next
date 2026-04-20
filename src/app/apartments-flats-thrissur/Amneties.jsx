@@ -38,8 +38,16 @@ export default function Amneties() {
           to top tier educational institutions like Govt. Engineering College
           and Govt. Medical College. World-class healthcare centres are always
           just minutes away. This rich mix of green spaces and modern facilities
-          offers a wonderful life. Buying flats for sale in Thrissur is simply a
-          smart choice.
+          makes{" "}
+          <a
+            href="https://cidbi.com/ready-to-occupy-flats-thrissur"
+            target="_blank"
+            className="text-blue-600 hover:underline"
+          >
+            ready to move flats in Thrissur
+          </a>{" "}
+          an ideal choice for a wonderful life. Buying flats for sale in
+          Thrissur is simply a smart choice.
         </p>
       </div>
     </section>

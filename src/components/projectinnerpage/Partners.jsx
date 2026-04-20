@@ -59,18 +59,27 @@ function Partners({ bank, isCandorPage }) {
             </div>
           </div>
 
-          <div>
-            <h2 className="text-[18px] leading-[100%] md:text-[24px] md:max-w-xl text-black mb-3 font-semibold">
+          <div className="relative z-10">
+            <h2 className="text-[18px] md:text-[24px] text-black mb-3 font-semibold">
               About CIDBI – Trusted Builders in Thrissur
             </h2>
 
-            <p className="text-black text-[13px] leading-normal md:text-[14px] max-w-4xl">
-              CIDBI stands as a highly trusted name in luxury home construction.
-              Mr. A. A. Abdul Lathif leads our expert team with years of rich
-              experience. We proudly hold an ISO 9001 2015 certification for our
-              top tier standards. We always deliver projects on time, earning
-              deep trust from happy families. As a proud CREDAI member, we
-              promise pure excellence in every single home we build. When you
+            <p className="!text-black text-[13px] md:text-[14px] max-w-4xl">
+              CIDBI stands as one of the{" "}
+              <a
+                href="https://cidbi.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline hover:text-blue-800"
+              >
+                trusted builders in Thrissur
+              </a>
+              , known for excellence in luxury home construction. Led by Mr. A.
+              A. Abdul Lathif, our expert team brings years of rich experience
+              to every project. We proudly hold an ISO 9001:2015 certification
+              for our top-tier standards. We always deliver projects on time,
+              earning deep trust from happy families. As a proud CREDAI member,
+              we promise pure excellence in every single home we build. When you
               choose CIDBI, you choose lasting peace and true value.
             </p>
           </div>

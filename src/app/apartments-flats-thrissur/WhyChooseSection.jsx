@@ -54,17 +54,24 @@ export default function WhyChooseSection() {
             </span>
           </h2>
           <p className="text-gray-600 text-[13px] leading-normal md:text-[14px] max-w-4xl mb-8 ">
-            CIDBI, with over 40 years of building experience, has the ability to
-            face any challenges in construction field and deliver projects on
-            time. Moreover, CIDBI has no sub contracts in any stage of
-            development. Each apartment is designed and built to create a
-            perfect living space for families and individuals. CIDBI’s projects
-            are designed to minimize environmental impact while maximizing
-            comfort. They come with solar power plants and waste management
-            system. CIDBI also uses premium quality materials for doors,
-            windows, plumbing and electrical fittings. More open space for echo
-            friendly living is the main feature of apartments in Thrissur by
-            CIDBI.
+            CIDBI, with over 40 years of building experience, is one of the{" "}
+            <a
+              href="https://cidbi.com/"
+              target="_blank"
+              className="text-blue-600 hover:underline"
+            >
+              best builders in Thrissur
+            </a>{" "}
+            and has the ability to face any challenges in construction field and
+            deliver projects on time. Moreover, CIDBI has no sub contracts in
+            any stage of development. Each apartment is designed and built to
+            create a perfect living space for families and individuals. CIDBI’s
+            projects are designed to minimize environmental impact while
+            maximizing comfort. They come with solar power plants and waste
+            management system. CIDBI also uses premium quality materials for
+            doors, windows, plumbing and electrical fittings. More open space
+            for echo friendly living is the main feature of apartments in
+            Thrissur by CIDBI.
           </p>
 
           {/* Features */}
