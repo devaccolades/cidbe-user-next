@@ -56,7 +56,7 @@ function page() {
           <div className="containers relative z-10 px-4 sm:px-6">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-0">
               {/* LEFT SIDE */}
-              <div className="lg:col-span-8">
+              <div className="lg:col-span-8 ">
                 <div className="flex items-center gap-4 mb-6 lg:mb-8">
                   <div className="w-8 lg:w-12 h-[1px] bg-[--secondary-cl]"></div>
                   <span className="text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] uppercase text-[--secondary-cl] font-bold">
@@ -64,13 +64,12 @@ function page() {
                   </span>
                 </div>
 
-                <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[120px] leading-[0.9] lg:leading-[0.8] tracking-tighter text-[--secondary-cl]">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-[120px] leading-[0.9] lg:leading-[0.8] tracking-tighter text-[--secondary-cl]">
                   <span className="block mb-2">Buy Premium</span>
                   <span className="relative inline-block font-light">
                     Ready to Occupy
-                    {/* <div className="absolute bottom-2 lg:bottom-4 left-0 w-full h-[1px] lg:h-[2px] bg-[--secondary-cl] origin-left scale-x-110 opacity-20"></div> */}
                   </span>
-                  <span className="block text-[--primary-cl] brightness-75">
+                  <span className="block text-[--primary-cl] mt-4 brightness-75">
                     Flats in Thrissur
                   </span>
                 </h1>
@@ -92,28 +91,6 @@ function page() {
                     prime example of this finished excellence. It perfectly
                     shows the high quality of our ready to occupy flats.
                   </p>
-
-                  {/* <div className="space-y-6">
-                    <p className="text-sm sm:text-base leading-relaxed opacity-70 border-b border-[--secondary-cl]/10 pb-6">
-                      Dodge construction delays and settle in right away. You
-                      get exactly what you see, making the buying process
-                      completely stress-free.
-                    </p>
-
-                    <div className="group cursor-default">
-                      <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[--secondary-cl] mb-2 flex items-center gap-2">
-                        Featured Project
-                        <span className="w-2 h-2 rounded-full bg-[--primary-cl] animate-pulse"></span>
-                      </p>
-                      <p className="text-base sm:text-lg text-[--secondary-cl]/80 leading-snug">
-                        Our beautiful{" "}
-                        <span className="underline decoration-[--primary-cl] decoration-2 underline-offset-4 font-bold">
-                          Candor project
-                        </span>{" "}
-                        stands as a prime example of finished excellence.
-                      </p>
-                    </div>
-                  </div> */}
                 </div>
               </div>
             </div>
@@ -149,12 +126,6 @@ function page() {
                 fits your family perfectly.
               </p>
             </div>
-            {/* <button className="relative z-10 w-full lg:w-auto group bg-[--primary-cl] hover:bg-white text-[--secondary-cl] px-8 lg:px-12 py-5 lg:py-6 rounded-full font-bold text-xs sm:text-sm uppercase tracking-[0.2em] transition-all duration-500 shadow-xl">
-              Enquire Now
-              <span className="inline-block ml-4 group-hover:translate-x-2 transition-transform">
-                →
-              </span>
-            </button> */}
             <ReadyToOccupySeo>
               <button className="relative z-10 w-full lg:w-auto group bg-[--primary-cl] hover:bg-white text-[--secondary-cl] px-8 lg:px-12 py-5 lg:py-6 rounded-full font-bold text-xs sm:text-sm uppercase tracking-[0.2em] transition-all duration-500 shadow-xl">
                 Enquire Now
