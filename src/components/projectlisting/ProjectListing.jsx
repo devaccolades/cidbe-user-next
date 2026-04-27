@@ -128,7 +128,7 @@ guarantees a home-buying experience that exceeds expectations.
   },
 ];
 
-function ProjectListing({ title }) {
+function ProjectListing({ title, basePath = "/completed-projects" }) {
   const [isOpend, setOpen] = useState(null);
 
   const pathname = usePathname();
@@ -176,6 +176,19 @@ function ProjectListing({ title }) {
     setPage(pageNumber);
   };
 
+  const resolvedBasePath =
+    basePath ||
+    (() => {
+      if (pathname === "/completed-projects") return "/completed-projects";
+      if (pathname === "/featured-projects") return "/featured-projects";
+      if (pathname === "/ongoing-projects") return "/ongoing-projects";
+      if (pathname === "/upcoming-projects") return "/upcoming-projects";
+      if (pathname === "/ready-to-occupy") return "/ready-to-occupy";
+      if (pathname === "/apartments-flats-thrissur")
+        return "/completed-projects"; // <-- key fix
+      return pathname;
+    })();
+
   const HeadingTag = pathname === "/featured-projects" ? "h1" : "h2";
   return (
     <main className="bg-[--primary-cl] bg-cover bg-no-repeat project-list-bg -mt-[80px] lg:-mt-[95px]">
@@ -194,7 +207,11 @@ function ProjectListing({ title }) {
         ) : projects.length > 0 ? (
           <div className="grid grid-cols-1 custom-listing md:grid-cols-2 lg:grid-cols-3 gap-[20px] w-full py-[30px]">
             {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
+              <ProjectCard
+                key={index}
+                project={project}
+                basePath={resolvedBasePath}
+              />
             ))}
           </div>
         ) : (
