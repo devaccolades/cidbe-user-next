@@ -100,7 +100,7 @@ function page() {
               excellent access to education, healthcare, shopping, and
               transport. Introducing{" "}
               <span className="text-[#052D23] font-semibold">
-                Chembaka Premium Luxury Apartments
+                Chembaka Premium Luxury Apartments, Punkunnam, near Sankarankulangara junction
               </span>{" "}
               by CIDBI—thoughtfully designed homes that combine comfort,
               elegance, and convenience. Located close to everything you need,
