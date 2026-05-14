@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`hidescroll ${inter.variable}`}>
       <head />
       <body className={inter.className}>
-        <noscript>
+        {/* <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894"
             height="0"
@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
               })(window,document,'script','dataLayer','GTM-PWFG6894');
               `,
           }}
-        />
+        /> */}
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=AW-11550885039"
