@@ -12,7 +12,7 @@ function NotFound() {
         <p className='text-[24px] font-[inter-medium]'>Nothing Here!</p>
         <p className='text-center'>There's nothing here yet, but we're building something amazing! 
             Check back soon for updates on our latest projects. For immediate 
-            assistance, please contact us at <a href={pathname==="/careers" ? "mailto:jobs.cidbi@gmail.com" : "mailto:salescidbi@gmail.com"}>{pathname==="/careers" ? "jobs.cidbi@gmail.com" : "salescidbi@gmail.com"}</a>
+            assistance, please contact us at <a href={pathname==="/careers" ? "mailto:jobs.cidbi@gmail.com" : "mailto:sales@cidbi.com"}>{pathname==="/careers" ? "jobs.cidbi@gmail.com" : "sales@cidbi.com"}</a>
             </p>
     </section>
   )

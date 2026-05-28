@@ -77,7 +77,7 @@ const faqStructuredData = {
         contactPoint: {
           "@type": "ContactPoint",
           telephone: "+91 94969 33000",
-          email: "salescidbi@gmail.com",
+          email: "sales@cidbi.com",
           contactType: "Customer Support",
         },
       },
@@ -155,7 +155,7 @@ const faqStructuredData = {
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+91 94969 33000",
-        email: "salescidbi@gmail.com",
+        email: "sales@cidbi.com",
         contactType: "Sales",
         areaServed: "IN",
         availableLanguage: "English",

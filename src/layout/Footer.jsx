@@ -170,11 +170,8 @@ function Footer({ backGround = "--primary-cl" }) {
               <p className="flex flex-row gap-[10px]">
                 <span className="w-[67px]">Email</span> <span>-</span>
                 {/* <span>salescidbi@gmail.com</span> */}
-                <a
-                  href="mailto:salescidbi@gmail.com"
-                  className="hover:underline"
-                >
-                  salescidbi@gmail.com
+                <a href="mailto:sales@cidbi.com" className="hover:underline">
+                  sales@cidbi.com
                 </a>
               </p>
               <p className="flex flex-row gap-[10px]">
@@ -355,7 +352,7 @@ function Footer({ backGround = "--primary-cl" }) {
               </p>
               <p className="flex flex-row gap-[10px]">
                 <span className="w-[67px]">Email</span> <span>-</span>
-                <span>salescidbi@gmail.com</span>
+                <span>sales@cidbi.com</span>
               </p>
               <p className="flex flex-row gap-[10px]">
                 <span className="w-[67px]">Call</span> <span>-</span>
