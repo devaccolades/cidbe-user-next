@@ -38,7 +38,7 @@ function CustomerReviewsAndFaq() {
     } else {
       setIscontact(false);
     }
-  }, [pathname])
+  }, [pathname]);
 
   const handleModalClose = () => {
     setIsModalOpen(!isModalOpen);
@@ -209,7 +209,7 @@ function CustomerReviewsAndFaq() {
               <AnimatePresence>
                 {isOpend === index && (
                   <div
-                  // <motion.div
+                    // <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
@@ -219,7 +219,7 @@ function CustomerReviewsAndFaq() {
                     <p className="font-[general-sans-regular] text-[12px] lg:text-[16px] py-[8px] leading-[18px] lg:leading-[24px]">
                       {faq.answer || ""}
                     </p>
-                  {/* </motion.div> */}
+                    {/* </motion.div> */}
                   </div>
                 )}
               </AnimatePresence>
@@ -516,10 +516,9 @@ function CustomerReviewsAndFaq() {
 
       {isModalOpen && (
         <Dialog
-          size="xl"
           open={isModalOpen}
           handler={handleModalClose}
-          className="bg-transparent"
+          className="bg-transparent lg:w-[80%] md:h-[60vh]"
         >
           <video
             ref={videoRef}
