@@ -28,23 +28,44 @@ function Footer({ backGround = "--primary-cl" }) {
   const router = useRouter();
   return (
     <>
-      <Script
-        id="tawk-to"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/5e51034ea89cda5a18876532/default';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-          `,
-        }}
-      />
+<Script
+  id="tawk-to"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `
+      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+
+      Tawk_API.onLoad = function () {
+        if (window.innerWidth <= 768) {
+          Tawk_API.customStyle = {
+            visibility: {
+              desktop: {
+                position: "br",
+                xOffset: "20px",
+                yOffset: 20
+              },
+              mobile: {
+                position: "br",
+                xOffset: "10px",
+                yOffset: 10
+              }
+            }
+          };
+        }
+      };
+
+      (function() {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/5e51034ea89cda5a18876532/default";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    `,
+  }}
+/>
 
       <div className="quick-enquiry" onClick={handleOpen}>
         <p className="content">Enquire Now</p>
@@ -52,16 +73,16 @@ function Footer({ backGround = "--primary-cl" }) {
       <EnquiryModal open={open} handleOpen={handleOpen} />
       {/* Whatsapp and phone start */}
       <div className="fixed z-50 bottom-[50px] right-0">
-        <div className="flex flex-col space-y-[10px] mr-[20px] md:space-y-5 md:mr-[40px] mb-[30px]">
+        <div className="flex flex-col space-y-[10px] mr-[3px] md:space-y-3 md:mr-[10px] mb-[20px]">
           <a
-            className="w-[45px] lg:w-full"
+            className="w-[35px] md:w-[45px] lg:w-full"
             href="https://wa.me/+919496933000?text=I'm%20interested%20in%20your%20Property"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image src={watsappIcon} alt="WhatsApp Icon" />
           </a>
-          <a className="w-[45px] lg:w-full" href="tel:+919496933000">
+          <a className="w-[35px] md:w-[45px] lg:w-full" href="tel:+919496933000">
             <Image src={callIcon} alt="Call Icon" target="_blank" />
           </a>
         </div>
@@ -299,7 +320,7 @@ function Footer({ backGround = "--primary-cl" }) {
             </div>
           </div>
           <div className="flex flex-ro w-full justify-between mt-[40px]">
-            <div className="text-[14px] leading-[21px] flex flex-col w-full gap-[20px]">
+            <div className="text-[14px] leading-[21px] flex flex-col w-full gap-[12px] md:gap-[20px]">
               <p className="font-[general-sans-semibold]">PROJECTS</p>
               <Link href="/completed-projects" className="cursor-pointer">
                 <p>Completed Projects</p>
@@ -317,7 +338,7 @@ function Footer({ backGround = "--primary-cl" }) {
                 <p>Ongoing Projects</p>
               </Link>
             </div>
-            <div className="font-[general-sans-semibold] text-[14px] w-[50%] flex flex-col gap-[20px]">
+            <div className="font-[general-sans-semibold] text-[14px] w-[50%] flex flex-col gap-[8px] md:gap-[20px]">
               <Link href="/gallery" className="cursor-pointer">
                 <p>GALLERY</p>
               </Link>
