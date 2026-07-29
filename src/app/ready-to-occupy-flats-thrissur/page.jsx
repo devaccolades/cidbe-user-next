@@ -223,7 +223,7 @@ function page() {
           <div className="containers px-4 sm:px-6">
             <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
               <div className="lg:w-1/3">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tighter text-[--secondary-cl] mb-6 lg:mb-8 lg:sticky lg:top-32">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl tracking-tighter text-[--secondary-cl] mb-6 lg:mb-8 lg:top-32">
                   Why Buy Ready <br className="hidden lg:block" />
                   to Move Flats <br className="hidden lg:block" />
                   in Thrissur
