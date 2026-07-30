@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Location({ location, nearby }) {
+  if (!location && (!nearby || nearby.length === 0)) return null;
   return (
     <section className='bg-[#ffff]'>
       <div className="containers custom-res py-[20px]">

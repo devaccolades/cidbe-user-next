@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Specifications = ({ specification, isCandorPage }) => {
+  if (!specification || specification.length === 0) return null;
   const [openItemIndex, setOpenItemIndex] = useState(null);
 
   return (

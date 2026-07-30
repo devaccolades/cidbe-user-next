@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 function Amenities({ amenities, isCandorPage }) {
+  if (!amenities || amenities.length === 0) return null;
   return (
     <div className="containers custom-res py-[20px] mb-[30px]">
       <h2 className="text-[24px] font-[clash-display-medium] mb-[10px]">

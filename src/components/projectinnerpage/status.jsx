@@ -17,8 +17,12 @@ function Status({ status }) {
   const swiperRef = useRef(null);
 
   useEffect(() => {
-    setActiveYear(status[0]?.year)
+    if (status && status.length > 0) {
+      setActiveYear(status[0]?.year);
+    }
   }, [status]);
+
+  if (!status || status.length === 0) return null;
 
   const handleSlideChange = (swiper) => {
     const currentIndex = swiper.activeIndex;
