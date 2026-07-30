@@ -67,107 +67,120 @@ function DeepDetails({
   };
 
   const sections = [
-    { name: "Amenities" },
-    { name: "Smart Features" },
-    { name: "Specifications" },
-    { name: "Plans" },
-    { name: "VideoSection" },
-    { name: "ProductVideo" },
-    { name: "Location" },
-    { name: "Current Status" },
+    { name: "Amenities", hasData: amenities?.length > 0 },
+    { name: "Smart Features", hasData: features?.length > 0 },
+    { name: "Specifications", hasData: specification?.length > 0 },
+    { name: "Plans", hasData: floor_plan?.length > 0 || Boolean(blueprint_image) },
+    { name: "VideoSection", hasData: Boolean(videosection) },
+    { name: "ProductVideo", hasData: videos?.length > 0 },
+    { name: "Location", hasData: Boolean(location) || nearby?.length > 0 },
+    { name: "Current Status", hasData: status?.length > 0 },
   ];
 
-  const filteredSections =
-    features.length === 0
-      ? sections.filter((section) => section.name !== "Smart Features")
-      : sections;
+  const filteredSections = sections.filter((section) => section.hasData);
 
   return (
     <>
       {/* Hide header when video modal is open */}
-      <section
-        ref={navbarRef}
-        className={`lg:sticky top-0 z-50 transition-all duration-300 ease-in-out ${
-          isSticky ? "bg-[--primary-cl]" : "bg-white"
-        } pt-[20px] pb-[10px] ${
-          isVideoModalOpen ? "hidden" : "hidden lg:block"
-        }`}
-      >
-        <div
-          className={`containers custom-res py-[20px] rounded-[12px] transition-colors duration-300`}
+      {filteredSections.length > 0 && (
+        <section
+          ref={navbarRef}
+          className={`lg:sticky top-0 z-50 transition-all duration-300 ease-in-out ${
+            isSticky ? "bg-[--primary-cl]" : "bg-white"
+          } pt-[20px] pb-[10px] ${
+            isVideoModalOpen ? "hidden" : "hidden lg:block"
+          }`}
         >
-          <ul className="flex justify-between w-full">
-            {filteredSections.map((item, index) => (
-              <li
-                key={index}
-                onClick={() => scrollToSection(item.name)}
-                className="font-[general-sans-regular] lg:text-[16px] xl:text-[20px] px-[10px] py-[5px] relative cursor-pointer group transition-all duration-300 ease-in-out hover:font-[general-sans-medium]"
-              >
-                {item.name}
-                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </li>
-            ))}
-          </ul>
+          <div
+            className={`containers custom-res py-[20px] rounded-[12px] transition-colors duration-300`}
+          >
+            <ul className="flex justify-between w-full">
+              {filteredSections.map((item, index) => (
+                <li
+                  key={index}
+                  onClick={() => scrollToSection(item.name)}
+                  className="font-[general-sans-regular] lg:text-[16px] xl:text-[20px] px-[10px] py-[5px] relative cursor-pointer group transition-all duration-300 ease-in-out hover:font-[general-sans-medium]"
+                >
+                  {item.name}
+                  <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {amenities?.length > 0 && (
+        <div ref={sectionRefs.Amenities} className="pt-[30px] bg-white">
+          <Amenities amenities={amenities} isCandorPage={isCandorPage} />
         </div>
-      </section>
+      )}
 
-      <div ref={sectionRefs.Amenities} className="pt-[30px] bg-white">
-        <Amenities amenities={amenities} isCandorPage={isCandorPage} />
-      </div>
-
-      {features.length > 0 && (
+      {features?.length > 0 && (
         <div ref={sectionRefs["Smart Features"]} className="pt-[30px] bg-white">
           <SmartFeature features={features} />
         </div>
       )}
 
-      {amenities_images.length > 0 && (
+      {amenities_images?.length > 0 && (
         <Slider amenities_images={amenities_images} />
       )}
 
-      <div ref={sectionRefs.Specifications} className="pt-[30px] bg-white">
-        <Specification
-          specification={specification}
-          isCandorPage={isCandorPage}
-        />
-      </div>
+      {specification?.length > 0 && (
+        <div ref={sectionRefs.Specifications} className="pt-[30px] bg-white">
+          <Specification
+            specification={specification}
+            isCandorPage={isCandorPage}
+          />
+        </div>
+      )}
 
-      <div ref={sectionRefs.Plans} className="pt-[30px] bg-white">
-        <Plans
-          floor_plan={floor_plan}
-          blueprint_image={blueprint_image}
-          isCandorPage={isCandorPage}
-        />
-      </div>
+      {(floor_plan?.length > 0 || blueprint_image) && (
+        <div ref={sectionRefs.Plans} className="pt-[30px] bg-white">
+          <Plans
+            floor_plan={floor_plan}
+            blueprint_image={blueprint_image}
+            isCandorPage={isCandorPage}
+          />
+        </div>
+      )}
 
       {/* VideoSection with modal state handlers */}
-      <div ref={sectionRefs.VideoSection} className="bg-white">
-        <VideoSection
-          videosection={videosection}
-          onVideoModalOpen={() => {
-            setIsVideoModalOpen(true);
-            onVideoModalOpen?.();
-          }}
-          onVideoModalClose={() => {
-            setIsVideoModalOpen(false);
-            onVideoModalClose?.();
-          }}
-        />
-      </div>
+      {videosection && (
+        <div ref={sectionRefs.VideoSection} className="bg-white">
+          <VideoSection
+            videosection={videosection}
+            onVideoModalOpen={() => {
+              setIsVideoModalOpen(true);
+              onVideoModalOpen?.();
+            }}
+            onVideoModalClose={() => {
+              setIsVideoModalOpen(false);
+              onVideoModalClose?.();
+            }}
+          />
+        </div>
+      )}
 
-      <div ref={sectionRefs.ProductVideo} className="pt-[30px] bg-white">
-        <ProductVideo videos={videos} />
-      </div>
+      {videos?.length > 0 && (
+        <div ref={sectionRefs.ProductVideo} className="pt-[30px] bg-white">
+          <ProductVideo videos={videos} />
+        </div>
+      )}
 
-      <div ref={sectionRefs.Location} className="pt-[30px] bg-white">
-        <Location location={location} nearby={nearby} />
-      </div>
+      {(location || nearby?.length > 0) && (
+        <div ref={sectionRefs.Location} className="pt-[30px] bg-white">
+          <Location location={location} nearby={nearby} />
+        </div>
+      )}
 
-      <div ref={sectionRefs["Current Status"]} className="pt-[30px] bg-white">
-        <Status status={status} />
-      </div>
+      {status?.length > 0 && (
+        <div ref={sectionRefs["Current Status"]} className="pt-[30px] bg-white">
+          <Status status={status} />
+        </div>
+      )}
 
-      {bank.length > 0 && <Partners bank={bank} isCandorPage={isCandorPage} />}
+      {bank?.length > 0 && <Partners bank={bank} isCandorPage={isCandorPage} />}
     </>
   );
 }

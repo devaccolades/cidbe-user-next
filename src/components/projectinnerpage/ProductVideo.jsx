@@ -2,6 +2,7 @@ import React from 'react'
 
 
 function ProductVideo({ videos }) {
+  if (!videos || videos.length === 0) return null;
   return (
     <>
       {videos.length > 0 &&(<section className='bg-[#ffff]'>

@@ -10,6 +10,7 @@ import "swiper/css/scrollbar";
 import buildIcon from "../../../public/images/product-view/plansbuilding.webp";
 
 function Plans({ floor_plan, blueprint_image, isCandorPage }) {
+  if ((!floor_plan || floor_plan.length === 0) && !blueprint_image) return null;
   return (
     <section className="py-10 bg-[#ffff]">
       <div className="containers custom-res">
