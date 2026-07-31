@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Amenities from "./Amenities";
 import SmartFeature from "./SmartFeature";
-// import Slider from './Slider';
 import Specification from "./Specification";
 import ProductVideo from "./ProductVideo";
 import Plans from "./Plans";
@@ -12,6 +11,7 @@ import Partners from "./Partners";
 import VideoSection from "../VideoSection";
 import dynamic from "next/dynamic";
 import { SkeletonLoader } from "../skeletoneffect/Skelten";
+
 const Slider = dynamic(() => import("./Slider"), {
   ssr: false,
   loading: () => <SkeletonLoader />,
@@ -60,21 +60,52 @@ function DeepDetails({
 
   const scrollToSection = (section) => {
     const offset = 70;
-    window.scrollTo({
-      top: sectionRefs[section].current.offsetTop - offset,
-      behavior: "smooth",
-    });
+    if (sectionRefs[section]?.current) {
+      window.scrollTo({
+        top: sectionRefs[section].current.offsetTop - offset,
+        behavior: "smooth",
+      });
+    }
   };
 
+  const hasAmenities = Array.isArray(amenities) && amenities.length > 0;
+  const hasFeatures = Array.isArray(features) && features.length > 0;
+  const hasSpecification =
+    Array.isArray(specification) &&
+    specification.some(
+      (spec) =>
+        (spec?.title && String(spec.title).trim() !== "") ||
+        (spec?.description && String(spec.description).trim() !== "")
+    );
+  const hasPlans =
+    (Array.isArray(floor_plan) && floor_plan.length > 0) ||
+    Boolean(blueprint_image);
+  const hasVideoSection = Boolean(videosection);
+  const hasVideos =
+    Array.isArray(videos) &&
+    videos.some((v) => v?.url && String(v.url).trim() !== "");
+  const hasLocation =
+    (Boolean(location) && String(location).trim() !== "") ||
+    (Array.isArray(nearby) && nearby.length > 0);
+  const hasStatus =
+    Array.isArray(status) &&
+    status.some(
+      (item) =>
+        item?.statuses &&
+        Array.isArray(item.statuses) &&
+        item.statuses.length > 0
+    );
+  const hasBank = Array.isArray(bank) && bank.length > 0;
+
   const sections = [
-    { name: "Amenities", hasData: amenities?.length > 0 },
-    { name: "Smart Features", hasData: features?.length > 0 },
-    { name: "Specifications", hasData: specification?.length > 0 },
-    { name: "Plans", hasData: floor_plan?.length > 0 || Boolean(blueprint_image) },
-    { name: "VideoSection", hasData: Boolean(videosection) },
-    { name: "ProductVideo", hasData: videos?.length > 0 },
-    { name: "Location", hasData: Boolean(location) || nearby?.length > 0 },
-    { name: "Current Status", hasData: status?.length > 0 },
+    { name: "Amenities", hasData: hasAmenities },
+    { name: "Smart Features", hasData: hasFeatures },
+    { name: "Specifications", hasData: hasSpecification },
+    { name: "Plans", hasData: hasPlans },
+    { name: "VideoSection", hasData: hasVideoSection },
+    { name: "ProductVideo", hasData: hasVideos },
+    { name: "Location", hasData: hasLocation },
+    { name: "Current Status", hasData: hasStatus },
   ];
 
   const filteredSections = sections.filter((section) => section.hasData);
@@ -110,13 +141,13 @@ function DeepDetails({
         </section>
       )}
 
-      {amenities?.length > 0 && (
+      {hasAmenities && (
         <div ref={sectionRefs.Amenities} className="pt-[30px] bg-white">
           <Amenities amenities={amenities} isCandorPage={isCandorPage} />
         </div>
       )}
 
-      {features?.length > 0 && (
+      {hasFeatures && (
         <div ref={sectionRefs["Smart Features"]} className="pt-[30px] bg-white">
           <SmartFeature features={features} />
         </div>
@@ -126,7 +157,7 @@ function DeepDetails({
         <Slider amenities_images={amenities_images} />
       )}
 
-      {specification?.length > 0 && (
+      {hasSpecification && (
         <div ref={sectionRefs.Specifications} className="pt-[30px] bg-white">
           <Specification
             specification={specification}
@@ -135,7 +166,7 @@ function DeepDetails({
         </div>
       )}
 
-      {(floor_plan?.length > 0 || blueprint_image) && (
+      {hasPlans && (
         <div ref={sectionRefs.Plans} className="pt-[30px] bg-white">
           <Plans
             floor_plan={floor_plan}
@@ -146,7 +177,7 @@ function DeepDetails({
       )}
 
       {/* VideoSection with modal state handlers */}
-      {videosection && (
+      {hasVideoSection && (
         <div ref={sectionRefs.VideoSection} className="bg-white">
           <VideoSection
             videosection={videosection}
@@ -162,25 +193,25 @@ function DeepDetails({
         </div>
       )}
 
-      {videos?.length > 0 && (
+      {hasVideos && (
         <div ref={sectionRefs.ProductVideo} className="pt-[30px] bg-white">
           <ProductVideo videos={videos} />
         </div>
       )}
 
-      {(location || nearby?.length > 0) && (
+      {hasLocation && (
         <div ref={sectionRefs.Location} className="pt-[30px] bg-white">
           <Location location={location} nearby={nearby} />
         </div>
       )}
 
-      {status?.length > 0 && (
+      {hasStatus && (
         <div ref={sectionRefs["Current Status"]} className="pt-[30px] bg-white">
           <Status status={status} />
         </div>
       )}
 
-      {bank?.length > 0 && <Partners bank={bank} isCandorPage={isCandorPage} />}
+      {hasBank && <Partners bank={bank} isCandorPage={isCandorPage} />}
     </>
   );
 }
