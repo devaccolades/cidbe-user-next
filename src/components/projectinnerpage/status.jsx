@@ -16,13 +16,25 @@ function Status({ status }) {
   const [activeYear, setActiveYear] = useState("");
   const swiperRef = useRef(null);
 
-  useEffect(() => {
-    if (status && status.length > 0) {
-      setActiveYear(status[0]?.year);
-    }
-  }, [status]);
+  const hasValidStatus =
+    Array.isArray(status) &&
+    status.some(
+      (yearData) =>
+        yearData?.statuses &&
+        Array.isArray(yearData.statuses) &&
+        yearData.statuses.length > 0
+    );
 
-  if (!status || status.length === 0) return null;
+  useEffect(() => {
+    if (hasValidStatus) {
+      const firstValid = status.find(
+        (yearData) => yearData?.statuses?.length > 0
+      );
+      setActiveYear(firstValid?.year || status[0]?.year || "");
+    }
+  }, [status, hasValidStatus]);
+
+  if (!hasValidStatus) return null;
 
   const handleSlideChange = (swiper) => {
     const currentIndex = swiper.activeIndex;

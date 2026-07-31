@@ -4,7 +4,7 @@ import Image from "next/image";
 import downloadIcon from "../../../public/images/product-view/download.webp";
 import dynamic from "next/dynamic";
 import arrow_outwardicon from "../../../public/icons/arrow_outward.webp";
-
+import Link from "next/link";
 import qrIcon from "../../../public/images/product-view/newQr.svg";
 import first from "../../../public/images/product-view/icons/05.webp";
 import second from "../../../public/images/product-view/icons/04.webp";
@@ -106,7 +106,7 @@ function Brochure({ data }) {
           </div>
 
           {/* Right-side content */}
-          <div className="md:w-[47%] lg:w-[30%] bg-[#BFD8BD] rounded-[12px] p-[30px] flex flex-col right-side-width">
+          <div className="md:w-[47%] lg:w-[30%] h-fit self-start bg-[#BFD8BD] rounded-[12px] p-[30px] flex flex-col right-side-width">
             <div className="flex-grow">
               <div className="flex items-center justify-between mb-[20px]">
                 <h2 className="lg:text-[24px] md:text-[16px] font-[clash-display-medium] heading-size ">
@@ -117,8 +117,8 @@ function Brochure({ data }) {
                     unoptimized
                     src={data?.qr_code}
                     alt="Premium 4 Bhk flats in thrissur"
-                    width={46}
-                    height={46}
+                    width={64}
+                    height={64}
                   />
                 )}
               </div>
@@ -138,9 +138,15 @@ function Brochure({ data }) {
                       <h3 className="lg:text-[16px] md:text-[14px] font-[general-sans-medium] heading-size">
                         {item.title}
                       </h3>
-                      <p className="xl:text-[18px] lg:text-[16px] md:text-[14px] text-[14px] capitalize font-[general-sans-regular] text-res leading-[20px] paragraph-size">
-                        {item.description}
-                      </p>
+                      <Link
+                        href="https://rera.kerala.gov.in/projects/12198"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <p className="xl:text-[18px] lg:text-[16px] md:text-[14px] text-[14px] capitalize font-[general-sans-regular] text-res leading-[20px] paragraph-size cursor-pointer hover:underline">
+                          {item.description}
+                        </p>
+                      </Link>
                     </div>
                   </div>
                 ))}

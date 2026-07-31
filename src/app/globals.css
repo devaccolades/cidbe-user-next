@@ -16,6 +16,18 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "fml-mohini-regular"; /* 400 */
+  src: url(../../public/font/FML-Mohini.otf) format(opentype);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "fml-mohini-bold";           
+  src: url(../../public/font/FML-Mohini-Bold.otf) format("opentype");
+  font-display: swap;
+}
+
 /* general sans fonts 300*/
 
 /* @font-face {
@@ -131,4 +143,9 @@
   .about-main-bg {
     background-image: url("../../public/images/home/about-section-bg.webp");
   }
+}
+
+
+.paragraph-size strong {
+  font-weight: 700 !important;
 }

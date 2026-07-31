@@ -4,7 +4,15 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Specifications = ({ specification, isCandorPage }) => {
-  if (!specification || specification.length === 0) return null;
+  const hasValidSpecs =
+    Array.isArray(specification) &&
+    specification.some(
+      (spec) =>
+        (spec?.title && String(spec.title).trim() !== "") ||
+        (spec?.description && String(spec.description).trim() !== "")
+    );
+
+  if (!hasValidSpecs && !isCandorPage) return null;
   const [openItemIndex, setOpenItemIndex] = useState(null);
 
   return (

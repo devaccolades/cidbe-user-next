@@ -82,6 +82,9 @@ function HeroSection({ data, images }) {
           {/* <p className="text-[16px] font-[clash-display-medium]">
             {data?.sub_name}
           </p> */}
+          <p className="text-[32px] md:text-[52px] lg:text-[64x] leading-[100%] font-[fml-mohini-regular]">
+            XrÈqÀ Fsâ \mSv <br /> sN¼I Fsâ hoSv
+          </p>
           <p className="text-[16px] font-[clash-display-medium]">
             {data?.location}
           </p>
