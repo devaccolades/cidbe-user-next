@@ -48,7 +48,7 @@ function HeroSection() {
   const [projects, setProject] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [backgroundImage, setBackgroundImage] = useState(
-    projects[0]?.background_image
+    projects[0]?.background_image,
   );
   const [isMobile, setIsMobile] = useState();
 
@@ -93,7 +93,7 @@ function HeroSection() {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
   };
-  
+
   const animationConfig = {
     initial: {
       opacity: 0,
@@ -196,7 +196,9 @@ function HeroSection() {
                 <p className="inner">110 Lakhs Sqft. Area Completed</p>
               </motion.button> */}
               <button className="border border-collapse p-2 m-[20px]">
-                <p className="inner text-white text-[12px] lg:text-[16px] ">110 Lakhs Sqft. Area Completed</p>
+                <p className="inner text-white text-[12px] lg:text-[16px] ">
+                  110 Lakhs Sqft. Area Completed
+                </p>
               </button>
 
               <motion.p
@@ -225,10 +227,18 @@ function HeroSection() {
                   key={index}
                   className="md:w-[275px] lg:w-[195px] h-[97%] px-[5px] pt-[5px] pb-[10px] mx-auto overflow-hidden"
                 >
-                  <div
-                    className="md:h-[259px] lg:h-[405px] bg-top rounded-[8px] bg-cover"
-                    style={{ backgroundImage: `url(${project.thumbnail})` }}
-                  />
+                  <div className="relative">
+                    <div
+                      className="md:h-[259px] lg:h-[405px] bg-top rounded-[8px] bg-cover"
+                      style={{ backgroundImage: `url(${project.thumbnail})` }}
+                    />
+                    {project?.thumbnail_alt?.trim() === "Chembaka" && (
+                      <div className="absolute top-3 left-3 bg-red-600 text-white text-[10px] lg:text-[12px] font-[general-sans-regular] font-medium px-3 py-1 rounded-md z-10">
+                        New Launch
+                      </div>
+                    )}
+                  </div>
+
                   <div className="bg-white grid grid-rows-2 lg:pt-[10px] md:px-[16px] lg:px-[20px] ">
                     <div className="h-[72px] w-full flex justify-between items-center">
                       <div className="font-[general-sans-regular] md:-mb-[20px] lg:mb-0">
@@ -236,7 +246,11 @@ function HeroSection() {
                           {project?.name}
                         </p>
                         <p className="capitalize flex gap-[8px] lg:-mt-[4px]">
-                          <Image src={locationIcon} alt="flats in Thrissur"  priority/>{" "}
+                          <Image
+                            src={locationIcon}
+                            alt="flats in Thrissur"
+                            priority
+                          />{" "}
                           <span className="md:text-[10px] lg:text-[16px] text-[#767575]">
                             {project?.location}
                           </span>
@@ -258,7 +272,11 @@ function HeroSection() {
                         >
                           View Project Details
                         </p>
-                        <Image src={arrowoutwardIcon} alt="flats in Thrissur" priority/>
+                        <Image
+                          src={arrowoutwardIcon}
+                          alt="flats in Thrissur"
+                          priority
+                        />
                       </button>
                     </div>
                   </div>
@@ -285,7 +303,11 @@ function HeroSection() {
                   <div className="font-[general-sans-regular] ">
                     <p className="text-[24px] text-black">{project?.name}</p>
                     <p className="capitalize flex gap-[8px] ">
-                      <Image src={locationIcon} alt="apartments in Thrissur" priority/>{" "}
+                      <Image
+                        src={locationIcon}
+                        alt="apartments in Thrissur"
+                        priority
+                      />{" "}
                       <span className="text-[14px] text-[#767575]">
                         {project?.location}
                       </span>
@@ -307,7 +329,11 @@ function HeroSection() {
                     >
                       View Project Details
                     </p>
-                    <Image src={arrowoutwardIcon} alt="flats in Thrissur" priority/>
+                    <Image
+                      src={arrowoutwardIcon}
+                      alt="flats in Thrissur"
+                      priority
+                    />
                   </button>
                 </div>
               </div>
