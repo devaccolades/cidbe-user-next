@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Specifications = ({ specification, isCandorPage }) => {
+  const [openItemIndex, setOpenItemIndex] = useState(null);
+
   const hasValidSpecs =
     Array.isArray(specification) &&
     specification.some(
@@ -13,7 +15,6 @@ const Specifications = ({ specification, isCandorPage }) => {
     );
 
   if (!hasValidSpecs && !isCandorPage) return null;
-  const [openItemIndex, setOpenItemIndex] = useState(null);
 
   return (
     <div className="containers custom-res py-[20px] bg-white">
@@ -49,7 +50,7 @@ const Specifications = ({ specification, isCandorPage }) => {
         </div>
       )}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[106px] gap-y-[20px] md:gap-y-[30px]">
-        {specification.map((spec, index) => (
+        {specification?.map((spec, index) => (
           <SpecificationItem
             key={index}
             title={spec.title}
