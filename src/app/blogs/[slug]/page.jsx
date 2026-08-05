@@ -18,6 +18,7 @@ export async function generateMetadata({ params }) {
     return {
       title: data?.meta_title || "Blogs",
       description: data?.meta_description || "Default Description",
+      keywords: data?.meta_keywords || "",
       alternates: {
         canonical: `https://cidbi.com/blogs/${slug}`,
       },

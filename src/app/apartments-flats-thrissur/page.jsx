@@ -25,6 +25,7 @@ export async function generateMetadata() {
     return {
       title: data?.[0]?.meta_title || "Apartments and flats in thrissur",
       description: data?.[0]?.meta_description || "Default Description",
+      keywords: data?.[0]?.meta_keywords || "",
       alternates: {
         canonical: `https://cidbi.com${path}`,
       },

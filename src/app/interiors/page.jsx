@@ -20,7 +20,7 @@ async function fetchSeoData(path) {
 export async function generateMetadata() {
   const path = "/interiors";
   const responseData = await fetchSeoData(path);
-  const { meta_title, meta_description } = responseData;
+  const { meta_title, meta_description, meta_keywords } = responseData;
   return {
     title: meta_title,
     description: meta_description,
@@ -31,6 +31,7 @@ export async function generateMetadata() {
       index: true,
       follow: true,
     },
+    keywords: meta_keywords,
   };
 }
 

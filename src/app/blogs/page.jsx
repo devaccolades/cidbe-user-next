@@ -20,6 +20,7 @@ export async function generateMetadata() {
     return {
       title: data?.[0]?.meta_title || "Blogs",
       description: data?.[0]?.meta_description || "Default Description",
+      keywords: data?.[0]?.meta_keywords || "",
       robots: {
         index: true,
         follow: true,
