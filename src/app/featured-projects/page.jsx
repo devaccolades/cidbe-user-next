@@ -26,10 +26,11 @@ async function fetchSeoData(path) {
 export async function generateMetadata() {
   const path = "/featured-projects";
   const responseData = await fetchSeoData(path);
-  const { meta_title, meta_description } = responseData;
+  const { meta_title, meta_description, meta_keywords } = responseData;
   return {
     title: meta_title,
     description: meta_description,
+    keywords: meta_keywords,
     alternates: {
       canonical: `https://cidbi.com${path}`,
     },

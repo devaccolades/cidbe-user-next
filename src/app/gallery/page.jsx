@@ -20,6 +20,7 @@ export async function generateMetadata() {
     return {
       title: data?.[0]?.meta_title || "Gallery",
       description: data?.[0]?.meta_description || "Default Description",
+      keywords: data?.[0]?.meta_keywords || "",
       alternates: {
         canonical: `https://cidbi.com${path}`,
       },
