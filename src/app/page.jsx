@@ -225,28 +225,28 @@ try {
 function Page() {
   return (
     <>
-      {/* <ScrollToTop /> */}
-      {/* <Header /> */}
-      {/* <HeroSection /> */}
-      {/* <AboutSection /> */}
-      {/* <WhyChoose /> */}
-      {/* <FeaturedProject /> */}
+      <ScrollToTop />
+      <Header />
+      <HeroSection />
+      <AboutSection />
+      <WhyChoose />
+      <FeaturedProject />
       <Message />
-      {/* <Chairman /> */}
-      {/* <Achievements achievements={achievements} /> */}
-      {/* <Blogs /> */}
-      {/* <CustomerReviewsAndFaq /> */}
-      {/* <Footer /> */}
-      {/* <Script
+      <Chairman />
+      <Achievements achievements={achievements} />
+      <Blogs />
+      <CustomerReviewsAndFaq />
+      <Footer />
+      <Script
         id="seo-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
-      /> */}
-      {/* <Script
+      />
+      <Script
         id="seo-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(newSchema) }}
-      /> */}
+      />
     </>
   );
 }
