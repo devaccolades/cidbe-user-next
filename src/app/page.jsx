@@ -232,7 +232,7 @@ function Page() {
       <WhyChoose />
       <FeaturedProject />
       <Message />
-      <Chairman />
+      {/* <Chairman /> */}
       <Achievements achievements={achievements} />
       <Blogs />
       <CustomerReviewsAndFaq />
