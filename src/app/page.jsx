@@ -3,6 +3,8 @@ import { getSeoApi } from "../services/services";
 import dynamic from "next/dynamic";
 import Header from "../layout/Header";
 import AboutSection from "../app/(home)/AboutSection";
+import WhyChoose from "../app/(home)/WhyChoose";
+import Message from "../app/(home)/Message";
 import Chairman from "../app/(home)/Chairman";
 import Skelten from "../components/skeletoneffect/Skelten";
 import Footer from "../layout/Footer";
@@ -223,26 +225,28 @@ try {
 function Page() {
   return (
     <>
-      <ScrollToTop />
-      <Header />
-      <HeroSection />
-      <AboutSection />
-      <FeaturedProject />
-      <Chairman />
-      <Achievements achievements={achievements} />
-      <Blogs />
-      <CustomerReviewsAndFaq />
-      <Footer />
-      <Script
+      {/* <ScrollToTop /> */}
+      {/* <Header /> */}
+      {/* <HeroSection /> */}
+      {/* <AboutSection /> */}
+      {/* <WhyChoose /> */}
+      {/* <FeaturedProject /> */}
+      <Message />
+      {/* <Chairman /> */}
+      {/* <Achievements achievements={achievements} /> */}
+      {/* <Blogs /> */}
+      {/* <CustomerReviewsAndFaq /> */}
+      {/* <Footer /> */}
+      {/* <Script
         id="seo-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
-      />
-      <Script
+      /> */}
+      {/* <Script
         id="seo-json-ld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(newSchema) }}
-      />
+      /> */}
     </>
   );
 }
