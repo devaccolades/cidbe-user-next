@@ -9,7 +9,7 @@ export default function Message({
   image = "/images/home/chair.webp",
 }) {
   return (
-    <section className="relative bg-[#fafaf8] overflow-hidden py-12">
+    <section className="relative bg-[#fafaf8] overflow-hidden">
       {/* decorative leaf pattern, top-right */}
       <div
         className="pointer-events-none absolute top-0 right-0 w-[420px] h-[260px] opacity-[0.12]"
@@ -20,7 +20,7 @@ export default function Message({
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
+      <div className="relative containers grid grid-cols-1 md:grid-cols-2">
         {/* Photo */}
         <div className="relative w-full h-[420px] md:h-[520px]">
           <img src={image} alt={name} className="absolute inset-0 h-full w-full object-cover" />
@@ -41,7 +41,7 @@ export default function Message({
           <div>
             <p className="text-[inter-medium] text-[16px] leading-[20px] text-[#000000]">{name}</p>
             {roles.map((role) => (
-              <p key={role} className="text-sm text-neutral-500">
+              <p key={role} className="text-[inter-regular] text-[14px] text-[#000000]">
                 {role}
               </p>
             ))}
