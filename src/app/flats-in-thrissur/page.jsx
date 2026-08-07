@@ -2,8 +2,36 @@ import React from 'react'
 
 import Header from '../../layout/Header'
 import Footer from '../../layout/Footer'
-import { getFeaturedProject } from '../../services/services';
+import { getFeaturedProject, getSeoApi } from '../../services/services';
 import ProjectCard from '../../components/ProjectCard';
+
+export async function generateMetadata() {
+    try {
+        const path = "/flats-in-thrissur";
+        const res = await getSeoApi(path);
+        const { data } = res?.data || {};
+
+        return {
+            title: data?.[0]?.meta_title || "Flats in Thrissur",
+            description: data?.[0]?.meta_description || "Flats in Thrissur by CIDBI",
+            keywords: data?.[0]?.meta_keywords || "",
+            alternates: {
+                canonical: `https://cidbi.com${path}`,
+            },
+            robots: {
+                index: true,
+                follow: true,
+            },
+        };
+    } catch (error) {
+        console.error("Error fetching SEO data for flats-in-thrissur:", error);
+        return {
+            title: "Flats in Thrissur",
+            description: "Flats in Thrissur by CIDBI",
+            keywords: "",
+        };
+    }
+}
 
 async function fetchata() {
     try {

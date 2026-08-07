@@ -16,6 +16,14 @@ export async function generateMetadata({ params }) {
     return {
       title: data?.title || 'Gallery',
       description: data?.title || 'Default Description',
+      keywords: data?.meta_keywords || '',
+      alternates: {
+        canonical: `https://cidbi.com/gallery/${slug}`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   } catch (error) {
     console.error(`Error fetching metadata for blog with slug: ${slug}`, error);

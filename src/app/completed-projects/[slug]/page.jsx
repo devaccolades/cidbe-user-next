@@ -43,8 +43,13 @@ export async function generateMetadata({ params }) {
   return {
     title: project?.meta_title || "Default Title",
     description: project?.meta_description || "Default Description",
+    keywords: project?.meta_keywords || "",
     alternates: {
       canonical: canonicalUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
