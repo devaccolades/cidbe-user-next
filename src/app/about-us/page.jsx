@@ -33,8 +33,8 @@ export async function generateMetadata() {
       canonical: `https://cidbi.com${path}`,
     },
     robots: {
-       index: true,
-       follow: true 
+      index: true,
+      follow: true,
     },
   };
 }
