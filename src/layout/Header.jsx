@@ -19,9 +19,9 @@ const navLinks = [
     label: "Projects",
     // href: "/projects",
     dropdown: [
-      { label: "Ongoing Projects", href: "/projects/ongoing-projects" },
-      { label: "Completed Projects", href: "/projects/completed-projects" },
-      { label: "Upcoming Projects", href: "/projects/upcoming-projects" },
+      { label: "Ongoing Projects", href: "/ongoing-projects" },
+      { label: "Completed Projects", href: "/completed-projects" },
+      { label: "Upcoming Projects", href: "/upcoming-projects" },
     ],
   },
   { label: "Gallery", href: "/gallery" },
