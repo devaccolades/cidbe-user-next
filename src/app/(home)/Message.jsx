@@ -20,28 +20,28 @@ export default function Message({
         }}
       />
 
-      <div className="relative containers grid grid-cols-1 md:grid-cols-2">
+      <div className="relative grid grid-cols-1 md:grid-cols-2">
         {/* Photo */}
-        <div className="relative w-full h-[420px] md:h-[520px]">
+        <div className="relative w-full h-[300px] xl:h-[600px] md:h-full">
           <img src={image} alt={name} className="absolute inset-0 h-full w-full object-cover" />
         </div>
 
         {/* Content */}
-        <div className="flex flex-col justify-center px-6 py-10 md:px-16 md:py-0">
-          <span className="text-[14px] text-[inter-regular] font-medium text-[#185D41] mb-3">{label}</span>
+        <div className="flex flex-col justify-center px-6 xl:px-12 py-6">
+          <span className="text-[14px] font-[inter-regular] font-medium text-[#185D41] mb-2">{label}</span>
 
-          <h2 className="xl:text-[48px] text-[general-sans-regular] leading-[100%] -tracking-[2%] font-bold text-[#000000] mb-5 max-w-xl">
+          <h2 className="xl:text-[48px] lg:text-[40px] md:text-[28px] text-[24px] font-[general-sans-regular] leading-[120%] -tracking-[2%] font-bold text-[#000000] mb-2 md:mb-3 max-w-xl">
             {heading}
           </h2>
 
-          <p className="lg:text-[14px] text-[inter-regular] leading-[156%] text-[#464646] max-w-xl mb-8 whitespace-pre-line">
+          <p className="lg:text-[14px] text-[13px] font-[inter-regular] leading-[140%] text-[#464646] max-w-xl mb-4 md:mb-8 whitespace-pre-line">
             {message}
           </p>
 
           <div>
-            <p className="text-[inter-medium] text-[16px] leading-[20px] text-[#000000]">{name}</p>
+            <p className="font-[inter-medium] text-[14px] md:text-[16px] leading-[20px] text-[#000000]">{name}</p>
             {roles.map((role) => (
-              <p key={role} className="text-[inter-regular] text-[14px] text-[#000000]">
+              <p key={role} className="font-[inter-regular] text-[13px] md:text-[14px] text-[#000000]">
                 {role}
               </p>
             ))}

@@ -21,8 +21,8 @@ export async function generateMetadata() {
   const responseData = await fetchSeoData(path);
   const { meta_title, meta_description, meta_keywords } = responseData;
   return {
-    title: meta_title,
-    description: meta_description,
+    title: meta_title || "CSR - CIDBI",
+    description: meta_description || "CIDBI corporate social responsibility initiatives.",
     alternates: {
       canonical: `https://cidbi.com${path}`,
     },
@@ -30,7 +30,7 @@ export async function generateMetadata() {
       index: true,
       follow: true,
     },
-    keywords: meta_keywords,
+    keywords: meta_keywords || "",
   };
 }
 function page() {

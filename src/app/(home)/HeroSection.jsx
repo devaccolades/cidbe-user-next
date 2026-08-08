@@ -1,348 +1,254 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
+
 import Image from "next/image";
-import { motion } from "framer-motion";
-import debounce from "lodash/debounce";
-import {
-  getFeaturedProject,
-  getCompletedProject,
-} from "../../services/services";
-import { useRouter } from "next/navigation";
-import { Card } from "@material-tailwind/react";
+import { useEffect, useRef, useState } from "react";
+import { getFeaturedProject } from "../../services/services";
 
-const Carousel = dynamic(() => import("react-slick"), { ssr: false });
+const customers = [
+  "/images/home/ic1.svg",
+  "/images/home/ic2.svg",
+  "/images/home/ic3.svg",
+  "/images/home/ic4.svg",
+  "/images/home/ic5.svg",
+];
 
-// Icons
-import locationIcon from "../../../public/icons/location.webp";
-import arrowoutwardIcon from "../../../public/icons/arrow_outward.webp";
-import nextArrowIcon from "../../../public/icons/next_arrow.webp";
-import prevArrowIcon from "../../../public/icons/prev_arrow.webp";
+const defaultProjects = [
+  {
+    image: "/images/home/s2.svg",
+    banner: "/images/home/s10.png",
+    title: "CHEMBAKA",
+    location: "Punkunnam",
+    badge: "New Launch",
+  },
+  {
+    image: "/images/home/s1.svg",
+    banner: "/images/home/s11.webp",
+    title: "CASSIA",
+    location: "Near Daya Hospital",
+  },
+];
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "./Home.css";
-
-// Custom Next Arrow component
-const NextArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div className="custom-arrow next-arrow" onClick={onClick}>
-      <Image src={nextArrowIcon} alt="next" />
-    </div>
-  );
+const resolveImageSrc = (src) => {
+  if (!src) return "";
+  if (typeof src === "object") {
+    if (src.url) return resolveImageSrc(src.url);
+    if (src.data?.attributes?.url) return resolveImageSrc(src.data.attributes.url);
+    return "";
+  }
+  if (src.startsWith("http")) return src;
+  if (src.startsWith("//")) return `https:${src}`;
+  if (src.startsWith("/images/") || src.startsWith("/icons/")) return src;
+  if (src.startsWith("/")) return `https://backend.cidbi.com${src}`;
+  return `https://backend.cidbi.com/${src}`;
 };
 
-// Custom Prev Arrow component
-const PrevArrow = (props) => {
-  const { onClick } = props;
-  return (
-    <div className="custom-arrow prev-arrow" onClick={onClick}>
-      <Image src={prevArrowIcon} alt="flats in Thrissur" />
-    </div>
-  );
+const normalizeHeroProject = (project) => {
+  const title = project.title || project.name || project.slug || "";
+  return {
+    title,
+    location: project.location || project.address || "",
+    badge: title.toLowerCase().includes("chembaka") ? "New Launch" : project.badge || project.tag || project.status || "",
+    banner: resolveImageSrc(
+      project.background_image || project.banner || project.hero_banner || project.banner_image || project.featured_image || project.image,
+    ),
+    image: resolveImageSrc(
+      project.thumbnail || project.image || project.gallery_image || project.hero_image || project.banner || project.featured_image,
+    ),
+  };
 };
 
-function HeroSection() {
-  const router = useRouter();
-  const [projects, setProject] = useState([]);
+const AUTO_ROTATE_MS = 6000;
+
+export default function HeroSection() {
+  const [projects, setProjects] = useState(defaultProjects);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [backgroundImage, setBackgroundImage] = useState(
-    projects[0]?.background_image,
-  );
-  const [isMobile, setIsMobile] = useState();
+  const timerRef = useRef(null);
 
-  const handleResize = debounce(() => {
-    setIsMobile(window.innerWidth <= 1024);
-  }, 200);
+  const startTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setActiveIndex((i) => (i + 1) % projects.length);
+    }, AUTO_ROTATE_MS);
+  };
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const settings = {
-    dots: true,
-    // infinite: true,
-    infinite: projects.length > 1,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    // draggable: true,
-    // autoplay: true,
-    draggable: projects.length > 1,
-    autoplay: projects.length > 1,
-    autoplaySpeed: 5000,
-    arrows: isMobile ? false : true,
-    beforeChange: (current, next) => {
-      setActiveIndex(next);
-      setBackgroundImage(projects[next].background_image);
-    },
-    appendDots: (dots) => (
-      <div>
-        <ul className="custom-dots"> {dots} </ul>
-      </div>
-    ),
-    customPaging: (i) => (
-      <div className={`custom-dot ${i === activeIndex ? "active" : ""}`}>
-        <span className="dot-line"></span>
-      </div>
-    ),
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-  };
-
-  const animationConfig = {
-    initial: {
-      opacity: 0,
-      y: 50,
-    },
-    whileInView: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        delay: 0.5,
-      },
-    },
-  };
-
-  const fetchData = async () => {
-    try {
-      const res = await getFeaturedProject(1, 4);
-      // const res = await getCompletedProject(1,4)
-      const { StatusCode, data } = res.data;
-      if (StatusCode === 6000) {
-        let projects = data;
-        if (data.length === 1) {
-          projects = Array(5).fill(data[0]);
+    const fetchHeroProjects = async () => {
+      try {
+        const res = await getFeaturedProject(1, 4);
+        console.log("Hero Section Projects Response:", res?.data);
+        const { StatusCode, data } = res?.data || {};
+        if (StatusCode === 6000 && Array.isArray(data) && data.length > 0) {
+          setProjects(data.map(normalizeHeroProject));
+          setActiveIndex(0);
         }
-        setProject(projects);
-        setBackgroundImage(data[0]?.background_image);
-      } else {
-        setProject([]);
+      } catch (error) {
+        console.error("Failed to fetch hero section projects:", error);
       }
-    } catch (error) {
-      console.log(error);
-      setProject([]);
-    }
-  };
-  useEffect(() => {
-    fetchData();
+    };
+
+    fetchHeroProjects();
   }, []);
+
+  useEffect(() => {
+    if (!projects.length) return;
+    startTimer();
+    return () => clearInterval(timerRef.current);
+  }, [projects]);
+
+  const goTo = (index) => {
+    setActiveIndex(index);
+    startTimer(); // restart the countdown so it doesn't jump right after a manual click
+  };
+
+  const goPrev = () =>
+    goTo((activeIndex - 1 + projects.length) % projects.length);
+  const goNext = () => goTo((activeIndex + 1) % projects.length);
+
+  // Whichever project is currently showing in the background always appears
+  // first (leftmost) in the slider on the right.
+  const orderedProjects = [
+    ...projects.slice(activeIndex),
+    ...projects.slice(0, activeIndex),
+  ];
+
   return (
-    <>
-      <section
-        className="h-[605px] carousel-background md:h-[540px] main-div lg:h-[860px] -mt-[78px] lg:-mt-[95px] bg-cover bg-center overflow-hidden"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <div className="h-full md:w-[90%] res lg:w-[80%] mx-auto flex flex-row justify-between md:items-center lg:pe-[40px]">
-          <div className="md:w-[311px] lg:w-[429px] flex flex-col md:mt-4 justify-between items-center text-center md:ps-5 mx-auto pt-[85px] md:pt-0 pb-[20px] md:pb-0 md:mx-0">
-            <div>
-              {/* <p className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
-                <p className="text-wrapper">
-                  <span className="text-animation delay-1">തൃശ്ശൂരിൻ്റെ </span>
-                </p>
-                <p className="text-wrapper">
-                  <span className="text-animation delay-1">സ്വന്തം</span>
-                </p>
-              </p>
-              <p className="hero-sub-text -mt-[10px] md:mt-0 text-wrapper">
-                <span className="text-animation delay-1">ബിൽഡർ</span>
-              </p>
-    */}
-              <p className="hero-text md:text-[36px] lg:text-[3.95vw] flex flex-col">
-                <motion.span
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.1, delay: 0.1 }}
-                  className="text-wrapper"
-                >
-                  തൃശ്ശൂരിൻ്റെ
-                </motion.span>
+    <section className="relative h-screen w-full overflow-hidden -mt-[95px]">
+      {/* Background - crossfades to match the active project */}
+      {projects.map((project, index) => (
+        <Image
+          key={project.title}
+          src={project.banner}
+          alt={project.title}
+          fill
+          priority={index === 0}
+          className={`object-cover transition-opacity duration-1000 ease-in-out ${
+            index === activeIndex ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
 
-                <motion.span
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.3 }}
-                  className="text-wrapper"
-                >
-                  സ്വന്തം
-                </motion.span>
-              </p>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-              <motion.p
-                className="hero-sub-text -mt-[10px] md:mt-0 text-wrapper"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.3 }}
-              >
-                ബിൽഡർ
-              </motion.p>
-            </div>
-
-            <div className="">
-              {/* <motion.button
-                className="box m-[20px]"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.2, delay: 0.2 },
-                }}
-              >
-                <p className="inner">110 Lakhs Sqft. Area Completed</p>
-              </motion.button> */}
-              <button className="border border-collapse p-2 m-[20px]">
-                <p className="inner text-white text-[12px] lg:text-[16px] ">
-                  110 Lakhs Sqft. Area Completed
-                </p>
-              </button>
-
-              <motion.p
-                className="hero-small-txt"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.1, delay: 0.1 },
-                }}
-              >
-                You are choosing a builder having the best apartments and flats
-                with more than 35 years of experience in the construction
-                industry
-              </motion.p>
-            </div>
-          </div>
-          {/* <motion.div */}
-          <div
-            className="md:block hidden md:h-[430px] lg:h-[591px] carousel md:w-[311px] md:mt-10 lg:mt-0 lg:w-[395px] md:me-10 lg:me-0"
-            {...animationConfig}
-          >
-            <Carousel {...settings}>
-              {projects.map((project, index) => (
-                <Card
+      <div className="relative px-4 md:px-8 z-10 flex h-full flex-col justify-end gap-5 pb-6 sm:pb-8 md:flex-row md:items-end md:justify-between md:gap-0 md:pb-12">
+        {/* LEFT CONTENT */}
+        <div className="max-w-xl text-white">
+          {/* Customers */}
+          <div className="flex items-center gap-4 mb-3 md:mb-5">
+            <div className="flex">
+              {customers.map((img, index) => (
+                <div
                   key={index}
-                  className="md:w-[275px] lg:w-[195px] h-[97%] px-[5px] pt-[5px] pb-[10px] mx-auto overflow-hidden"
+                  className={`relative h-8 w-8 md:h-10 md:w-10 lg:h-11 lg:w-11 xl:h-12 xl:w-12 rounded-full border-white overflow-hidden ${
+                    index !== 0 ? "-ml-4" : ""
+                  }`}
                 >
-                  <div className="relative">
-                    <div
-                      className="md:h-[259px] lg:h-[405px] bg-top rounded-[8px] bg-cover"
-                      style={{ backgroundImage: `url(${project.thumbnail})` }}
+                  <Image src={img} alt="" fill className="object-cover" />
+                </div>
+              ))}
+            </div>
+
+            <span className="text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] font-[inter-medium] ">1000+ Happy Customers</span>
+          </div>
+
+          <h1 className="text-[28px] md:text-[32px] lg:text-[36px] 2xl:text-[60px] font-[inter-normal] ">
+            തൃശ്ശൂരിൻ്റെ
+            <br />
+            സ്വന്തം ബിൽഡർ
+          </h1>
+
+          <p className="mt-2 md:mt-5 max-w-lg text-white/80 text-[13px] md:text-[14px] lg:text-[16px] leading-[20px] font-[general-sans-regular] ">
+            You are choosing a builder having the best apartments and flats with more than 35 years of experience in the construction industry
+          </p>
+        </div>
+
+        {/* RIGHT PROPERTY SLIDER - stacked below on mobile, side-by-side from md up */}
+        <div className="w-full md:w-[420px]">
+          <div className="flex gap-4 md:justify-end md:gap-6">
+            {orderedProjects.map((item) => {
+              const originalIndex = projects.indexOf(item);
+              const isActive = originalIndex === activeIndex;
+
+              return (
+                <button
+                  key={item.title}
+                  type="button"
+                  onClick={() => goTo(originalIndex)}
+                  className={`relative flex-1 md:w-[170px] md:flex-none text-left bg-transparent border-0 p-0 transition-opacity duration-500 cursor-pointer ${
+                    isActive ? "opacity-100" : "opacity-40"
+                  }`}
+                >
+                  <div className="relative h-[80px] sm:h-[95px] md:h-[110px] overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
                     />
-                    {project?.thumbnail_alt?.trim() === "Chembaka" && (
-                      <div className="absolute top-3 left-3 bg-red-600 text-white text-[10px] lg:text-[12px] font-[general-sans-regular] font-medium px-3 py-1 rounded-md z-10">
-                        New Launch
-                      </div>
+
+                    {item.badge && (
+                      <span className="absolute top-0 left-0 bg-red-600 text-white text-[9px] md:text-[10px] px-2 py-1">
+                        {item.badge}
+                      </span>
                     )}
                   </div>
 
-                  <div className="bg-white grid grid-rows-2 lg:pt-[10px] md:px-[16px] lg:px-[20px] ">
-                    <div className="h-[72px] w-full flex justify-between items-center">
-                      <div className="font-[general-sans-regular] md:-mb-[20px] lg:mb-0">
-                        <p className="md:text-[24px] lg:text-[36px] text-black">
-                          {project?.name}
-                        </p>
-                        <p className="capitalize flex gap-[8px] lg:-mt-[4px]">
-                          <Image
-                            src={locationIcon}
-                            alt="flats in Thrissur"
-                            priority
-                          />{" "}
-                          <span className="md:text-[10px] lg:text-[16px] text-[#767575]">
-                            {project?.location}
-                          </span>
-                        </p>
-                      </div>
-                      <div>
-                        <p className="capitalize md:-mb-[20px] lg:mb-0 rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-white text-[12px] py-[2px] px-[10px]">
-                          {project?.status}
-                        </p>
-                      </div>
-                    </div>
-                    <div className=" h-[64px] flex justify-center items-end">
-                      <button className="bg-[--secondary-cl] h-[44px] gap-[8px] py-[12px] pr-[8px] pl-[14px] rounded-[8px] w-full flex justify-center items-center">
-                        <p
-                          className="font-[general-sans-medium] text-[14px] text-white cursor-pointer"
-                          onClick={() =>
-                            router.push(`/featured-projects/${project?.slug}`)
-                          }
-                        >
-                          View Project Details
-                        </p>
-                        <Image
-                          src={arrowoutwardIcon}
-                          alt="flats in Thrissur"
-                          priority
-                        />
-                      </button>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </Carousel>
-          </div>
-          {/* </motion.div> */}
-        </div>
-      </section>
-      <div className="md:hidden block h-[630px] py-[20px] containers overflow-hidden">
-        <Carousel {...settings}>
-          {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="h-[97%] px-[5px] pt-[5px] pb-[10px] mx-auto border shadow-none rounded-[15px] "
-            >
-              <div
-                className="h-[400px] bg-top rounded-[8px] bg-cover"
-                style={{ backgroundImage: `url(${project.thumbnail})` }}
-              />
-              <div className="bg-white grid grid-rows-2 px-[16px]">
-                <div className="h-[72px] w-full pt-[10px] flex justify-between items-center">
-                  <div className="font-[general-sans-regular] ">
-                    <p className="text-[24px] text-black">{project?.name}</p>
-                    <p className="capitalize flex gap-[8px] ">
-                      <Image
-                        src={locationIcon}
-                        alt="apartments in Thrissur"
-                        priority
-                      />{" "}
-                      <span className="text-[14px] text-[#767575]">
-                        {project?.location}
-                      </span>
-                    </p>
-                  </div>
-                  <div>
-                    <p className="capitalize md:-mb-[20px] lg:mb-0 rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-white text-[10px] py-[2px] px-[10px]">
-                      {project?.status}
-                    </p>
-                  </div>
-                </div>
-                <div className="h-[64px] flex justify-center items-end">
-                  <button className="bg-[--secondary-cl] h-[44px] gap-[8px] py-[12px] pr-[8px] pl-[14px] rounded-[8px] w-full flex justify-center items-center">
-                    <p
-                      className="font-[general-sans-medium] text-[14px] text-white"
-                      onClick={() =>
-                        router.push(`/featured-projects/${project?.slug}`)
-                      }
-                    >
-                      View Project Details
-                    </p>
-                    <Image
-                      src={arrowoutwardIcon}
-                      alt="flats in Thrissur"
-                      priority
+                  <h3 className="mt-2 md:mt-3 text-sm md:text-base font-semibold text-white">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-xs md:text-sm text-white/70">
+                    {item.location}
+                  </p>
+
+                  {/* Progress - fills over the same duration as the auto-rotate timer */}
+                  <div className="mt-3 md:mt-4 h-[3px] bg-white/30 overflow-hidden">
+                    <div
+                      key={isActive ? `${item.title}-${activeIndex}` : item.title}
+                      className={`h-full bg-[linear-gradient(90deg,#FFFFFF_0%,#185D41_51.92%,#F8F8F8_100%)] ${
+                        isActive ? "cidbi-progress" : "w-1/3"
+                      }`}
                     />
-                  </button>
-                </div>
-              </div>
-            </Card>
-          ))}
-        </Carousel>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Navigation */}
+          <div className="mt-4 md:mt-6 flex justify-end items-center gap-4">
+            <button type="button" onClick={goPrev} className="cursor-pointer">
+              <Image
+                src="/images/home/lft.svg"
+                alt="Previous"
+                width={20}
+                height={20}
+                className="md:w-6 md:h-6"
+              />
+            </button>
+
+            <button type="button" onClick={goNext} className="cursor-pointer">
+              <Image
+                src="/images/home/right.svg"
+                alt="Next"
+                width={20}
+                height={20}
+                className="md:w-6 md:h-6"
+              />
+            </button>
+          </div>
+        </div>
       </div>
-    </>
+
+      <style>{`
+        @keyframes cidbi-progress-fill {
+          from { width: 0%; }
+          to   { width: 100%; }
+        }
+        .cidbi-progress {
+          animation: cidbi-progress-fill ${AUTO_ROTATE_MS}ms linear;
+        }
+      `}</style>
+    </section>
   );
 }
-
-export default HeroSection;

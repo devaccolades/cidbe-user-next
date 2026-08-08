@@ -28,9 +28,9 @@ export async function generateMetadata() {
   const responseData = await fetchSeoData(path);
   const { meta_title, meta_description, meta_keywords } = responseData;
   return {
-    title: meta_title,
-    description: meta_description,
-    keywords: meta_keywords,
+    title: meta_title || "Careers - CIDBI",
+    description: meta_description || "Discover career opportunities at CIDBI.",
+    keywords: meta_keywords || "",
     alternates: {
       canonical: `https://cidbi.com${path}`,
     },

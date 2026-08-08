@@ -30,6 +30,14 @@ export async function generateMetadata({ params }) {
     return {
       title: 'Gallery',
       description: 'Default Description',
+      keywords: '',
+      alternates: {
+        canonical: `https://cidbi.com/gallery/${slug}`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   }
 }

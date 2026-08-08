@@ -13,6 +13,8 @@ import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 import HeroSection from "../app/(home)/HeroSection";
 import Achievements from "./(home)/Achievements";
 import { getAchievementsApi } from "../services/services";
+import Message from '../app/(home)/Message'
+import WhyChoose from '../app/(home)/WhyChoose'
 
 const FeaturedProject = dynamic(() => import("../app/(home)/FeaturedProject"), {
   ssr: false,
@@ -223,12 +225,15 @@ try {
 function Page() {
   return (
     <>
+    
       <ScrollToTop />
       <Header />
       <HeroSection />
       <AboutSection />
+      <WhyChoose />
       <FeaturedProject />
-      <Chairman />
+      <Message />
+      {/* <Chairman /> */}
       <Achievements achievements={achievements} />
       <Blogs />
       <CustomerReviewsAndFaq />

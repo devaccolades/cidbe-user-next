@@ -21,6 +21,9 @@ export async function generateMetadata() {
       title: data?.[0]?.meta_title || "Blogs",
       description: data?.[0]?.meta_description || "Default Description",
       keywords: data?.[0]?.meta_keywords || "",
+      alternates: {
+        canonical: `https://cidbi.com/blogs`,
+      },
       robots: {
         index: true,
         follow: true,
@@ -31,6 +34,14 @@ export async function generateMetadata() {
     return {
       title: "Blogs",
       description: "Default Description",
+      keywords: "",
+      alternates: {
+        canonical: `https://cidbi.com/blogs`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   }
 }

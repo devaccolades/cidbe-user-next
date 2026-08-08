@@ -53,7 +53,7 @@ function ProjectCard({ project, basePath }) {
               </p>
             </div>
             <div>
-              <p className="capitalize rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-[12px] text-white py-[4px] px-[12px]">
+              <p className="capitalize rounded-[12px] font-[general-sans-medium] bg-[--secondary-cl] text-[12px] text-white py-[4px] px-[12px]">
                 {project?.status}
               </p>
             </div>
@@ -97,7 +97,7 @@ function ProjectCard({ project, basePath }) {
               </p>
             </div>
             <div>
-              <p className="capitalize rounded-[12px] text-[general-sans-medium] bg-[--secondary-cl] text-[12px] text-white py-[4px] px-[12px]">
+              <p className="capitalize rounded-[12px] font-[general-sans-medium] bg-[--secondary-cl] text-[12px] text-white py-[4px] px-[12px]">
                 {project?.status}
               </p>
             </div>
