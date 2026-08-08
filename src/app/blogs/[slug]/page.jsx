@@ -32,6 +32,14 @@ export async function generateMetadata({ params }) {
     return {
       title: "Blogs",
       description: "Default Description",
+      keywords: "",
+      alternates: {
+        canonical: `https://cidbi.com/blogs/${slug}`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   }
 }

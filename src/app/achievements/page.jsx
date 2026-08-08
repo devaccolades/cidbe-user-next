@@ -34,6 +34,14 @@ export async function generateMetadata() {
     return {
       title: "Achievements",
       description: "Default Description",
+      keywords: "",
+      alternates: {
+        canonical: `https://cidbi.com/achievements`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   }
 }

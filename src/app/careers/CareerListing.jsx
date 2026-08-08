@@ -324,7 +324,7 @@ function CurrentOpenings() {
                   </div>
 
                 </div>
-                <div className='-mt-[10px] md:mt-2 flex items-center text-[inter-regular] md:text-[11px] text-[#052D23]'>
+                <div className='-mt-[10px] md:mt-2 flex items-center font-[inter-regular] md:text-[11px] text-[#052D23]'>
                   <p className='text-xs md:text-[11px]'>
                     Allowed file types: pdf, doc, docx, rtf<br />
                     Maximum file size allowed: 5MB

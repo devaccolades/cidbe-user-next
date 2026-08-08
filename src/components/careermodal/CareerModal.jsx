@@ -172,7 +172,7 @@ function CareerModal({
                                 <Image src={uploadIcon} alt='Apartments in Thrissur' className='absolute top-1/2 left-3 transform -translate-y-1/2 cursor-pointer' />
                                 <input type="file" ref={fileInputRef} className='hidden' onChange={handleFileChange} />
                             </div>
-                            <div className='mt-2 text-[inter-regular] md:text-[11px] text-[#052D23]'>
+                            <div className='mt-2 font-[inter-regular] md:text-[11px] text-[#052D23]'>
                                 <p className='text-xs md:text-[11px]'>
                                     Allowed file types: pdf, doc, docx, rtf<br />
                                     Maximum file size allowed: 5MB

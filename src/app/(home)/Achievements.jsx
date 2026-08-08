@@ -9,7 +9,7 @@ const Achievements = ({ achievements = [] }) => {
   console.log("check", achievements);
 
   return (
-    <section className="containers pb-[40px] lg:pb-[80px]">
+    <section className="containers pt-10 pb-[40px] lg:pb-[80px]">
       {/* Heading */}
       <div className="flex justify-between items-center mb-[20px]">
         <h2 className="text-[20px] lg:text-[32px] font-[clash-display-medium] text-[--secondary-cl]">

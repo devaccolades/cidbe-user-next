@@ -1,72 +1,504 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import ProjectCard from '../../components/ProjectCard'
-import { useRouter } from 'next/navigation'
-import NotFound from '../../components/common/NotFound'
-import { getFeaturedProject } from '../../services/services'
-import { Fade } from "react-reveal";
-import { throttle } from 'lodash';
+"use client";
 
-import "./Home.css"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import EnquiryModal from "../../components/EnquiryForm/EnquiryModal";
+import { getFeaturedProject } from "../../services/services";
 
-function FeaturedProject() {
-  const router = useRouter()
-  const [numItems, setNumItems] = useState(window.innerWidth < 768 ? 1:window.innerWidth >= 768 && window.innerWidth <= 1399 ? 2 :3 );
-  const [featuredProject, setFeaturedProject] = useState([])
+const defaultProjects = [
+  // {
+  //   id: 1,
+  //   name: "Chembaka",
+  //   location: "Punkunnam",
+  //   status: "Ongoing",
+  //   tag: "New Launch",
+  //   apartmentType: "2 & 3 BHK",
+  //   areaRange: "1060 - 1725 Sq.Ft",
+  //   premiumNote: "up to 70% open space",
+  //   rera: "K-RERA/PRJ/TSR/111/2026",
+  //   image: "/images/home/img99.jpg",
+  //   logo: "/images/home/cid.svg",
+  // },
+  // {
+  //   id: 2,
+  //   name: "Cassia",
+  //   location: "Vazhuthacaud",
+  //   status: "Ongoing",
+  //   apartmentType: "2 & 3 BHK",
+  //   areaRange: "1150 - 1850 Sq.Ft",
+  //   premiumNote: "up to 65% open space",
+  //   rera: "K-RERA/PRJ/TVM/204/2026",
+  //   image: "/images/home/img88.png",
+  //   logo: "/images/home/cas.svg",
+  // },
+];
+
+const resolveImageSrc = (src) => {
+  if (!src) return "";
+  if (typeof src === "object") {
+    if (src.url) return resolveImageSrc(src.url);
+    if (src.data?.attributes?.url) return resolveImageSrc(src.data.attributes.url);
+    return "";
+  }
+  if (src.startsWith("http")) return src;
+  if (src.startsWith("//")) return `https:${src}`;
+  if (src.startsWith("/images/") || src.startsWith("/icons/")) return src;
+  if (src.startsWith("/")) return `https://backend.cidbi.com${src}`;
+  return `https://backend.cidbi.com/${src}`;
+};
+
+const normalizeProject = (project) => ({
+  id: project.id,
+  slug: project.slug || project.slug_name || project.id,
+  name: project.name || project.title || project.slug || "",
+  location: project.location || project.address || "",
+  status: project.status || "Ongoing",
+  tag: project.tag || project.badge || project.promo_tag || "",
+  apartmentType: project.apartment_type || (project.bhk ? `${project.bhk} BHK` : ""),
+  areaRange:
+    project.area_range ||
+    (project.area_from && project.area_to
+      ? `${project.area_from} - ${project.area_to} Sq.Ft`
+      : project.area || ""),
+  premiumNote: project.premiumNote || project.sub_name || project.description || "",
+  rera: project.rera || project.rera_number || project.rera_code || "",
+  image: resolveImageSrc(
+    project.banner || project.thumbnail || project.image || project.project_image || project.featured_image,
+  ),
+  logo: resolveImageSrc(
+    project.logo || project.project_logo || project.company_logo || project.companyLogo || project.logo_url || "",
+  ),
+});
+
+export default function FeaturedProjects() {
+  const [projects, setProjects] = useState(defaultProjects);
+  const [expandedId, setExpandedId] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
+
+  const handleEnquiryToggle = () => setEnquiryOpen((prev) => !prev);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setNumItems(1);
-      } else if (window.innerWidth >= 768 && window.innerWidth <= 1399) {
-        setNumItems(2);
-      } else {
-        setNumItems(3);
+    const fetchFeaturedProjects = async () => {
+      try {
+        const res = await getFeaturedProject(1, 4);
+        console.log("Featured Projects Response:", res);
+        const { StatusCode, data } = res?.data || {};
+        if (StatusCode === 6000 && Array.isArray(data) && data.length > 0) {
+          setProjects(data.map(normalizeProject));
+        }
+      } catch (error) {
+        console.error("Failed to fetch featured projects:", error);
       }
     };
 
-    handleResize();
+    fetchFeaturedProjects();
+  }, []);
 
-    window.addEventListener('resize', handleResize);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    const handleChange = (e) => {
+      setIsDesktop(e.matches);
+    };
+
+    setIsDesktop(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleChange);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      mediaQuery.removeEventListener("change", handleChange);
     };
   }, []);
 
-  const fetchData = async () =>{
-    try {
-      const res = await getFeaturedProject(1,numItems)
-      const { StatusCode, data } = res.data
-      setFeaturedProject(StatusCode === 6000 ? data : []);
-    } catch (error) {
-      setFeaturedProject([])
+  useEffect(() => {
+    if (!projects?.length) return;
+
+    if (isDesktop) {
+      setExpandedId(projects[0].id);
+    } else {
+      setExpandedId(null);
     }
-  }
-  useEffect(()=>{
-    fetchData()
-  },[numItems])
+  }, [projects, isDesktop]);
+
   return (
-    <Fade bottom delay={100}>
-    <div className=' bg-[--primary-cl] text-[--secondary-cl] pt-[40px] md:pt-[80px] pb-[30px] main-featurend-bg'>
-      <div className='w-[90%] md:w-[90%] responsive lg:w-[60%] xl:w-[55%] mx-auto flex flex-col gap-[20px]'>
-      <Fade bottom delay={100}>
-        <h2 className='text-[32px] leading-[43px] font-[general-sans-medium]'>Featured Projects</h2>
-        </Fade>
-        {featuredProject.length > 0 ?(
-          <div className='flex flex-row gap-[20px] w-full'>
-            {featuredProject.slice(0, numItems).map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-        ):(
-        <NotFound />
-        )}
-        <p className='text-[16px] font-[general-sans-medium] text-center underline pt-[30px] cursor-pointer' onClick={() => router.push('/featured-projects')}>View All</p>
+    <section
+      className="
+        relative
+        py-6 md:py-10 lg:py-16
+        px-6 md:px-12
+        bg-[#eef1e2]
+        overflow-hidden
+      "
+    >
+      {/* Background pattern */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/home/fr.svg"
+          alt="Background"
+          fill
+          className="object-cover"
+        />
       </div>
-    </div>
-    </Fade>
-  )
+
+      <div className="relative max-w-7xl mx-auto">
+        <h2
+          className="
+            font-[general-sans-medium]
+            text-[24px]
+            md:text-[32px]
+            lg:text-[38px]
+            -tracking-[2%]
+            text-neutral-900
+            mb-4
+            md:mb-8
+          "
+        >
+          Featured Projects
+        </h2>
+
+        <div className="flex flex-col md:flex-row gap-2 lg:gap-4">
+          {projects.map((project) => {
+            const isExpanded = project.id === expandedId;
+
+            return (
+              <div
+                key={project.id}
+                className={`
+                  relative
+                  rounded-[20px]
+                  bg-white
+                  shadow-[0_15px_45px_-20px_rgba(0,0,0,0.35)]
+                  overflow-hidden
+                  transition-all
+                  duration-500
+                  ease-in-out
+                  flex
+                  flex-col
+                  md:flex-row
+                  min-w-0
+
+                  ${isExpanded ? "md:flex-[3_1_0%]" : "md:flex-[1_1_0%]"}
+                `}
+              >
+                {/* ================= TAG ================= */}
+                {isExpanded && project.tag && (
+                  <span
+                    className="
+                      absolute
+                      top-0
+                      right-0
+                      z-20
+                      font-[inter-regular]
+                      text-[13px]
+                      md:text-[14px]
+                      bg-[#FF0000]
+                      text-white
+                      text-xs
+                      font-semibold
+                      px-5
+                      py-1.5
+                      rounded-bl-lg
+                      shadow-md
+                    "
+                  >
+                    {project.tag}
+                  </span>
+                )}
+
+                {/* ================= IMAGE ================= */}
+                <div
+                  onClick={() => {
+                    if (!isExpanded) {
+                      setExpandedId(project.id);
+                    }
+                  }}
+                  className={`
+                    relative
+                    overflow-hidden
+                    w-full
+                    h-[260px]
+                    min-h-[260px]
+                    md:h-auto
+                    ${isExpanded ? "md:w-[42%]" : "cursor-pointer"}
+                    bg-[#f8fafb]
+                  `}
+                >
+                  {/* Project Image */}
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    width={500}
+                    height={300}
+                    className="
+                      absolute
+                      inset-0
+                      h-full
+                      w-full
+                      object-cover
+                      p-1
+                      md:p-2
+                      rounded-[20px]
+                      transition-transform
+                      duration-500
+                      hover:scale-105
+                    "
+                  />
+
+                  {/* Status */}
+                  <span
+                    className="
+                      absolute
+                      top-4
+                      left-4
+                      border
+                      border-[#FFFFFF52]
+                      bg-[#0B5740]
+                      text-white
+                      text-[12px]
+                      md:text-[14px]
+                      font-[inter-regular]
+                      px-3
+                      py-1
+                      rounded-full
+                    "
+                  >
+                    {project.status}
+                  </span>
+
+                  {/* Logo */}
+                  <div
+                    className="
+                      absolute
+                      bottom-5
+                      left-5
+                      md:bottom-6
+                      md:left-6
+                    "
+                  >
+                    {project.logo ? (
+                      <Image
+                        src={project.logo}
+                        alt={project.name}
+                        width={120}
+                        height={40}
+                        className="
+                          h-10
+                          md:h-12
+                          w-auto
+                          object-contain
+                          drop-shadow-md
+                        "
+                      />
+                    ) : (
+                      <span className="text-white/90 text-sm font-semibold tracking-wide">
+                        {project.name}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* ================= DETAILS ================= */}
+                {isExpanded && (
+                  <div
+                    className="
+                      relative
+                      flex-1
+                      p-4
+                      md:p-5
+                      xl:p-6
+                      flex
+                      flex-col
+                      justify-between
+                      min-w-0
+                    "
+                  >
+                    {/* Project Information */}
+                    <div>
+                      {/* Project Name */}
+                      <h3
+                        className="
+                          font-[general-sans-regular]
+                          text-[20px]
+                          md:text-[28px]
+                          lg:text-[32px]
+                          tracking-wide
+                          uppercase
+                        "
+                      >
+                        {project.name}
+                      </h3>
+
+                      {/* Location */}
+                      <div
+                        className="
+                          flex
+                          items-center
+                          gap-1.5
+                          font-[inter-medium]
+                          lg:text-[16px]
+                          md:text-[14px]
+                          text-[13px]
+                          text-[#7A7A7A]
+                          mb-2
+                          md:mb-4
+                          uppercase
+                          tracking-wide
+                        "
+                      >
+                        <Image
+                          src="/images/home/loc.svg"
+                          width={20}
+                          height={20}
+                          alt="location"
+                        />
+
+                        {project.location}
+                      </div>
+
+                      {/* Details */}
+                      <div className="space-y-4">
+                        <DetailRow
+                          icon="/images/home/build.svg"
+                          label="Apartment type"
+                          value={project.apartmentType}
+                        />
+
+                        <DetailRow
+                          icon="/images/home/square.svg"
+                          label="Area range"
+                          value={project.areaRange}
+                        />
+
+                        <DetailRow
+                          icon="/images/home/diamond.svg"
+                          label="Premium luxury apartment"
+                          value={project.premiumNote}
+                        />
+
+                        <DetailRow
+                          icon="/images/home/rera.svg"
+                          label="K.RERA"
+                          value={project.rera}
+                        />
+                      </div>
+                    </div>
+
+                    {/* ================= BUTTONS (Side-by-side on all screens) ================= */}
+                    <div
+                      className="
+                        flex
+                        flex-row
+                        items-center
+                        gap-3
+                        mt-6
+                        lg:mt-8
+                      "
+                    >
+                      <Link href={`/featured-projects/${project.slug || project.id}`}>
+                        <button
+                          className="
+                            rounded-[8px]
+                            border
+                            border-[#052D23]
+                            font-[general-sans-medium]
+                            text-[13px]
+                            text-[#052D23]
+                            px-2
+                            lg:px-5
+                            py-2
+                            lg:py-2.5
+                            hover:bg-neutral-50
+                            transition-colors
+                          "
+                        >
+                          View Details
+                        </button>
+                      </Link>
+
+                      <button
+                        onClick={() => {
+                          setSelectedProjectId(project.id);
+                          setEnquiryOpen(true);
+                        }}
+                        className="
+                          flex
+                          items-center
+                          gap-1.5
+                          border-[#052D23]
+                          rounded-[8px]
+                          bg-emerald-900
+                          text-white
+                          px-2
+                          lg:px-5
+                          py-2
+                          lg:py-2.5
+                          font-[general-sans-medium]
+                          text-[13px]
+                          hover:bg-emerald-800
+                          transition-colors
+                        "
+                      >
+                        Enquire Now
+                        <Image
+                          src="/images/home/ar.svg"
+                          width={10}
+                          height={10}
+                          className="size-[20px]"
+                          alt="arrow"
+                        />
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <EnquiryModal open={enquiryOpen} handleOpen={handleEnquiryToggle} projectId={selectedProjectId} />
+    </section>
+  );
 }
 
-export default FeaturedProject
+/* ================= DETAIL ROW ================= */
+
+function DetailRow({ icon, label, value }) {
+  return (
+    <div className="flex items-start gap-3">
+      <Image
+        src={icon}
+        alt={label}
+        width={20}
+        height={20}
+        className="shrink-0 mt-0.5"
+      />
+
+      <div>
+        <p
+          className="
+            font-[general-sans-medium]
+            text-[13px]
+            md:text-[14px]
+            lg:text-[16px]
+            text-[#052D23]
+          "
+        >
+          {label}
+        </p>
+
+        <p
+          className="
+            font-[general-sans-regular]
+            text-[13px]
+            md:text-[14px]
+            lg:text-[16px]
+            text-[#052D23]
+          "
+        >
+          {value}
+        </p>
+      </div>
+    </div>
+  );
+}

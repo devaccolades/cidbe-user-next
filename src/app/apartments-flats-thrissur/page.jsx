@@ -37,8 +37,16 @@ export async function generateMetadata() {
   } catch (error) {
     console.error("Error fetching metadata:", error);
     return {
-      title: "Blogs",
+      title: "Apartments and flats in thrissur",
       description: "Default Description",
+      keywords: "",
+      alternates: {
+        canonical: `https://cidbi.com/apartments-flats-thrissur`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
     };
   }
 }

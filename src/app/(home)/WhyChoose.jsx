@@ -20,62 +20,59 @@ const features = [
 
 export default function WhyChoose() {
   return (
-    <section className="relative overflow-hidden bg-[#F7F7F7] py-24">
-      {/* Background Blur */}
-      <div className="absolute -top-20 -left-20 h-64 w-64 rounded-full bg-lime-200 blur-[120px]" />
-      <div className="absolute -bottom-20 right-0 h-64 w-64 rounded-full bg-lime-200 blur-[120px]" />
+<div className="relative overflow-hidden pt-12 pb-36">
+  {/* Green gradient — full section width */}
+  <div className="absolute -bottom-24 -right-24 h-[400px] w-[400px] rounded-full bg-[#D9F99D] opacity-70 blur-[120px]" />
 
-      {/* Watermark */}
-      <Image
-        src="/images/logo-watermark.png"
-        alt="Watermark"
-        width={500}
-        height={300}
-        className="absolute bottom-0 right-10 opacity-[0.05] pointer-events-none select-none"
-      />
+  {/* Bottom-right decoration — full section width */}
+  <Image
+    src="/images/home/c.svg"
+    alt="Decoration"
+    width={400}
+    height={400}
+    className="pointer-events-none absolute bottom-0 right-0 z-0 select-none"
+  />
 
-      <div className="relative z-10 mx-auto flex max-w-7xl items-center gap-10 px-6 lg:px-8">
-
-        {/* Left Image */}
-        <div className="w-full lg:w-[32%]">
-          <div className="relative h-[430px] overflow-hidden rounded-3xl shadow-xl">
-            <Image
-              src="/images/home/whychoose.png"
-              alt="Family"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Right Content */}
-        <div className="flex-1">
-
-          <h2 className="mb-6 text-5xl font-light uppercase">
-            WHY CHOOSE US?
-          </h2>
-
-          <div className="grid gap-6 md:grid-cols-3">
-
-            {features.map((item, index) => (
-              <div
-                key={index}
-                className="rounded-3xl bg-white p-4 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-              >
-                <h3 className="mb-3 text-[26px] leading-[30px] font-light">
-                  {item.title}
-                </h3>
-
-                <p className="text-sm leading-5 text-gray-500">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
-        </div>
+  {/* Content container */}
+  <div className="containers relative z-10 flex flex-col gap-4 md:flex-row md:gap-6 lg:items-center lg:gap-10">
+    
+    {/* Left Image */}
+    <div className="h-full w-full md:w-[30%] lg:w-[32%]">
+      <div className="relative h-[250px] overflow-hidden rounded-3xl shadow-[20px] md:h-[350px] lg:h-[430px]">
+        <Image
+          src="/images/home/whychoose.png"
+          alt="Family"
+          fill
+          className="object-cover"
+        />
       </div>
-    </section>
+    </div>
+
+    {/* Right Content */}
+    <div className="flex-1">
+      <h2 className="mb-2 font-[general-sans-medium] text-[20px] -tracking-[-2%] text-start md:mb-4 md:text-[26px] lg:mb-6 lg:text-[32px]">
+        WHY CHOOSE US?
+      </h2>
+
+      <div className="grid gap-2 md:grid-cols-3 md:gap-3">
+        {features.map((item, index) => (
+          <div
+            key={index}
+            className="rounded-3xl bg-white p-3 shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+          >
+            <h3 className="mb-1 font-[general-sans-medium] text-[20px] leading-[120%] text-[#000000] md:mb-3">
+              {item.title}
+            </h3>
+
+            <p className="font-[general-sans-regular] text-[12px] leading-[156%] text-[#464646] md:text-[14px]">
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</div>
   );
 }
