@@ -21,13 +21,14 @@ const navLinks = [
     dropdown: [
       { label: "Ongoing Projects", href: "/ongoing-projects" },
       { label: "Completed Projects", href: "/completed-projects" },
-      { label: "Upcoming Projects", href: "/upcoming-projects" },
+      { label: "Featured Projects", href: "/featured-projects" },
+      { label: "Ready to Occupy", href: "/ready-to-occupy" },
     ],
   },
   { label: "Gallery", href: "/gallery" },
   { label: "Interiors", href: "/interiors" },
   { label: "Blog", href: "/blogs" },
-  { label: "Acheivements", href: "/acheivements" },
+  { label: "Acheivements", href: "/achievements" },
   { label: "Contact Us", href: "/contact-us" },
 ];
 
