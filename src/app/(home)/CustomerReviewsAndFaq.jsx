@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
+import Link from "next/link";
 // icons
 import quatsIcon from "../../../public/icons/quats.webp";
 import plusIcon from "../../../public/icons/plus.webp";
@@ -216,9 +217,10 @@ function CustomerReviewsAndFaq() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="font-[general-sans-regular] text-[12px] lg:text-[16px] py-[8px] leading-[18px] lg:leading-[24px]">
-                      {faq.answer || ""}
-                    </p>
+                    <p
+                      className="font-[general-sans-regular] text-[12px] lg:text-[16px] py-[8px] leading-[18px] lg:leading-[24px]"
+                      dangerouslySetInnerHTML={{ __html: faq.answer || "" }}
+                    />
                     {/* </motion.div> */}
                   </div>
                 )}
@@ -428,10 +430,17 @@ function CustomerReviewsAndFaq() {
                   Why Choose CIDBI – The Trusted Builders in Thrissur
                 </h2>
                 <div className="flex flex-col gap-[10px]">
+                  import Link from "next/link";
                   <p className="text-[12px] md:text-[13px]">
-                    <span className="font-semibold"> Proven Expertise:</span>{" "}
-                    Over 35 years of construction excellence and 3 of completed
-                    projects.
+                    <span className="font-semibold">Proven Expertise:</span>{" "}
+                    Over 35 years of construction excellence and 3 of{" "}
+                    <Link
+                      href="/completed-projects"
+                      className="hover:text-[#0B5740] transition"
+                    >
+                      completed projects
+                    </Link>
+                    .
                   </p>
                   <p className="text-[12px] md:text-[13px]">
                     <span className="font-semibold">
