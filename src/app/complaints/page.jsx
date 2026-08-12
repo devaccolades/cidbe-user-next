@@ -29,22 +29,25 @@ export async function generateMetadata() {
       title: "Complaints - CIDBI",
       description: "Submit complaints or feedback to CIDBI.",
       keywords: "",
-        alternates: {
-          canonical: `https://cidbi.com${path}`,
-        },
-        robots: {
-          index: true,
-          follow: true,
-        },
+      alternates: {
+        canonical: `https://cidbi.com${path}`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    };
+  }
+}
+
+export default function page() {
   return (
     <div>
       <Header bgPrimary={true} />
-      
       {/* <HeroSection/> */}
-      <ComplaintForm/>
-      <Footer/>
+      <ComplaintForm />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default page;

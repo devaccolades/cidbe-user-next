@@ -26,17 +26,22 @@ export async function generateMetadata() {
       title: "Customer Enquiry - CIDBI",
       description: "Customer Enquiry Page for CIDBI.",
       keywords: "",
-        alternates: {
-          canonical: `https://cidbi.com${path}`,
-        },
-        robots: {
-          index: true,
-          follow: true,
-        },
-    <div>
-     <CustomerEnquiryForm/>
-    </div>
-  )
+      alternates: {
+        canonical: `https://cidbi.com${path}`,
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    };
+  }
 }
 
-export default page
+export default function page() {
+  return (
+    <div>
+      <CustomerEnquiryForm />
+    </div>
+  );
+}
+
