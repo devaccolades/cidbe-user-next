@@ -72,7 +72,7 @@ function Footer({ backGround = "--primary-cl" }) {
       </div>
       <EnquiryModal open={open} handleOpen={handleOpen} />
       {/* Whatsapp and phone start */}
-      <div className="fixed z-50 bottom-[50px] right-0">
+      {/* <div className="fixed z-50 bottom-[50px] right-0">
         <div className="flex flex-col space-y-[10px] mr-[3px] md:space-y-3 md:mr-[10px] mb-[20px]">
           <a
             className="w-[35px] md:w-[45px] lg:w-full"
@@ -86,7 +86,7 @@ function Footer({ backGround = "--primary-cl" }) {
             <Image src={callIcon} alt="Call Icon" target="_blank" />
           </a>
         </div>
-      </div>
+      </div> */}
       {/* Whatsapp and phone end */}
       {/* Foote pc */}
       <section

@@ -34,7 +34,7 @@ export default function WhyChoose() {
   />
 
   {/* Content container */}
-  <div className="containers relative z-10 flex flex-col gap-4 md:flex-row md:gap-6 lg:items-center lg:gap-10">
+  <div className="containers relative z-10 flex flex-col gap-4 md:flex-row md:gap-6 md:items-start lg:gap-10">
     
     {/* Left Image */}
     <div className="h-full w-full md:w-[30%] lg:w-[32%]">

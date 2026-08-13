@@ -151,7 +151,7 @@ export default function HeroSection() {
             <span className="text-[12px] md:text-[14px] lg:text-[16px] xl:text-[18px] font-[inter-medium] ">1000+ Happy Customers</span>
           </div>
 
-          <h1 className="text-[28px] md:text-[32px] lg:text-[36px] 2xl:text-[60px] font-[inter-normal] ">
+          <h1 className="text-[28px] md:text-[32px] lg:text-[36px] 2xl:text-[60px] font-[inter-normal]">
             തൃശ്ശൂരിൻ്റെ
             <br />
             സ്വന്തം ബിൽഡർ
