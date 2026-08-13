@@ -5,9 +5,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 
+const resolveImageSrc = (src) => {
+  if (!src) return "";
+
+  if (typeof src === "object") {
+    if (src.url) return resolveImageSrc(src.url);
+    if (src.data?.attributes?.url) return resolveImageSrc(src.data.attributes.url);
+    if (src.data?.url) return resolveImageSrc(src.data.url);
+    if (src.formats?.large?.url) return resolveImageSrc(src.formats.large.url);
+    if (src.formats?.medium?.url) return resolveImageSrc(src.formats.medium.url);
+    if (src.formats?.small?.url) return resolveImageSrc(src.formats.small.url);
+    if (src.path) return resolveImageSrc(src.path);
+    return "";
+  }
+
+  if (src.startsWith("http")) return src;
+  if (src.startsWith("//")) return `https:${src}`;
+  if (src.startsWith("/")) return `https://backend.cidbi.com${src}`;
+  return `https://backend.cidbi.com/${src}`;
+};
+
 // HeroSection Component
 function HeroSection({ data, images }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const projectLogo = resolveImageSrc(data?.logo);
 
   // Settings for the carousel
   const settings = {
@@ -67,9 +88,9 @@ function HeroSection({ data, images }) {
       {/* Text Content */}
       <div className="p-[20px] h-full flex flex-col justify-end containers relative z-20">
         <div className="text-white mb-[100px]">
-          {data?.logo && (
+          {projectLogo && (
             <Image
-              src={data?.logo}
+              src={projectLogo}
               width={100}
               height={100}
               alt="Premium Apartments in Thrissur"

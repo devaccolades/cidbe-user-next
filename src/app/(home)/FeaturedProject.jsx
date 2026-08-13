@@ -36,11 +36,18 @@ const defaultProjects = [
 
 const resolveImageSrc = (src) => {
   if (!src) return "";
+
   if (typeof src === "object") {
     if (src.url) return resolveImageSrc(src.url);
     if (src.data?.attributes?.url) return resolveImageSrc(src.data.attributes.url);
+    if (src.data?.url) return resolveImageSrc(src.data.url);
+    if (src.formats?.large?.url) return resolveImageSrc(src.formats.large.url);
+    if (src.formats?.medium?.url) return resolveImageSrc(src.formats.medium.url);
+    if (src.formats?.small?.url) return resolveImageSrc(src.formats.small.url);
+    if (src.path) return resolveImageSrc(src.path);
     return "";
   }
+
   if (src.startsWith("http")) return src;
   if (src.startsWith("//")) return `https:${src}`;
   if (src.startsWith("/images/") || src.startsWith("/icons/")) return src;
@@ -67,7 +74,19 @@ const normalizeProject = (project) => ({
     project.banner || project.thumbnail || project.image || project.project_image || project.featured_image,
   ),
   logo: resolveImageSrc(
-    project.logo || project.project_logo || project.company_logo || project.companyLogo || project.logo_url || "",
+    project.logo ||
+      project.project_logo ||
+      project.company_logo ||
+      project.companyLogo ||
+      project.logo_url ||
+      project?.logo?.url ||
+      project?.project_logo?.url ||
+      project?.company_logo?.url ||
+      project?.companyLogo?.url ||
+      project?.logo?.data?.attributes?.url ||
+      project?.project_logo?.data?.attributes?.url ||
+      project?.company_logo?.data?.attributes?.url ||
+      ""
   ),
 });
 

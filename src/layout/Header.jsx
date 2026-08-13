@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -33,10 +34,42 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeLink, setActiveLink] = useState("Home");
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef(null);
+
+  useEffect(() => {
+    if (!pathname) return;
+
+    const currentPath = pathname === "/" ? "/" : pathname.replace(/\/$/, "");
+
+    if (currentPath === "/") {
+      setActiveLink("Home");
+      return;
+    }
+
+    const directMatch = navLinks.find(
+      (link) =>
+        link.href &&
+        (currentPath === link.href || currentPath.startsWith(`${link.href}/`))
+    );
+
+    if (directMatch) {
+      setActiveLink(directMatch.label);
+      return;
+    }
+
+    const dropdownMatch = navLinks.find((link) =>
+      link.dropdown?.some(
+        (item) =>
+          currentPath === item.href || currentPath.startsWith(`${item.href}/`)
+      )
+    );
+
+    setActiveLink(dropdownMatch ? "Projects" : "Home");
+  }, [pathname]);
 
   const openDropdown = (label) => {
     if (closeTimer.current) clearTimeout(closeTimer.current);
@@ -59,13 +92,13 @@ export default function Navbar() {
           alt="CIDBI"
           width={110}
           height={44}
-          className="h-6 w-auto object-contain md:h-8 xl:h-11"
+          className="h-6 w-auto object-contain md:h-8"
           priority
         />
       </Link>
 
       {/* Nav links pill (desktop/large screens only) */}
-      <nav className="hidden w-fit flex-none items-center gap-6 rounded-[10px] bg-white/95 px-4 lg:py-[14px] xl:py-[18px] shadow-md backdrop-blur-sm md:px-6 lg:flex xl:gap-8">
+      <nav className="hidden w-fit flex-none items-center gap-6 rounded-[10px] bg-white/95 px-4 lg:py-[14px] shadow-md backdrop-blur-sm md:px-6 lg:flex xl:gap-8">
         {/* Desktop Nav Links */}
         <ul className="flex items-center gap-6 xl:gap-8">
           {navLinks.map((link) => (
@@ -79,7 +112,7 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setActiveLink(link.label)}
-                  className={`flex items-center font-[inter-regular] gap-1 whitespace-nowrap text-[14px] leading-[20px] transition-colors ${
+                  className={`flex items-center font-[inter-regular] gap-1 whitespace-nowrap text-[14px] leading-[20px] transition-colors hover:text-[#185D41] hover:font-bold ${
                     activeLink === link.label
                       ? "text-[#185D41] font-bold"
                       : "text-[#000000] hover:text-neutral-900"

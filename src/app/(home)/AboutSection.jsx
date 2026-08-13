@@ -127,11 +127,11 @@ export default function AboutSection() {
               key={index}
               className="py-4 md:py-8 lg:py-10 text-center border-r last:border-r-0"
             >
-              <h3 className="font-[general-sans-medium] text-[20px] md:text-[24px] lg:text-[28px] text-[#185D41]">
+              <h3 className="font-[general-sans-medium] font-bold text-[30px] md:text-[38px] lg:text-[44px] xl:text-[50px] text-[#185D41]">
                 {number}
               </h3>
 
-              <p className="mt-3 font-[general-sans-regular] text-[12px] md:text-[13px] lg:text-[14px] text-[#464646]">
+              <p className="mt-3 font-[general-sans-regular] text-[12px] md:text-[15px] lg:text-[18px] xl:text-[21px] text-[#464646]">
                 {label}
               </p>
             </div>
