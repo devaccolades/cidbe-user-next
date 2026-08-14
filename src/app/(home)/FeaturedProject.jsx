@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import EnquiryModal from "../../components/EnquiryForm/EnquiryModal";
-import { getFeaturedProject } from "../../services/services";
+import { getFeaturedProject, getProjectDetails } from "../../services/services";
 
 const defaultProjects = [
   // {
@@ -55,40 +55,53 @@ const resolveImageSrc = (src) => {
   return `https://backend.cidbi.com/${src}`;
 };
 
-const normalizeProject = (project) => ({
-  id: project.id,
-  slug: project.slug || project.slug_name || project.id,
-  name: project.name || project.title || project.slug || "",
-  location: project.location || project.address || "",
-  status: project.status || "Ongoing",
-  tag: project.tag || project.badge || project.promo_tag || "",
-  apartmentType: project.apartment_type || (project.bhk ? `${project.bhk} BHK` : ""),
-  areaRange:
-    project.area_range ||
-    (project.area_from && project.area_to
-      ? `${project.area_from} - ${project.area_to} Sq.Ft`
-      : project.area || ""),
-  premiumNote: project.premiumNote || project.sub_name || project.description || "",
-  rera: project.rera || project.rera_number || project.rera_code || "",
-  image: resolveImageSrc(
-    project.banner || project.thumbnail || project.image || project.project_image || project.featured_image,
-  ),
-  logo: resolveImageSrc(
-    project.logo ||
-      project.project_logo ||
-      project.company_logo ||
-      project.companyLogo ||
-      project.logo_url ||
-      project?.logo?.url ||
-      project?.project_logo?.url ||
-      project?.company_logo?.url ||
-      project?.companyLogo?.url ||
-      project?.logo?.data?.attributes?.url ||
-      project?.project_logo?.data?.attributes?.url ||
-      project?.company_logo?.data?.attributes?.url ||
-      ""
-  ),
-});
+const normalizeProject = (project, detail = null) => {
+  const detailProject = detail || project;
+
+  return {
+    id: project.id,
+    slug: project.slug || project.slug_name || project.id,
+    name: project.name || project.title || project.slug || "",
+    location: project.location || project.address || "",
+    status: project.status || "Ongoing",
+    tag:
+      project.tag ||
+      project.badge ||
+      project.promo_tag ||
+      (project.name?.toUpperCase?.().includes("CHEMBAKA") ? "New Launch" : "") ||
+      (detailProject?.name?.toUpperCase?.().includes("CHEMBAKA") ? "New Launch" : "") ||
+      "",
+    apartmentType: project.apartment_type || (project.bhk ? `${project.bhk} BHK` : ""),
+    areaRange:
+      project.area_range ||
+      (project.area_from && project.area_to
+        ? `${project.area_from} - ${project.area_to} Sq.Ft`
+        : project.area || ""),
+    premiumNote: project.premiumNote || project.sub_name || project.description || "",
+    rera: project.rera || project.rera_number || project.rera_code || "",
+    image: resolveImageSrc(
+      project.banner || project.thumbnail || project.image || project.project_image || project.featured_image,
+    ),
+    logo: resolveImageSrc(
+      detailProject.logo ||
+        detailProject.project_logo ||
+        detailProject.company_logo ||
+        detailProject.companyLogo ||
+        detailProject.logo_url ||
+        detailProject?.logo?.url ||
+        detailProject?.project_logo?.url ||
+        detailProject?.company_logo?.url ||
+        detailProject?.companyLogo?.url ||
+        detailProject?.logo?.data?.attributes?.url ||
+        detailProject?.project_logo?.data?.attributes?.url ||
+        detailProject?.company_logo?.data?.attributes?.url ||
+        project.qr_code ||
+        project.thumbnail ||
+        project.background_image ||
+        ""
+    ),
+  };
+};
 
 export default function FeaturedProjects() {
   const [projects, setProjects] = useState(defaultProjects);
@@ -105,8 +118,26 @@ export default function FeaturedProjects() {
         const res = await getFeaturedProject(1, 4);
         console.log("Featured Projects Response:", res);
         const { StatusCode, data } = res?.data || {};
+
         if (StatusCode === 6000 && Array.isArray(data) && data.length > 0) {
-          setProjects(data.map(normalizeProject));
+          const enrichedProjects = await Promise.all(
+            data.map(async (project) => {
+              const slug = project.slug || project.slug_name;
+
+              if (!slug) return normalizeProject(project);
+
+              try {
+                const detailRes = await getProjectDetails(slug);
+                const detailData = detailRes?.data?.data || detailRes?.data || {};
+                return normalizeProject(project, detailData);
+              } catch (detailError) {
+                console.error(`Failed to fetch project detail for ${slug}:`, detailError);
+                return normalizeProject(project);
+              }
+            })
+          );
+
+          setProjects(enrichedProjects);
         }
       } catch (error) {
         console.error("Failed to fetch featured projects:", error);
@@ -201,12 +232,12 @@ export default function FeaturedProjects() {
                 `}
               >
                 {/* ================= TAG ================= */}
-                {isExpanded && project.tag && (
+                {project.tag && (
                   <span
                     className="
                       absolute
-                      top-0
-                      right-0
+                      top-2
+                      right-2
                       z-20
                       font-[inter-regular]
                       text-[13px]
@@ -217,7 +248,7 @@ export default function FeaturedProjects() {
                       font-semibold
                       px-5
                       py-1.5
-                      rounded-bl-lg
+                      rounded-[5px]
                       shadow-md
                     "
                   >
