@@ -5,22 +5,28 @@ import Link from "next/link";
 
 export default function AboutSection() {
   const images = [
-    { src: "/images/home/hs9.png", year: "2018" },
-    { src: "/images/home/hs6.png", year: "2019" },
-    { src: "/images/home/hs7.png", year: "2020" },
-    { src: "/images/home/hs4.png", year: "2021" },
-    { src: "/images/home/hs5.png", year: "2022" },
-    { src: "/images/home/hs3.png", year: "2023" },
-    { src: "/images/home/hs2.png", year: "2024" },
-    { src: "/images/home/hs1.png", year: "2025" },
-    { src: "/images/home/hs8.png", year: "2026" },
+    { src: "/images/home/rr.png", year: "2007" },
+    { src: "/images/home/hs9.png", year: "2010" },
+    { src: "/images/home/hs6.png", year: "2011" },
+    { src: "/images/home/hs7.png", year: "2013" },
+    { src: "/images/home/hs4.png", year: "2015" },
+    { src: "/images/home/hs5.png", year: "2015" },
+    { src: "/images/home/hs3.png", year: "2017" },
+    { src: "/images/home/hs2.png", year: "2018" },
+    { src: "/images/home/hs1.png", year: "2018" },
+    { src: "/images/home/hs10.png", year: "2023" },
+    { src: "/images/home/hs11.jpg", year: "2024" },
+    { src: "/images/home/hs12.png", year: "2024" },
   ];
 
   // Visibility rules (index is 1-based, matches curve-image-N):
-  // 1 & 9 (outermost)  -> desktop only (lg+)
-  // 2 & 8              -> tablet + desktop (md+)
-  // 3,4,5,6,7 (middle)  -> always visible (mobile, tablet, desktop)
+  // 1 & 9 (outermost of the original 9)  -> lg and above
+  // 2 & 8                                 -> md and above
+  // 3,4,5,6,7 (middle)                    -> always visible
+  // 10,11,12 (the 3 new ones)             -> xl and above only
   const getVisibilityClass = (position) => {
+    if (position === 10 || position === 11 || position === 12)
+      return "hidden xl:block";
     if (position === 1 || position === 9) return "hidden lg:block";
     if (position === 2 || position === 8) return "hidden md:block";
     return "block";
@@ -72,7 +78,7 @@ export default function AboutSection() {
         {/* =========================
             CONTENT
         ========================== */}
-        <div className="mx-auto mt-2 max-w-2xl text-center sm:mt-0 md:-mt-28 lg:-mt-80 xl:-mt-96">
+        <div className="mx-auto max-w-2xl text-center -mt-32 md:-mt-60 lg:-mt-[300px] min-[1430px]:-mt-[500px] min-[1500px]:-mt-[500px]  xl:-mt-[450px]">
           <p className="text-sm text-[#14532d]">About us</p>
 
           <h2 className="mt-3 font-[general-sans-medium] text-[20px] leading-[120%] md:text-[28px] lg:text-[36px]">
@@ -166,11 +172,9 @@ export default function AboutSection() {
         .about-curve-container {
           position: relative;
           width: 100%;
-          height: 140px;
+          height: 220px;
           margin: 0 auto;
           transform-origin: center bottom;
-          animation: curveMotion 8s linear infinite;
-          --curve-sway: 18px;
         }
 
         .curve-image {
@@ -180,226 +184,165 @@ export default function AboutSection() {
           transform-origin: center bottom;
           transform: translateX(-50%) rotate(var(--curve-rotate, 0deg))
             translateY(var(--curve-y, -125px));
-          transition:
-            transform 1.1s ease-in-out,
-            opacity 1.1s ease-in-out;
         }
 
         .curve-image-1 {
           --curve-rotate: -45deg;
-          --curve-y: -125px;
+          --curve-y: -225px;
         }
         .curve-image-2 {
-          --curve-rotate: -30deg;
-          --curve-y: -125px;
+          --curve-rotate: -33.75deg;
+          --curve-y: -225px;
         }
         .curve-image-3 {
           --curve-rotate: -22.5deg;
-          --curve-y: -125px;
+          --curve-y: -225px;
         }
         .curve-image-4 {
-          --curve-rotate: -10deg;
-          --curve-y: -125px;
+          --curve-rotate: -11.25deg;
+          --curve-y: -225px;
         }
         .curve-image-5 {
           --curve-rotate: 0deg;
-          --curve-y: -125px;
+          --curve-y: -225px;
         }
         .curve-image-6 {
-          --curve-rotate: 10deg;
-          --curve-y: -125px;
+          --curve-rotate: 11.25deg;
+          --curve-y: -225px;
         }
         .curve-image-7 {
           --curve-rotate: 22.5deg;
-          --curve-y: -125px;
+          --curve-y: -225px;
         }
         .curve-image-8 {
-          --curve-rotate: 30deg;
-          --curve-y: -125px;
+          --curve-rotate: 33.75deg;
+          --curve-y: -225px;
         }
         .curve-image-9 {
           --curve-rotate: 45deg;
-          --curve-y: -125px;
+          --curve-y: -225px;
+        }
+        .curve-image-10,
+        .curve-image-11,
+        .curve-image-12 {
+          --curve-rotate: 45deg;
+          --curve-y: -225px;
         }
 
         @media (min-width: 768px) {
           .about-curve-container {
-            height: 280px;
-            --curve-sway: 26px;
+            height: 365px;
           }
 
           .curve-image-1,
           .curve-image-2,
           .curve-image-3,
           .curve-image-4,
+          .curve-image-5,
           .curve-image-6,
+          .curve-image-7,
           .curve-image-8,
           .curve-image-9 {
-            --curve-y: -300px;
+            --curve-y: -400px;
           }
         }
 
         @media (min-width: 1024px) {
           .about-curve-container {
             height: 450px;
-            --curve-sway: 40px;
           }
 
-          .curve-image-1 {
-            --curve-rotate: -45deg;
-            --curve-y: -520px;
-          }
-          .curve-image-2 {
-            --curve-rotate: -33.75deg;
-            --curve-y: -520px;
-          }
-          .curve-image-3 {
-            --curve-rotate: -22.5deg;
-            --curve-y: -520px;
-          }
-          .curve-image-4 {
-            --curve-rotate: -11.25deg;
-            --curve-y: -520px;
-          }
-          .curve-image-5 {
-            --curve-rotate: 0deg;
-            --curve-y: -520px;
-          }
-          .curve-image-6 {
-            --curve-rotate: 11.25deg;
-            --curve-y: -520px;
-          }
-          .curve-image-7 {
-            --curve-rotate: 22.5deg;
-            --curve-y: -520px;
-          }
-          .curve-image-8 {
-            --curve-rotate: 33.75deg;
-            --curve-y: -520px;
-          }
+          .curve-image-1,
+          .curve-image-2,
+          .curve-image-3,
+          .curve-image-4,
+          .curve-image-5,
+          .curve-image-6,
+          .curve-image-7,
+          .curve-image-8,
           .curve-image-9 {
-            --curve-rotate: 45deg;
             --curve-y: -520px;
           }
         }
 
         @media (min-width: 1280px) {
           .about-curve-container {
-            height: 550px;
-            --curve-sway: 46px;
+            height: 700px;
           }
 
+          /* 12-image symmetric fan: 8deg steps, centered between images 6 & 7 */
           .curve-image-1 {
-            --curve-rotate: -45deg;
-            --curve-y: -560px;
+            --curve-rotate: -44deg;
+            --curve-y: -750px;
           }
           .curve-image-2 {
-            --curve-rotate: -33.75deg;
-            --curve-y: -560px;
+            --curve-rotate: -36deg;
+            --curve-y: -750px;
           }
           .curve-image-3 {
-            --curve-rotate: -22.5deg;
-            --curve-y: -560px;
+            --curve-rotate: -28deg;
+            --curve-y: -750px;
           }
           .curve-image-4 {
-            --curve-rotate: -11.25deg;
-            --curve-y: -560px;
+            --curve-rotate: -20deg;
+            --curve-y: -750px;
           }
           .curve-image-5 {
-            --curve-rotate: 0deg;
-            --curve-y: -560px;
+            --curve-rotate: -12deg;
+            --curve-y: -750px;
           }
           .curve-image-6 {
-            --curve-rotate: 11.25deg;
-            --curve-y: -560px;
+            --curve-rotate: -4deg;
+            --curve-y: -750px;
           }
           .curve-image-7 {
-            --curve-rotate: 22.5deg;
-            --curve-y: -560px;
+            --curve-rotate: 4deg;
+            --curve-y: -750px;
           }
           .curve-image-8 {
-            --curve-rotate: 33.75deg;
-            --curve-y: -560px;
+            --curve-rotate: 12deg;
+            --curve-y: -750px;
           }
           .curve-image-9 {
-            --curve-rotate: 45deg;
-            --curve-y: -560px;
+            --curve-rotate: 20deg;
+            --curve-y: -750px;
+          }
+          .curve-image-10 {
+            --curve-rotate: 28deg;
+            --curve-y: -750px;
+          }
+          .curve-image-11 {
+            --curve-rotate: 36deg;
+            --curve-y: -750px;
+          }
+          .curve-image-12 {
+            --curve-rotate: 44deg;
+            --curve-y: -750px;
           }
         }
 
         @media (min-width: 1536px) {
           .about-curve-container {
-            height: 620px;
-            --curve-sway: 52px;
+            height: 700px;
           }
 
-          .curve-image-1 {
-            --curve-rotate: -45deg;
-            --curve-y: -600px;
-          }
-          .curve-image-2 {
-            --curve-rotate: -33.75deg;
-            --curve-y: -600px;
-          }
-          .curve-image-3 {
-            --curve-rotate: -22.5deg;
-            --curve-y: -600px;
-          }
-          .curve-image-4 {
-            --curve-rotate: -11.25deg;
-            --curve-y: -600px;
-          }
-          .curve-image-5 {
-            --curve-rotate: 0deg;
-            --curve-y: -600px;
-          }
-          .curve-image-6 {
-            --curve-rotate: 11.25deg;
-            --curve-y: -600px;
-          }
-          .curve-image-7 {
-            --curve-rotate: 22.5deg;
-            --curve-y: -600px;
-          }
-          .curve-image-8 {
-            --curve-rotate: 33.75deg;
-            --curve-y: -600px;
-          }
-          .curve-image-9 {
-            --curve-rotate: 45deg;
-            --curve-y: -600px;
+          .curve-image-1,
+          .curve-image-2,
+          .curve-image-3,
+          .curve-image-4,
+          .curve-image-5,
+          .curve-image-6,
+          .curve-image-7,
+          .curve-image-8,
+          .curve-image-9,
+          .curve-image-10,
+          .curve-image-11,
+          .curve-image-12 {
+            --curve-y: -750px;
           }
         }
 
-        /* Seamless looping sway — starts and ends at the same transform
-           so there is no jump-cut when the animation restarts. */
-        @keyframes curveMotion {
-          0% {
-            transform: rotate(0deg) translateX(0);
-          }
 
-          25% {
-            transform: rotate(-10deg) translateX(calc(var(--curve-sway) * -1));
-          }
-
-          50% {
-            transform: rotate(0deg) translateX(calc(var(--curve-sway) * -2));
-          }
-
-          75% {
-            transform: rotate(10deg) translateX(calc(var(--curve-sway) * -1));
-          }
-
-          100% {
-            transform: rotate(0deg) translateX(0);
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .about-curve-container {
-            animation: none;
-          }
-        }
       `}</style>
     </section>
   );
