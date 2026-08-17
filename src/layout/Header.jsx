@@ -23,7 +23,7 @@ const navLinks = [
       { label: "Ongoing Projects", href: "/ongoing-projects" },
       { label: "Completed Projects", href: "/completed-projects" },
       { label: "Featured Projects", href: "/featured-projects" },
-      { label: "Ready to Occupy", href: "/ready-to-occupy" },
+      { label: "Ready to Occupy", href: "/ready-to-occupy-flats-thrissur" },
     ],
   },
   { label: "Gallery", href: "/gallery" },

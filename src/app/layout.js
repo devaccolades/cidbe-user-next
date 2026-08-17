@@ -4,6 +4,14 @@ import Script from "next/script";
 import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 // import Canonical from "../components/Canonical"
 
+export const metadata = {
+  title: "CIDBI: Best Builders in Thrissur | Trusted Flat Builders Kerala",
+  description: "CIDBI one of the leading builders in Thrissur, Kerala offers the best apartments and flats.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--general-sans-light", // 👈 use your existing name
