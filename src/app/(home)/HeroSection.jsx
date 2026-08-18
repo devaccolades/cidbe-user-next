@@ -5,11 +5,11 @@ import { useEffect, useRef, useState } from "react";
 import { getFeaturedProject } from "../../services/services";
 
 const customers = [
-  "/images/home/ic1.svg",
-  "/images/home/ic2.svg",
-  "/images/home/ic3.svg",
-  "/images/home/ic4.svg",
-  "/images/home/ic5.svg",
+  "/images/home/ts1.png",
+  "/images/home/ts2.png",
+  "/images/home/ts4.png",
+  "/images/home/ts5.png",
+  "/images/home/ts7.png",
 ];
 
 const defaultProjects = [
@@ -158,7 +158,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-2 md:mt-5 max-w-lg text-white/80 text-[13px] md:text-[14px] lg:text-[16px] leading-[20px] font-[general-sans-regular] ">
-            You are choosing a builder having the best apartments and flats with more than 35 years of experience in the construction industry
+            You are choosing a builder having the best apartments and flats with more than 40 years of experience in the construction industry
           </p>
         </div>
 

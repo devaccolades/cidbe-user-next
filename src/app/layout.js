@@ -8,7 +8,7 @@ export const metadata = {
   title: "CIDBI: Best Builders in Thrissur | Trusted Flat Builders Kerala",
   description: "CIDBI one of the leading builders in Thrissur, Kerala offers the best apartments and flats.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.ico?v=2",
   },
 };
 
