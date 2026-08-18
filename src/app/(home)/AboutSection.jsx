@@ -93,7 +93,7 @@ export default function AboutSection() {
             in response to the growing need of quality housings. Since then, we
             have grown to be one of the best builders in Thrissur. CIDBI is a
             professionally managed company under the leadership of Mr. A A Abdul
-            Lathif, run by well experienced management. We have more than 35
+            Lathif, run by well experienced management. We have more than 40
             years of experience in the construction field.
           </p>
 

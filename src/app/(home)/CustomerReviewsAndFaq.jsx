@@ -252,7 +252,7 @@ function CustomerReviewsAndFaq() {
                     CIDBI was founded in 2005. Under the leadership of Mr. A.A.
                     Abdul Lathif, CIDBI has grown into a name synonymous with
                     excellence. We are an ISO 9001:2015 certified builder with
-                    over 35 years of experience and a proud track record of 110
+                    over 40 years of experience and a proud track record of 110
                     lakh sq. ft. of completed projects across residential and
                     commercial segments.
                   </p>
@@ -433,7 +433,7 @@ function CustomerReviewsAndFaq() {
                   import Link from "next/link";
                   <p className="text-[12px] md:text-[13px]">
                     <span className="font-semibold">Proven Expertise:</span>{" "}
-                    Over 35 years of construction excellence and 3 of{" "}
+                    Over 40 years of construction excellence and 3 of{" "}
                     <Link
                       href="/completed-projects"
                       className="hover:text-[#0B5740] transition"
