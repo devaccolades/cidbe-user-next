@@ -7,6 +7,7 @@ import Skelten from '../../components/skeletoneffect/Skelten';
 const ProjectListing = dynamic(() => import('../../components/projectlisting/ProjectListing'), { ssr: false,loading:() => <Skelten/>, });
 
 import { getSeoApi } from '../../services/services';
+import OngoingFaq from './[slug]/OngoingFaq';
 
 async function fetchSeoData(path) {
   let data = {};
@@ -49,6 +50,7 @@ function page() {
    <>
    <Header bgPrimary={true}/>
    <ProjectListing title={title} data={OngoingProjects}/>
+   <OngoingFaq />
    <Footer backGround=''/>
    </>
 )

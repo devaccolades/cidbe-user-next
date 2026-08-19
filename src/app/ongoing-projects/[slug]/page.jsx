@@ -8,6 +8,7 @@ import '../../../components/projectinnerpage/projectDetails.css'
 import { redirect } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { SkeletonLoader } from '../../../components/skeletoneffect/Skelten';
+import OngoingFaq from './OngoingFaq';
 
 const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, })
 
@@ -77,6 +78,7 @@ export default async function Page({ params }) {
                     status={data?.status || []}
                     bank={data?.bank}
                     className='bg-[#ffff]' />
+            <OngoingFaq />
             </div>
             <Footer />
         </>

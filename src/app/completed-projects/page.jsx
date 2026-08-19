@@ -3,6 +3,7 @@ import Header from "../../layout/Header";
 import Footer from "../../layout/Footer";
 // import ProjectListing from '../../components/projectlisting/ProjectListing';
 import dynamic from "next/dynamic";
+import CFaq from "./[slug]/CFaq";
 import Skelten from "../../components/skeletoneffect/Skelten";
 const ProjectListing = dynamic(
   () => import("../../components/projectlisting/ProjectListing"),
@@ -43,6 +44,7 @@ function page() {
     <>
       <Header bgPrimary={true} />
       <ProjectListing title={title} />
+      <CFaq />
       <Footer backGround="" />
     </>
   );
