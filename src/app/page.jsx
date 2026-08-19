@@ -15,6 +15,7 @@ import Achievements from "./(home)/Achievements";
 import { getAchievementsApi } from "../services/services";
 import Message from '../app/(home)/Message'
 import WhyChoose from '../app/(home)/WhyChoose'
+import Schema from '../../Schema'
 
 const FeaturedProject = dynamic(() => import("../app/(home)/FeaturedProject"), {
   ssr: false,
@@ -225,7 +226,6 @@ try {
 function Page() {
   return (
     <>
-    
       <ScrollToTop />
       <Header />
       <HeroSection />
