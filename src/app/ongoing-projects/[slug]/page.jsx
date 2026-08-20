@@ -1,86 +1,93 @@
-import React from 'react'
-import Header from '../../../layout/Header';
-import Footer from '../../../layout/Footer';
-import { getProjectDetails } from '../../../services/services';
-import HeroSection from '../../../components/projectinnerpage/HeroSection';
-import DeepDeatiles from '../../../components/projectinnerpage/DeepDeatiles';
-import '../../../components/projectinnerpage/projectDetails.css'
-import { redirect } from 'next/navigation';
-import dynamic from 'next/dynamic';
-import { SkeletonLoader } from '../../../components/skeletoneffect/Skelten';
-import OngoingFaq from './OngoingFaq';
+import React from "react";
+import Header from "../../../layout/Header";
+import Footer from "../../../layout/Footer";
+import { getProjectDetails } from "../../../services/services";
+import HeroSection from "../../../components/projectinnerpage/HeroSection";
+import DeepDeatiles from "../../../components/projectinnerpage/DeepDeatiles";
+import "../../../components/projectinnerpage/projectDetails.css";
+import { redirect } from "next/navigation";
+import dynamic from "next/dynamic";
+import { SkeletonLoader } from "../../../components/skeletoneffect/Skelten";
+import OngoingInnerFaq from "./OngoingInnerFaq";
 
-const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, })
+const Brochure = dynamic(
+  () => import("../../../components/projectinnerpage/Brochure"),
+  { ssr: false, loading: () => <SkeletonLoader /> },
+);
 
 async function fetchData(slug) {
-    try {
-        const res = await getProjectDetails(slug);
+  try {
+    const res = await getProjectDetails(slug);
 
-        if (res?.data?.StatusCode === 6000) {
-            return res?.data;
-        }
-        return null;
-    } catch (error) {
-        console.error(`Error fetching project details for slug: ${slug}`, error);
-        return null;
+    if (res?.data?.StatusCode === 6000) {
+      return res?.data;
     }
+    return null;
+  } catch (error) {
+    console.error(`Error fetching project details for slug: ${slug}`, error);
+    return null;
+  }
 }
 
-
 export async function generateMetadata({ params }) {
-    const { slug } = params;
-    const data = await fetchData(slug);
+  const { slug } = params;
+  const data = await fetchData(slug);
 
-    if (!data) {
-        return {};
-    }
+  if (!data) {
+    return {};
+  }
 
-    const project = data?.data;
+  const project = data?.data;
 
-    return {
-        title: project?.meta_title || "Default Title",
-        description: project?.meta_description || "Default Description",
-        keywords: project?.meta_keywords || "",
-        alternates: {
-            canonical: `https://cidbi.com/ongoing-projects/${slug}`,
-        },
-        robots: {
-            index: true,
-            follow: true,
-        },
-    };
+  return {
+    title: project?.meta_title || "Default Title",
+    description: project?.meta_description || "Default Description",
+    keywords: project?.meta_keywords || "",
+    alternates: {
+      canonical: `https://cidbi.com/ongoing-projects/${slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
 }
 
 export default async function Page({ params }) {
-    const { slug } = params;
-    const data = await fetchData(slug);
+  const { slug } = params;
+  const data = await fetchData(slug);
 
-    if (!data) {
-        redirect('/ongoing-projects');
-        return;
-    }
-    return (
-        <>
-            <Header />
-            <HeroSection data={data?.data} images={data?.images || []} className='bg-[#ffff]' />
-            <Brochure data={data?.data || {}} />
-             <div className='bg-[#ffff]'>
-                <DeepDeatiles
-                    amenities={data?.amenities}
-                    features={data?.features}
-                    amenities_images={data?.amenities_images}
-                    specification={data?.specification}
-                    blueprint_image={data?.data?.blueprint_image}
-                    floor_plan={data?.floor_plan}
-                    location={data?.data?.iframe}
-                    nearby={data?.nearby}
-                    videos={data?.videos}
-                    status={data?.status || []}
-                    bank={data?.bank}
-                    className='bg-[#ffff]' />
-            <OngoingFaq />
-            </div>
-            <Footer />
-        </>
-    )
+  if (!data) {
+    redirect("/ongoing-projects");
+    return;
+  }
+  return (
+    <>
+      <Header />
+      <HeroSection
+        data={data?.data}
+        images={data?.images || []}
+        className="bg-[#ffff]"
+      />
+      <Brochure data={data?.data || {}} />
+      <div className="bg-[#ffff]">
+        <DeepDeatiles
+          amenities={data?.amenities}
+          features={data?.features}
+          amenities_images={data?.amenities_images}
+          specification={data?.specification}
+          blueprint_image={data?.data?.blueprint_image}
+          floor_plan={data?.floor_plan}
+          location={data?.data?.iframe}
+          nearby={data?.nearby}
+          videos={data?.videos}
+          status={data?.status || []}
+          bank={data?.bank}
+          className="bg-[#ffff]"
+        />
+        <OngoingInnerFaq slug={slug} />
+      </div>
+      <Footer />
+    </>
+  );
 }

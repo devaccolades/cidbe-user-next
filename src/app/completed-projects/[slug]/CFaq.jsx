@@ -1,4 +1,22 @@
 import React from "react";
+import Link from "next/link";
+
+const renderLinkedAnswer = (answer, linkText, href, shouldLink) => {
+  if (!shouldLink) return answer;
+
+  const linkIndex = answer.indexOf(linkText);
+  if (linkIndex === -1) return answer;
+
+  return (
+    <>
+      {answer.slice(0, linkIndex)}
+      <Link href={href} className="text-[#4C956C] no-underline">
+        {linkText}
+      </Link>
+      {answer.slice(linkIndex + linkText.length)}
+    </>
+  );
+};
 
 const faqs = [
   {
@@ -84,6 +102,9 @@ const faqs = [
 ]
 
 const CFaq = () => {
+  const linkText = "CIDBI Chembaka in Punkunnam";
+  const linkedFaqIndex = faqs.findIndex((faq) => faq.answer.includes(linkText));
+
   return (
     <section className="containers custom-res py-10">
       <h2 className="text-[24px] font-[clash-display-medium] text-[--secondary-cl] text-center mb-8">Frequently Asked Questions</h2>
@@ -96,7 +117,9 @@ const CFaq = () => {
             <h3 className="text-[18px] font-[clash-display-medium] text-[--secondary-cl] text-gray-800 mb-2">
               {faq.question}
             </h3>
-            <p className="lg:text-[16px] text-[14px] font-[general-sans-regular] leading-[27px]">{faq.answer}</p>
+            <p className="lg:text-[16px] text-[14px] font-[general-sans-regular] leading-[27px]">
+              {renderLinkedAnswer(faq.answer, linkText, "/chembaka-premium-luxury-apartments", index === linkedFaqIndex)}
+            </p>
           </div>
         ))}
       </div>
