@@ -1,502 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-
+  <!-- Homepage -->
   <url>
     <loc>https://cidbi.com/</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/featured-projects</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/upcoming-projects</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/ready-to-occupy</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/ongoing-projects</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/ongoing-projects/cassia</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/ready-to-occupy/flats-in-thrissur-candor</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects/chalet</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects/clarion</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects/cinthia-park</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects/chirag</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects/cocoon</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects/cedar</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects/chaithram</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects/coronet</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/completed-projects/coral</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
 
-
+  <!-- Core / About / Contact -->
   <url>
-    <loc>https://cidbi.com/gallery</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/interiors</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.80</priority>
+    <loc>https://cidbi.com/about-us</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cidbi.com/contact-us</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/achievements</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/about-us</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.0</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://cidbi.com/csr</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.0</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/benefits-of-buying-budget-flats-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
+    <loc>https://cidbi.com/complaints</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://cidbi.com/careers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Project / Category listing pages -->
+  <url>
+    <loc>https://cidbi.com/ongoing-projects</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cidbi.com/featured-projects</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cidbi.com/completed-projects</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/which-is-the-best-builder-that-provides-premium-2</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
+    <loc>https://cidbi.com/upcoming-projects</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/investing-in-grandeur-nris-driving-luxury-apartmen</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
+    <loc>https://cidbi.com/ready-to-occupy-flats-thrissur</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/swimming-pools-in-flats-and-luxury-apartments</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
+    <loc>https://cidbi.com/apartments-flats-thrissur</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Individual project detail pages -->
+  <url>
+    <loc>https://cidbi.com/ongoing-projects/premium-flats-cassia</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/common-facilities-in-an-apartment-building</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
+    <loc>https://cidbi.com/ongoing-projects/chembaka-premium-luxury-apartments</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/flats-for-sale-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/completed-projects/credence</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/luxury-apartments-in-thrissur-from-best-builders</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/completed-projects/chirag</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/invest-in-quality-thrissurs-superior-living-standa</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/completed-projects/clarion</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Gallery / Interiors / Achievements -->
+  <url>
+    <loc>https://cidbi.com/gallery</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/Importance-of-Location-in-Choosing-Premium-Flats</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/interiors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/23-bhk-flats-apartments-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/achievements</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>https://cidbi.com/blogs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog posts -->
+  <url>
+    <loc>https://cidbi.com/blogs/why-ayyanthole-and-punkunnam-are-becoming-thrissurs-most-coveted-residential-addresses</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/advantages-of-apartment-living</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/blogs/invest-real-estate-thrissur-keralas-next-hotspot</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/comparing-flats-under-construction-and-ready-to</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/blogs/2-vs-3-bhk-flats-in-thrissur-which-one-fits</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/moving-to-thrissur-how-to-make-a-smooth-transition</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/blogs/what-nobody-tells-you-about-buying-a-flat</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/are-there-any-ready-to-move-in-3-bhk-flat-for-sale</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/furnished-vs-unfurnished-making-the-right-choice</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/discover-the-best-flats-in-thrissur-for-a-comfort</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/your-perfect-space-awaits-flats-for-sale-in-thriss</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/3bhk-flates-for-families</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/what-makes-buying-an-apartments-in-thrissur-a-good</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/key-reasons-why-flats-in-thrissur-are-the-best-buy</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/living-beyond-the-four-walls-in-luxury-apartments</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/explore-ready-to-occupy-flats-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/top-reasons-to-buy-flats-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/how-to-choose-the-right-home-builder-important</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/top-qualities-of-a-builder-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/where-can-i-buy-a-luxury-apartment-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/embrace-the-opportunity-apartments-in-thrissur-you</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/what-is-the-legal-process-for-buying-a-flat</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/basic-amenities-in-flat-essential-features</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/why-location-is-an-important-factor-while-buying</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/settle-in-style-explore-ready-to-occupy-flats</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/is-buying-an-apartment-a-good-investment-in</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/explore-cassia-the-all-new-residential-projects-by</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/premium-apartments-flats-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/luxury-3-bhk-flat-sale-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
+    <loc>https://cidbi.com/blogs/ready-to-occupy-vs-under-construction</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://cidbi.com/blogs/2-bhk-flat-in-thrissur-the-perfect-choice</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/featured-projects/premium-flats-cassia</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/2-3-bhk-flats-apartments-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/flats-for-sale-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/top-qualities-of-a-builder-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/flats-under-construction-and-ready-to-move-in</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/benefits-of-buying-budget-flats-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/dos-and-donts-in-apartment-living</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/ultimate-guide-to-buying-a-3-bhk-flat-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/buying-an-apartment-things-you-need-to-know</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/ready-to-occupy-flat-in-thrissur-convenient-option</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/key-factors-consider-when-choosing-flats</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/best-flats-in-thrissur-for-a-comfort-living</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/find-your-dream-home-ready-to-occupy-flat-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/embrace-the-opportunity-apartments-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/where-can-i-buy-a-luxury-apartment-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/find-perfect-home-2-bhk-flat-for-sale-in-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/explore-cassia-the-all-new-residential-projects</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/journey-from-idea-to-reality-builders-in-Trissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/perfect-space-awaits-flats-for-sale-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/top-reasons-to-buy-flats-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/advantages-of-buying-a-home-over-renting</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/rise-of-sustainable-living-eco-friendly-features</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/features-in-ready-to-occupy-flats-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://cidbi.com/blogs/invest-in-quality-thrissurs-superior-living</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2024-06-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/ai-in-smart-homes-how-ai-shaping-modern-living</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/blogs/luxury-3-bhk-flat-sale-thrissur</loc>
+    <lastmod>2024-01-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/nris-driving-luxury-apartment-room</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/blogs/luxury-apartments-in-thrissur-from-best-builders</loc>
+    <lastmod>2023-12-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/avoid-mistakes-while-selecting-builders</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/blogs/explore-cassia-the-all-new-residential-projects</loc>
+    <lastmod>2023-10-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://cidbi.com/blogs/style-your-furnished-apartment-homely</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/invest-in-ready-to-move-apartments-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/tips-for-budget-friendly-apartments-in-Thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/finding-affordable-flats-with-top-amenities</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/benefits-of-buying-constructed-flats-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/superior-construction-for-luxury-living</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/questions-to-ask-real-estate-builders</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/what-makes-best-flat-builders-stand-out</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://cidbi.com/blogs/exclusive-luxury-apartments-around-thrissur</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-   <url>
-    <loc>https://cidbi.com/blogs/2-bhk-flats-perfect-balance-modern-living</loc>
-    <lastmod>2024-08-29T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-   <url>
-    <loc>https://cidbi.com/apartments-flats-thrissur</loc>
-    <lastmod>2025-06-26T11:02:10+00:00</lastmod>
-    <priority>0.8</priority>
+    <loc>https://cidbi.com/blogs/basic-amenities-in-flat-essential-features</loc>
+    <lastmod>2023-10-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
   </url>
 
 </urlset>

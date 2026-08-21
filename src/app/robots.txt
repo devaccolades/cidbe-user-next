@@ -1,5 +1,18 @@
-User-agent: *
+User-agent: GPTBot
+Allow: /
 
-Allow: /favicon.ico
-Allow: /next/image
-Sitemap: https://cidbi.com/sitemap.xml      
+User-agent: ChatGPT-user
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Gemini-Deep-Research
+Allow: /
+
+User-agent: *
+Disallow: /cgi-bin/
+Sitemap: Sitemap: https://cidbi.com/sitemap.xml     
