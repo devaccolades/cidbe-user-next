@@ -78,7 +78,7 @@ export default function AboutSection() {
         {/* =========================
             CONTENT
         ========================== */}
-        <div className="relative z-10 mx-auto max-w-2xl text-center -mt-32 md:-mt-60 lg:-mt-[300px] min-[1430px]:-mt-[500px] min-[1500px]:-mt-[500px]  xl:-mt-[450px]">
+        <div className="mx-auto max-w-2xl text-center -mt-32 md:-mt-60 lg:-mt-[300px] min-[1430px]:-mt-[500px] min-[1500px]:-mt-[500px]  xl:-mt-[450px]">
           <p className="text-sm text-[#14532d]">About us</p>
 
           <h2 className="mt-3 font-[general-sans-medium] text-[20px] leading-[120%] md:text-[28px] lg:text-[36px]">
@@ -161,9 +161,9 @@ export default function AboutSection() {
       {/* =========================
           BLUR LIGHTS
       ========================== */}
-      <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-72 rounded-full bg-lime-200 blur-[120px]" />
+      <div className="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-lime-200 blur-[120px]" />
 
-      <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-white blur-[120px]" />
+      <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-white blur-[120px]" />
 
       {/* =========================
           CURVED IMAGE CSS
