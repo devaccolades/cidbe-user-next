@@ -150,7 +150,7 @@ function ProjectListing({ title, basePath = "/completed-projects" }) {
         res = await getUpcomingProject(page, page_limit);
       } else if (pathname === "/completed-projects") {
         res = await getCompletedProject(page, page_limit);
-      } else if (pathname === "/ready-to-occupy") {
+      } else if (pathname === "/ready-to-occupy-flats-thrissur") {
         res = await getReadyToOccupyProject(page, page_limit);
       } else if (pathname === "/apartments-flats-thrissur") {
         res = await getCompletedProject(page, page_limit);
@@ -183,7 +183,7 @@ function ProjectListing({ title, basePath = "/completed-projects" }) {
       if (pathname === "/featured-projects") return "/featured-projects";
       if (pathname === "/ongoing-projects") return "/ongoing-projects";
       if (pathname === "/upcoming-projects") return "/upcoming-projects";
-      if (pathname === "/ready-to-occupy") return "/ready-to-occupy";
+      if (pathname === "/ready-to-occupy-flats-thrissur") return "/ready-to-occupy-flats-thrissur";
       if (pathname === "/apartments-flats-thrissur")
         return "/completed-projects"; // <-- key fix
       return pathname;
