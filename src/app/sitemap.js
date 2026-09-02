@@ -9,7 +9,7 @@ export default async function sitemap() {
     "/featured-projects",
     "/completed-projects",
     "/upcoming-projects",
-    "/ready-to-occupy",
+    "/ready-to-occupy-flats-thrissur",
     "/ongoing-projects",
     "/gallery",
     "/interiors",

@@ -118,7 +118,7 @@ export default function WhyChooseSection() {
           </div>
         </Link>
 
-        <Link href="/ready-to-occupy" className="cursor-pointer">
+        <Link href="/ready-to-occupy-flats-thrissur" className="cursor-pointer">
           <div
             style={{
               backgroundImage: `url(${ready.src})`,

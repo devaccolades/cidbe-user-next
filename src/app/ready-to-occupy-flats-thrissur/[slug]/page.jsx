@@ -55,7 +55,7 @@ export default async function Page({ params }) {
     const data = await fetchData(slug);
 
     if (!data) {
-        redirect('/ready-to-occupy');
+        redirect('/ready-to-occupy-flats-thrissur');
         return;
     }
     return (

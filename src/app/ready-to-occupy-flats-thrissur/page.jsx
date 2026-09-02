@@ -24,7 +24,7 @@ async function fetchSeoData(path) {
 }
 
 export async function generateMetadata() {
-  const path = "/ready-to-occupy";
+  const path = "/ready-to-occupy-flats-thrissur";
   const responseData = await fetchSeoData(path);
   const { meta_title, meta_description, meta_keywords } = responseData;
   return {
