@@ -430,7 +430,6 @@ function CustomerReviewsAndFaq() {
                   Why Choose CIDBI – The Trusted Builders in Thrissur
                 </h2>
                 <div className="flex flex-col gap-[10px]">
-                  import Link from "next/link";
                   <p className="text-[12px] md:text-[13px]">
                     <span className="font-semibold">Proven Expertise:</span>{" "}
                     Over 40 years of construction excellence and 3 of{" "}
