@@ -33,8 +33,11 @@ const navLinks = [
   { label: "Contact Us", href: "/contact-us" },
 ];
 
+const contactNumbers = ["+919496933000", "+918137873330"];
+
 export default function Navbar() {
   const pathname = usePathname();
+  const contactNumber = contactNumbers[new Date().getMonth() % contactNumbers.length];
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [activeLink, setActiveLink] = useState("Home");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -186,14 +189,14 @@ export default function Navbar() {
       {/* Right side: Call Now + WhatsApp + Hamburger (hamburger only on mobile/tablet) */}
       <div className="ml-auto flex w-fit flex-none shrink-0 items-center gap-1 md:gap-2">
         <a
-          href="tel:+919496933000"
+          href={`tel:${contactNumber}`}
           className="flex items-center gap-2 rounded-[10px] font-[inter-regular] bg-emerald-950 px-2 py-2 md:py-3 text-[12px] md:text-[14px] font-medium text-white shadow-md transition-colors hover:bg-emerald-900 md:px-5"
         >
           <Image src="/images/home/fon.svg" alt="phone" width={16} height={16} className="h-[16px] w-[16px]"/>
           Call Now
         </a>
         <a
-          href="https://wa.me/919496933000"
+          href={`https://wa.me/${contactNumber.replace("+", "")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex h-8 w-8 md:h-11 md:w-11 shrink-0 items-center justify-center rounded-[10px] bg-emerald-950 shadow-md transition-colors hover:bg-emerald-900"
