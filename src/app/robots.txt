@@ -15,4 +15,5 @@ Allow: /
 
 User-agent: *
 Disallow: /cgi-bin/
-Sitemap: Sitemap: https://cidbi.com/sitemap.xml     
+Disallow: /blogs?page=
+Sitemap: Sitemap: https://cidbi.com/sitemap.xml
