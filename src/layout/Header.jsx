@@ -33,7 +33,7 @@ const navLinks = [
   { label: "Contact Us", href: "/contact-us" },
 ];
 
-const contactNumbers = ["+919496933000", "+918137873330"];
+const contactNumbers = ["+918137873330", "+919496933000"];
 
 export default function Navbar() {
   const pathname = usePathname();
