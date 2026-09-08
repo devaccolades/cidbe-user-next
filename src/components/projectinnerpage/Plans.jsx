@@ -8,8 +8,9 @@ import { Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 import buildIcon from "../../../public/images/product-view/plansbuilding.webp";
+import Link from "next/link";
 
-function Plans({ floor_plan, blueprint_image, isCandorPage }) {
+function Plans({ floor_plan, blueprint_image, isCandorPage, isChaletPage }) {
   if ((!floor_plan || floor_plan.length === 0) && !blueprint_image) return null;
   return (
     <section className="py-10 bg-[#ffff]">
@@ -21,17 +22,37 @@ function Plans({ floor_plan, blueprint_image, isCandorPage }) {
           Well Designed 2 & 3 BHK Apartment Plans
         </h2>
         {isCandorPage && (
-          <p className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-medium] mb-4">
-            CANDOR 2&3 BHK apartments in Punkunnam, by CIDBI has 5 floor
-            layouts. Floor plans from Type A to Type D are standard units and
-            Type E are spacious units. Every corner is crafted to give your
-            family room to grow and relax .Enjoy bright mornings with excellent
-            ventilation in every single room. Open balconies and clever designs
-            pull in fresh air and plenty of natural sunlight. This keeps your
-            living spaces feeling fresh and full of life all day long. The
-            generous floor areas give you plenty of room for your favourite
-            furniture. Moving around feels easy and completely unrestricted.
+          <p className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-regular] mb-4">
+            CIDBI offers five unique floor layouts for these <Link className="font-[general-sans-medium]" href="/">premium flats in Punkunnam</Link>. Plans from Type A to Type D are standard homes, while
+            Type E offers extra spacious living. We craft every corner so your
+            family has room to grow and relax. Enjoy bright mornings with smooth
+            airflow in every single room. Smart designs and open balconies pull
+            in fresh air and plenty of warm sunlight. This keeps your living
+            spaces feeling fresh and full of joy all day long. Wide floor spaces
+            give you plenty of room for all your favourite furniture. Moving
+            around feels easy and completely free.
           </p>
+        )}
+        {isChaletPage && (
+          <div className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-regular] mb-4">
+            <p className="mb-2">
+              Chalet brings you beautifully planned spaces for modern
+              families. We designed these homes to maximize your daily
+              comfort. If you want <Link className="font-[general-sans-medium]" href="/">3 &amp; 2 BHK Flat for sale in Thrissur</Link>,
+              you have great choices here.
+            </p>
+            <p className="mb-2">
+              Type A offers a large 1137 square foot 2BHK layout. Type B
+              provides a smart 994 square foot design. Type C brings you 1063
+              square feet of bright living space.
+            </p>
+            <p className="mb-2">
+              Every single layout pulls in fresh air and warm sunlight. We
+              built these open rooms to give your family freedom to move.
+              Finding perfect <Link className="font-[general-sans-medium]" href="/">Apartments For Sale In Thrissur</Link> is easy now. These smart
+              floor plans make your daily city life truly joyful.
+            </p>
+          </div>
         )}
         <div className="-mx-4 sm:-mx-6 lg:-mx-8">
           <AntdImage.PreviewGroup>
