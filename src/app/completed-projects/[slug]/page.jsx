@@ -57,6 +57,7 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params }) {
   const { slug } = params;
   const isCandorPage = slug === "flats-in-punkunnam-candor";
+  const isChaletPage = slug === "chalet";
   const data = await fetchData(slug);
 
   if (!data) {
@@ -89,6 +90,7 @@ export default async function Page({ params }) {
           status={data?.status || []}
           bank={data?.bank}
           isCandorPage={isCandorPage}
+          isChaletPage={isChaletPage}
           className="bg-[#ffff]"
         />
         {isCandorPage && (

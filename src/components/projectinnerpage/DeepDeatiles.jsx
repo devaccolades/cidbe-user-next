@@ -33,6 +33,7 @@ function DeepDetails({
   onVideoModalOpen,
   onVideoModalClose,
   isCandorPage,
+  isChaletPage,
 }) {
   const [isSticky, setIsSticky] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -100,7 +101,10 @@ function DeepDetails({
   const sections = [
     { name: "Amenities", hasData: hasAmenities },
     { name: "Smart Features", hasData: hasFeatures },
-    { name: "Specifications", hasData: hasSpecification },
+    {
+      name: "Specifications",
+      hasData: hasSpecification || isCandorPage || isChaletPage,
+    },
     { name: "Plans", hasData: hasPlans },
     { name: "VideoSection", hasData: hasVideoSection },
     { name: "ProductVideo", hasData: hasVideos },
@@ -118,7 +122,7 @@ function DeepDetails({
           ref={navbarRef}
           className={`lg:sticky top-0 z-50 transition-all duration-300 ease-in-out ${
             isSticky ? "bg-[--primary-cl]" : "bg-white"
-          } pt-[20px] pb-[10px] ${
+          } pt-[20px] ${
             isVideoModalOpen ? "hidden" : "hidden lg:block"
           }`}
         >
@@ -142,8 +146,12 @@ function DeepDetails({
       )}
 
       {hasAmenities && (
-        <div ref={sectionRefs.Amenities} className="pt-[30px] bg-white">
-          <Amenities amenities={amenities} isCandorPage={isCandorPage} />
+        <div ref={sectionRefs.Amenities} className="bg-white">
+          <Amenities
+            amenities={amenities}
+            isCandorPage={isCandorPage}
+            isChaletPage={isChaletPage}
+          />
         </div>
       )}
 
@@ -157,11 +165,12 @@ function DeepDetails({
         <Slider amenities_images={amenities_images} />
       )}
 
-      {hasSpecification && (
+      {(hasSpecification || isCandorPage || isChaletPage) && (
         <div ref={sectionRefs.Specifications} className="pt-[30px] bg-white">
           <Specification
             specification={specification}
             isCandorPage={isCandorPage}
+            isChaletPage={isChaletPage}
           />
         </div>
       )}
@@ -172,6 +181,7 @@ function DeepDetails({
             floor_plan={floor_plan}
             blueprint_image={blueprint_image}
             isCandorPage={isCandorPage}
+            isChaletPage={isChaletPage}
           />
         </div>
       )}
@@ -211,7 +221,13 @@ function DeepDetails({
         </div>
       )}
 
-      {hasBank && <Partners bank={bank} isCandorPage={isCandorPage} />}
+      {hasBank && (
+        <Partners
+          bank={bank}
+          isCandorPage={isCandorPage}
+          isChaletPage={isChaletPage}
+        />
+      )}
     </>
   );
 }

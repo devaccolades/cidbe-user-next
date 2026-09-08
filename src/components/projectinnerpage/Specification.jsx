@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
-const Specifications = ({ specification, isCandorPage }) => {
+const Specifications = ({ specification, isCandorPage, isChaletPage }) => {
   const [openItemIndex, setOpenItemIndex] = useState(null);
 
   const hasValidSpecs =
@@ -11,10 +12,10 @@ const Specifications = ({ specification, isCandorPage }) => {
     specification.some(
       (spec) =>
         (spec?.title && String(spec.title).trim() !== "") ||
-        (spec?.description && String(spec.description).trim() !== "")
+        (spec?.description && String(spec.description).trim() !== ""),
     );
 
-  if (!hasValidSpecs && !isCandorPage) return null;
+  if (!hasValidSpecs && !isCandorPage && !isChaletPage) return null;
 
   return (
     <div className="containers custom-res py-[20px] bg-white">
@@ -22,30 +23,63 @@ const Specifications = ({ specification, isCandorPage }) => {
         Specifications
       </h2>
       {isCandorPage && (
-        <div className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-medium] mb-4">
+        <div className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-regular] mb-4">
           <p className="mb-2">
-            Candor, our completed flats in Punkunnamm has an earthquake
-            resistant RCC framed structure. Solid block masonry walls with
-            cement mortar plaster ensure maximum strength. Floorings of these
-            luxury apartments in Punkunnam are done using high quality vitrified
-            tiles. The elegant finish includes factory moulded design doors,
-            sleek granite kitchen counters, and smooth walls coated with double
-            plastic emulsion.
+            Candor offers a highly strong, earthquake-resistant RCC framed
+            structure. Solid block walls with cement plaster give your new home
+            maximum strength. We use premium vitrified tiles to craft the bright
+            floors inside these <Link className="font-[general-sans-medium]" href="/">premium flats in Punkunnam</Link>. The finish features
+            stylish moulded doors and sleek granite kitchen counters. Smooth
+            indoor walls feature a rich double plastic emulsion coating.
           </p>
 
           <p className="mb-2">
+            We built your home to last a lifetime. If you seek <Link className="font-[general-sans-medium]" href="/">flats for sale in Punkunnam</Link>,
+            our spaces feature safe copper wiring and branded hidden plumbing.
+            A steady sewage plant and smart groundwater system make your daily
+            routine completely trouble-free.
+          </p>
+
+          <p className="mb-2">
+            Safety always comes first in our secure apartments. We protect your
+            family using modern fire systems, strict electrical controls, and
+            safe non-skid bathroom floors. An automatic generator runs all day
+            to power the lifts and handle emergencies during any blackout.
+          </p>
+
+          {/* <p className="mb-2">
             Your home is built to last. These 3 and 2 BHK flats in Punkunnam
             feature ISI marked copper wiring and branded UPVC concealed
             plumbing. A reliable sewage treatment plant and a smart groundwater
             supply system ensure trouble free daily living.
-          </p>
+          </p> */}
 
-          <p className="mb-2">
+          {/* <p className="mb-2">
             Safety remains our top priority in these Punkunnam apartments. We
             provide advanced firefighting systems, strict ELCB electrical
             controls, and non-skid bathroom floors. There is a 24 hour automatic
             generator backup to ensure lift operations and other emergencies
             during power failure.
+          </p> */}
+        </div>
+      )}
+      {isChaletPage && (
+        <div className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-regular] mb-4">
+          <p className="mb-2">
+            We build every home with a strong foundation and solid structure.
+            You get smooth walls, premium flooring and elegant doors and
+            windows. Our modern kitchens and clean bathrooms feature top
+            sanitary and CP fittings. We ensure safety with advanced
+            firefighting systems and secure electrical wiring.
+          </p>
+          <p className="mb-2">
+            If you seek <Link className="font-[general-sans-medium]" href="/">Apartments For Sale In Thrissur</Link>,
+            we deliver unmatched quality. Reliable water supply and a
+            dedicated sewage treatment plant keep daily routines easy. A
+            backup generator and smooth passenger lifts add pure daily
+            convenience. Every corner features beautiful painting and handy
+            telephone connections. Finding a perfect <Link className="font-[general-sans-medium]" href="/">3 &amp; 2 BHK Flat for sale in Thrissur</Link>
+            is now truly simple.
           </p>
         </div>
       )}
