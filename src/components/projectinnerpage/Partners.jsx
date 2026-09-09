@@ -41,7 +41,7 @@ function Partners({ bank, isCandorPage, isChaletPage }) {
                   </p>
 
                   <p>
-                    If you want <Link className="text-blue-600 underline hover:text-blue-800 font-semibold" href="/">3 &amp; 2 BHK flat for sale in Thrissur</Link>,
+                    If you want <Link className=" font-semibold" href="/">3 &amp; 2 BHK flat for sale in Thrissur</Link>,
                     location truly matters. You get quick access to top city
                     spots. Sun Hospital is a short half-kilometre trip. The
                     railway station and KSRTC stand are just 1.5 kilometres
@@ -49,7 +49,7 @@ function Partners({ bank, isCandorPage, isChaletPage }) {
                   </p>
 
                   <p>
-                    Finding great <Link className="text-blue-600 underline hover:text-blue-800 font-semibold" href="/">apartments for sale In Thrissur</Link> means choosing real
+                    Finding great <Link className=" font-semibold" href="/">apartments for sale In Thrissur</Link> means choosing real
                     daily convenience.
                   </p>
                 </div>
@@ -64,7 +64,7 @@ function Partners({ bank, isCandorPage, isChaletPage }) {
                 <div className="text-black text-[13px] leading-normal md:text-[14px] max-w-4xl space-y-3">
                   <p>
                     Punkunnam shines as a highly desired residential hub in Thrissur
-                    city. High demand makes buying <Link className="text-blue-600 underline hover:text-blue-800" href="/">premium flats in Punkunnam</Link> a
+                    city. High demand makes buying <Link className=" font-semibold" href="/">premium flats in Punkunnam</Link> a
                     truly smart choice today.
                   </p>
 
@@ -77,7 +77,7 @@ function Partners({ bank, isCandorPage, isChaletPage }) {
                   </p>
 
                   <p>
-                    Looking for <Link className="text-blue-600 underline hover:text-blue-800" href="/">premium flats for sale in Punkunnam</Link>? These homes offer real convenience. You get a peaceful space linked to active city life.
+                    Looking for <Link className=" font-semibold" href="/">premium flats for sale in Punkunnam</Link>? These homes offer real convenience. You get a peaceful space linked to active city life.
                   </p>
                 </div>
               </>
@@ -107,7 +107,7 @@ function Partners({ bank, isCandorPage, isChaletPage }) {
                   </p>
 
                   <p>
-                    When you search for <Link className="text-blue-600 underline hover:text-blue-800 font-semibold" href="/">apartments for sale in Thrissur</Link>,
+                    When you search for <Link className=" font-semibold" href="/">apartments for sale in Thrissur</Link>,
                     trust means everything. We build safe spaces filled with
                     lasting peace and deep value.
                   </p>

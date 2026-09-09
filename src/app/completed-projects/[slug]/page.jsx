@@ -8,6 +8,7 @@ import "../../../components/projectinnerpage/projectDetails.css";
 import { redirect } from "next/navigation";
 import dynamic from "next/dynamic";
 import { SkeletonLoader } from "../../../components/skeletoneffect/Skelten";
+import ProjectFaq from "./ProjectFaq";
 
 const Brochure = dynamic(
   () => import("../../../components/projectinnerpage/Brochure"),
@@ -93,61 +94,8 @@ export default async function Page({ params }) {
           isChaletPage={isChaletPage}
           className="bg-[#ffff]"
         />
-        {isCandorPage && (
-          <div className="containers bg-white py-8 sm:py-10 md:py-14 ">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-6 md:mb-8">
-              FAQ’s
-            </h3>
-
-            <div className="space-y-3 sm:space-y-4 w-full">
-              {[
-                {
-                  question: "Are flats available in Punkunnam, Thrissur?",
-                  answer:
-                    "Yes, CIDBI Candor offers luxury 2 BHK and 3 BHK flats in Punkunnam, designed for modern families. These homes are spacious and thoughtfully planned for comfortable city living.",
-                },
-                {
-                  question: "What amenities are available at CIDBI Candor?",
-                  answer:
-                    "CIDBI Candor offers a range of lifestyle amenities including a rooftop swimming pool, AC health club, and a dedicated play area for kids. The project also ensures safety with biometric entry and 24/7 camera surveillance.",
-                },
-                {
-                  question:
-                    "Is Punkunnam a good location to buy apartments in Thrissur?",
-                  answer:
-                    "Yes, Punkunnam is one of the most sought-after residential areas in Thrissur. It offers excellent connectivity to major roads, schools, and hospitals, while still providing a peaceful living environment.",
-                },
-                {
-                  question:
-                    "How can I book a flat at CIDBI Candor in Punkunnam?",
-                  answer:
-                    "Booking is simple and hassle-free. You can click the Enquire Now button on the website or call the sales team at +91 94969 33000 to schedule a site visit.",
-                },
-                {
-                  question:
-                    "Are the flats at CIDBI Candor in Punkunnam close to key facilities and services?",
-                  answer:
-                    "Yes, the project is located very close to essential facilities. The railway station is just a 300-meter walk away, and institutions like Devamatha Public School and Ashwini Hospital are also nearby.",
-                },
-              ].map((faq, index) => (
-                <details
-                  key={index}
-                  className="border rounded-xl p-4 sm:p-5 md:p-6 group transition-all duration-200 hover:shadow-sm"
-                >
-                  <summary className="cursor-pointer font-medium text-base sm:text-lg md:text-xl flex justify-between items-center gap-4">
-                    <span>{faq.question}</span>
-                    <span className="text-sm sm:text-base transition-transform duration-200 group-open:rotate-180">
-                      ▼
-                    </span>
-                  </summary>
-
-                  <p className="mt-3 sm:mt-4 text-sm sm:text-base text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </div>
+        {(isCandorPage || isChaletPage) && (
+          <ProjectFaq isChaletPage={isChaletPage} />
         )}
       </div>
       <Footer />
