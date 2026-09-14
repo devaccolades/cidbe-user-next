@@ -28,7 +28,7 @@ const faqs = [
     "answer": "CIDBI manages construction in house instead of relying on external contractors, ensuring stronger quality control. This approach has helped us build a trusted reputation across Thrissur's real estate market."
   },
   {
-    "question": "Does CIDBI offer bank loan assistance for flats in Thrissur town?",
+    "question": "Does CIDBI offer bank loan assistance for Apartments in Thrissur town?",
     "answer": "Yes, CIDBI's completed and ongoing projects carry SBI approval, simplifying home loan processing for buyers. Our sales team also assists with documentation and coordination throughout the loan process."
   },
   {
@@ -48,7 +48,7 @@ const faqs = [
     "answer": "CIDBI assists buyers with sale agreements, title verification and loan related paperwork throughout the purchase. This support reduces legal complications commonly faced when buying flats in Thrissur town."
   },
   {
-    "question": "Can first time home buyers rely on CIDBI for flats in Thrissur town?",
+    "question": "Can first time home buyers rely on CIDBI for Apartments in Thrissur town?",
     "answer": "CIDBI's completed projects demonstrate a consistent history of on time delivery and quality construction. This reliability makes CIDBI a dependable choice for first time buyers evaluating flats in Thrissur town."
   },
   {
@@ -92,7 +92,7 @@ const faqs = [
     "answer": "New launch projects offer the best introductory pricing and flexible milestone based payment plans. You also gain higher capital growth as the development moves toward final completion."
   },
   {
-    "question": "How do I book a unit in CIDBI new launch flats in Thrissur Town?",
+    "question": "How do I book a unit in CIDBI new launch Apartments in Thrissur Town?",
     "answer": "You can connect with our sales team to review upcoming floor plans and early pricing. Booking early ensures your preferred floor choice and locked in pre launch rates."
   },
   {
