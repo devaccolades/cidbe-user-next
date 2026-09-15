@@ -2,14 +2,17 @@ import React from "react";
 import Header from "../../layout/Header";
 import Footer from "../../layout/Footer";
 // import ProjectListing from '../../components/projectlisting/ProjectListing';
-import dynamic from "next/dynamic";
+import nextDynamic from "next/dynamic";
 import CFaq from "./[slug]/CFaq";
 import Skelten from "../../components/skeletoneffect/Skelten";
-const ProjectListing = dynamic(
+const ProjectListing = nextDynamic(
   () => import("../../components/projectlisting/ProjectListing"),
   { ssr: false, loading: () => <Skelten /> }
 );
 import { getSeoApi } from "../../services/services";
+
+export const dynamic = "force-dynamic";
+
 async function fetchSeoData(path) {
   let data = {};
   try {
