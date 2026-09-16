@@ -59,6 +59,7 @@ export default async function Page({ params }) {
   const { slug } = params;
   const isCandorPage = slug === "flats-in-punkunnam-candor";
   const isChaletPage = slug === "chalet";
+  const isCredencePage = slug === "credence";
   const data = await fetchData(slug);
 
   if (!data) {
@@ -92,10 +93,11 @@ export default async function Page({ params }) {
           bank={data?.bank}
           isCandorPage={isCandorPage}
           isChaletPage={isChaletPage}
+          isCredencePage={isCredencePage}
           className="bg-[#ffff]"
         />
-        {(isCandorPage || isChaletPage) && (
-          <ProjectFaq isChaletPage={isChaletPage} />
+        {(isCandorPage || isChaletPage || isCredencePage) && (
+          <ProjectFaq isChaletPage={isChaletPage} isCredencePage={isCredencePage} />
         )}
       </div>
       <Footer />

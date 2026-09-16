@@ -34,6 +34,7 @@ function DeepDetails({
   onVideoModalClose,
   isCandorPage,
   isChaletPage,
+  isCredencePage,
 }) {
   const [isSticky, setIsSticky] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -97,13 +98,15 @@ function DeepDetails({
         item.statuses.length > 0
     );
   const hasBank = Array.isArray(bank) && bank.length > 0;
+  const shouldShowPartners = hasBank || isCredencePage;
 
   const sections = [
     { name: "Amenities", hasData: hasAmenities },
     { name: "Smart Features", hasData: hasFeatures },
     {
       name: "Specifications",
-      hasData: hasSpecification || isCandorPage || isChaletPage,
+      hasData:
+        hasSpecification || isCandorPage || isChaletPage || isCredencePage,
     },
     { name: "Plans", hasData: hasPlans },
     { name: "VideoSection", hasData: hasVideoSection },
@@ -151,6 +154,7 @@ function DeepDetails({
             amenities={amenities}
             isCandorPage={isCandorPage}
             isChaletPage={isChaletPage}
+            isCredencePage={isCredencePage}
           />
         </div>
       )}
@@ -165,12 +169,13 @@ function DeepDetails({
         <Slider amenities_images={amenities_images} />
       )}
 
-      {(hasSpecification || isCandorPage || isChaletPage) && (
+      {(hasSpecification || isCandorPage || isChaletPage || isCredencePage) && (
         <div ref={sectionRefs.Specifications} className="pt-[30px] bg-white">
           <Specification
             specification={specification}
             isCandorPage={isCandorPage}
             isChaletPage={isChaletPage}
+            isCredencePage={isCredencePage}
           />
         </div>
       )}
@@ -182,6 +187,7 @@ function DeepDetails({
             blueprint_image={blueprint_image}
             isCandorPage={isCandorPage}
             isChaletPage={isChaletPage}
+            isCredencePage={isCredencePage}
           />
         </div>
       )}
@@ -221,11 +227,12 @@ function DeepDetails({
         </div>
       )}
 
-      {hasBank && (
+      {shouldShowPartners && (
         <Partners
           bank={bank}
           isCandorPage={isCandorPage}
           isChaletPage={isChaletPage}
+          isCredencePage={isCredencePage}
         />
       )}
     </>

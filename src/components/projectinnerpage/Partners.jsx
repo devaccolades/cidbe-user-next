@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-function Partners({ bank, isCandorPage, isChaletPage }) {
+function Partners({ bank, isCandorPage, isChaletPage, isCredencePage }) {
   // Array of logos
 
   return (
@@ -23,7 +23,7 @@ function Partners({ bank, isCandorPage, isChaletPage }) {
           </div>
         </div>
       </section>
-      {(isCandorPage || isChaletPage) && (
+      {(isCandorPage || isChaletPage || isCredencePage) && (
         <div className="containers grid grid-cols-1 md:grid-cols-2 gap-10 py-3">
           <div>
             {isChaletPage && (
@@ -82,6 +82,32 @@ function Partners({ bank, isCandorPage, isChaletPage }) {
                 </div>
               </>
             )}
+            {isCredencePage && (
+              <>
+                <h2 className="text-[18px] leading-[100%] md:text-[24px] md:max-w-xl text-black mb-3 font-semibold">
+                  Prime Location Near Jubilee Mission
+                </h2>
+
+                <div className="text-black text-[13px] leading-normal md:text-[14px] max-w-4xl space-y-3">
+                  <p>
+                    Credence places you in a highly connected spot near Jubilee Mission.
+                    This prime location makes city travel smooth and quick. You get easy
+                    access to top hospitals, schools, and busy shopping centres.
+                    Finding premium <span className="font-semibold">Apartments in Thrissur</span> means choosing real daily convenience.
+                  </p>
+
+                  <p>
+                    The local railway station and main bus stands are just a short drive away.
+                    Daily commutes feel effortless from this central base. Like our popular
+                    <span className="font-semibold"> Apartments in Kannamkulangara</span>, this location offers peace alongside active city living.
+                  </p>
+
+                  <p>
+                    If you want <span className="font-semibold">3 BHK Apartments in Thrissur</span>, this spot perfectly balances work, life, and comfort.
+                  </p>
+                </div>
+              </>
+            )}
           </div>
 
           <div className="relative z-10">
@@ -123,6 +149,32 @@ function Partners({ bank, isCandorPage, isChaletPage }) {
                 <p className="!text-black text-[13px] md:text-[14px] max-w-4xl">
                   CIDBI shines as one of the most trusted builders in Thrissur. We are known for crafting beautiful luxury homes today. Guided by Mr. A. A. Abdul Lathif, our skilled team brings rich experience to every single project. We proudly hold an ISO 9001:2015 certification for our high working standards. Our team always delivers projects on time, earning true trust from happy families. As a proud and dedicated CREDAI member, we promise pure excellence in every home. Choosing CIDBI means choosing lasting peace and true value.
                 </p>
+              </>
+            )}
+            {isCredencePage && (
+              <>
+                <h2 className="text-[18px] md:text-[24px] text-black mb-3 font-semibold">
+                  About CIDBI – Trusted Builders in Thrissur
+                </h2>
+
+                <div className="!text-black text-[13px] md:text-[14px] max-w-4xl space-y-3">
+                  <p>
+                    CIDBI remains a highly trusted name for luxury home construction.
+                    Mr. A. A. Abdul Lathif leads our expert team today. We bring years
+                    of real experience to every single building project.
+                  </p>
+
+                  <p>
+                    Our team proudly holds a strict ISO 9001:2015 certification. As a
+                    dedicated CREDAI member, we always promise pure building excellence.
+                    We work hard to deliver your new home right on time.
+                  </p>
+
+                  <p>
+                    If you seek beautiful <span className="font-semibold">Apartments in Thrissur</span>, you can completely trust our craft.
+                    Like our highly rated <span className="font-semibold">Apartments in Kannamkulangara</span>, we build safe spaces that offer your family lasting value and joy.
+                  </p>
+                </div>
               </>
             )}
           </div>
