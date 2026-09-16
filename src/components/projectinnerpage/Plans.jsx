@@ -10,7 +10,7 @@ import "swiper/css/scrollbar";
 import buildIcon from "../../../public/images/product-view/plansbuilding.webp";
 import Link from "next/link";
 
-function Plans({ floor_plan, blueprint_image, isCandorPage, isChaletPage }) {
+function Plans({ floor_plan, blueprint_image, isCandorPage, isChaletPage, isCredencePage }) {
   if ((!floor_plan || floor_plan.length === 0) && !blueprint_image) return null;
   return (
     <section className="py-10 bg-[#ffff]">
@@ -52,6 +52,23 @@ function Plans({ floor_plan, blueprint_image, isCandorPage, isChaletPage }) {
               Finding perfect <Link className="font-[general-sans-medium]" href="/">Apartments For Sale In Thrissur</Link> is easy now. These smart
               floor plans make your daily city life truly joyful.
             </p>
+          </div>
+        )}
+        {isCredencePage && (
+          <div className="text-base sm:text-[14px] lg:text-[16px] font-[general-sans-regular] mb-4">
+            <p className="mb-2">
+              Credence offers beautiful floor layouts for modern living. If you
+              want the best <span className="font-[general-sans-medium]">Apartments in Thrissur</span>,
+              we have the perfect home for you.              Type A features spacious <span className="font-[general-sans-medium]">3 BHK Apartments in Thrissur</span>{" "}
+              covering 1615 square feet. It gives large families plenty of room
+              to grow. Type B provides a smart 2 BHK design covering 1174 square
+              feet. Type C brings you 1033 square feet of highly comfortable
+              space.These open plans pull in fresh air and bright sunlight every day.
+              Just like our popular <span className="font-[general-sans-medium]">Apartments in Kannamkulangara</span>,
+              we built these homes for your total comfort. Discover your dream
+              space today.
+            </p>
+
           </div>
         )}
         <div className="-mx-4 sm:-mx-6 lg:-mx-8">

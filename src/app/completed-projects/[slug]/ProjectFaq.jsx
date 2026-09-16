@@ -14,20 +14,22 @@ const chaletFaqs = [
   ['Which ongoing CIDBI project is open for new investment?', 'Buyers seeking a 3 & 2 BHK Flat for sale in Thrissur can explore our ongoing project, CIDBI Cassia. It sits conveniently near Daya Hospital with sample flats available.'],
 ]
 
-const candorFaqs = [
-  ['Where are the CIDBI Candor luxury apartments located?', 'CIDBI Candor offers premium flats in Punkunnam, Thrissur. These modern homes sit near Swaraj Round. You get very quick access to the local railway station daily.'],
-  ['What sizes are the flats for sale at CANDOR in Punkunnam?', 'These 2 BHK and 3 BHK apartments range from 1196 to 2233 square feet. The spacious layouts provide bright sunlight and fresh air for your family.'],
-  ['What amenities do these premium properties provide?', 'Residents enjoy a rooftop swimming pool and a modern AC health club. The property also features a sky lounge and a safe play area for kids.'],
-  ['How secure are the ready to occupy apartments?', 'Your family stays completely safe with constant security guards and CCTV cameras. We also use smart biometric entry and automatic gates to ensure peace of mind.'],
-  ['Do these luxury flats in Thrissur have backup power?', 'Yes, the property features a fully automatic generator backup for lifts and emergencies. We also utilize a five kilowatt green solar panel system for cleaner energy.'],
-  ['Are there good hospitals near these residential flats?', 'Top healthcare facilities sit right around the corner from your new home. Ashwini Hospital is just one kilometre away, while Saroja Multi Speciality Hospital is nearby.'],
-  ['Is it easy to find schools near CIDBI Candor?', 'Yes, families love these premium properties because excellent education is very close. The famous Devamatha Public School sits just two kilometres away from your front door.'],
-  ['How is the travel connectivity around these Punkunnam apartments?', 'Buying property here offers amazing travel connectivity to major local city roads. The Punkunnam Railway Station is only 300 meters away, making your daily trips easy.'],
+const credenceFaqs = [
+  ['1. Where is the CIDBI Credence project located?', 'CIDBI Credence offers premium Apartments in Thrissur located near Jubilee Mission. This prime location gives residents very quick and easy access to the central city core.'],
+  ['2. What types of homes does Credence offer?', 'We provide a beautiful mix of living spaces for modern families. You can easily find spacious 3 BHK Apartments in Thrissur or comfortable two-bedroom homes here.'],
+  ['3. Are there large units available for families?', 'Yes, our Type A layout offers massive 3 BHK Apartments in Thrissur. These units cover 1,615 square feet to give larger families plenty of living space.'],
+  ['4. Do you have properties in other nearby areas?', 'Yes, we also offer highly popular Apartments in Kannamkulangara for buyers. Our completed Chalet project there brings you smart layouts and truly peaceful city living.'],
+  ['5. What amenities do residents enjoy at Credence?', 'Buyers seeking Apartments in Thrissur enjoy a relaxing rooftop swimming pool here. We also provide a modern air-conditioned health club and a safe children\'s play area.'],
+  ['6. Is the property safe and secure for families?', 'Yes, these premium Apartments in Thrissur feature strict 24-hour security guards. We also run smart CCTV surveillance systems across the property to keep your family protected.'],
+  ['7. How is the build quality of these homes?', 'CIDBI builds every project using proven methods and highly durable materials. Similar to our Apartments in Kannamkulangara, Credence offers lasting value and very low daily upkeep.'],
+  ['8. Are the homes designed with good ventilation?', 'Yes, our beautiful 3 BHK Apartments in Thrissur balance natural light perfectly. Smart open layouts pull fresh air into every single room of your new home.'],
+  ['9. Why should I choose CIDBI as my builder?', 'CIDBI is a trusted builder offering premium Apartments in Thrissur today. We always deliver high quality homes right on time to satisfy modern families and investors.'],
+  ['10. Can I buy a new home from CIDBI now?', 'Yes, we offer beautiful 3 BHK Apartments in Thrissur for immediate investment. Please contact our team to visit the Cassia sample flat and exciting experience centre.'],
 ]
 
-export default function ProjectFaq({ isChaletPage }) {
+export default function ProjectFaq({ isChaletPage, isCredencePage }) {
   const [isOpend, setOpen] = useState(null)
-  const faqs = isChaletPage ? chaletFaqs : candorFaqs
+  const faqs = isChaletPage ? chaletFaqs : isCredencePage ? credenceFaqs : candorFaqs
 
   return (
     <div className='py-[45px] about-main-bg'>
