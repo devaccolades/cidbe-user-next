@@ -27,9 +27,24 @@ const credenceFaqs = [
   ['10. Can I buy a new home from CIDBI now?', 'Yes, we offer beautiful 3 BHK Apartments in Thrissur for immediate investment. Please contact our team to visit the Cassia sample flat and exciting experience centre.'],
 ]
 
-export default function ProjectFaq({ isChaletPage, isCredencePage }) {
+const clarionFaqs = [
+  ['Why is CIDBI a highly trusted choice in Kerala?', 'CIDBI is a highly dedicated ISO certified builder offering over forty years of rich experience. We always deliver premium homes on time without using any external subcontractors.'],
+  ['Where are your newest active residential projects located?', 'Looking for flats in Thrissur town for sale? You can explore CIDBI Cassia in Peringavu, Near Daya Hospital and Chembaka in Punkunnam. Both locations offer truly unmatched daily convenience.'],
+  ['Do you have any finished homes available for immediate move in?', 'As of now finished homes are not available.  but, 2, 3 & 4 BHK apartments are nearing completion at Cassia near Daya hospital.'],
+  ['How does CIDBI guarantee exceptional construction quality for buyers?', 'Our skilled in-house team handles every single construction stage without relying on any subcontractors. This strict internal process ensures superior craftsmanship for all our luxury properties today.'],
+]
+
+export default function ProjectFaq({ isChaletPage, isCredencePage, isClarionPage }) {
   const [isOpend, setOpen] = useState(null)
-  const faqs = isChaletPage ? chaletFaqs : isCredencePage ? credenceFaqs : candorFaqs
+  const faqs = isChaletPage
+    ? chaletFaqs
+    : isCredencePage
+    ? credenceFaqs
+    : isClarionPage
+    ? clarionFaqs
+    : typeof candorFaqs !== 'undefined'
+    ? candorFaqs
+    : []
 
   return (
     <div className='py-[45px] about-main-bg'>
