@@ -78,7 +78,7 @@ export default function AboutSection() {
         {/* =========================
             CONTENT
         ========================== */}
-        <div className="mx-auto max-w-2xl text-center -mt-32 md:-mt-60 lg:-mt-[300px] min-[1430px]:-mt-[500px] min-[1500px]:-mt-[500px]  xl:-mt-[450px]">
+        <div className="relative z-10 mx-auto max-w-2xl text-center -mt-32 md:-mt-60 lg:-mt-[300px] min-[1430px]:-mt-[500px] min-[1500px]:-mt-[500px]  xl:-mt-[450px]">
           <p className="text-sm text-[#14532d]">About us</p>
 
           <h2 className="mt-3 font-[general-sans-medium] text-[20px] leading-[120%] md:text-[28px] lg:text-[36px]">

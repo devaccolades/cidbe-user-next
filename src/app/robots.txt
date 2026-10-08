@@ -1,19 +1,34 @@
+User-agent: OAI-SearchBot
 User-agent: GPTBot
+User-agent: ChatGPT-User
 Allow: /
-
-User-agent: ChatGPT-user
-Allow: /
+Disallow: /cgi-bin/
+Disallow: /blogs?page=
+Disallow: /blogs/?page=
 
 User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 Allow: /
+Disallow: /cgi-bin/
+Disallow: /blogs?page=
+Disallow: /blogs/?page=
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /cgi-bin/
+Disallow: /blogs?page=
+Disallow: /blogs/?page=
 
-User-agent: Gemini-Deep-Research
+User-agent: Google-Extended
 Allow: /
+Disallow: /cgi-bin/
+Disallow: /blogs?page=
+Disallow: /blogs/?page=
 
 User-agent: *
 Disallow: /cgi-bin/
 Disallow: /blogs?page=
-Sitemap: Sitemap: https://cidbi.com/sitemap.xml
+Disallow: /blogs/?page=
+
+Sitemap: https://cidbi.com/sitemap.xml
