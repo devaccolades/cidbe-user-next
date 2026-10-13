@@ -120,7 +120,7 @@ const faqStructuredData = {
             "Ongoing smart apartments in Viyyoor, Thrissur. 2, 3 & 4 BHK flats from ₹71.85 lakhs with 40+ amenities.",
           priceCurrency: "INR",
           price: "7185000",
-          url: "https://cidbi.com/featured-projects/premium-flats-cassia",
+          url: "https://cidbi.com/projects/premium-flats-cassia",
           availability: "https://schema.org/PreOrder",
         },
         {
@@ -130,7 +130,7 @@ const faqStructuredData = {
             "Ready-to-move flats in Punkunnam, Thrissur. 2 BHK + Study from ₹81.5 lakhs, 3 BHK at ₹1.02 Cr.",
           priceCurrency: "INR",
           price: "8150000",
-          url: "https://cidbi.com/featured-projects/flats-in-thrissur-candor",
+          url: "https://cidbi.com/projects/flats-in-thrissur-candor",
           availability: "https://schema.org/InStock",
         },
       ],

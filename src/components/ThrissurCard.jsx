@@ -139,7 +139,7 @@ export default function ThrissurCard({
           </div>
 
           <div className="bg-white grid grid-cols-2 gap-[10px] px-[15px] pb-[10px] text-[12px] sm:text-[14px]">
-            <Link href={`${basePath}/${project?.slug}`}>
+            <Link href={`/projects/${project?.slug}`}>
               <button className="border border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px] cursor-pointer">
                 Read more
               </button>
@@ -187,7 +187,7 @@ export default function ThrissurCard({
           </div>
 
           <div className=" grid grid-cols-2 gap-[10px] px-[15px] pb-[10px] text-[12px] sm:text-[14px]">
-            <Link href={`${basePath}/${project?.slug}`}>
+            <Link href={`/projects/${project?.slug}`}>
               <button className="border border-[--secondary-cl] w-full text-[14px] text-[--secondary] py-[7px] rounded-[8px] cursor-pointer">
                 Read more
               </button>

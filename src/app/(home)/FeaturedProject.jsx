@@ -445,7 +445,7 @@ export default function FeaturedProjects() {
                         lg:mt-8
                       "
                     >
-                      <Link href={`/featured-projects/${project.slug || project.id}`}>
+                      <Link href={`/projects/${project.slug || project.id}`}>
                         <button
                           className="
                             rounded-[8px]

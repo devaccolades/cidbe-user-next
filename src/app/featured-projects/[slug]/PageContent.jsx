@@ -7,6 +7,8 @@ import '../../../components/projectinnerpage/projectDetails.css';
 import dynamic from 'next/dynamic';
 import { SkeletonLoader } from '../../../components/skeletoneffect/Skelten';
 import FeaturedFaq from './FeaturedFaq';
+import OngoingInnerFaq from '../../ongoing-projects/[slug]/OngoingInnerFaq';
+import ProjectFaq from '../../completed-projects/[slug]/ProjectFaq';
 
 const Brochure = dynamic(() => import('../../../components/projectinnerpage/Brochure'), { ssr: false, loading: () => <SkeletonLoader />, });
 const DeepDeatiles = dynamic(() => import('../../../components/projectinnerpage/DeepDeatiles'), { ssr: false, loading: () => <SkeletonLoader />, });
@@ -16,7 +18,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "FAQPage",
-      "@id": "https://cidbi.com/featured-projects/premium-flats-cassia#faq",
+      "@id": "https://cidbi.com/projects/premium-flats-cassia#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -62,7 +64,7 @@ const jsonLd = {
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://cidbi.com/featured-projects/premium-flats-cassia#breadcrumb",
+      "@id": "https://cidbi.com/projects/premium-flats-cassia#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -80,7 +82,7 @@ const jsonLd = {
           "@type": "ListItem",
           "position": 3,
           "name": "Cassia – Premium Flats in Thrissur",
-          "item": "https://cidbi.com/featured-projects/premium-flats-cassia"
+          "item": "https://cidbi.com/projects/premium-flats-cassia"
         }
       ]
     }
@@ -89,6 +91,15 @@ const jsonLd = {
 
 export default function PageContent({ data }) {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const slug = data?.data?.slug;
+  const isCandorPage = slug === 'flats-in-punkunnam-candor';
+  const isChaletPage = slug === 'chalet';
+  const isCredencePage = slug === 'credence';
+  const isClarionPage = slug === 'clarion';
+  const showFeaturedFaq = [
+    'premium-flats-cassia',
+    'flats-in-thrissur-candor',
+  ].includes(slug);
 
   return (
     <>
@@ -120,11 +131,24 @@ export default function PageContent({ data }) {
           status={data?.status || []}
           bank={data?.bank}
           videosection={data?.videosection}
+          isCandorPage={isCandorPage}
+          isChaletPage={isChaletPage}
+          isCredencePage={isCredencePage}
           className='bg-[#ffff]'
           onVideoModalOpen={() => setIsVideoModalOpen(true)}
           onVideoModalClose={() => setIsVideoModalOpen(false)}
         />
-        <FeaturedFaq />
+        {showFeaturedFaq && <FeaturedFaq />}
+        {slug === 'chembaka-premium-luxury-apartments' && (
+          <OngoingInnerFaq slug={slug} />
+        )}
+        {(isCandorPage || isChaletPage || isCredencePage || isClarionPage) && (
+          <ProjectFaq
+            isChaletPage={isChaletPage}
+            isCredencePage={isCredencePage}
+            isClarionPage={isClarionPage}
+          />
+        )}
       </div>
       <Footer />
     </>

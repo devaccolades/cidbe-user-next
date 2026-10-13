@@ -15,7 +15,7 @@ import arrow_outwardIcon from "../../public/icons/arrow_outward.webp";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
-function ProjectCard({ project, basePath }) {
+function ProjectCard({ project }) {
   let pathname = usePathname();
   if (pathname === "/" || pathname === "/flats-in-thrissur") {
     pathname = "/featured-projects";
@@ -27,7 +27,7 @@ function ProjectCard({ project, basePath }) {
 
   const handleOpen = () => setOpen(!open);
 
-  const linkBase = basePath || pathname;
+  const projectUrl = `/projects/${project?.slug}`;
   return (
     <>
       {pathname === "/completed-projects" ||
@@ -61,7 +61,7 @@ function ProjectCard({ project, basePath }) {
           <div className="sticky bottom-1 bg-white mt-[10px] gap-[10px] px-[15px] pb-[10px] text-[12px] sm:text-[14px] ">
             {project ? (
               //   <Link href={`${pathname}/${project?.slug}`}>
-              <Link href={`${linkBase}/${project?.slug}`}>
+              <Link href={projectUrl}>
                 <button className="border cursor-pointer border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px]">
                   Read more
                 </button>
@@ -173,7 +173,7 @@ function ProjectCard({ project, basePath }) {
             </AnimatePresence>
           </div>
           <div className="sticky bottom-1 bg-white grid grid-cols-2 gap-[10px] px-[15px] pb-[10px] text-[12px] sm:text-[14px] ">
-            <Link href={`${pathname}/${project?.slug}`}>
+            <Link href={projectUrl}>
               {" "}
               <button className="border border-[--secondary-cl] w-full text-[--secondary] py-[7px] px-[8px] rounded-[8px] cursor-pointer">
                 Read more

@@ -32,13 +32,13 @@ const featuredProjectAddOnDatas = [
     <p><span style="color:#000000">Thoughtful spaces like a Senior&#39;s Corner and a Garden Gazebo.</span></p>
     <p><span style="color:#000000">For gatherings and social occasions, the Barbeque Corner and Meeting Hall offer excellent venues. The 1 BHK guest apartments ensure hospitality for visitors, while the Double Height Entry Plaza and Spacious Lobby exude grandeur.</span></p>
     <p><span style="color:#000000"><strong>Cutting-Edge Smart Features</strong></span></p>
-    <p><span style="color:#000000">CIDBI Cassia boasts an impressive suite of smart specifications, making it one of the most technologically advanced </span><a href="https://cidbi.com/featured-projects/premium-flats-cassia" style="text-decoration:none"><span style="color:#1155cc"><u>premium flats in Thrissur</u></span></a><span style="color:#000000">:</span></p>
+    <p><span style="color:#000000">CIDBI Cassia boasts an impressive suite of smart specifications, making it one of the most technologically advanced </span><a href="https://cidbi.com/projects/premium-flats-cassia" style="text-decoration:none"><span style="color:#1155cc"><u>premium flats in Thrissur</u></span></a><span style="color:#000000">:</span></p>
     <p><span style="color:#000000">Face-detected access control and automated car-detected boom barriers enhance security.</span></p>
     <p><span style="color:#000000">Automated garden watering systems and smart lighting in parking and landscapes promote sustainability.</span></p>
     <p><span style="color:#000000">Smart tech extends to conveniences like video door phones, automated smoke detectors, and lift call features from within apartments.</span></p>
     <p><span style="color:#000000">Provisions for electric car charging and access-controlled lifts reflect a future-forward approach.</span></p>
     <p><span style="color:#000000"><strong>Proximity to Key Locations</strong></span></p>
-    <p><span style="color:#000000">Located just 100 meters from Daya Hospital, CIDBI Cassia ensures easy access to essential services. It is also close to prominent spots like Ashwini Junction (1.9 km), Swaraj Round (2.8 km), and KSRTC Stand (4.2 km), making it one of the most conveniently located </span><a href="https://cidbi.com/featured-projects/premium-flats-cassia" style="text-decoration:none"><span style="color:#1155cc"><u>luxury apartments in Thrissur</u></span></a><span style="color:#000000">.</span></p>
+    <p><span style="color:#000000">Located just 100 meters from Daya Hospital, CIDBI Cassia ensures easy access to essential services. It is also close to prominent spots like Ashwini Junction (1.9 km), Swaraj Round (2.8 km), and KSRTC Stand (4.2 km), making it one of the most conveniently located </span><a href="https://cidbi.com/projects/premium-flats-cassia" style="text-decoration:none"><span style="color:#1155cc"><u>luxury apartments in Thrissur</u></span></a><span style="color:#000000">.</span></p>
     <p><span style="color:#000000">For families, the proximity to schools (1.7 km) and churches (900 meters) adds to its appeal. With its unbeatable combination of location, amenities, and technology, CIDBI Cassia is a top choice for homebuyers seeking the best 3 BHK apartments in Thrissur.</span></p>
     <p>&nbsp;</p>
   `,
@@ -128,7 +128,7 @@ guarantees a home-buying experience that exceeds expectations.
   },
 ];
 
-function ProjectListing({ title, basePath = "/completed-projects" }) {
+function ProjectListing({ title }) {
   const [isOpend, setOpen] = useState(null);
 
   const pathname = usePathname();
@@ -176,19 +176,6 @@ function ProjectListing({ title, basePath = "/completed-projects" }) {
     setPage(pageNumber);
   };
 
-  const resolvedBasePath =
-    basePath ||
-    (() => {
-      if (pathname === "/completed-projects") return "/completed-projects";
-      if (pathname === "/featured-projects") return "/featured-projects";
-      if (pathname === "/ongoing-projects") return "/ongoing-projects";
-      if (pathname === "/upcoming-projects") return "/upcoming-projects";
-      if (pathname === "/ready-to-occupy-flats-thrissur") return "/ready-to-occupy-flats-thrissur";
-      if (pathname === "/apartments-flats-thrissur")
-        return "/completed-projects"; // <-- key fix
-      return pathname;
-    })();
-
   const HeadingTag = pathname === "/featured-projects" ? "h1" : "h2";
   return (
     <main className="bg-[--primary-cl] bg-cover bg-no-repeat project-list-bg -mt-[80px] lg:-mt-[95px]">
@@ -210,7 +197,6 @@ function ProjectListing({ title, basePath = "/completed-projects" }) {
               <ProjectCard
                 key={index}
                 project={project}
-                basePath={resolvedBasePath}
               />
             ))}
           </div>

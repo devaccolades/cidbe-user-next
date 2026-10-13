@@ -16,16 +16,16 @@ export default async function sitemap() {
     { url: "/featured-projects", changeFrequency: "monthly", priority: 0.8 },
 
     // Project Detail Pages
-    { url: "/ongoing-projects/chembaka-premium-luxury-apartments", changeFrequency: "weekly", priority: 0.9 },
-    { url: "/featured-projects/premium-flats-cassia", changeFrequency: "weekly", priority: 0.9 },
-    { url: "/featured-projects/flats-in-thrissur-candor", changeFrequency: "monthly", priority: 0.8 },
-    { url: "/completed-projects/clarion", changeFrequency: "yearly", priority: 0.7 },
-    { url: "/completed-projects/chirag", changeFrequency: "yearly", priority: 0.6 },
-    { url: "/completed-projects/cocoon", changeFrequency: "yearly", priority: 0.6 },
-    { url: "/completed-projects/cedar", changeFrequency: "yearly", priority: 0.6 },
-    { url: "/completed-projects/chaithram", changeFrequency: "yearly", priority: 0.6 },
-    { url: "/completed-projects/coronet", changeFrequency: "yearly", priority: 0.6 },
-    { url: "/completed-projects/coral", changeFrequency: "yearly", priority: 0.6 },
+    { url: "/projects/chembaka-premium-luxury-apartments", changeFrequency: "weekly", priority: 0.9 },
+    { url: "/projects/premium-flats-cassia", changeFrequency: "weekly", priority: 0.9 },
+    { url: "/projects/flats-in-thrissur-candor", changeFrequency: "monthly", priority: 0.8 },
+    { url: "/projects/clarion", changeFrequency: "yearly", priority: 0.7 },
+    { url: "/projects/chirag", changeFrequency: "yearly", priority: 0.6 },
+    { url: "/projects/cocoon", changeFrequency: "yearly", priority: 0.6 },
+    { url: "/projects/cedar", changeFrequency: "yearly", priority: 0.6 },
+    { url: "/projects/chaithram", changeFrequency: "yearly", priority: 0.6 },
+    { url: "/projects/coronet", changeFrequency: "yearly", priority: 0.6 },
+    { url: "/projects/coral", changeFrequency: "yearly", priority: 0.6 },
 
     // Core Pages
     { url: "/about-us", changeFrequency: "monthly", priority: 0.8 },
