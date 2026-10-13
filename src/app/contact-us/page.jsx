@@ -5,11 +5,11 @@ import Skelten from "../../components/skeletoneffect/Skelten";
 import MapAndForm from "./MapAndForm";
 import AddressInfo from "./AddressInfo";
 import "./Contact.css";
-import { getSeoApi } from "../../services/services";
+import { getFaqApi, getSeoApi } from "../../services/services";
 
 const CustomerReviewsAndFaq = dynamic(
   () => import("../(home)/CustomerReviewsAndFaq"),
-  { ssr: false, loading: () => <Skelten /> }
+  { loading: () => <Skelten /> }
 );
 
 async function fetchSeoData(path) {
@@ -41,13 +41,24 @@ export async function generateMetadata() {
   };
 }
 
-function page() {
+async function page() {
+  let faqs = [];
+
+  try {
+    const response = await getFaqApi();
+    if (response?.data?.StatusCode === 6000) {
+      faqs = response.data.data || [];
+    }
+  } catch (error) {
+    console.error("Contact FAQ fetch failed", error);
+  }
+
   return (
     <>
       <Header bgPrimary={true} />
       <MapAndForm />
       <AddressInfo />
-      <CustomerReviewsAndFaq />
+      <CustomerReviewsAndFaq initialFaqs={faqs} />
       <Footer />
     </>
   );

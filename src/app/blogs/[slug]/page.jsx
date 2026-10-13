@@ -8,6 +8,7 @@ import { redirect } from "next/navigation";
 import { getBlogDetailsApi } from "../../../services/services";
 import "../../../app/globals.css";
 import "../Blogs.css";
+import BlogPostingSchema from "./BlogPostingSchema";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -68,6 +69,7 @@ export default async function Page({ params }) {
   }
   return (
     <>
+      <BlogPostingSchema blog={data} />
       <Header />
       {data.title && (
         <React.Fragment>

@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "../app/globals.css";
 import Script from "next/script";
 import ScrollToTop from "../components/scrollToTop/ScrollToTop";
+import SitewideOrganizationSchema from "../components/seo/SitewideOrganizationSchema";
 // import Canonical from "../components/Canonical"
 
 export const metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`hidescroll ${inter.variable}`}>
       <head />
       <body className={inter.className}>
+        <SitewideOrganizationSchema />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PWFG6894"

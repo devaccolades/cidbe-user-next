@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import FaqSchema from "../../components/seo/FaqSchema";
 
 const renderLinkedAnswer = (answer, linkText, href, shouldLink) => {
   if (!shouldLink) return answer;
@@ -95,6 +96,7 @@ const OngoingFaq = () => {
 
   return (
     <section className="containers custom-res py-10">
+      <FaqSchema faqs={faqs} url="/ongoing-projects" />
       <h2 className="text-[24px] font-[clash-display-medium] text-[--secondary-cl] text-center mb-8">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (

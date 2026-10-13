@@ -2,6 +2,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
 import React, { useState } from 'react'
+import FaqSchema from '../../components/seo/FaqSchema'
 
 // import plusIcon from '../../../public/icons/plus.svg'
 // import minusIcon from '../../../public/icons/minus.svg'
@@ -42,6 +43,7 @@ export default function FaqSection  () {
     
   return (
     <div className='py-[45px] about-main-bg'>
+      <FaqSchema faqs={faqs} url="/apartments-flats-thrissur" />
         
       <div className='containers '>
                 <h2 className='font-[clash-display-medium] text-[20px] lg:text-[32px]'>FAQ</h2>

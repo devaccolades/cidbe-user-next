@@ -102,6 +102,7 @@ export default async function Page({ params }) {
             isChaletPage={isChaletPage}
             isCredencePage={isCredencePage}
             isClarionPage={isClarionPage}
+            slug={slug}
           />
         )}
       </div>

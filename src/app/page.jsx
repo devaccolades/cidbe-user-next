@@ -12,7 +12,7 @@ import Script from "next/script";
 import ScrollToTop from "../components/scrollToTop/ScrollToTop";
 import HeroSection from "../app/(home)/HeroSection";
 import Achievements from "./(home)/Achievements";
-import { getAchievementsApi } from "../services/services";
+import { getAchievementsApi, getFaqApi } from "../services/services";
 import Message from '../app/(home)/Message'
 import WhyChoose from '../app/(home)/WhyChoose'
 import Schema from '../../Schema'
@@ -27,7 +27,7 @@ const Blogs = dynamic(() => import("../app/(home)/Blogs"), {
 });
 const CustomerReviewsAndFaq = dynamic(
   () => import("../app/(home)/CustomerReviewsAndFaq"),
-  { ssr: false, loading: () => <Skelten /> },
+  { loading: () => <Skelten /> },
 );
 // const HeroSection = dynamic(() => import("../app/(home)/HeroSection"), {
 //   ssr: false,
@@ -223,7 +223,18 @@ try {
   console.error("Error fetching achievements:", err);
 }
 
-function Page() {
+async function Page() {
+  let faqs = [];
+
+  try {
+    const response = await getFaqApi();
+    if (response?.data?.StatusCode === 6000) {
+      faqs = response.data.data || [];
+    }
+  } catch (error) {
+    console.error("Homepage FAQ fetch failed", error);
+  }
+
   return (
     <>
       <ScrollToTop />
@@ -236,7 +247,7 @@ function Page() {
       {/* <Chairman /> */}
       <Achievements achievements={achievements} />
       <Blogs />
-      <CustomerReviewsAndFaq />
+      <CustomerReviewsAndFaq initialFaqs={faqs} />
       <Footer />
       <Script
         id="seo-json-ld"

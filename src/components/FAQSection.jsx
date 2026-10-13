@@ -1,4 +1,5 @@
 import React from "react";
+import FaqSchema from "./seo/FaqSchema";
 
 const faqs = [
   {
@@ -49,6 +50,7 @@ const faqs = [
 const FAQSection = () => {
   return (
     <section className="containers custom-res py-10">
+      <FaqSchema faqs={faqs} />
       <h2 className="text-[24px] font-[clash-display-medium] text-[--secondary-cl] text-center mb-8">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (

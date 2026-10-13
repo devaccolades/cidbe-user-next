@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useState } from 'react'
+import FaqSchema from '../../../components/seo/FaqSchema'
 
 const chaletFaqs = [
   ['Where is CIDBI Chalet located in Thrissur?', 'CIDBI Chalet is located at Kannamkulangara in Thrissur. The property sits just one kilometre from Sakthan Stand. Swaraj Round is only two kilometres away from home.'],
@@ -34,7 +35,7 @@ const clarionFaqs = [
   ['How does CIDBI guarantee exceptional construction quality for buyers?', 'Our skilled in-house team handles every single construction stage without relying on any subcontractors. This strict internal process ensures superior craftsmanship for all our luxury properties today.'],
 ]
 
-export default function ProjectFaq({ isChaletPage, isCredencePage, isClarionPage }) {
+export default function ProjectFaq({ isChaletPage, isCredencePage, isClarionPage, slug }) {
   const [isOpend, setOpen] = useState(null)
   const faqs = isChaletPage
     ? chaletFaqs
@@ -48,6 +49,7 @@ export default function ProjectFaq({ isChaletPage, isCredencePage, isClarionPage
 
   return (
     <div className='py-[45px] about-main-bg'>
+      <FaqSchema faqs={faqs} url={slug ? `/projects/${slug}` : undefined} />
       <div className='containers '>
         <h2 className='font-[clash-display-medium] text-[20px] lg:text-[32px]'>FAQ</h2>
         <div className='text-black'>

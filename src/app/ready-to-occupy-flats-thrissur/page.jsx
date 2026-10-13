@@ -11,6 +11,30 @@ const ProjectListing = dynamic(
 
 import { getSeoApi } from "../../services/services";
 import ReadyToOccupySeo from "./ReadyToOccupySeo.jsx";
+import FaqSchema from "../../components/seo/FaqSchema";
+
+const readyToOccupyFaqs = [
+  {
+    q: "Are ready to move apartments available in Thrissur?",
+    a: "Yes, many premium options exist today and you can easily find ready to move flats in Thrissur. Our completed projects like CIDBI Candor offer immediate possession for your family.",
+  },
+  {
+    q: "Is buying a ready apartment better than under construction?",
+    a: "Yes, it offers instant peace of mind. You avoid all construction delays completely. Buying ready to occupy apartments in Thrissur means you get exactly what you pay for today.",
+  },
+  {
+    q: "Do ready to move flats require GST?",
+    a: "It depends, certain completed homes prior to RERA with a completion certificate do not attract GST. This makes ready to occupy flats in Thrissur a highly cost effective choice for smart buyers.",
+  },
+  {
+    q: "What amenities are available in ready to move apartments in Thrissur?",
+    a: "Ready to move flats in Thrissur feature all common luxury amenities. Swimming pools rooftop or ground, AC health clubs, secure play areas, and 24hour smart security systems are only some of them.",
+  },
+  {
+    q: "Are home loans available for ready to move apartments?",
+    a: "Yes, banks process loans much faster for finished properties. You can easily secure quick financing to buy your dream ready to occupy apartments in Thrissur.",
+  },
+];
 
 async function fetchSeoData(path) {
   let data = {};
@@ -364,33 +388,16 @@ function page() {
 
         {/* FAQ SECTION */}
         <div className="bg-[#f2f6f2] py-20 lg:py-32">
+          <FaqSchema
+            faqs={readyToOccupyFaqs}
+            url="/ready-to-occupy-flats-thrissur"
+          />
           <div className="containers px-4 sm:px-6">
             <h3 className="text-3xl lg:text-4xl text-center font-bold mb-12 lg:mb-16 text-[--secondary-cl]">
               FAQ'S
             </h3>
             <div className="max-w-4xl mx-auto grid gap-4 lg:gap-6">
-              {[
-                {
-                  q: "Are ready to move apartments available in Thrissur?",
-                  a: "Yes, many premium options exist today and you can easily find ready to move flats in Thrissur. Our completed projects like CIDBI Candor offer immediate possession for your family.",
-                },
-                {
-                  q: "Is buying a ready apartment better than under construction?",
-                  a: "Yes, it offers instant peace of mind. You avoid all construction delays completely. Buying ready to occupy apartments in Thrissur means you get exactly what you pay for today.",
-                },
-                {
-                  q: "Do ready to move flats require GST?",
-                  a: "It depends, certain completed homes prior to RERA with a completion certificate do not attract GST. This makes ready to occupy flats in Thrissur a highly cost effective choice for smart buyers.",
-                },
-                {
-                  q: "What amenities are available in ready to move apartments in Thrissur?",
-                  a: "Ready to move flats in Thrissur feature all common luxury amenities. Swimming pools rooftop or ground, AC health clubs, secure play areas, and 24hour smart security systems are only some of them.",
-                },
-                {
-                  q: "Are home loans available for ready to move apartments?",
-                  a: "Yes, banks process loans much faster for finished properties. You can easily secure quick financing to buy your dream ready to occupy apartments in Thrissur.",
-                },
-              ].map((faq, i) => (
+              {readyToOccupyFaqs.map((faq, i) => (
                 <details
                   key={i}
                   className="group bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-8 cursor-pointer shadow-sm border border-transparent hover:border-[--primary-cl] transition-all"

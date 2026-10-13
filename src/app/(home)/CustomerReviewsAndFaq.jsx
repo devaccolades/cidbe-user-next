@@ -20,13 +20,14 @@ import playIcon from "../../..//public/icons/play.webp";
 
 import customerReviewbg from "../../../public/images/home/customer-reviewsbg.webp";
 import path from "path";
+import FaqSchema from "../../components/seo/FaqSchema";
 
-function CustomerReviewsAndFaq() {
+function CustomerReviewsAndFaq({ initialFaqs = [] }) {
   const pathname = usePathname();
 
   const [numItems, setNumItems] = useState(1);
   const [testimonials, setTestimonials] = useState([]);
-  const [faqs, setFaqs] = useState([]);
+  const [faqs, setFaqs] = useState(initialFaqs);
   const [isOpend, setOpen] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(null);
@@ -107,6 +108,7 @@ function CustomerReviewsAndFaq() {
         pathname === "/contact-us" ? "" : "reviews-bg-gradient"
       }  py-[40px] lg:py-[90px] flex flex-col gap-[20px] md:gap-[50px] lg:gap-[130px]`}
     >
+      <FaqSchema faqs={faqs} />
       <Image
         src={customerReviewbg}
         className="absolute right-0 hidden lg:block -z-10 top-[-150px]"
